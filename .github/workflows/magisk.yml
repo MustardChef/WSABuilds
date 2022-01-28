@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
-        arch: [x64, arm64]
+        arch: [x64]
     steps:
       - name: Dependencies
         run: |
