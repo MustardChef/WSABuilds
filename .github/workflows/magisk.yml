@@ -1,17 +1,11 @@
 name: Build WSA
 on:
-  push:
-    paths-ignore:
-      - 'README.md'
-  pull_request:
-    paths-ignore:
-      - 'README.md'
   workflow_dispatch:
     inputs:
       arch:
         description: "Build arch"
         required: true
-        default: "x64 & arm64"
+        default: "x64"
         type: choice
         options:
         - x64
@@ -29,7 +23,7 @@ on:
       gapps_variant:
         description: "Variants of gapps"
         required: true
-        default: "none"
+        default: "full"
         type: choice
         options:
         - none
