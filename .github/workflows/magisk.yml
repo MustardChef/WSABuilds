@@ -1,28 +1,87 @@
 name: Build WSA
 on:
   push:
+    paths-ignore:
+      - 'README.md'
   pull_request:
+    paths-ignore:
+      - 'README.md'
   workflow_dispatch:
     inputs:
-      magisk_apk:
-        description: "Download link to magisk apk."
+      arch:
+        description: "Build arch"
         required: true
-        default: "https://cdn.jsdelivr.net/gh/topjohnwu/magisk-files@24.1/app-release.apk"
+        default: "x64 & arm64"
+        type: choice
+        options:
+        - x64
+        - arm64
+        - x64 & arm64
+      magisk_apk:
+        description: "Magisk version"
+        required: true
+        default: "stable"
+        type: choice
+        options:
+        - stable
+        - beta
+        - canary
       gapps_variant:
-        description: "Variants of gapps. Should be: [none, super, stock, full, mini, micro, nano, pico, tvstock, tvmini]"
+        description: "Variants of gapps"
         required: true
         default: "none"
+        type: choice
+        options:
+        - none
+        - super
+        - stock
+        - full
+        - mini
+        - micro
+        - nano
+        - pico
+        - tvstock
+        - tvmini
       root_sol:
-        description: "Root solution. Should be: [magisk, none]"
+        description: "Root solution"
         required: true
         default: "magisk"
+        type: choice
+        options:
+        - magisk
+        - none
 
 jobs:
+  matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Generate build matrix
+        id: set-matrix
+        uses: actions/github-script@v6
+        with:
+          script: |
+            let matrix = {};
+            let arch = "${{ github.event.inputs.arch }}"
+            switch ( arch ) {
+              case "x64":
+                matrix.arch = ["x64"];
+                break;
+              case "arm64":
+                matrix.arch = ["arm64"];
+                break;
+              default:
+                matrix.arch = ["x64", "arm64"];
+                break;
+            }
+            core.setOutput("matrix",JSON.stringify(matrix));
+
   build:
     runs-on: ubuntu-20.04
+    needs: matrix
     strategy:
-      matrix:
-        arch: [x64, arm64]
+      matrix: ${{fromJson(needs.matrix.outputs.matrix)}}
     steps:
       - name: Dependencies
         run: |
@@ -109,12 +168,16 @@ jobs:
           import urllib.request
           import zipfile
           import os
+          import json
+          import requests
 
           magisk_apk = """${{ github.event.inputs.magisk_apk }}"""
 
           if not magisk_apk:
-              magisk_apk = """https://cdn.jsdelivr.net/gh/topjohnwu/magisk-files@24.1/app-release.apk"""
-
+              magisk_apk = "stable"
+          if magisk_apk == "stable" or magisk_apk == "beta" or magisk_apk == "canary":
+              magisk_apk = json.loads(requests.get(f"https://github.com/topjohnwu/magisk-files/raw/master/{magisk_apk}.json").content)['magisk']['link']
+              
           out_file = "magisk.zip"
 
           arch = "${{ matrix.arch }}"
@@ -437,7 +500,7 @@ jobs:
           }
 
           if (-not (Test-Administrator)) {
-              \$proc = Start-Process -PassThru -WindowStyle Hidden -Verb RunAs powershell.exe -Args "-executionpolicy bypass -command Set-Location \`"\$PSScriptRoot\`"; \`"\$PSCommandPath\`" EVAL"
+              \$proc = Start-Process -PassThru -WindowStyle Hidden -Verb RunAs powershell.exe -Args "-executionpolicy bypass -command Set-Location '\$PSScriptRoot'; &'\$PSCommandPath' EVAL"
               \$proc.WaitForExit()
               if (\$proc.ExitCode -ne 0) {
                   Clear-Host
@@ -447,7 +510,7 @@ jobs:
               exit
           }
           elseif ((\$args.Count -eq 1) -and (\$args[0] -eq "EVAL")) {
-              Start-Process powershell.exe -Args "-executionpolicy bypass -command Set-Location \`"\$PSScriptRoot\`"; \`"\$PSCommandPath\`""
+              Start-Process powershell.exe -Args "-executionpolicy bypass -command Set-Location '\$PSScriptRoot'; &'\$PSCommandPath'"
               exit
           }
 
@@ -486,7 +549,7 @@ jobs:
           }
           Clear-Host
           Write-Host "Installing MagiskOnWSA..."
-          Stop-Process -Name "wsaclient"
+          Stop-Process -Name "wsaclient" -ErrorAction "silentlycontinue"
           Add-AppxPackage -ForceApplicationShutdown -ForceUpdateFromAnyVersion -Register .\AppxManifest.xml
           if (\$?) {
               Finish

@@ -78,13 +78,10 @@ https://user-images.githubusercontent.com/5022927/145696886-e13ebfc1-ff25-4410-8
     Magisk actively remove online module repository. You can install module locally or by `adb push module.zip /data/local/tmp` and `adb shell su -c magisk --install-module /data/local/tmp/module.zip`.
 - Can I use Magisk 23.0 stable or lower version?
 
-    No. Magisk has bugs preventing itself running on WSA. Magisk Canary has fixed them. So try Magisk 23 canary or higher version.
-- But Magisk has removed hide since 23 canary?
-
-    Use [Magisk Alpha](https://t.me/magiskalpha) or use Zygisk with [Shamiko](https://t.me/c/1414270883/25744) for hidding. To intergrate Magisk Alpha, use this Magisk apk link https://github.com/vvb2060/magisk_files/raw/alpha/app-release.apk for the Github Action.
+    No. Magisk has bugs preventing itself running on WSA. Magisk 24+ has fixed them. So you must use Magisk 24 or higher version.
 - How can I get rid of Magisk?
 
-    Input `none` as root solution.
+    Choose `none` as root solution.
 - Github Action script is updated, how can I synchronize it?
 
     1. In your fork repository, click `fetch upstream`
