@@ -189,11 +189,23 @@ jobs:
           with zipfile.ZipFile(out_file) as zip:
               extract_as(zip, f"lib/{ abi_map[arch][0] }/libmagisk64.so", "magisk64", "magisk")
               extract_as(zip, f"lib/{ abi_map[arch][1] }/libmagisk32.so", "magisk32", "magisk")
+              standalone_policy = False
+              try:
+                zip.getinfo(f"lib/{ abi_map[arch][0] }/libmagiskpolicy.so")
+                standalone_policy = True
+              except:
+                pass
               extract_as(zip, f"lib/{ abi_map[arch][0] }/libmagiskinit.so", "magiskinit", "magisk")
-              extract_as(zip, f"lib/{ abi_map[arch][0] }/libmagiskinit.so", "magiskpolicy", "magisk")
+              if standalone_policy:
+                extract_as(zip, f"lib/{ abi_map[arch][0] }/libmagiskpolicy.so", "magiskpolicy", "magisk")
+              else:
+                extract_as(zip, f"lib/{ abi_map[arch][0] }/libmagiskinit.so", "magiskpolicy", "magisk")
               extract_as(zip, f"lib/{ abi_map[arch][0] }/libmagiskboot.so", "magiskboot", "magisk")
               extract_as(zip, f"lib/{ abi_map[arch][0] }/libbusybox.so", "busybox", "magisk")
-              extract_as(zip, f"lib/{ abi_map['x64'][0] }/libmagiskinit.so", "magiskpolicy", ".")
+              if standalone_policy:
+                extract_as(zip, f"lib/{ abi_map['x64'][0] }/libmagiskpolicy.so", "magiskpolicy", ".")
+              else:
+                extract_as(zip, f"lib/{ abi_map['x64'][0] }/libmagiskinit.so", "magiskpolicy", ".")
               extract_as(zip, f"assets/boot_patch.sh", "boot_patch.sh", "magisk")
               extract_as(zip, f"assets/util_functions.sh", "util_functions.sh", "magisk")
       - name: Download OpenGApps
@@ -298,7 +310,8 @@ jobs:
               chmod 0755 /dev/wsa-magisk/magisk32
               copy /sbin/magiskinit /dev/wsa-magisk/magiskinit
               chmod 0755 /dev/wsa-magisk/magiskinit
-              symlink ./magiskinit /dev/wsa-magisk/magiskpolicy
+              copy /sbin/magiskpolicy /dev/wsa-magisk/magiskpolicy
+              chmod 0755 /dev/wsa-magisk/magiskpolicy
               mkdir /dev/wsa-magisk/.magisk 700
               mkdir /dev/wsa-magisk/.magisk/mirror 700
               mkdir /dev/wsa-magisk/.magisk/block 700

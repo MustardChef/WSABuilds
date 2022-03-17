@@ -18,7 +18,7 @@ https://user-images.githubusercontent.com/5022927/145696886-e13ebfc1-ff25-4410-8
 
 ## Text Guide
 
-1. Star (if you like) and fork this repo
+1. Star (if you like) and fork this repo (keep it PUBLIC, private repo is not supported)
 1. Go to the **Action** tab in your forked repo
     ![Action Tab](https://docs.github.com/assets/images/help/repository/actions-tab.png)
 1. In the left sidebar, click the **Build WSA** workflow.
