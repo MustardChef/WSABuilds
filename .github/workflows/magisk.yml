@@ -266,17 +266,18 @@ jobs:
         shell: python
         run: |
           import requests
+          import zipfile
           import os
           import urllib.request
 
-          link = "https://ipfs.infura.io/ipfs/Qmbh8NKAtiaYSgXHj7GTXMcU2AqxCp3jof31Gneffr8XNi?filename=gapps.zip"
+          link = "https://ipfs.infura.io/ipfs/Qmbh8NKAtiaYSgXHj7GTXMcU2AqxCp3jof31Gneffr8XNi"
 
           print(f"downloading link: {link}", flush=True)
 
           out_file = "gapps.zip"
 
           if not os.path.isfile(out_file):
-              requests.get(link)
+              urllib.request.urlretrieve(link, out_file)
           print("done", flush=True)
 
       - name: Extract GApps and expand images
