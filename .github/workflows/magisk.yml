@@ -14,7 +14,7 @@ on:
       release_type:
         description: "WSA release type"
         required: true
-        default: "retail"
+        default: "insider fast"
         type: choice
         options:
         - retail
