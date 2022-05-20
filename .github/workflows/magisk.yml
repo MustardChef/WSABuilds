@@ -265,17 +265,16 @@ jobs:
         if: ${{ matrix.arch == 'x64' && github.event.inputs.gapps_variant == 'full' && github.event.inputs.gapps_version == '12.1' }}
         shell: python
         run: |
+          import requests
           import os
           import urllib.request
 
-          link = "https://ipfs.infura.io/ipfs/Qmbh8NKAtiaYSgXHj7GTXMcU2AqxCp3jof31Gneffr8XNi"
+          link = "https://ipfs.infura.io/ipfs/Qmbh8NKAtiaYSgXHj7GTXMcU2AqxCp3jof31Gneffr8XNi?filename=gapps.zip"
 
           print(f"downloading link: {link}", flush=True)
 
-          out_file = "gapps.zip"
-
           if not os.path.isfile(out_file):
-              urllib.request.urlretrieve(link, out_file)
+              request.get(link)
           print("done", flush=True)
 
       - name: Extract GApps and expand images
