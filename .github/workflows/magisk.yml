@@ -273,6 +273,8 @@ jobs:
 
           print(f"downloading link: {link}", flush=True)
 
+          out_file = "gapps.zip"
+
           if not os.path.isfile(out_file):
               request.get(link)
           print("done", flush=True)
