@@ -621,5 +621,5 @@ jobs:
       - name: Upload WSA
         uses: softprops/action-gh-release@v1
         with:
-          file: ./${{ env.artifact_name }}.zip
+          files: ./${{ env.artifact_name }}.zip
           tag_name: ./${{ env.artifact_name }}
