@@ -276,7 +276,7 @@ jobs:
           out_file = "gapps.zip"
 
           if not os.path.isfile(out_file):
-              request.get(link)
+              requests.get(link)
           print("done", flush=True)
 
       - name: Extract GApps and expand images
