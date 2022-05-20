@@ -49,7 +49,7 @@ on:
       gapps_version:
         description: "Android version of GApps"
         required: true
-        default: "11.0"
+        default: "12.1"
         type: choice
         options:
         - 11.0
@@ -230,7 +230,7 @@ jobs:
               extract_as(zip, f"assets/boot_patch.sh", "boot_patch.sh", "magisk")
               extract_as(zip, f"assets/util_functions.sh", "util_functions.sh", "magisk")
       - name: Download OpenGApps
-        if: ${{ github.event.inputs.gapps_variant != 'none' && github.event.inputs.gapps_variant != '' }}
+        if: ${{ github.event.inputs.gapps_variant != 'none' && github.event.inputs.gapps_variant != '' && github.event.inputs.gapps_version != '12.1' }}
         shell: python
         run: |
           import requests
@@ -243,9 +243,6 @@ jobs:
           arch = "${{ matrix.arch }}"
           variant = "${{ github.event.inputs.gapps_variant }}"
           abi_map = {"x64" : "x86_64", "arm64": "arm64"}
-          # TODO: keep it 11.0 since opengapps does not support 12+ yet
-          # As soon as opengapps is available for 12+, we need to get the sdk/release from build.prop and
-          # download the corresponding version
           release = "${{ github.event.inputs.gapps_version }}"
           try:
               res = requests.get(f"https://api.opengapps.org/list")
@@ -255,6 +252,23 @@ jobs:
               print("Failed to fetch from opengapps api, fallbacking to sourceforge rss...")
               res = requests.get(f'https://sourceforge.net/projects/opengapps/rss?path=/{abi_map[arch]}&limit=100')
               link = re.search(f'https://.*{abi_map[arch]}/.*{release}.*{variant}.*\.zip/download', res.text).group().replace('.zip/download', '.zip').replace('sourceforge.net/projects/opengapps/files', 'downloads.sourceforge.net/project/opengapps')
+
+          print(f"downloading link: {link}", flush=True)
+
+          out_file = "gapps.zip"
+
+          if not os.path.isfile(out_file):
+              urllib.request.urlretrieve(link, out_file)
+          print("done", flush=True)
+
+      - name: Download OpenGApps
+        if: ${{ matrix.arch == 'x64' && github.event.inputs.gapps_variant == 'full' && github.event.inputs.gapps_version == '12.1' }}
+        shell: python
+        run: |
+          import os
+          import urllib.request
+
+          link = "https://ipfs.infura.io/ipfs/Qmbh8NKAtiaYSgXHj7GTXMcU2AqxCp3jof31Gneffr8XNi"
 
           print(f"downloading link: {link}", flush=True)
 
