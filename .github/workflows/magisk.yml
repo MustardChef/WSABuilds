@@ -663,4 +663,4 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: ./${{ env.artifact_name }}.zip
-          tag_name: ${{ git_hash }}
+          tag_name: $git_hash
