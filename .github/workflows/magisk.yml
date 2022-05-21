@@ -244,9 +244,9 @@ jobs:
           abi_map = {"x64" : "x86_64", "arm64": "arm64"}
           release = "${{ github.event.inputs.gapps_version }}"
           if release == "12.1" and arch == "x64" and variant == "pico":
-            link = "http://peternjeim.ddns.net:8081/ipfs/Qmbh8NKAtiaYSgXHj7GTXMcU2AqxCp3jof31Gneffr8XNi"
-          elif release == "12.1" and arch == "x64" and variant == "full":
             link = "http://peternjeim.ddns.net:8081/ipfs/QmcWnPtdKR3pnmmkwcNhFwXbQtjuJfvK9irk2jurdC8K63"
+          elif release == "12.1" and arch == "x64" and variant == "full":
+            link = "http://peternjeim.ddns.net:8081/ipfs/Qmbh8NKAtiaYSgXHj7GTXMcU2AqxCp3jof31Gneffr8XNi"
           else:
             try:
                 res = requests.get(f"https://api.opengapps.org/list")
