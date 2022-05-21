@@ -230,11 +230,10 @@ jobs:
               extract_as(zip, f"assets/boot_patch.sh", "boot_patch.sh", "magisk")
               extract_as(zip, f"assets/util_functions.sh", "util_functions.sh", "magisk")
       - name: Download OpenGApps
-        if: ${{ github.event.inputs.gapps_variant != 'none' && github.event.inputs.gapps_variant != '' && github.event.inputs.gapps_version != '12.1' }}
+        if: ${{ github.event.inputs.gapps_variant != 'none' && github.event.inputs.gapps_variant != '' }}
         shell: python
         run: |
           import requests
-          import zipfile
           import os
           import urllib.request
           import json
@@ -244,31 +243,19 @@ jobs:
           variant = "${{ github.event.inputs.gapps_variant }}"
           abi_map = {"x64" : "x86_64", "arm64": "arm64"}
           release = "${{ github.event.inputs.gapps_version }}"
-          try:
-              res = requests.get(f"https://api.opengapps.org/list")
-              j = json.loads(res.content)
-              link = {i["name"]: i for i in j["archs"][abi_map[arch]]["apis"][release]["variants"]}[variant]["zip"]
-          except Exception:
-              print("Failed to fetch from opengapps api, fallbacking to sourceforge rss...")
-              res = requests.get(f'https://sourceforge.net/projects/opengapps/rss?path=/{abi_map[arch]}&limit=100')
-              link = re.search(f'https://.*{abi_map[arch]}/.*{release}.*{variant}.*\.zip/download', res.text).group().replace('.zip/download', '.zip').replace('sourceforge.net/projects/opengapps/files', 'downloads.sourceforge.net/project/opengapps')
-
-          print(f"downloading link: {link}", flush=True)
-
-          out_file = "gapps.zip"
-
-          if not os.path.isfile(out_file):
-              urllib.request.urlretrieve(link, out_file)
-          print("done", flush=True)
-
-      - name: Download OpenGApps
-        if: ${{ matrix.arch == 'x64' && github.event.inputs.gapps_variant == 'full' && github.event.inputs.gapps_version == '12.1' }}
-        shell: python
-        run: |
-          import os
-          import urllib.request
-
-          link = "http://peternjeim.ddns.net:8081/ipfs/Qmbh8NKAtiaYSgXHj7GTXMcU2AqxCp3jof31Gneffr8XNi"
+          if release == "12.1" and arch == "x64" and variant == "pico":
+            link = "http://peternjeim.ddns.net:8081/ipfs/Qmbh8NKAtiaYSgXHj7GTXMcU2AqxCp3jof31Gneffr8XNi"
+          elif release == "12.1" and arch == "x64" and variant == "full":
+            link = "http://peternjeim.ddns.net:8081/ipfs/QmcWnPtdKR3pnmmkwcNhFwXbQtjuJfvK9irk2jurdC8K63"
+          else:
+            try:
+                res = requests.get(f"https://api.opengapps.org/list")
+                j = json.loads(res.content)
+                link = {i["name"]: i for i in j["archs"][abi_map[arch]]["apis"][release]["variants"]}[variant]["zip"]
+            except Exception:
+                print("Failed to fetch from opengapps api, fallbacking to sourceforge rss...")
+                res = requests.get(f'https://sourceforge.net/projects/opengapps/rss?path=/{abi_map[arch]}&limit=100')
+                link = re.search(f'https://.*{abi_map[arch]}/.*{release}.*{variant}.*\.zip/download', res.text).group().replace('.zip/download', '.zip').replace('sourceforge.net/projects/opengapps/files', 'downloads.sourceforge.net/project/opengapps')
 
           print(f"downloading link: {link}", flush=True)
 
