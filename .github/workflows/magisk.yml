@@ -658,9 +658,9 @@ jobs:
       - name: Compress
         run: |
           zip -qrv ${{ env.artifact_name }}.zip ./${{ matrix.arch }}/*
-          git_hash=${GITHUB_SHA:0:7}
+          echo "git_hash=${GITHUB_SHA:0:7}" >> $GITHUB_ENV
       - name: Upload WSA
         uses: softprops/action-gh-release@v1
         with:
           files: ./${{ env.artifact_name }}.zip
-          tag_name: $git_hash
+          tag_name: ${{ env.git_hash }}
