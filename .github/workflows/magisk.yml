@@ -657,7 +657,7 @@ jobs:
           echo "artifact_name=WSA${name1}${name2}_${{ env.WSA_VER }}_${{ matrix.arch }}_${{ env.WSA_REL }}" >> $GITHUB_ENV
       - name: Compress
         run: |
-          zip -9qrv ${{ env.artifact_name }}.zip ./${{ matrix.arch }}/*
+          zip -qrv ${{ env.artifact_name }}.zip ./${{ matrix.arch }}/*
       - name: Upload WSA
         uses: softprops/action-gh-release@v1
         with:
