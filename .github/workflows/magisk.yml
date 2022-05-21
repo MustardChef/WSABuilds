@@ -284,15 +284,25 @@ jobs:
           mkdir gapps
           unzip -p gapps.zip {Core,GApps}/'*.lz' | tar --lzip -C gapps -xvf - -i --strip-components=2 --exclude='setupwizardtablet-x86_64' --exclude='packageinstallergoogle-all' --exclude='speech-common' --exclude='markup-lib-arm' --exclude='markup-lib-arm64' --exclude='markup-all' --exclude='setupwizarddefault-x86_64' --exclude='pixellauncher-all' --exclude='pixellauncher-common'
 
-          e2fsck -yf ${{ matrix.arch }}/system.img
-          resize2fs ${{ matrix.arch }}/system.img $(( $(du -sB512 gapps | cut -f1) + $(du -sB512 ${{ matrix.arch }}/system.img | cut -f1) ))s
           # TODO: calculate the size dynamically for better compatibility
           e2fsck -yf ${{ matrix.arch }}/product.img
           resize2fs ${{ matrix.arch }}/product.img 1024M
           e2fsck -yf ${{ matrix.arch }}/system_ext.img
           resize2fs ${{ matrix.arch }}/system_ext.img 200M
-      - name: Expand vendor
+      - name: Expand vendor and system
         run: |
+          e2fsck -yf ${{ matrix.arch }}/system.img
+          system_size=$(( $(du -sB512 ${{ matrix.arch }}/system.img | cut -f1) + 20000 ))
+          if [ -d gapps ]; then
+            system_size=$(( $system_size + $(du -sB512 gapps | cut -f1) ))
+          fi
+          if [ -d magisk ]; then
+            system_size=$(( $system_size +$(du -sB512 magisk | cut -f1) ))
+          fi
+          if [ -f magisk.zip ]; then
+            system_size=$(( $system_size +$(du -sB512 magisk.zip | cut -f1) ))
+          fi
+          resize2fs ${{ matrix.arch }}/system.img "$system_size"s
           e2fsck -yf ${{ matrix.arch }}/vendor.img
           resize2fs ${{ matrix.arch }}/vendor.img 400M
       - name: Mount images
