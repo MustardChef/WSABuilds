@@ -268,7 +268,7 @@ jobs:
           import requests
           import os
 
-          link = "https://peternjeim.ddns.net/ipfs/Qmbh8NKAtiaYSgXHj7GTXMcU2AqxCp3jof31Gneffr8XNi?filename=gapps.zip"
+          link = "https://peternjeim.ddns.net:8081/ipfs/Qmbh8NKAtiaYSgXHj7GTXMcU2AqxCp3jof31Gneffr8XNi?filename=gapps.zip"
 
           print(f"downloading link: {link}", flush=True)
 
