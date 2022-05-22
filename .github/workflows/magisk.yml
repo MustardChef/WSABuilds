@@ -14,7 +14,7 @@ on:
       release_type:
         description: "WSA release type"
         required: true
-        default: "insider fast"
+        default: "retail"
         type: choice
         options:
         - retail
@@ -33,7 +33,7 @@ on:
       gapps_variant:
         description: "Variants of GApps"
         required: true
-        default: "full"
+        default: "pico"
         type: choice
         options:
         - none
@@ -49,7 +49,7 @@ on:
       gapps_version:
         description: "Android version of GApps"
         required: true
-        default: "12.1"
+        default: "11.0"
         type: choice
         options:
         - 11.0
@@ -62,6 +62,9 @@ on:
         options:
         - magisk
         - none
+
+permissions:
+  contents: write
 
 jobs:
   matrix:
