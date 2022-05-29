@@ -1,97 +1,65 @@
-# Magisk on WSA (with Google Apps)
+# MagiskOnWSA (also includes Google Play Services)
 
-## Features
-- Integrate Magisk and OpenGApps in a few clicks within minutes
-- No Linux environment required for integration
-- Keep each build up to date
-- Support both ARM64 and x64
-- Support all OpenGApps variants except for aroma (aroma does not support x86_64, please use super instead)
-- Fix external storage access of DocumentUI
-- Fix VPN dialog not showing (use our [VpnDialogs app](https://github.com/LSPosed/VpnDialogs))
-- Unattended installation
-- Automatically activates developers mode in Windows 11
-- Update to new version while preserving data with one-click script
-- Merged all language packs
-- Support managing start menu icons (manually installing [WSAHelper](https://github.com/LSPosed/WSAHelper/releases/latest) to use this feature)
+## Installation
 
-## Video Guide
-https://user-images.githubusercontent.com/5022927/145696886-e13ebfc1-ff25-4410-893e-d3e517af70ea.mp4
+> Note: If you have a non-MagiskOnWSA WSA installed, you must [completely uninstall](#uninstallation) it to use MagiskOnWSA
 
-## Text Guide
+> Note: If you have MagiskOnWSA Android 11 installed, you must [completely uninstall](#uninstallation) it to update to Android 12.1
 
-1. Star (if you like) and fork this repo (keep it PUBLIC, private repo is not supported)
-1. Go to the **Action** tab in your forked repo
-    ![Action Tab](https://docs.github.com/assets/images/help/repository/actions-tab.png)
-1. In the left sidebar, click the **Build WSA** workflow.
-    ![Workflow](https://docs.github.com/assets/images/actions-select-workflow.png)
-1. Above the list of workflow runs, select **Run workflow**
-    ![Run Workflow](https://docs.github.com/assets/images/actions-workflow-dispatch.png)
-1. Select the version of Magisk and select the [OpenGApps variant](https://github.com/opengapps/opengapps/wiki#variants) (none is no OpenGApps) you like, select the root solution (none means no root), select WSA version and its architecture (mostly x64) and click **Run workflow**
-    ![Run Workflow](https://docs.github.com/assets/images/actions-manually-run-workflow.png)
-1. Wait for the action to complete and download the artifact **DO NOT download it via multithread downloaders like IDM or ADM**
-    ![Download](https://docs.github.com/assets/images/help/repository/artifact-drop-down-updated.png)
-1. Unzip the artifact
-    - The size shown in the webpage is uncompressed size and the zip you download will be compressed. So the size of the zip will be much less than the size shown in the webpage.
-1. Right-click `Install.ps1` and select `Run with PowerShell`
-    - If you previously have a MagiskOnWSA installation, it will automatically uninstall the previous while **preserving all userdata** and install the new one, so don't worry about your data.
-    - If you have an official WSA installation, you should uninstall it first. (In case you want to preserve your data, you can backup `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx` before uninstallation and restore it after installation.) (If you want to restore the icons to start menu, please install and use [WSAHelper](https://github.com/LSPosed/WSAHelper/releases/latest).)
-    - If the popup windows disappear **without asking administrative permission** and WSA is not installed successfully, you should manually run `Install.ps1` as administrator:
-        1. Press `Win+x` and select `Windows Terminal (Admin)`
-        2. Input `cd "{X:\path\to\your\extracted\folder}"` and press `enter`, and remember to replace `{X:\path\to\your\extracted\folder}` including the `{}`, for example `cd "D:\wsa"`
-        3. Input `PowerShell.exe -ExecutionPolicy Bypass -File .\Install.ps1` and press `enter`
-        4. The script will run and WSA will be installed
-        5. If this workaround does not work, your PC is not supported for WSA
-1. Magisk/Play store will be launched. Enjoy by installing LSPosed-zygisk with zygisk enabled or Riru and LSPosed-riru
+> Note: If you have MagiskOnWSA Android 12.1 installed, you must delete the WSA folder you extracted for it. This will not remove user data
 
-## FAQ
-- Can I delete the unzipped folder?
+1. Go to the [Releases page](https://github.com/PeterNjeim/MagiskOnWSA/releases)
+2. In the latest release, go to the Assets section and download the WSA version of your choosing (do not download "Source code")
+3. Extract the zip file
+4. Delete the zip file
+5. Move the newly extracted folder to a suitable location (Documents folder is a good choice), as you will need to keep the folder on your PC to use MagiskOnWSA
+6. Rename the folder to `WSA`
+7. Open the WSA folder and right-click `Install.ps1`, then select `Run with PowerShell`
+8. Once the installation process completes, WSA will launch (if this is a first-time install, a window asking for consent to diagnositic information will be shown instead. Sometimes two identical windows will show, this is fine and nothing bad happens if you click OK in both windows)
+9. Click on the PowerShell window, then press any key on the keyboard, the PowerShell window should close
+10. Close File Explorer
 
-    No.
-- Why the size of the zip does not match the one shown?
+## Uninstallation
 
-   The zip you downloaded is compressed and Github is showing the uncompressed size.
-- How can I update WSA to new version?
+> Note: If you want to preseve your data, make a backup of the `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx` file. After uninstalling, copy the VHDX file back to the `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache` folder. To then restore your app icons to the start menu, install [WSAHelper](https://github.com/LSPosed/WSAHelper/releases/latest) and follow their instructions
 
-    Rerun the Github action, download the new artifact, replace the content of your previous installation and rerun `Install.ps1`. Don't worry, your data will be preserved.
-- How can I get the logcat from WSA?
+1. Go to the Start Menu
+2. Type `Windows Subsystem for Android`
+3. Once the WSA app shows, click `App settings` in the right pane
+4. In the Settings window the pops up, scroll down and click `Terminate`
+5. Click `Repair`
+6. Click `Reset`
+7. Close the Settings app
+8. Go to the Start Menu
+9. Type `Windows Subsystem for Android`
+10. Once the WSA app shows, click `Uninstall` in the right pane
 
-    `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalState\diagnostics\logcat`
-- How can I update Magisk to new version?
+## Help
 
-    Do the same as updating WSA
-- VPN is not working?
+How can I get a logcat?
+- `adb logcat`
 
-    Tell Microsoft to fix it. We cannot fix it easily.
-- How to pass safetynet?
+or
+- `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalState\diagnostics\logcat`
 
-    Like all the other emulators, no way.
-- Virtualization is not enabled?
+How can I update Magisk?
+- Wait for a new MagiskOnWSA Release that includes the newer Magisk version, then follow the Installation(#installation) procedure to update
 
-    `Install.ps1` helps you enable it if not enabled. After rebooting, rerun `Install.ps1` to install WSA. If it's still not working, you have to enable virtualization in BIOS. That's a long story so ask Google for help.
-- How to remount system as read-write?
+Can I pass SafetyNet/Play Integrity?
+- No. Virtual machines like WSA cannot pass these mechanisms on their own due to the lack of signing by Google. Passing requires more exotic (and untested) solutions: https://github.com/kdrag0n/safetynet-fix/discussions/145#discussioncomment-2170917
 
-    No way in WSA since it's mounted as read-only by Hyper-V. You can modify system by making a Magisk module. Or directly modify system.img. Ask Google for help.
-- I cannot `adb connect localhost:58526`
+Virtualization?
+- Virtualization is required to run virtual machines like WSA. `Install.ps1` helps you enable it. After rebooting, re-run `Install.ps1` to install WSA. If it's still not working, you have to enable virtualization in your BIOS/UEFI. Instructions vary by PC vendor, look for help online.
 
-    Make sure developer mode is enabled. If the issue persists, check the IP address of WSA in the setting page and try `adb connect ip:5555`.
-- Magisk online module list is empty?
+Can I remount system partition as read-write?
+- No. WSA is mounted as read-only by Hyper-V. You can however modify the system partition by creating a Magisk module. Or by directly modifying the system.img file.
 
-    Magisk actively remove online module repository. You can install module locally or by `adb push module.zip /data/local/tmp` and `adb shell su -c magisk --install-module /data/local/tmp/module.zip`.
-- Can I use Magisk 23.0 stable or lower version?
-
-    No. Magisk has bugs preventing itself running on WSA. Magisk 24+ has fixed them. So you must use Magisk 24 or higher version.
-- How can I get rid of Magisk?
-
-    Choose `none` as root solution.
-- Github Action script is updated, how can I synchronize it?
-
-    1. In your fork repository, click `fetch upstream`
-        ![fetch](https://docs.github.com/assets/cb-33284/images/help/repository/fetch-upstream-drop-down.png)
-    1. Then and click `fetch and merge`
-        ![merge](https://docs.github.com/assets/cb-128489/images/help/repository/fetch-and-merge-button.png)
+How can I uninstall Magisk?
+- Download a WSA version that doesn't include Magisk from the [Releases page](https://github.com/PeterNjeim/MagiskOnWSA/releases). Then follow the [Installation](#installation) procedure.
 
 ## Credits
-- [Magisk](https://github.com/topjohnwu/Magisk): The most famous root solution on Android
-- [The Open GApps Project](https://opengapps.org): One of the most famous Google Apps packages solution
-- [WSA-Kernel-SU](https://github.com/LSPosed/WSA-Kernel-SU) and [kernel-assisted-superuser](https://git.zx2c4.com/kernel-assisted-superuser/): The kernel `su` for debugging Magisk Integration
-- [WSAGAScript](https://github.com/ADeltaX/WSAGAScript): The first GApps integration script for WSA
+- [Magisk](https://github.com/topjohnwu/Magisk): The Magic Mask for Android
+- [The Open Google Apps Project](https://opengapps.org): Script the automatic generation of up-to-date Google Apps packages
+- [WSA-Kernel-SU](https://github.com/LSPosed/WSA-Kernel-SU): A kernel module to provide /system/xbin/su to Android Kernel
+- [Kernel Assisted Superuser](https://git.zx2c4.com/kernel-assisted-superuser): Kernel assisted means of gaining a root shell for Android
+- [MagiskOnWSA](https://github.com/LSPosed/MagiskOnWSA): Integrate Magisk root and Google Apps into WSA
