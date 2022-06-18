@@ -26,7 +26,7 @@
 1. Go to the Start Menu
 2. Type `Windows Subsystem for Android`
 3. Once the WSA app shows, click `App settings` in the right pane
-4. In the Settings window the pops up, scroll down and click `Terminate`
+4. In the Settings window that opens, scroll down and click `Terminate`
 5. Click `Repair`
 6. Click `Reset`
 7. Close the Settings app
