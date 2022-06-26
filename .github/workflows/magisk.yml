@@ -281,17 +281,17 @@ jobs:
                       urllib.request.urlretrieve(link, out_file)
                   print("done", flush=True)
 
-            - name: Extract GApps and expand images
+            - name: Extract GApps
               if: ${{ github.event.inputs.gapps_variant != 'none' && github.event.inputs.gapps_variant != '' }}
               run: |
                   mkdir gapps
                   unzip -p gapps.zip {Core,GApps}/'*.lz' | tar --lzip -C gapps -xvf - -i --strip-components=2 --exclude='setupwizardtablet-x86_64' --exclude='packageinstallergoogle-all' --exclude='speech-common' --exclude='markup-lib-arm' --exclude='markup-lib-arm64' --exclude='markup-all' --exclude='setupwizarddefault-x86_64' --exclude='pixellauncher-all' --exclude='pixellauncher-common'
 
-                  # TODO: calculate the size dynamically for better compatibility
-                  e2fsck -yf ${{ matrix.arch }}/system_ext.img
-                  resize2fs ${{ matrix.arch }}/system_ext.img 200M
-            - name: Expand vendor and system
+            - name: Expand images
               run: |
+                  e2fsck -yf ${{ matrix.arch }}/system_ext.img
+                  system_ext_size=$(( $(du -sB512 ${{ matrix.arch }}/system_ext.img | cut -f1) + 20000 ))
+                  resize2fs ${{ matrix.arch }}/system_ext.img "$system_ext_size"s
                   e2fsck -yf ${{ matrix.arch }}/product.img
                   product_size=$(( $(du -sB512 ${{ matrix.arch }}/product.img | cut -f1) + 20000 ))
                   if [ -d gapps/product ]; then
@@ -311,7 +311,8 @@ jobs:
                   fi
                   resize2fs ${{ matrix.arch }}/system.img "$system_size"s
                   e2fsck -yf ${{ matrix.arch }}/vendor.img
-                  resize2fs ${{ matrix.arch }}/vendor.img 400M
+                  vendor_size=$(( $(du -sB512 ${{ matrix.arch }}/vendor.img | cut -f1) + 20000 ))
+                  resize2fs ${{ matrix.arch }}/vendor.img "$vendor_size"s
             - name: Mount images
               run: |
                   sudo mkdir system
