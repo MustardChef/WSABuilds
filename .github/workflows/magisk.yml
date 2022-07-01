@@ -14,7 +14,7 @@ on:
             release_type:
                 description: "WSA release type"
                 required: true
-                default: "retail"
+                default: "insider fast"
                 type: choice
                 options:
                     - retail
@@ -50,7 +50,7 @@ on:
             gapps_version:
                 description: "Android version of GApps"
                 required: true
-                default: "11.0"
+                default: "12.1"
                 type: choice
                 options:
                     - 11.0
@@ -58,7 +58,7 @@ on:
             remove_amazon:
                 description: "Remove Amazon AppStore"
                 required: true
-                default: "keep"
+                default: "remove"
                 type: choice
                 options:
                     - keep
