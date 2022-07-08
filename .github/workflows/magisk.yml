@@ -651,28 +651,35 @@ jobs:
                   Write-Host "All Done\`r\`nPress any key to exit"
                   \$null = \$Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown')
                   EOF
-            - name: Generate artifact name
+            - name: Generate release asset name
               run: |
                   variant="${{ github.event.inputs.gapps_variant }}"
                   root="${{ github.event.inputs.root_sol }}"
+                  magisk="${{ github.event.inputs.magisk_apk }}"
+                  amazon="${{ github.event.inputs.remove_amazon }}"
                   if [[ "$root" = "none" ]]; then
-                    name1=""
+                    rootVer=""
                   elif [[ "$root" = "" ]]; then
-                    name1="-with-magisk"
+                    rootVer=" (Magisk $(curl -s https://raw.githubusercontent.com/topjohnwu/magisk-files/master/$magisk.json | jq -r ".magisk.version"))"
                   else
-                    name1="-with-${root}"
+                    rootVer=" (Magisk $(curl -s https://raw.githubusercontent.com/topjohnwu/magisk-files/master/$magisk.json | jq -r ".magisk.version"))"
                   fi
                   if [[ "$variant" = "none" || "$variant" = "" ]]; then
-                    name2="-NoGApps"
+                    gappsVer=""
                   else
-                    name2="-GApps-${variant}"
+                    gappsVer=" (GApps ${variant})"
                   fi
-                  echo "artifact_name=WSA${name1}${name2}_${{ env.WSA_VER }}_${{ matrix.arch }}_${{ env.WSA_REL }}" >> $GITHUB_ENV
+                  if [[ "$amazon" == "remove" ]]; then
+                    amazonVer=""
+                  else
+                    amazonVer=" (Amazon App Store)"
+                  fi
+                  echo "release_asset_name=WSA ${{ env.WSA_VER }}$rootVer$gappsVer$amazonVer (${{ matrix.arch }})" >> $GITHUB_ENV
             - name: Compress
               run: |
-                  zip -qrv ${{ env.artifact_name }}.zip ./${{ matrix.arch }}/*
+                  zip -qrv ${{ env.release_asset_name }}.zip ./${{ matrix.arch }}/*
             - name: Upload WSA
               uses: softprops/action-gh-release@v1
               with:
-                  files: ./${{ env.artifact_name }}.zip
+                  files: ./${{ env.release_asset_name }}.zip
                   tag_name: WSA
