@@ -660,21 +660,21 @@ jobs:
                   if [[ "$root" = "none" ]]; then
                     rootVer=""
                   elif [[ "$root" = "" ]]; then
-                    rootVer=" (Magisk $(curl -s https://raw.githubusercontent.com/topjohnwu/magisk-files/master/$magisk.json | jq -r ".magisk.version"))"
+                    rootVer="_Magisk $(curl -s https://raw.githubusercontent.com/topjohnwu/magisk-files/master/$magisk.json | jq -r ".magisk.version")"
                   else
-                    rootVer=" (Magisk $(curl -s https://raw.githubusercontent.com/topjohnwu/magisk-files/master/$magisk.json | jq -r ".magisk.version"))"
+                    rootVer="_Magisk $(curl -s https://raw.githubusercontent.com/topjohnwu/magisk-files/master/$magisk.json | jq -r ".magisk.version")"
                   fi
                   if [[ "$variant" = "none" || "$variant" = "" ]]; then
                     gappsVer=""
                   else
-                    gappsVer=" (${variant} GApps)"
+                    gappsVer="_${variant} GApps"
                   fi
                   if [[ "$amazon" == "remove" ]]; then
                     amazonVer=""
                   else
-                    amazonVer=" (Amazon App Store)"
+                    amazonVer="_Amazon App Store"
                   fi
-                  echo "release_asset_name=WSA ${{ env.WSA_VER }}$rootVer$gappsVer$amazonVer (${{ matrix.arch }})" >> $GITHUB_ENV
+                  echo "release_asset_name=WSA_${{ env.WSA_VER }}$rootVer$gappsVer$amazonVer_${{ matrix.arch }}" >> $GITHUB_ENV
             - name: Compress
               run: |
                   zip -qrv "${{ env.release_asset_name }}.zip" ./${{ matrix.arch }}/*
