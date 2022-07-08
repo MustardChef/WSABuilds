@@ -667,7 +667,7 @@ jobs:
                   if [[ "$variant" = "none" || "$variant" = "" ]]; then
                     gappsVer=""
                   else
-                    gappsVer=" (GApps ${variant})"
+                    gappsVer=" (${variant} GApps)"
                   fi
                   if [[ "$amazon" == "remove" ]]; then
                     amazonVer=""
@@ -677,7 +677,7 @@ jobs:
                   echo "release_asset_name=WSA ${{ env.WSA_VER }}$rootVer$gappsVer$amazonVer (${{ matrix.arch }})" >> $GITHUB_ENV
             - name: Compress
               run: |
-                  zip -qrv ${{ env.release_asset_name }}.zip ./${{ matrix.arch }}/*
+                  zip -qrv "${{ env.release_asset_name }}.zip" ./${{ matrix.arch }}/*
             - name: Upload WSA
               uses: softprops/action-gh-release@v1
               with:
