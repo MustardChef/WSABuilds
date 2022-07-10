@@ -1,6 +1,6 @@
 # MagiskOnWSA (also includes Google Play Services)
 
-[![Github All Releases](https://img.shields.io/github/downloads/PeterNjeim/MagiskOnWSA/total.svg?label=Downloads+%28latest only%29](https://github.com/PeterNjeim/MagiskOnWSA/releases/latest)
+[![Github All Releases](https://img.shields.io/github/downloads/PeterNjeim/MagiskOnWSA/total.svg?label=Downloads+%28latest+only%29)](https://github.com/PeterNjeim/MagiskOnWSA/releases/latest)
 
 ## Installation
 
