@@ -1,5 +1,7 @@
 # MagiskOnWSA (also includes Google Play Services)
 
+[![Github All Releases](https://img.shields.io/github/downloads/PeterNjeim/MagiskOnWSA/total.svg?label=Downloads)](https://github.com/PeterNjeim/MagiskOnWSA/releases/latest)
+
 ## Installation
 
 > Note: If you have a non-MagiskOnWSA WSA installed, you must [completely uninstall](#uninstallation) it to use MagiskOnWSA
