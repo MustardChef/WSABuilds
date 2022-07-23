@@ -1,0 +1,27 @@
+<Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.w3.org/2003/05/soap-envelope">
+  <Header>
+    <Action d3p1:mustUnderstand="1" xmlns:d3p1="http://www.w3.org/2003/05/soap-envelope" xmlns="http://www.w3.org/2005/08/addressing">http://www.microsoft.com/SoftwareDistribution/Server/ClientWebService/GetCookie</Action>
+    <MessageID xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:b9b43757-2247-4d7b-ae8f-a71ba8a22386</MessageID>
+    <To d3p1:mustUnderstand="1" xmlns:d3p1="http://www.w3.org/2003/05/soap-envelope" xmlns="http://www.w3.org/2005/08/addressing">https://fe3.delivery.mp.microsoft.com/ClientWebService/client.asmx</To>
+    <Security d3p1:mustUnderstand="1" xmlns:d3p1="http://www.w3.org/2003/05/soap-envelope" xmlns="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+      <Timestamp xmlns="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+        <Created>2017-12-02T00:16:15.210Z</Created>
+        <Expires>2017-12-29T06:25:43.943Z</Expires>
+      </Timestamp>
+      <WindowsUpdateTicketsToken d4p1:id="ClientMSA" xmlns:d4p1="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns="http://schemas.microsoft.com/msus/2014/10/WindowsUpdateAuthorization">
+        <TicketType Name="MSA" Version="1.0" Policy="MBI_SSL">
+          <User />
+        </TicketType>
+      </WindowsUpdateTicketsToken>
+    </Security>
+  </Header>
+  <Body>
+    <GetCookie xmlns="http://www.microsoft.com/SoftwareDistribution/Server/ClientWebService">
+      <oldCookie>
+      </oldCookie>
+      <lastChange>2015-10-21T17:01:07.1472913Z</lastChange>
+      <currentTime>2017-12-02T00:16:15.217Z</currentTime>
+      <protocolVersion>1.40</protocolVersion>
+    </GetCookie>
+  </Body>
+</Envelope>

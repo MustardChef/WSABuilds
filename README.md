@@ -40,36 +40,38 @@
 
 How can I get a logcat?
 
--   `adb logcat`
+- `adb logcat`
 
 or
 
--   `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalState\diagnostics\logcat`
+- `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalState\diagnostics\logcat`
 
 How can I update Magisk?
 
--   Wait for a new MagiskOnWSA release that includes the newer Magisk version, then follow the [Installation instructions](#installation) to update
+- Wait for a new MagiskOnWSA release that includes the newer Magisk version, then follow the [Installation instructions](#installation) to update
 
 Can I pass SafetyNet/Play Integrity?
 
--   No. Virtual machines like WSA cannot pass these mechanisms on their own due to the lack of signing by Google. Passing requires more exotic (and untested) solutions: https://github.com/kdrag0n/safetynet-fix/discussions/145#discussioncomment-2170917
+- No. Virtual machines like WSA cannot pass these mechanisms on their own due to the lack of signing by Google. Passing requires more exotic (and untested) solutions: <https://github.com/kdrag0n/safetynet-fix/discussions/145#discussioncomment-2170917>
 
 Virtualization?
 
--   Virtualization is required to run virtual machines like WSA. `Install.ps1` helps you enable it. After rebooting, re-run `Install.ps1` to install WSA. If it's still not working, you have to enable virtualization in your BIOS/UEFI. Instructions vary by PC vendor, look for help online
+- Virtualization is required to run virtual machines like WSA. `Install.ps1` helps you enable it. After rebooting, re-run `Install.ps1` to install WSA. If it's still not working, you have to enable virtualization in your BIOS/UEFI. Instructions vary by PC vendor, look for help online
 
 Can I remount system partition as read-write?
 
--   No. WSA is mounted as read-only by Hyper-V. You can, however, modify the system partition by creating a Magisk module, or by directly modifying the system.img file
+- No. WSA is mounted as read-only by Hyper-V. You can, however, modify the system partition by creating a Magisk module, or by directly modifying the system.img file
 
 How can I uninstall Magisk?
 
--   Download a WSA version that doesn't include Magisk from the [Releases page](https://github.com/PeterNjeim/MagiskOnWSA/releases). Then follow the [Installation instructions](#installation)
+- Download a WSA version that doesn't include Magisk from the [Releases page](https://github.com/PeterNjeim/MagiskOnWSA/releases). Then follow the [Installation instructions](#installation)
 
 ## Credits
 
--   [Magisk](https://github.com/topjohnwu/Magisk): The Magic Mask for Android
--   [The Open Google Apps Project](https://opengapps.org): Script the automatic generation of up-to-date Google Apps packages
--   [WSA-Kernel-SU](https://github.com/LSPosed/WSA-Kernel-SU): A kernel module to provide /system/xbin/su to Android Kernel
--   [Kernel Assisted Superuser](https://git.zx2c4.com/kernel-assisted-superuser): Kernel assisted means of gaining a root shell for Android
--   [MagiskOnWSA](https://github.com/LSPosed/MagiskOnWSA): Integrate Magisk root and Google Apps into WSA
+- [StoreLib](https://github.com/StoreDev/StoreLib): API for downloading WSA
+- [Magisk](https://github.com/topjohnwu/Magisk): The Magic Mask for Android
+- [The Open Google Apps Project](https://opengapps.org): Script the automatic generation of up-to-date Google Apps packages
+- [WSA-Kernel-SU](https://github.com/LSPosed/WSA-Kernel-SU): A kernel module to provide /system/xbin/su to Android Kernel
+- [Kernel Assisted Superuser](https://git.zx2c4.com/kernel-assisted-superuser): Kernel assisted means of gaining a root shell for Android
+- [WSAGAScript](https://github.com/ADeltaX/WSAGAScript): The first GApps integration script for WSA
+- [MagiskOnWSA](https://github.com/LSPosed/MagiskOnWSA): Integrate Magisk root and Google Apps into WSA
