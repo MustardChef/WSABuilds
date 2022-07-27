@@ -184,7 +184,7 @@ jobs:
                           continue
                       out = requests.post(
                           'https://fe3.delivery.mp.microsoft.com/ClientWebService/client.asmx/secured',
-                          data=file_content.format(i, v),
+                          data=file_content.format(i, v, release_type),
                           headers={'Content-Type': 'application/soap+xml; charset=utf-8'},
                           verify=False
                       )
