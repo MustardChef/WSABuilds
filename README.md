@@ -4,11 +4,9 @@
 
 ## Installation
 
-> Note: If you have a non-MagiskOnWSA WSA installed, you must [completely uninstall](#uninstallation) it to use MagiskOnWSA
+> Note: If you have the official WSA installed, you must [completely uninstall](#uninstallation) it to use MagiskOnWSA
 
-> Note: If you have MagiskOnWSA Android 11 installed, you must [completely uninstall](#uninstallation) it to update to Android 12.1
-
-> Note: If you have MagiskOnWSA Android 12.1 installed, you must delete the WSA folder you extracted for it. This will not remove user data
+> Note: If you already have MagiskOnWSA installed, you must delete the WSA folder you extracted for it. This will not remove user data
 
 1. Go to the [Releases page](https://github.com/PeterNjeim/MagiskOnWSA/releases)
 2. In the latest release, go to the Assets section and download the WSA version of your choosing (do not download "Source code")
@@ -74,4 +72,5 @@ How can I uninstall Magisk?
 - [WSA-Kernel-SU](https://github.com/LSPosed/WSA-Kernel-SU): A kernel module to provide /system/xbin/su to Android Kernel
 - [Kernel Assisted Superuser](https://git.zx2c4.com/kernel-assisted-superuser): Kernel assisted means of gaining a root shell for Android
 - [WSAGAScript](https://github.com/ADeltaX/WSAGAScript): The first GApps integration script for WSA
-- [MagiskOnWSA](https://github.com/LSPosed/MagiskOnWSA): Integrate Magisk root and Google Apps into WSA
+- [MagiskOnWSA](https://github.com/LSPosed/MagiskOnWSA): `Deprecated` Integrate Magisk root and Google Apps into WSA
+- [MagiskOnWSALocal](https://github.com/LSPosed/MagiskOnWSALocal): Integrate Magisk root and Google Apps into WSA
