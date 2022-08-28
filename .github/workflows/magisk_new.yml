@@ -480,13 +480,13 @@ jobs:
             - name: Add extra packages
               run: |
                   wget -qO- "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/archive/$GITHUB_REF.tar.gz" | sudo tar --wildcards -zxvf- --strip-component=2 '*/${{ matrix.arch }}/system/*'
-                  find system/system/system/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I dir sudo find system/system/priv-app/dir -type d -exec chmod 0755 {} \;
-                  find system/system/system/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I dir sudo find system/system/priv-app/dir -type f -exec chmod 0644 {} \;
-                  find system/system/system/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I dir sudo find system/system/priv-app/dir -exec chown root:root {} \;
-                  find system/system/system/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I dir sudo find system/system/priv-app/dir -exec chcon --reference=system/system/priv-app {} \;
-                  find system/system/system/etc/permissions/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I file sudo find system/system/etc/permissions/file -type f -exec chmod 0644 {} \;
-                  find system/system/system/etc/permissions/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I file sudo find system/system/etc/permissions/file -exec chown root:root {} \;
-                  find system/system/system/etc/permissions/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I file sudo find system/system/etc/permissions/file -type f -exec chcon --reference=system/system/etc/permissions/platform.xml {} \;
+                  find system/system/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I dir sudo find system/system/priv-app/dir -type d -exec chmod 0755 {} \;
+                  find system/system/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I dir sudo find system/system/priv-app/dir -type f -exec chmod 0644 {} \;
+                  find system/system/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I dir sudo find system/system/priv-app/dir -exec chown root:root {} \;
+                  find system/system/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I dir sudo find system/system/priv-app/dir -exec chcon --reference=system/system/priv-app {} \;
+                  find system/system/etc/permissions/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I file sudo find system/system/etc/permissions/file -type f -exec chmod 0644 {} \;
+                  find system/system/etc/permissions/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I file sudo find system/system/etc/permissions/file -exec chown root:root {} \;
+                  find system/system/etc/permissions/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I file sudo find system/system/etc/permissions/file -type f -exec chcon --reference=system/system/etc/permissions/platform.xml {} \;
             - name: Integrate GApps
               if: ${{ github.event.inputs.gapps_variant != 'none' && github.event.inputs.gapps_variant != '' }}
               run: |
