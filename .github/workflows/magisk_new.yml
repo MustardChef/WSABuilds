@@ -174,30 +174,28 @@ jobs:
                       for l in doc.getElementsByTagName("FileLocation"):
                           url = l.getElementsByTagName("Url")[0].firstChild.nodeValue
                           if len(url) != 99:
-                              if not os.path.isfile(out_file):
-                                  print(f"download link: {url} to {out_file}", flush=True)
-                                  tmpdownlist.writelines(url + '\n')
-                                  tmpdownlist.writelines(f'  dir=.\n')
-                                  tmpdownlist.writelines(f'  out={out_file}\n')
+                              print(f"download link: {url} to {out_file}", flush=True)
+                              tmpdownlist.writelines(url + '\n')
+                              tmpdownlist.writelines(f'  dir=.\n')
+                              tmpdownlist.writelines(f'  out={out_file}\n')
                   tmpdownlist.writelines(f'https://aka.ms/Microsoft.VCLibs.{arch}.14.00.Desktop.appx\n')
                   tmpdownlist.writelines(f'  dir=.\n')
                   tmpdownlist.writelines(f'  out=vclibs.appx\n')
                   tmpdownlist.close
 
-                  magisk_apk = """${{ github.event.inputs.magisk_apk }}"""
-                  print(f"Generating Magisk download link: release type={magisk_apk}", flush=True)
-                  if not magisk_apk:
-                      magisk_apk = "stable"
-                  if magisk_apk == "stable" or magisk_apk == "beta" or magisk_apk == "canary" or magisk_apk == "debug":
-                      magisk_apk = json.loads(requests.get(f"https://github.com/topjohnwu/magisk-files/raw/master/{magisk_apk}.json").content)['magisk']['link']
-                  print(f"download link: {magisk_apk}", flush=True)
+                  magisk_ver = """${{ github.event.inputs.magisk_ver }}"""
+                  print(f"Generating Magisk download link: release type={magisk_ver}", flush=True)
+                  if not magisk_ver:
+                      magisk_ver = "stable"
+                  if magisk_ver == "stable" or magisk_ver == "beta" or magisk_ver == "canary" or magisk_ver == "debug":
+                      magisk_ver = json.loads(requests.get(f"https://github.com/topjohnwu/magisk-files/raw/master/{magisk_ver}.json").content)['magisk']['link']
+                  print(f"download link: {magisk_ver}", flush=True)
                   out_file = "magisk.zip"
 
-                  if not os.path.isfile(out_file):
-                      with open("download.list", 'a') as f:
-                          f.writelines(f'{magisk_apk}\n')
-                          f.writelines(f'  dir=.\n')
-                          f.writelines(f'  out=magisk.zip\n')
+                  with open("download.list", 'a') as f:
+                      f.writelines(f'{magisk_ver}\n')
+                      f.writelines(f'  dir=.\n')
+                      f.writelines(f'  out=magisk.zip\n')
 
                   variant = "${{ github.event.inputs.gapps_variant }}"
                   if variant != "none" and variant != "":
@@ -221,19 +219,16 @@ jobs:
 
                       print(f"download link: {link}", flush=True)
 
-                      out_file = "gapps.zip"
-
-                      if not os.path.isfile(out_file):
-                          with open("download.list", 'a') as f:
-                              f.writelines(f'{link}\n')
-                              f.writelines(f'  dir=.\n')
-                              f.writelines(f'  out=gapps.zip\n')
-                              f.close
+                      with open("download.list", 'a') as f:
+                          f.writelines(f'{link}\n')
+                          f.writelines(f'  dir=.\n')
+                          f.writelines(f'  out=gapps.zip\n')
+                          f.close
             - name: Download artifacts
               run: |
                   if ! aria2c --no-conf --log-level=info --log="./aria2_download.log" -x16 -s16 -j5 -c -R -m0 -i"download.list"; then
-                    echo "We have encountered an error while downloading files."
-                    exit 1
+                      echo "We have encountered an error while downloading files."
+                      exit 1
                   fi
             - name: Extract WSA
               shell: python
@@ -328,7 +323,6 @@ jobs:
               run: |
                   mkdir gapps
                   unzip -p gapps.zip {Core,GApps}/'*.lz' | tar --lzip -C gapps -xf - -i --strip-components=2 --exclude='setupwizardtablet-x86_64' --exclude='packageinstallergoogle-all' --exclude='speech-common' --exclude='markup-lib-arm' --exclude='markup-lib-arm64' --exclude='markup-all' --exclude='setupwizarddefault-x86_64' --exclude='pixellauncher-all' --exclude='pixellauncher-common'
-
             - name: Expand images
               run: |
                   e2fsck -yf ${{ matrix.arch }}/system_ext.img
@@ -358,6 +352,9 @@ jobs:
                   fi
                   if [ -f magisk.zip ]; then
                     SYSTEM_SIZE=$(( $SYSTEM_SIZE +$(du --apparent-size -sB512 magisk.zip | cut -f1) ))
+                  fi
+                  if [ -d system ]; then
+                    SYSTEM_SIZE=$(( $SYSTEM_SIZE +$(du --apparent-size -sB512 system | cut -f1) ))
                   fi
                   resize2fs ${{ matrix.arch }}/system.img "$SYSTEM_SIZE"s
 
@@ -483,51 +480,38 @@ jobs:
             - name: Add extra packages
               run: |
                   wget -qO- "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/archive/$GITHUB_REF.tar.gz" | sudo tar --wildcards -zxvf- --strip-component=2 '*/${{ matrix.arch }}/system/*'
-                  sudo find system/system/priv-app -type d -exec chmod 0755 {} \;
-                  sudo find system/system/priv-app -type f -exec chmod 0644 {} \;
-                  sudo find system/system/priv-app -exec chcon --reference=system/system/priv-app {} \;
+                  find system/system/system/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I dir sudo find system/system/priv-app/dir -type d -exec chmod 0755 {} \;
+                  find system/system/system/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I dir sudo find system/system/priv-app/dir -type f -exec chmod 0644 {} \;
+                  find system/system/system/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I dir sudo find system/system/priv-app/dir -exec chown root:root {} \;
+                  find system/system/system/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I dir sudo find system/system/priv-app/dir -exec chcon --reference=system/system/priv-app {} \;
+                  find system/system/system/etc/permissions/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I file sudo find system/system/etc/permissions/file -type f -exec chmod 0644 {} \;
+                  find system/system/system/etc/permissions/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I file sudo find system/system/etc/permissions/file -exec chown root:root {} \;
+                  find system/system/system/etc/permissions/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I file sudo find system/system/etc/permissions/file -type f -exec chcon --reference=system/system/etc/permissions/platform.xml {} \;
             - name: Integrate GApps
               if: ${{ github.event.inputs.gapps_variant != 'none' && github.event.inputs.gapps_variant != '' }}
               run: |
-                  wget -qO- "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/archive/$GITHUB_REF.tar.gz" | sudo tar --wildcards -zxvf- --strip-component=2 '*/${{ matrix.arch }}/gapps/*'
-                  for d in $(find gapps -mindepth 1 -type d -type d); do
-                      sudo chmod 0755 "$d"
-                      sudo chown root:root "$d"
+                  find "gapps/" -mindepth 1 -type d -exec sudo chmod 0755 {} \;
+                  find "gapps/" -mindepth 1 -type d -exec sudo chown root:root {} \;
+                  file_list="$(find "gapps/" -mindepth 1 -type f | cut -d/ -f5-)"
+                  for file in $file_list; do
+                      sudo chown root:root "gapps/${file}"
+                      sudo chmod 0644 "gapps/${file}"
                   done
-                  for f in $(find gapps -type f); do
-                      type=$(echo "$f" | sed 's/.*\.//')
-                      if [ "$type" == "sh" ] || [ "$type" == "$f" ]; then
-                          sudo chmod 0755 "$f"
-                      else
-                          sudo chmod 0644 "$f"
-                      fi
-                      sudo chown root:root "$f"
-                      sudo chcon -h --reference=system/product/etc/permissions/com.android.settings.intelligence.xml "$f"
-                      sudo chcon --reference=system/product/etc/permissions/com.android.settings.intelligence.xml "$f"
-                  done
-                  shopt -s extglob
-                  sudo cp --preserve=a -r gapps/product/* system/product
-                  sudo rm -rf gapps/product
-                  sudo cp --preserve=a -r gapps/* system/system
 
-                  sudo find system/system/{app,etc,framework,priv-app} -exec chown root:root {} \;
-                  sudo find system/product/{app,etc,overlay,priv-app,lib64,lib,framework} -exec chown root:root {} \;
+                  find gapps/ -maxdepth 1 -mindepth 1 -type d -not -path '*product' -exec sudo cp --preserve=all -r {} system \; || abort
 
-                  sudo find system/system/{app,etc,framework,priv-app} -type d -exec chmod 0755 {} \;
-                  sudo find system/product/{app,etc,overlay,priv-app,lib64,lib,framework} -type d -exec chmod 0755 {} \;
+                  sudo cp --preserve=all -r gapps/product/* product || abort
 
-                  sudo find system/system/{app,framework,priv-app} -type f -exec chmod 0644 {} \;
-                  sudo find system/product/{app,etc,overlay,priv-app,lib64,lib,framework} -type f -exec chmod 0644 {} \;
+                  find gapps/product/overlay -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I file sudo find product/overlay/file -type f -exec chcon --reference=product/overlay/FontNotoSerifSource/FontNotoSerifSourceOverlay.apk {} \;
 
-                  sudo find system/system/{app,framework,priv-app} -type d -exec chcon --reference=system/system/app {} \;
-                  sudo find system/product/{app,etc,overlay,priv-app,lib64,lib,framework} -type d -exec chcon --reference=system/product/app {} \;
-
-                  sudo find system/system/{app,framework,priv-app} -type f -exec chcon --reference=system/system/framework/ext.jar {} \;
-                  sudo find system/product/{app,etc,overlay,priv-app,lib64,lib,framework} -type f -exec chcon --reference=system/product/etc/permissions/com.android.settings.intelligence.xml {} \;
-
-                  ls gapps/etc/ | xargs -n 1 -I dir sudo find system/etc/dir -type f -exec chmod 0644 {} \;
-                  ls gapps/etc/ | xargs -n 1 -I dir sudo find system/etc/dir -type d -exec chcon --reference=system/etc/permissions {} \;
-                  ls gapps/etc/ | xargs -n 1 -I dir sudo find system/etc/dir -type f -exec chcon --reference=system/etc/permissions {} \;
+                  find gapps/app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I dir sudo find system/app/dir -type d -exec chcon --reference=system/app {} \;
+                  find gapps/framework/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I dir sudo find system/framework/dir -type d -exec chcon --reference=system/framework {} \;
+                  find gapps/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I dir sudo find system/priv-app/dir -type d -exec chcon --reference=system/priv-app {} \;
+                  find gapps/app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I file sudo find system/app/file -type f -exec chcon --reference=system/app/KeyChain/KeyChain.apk {} \;
+                  find gapps/framework/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I file sudo find system/framework/file -type f -exec chcon --reference=system/framework/ext.jar {} \;
+                  find gapps/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I file sudo find system/priv-app/file -type f -exec chcon --reference=system/priv-app/Shell/Shell.apk {} \;
+                  find gapps/etc/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I dir sudo find system/etc/dir -type d -exec chcon --reference=system/etc/permissions {} \;
+                  find gapps/etc/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I dir sudo find system/etc/dir -type f -exec chcon --reference=system/etc/permissions {} \;
 
                   sudo patchelf --replace-needed libc.so "${HOME}/libc.so" ./magiskpolicy || true
                   sudo patchelf --replace-needed libm.so "${HOME}/libm.so" ./magiskpolicy || true
@@ -666,7 +650,7 @@ jobs:
                       exit
                   }
 
-                  if (((Test-Path -Path $(ls -Q ./${{ matrix.arch }} | paste -sd "," -)) -eq \$false).Count) {
+                  if (((Test-Path -Path $(find ./${{ matrix.arch }} -maxdepth 1 -mindepth 1 -printf "\"%P\"\n | paste -sd "," -)) -eq \$false).Count) {
                       Write-Error "Some files are missing in the folder. Please try to download the Release from GitHub again. Press any key to exit"
                       \$null = \$Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown')
                       exit 1
