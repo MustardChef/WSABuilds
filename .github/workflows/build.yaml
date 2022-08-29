@@ -71,13 +71,14 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v3
             - name: Install Dependencies
+              working-directory: ./scripts
               run: |
-                  cd ./scripts
                   sudo apt update && sudo apt -y install setools lzip wine winetricks patchelf e2fsprogs python3-pip aria2
                   python3 -m pip install requests
                   cp -r ../wine/.cache/* ~/.cache
                   winetricks msxml6
             - name: Build MagiskOnWSA
+              working-directory: ./scripts
               run: |
                   DOWNLOAD_DIR=../download
                   DOWNLOAD_CONF_NAME=download.list
@@ -135,13 +136,11 @@ jobs:
 
                   COMMAND_LINE=(--arch "$ARCH" --release-type "$RELEASE_TYPE" --magisk-ver "$MAGISK_VER" --gapps-brand "$GAPPS_BRAND" --gapps-variant "$GAPPS_VARIANT" "$REMOVE_AMAZON" --root-sol "$ROOT_SOL" "$COMPRESS_OUTPUT" "$OFFLINE" "$DEBUG" "$CUSTOM_MAGISK")
                   echo "COMMAND_LINE=${COMMAND_LINE[*]}"
-                  ls .
+
                   ./build.sh "${COMMAND_LINE[@]}"
             - name: Generate Release Asset Name
+              working-directory: ./output
               run: |
-                  OUTPUT_DIR=../output
-                  cd $OUTPUT_DIR
-
                   magisk_ver="${{ inputs.magisk_ver }}"
                   gapps_var="${{ inputs.gapps_var }}"
                   remove_amazon="${{ inputs.remove_amazon }}"
@@ -169,10 +168,12 @@ jobs:
                   fi
                   echo "release_asset_name=WSA_${{ env.WSA_VER }}$magiskVer$gappsVar$amazon_${{ inputs.arch }}" >> $GITHUB_ENV
             - name: Compress Asset
+              working-directory: ./output
               run: |
                   find ./ -maxdepth 1 -type d -not -path './' -exec mv "{}" WSA \;
                   zip -qrv "${{ env.release_asset_name }}.zip" ./*
             - name: Upload Asset
+              working-directory: ./output
               uses: softprops/action-gh-release@v1
               with:
                   files: ./${{ env.release_asset_name }}.zip
