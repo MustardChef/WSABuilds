@@ -81,7 +81,7 @@ abort() {
 trap abort INT TERM
 
 function Gen_Rand_Str {
-    tr -dc 'a-zA-Z0-9' < /dev/urandom | fold -w "$1" | head -n 1
+    head /dev/urandom | tr -dc A-Za-z0-9 | head -c"$1"
 }
 
 usage(){
@@ -489,7 +489,7 @@ if [ "$GAPPS_VARIANT" != 'none' ] && [ "$GAPPS_VARIANT" != '' ]; then
 
         sudo chcon --reference="$MOUNT_DIR"/product/lib64/libjni_eglfence.so "$MOUNT_DIR"/product/lib
         find "$WORK_DIR"/gapps/product/lib/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I file sudo find "$MOUNT_DIR"/product/lib/file -exec chcon --reference="$MOUNT_DIR"/product/lib64/libjni_eglfence.so {} \;
-        find "$WORK_DIR"/gapps/product/lib64/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I file sudo find "$MOUNT_DIR"/product/lib64/file -type f -exec chcon --reference="$MOUNT_DIR"/product/lib64/libjni_eglfence.so {} \;        
+        find "$WORK_DIR"/gapps/product/lib64/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I file sudo find "$MOUNT_DIR"/product/lib64/file -type f -exec chcon --reference="$MOUNT_DIR"/product/lib64/libjni_eglfence.so {} \;
         find "$WORK_DIR"/gapps/system_ext/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I dir sudo find "$MOUNT_DIR"/system_ext/priv-app/dir -type d -exec chcon --reference="$MOUNT_DIR"/system_ext/priv-app {} \;
         find "$WORK_DIR"/gapps/system_ext/etc/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I dir sudo find "$MOUNT_DIR"/system_ext/etc/dir -type d -exec chcon --reference="$MOUNT_DIR"/system_ext/etc {} \;
         find "$WORK_DIR"/gapps/system_ext/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I dir sudo find "$MOUNT_DIR"/system_ext/priv-app/dir -type f -exec chcon --reference="$MOUNT_DIR"/system_ext/priv-app/Settings/Settings.apk {} \;
