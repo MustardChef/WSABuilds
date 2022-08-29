@@ -70,7 +70,7 @@ jobs:
         steps:
             - name: Install Dependencies
               run: |
-                  cd "$(dirname "$0")" || exit 1
+                  cd ./scripts
                   sudo apt update && sudo apt -y install setools lzip wine winetricks patchelf e2fsprogs python3-pip aria2
                   python3 -m pip install requests
                   cp -r ../wine/.cache/* ~/.cache
