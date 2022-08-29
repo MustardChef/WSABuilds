@@ -88,7 +88,7 @@ jobs:
                   echo $ARCH
                   RELEASE_TYPE="${opts[RELEASE_TYPE,${{ inputs.release_type }}]}"
                   echo $RELEASE_TYPE
-                  if [ "${{inputs.magisk_ver }} != "None" ]; then
+                  if [ "${{inputs.magisk_ver }}" != "None" ]; then
                       ROOT_SOL="magisk"
                       if [ "${{ inputs.magisk_ver }}" != "Custom (URL)" ]; then
                           MAGISK_VER="${opts[MAGISK_VER,${{ inputs.magisk_ver }}]}"
@@ -115,7 +115,7 @@ jobs:
                     GAPPS_VAR="pico"
                   fi
                   echo $GAPPS_VAR
-                  if [ "${{inputs.gapps_var }} != "None" ]; then
+                  if [ "${{inputs.gapps_var }}" != "None" ]; then
                       if [ "${{ inputs.gapps_var }}" != "MindTheGapps (URL)" ]; then
                           GAPPS_BRAND="OpenGApps"
                       else
