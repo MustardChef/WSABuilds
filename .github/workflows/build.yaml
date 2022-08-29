@@ -1,0 +1,174 @@
+name: Build MagiskOnWSA
+on:
+    workflow_dispatch:
+        inputs:
+            arch:
+                description: "WSA Architecture"
+                required: true
+                default: "X86_64"
+                type: choice
+                options:
+                    - X86_64
+                    - AArch64
+            release_type:
+                description: "WSA Release Channel"
+                required: true
+                default: "Dev Channel"
+                type: choice
+                options:
+                    - General Availability Channel
+                    - Release Preview Channel
+                    - Beta Channel
+                    - Dev Channel
+            magisk_ver:
+                description: "Magisk Version"
+                required: true
+                default: "Stable"
+                type: choice
+                options:
+                    - None
+                    - Stable
+                    - Beta
+                    - Canary
+                    - Debug
+                    - Custom (URL)
+            magisk_url:
+                description: "Custom Magisk APK/ZIP URL"
+                required: false
+                type: string
+            gapps_var:
+                description: "GApps Variant"
+                required: true
+                default: "Full"
+                type: choice
+                options:
+                    - None
+                    - Pico
+                    - Full
+                    - MindTheGapps (URL)
+            mindthegapps_url:
+                description: "MindTheGapps ZIP URL"
+                required: false
+                type: string
+            remove_amazon:
+                description: "Remove Amazon AppStore"
+                required: false
+                default: true
+                type: boolean
+            offline_mode:
+                description: "Enable Offline Mode"
+                required: false
+                default: false
+                type: boolean
+
+permissions:
+    contents: write
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Install Dependencies
+              run: |
+                  cd "$(dirname "$0")" || exit 1
+                  sudo apt update && sudo apt -y install setools lzip wine winetricks patchelf e2fsprogs python3-pip aria2
+                  python3 -m pip install requests
+                  cp -r ../wine/.cache/* ~/.cache
+                  winetricks msxml6
+            - name: Build MagiskOnWSA
+              run: |
+                  DOWNLOAD_DIR=../download
+                  DOWNLOAD_CONF_NAME=download.list
+                  OUTPUT_DIR=../output
+
+                  declare -A opts=( ["ARCH,X86_64"]="x64" ["ARCH,AArch64"]="arm64" ["RELEASE_TYPE,General Availability Channel"]="retail" ["RELEASE_TYPE,Release Preview Channel"]="release preview" ["RELEASE_TYPE,Beta Channel"]="insider slow" ["RELEASE_TYPE,Dev Channel"]="insider fast" ["MAGISK_VER,Stable"]="stable" ["MAGISK_VER,Beta"]="beta" ["MAGISK_VER,Canary"]="canary" ["MAGISK_VER,Debug"]="debug" ["GAPPS_VAR,None"]="none" ["GAPPS_VAR,Pico"]="pico" ["GAPPS_VAR,Full"]="full" ["GAPPS_VAR,MindTheGapps (URL)"]="MindTheGapps" ["REMOVE_AMAZON,true"]="--remove-amazon" ["REMOVE_AMAZON,false"]="" ["OFFLINE_MODE,true"]="--offline" ["OFFLINE_MODE,false"]="" )
+
+                  ARCH="${opts[ARCH,${{ inputs.arch }}]}"
+
+                  RELEASE_TYPE="${opts[RELEASE_TYPE,${{ inputs.release_type }}]}"
+
+                  if [ "${{inputs.magisk_ver }} != "None" ]; then
+                      ROOT_SOL="magisk"
+                      if [ "${{ inputs.magisk_ver }}" != "Custom (URL)" ]; then
+                          MAGISK_VER="${opts[MAGISK_VER,${{ inputs.magisk_ver }}]}"
+                      else
+                          echo "${{ inputs.magisk_url }}" > "$DOWNLOAD_DIR"/"$DOWNLOAD_CONF_NAME"
+
+                          if ! aria2c --no-conf --log-level=info --log="$DOWNLOAD_DIR/aria2_custom_magisk_download.log" -R --allow-overwrite -d"$DOWNLOAD_DIR" -o magisk-debug.zip -i"$DOWNLOAD_DIR"/"$DOWNLOAD_CONF_NAME"; then
+                              echo "Custom Magisk download error!"
+                              exit 1
+                          fi
+                          CUSTOM_MAGISK="1"
+                          MAGISK_VER="${opts[MAGISK_VER,Debug]}"
+                      fi
+                  else
+                      ROOT_SOL="none"
+                      MAGISK_VER="${opts[MAGISK_VER,Stable]}"
+                  fi
+
+                  if [ "$ARCH" != "arm64" ]; then
+                    GAPPS_VAR="${opts[GAPPS_VAR,${{ inputs.gapps_var }}]}"
+                  else
+                    GAPPS_VAR="pico"
+                  fi
+
+                  if [ "${{inputs.gapps_var }} != "None" ]; then
+                      if [ "${{ inputs.gapps_var }}" != "MindTheGapps (URL)" ]; then
+                          GAPPS_BRAND="OpenGApps"
+                      else
+                          echo "${{ inputs.mindthegapps_url }}" > -i"$DOWNLOAD_DIR"/"$DOWNLOAD_CONF_NAME"
+
+                          if ! aria2c --no-conf --log-level=info --log="$DOWNLOAD_DIR/aria2_mindthegapps_download.log" -R --allow-overwrite -d"$DOWNLOAD_DIR" -o MindTheGapps-"$ARCH".zip -i"$DOWNLOAD_DIR"/"$DOWNLOAD_CONF_NAME"; then
+                              echo "MindTheGapps download error!"
+                              exit 1
+                          fi
+                          GAPPS_BRAND="MindTheGapps"
+                      fi
+                  fi
+
+                  REMOVE_AMAZON="${opts[REMOVE_AMAZON,${{ inputs.remove_amazon }}]}"
+
+                  OFFLINE_MODE="${opts[OFFLINE_MODE,${{ inputs.offline_mode }}]}"
+
+                  COMMAND_LINE=(--arch "$ARCH" --release-type "$RELEASE_TYPE" --magisk-ver "$MAGISK_VER" --gapps-brand "$GAPPS_BRAND" --gapps-variant "$GAPPS_VARIANT" "$REMOVE_AMAZON" --root-sol "$ROOT_SOL" "$COMPRESS_OUTPUT" "$OFFLINE" "$DEBUG" "$CUSTOM_MAGISK")
+                  echo "COMMAND_LINE=${COMMAND_LINE[*]}"
+
+                  ./build.sh "${COMMAND_LINE[@]}"
+            - name: Generate Release Asset Name
+              run: |
+                  cd ../output
+
+                  magisk_ver="${{ inputs.magisk_ver }}"
+                  gapps_var="${{ inputs.gapps_var }}"
+                  remove_amazon="${{ inputs.remove_amazon }}"
+
+                  if [[ "$magisk_ver" = "None" ]]; then
+                    magiskVer=""
+                  elif [[ "$magisk_ver" = "Custom (URL)" ]]; then
+                    magiskVer="_Magisk-Custom"
+                  else
+                    magiskVer="_Magisk-$(curl -s https://raw.githubusercontent.com/topjohnwu/magisk-files/master/$magisk_ver.json | jq -r ".magisk.version")"
+                  fi
+
+                  if [[ "$gapps_var" = "None" ]]; then
+                    gappsVar=""
+                  elif [[ "$gapps_var" = "MindTheGapps (URL)" ]]; then
+                    gappsVar="_MindTheGapps"
+                  else
+                    gappsVar="_${gapps_var}-OpenGApps"
+                  fi
+
+                  if [[ "$remove_amazon" == "true" ]]; then
+                    amazon=""
+                  else
+                    amazon="_Amazon-AppStore"
+                  fi
+                  echo "release_asset_name=WSA_${{ env.WSA_VER }}$magiskVer$gappsVar$amazon_${{ inputs.arch }}" >> $GITHUB_ENV
+            - name: Compress Asset
+              run: |
+                  zip -qrv "${{ env.release_asset_name }}.zip" ./*
+            - name: Upload Asset
+              uses: softprops/action-gh-release@v1
+              with:
+                  files: ./${{ env.release_asset_name }}.zip
+                  tag_name: WSA
