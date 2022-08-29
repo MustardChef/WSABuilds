@@ -136,7 +136,7 @@ jobs:
 
                   COMMAND_LINE=(--arch "$ARCH" --release-type "$RELEASE_TYPE" --magisk-ver "$MAGISK_VER" --gapps-brand "$GAPPS_BRAND" --gapps-variant "$GAPPS_VARIANT" "$REMOVE_AMAZON" --root-sol "$ROOT_SOL" "$COMPRESS_OUTPUT" "$OFFLINE" "$DEBUG" "$CUSTOM_MAGISK")
                   echo "COMMAND_LINE=${COMMAND_LINE[*]}"
-
+                  ls .
                   ./build.sh "${COMMAND_LINE[@]}"
             - name: Generate Release Asset Name
               working-directory: ./output
@@ -173,8 +173,7 @@ jobs:
                   find ./ -maxdepth 1 -type d -not -path './' -exec mv "{}" WSA \;
                   zip -qrv "${{ env.release_asset_name }}.zip" ./*
             - name: Upload Asset
-              working-directory: ./output
               uses: softprops/action-gh-release@v1
               with:
-                  files: ./${{ env.release_asset_name }}.zip
+                  files: ./output/${{ env.release_asset_name }}.zip
                   tag_name: WSA
