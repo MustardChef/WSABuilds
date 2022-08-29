@@ -499,7 +499,7 @@ if [ "$GAPPS_VARIANT" != 'none' ] && [ "$GAPPS_VARIANT" != '' ]; then
     sudo patchelf --replace-needed libm.so "../linker/$HOST_ARCH/libm.so" "$WORK_DIR"/magisk/magiskpolicy || abort
     sudo patchelf --replace-needed libdl.so "../linker/$HOST_ARCH/libdl.so" "$WORK_DIR"/magisk/magiskpolicy || abort
     sudo patchelf --set-interpreter "../linker/$HOST_ARCH/linker64" "$WORK_DIR"/magisk/magiskpolicy || abort
-    chmod +x "$WORK_DIR"/magisk/magiskpolicy || abort
+    sudo chmod +x "$WORK_DIR"/magisk/magiskpolicy || abort
     sudo "$WORK_DIR"/magisk/magiskpolicy --load "$MOUNT_DIR"/vendor/etc/selinux/precompiled_sepolicy --save "$MOUNT_DIR"/vendor/etc/selinux/precompiled_sepolicy "allow gmscore_app gmscore_app vsock_socket { create connect write read }" "allow gmscore_app device_config_runtime_native_boot_prop file read" "allow gmscore_app system_server_tmpfs dir search" "allow gmscore_app system_server_tmpfs file open" || abort
     echo -e "Integrate GApps done\n"
 fi
