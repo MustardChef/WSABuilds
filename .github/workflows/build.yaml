@@ -56,7 +56,7 @@ on:
                 default: true
                 type: boolean
             offline_mode:
-                description: "Enable Offline Mode"
+                description: "Offline Mode"
                 required: false
                 default: false
                 type: boolean
