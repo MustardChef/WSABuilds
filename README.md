@@ -13,11 +13,10 @@
 3. Extract the zip file
 4. Delete the zip file
 5. Move the newly extracted folder to a suitable location (Documents folder is a good choice), as you will need to keep the folder on your PC to use MagiskOnWSA
-6. Rename the folder to `WSA`
-7. Open the WSA folder and right-click `Install.ps1`, then select `Run with PowerShell`
-8. Once the installation process completes, WSA will launch (if this is a first-time install, a window asking for consent to diagnositic information will be shown instead. Sometimes two identical windows will show, this is fine and nothing bad happens if you click OK in both windows)
-9. Click on the PowerShell window, then press any key on the keyboard, the PowerShell window should close
-10. Close File Explorer
+6. Open the WSA folder and right-click `Install.ps1`, then select `Run with PowerShell`
+7. Once the installation process completes, WSA will launch (if this is a first-time install, a window asking for consent to diagnositic information will be shown instead. Sometimes two identical windows will show, this is fine and nothing bad happens if you click OK in both windows)
+8. Click on the PowerShell window, then press any key on the keyboard, the PowerShell window should close
+9. Close File Explorer
 
 ## Uninstallation
 
