@@ -81,13 +81,13 @@ jobs:
               run: |
                   DOWNLOAD_DIR=../download
                   DOWNLOAD_CONF_NAME=download.list
-                  echo $DOWNLOAD_DIR
+
                   declare -A opts=( ["ARCH,X86_64"]="x64" ["ARCH,AArch64"]="arm64" ["RELEASE_TYPE,General Availability Channel"]="retail" ["RELEASE_TYPE,Release Preview Channel"]="release preview" ["RELEASE_TYPE,Beta Channel"]="insider slow" ["RELEASE_TYPE,Dev Channel"]="insider fast" ["MAGISK_VER,Stable"]="stable" ["MAGISK_VER,Beta"]="beta" ["MAGISK_VER,Canary"]="canary" ["MAGISK_VER,Debug"]="debug" ["GAPPS_VAR,None"]="none" ["GAPPS_VAR,Pico"]="pico" ["GAPPS_VAR,Full"]="full" ["GAPPS_VAR,MindTheGapps (URL)"]="MindTheGapps" ["REMOVE_AMAZON,true"]="--remove-amazon" ["REMOVE_AMAZON,false"]="" ["OFFLINE_MODE,true"]="--offline" ["OFFLINE_MODE,false"]="" )
-                  echo ${opts[@]}
+
                   ARCH="${opts[ARCH,${{ inputs.arch }}]}"
-                  echo $ARCH
+
                   RELEASE_TYPE="${opts[RELEASE_TYPE,${{ inputs.release_type }}]}"
-                  echo $RELEASE_TYPE
+
                   if [ "${{inputs.magisk_ver }}" != "None" ]; then
                       ROOT_SOL="magisk"
                       if [ "${{ inputs.magisk_ver }}" != "Custom (URL)" ]; then
@@ -106,7 +106,7 @@ jobs:
                       ROOT_SOL="none"
                       MAGISK_VER="${opts[MAGISK_VER,Stable]}"
                   fi
-                  echo $MAGISK_VER
+
                   if [ "$ARCH" != "arm64" ]; then
                     GAPPS_VAR="${opts[GAPPS_VAR,${{ inputs.gapps_var }}]}"
                   else
@@ -114,7 +114,7 @@ jobs:
                     # As soon as opengapps is available for 12+, we need to get the sdk/release from build.prop and download the corresponding version
                     GAPPS_VAR="pico"
                   fi
-                  echo $GAPPS_VAR
+
                   if [ "${{inputs.gapps_var }}" != "None" ]; then
                       if [ "${{ inputs.gapps_var }}" != "MindTheGapps (URL)" ]; then
                           GAPPS_BRAND="OpenGApps"
@@ -128,14 +128,14 @@ jobs:
                           GAPPS_BRAND="MindTheGapps"
                       fi
                   fi
-                  echo $GAPPS_BRAND
+
                   REMOVE_AMAZON="${opts[REMOVE_AMAZON,${{ inputs.remove_amazon }}]}"
-                  echo $REMOVE_AMAZON
+
                   OFFLINE_MODE="${opts[OFFLINE_MODE,${{ inputs.offline_mode }}]}"
-                  echo $OFFLINE_MODE
+
                   COMMAND_LINE=(--arch "$ARCH" --release-type "$RELEASE_TYPE" --magisk-ver "$MAGISK_VER" --gapps-brand "$GAPPS_BRAND" --gapps-variant "$GAPPS_VARIANT" "$REMOVE_AMAZON" --root-sol "$ROOT_SOL" "$COMPRESS_OUTPUT" "$OFFLINE" "$DEBUG" "$CUSTOM_MAGISK")
                   echo "COMMAND_LINE=${COMMAND_LINE[*]}"
-
+                  ls .
                   ./build.sh "${COMMAND_LINE[@]}"
             - name: Generate Release Asset Name
               run: |
