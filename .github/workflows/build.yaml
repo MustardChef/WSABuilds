@@ -134,7 +134,7 @@ jobs:
 
                   OFFLINE_MODE="${opts[OFFLINE_MODE,${{ inputs.offline_mode }}]}"
 
-                  COMMAND_LINE=(--arch "$ARCH" --release-type \""$RELEASE_TYPE"\" --magisk-ver "$MAGISK_VER" --gapps-brand "$GAPPS_BRAND" --gapps-variant "$GAPPS_VAR" "$REMOVE_AMAZON" --root-sol "$ROOT_SOL" "$COMPRESS_OUTPUT" "$OFFLINE" "$DEBUG" "$CUSTOM_MAGISK")
+                  COMMAND_LINE=(--arch "$ARCH" --release-type "$RELEASE_TYPE" --magisk-ver "$MAGISK_VER" --gapps-brand "$GAPPS_BRAND" --gapps-variant "$GAPPS_VAR" "$REMOVE_AMAZON" --root-sol "$ROOT_SOL" "$COMPRESS_OUTPUT" "$OFFLINE" "$DEBUG" "$CUSTOM_MAGISK")
                   echo "COMMAND_LINE=${COMMAND_LINE[*]}"
 
                   chmod +x ./build.sh
