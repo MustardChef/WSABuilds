@@ -144,7 +144,7 @@ jobs:
               run: |
                   declare -A magisk_vers=( ["Stable"]="stable" ["Beta"]="beta" ["Canary"]="canary" ["Debug"]="debug" )
 
-                  magisk_ver="${magisk_vers[${{ inputs.magisk_ver }}]}"
+                  magisk_ver="{{ inputs.magisk_ver }}"
                   gapps_var="${{ inputs.gapps_var }}"
                   remove_amazon="${{ inputs.remove_amazon }}"
 
@@ -153,7 +153,7 @@ jobs:
                   elif [[ "$magisk_ver" = "Custom (URL)" ]]; then
                     magiskVer="_Magisk-Custom"
                   else
-                    magiskVer="_Magisk-$(curl -s https://raw.githubusercontent.com/topjohnwu/magisk-files/master/$magisk_ver.json | jq -r ".magisk.version")"
+                    magiskVer="_Magisk-$(curl -s https://raw.githubusercontent.com/topjohnwu/magisk-files/master/${magisk_vers[${{ inputs.magisk_ver }}]}.json | jq -r ".magisk.version")"
                   fi
 
                   if [[ "$gapps_var" = "None" ]]; then
