@@ -113,7 +113,7 @@ jobs:
                   else
                       # TODO: keep it 11.0 since official opengapps does not support 12+ yet
                       # As soon as opengapps is available for 12+, we need to get the sdk/release from build.prop and download the corresponding version
-                      if [ "${{ inputs.gapps_var }}" = "Full" ]; then
+                      if [ "${{ inputs.gapps_var }}" == "Full" ]; then
                           GAPPS_VAR="pico"
                       else
                           GAPPS_VAR="${opts[GAPPS_VAR,${{ inputs.gapps_var }}]}"
@@ -148,17 +148,17 @@ jobs:
               run: |
                   declare -A magisk_vers=( ["Stable"]="stable" ["Beta"]="beta" ["Canary"]="canary" ["Debug"]="debug" )
 
-                  if [[ "{{ inputs.magisk_ver }}" = "None" ]]; then
+                  if [[ "{{ inputs.magisk_ver }}" == "None" ]]; then
                     magiskVer=""
-                  elif [[ "{{ inputs.magisk_ver }}" = "Custom (URL)" ]]; then
+                  elif [[ "{{ inputs.magisk_ver }}" == "Custom (URL)" ]]; then
                     magiskVer="_Magisk-Custom"
                   else
                     magiskVer="_Magisk-$(curl -s https://raw.githubusercontent.com/topjohnwu/magisk-files/master/${magisk_vers[${{ inputs.magisk_ver }}]}.json | jq -r ".magisk.version")"
                   fi
 
-                  if [[ "${{ inputs.gapps_var }}" = "None" ]]; then
+                  if [[ "${{ inputs.gapps_var }}" == "None" ]]; then
                     gappsVar=""
-                  elif [[ "${{ inputs.gapps_var }}" = "MindTheGapps (URL)" ]]; then
+                  elif [[ "${{ inputs.gapps_var }}" == "MindTheGapps (URL)" ]]; then
                     gappsVar="_MindTheGapps"
                   else
                     gappsVar="_${{ inputs.gapps_var }}-OpenGApps"
