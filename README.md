@@ -2,6 +2,8 @@
 
 [![Github All Releases](https://img.shields.io/github/downloads/PeterNjeim/MagiskOnWSA/total.svg?label=Downloads+%28latest+only%29)](https://github.com/PeterNjeim/MagiskOnWSA/releases/latest)
 
+> Note: This repository is designed specifically not to be forked. This does not use the same mechanism as the original MagiskOnWSA. Don't fork this repository unless you're a developer and want to modify the code itself.
+
 ## Installation
 
 > Note: If you have the official WSA installed, you must [completely uninstall](#uninstallation) it to use MagiskOnWSA
