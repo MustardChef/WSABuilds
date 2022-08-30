@@ -142,7 +142,9 @@ jobs:
             - name: Generate Release Asset Name
               working-directory: ./output
               run: |
-                  magisk_ver="${{ inputs.magisk_ver }}"
+                  declare -A magisk_vers=( ["Stable"]="stable" ["Beta"]="beta" ["Canary"]="canary" ["Debug"]="debug" )
+
+                  magisk_ver="${magisk_vers[${{ inputs.magisk_ver }}]}"
                   gapps_var="${{ inputs.gapps_var }}"
                   remove_amazon="${{ inputs.remove_amazon }}"
 
