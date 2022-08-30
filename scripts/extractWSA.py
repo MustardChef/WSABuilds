@@ -49,6 +49,8 @@ with zipfile.ZipFile(wsa_zip_path) as zip:
                 main_ver = ver[0]
                 with open(os.environ['WSA_WORK_ENV'], 'a') as g:
                     g.write(f'WSA_VER={long_ver}\n')
+                with open(os.environ['GITHUB_ENV'], 'a') as g:
+                    g.write(f'WSA_VER={long_ver}\n')
                 with open(os.environ['WSA_WORK_ENV'], 'a') as g:
                     g.write(f'WSA_MAIN_VER={main_ver}\n')
                 rel = ver_no[3].split(".")
