@@ -148,9 +148,9 @@ jobs:
               run: |
                   declare -A magisk_vers=( ["Stable"]="stable" ["Beta"]="beta" ["Canary"]="canary" ["Debug"]="debug" )
 
-                  if [[ "{{ inputs.magisk_ver }}" == "None" ]]; then
+                  if [[ "${{ inputs.magisk_ver }}" == "None" ]]; then
                     magiskVer=""
-                  elif [[ "{{ inputs.magisk_ver }}" == "Custom (URL)" ]]; then
+                  elif [[ "${{ inputs.magisk_ver }}" == "Custom (URL)" ]]; then
                     magiskVer="_Magisk-Custom"
                   else
                     magiskVer="_Magisk-$(curl -s https://raw.githubusercontent.com/topjohnwu/magisk-files/master/${magisk_vers[${{ inputs.magisk_ver }}]}.json | jq -r ".magisk.version")"
