@@ -34,15 +34,9 @@ DOWNLOAD_DIR=../download
 DOWNLOAD_CONF_NAME=download.list
 OUTPUT_DIR=../output
 MOUNT_DIR="$WORK_DIR"/system
-CLEAN_DOWNLOAD_WSA=0
-CLEAN_DOWNLOAD_MAGISK=0
-CLEAN_DOWNLOAD_GAPPS=0
-REMOVE_AMAZON="keep"
-COMPRESS_OUTPUT="no"
-OFFLINE=0
 umount_clean(){
-    echo "Cleanup Work Directory"
     if [ -d "$MOUNT_DIR" ]; then
+        echo "Cleanup Work Directory"
         if [ -d "$MOUNT_DIR/vendor" ]; then
             sudo umount "$MOUNT_DIR"/vendor
         fi
@@ -53,19 +47,21 @@ umount_clean(){
             sudo umount "$MOUNT_DIR"/system_ext
         fi
         sudo umount "$MOUNT_DIR"
+        sudo rm -rf "${WORK_DIR:?}"
+    else
+        rm -rf "${WORK_DIR:?}"
     fi
-    sudo rm -rf "${WORK_DIR:?}"
 }
 clean_download(){
     if [ -d "$DOWNLOAD_DIR" ]; then
         echo "Cleanup Download Directory"
-        if [ "$CLEAN_DOWNLOAD_WSA" = "1" ]; then
+        if [ "$CLEAN_DOWNLOAD_WSA" ]; then
             rm -f "${WSA_ZIP_PATH:?}"
         fi
-        if [ "$CLEAN_DOWNLOAD_MAGISK" = "1" ]; then
+        if [ "$CLEAN_DOWNLOAD_MAGISK" ]; then
             rm -f "${MAGISK_PATH:?}"
         fi
-        if [ "$CLEAN_DOWNLOAD_GAPPS" = "1" ]; then
+        if [ "$CLEAN_DOWNLOAD_GAPPS" ]; then
             rm -f "${GAPPS_PATH:?}"
         fi
     fi
@@ -84,24 +80,42 @@ function Gen_Rand_Str {
     head /dev/urandom | tr -dc A-Za-z0-9 | head -c"$1"
 }
 
+
+default(){
+    ARCH=x64
+    RELEASE_TYPE=retail
+    MAGISK_VER=stable
+    GAPPS_BRAND=OpenGApps
+    GAPPS_VARIANT=pico
+    ROOT_SOL=magisk
+}
+
+exit_with_message(){
+    echo "ERROR: $1"
+    usage
+    abort
+}
+
 usage(){
-    if [ -n "$1" ]; then
-        echo "Unknown parameter: $1"
-    fi
+    default
     echo "Usage:
-    --arch
-    --release-type
-    --magisk-ver
-    --gapps-brand
-    --gapps-variant
-    --root-sol
-    --remove-amazon
-    --compress
-    --offline
-    --magisk-custom
-    --debug
+    --arch          Architecture of WSA, x64 or arm64, default: $ARCH
+    --release-type  Release type of WSA, retail, RP (Release Preview), WIS (Insider Slow) or WIF (Insider Fast), default: $RELEASE_TYPE
+    --magisk-ver    Magisk version, stable or canary, default: $MAGISK_VER
+    --gapps-brand   GApps brand, OpenGApps or MindTheGApps, default: $GAPPS_BRAND
+    --gapps-variant GApps variant, pico or full, etc...., default: $GAPPS_VARIANT
+    --root-sol      Root solution, magisk or none, default: $ROOT_SOL
+    --remove-amazon Remove Amazon from the system, default: false
+    --compress      Compress the WSA, default: false
+    --offline       Build WSA offline, default: false
+    --magisk-custom Install custom Magisk, default: false
+    --debug         Debug build mode, default: false
+    --help          Show this help message and exit
+
+    Example: 
+        ./build.sh --arch x64 --release-type retail --magisk-ver stable --gapps-brand OpenGApps --gapps-variant pico --remove-amazon
+        ./build.sh --arch x64 --release-type retail --remove-amazon --magisk-custom --offline
     "
-    exit 1
 }
 
 ARGUMENT_LIST=(
@@ -116,62 +130,134 @@ ARGUMENT_LIST=(
   "offline"
   "magisk-custom"
   "debug"
+  "help"
 )
+
+default
 
 opts=$(getopt \
   --longoptions "$(printf "%s," "${ARGUMENT_LIST[@]}")" \
   --name "$(basename "$0")" \
   --options "" \
   -- "$@"
-)
+) || abort
 
 eval set --"$opts"
 while [[ $# -gt 0 ]]; do
    case "$1" in
-      --arch            ) ARCH="$2"; shift 2 ;;
-      --release-type    ) RELEASE_TYPE="$2"; shift 2 ;;
-      --magisk-ver      ) MAGISK_VER="$2"; shift 2 ;;
-      --gapps-brand     ) GAPPS_BRAND="$2"; shift 2 ;;
-      --gapps-variant   ) GAPPS_VARIANT="$2"; shift 2 ;;
-      --remove-amazon   ) REMOVE_AMAZON="remove"; shift ;;
-      --root-sol        ) ROOT_SOL="$2"; shift 2 ;;
-      --compress        ) COMPRESS_OUTPUT="yes"; shift ;;
-      --offline         ) OFFLINE="1"; shift ;;
-      --debug           ) DEBUG="1"; shift ;;
-      --magisk-custom   ) CUSTOM_MAGISK="1"; shift ;;
-      --                ) shift; break;;
-      ?                 ) usage "$2"; shift ;;
-      *                 ) break ;;
+        --arch            ) ARCH="$2"; shift 2 ;;
+        --release-type    ) RELEASE_TYPE="$2"; shift 2 ;;
+        --magisk-ver      ) MAGISK_VER="$2"; shift 2 ;;
+        --gapps-brand     ) GAPPS_BRAND="$2"; shift 2 ;;
+        --gapps-variant   ) GAPPS_VARIANT="$2"; shift 2 ;;
+        --root-sol        ) ROOT_SOL="$2"; shift 2 ;;
+        --remove-amazon   ) REMOVE_AMAZON="remove"; shift ;;
+        --compress        ) COMPRESS_OUTPUT="yes"; shift ;;
+        --offline         ) OFFLINE="on"; shift ;;
+        --magisk-custom   ) CUSTOM_MAGISK="debug"; MAGISK_VER=$CUSTOM_MAGISK; shift ;;
+        --debug           ) DEBUG="on"; shift ;;
+        --help            ) usage; exit 0 ;;
+        --                ) shift; break;;
    esac
 done
 
-declare -A PARA_CHECK_LIST=([ARCH]="$ARCH" [RELEASE_TYPE]="$RELEASE_TYPE" [MAGISK_VER]="$MAGISK_VER" [GAPPS_VARIANT]="$GAPPS_VARIANT" [REMOVE_AMAZON]="$REMOVE_AMAZON" [ROOT_SOL]="$ROOT_SOL")
-for i in "${PARA_CHECK_LIST[@]}";
-do
-    if [ -z "$i" ]; then
-        usage
-    fi
-done
+ARCH_MAP=(
+    "x64"
+    "arm64"
+)
 
-echo -e "build: ARCH=$ARCH\nRELEASE_TYPE=$RELEASE_TYPE\nMAGISK_VER=$MAGISK_VER\nGAPPS_VARIANT=$GAPPS_VARIANT\nREMOVE_AMAZON=$REMOVE_AMAZON\nROOT_SOL=$ROOT_SOL\nCOMPRESS_OUTPUT=$COMPRESS_OUTPUT"
+RELEASE_TYPE_MAP=(
+    "retail"
+    "RP"
+    "WIS"
+    "WIF"
+)
 
-declare -A RELEASE_TYPE_MAP=(["retail"]="Retail" ["release preview"]="RP" ["insider slow"]="WIS" ["insider fast"]="WIF")
+MAGISK_VER_MAP=(
+    "stable"
+    "beta"
+    "canary"
+    "debug"
+)
 
-WSA_ZIP_PATH=$DOWNLOAD_DIR/wsa-$ARCH-${RELEASE_TYPE_MAP[$RELEASE_TYPE]}.zip
-vclibs_PATH=vclibs-"$ARCH".appx
-xaml_PATH=xaml-"$ARCH".appx
+GAPPS_BRAND_MAP=(
+    "OpenGApps"
+    "MindTheGApps"
+)
+
+GAPPS_VARIANT_MAP=(
+    "super"
+    "stock"
+    "full"
+    "mini"
+    "micro"
+    "nano"
+    "pico"
+    "tvstock"
+    "tvmini"
+)
+
+ROOT_SOL_MAP=(
+    "magisk"
+    "none"
+)
+
+check_list(){
+    local input=$1
+    local name=$2
+    shift
+    local arr=("$@")
+    local list_count=${#arr[@]}
+    for i in "${arr[@]}"; do
+        if [ "$input" == "$i" ]; then
+            break
+        fi
+        ((list_count--))
+        if (( "$list_count" <= 0 )); then
+            exit_with_message "Invalid $name: $input"
+        fi
+    done
+}
+
+check_list "$ARCH" "Architecture" "${ARCH_MAP[@]}"
+check_list "$RELEASE_TYPE" "Release Type" "${RELEASE_TYPE_MAP[@]}"
+check_list "$MAGISK_VER" "Magisk Version" "${MAGISK_VER_MAP[@]}"
+check_list "$GAPPS_BRAND" "GApps Brand" "${GAPPS_BRAND_MAP[@]}"
+check_list "$GAPPS_VARIANT" "GApps Variant" "${GAPPS_VARIANT_MAP[@]}"
+check_list "$ROOT_SOL" "Root Solution" "${ROOT_SOL_MAP[@]}"
+
+if [ "$DEBUG" ]; then
+    set -x
+fi
+
+declare -A RELEASE_NAME_MAP=(["retail"]="Retail" ["RP"]="Release Preview" ["WIS"]="Insider Slow" ["WIF"]="Insider Fast")
+RELEASE_NAME=${RELEASE_NAME_MAP[$RELEASE_TYPE]} || abort
+
+echo -e "build: ARCH=$ARCH\nRELEASE_TYPE=$RELEASE_NAME\nMAGISK_VER=$MAGISK_VER\nGAPPS_VARIANT=$GAPPS_VARIANT\nROOT_SOL=$ROOT_SOL"
+
+WSA_ZIP_PATH=$DOWNLOAD_DIR/wsa-$ARCH-$RELEASE_TYPE.zip
+vclibs_PATH=$DOWNLOAD_DIR/vclibs-"$ARCH".appx
+xaml_PATH=$DOWNLOAD_DIR/xaml-"$ARCH".appx
 MAGISK_PATH=$DOWNLOAD_DIR/magisk-$MAGISK_VER.zip
+if [ "$CUSTOM_MAGISK" ]; then
+    if [ ! -f "$MAGISK_PATH" ]; then
+        echo "Custom Magisk not found, please rename it to magisk-debug.zip and put it in $DOWNLOAD_DIR"
+        abort
+    fi
+fi
 if [ "$GAPPS_BRAND" = "OpenGApps" ]; then
     GAPPS_PATH="$DOWNLOAD_DIR"/OpenGApps-$ARCH-$GAPPS_VARIANT.zip
 else
     GAPPS_PATH="$DOWNLOAD_DIR"/MindTheGapps-"$ARCH".zip
 fi
-
-if [ "$OFFLINE" != "1" ]; then
+if [ "$(sudo whoami)" != "root" ]; then
+    sudo echo "sudo is required to run this script"
+fi
+if [ -z "${OFFLINE+x}" ]; then
     trap 'rm -f -- "${DOWNLOAD_DIR:?}/${DOWNLOAD_CONF_NAME}"' EXIT
     echo "Generate Download Links"
     python3 generateWSALinks.py "$ARCH" "$RELEASE_TYPE" "$DOWNLOAD_DIR" "$DOWNLOAD_CONF_NAME" || abort
-    if [ "$CUSTOM_MAGISK" != "1" ]; then
+    if [ -z "${CUSTOM_MAGISK+x}" ]; then
         python3 generateMagiskLink.py "$MAGISK_VER" "$DOWNLOAD_DIR" "$DOWNLOAD_CONF_NAME" || abort
     fi
     if [ "$GAPPS_VARIANT" != 'none' ] && [ "$GAPPS_VARIANT" != '' ]; then
@@ -186,21 +272,20 @@ if [ "$OFFLINE" != "1" ]; then
         exit 1
     fi
 else
-    if [ ! -f "$WSA_ZIP_PATH" ] || [ ! -f "$xaml_PATH" ] || [ ! -f "$vclibs_PATH" ]; then
-        echo "Offline mode: missing WSA files."
-        OFFLINE_ERR="1"
-    fi
-    if [ ! -f "$MAGISK_PATH" ]; then
-        echo "Offline mode: missing Magisk $MAGISK_VER file."
-        OFFLINE_ERR="1"
-    fi
+    declare -A FILES_CHECK_LIST=([WSA_ZIP_PATH]="$WSA_ZIP_PATH" [xaml_PATH]="$xaml_PATH" [vclibs_PATH]="$vclibs_PATH" [MAGISK_PATH]="$MAGISK_PATH")
+    for i in "${FILES_CHECK_LIST[@]}"; do
+        if [ ! -f "$i" ]; then
+            echo "Offline mode: missing [$i]."
+            OFFLINE_ERR="1"
+        fi
+    done
     if [ "$GAPPS_VARIANT" != 'none' ] && [ "$GAPPS_VARIANT" != '' ]; then
         if [ ! -f "$GAPPS_PATH" ]; then
-            echo "Offline mode: missing $GAPPS_BRAND file."
+            echo "Offline mode: missing [$GAPPS_PATH]."
             OFFLINE_ERR="1"
         fi
     fi
-    if [ -n "$OFFLINE_ERR" ]; then
+    if [ "$OFFLINE_ERR" ]; then
         echo "Offline mode: Some files are missing, please disable offline mode."
         exit 1
     fi
@@ -231,7 +316,7 @@ if [ -f "$MAGISK_PATH" ]; then
         CLEAN_DOWNLOAD_MAGISK=1
         abort
     fi
-elif [ "$CUSTOM_MAGISK" != "1" ]; then
+elif [ -z "${CUSTOM_MAGISK+x}" ]; then
     echo "The Magisk zip package does not exist, is the download incomplete?"
     exit 1
 else
@@ -318,7 +403,7 @@ sudo mount -o loop "$WORK_DIR"/wsa/"$ARCH"/product.img "$MOUNT_DIR"/product || a
 sudo mount -o loop "$WORK_DIR"/wsa/"$ARCH"/system_ext.img "$MOUNT_DIR"/system_ext || abort
 echo -e "done\n"
 
-if [ "$REMOVE_AMAZON" = 'remove' ]; then
+if [ "$REMOVE_AMAZON" ]; then
     echo "Remove Amazon AppStore"
     find "${MOUNT_DIR:?}"/product/{etc/permissions,etc/sysconfig,framework,priv-app} | grep -e amazon -e venezia | sudo xargs rm -rf
     echo -e "done\n"
@@ -489,7 +574,7 @@ if [ "$GAPPS_VARIANT" != 'none' ] && [ "$GAPPS_VARIANT" != '' ]; then
 
         sudo chcon --reference="$MOUNT_DIR"/product/lib64/libjni_eglfence.so "$MOUNT_DIR"/product/lib
         find "$WORK_DIR"/gapps/product/lib/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I file sudo find "$MOUNT_DIR"/product/lib/file -exec chcon --reference="$MOUNT_DIR"/product/lib64/libjni_eglfence.so {} \;
-        find "$WORK_DIR"/gapps/product/lib64/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I file sudo find "$MOUNT_DIR"/product/lib64/file -type f -exec chcon --reference="$MOUNT_DIR"/product/lib64/libjni_eglfence.so {} \;
+        find "$WORK_DIR"/gapps/product/lib64/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I file sudo find "$MOUNT_DIR"/product/lib64/file -type f -exec chcon --reference="$MOUNT_DIR"/product/lib64/libjni_eglfence.so {} \;        
         find "$WORK_DIR"/gapps/system_ext/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I dir sudo find "$MOUNT_DIR"/system_ext/priv-app/dir -type d -exec chcon --reference="$MOUNT_DIR"/system_ext/priv-app {} \;
         find "$WORK_DIR"/gapps/system_ext/etc/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I dir sudo find "$MOUNT_DIR"/system_ext/etc/dir -type d -exec chcon --reference="$MOUNT_DIR"/system_ext/etc {} \;
         find "$WORK_DIR"/gapps/system_ext/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I dir sudo find "$MOUNT_DIR"/system_ext/priv-app/dir -type f -exec chcon --reference="$MOUNT_DIR"/system_ext/priv-app/Settings/Settings.apk {} \;
@@ -531,7 +616,7 @@ echo -e "Shrink images done\n"
 
 echo "Remove signature and add scripts"
 sudo rm -rf "${WORK_DIR:?}"/wsa/"$ARCH"/\[Content_Types\].xml "$WORK_DIR"/wsa/"$ARCH"/AppxBlockMap.xml "$WORK_DIR"/wsa/"$ARCH"/AppxSignature.p7x "$WORK_DIR"/wsa/"$ARCH"/AppxMetadata || abort
-cp "$DOWNLOAD_DIR"/"$vclibs_PATH" "$DOWNLOAD_DIR"/"$xaml_PATH" "$WORK_DIR"/wsa/"$ARCH" || abort
+cp "$vclibs_PATH" "$xaml_PATH" "$WORK_DIR"/wsa/"$ARCH" || abort
 tee "$WORK_DIR"/wsa/"$ARCH"/Install.ps1 <<EOF
 # Automated Install script by Midonei
 # http://github.com/doneibcn
@@ -643,7 +728,7 @@ else
     else
         name2="-$GAPPS_BRAND"
     fi
-    if [ "$GAPPS_BRAND" = "OpenGApps" ] && [ "$DEBUG" != "1" ]; then
+    if [ "$GAPPS_BRAND" = "OpenGApps" ] && [ "$DEBUG" ]; then
         echo ":warning: Since OpenGApps doesn't officially support Android 12.1 yet, lock the variant to pico!"
     fi
 fi
@@ -656,10 +741,10 @@ fi
 if [ ! -d "$OUTPUT_DIR" ]; then
     mkdir -p "$OUTPUT_DIR"
 fi
-if [ "$COMPRESS_OUTPUT" = "yes" ]; then
+if [ "$COMPRESS_OUTPUT" ]; then
     rm -f "${OUTPUT_DIR:?}"/"$artifact_name.7z" || abort
     7z a "$OUTPUT_DIR"/"$artifact_name.7z" "$WORK_DIR/wsa/$ARCH/" || abort
-elif [ "$COMPRESS_OUTPUT" = "no" ]; then
+else
     rm -rf "${OUTPUT_DIR:?}/${artifact_name}" || abort
     mv "$WORK_DIR"/wsa/"$ARCH" "$OUTPUT_DIR/$artifact_name" || abort
 fi

@@ -83,7 +83,7 @@ jobs:
                   DOWNLOAD_DIR=../download
                   DOWNLOAD_CONF_NAME=download.list
 
-                  declare -A opts=( ["ARCH,x86_64"]="x64" ["ARCH,AArch64"]="arm64" ["RELEASE_TYPE,General Availability Channel"]="retail" ["RELEASE_TYPE,Release Preview Channel"]="release preview" ["RELEASE_TYPE,Beta Channel"]="insider slow" ["RELEASE_TYPE,Dev Channel"]="insider fast" ["MAGISK_VER,Stable"]="stable" ["MAGISK_VER,Beta"]="beta" ["MAGISK_VER,Canary"]="canary" ["MAGISK_VER,Debug"]="debug" ["GAPPS_VAR,None"]="none" ["GAPPS_VAR,Pico"]="pico" ["GAPPS_VAR,Full"]="full" ["GAPPS_VAR,MindTheGapps (URL)"]="MindTheGapps" ["REMOVE_AMAZON,true"]="--remove-amazon" ["REMOVE_AMAZON,false"]="" ["OFFLINE_MODE,true"]="--offline" ["OFFLINE_MODE,false"]="" )
+                  declare -A opts=( ["ARCH,x86_64"]="x64" ["ARCH,AArch64"]="arm64" ["RELEASE_TYPE,General Availability Channel"]="retail" ["RELEASE_TYPE,Release Preview Channel"]="RP" ["RELEASE_TYPE,Beta Channel"]="WIS" ["RELEASE_TYPE,Dev Channel"]="WIF" ["MAGISK_VER,Stable"]="stable" ["MAGISK_VER,Beta"]="beta" ["MAGISK_VER,Canary"]="canary" ["MAGISK_VER,Debug"]="debug" ["GAPPS_VAR,None"]="none" ["GAPPS_VAR,Pico"]="pico" ["GAPPS_VAR,Full"]="full" ["GAPPS_VAR,MindTheGapps (URL)"]="MindTheGapps" ["REMOVE_AMAZON,true"]="--remove-amazon" ["REMOVE_AMAZON,false"]="" ["OFFLINE_MODE,true"]="--offline" ["OFFLINE_MODE,false"]="" )
 
                   ARCH="${opts[ARCH,${{ inputs.arch }}]}"
 
