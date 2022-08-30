@@ -169,7 +169,7 @@ jobs:
                   else
                     amazon="_Amazon-AppStore"
                   fi
-                  echo "release_asset_name=WSA_${{ env.WSA_VER }}$magiskVer$gappsVar$amazon_${{ inputs.arch }}" >> $GITHUB_ENV
+                  echo "release_asset_name=WSA_${{ env.WSA_VER }}$magiskVer$gappsVar${amazon}_${{ inputs.arch }}" >> $GITHUB_ENV
             - name: Compress Asset
               working-directory: ./output
               run: |
