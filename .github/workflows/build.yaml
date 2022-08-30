@@ -109,11 +109,15 @@ jobs:
                   fi
 
                   if [ "$ARCH" != "arm64" ]; then
-                    GAPPS_VAR="${opts[GAPPS_VAR,${{ inputs.gapps_var }}]}"
+                      GAPPS_VAR="${opts[GAPPS_VAR,${{ inputs.gapps_var }}]}"
                   else
-                    # TODO: keep it 11.0 since official opengapps does not support 12+ yet
-                    # As soon as opengapps is available for 12+, we need to get the sdk/release from build.prop and download the corresponding version
-                    GAPPS_VAR="pico"
+                      # TODO: keep it 11.0 since official opengapps does not support 12+ yet
+                      # As soon as opengapps is available for 12+, we need to get the sdk/release from build.prop and download the corresponding version
+                      if [ "${{ inputs.gapps_var }}" = "Full" ]; then
+                          GAPPS_VAR="pico"
+                      else
+                          GAPPS_VAR="${opts[GAPPS_VAR,${{ inputs.gapps_var }}]}"
+                      fi
                   fi
 
                   if [ "${{inputs.gapps_var }}" != "None" ]; then
@@ -144,27 +148,23 @@ jobs:
               run: |
                   declare -A magisk_vers=( ["Stable"]="stable" ["Beta"]="beta" ["Canary"]="canary" ["Debug"]="debug" )
 
-                  magisk_ver="{{ inputs.magisk_ver }}"
-                  gapps_var="${{ inputs.gapps_var }}"
-                  remove_amazon="${{ inputs.remove_amazon }}"
-
-                  if [[ "$magisk_ver" = "None" ]]; then
+                  if [[ "{{ inputs.magisk_ver }}" = "None" ]]; then
                     magiskVer=""
-                  elif [[ "$magisk_ver" = "Custom (URL)" ]]; then
+                  elif [[ "{{ inputs.magisk_ver }}" = "Custom (URL)" ]]; then
                     magiskVer="_Magisk-Custom"
                   else
                     magiskVer="_Magisk-$(curl -s https://raw.githubusercontent.com/topjohnwu/magisk-files/master/${magisk_vers[${{ inputs.magisk_ver }}]}.json | jq -r ".magisk.version")"
                   fi
 
-                  if [[ "$gapps_var" = "None" ]]; then
+                  if [[ "${{ inputs.gapps_var }}" = "None" ]]; then
                     gappsVar=""
-                  elif [[ "$gapps_var" = "MindTheGapps (URL)" ]]; then
+                  elif [[ "${{ inputs.gapps_var }}" = "MindTheGapps (URL)" ]]; then
                     gappsVar="_MindTheGapps"
                   else
-                    gappsVar="_${gapps_var}-OpenGApps"
+                    gappsVar="_${{ inputs.gapps_var }}-OpenGApps"
                   fi
 
-                  if [[ "$remove_amazon" == "true" ]]; then
+                  if [[ "${{ inputs.remove_amazon }}" == "true" ]]; then
                     amazon=""
                   else
                     amazon="_Amazon-AppStore"
