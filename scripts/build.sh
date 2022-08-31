@@ -181,11 +181,13 @@ MAGISK_VER_MAP=(
 )
 
 GAPPS_BRAND_MAP=(
+    ""
     "OpenGApps"
     "MindTheGApps"
 )
 
 GAPPS_VARIANT_MAP=(
+    "none"
     "super"
     "stock"
     "full"
