@@ -132,6 +132,8 @@ jobs:
                           fi
                           GAPPS_BRAND="MindTheGapps"
                       fi
+                  else
+                      GAPPS_BRAND="none"
                   fi
 
                   REMOVE_AMAZON="${opts[REMOVE_AMAZON,${{ inputs.remove_amazon }}]}"

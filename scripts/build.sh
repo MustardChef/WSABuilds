@@ -115,6 +115,7 @@ usage(){
     Example: 
         ./build.sh --arch x64 --release-type retail --magisk-ver stable --gapps-brand OpenGApps --gapps-variant pico --remove-amazon
         ./build.sh --arch x64 --release-type retail --remove-amazon --magisk-custom --offline
+        ./build.sh --release-type RP
     "
 }
 
@@ -140,7 +141,7 @@ opts=$(getopt \
   --name "$(basename "$0")" \
   --options "" \
   -- "$@"
-) || abort
+) || exit_with_message "Failed to parse options, please check your input"
 
 eval set --"$opts"
 while [[ $# -gt 0 ]]; do
@@ -181,13 +182,12 @@ MAGISK_VER_MAP=(
 )
 
 GAPPS_BRAND_MAP=(
-    ""
     "OpenGApps"
     "MindTheGApps"
+    "none"
 )
 
 GAPPS_VARIANT_MAP=(
-    "none"
     "super"
     "stock"
     "full"
@@ -197,6 +197,7 @@ GAPPS_VARIANT_MAP=(
     "pico"
     "tvstock"
     "tvmini"
+    "none"
 )
 
 ROOT_SOL_MAP=(
@@ -212,6 +213,7 @@ check_list(){
     local list_count=${#arr[@]}
     for i in "${arr[@]}"; do
         if [ "$input" == "$i" ]; then
+            echo "INFO: $name: $input"
             break
         fi
         ((list_count--))
@@ -235,7 +237,7 @@ fi
 declare -A RELEASE_NAME_MAP=(["retail"]="Retail" ["RP"]="Release Preview" ["WIS"]="Insider Slow" ["WIF"]="Insider Fast")
 RELEASE_NAME=${RELEASE_NAME_MAP[$RELEASE_TYPE]} || abort
 
-echo -e "build: ARCH=$ARCH\nRELEASE_TYPE=$RELEASE_NAME\nMAGISK_VER=$MAGISK_VER\nGAPPS_VARIANT=$GAPPS_VARIANT\nROOT_SOL=$ROOT_SOL"
+echo -e "build: RELEASE_TYPE=$RELEASE_NAME"
 
 WSA_ZIP_PATH=$DOWNLOAD_DIR/wsa-$ARCH-$RELEASE_TYPE.zip
 vclibs_PATH=$DOWNLOAD_DIR/vclibs-"$ARCH".appx
@@ -281,7 +283,7 @@ else
             OFFLINE_ERR="1"
         fi
     done
-    if [ "$GAPPS_VARIANT" != 'none' ] && [ "$GAPPS_VARIANT" != '' ]; then
+    if [ "$GAPPS_VARIANT" != 'none' ] && [ "$GAPPS_VARIANT" != '' ] && [ "$GAPPS_BRAND" != 'none' ]; then
         if [ ! -f "$GAPPS_PATH" ]; then
             echo "Offline mode: missing [$GAPPS_PATH]."
             OFFLINE_ERR="1"
@@ -327,7 +329,7 @@ else
 fi
 echo -e "done\n"
 
-if [ "$GAPPS_VARIANT" != 'none' ] && [ "$GAPPS_VARIANT" != '' ]; then
+if [ "$GAPPS_VARIANT" != 'none' ] && [ "$GAPPS_VARIANT" != '' ] && [ "$GAPPS_BRAND" != 'none' ]; then
     echo "Extract GApps"
     mkdir -p "$WORK_DIR"/gapps || abort
     if [ -f "$GAPPS_PATH" ]; then
@@ -352,7 +354,7 @@ if [ "$GAPPS_VARIANT" != 'none' ] && [ "$GAPPS_VARIANT" != '' ]; then
         fi
     else
         echo "The $GAPPS_BRAND zip package does not exist."
-        exit 1
+        abort
     fi
     echo -e "Extract done\n"
 fi
@@ -530,7 +532,7 @@ find ../"$ARCH"/system/system/etc/permissions/ -maxdepth 1 -mindepth 1 -printf '
 find ../"$ARCH"/system/system/etc/permissions/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I file sudo find "$MOUNT_DIR"/system/etc/permissions/file -type f -exec chcon --reference="$MOUNT_DIR"/system/etc/permissions/platform.xml {} \;
 echo -e "Add extra packages done\n"
 
-if [ "$GAPPS_VARIANT" != 'none' ] && [ "$GAPPS_VARIANT" != '' ]; then
+if [ "$GAPPS_VARIANT" != 'none' ] && [ "$GAPPS_VARIANT" != '' ] && [ "$GAPPS_BRAND" != 'none' ]; then
     echo "Integrate GApps"
 
     find "$WORK_DIR/gapps/" -mindepth 1 -type d -exec sudo chmod 0755 {} \;
@@ -591,7 +593,7 @@ if [ "$GAPPS_VARIANT" != 'none' ] && [ "$GAPPS_VARIANT" != '' ]; then
     echo -e "Integrate GApps done\n"
 fi
 
-if [ "$GAPPS_VARIANT" != 'none' ] && [ "$GAPPS_VARIANT" != '' ]; then
+if [ "$GAPPS_VARIANT" != 'none' ] && [ "$GAPPS_VARIANT" != '' ] && [ "$GAPPS_BRAND" != 'none' ]; then
     echo "Fix GApps prop"
     sudo python3 fixGappsProp.py "$MOUNT_DIR" || abort
     echo -e "done\n"
@@ -722,7 +724,7 @@ elif [[ "$ROOT_SOL" = "" ]]; then
 else
     name1="-with-$ROOT_SOL-$MAGISK_VER"
 fi
-if [[ "$GAPPS_VARIANT" = "none" || "$GAPPS_VARIANT" = "" ]]; then
+if [[ "$GAPPS_VARIANT" = "none" || "$GAPPS_VARIANT" = ""  ||  "$GAPPS_BRAND" = "none" ]]; then
     name2="-NoGApps"
 else
     if [ "$GAPPS_BRAND" = "OpenGApps" ]; then
