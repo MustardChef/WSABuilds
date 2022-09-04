@@ -9,7 +9,7 @@ on:
                 type: choice
                 options:
                     - x86_64
-                    - AArch64
+                    - ARM64
             release_type:
                 description: "WSA Release Channel"
                 required: true
@@ -31,7 +31,7 @@ on:
                     - Beta
                     - Canary
                     - Debug
-                    - Custom (URL)
+                    - Custom
             magisk_url:
                 description: "Custom Magisk APK/ZIP URL"
                 required: false
@@ -43,22 +43,18 @@ on:
                 type: choice
                 options:
                     - None
-                    - Pico
-                    - Full
-                    - MindTheGapps (URL)
-            mindthegapps_url:
-                description: "MindTheGapps ZIP URL"
+                    - Pico (OpenGApps)
+                    - Full (OpenGApps)
+                    - Custom (OpenGApps)
+                    - Custom (MindTheGapps)
+            gapps_url:
+                description: "Custom GApps ZIP URL"
                 required: false
                 type: string
             remove_amazon:
                 description: "Remove Amazon AppStore"
                 required: false
                 default: true
-                type: boolean
-            offline_mode:
-                description: "Offline Mode"
-                required: false
-                default: false
                 type: boolean
 
 permissions:
@@ -83,7 +79,7 @@ jobs:
                   DOWNLOAD_DIR=../download
                   DOWNLOAD_CONF_NAME=download.list
 
-                  declare -A opts=( ["ARCH,x86_64"]="x64" ["ARCH,AArch64"]="arm64" ["RELEASE_TYPE,General Availability Channel"]="retail" ["RELEASE_TYPE,Release Preview Channel"]="RP" ["RELEASE_TYPE,Beta Channel"]="WIS" ["RELEASE_TYPE,Dev Channel"]="WIF" ["MAGISK_VER,Stable"]="stable" ["MAGISK_VER,Beta"]="beta" ["MAGISK_VER,Canary"]="canary" ["MAGISK_VER,Debug"]="debug" ["GAPPS_VAR,None"]="none" ["GAPPS_VAR,Pico"]="pico" ["GAPPS_VAR,Full"]="full" ["GAPPS_VAR,MindTheGapps (URL)"]="MindTheGapps" ["REMOVE_AMAZON,true"]="--remove-amazon" ["REMOVE_AMAZON,false"]="" ["OFFLINE_MODE,true"]="--offline" ["OFFLINE_MODE,false"]="" )
+                  declare -A opts=( ["ARCH,x86_64"]="x64" ["ARCH,ARM64"]="arm64" ["RELEASE_TYPE,General Availability Channel"]="retail" ["RELEASE_TYPE,Release Preview Channel"]="RP" ["RELEASE_TYPE,Beta Channel"]="WIS" ["RELEASE_TYPE,Dev Channel"]="WIF" ["MAGISK_VER,Stable"]="stable" ["MAGISK_VER,Beta"]="beta" ["MAGISK_VER,Canary"]="canary" ["MAGISK_VER,Debug"]="debug" ["MAGISK_VER,Custom"]="--magisk-custom" ["GAPPS_VAR,None"]="none" ["GAPPS_VAR,Pico (OpenGApps)"]="pico" ["GAPPS_VAR,Full (OpenGApps)"]="full" ["REMOVE_AMAZON,true"]="--remove-amazon" ["REMOVE_AMAZON,false"]="" )
 
                   ARCH="${opts[ARCH,${{ inputs.arch }}]}"
 
@@ -91,16 +87,16 @@ jobs:
 
                   if [ "${{inputs.magisk_ver }}" != "None" ]; then
                       ROOT_SOL="magisk"
-                      if [ "${{ inputs.magisk_ver }}" != "Custom (URL)" ]; then
+                      if [ "${{ inputs.magisk_ver }}" != "Custom" ]; then
                           MAGISK_VER="${opts[MAGISK_VER,${{ inputs.magisk_ver }}]}"
                       else
                           echo "${{ inputs.magisk_url }}" > "$DOWNLOAD_DIR"/"$DOWNLOAD_CONF_NAME"
 
-                          if ! aria2c --no-conf --log-level=info --log="$DOWNLOAD_DIR/aria2_custom_magisk_download.log" -R --allow-overwrite -d"$DOWNLOAD_DIR" -o magisk-debug.zip -i"$DOWNLOAD_DIR"/"$DOWNLOAD_CONF_NAME"; then
-                              echo "Custom Magisk download error!"
+                          if ! aria2c --no-conf --log-level=info --log="$DOWNLOAD_DIR/aria2_custom_magisk_download.log" -x16 -s16 -j5 -c -R -m0 --async-dns=false --check-integrity --continue --allow-overwrite --conditional-get -d"$DOWNLOAD_DIR" -o magisk-debug.zip -i"$DOWNLOAD_DIR"/"$DOWNLOAD_CONF_NAME"; then
+                              echo "Magisk download error!"
                               exit 1
                           fi
-                          CUSTOM_MAGISK="1"
+                          CUSTOM_MAGISK="${opts[MAGISK_VER,Custom]}"
                           MAGISK_VER="${opts[MAGISK_VER,Debug]}"
                       fi
                   else
@@ -108,25 +104,73 @@ jobs:
                       MAGISK_VER="${opts[MAGISK_VER,Stable]}"
                   fi
 
-                  if [ "$ARCH" != "arm64" ]; then
+                  if [ "$ARCH" == "x86_64" ]; then
                       GAPPS_VAR="${opts[GAPPS_VAR,${{ inputs.gapps_var }}]}"
                   else
                       # TODO: keep it 11.0 since official opengapps does not support 12+ yet
                       # As soon as opengapps is available for 12+, we need to get the sdk/release from build.prop and download the corresponding version
-                      if [ "${{ inputs.gapps_var }}" == "Full" ]; then
-                          GAPPS_VAR="pico"
+                      if [ "${{ inputs.gapps_var }}" == "Full (OpenGApps)" ]; then
+                          GAPPS_VAR="${opts[GAPPS_VAR,Pico (OpenGApps)]}"
                       else
                           GAPPS_VAR="${opts[GAPPS_VAR,${{ inputs.gapps_var }}]}"
                       fi
                   fi
 
                   if [ "${{inputs.gapps_var }}" != "None" ]; then
-                      if [ "${{ inputs.gapps_var }}" != "MindTheGapps (URL)" ]; then
+                      if [ "${{ inputs.gapps_var }}" != "Custom (MindTheGapps)" ]; then
                           GAPPS_BRAND="OpenGApps"
-                      else
-                          echo "${{ inputs.mindthegapps_url }}" > -i"$DOWNLOAD_DIR"/"$DOWNLOAD_CONF_NAME"
+                          if [ "${{ inputs.gapps_var }}" == "Custom (OpenGApps)" ]; then
+                              if [ -z "${${{ inputs.gapps_url }}+x}" ]; then
+                                  GAPPS_VARIANT_MAP=(
+                                      "super"
+                                      "stock"
+                                      "full"
+                                      "mini"
+                                      "micro"
+                                      "nano"
+                                      "pico"
+                                      "tvstock"
+                                      "tvmini"
+                                  )
 
-                          if ! aria2c --no-conf --log-level=info --log="$DOWNLOAD_DIR/aria2_mindthegapps_download.log" -R --allow-overwrite -d"$DOWNLOAD_DIR" -o MindTheGapps-"$ARCH".zip -i"$DOWNLOAD_DIR"/"$DOWNLOAD_CONF_NAME"; then
+                                  for file in "$DOWNLOAD_DIR"/OpenGApps-"$ARCH"-*.zip; do
+                                      GAPPS_VAR=${file%%\.*}
+                                      GAPPS_VAR=${GAPPS_VAR##*-}
+                                      list_count=${#GAPPS_VARIANT_MAP[@]}
+                                      for i in "${GAPPS_VARIANT_MAP[@]}"; do
+                                          if [ "$GAPPS_VAR" == "$i" ]; then
+                                              echo "INFO: GApps Variant: $GAPPS_VAR"
+                                              valid_gapps_var="true"
+                                              break
+                                          fi
+                                          ((list_count--))
+                                          if (("$list_count" <= 0)); then
+                                              echo "Invalid GApps Variant: $GAPPS_VAR"
+                                          fi
+                                      done
+                                      if [[ "$valid_gapps_var" == "true" ]]; then
+                                          break
+                                      fi
+                                  done
+                                  if [[ "$valid_gapps_var" != "true" ]]; then
+                                      echo "Missing OpenGApps file!"
+                                      exit 1
+                                  fi
+                                  echo "opengapps_var=${GAPPS_VAR^}" >> $GITHUB_ENV
+                              else
+                                  GAPPS_VAR="pico"
+                                  echo "${{ inputs.gapps_url }}" > -i"$DOWNLOAD_DIR"/"$DOWNLOAD_CONF_NAME"
+                                  if ! aria2c --no-conf --log-level=info --log="$DOWNLOAD_DIR/aria2_gapps_download.log" -x16 -s16 -j5 -c -R -m0 --async-dns=false --check-integrity --continue --allow-overwrite --conditional-get -d"$DOWNLOAD_DIR" -o OpenGApps-"$ARCH"-"$GAPPS_VAR".zip -i"$DOWNLOAD_DIR"/"$DOWNLOAD_CONF_NAME"; then
+                                      echo "OpenGApps download error!"
+                                      exit 1
+                                  fi
+                                  echo "opengapps_var=custom" >> $GITHUB_ENV
+                              fi
+                          fi
+                      else
+                          echo "${{ inputs.gapps_url }}" > -i"$DOWNLOAD_DIR"/"$DOWNLOAD_CONF_NAME"
+
+                          if ! aria2c --no-conf --log-level=info --log="$DOWNLOAD_DIR/aria2_gapps_download.log" -x16 -s16 -j5 -c -R -m0 --async-dns=false --check-integrity --continue --allow-overwrite --conditional-get -d"$DOWNLOAD_DIR" -o MindTheGapps-"$ARCH".zip -i"$DOWNLOAD_DIR"/"$DOWNLOAD_CONF_NAME"; then
                               echo "MindTheGapps download error!"
                               exit 1
                           fi
@@ -138,9 +182,22 @@ jobs:
 
                   REMOVE_AMAZON="${opts[REMOVE_AMAZON,${{ inputs.remove_amazon }}]}"
 
-                  OFFLINE_MODE="${opts[OFFLINE_MODE,${{ inputs.offline_mode }}]}"
+                  if [ "${{ inputs.gapps_var }}" == "Custom (OpenGApps)" ]; then
+                      echo "Generate Download Links"
+                      python3 generateWSALinks.py "$ARCH" "$RELEASE_TYPE" "$DOWNLOAD_DIR" "$DOWNLOAD_CONF_NAME"
+                      if [ "${{ inputs.magisk_ver }}" != "Custom" ]; then
+                          python3 generateMagiskLink.py "$MAGISK_VER" "$DOWNLOAD_DIR" "$DOWNLOAD_CONF_NAME"
+                      fi
 
-                  COMMAND_LINE=(--arch "$ARCH" --release-type "$RELEASE_TYPE" --magisk-ver "$MAGISK_VER" --gapps-brand "$GAPPS_BRAND" --gapps-variant "$GAPPS_VAR" "$REMOVE_AMAZON" --root-sol "$ROOT_SOL" "$COMPRESS_OUTPUT" "$OFFLINE" "$DEBUG" "$CUSTOM_MAGISK")
+                      echo "Download Artifacts"
+                      if ! aria2c --no-conf --log-level=info --log="$DOWNLOAD_DIR/aria2_download.log" -x16 -s16 -j5 -c -R -m0 --async-dns=false --check-integrity --continue --allow-overwrite --conditional-get -d"$DOWNLOAD_DIR" -i"$DOWNLOAD_DIR"/"$DOWNLOAD_CONF_NAME"; then
+                          echo "Artifact download error!"
+                          exit 1
+                      fi
+                      OFFLINE="--offline"
+                  fi
+
+                  COMMAND_LINE=(--arch "$ARCH" --release-type "$RELEASE_TYPE" --magisk-ver "$MAGISK_VER" --gapps-brand "$GAPPS_BRAND" --gapps-variant "$GAPPS_VAR" "$REMOVE_AMAZON" --root-sol "$ROOT_SOL" "$CUSTOM_MAGISK" "$OFFLINE")
                   echo "COMMAND_LINE=${COMMAND_LINE[*]}"
 
                   chmod +x ./build.sh
@@ -151,25 +208,27 @@ jobs:
                   declare -A magisk_vers=( ["Stable"]="stable" ["Beta"]="beta" ["Canary"]="canary" ["Debug"]="debug" )
 
                   if [[ "${{ inputs.magisk_ver }}" == "None" ]]; then
-                    magiskVer=""
-                  elif [[ "${{ inputs.magisk_ver }}" == "Custom (URL)" ]]; then
-                    magiskVer="_Magisk-Custom"
+                      magiskVer=""
+                  elif [[ "${{ inputs.magisk_ver }}" == "Custom" ]]; then
+                      magiskVer="_Magisk-Custom"
                   else
-                    magiskVer="_Magisk-$(curl -s https://raw.githubusercontent.com/topjohnwu/magisk-files/master/${magisk_vers[${{ inputs.magisk_ver }}]}.json | jq -r ".magisk.version")"
+                      magiskVer="_Magisk-$(curl -s https://raw.githubusercontent.com/topjohnwu/magisk-files/master/${magisk_vers[${{ inputs.magisk_ver }}]}.json | jq -r ".magisk.version")"
                   fi
 
                   if [[ "${{ inputs.gapps_var }}" == "None" ]]; then
-                    gappsVar=""
-                  elif [[ "${{ inputs.gapps_var }}" == "MindTheGapps (URL)" ]]; then
-                    gappsVar="_MindTheGapps"
+                      gappsVar=""
+                  elif [[ "${{ inputs.gapps_var }}" == "Custom (MindTheGapps)" ]]; then
+                      gappsVar="_MindTheGapps"
+                  elif [[ "${{ inputs.gapps_var }}" == "Custom (OpenGApps)" ]]; then
+                      gappsVar="_${{ env.opengapps_var }}-OpenGApps"
                   else
-                    gappsVar="_${{ inputs.gapps_var }}-OpenGApps"
+                      gappsVar="_${{ inputs.gapps_var }}-OpenGApps"
                   fi
 
                   if [[ "${{ inputs.remove_amazon }}" == "true" ]]; then
-                    amazon=""
+                      amazon=""
                   else
-                    amazon="_Amazon-AppStore"
+                      amazon="_Amazon-AppStore"
                   fi
                   echo "release_asset_name=WSA_${{ env.WSA_VER }}$magiskVer$gappsVar${amazon}_${{ inputs.arch }}" >> $GITHUB_ENV
             - name: Compress Asset

@@ -42,7 +42,7 @@
 
 ## Help
 
-How can I get a logcat?
+How do I get a logcat?
 
 - `adb logcat`
 
@@ -50,7 +50,7 @@ or
 
 - `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalState\diagnostics\logcat`
 
-How can I update Magisk?
+How do I update Magisk?
 
 - Wait for a new MagiskOnWSA release that includes the newer Magisk version, then follow the [Installation instructions](#installation) to update
 
@@ -58,7 +58,7 @@ Can I pass SafetyNet/Play Integrity?
 
 - No. Virtual machines like WSA cannot pass these mechanisms on their own due to the lack of signing by Google. Passing requires more exotic (and untested) solutions: <https://github.com/kdrag0n/safetynet-fix/discussions/145#discussioncomment-2170917>
 
-Virtualization?
+What is virtualization?
 
 - Virtualization is required to run virtual machines like WSA. `Install.ps1` helps you enable it. After rebooting, re-run `Install.ps1` to install WSA. If it's still not working, you have to enable virtualization in your BIOS/UEFI. Instructions vary by PC vendor, look for help online
 
@@ -66,9 +66,29 @@ Can I remount system partition as read-write?
 
 - No. WSA is mounted as read-only by Hyper-V. You can, however, modify the system partition by creating a Magisk module, or by directly modifying the system.img file
 
-How can I uninstall Magisk?
+How do I uninstall Magisk?
 
 - Download a WSA version that doesn't include Magisk from the [Releases page](https://github.com/PeterNjeim/MagiskOnWSA/releases). Then follow the [Installation instructions](#installation)
+
+How do I install custom Magisk or GApps?
+
+1. Fork this repository
+2. **A)** Magisk
+   1. **a)** Via local file:
+      1. Create a folder named `download in the root
+      2. Move your custom Magisk APK/ZIP file to the `download` folder and rename it to `magisk-debug.zip`
+   2. In GitHub Actions, click on `Build MagiskOnWSA`
+   3. Choose `Custom` in the `Magisk Version` field
+   4. **b)** Via URL:
+      1. Input the URL pointing to your custom Magisk APK/ZIP file in the `Custom Magisk APK/ZIP URL` field
+3. **B)** GApps
+   1. **a)** Via local file:
+      1. Create a folder named `download in the root
+      2. Move your custom OpenGApps or MindTheGapps ZIP file to the `download` folder and rename it to `OpenGApps-{arch}-{variant}.zip` or `MindTheGapps-{arch}.zip` *(e.g. `OpenGApps-x64-pico.zip` or `MindTheGapps-arm64.zip`)*
+   2. In GitHub Actions, click on `Build MagiskOnWSA`
+   3. Choose `Custom (OpenGApps)` or `Custom (MindTheGapps)` in the `GApps Variant` field
+   4. **b)** Via URL:
+      1. Input the URL pointing to your custom OpenGApps or MindTheGapps ZIP file in the `Custom GApps ZIP URL` field
 
 ## Credits
 
