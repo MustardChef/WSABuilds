@@ -179,7 +179,7 @@ usage() {
                     Default: $ROOT_SOL
 
 Additional Options:
-    --remove-amazon Remove Amazon Appstore from the system
+    --remove-amazon Remove Amazon AppStore from the system
     --compress      Compress the WSA
     --offline       Build WSA offline
     --magisk-custom Install custom Magisk
@@ -631,7 +631,7 @@ if [ "$GAPPS_BRAND" != 'none' ]; then
 fi
 
 echo "Umount images"
-sudo find "$MOUNT_DIR" -exec touch -amt 200901010000.00 {} \; >/dev/null 2>&1
+sudo find "$MOUNT_DIR" -exec touch -hamt 200901010000.00 {} \;
 sudo umount "$MOUNT_DIR"/vendor
 sudo umount "$MOUNT_DIR"/product
 sudo umount "$MOUNT_DIR"/system_ext
