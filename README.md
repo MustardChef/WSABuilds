@@ -13,13 +13,13 @@
 
 > Note: If you have the official WSA installed, you must [completely uninstall](#uninstallation) it to use MagiskOnWSA
 
-> Note: If you already have MagiskOnWSA installed, you must delete the WSA folder you extracted for it. This will not remove user data
-
 1. Go to the [Releases page](https://github.com/PeterNjeim/MagiskOnWSA/releases)
 2. In the latest release, go to the Assets section and download the WSA version of your choosing (do not download "Source code")
 3. Extract the zip file
 4. Delete the zip file
 5. Move the newly extracted folder to a suitable location (Documents folder is a good choice), as you will need to keep the folder on your PC to use MagiskOnWSA
+> Note: If you're updating WSA, merge the folders and replace the files for all items when asked
+
 6. Open the WSA folder and right-click `Install.ps1`, then select `Run with PowerShell`
 7. Once the installation process completes, WSA will launch (if this is a first-time install, a window asking for consent to diagnositic information will be shown instead. Sometimes two identical windows will show, this is fine and nothing bad happens if you click OK in both windows)
 8. Click on the PowerShell window, then press any key on the keyboard, the PowerShell window should close
