@@ -61,6 +61,11 @@ on:
                 required: false
                 default: "WSA"
                 type: string
+            prerelease:
+                description: "Release as prerelease"
+                required: false
+                default: false
+                type: boolean
 
 permissions:
     contents: write
@@ -246,3 +251,4 @@ jobs:
               with:
                   files: ./output/${{ env.release_asset_name }}.zip
                   tag_name: ${{ inputs.tag }}
+                  prerelease: ${{ inputs.prerelease }}
