@@ -68,6 +68,10 @@ How do I uninstall Magisk?
 
 - Download a WSA version that doesn't include Magisk from the [Releases page](https://github.com/PeterNjeim/MagiskOnWSA/releases). Then follow the [Installation instructions](#installation)
 
+Can I switch between OpenGApps and MindTheGapps?
+
+- No. GApps will no longer function. Do a [complete uninstallation](#uninstallation) before switching
+
 How do I install custom Magisk or GApps?
 
 1. Fork this repository

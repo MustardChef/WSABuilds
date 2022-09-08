@@ -29,6 +29,11 @@ if [ "$HOST_ARCH" != "x86_64" ] && [ "$HOST_ARCH" != "aarch64" ]; then
 fi
 cd "$(dirname "$0")" || exit 1
 trap umount_clean EXIT
+PARENT_DIR="$(dirname "$PWD")"
+# export TMPDIR=$PARENT_DIR/WORK_DIR_
+if [ "$TMPDIR" ] && [ ! -d "$TMPDIR" ]; then
+    mkdir -p "$TMPDIR"
+fi
 WORK_DIR=$(mktemp -d -t wsa-build-XXXXXXXXXX_) || exit 1
 DOWNLOAD_DIR=../download
 DOWNLOAD_CONF_NAME=download.list
@@ -50,6 +55,10 @@ umount_clean() {
         sudo rm -rf "${WORK_DIR:?}"
     else
         rm -rf "${WORK_DIR:?}"
+    fi
+    if [ "$TMPDIR" ] && [ -d "$TMPDIR" ]; then
+        rm -rf "${TMPDIR:?}"
+        unset TMPDIR
     fi
 }
 clean_download() {
