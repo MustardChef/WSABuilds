@@ -250,5 +250,6 @@ jobs:
               uses: softprops/action-gh-release@v1
               with:
                   files: ./output/${{ env.release_asset_name }}.zip
+                  name: "WSA"
                   tag_name: ${{ inputs.tag }}
                   prerelease: ${{ inputs.prerelease }}
