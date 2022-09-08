@@ -231,9 +231,9 @@ jobs:
                   elif [[ "${{ inputs.gapps_var }}" == "Custom (MindTheGapps)" ]]; then
                       gappsVar="_MindTheGapps"
                   elif [[ "${{ inputs.gapps_var }}" == "Custom (OpenGApps)" ]]; then
-                      gappsVar="_${{ env.opengapps_var }}-OpenGApps"
+                      gappsVar="_OpenGApps-${{ env.opengapps_var }}"
                   else
-                      gappsVar="_${{ inputs.gapps_var }}-OpenGApps"
+                      gappsVar="_OpenGApps-${{ inputs.gapps_var }}"
                   fi
 
                   if [[ "${{ inputs.remove_amazon }}" == "true" ]]; then
