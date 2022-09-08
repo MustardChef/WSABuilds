@@ -187,6 +187,7 @@ jobs:
                           GAPPS_BRAND="MindTheGapps"
                       fi
                   else
+                      GAPPS_VAR="pico"
                       GAPPS_BRAND="none"
                   fi
 
