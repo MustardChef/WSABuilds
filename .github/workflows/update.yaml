@@ -15,7 +15,7 @@ jobs:
       - name: Rename tag
         run: |
           URL="$(curl -s -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/${{ github.repository }}/releases/tags/latest | jq -r .url)"
-          curl -s -X PATCH -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" $URL -d '{"tag_name":"outdated"}'
+          curl -s -X PATCH -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" $URL -d '{"tag_name":"outdated"}' > /dev/null
       - name: Delete tag
         run: |
           curl -s -X DELETE -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/${{ github.repository }}/git/refs/tags/latest
@@ -40,7 +40,9 @@ jobs:
       - name: Publish release
         run: |
           URL="$(curl -s -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/${{ github.repository }}/releases/tags/latest | jq -r .url)"
-          curl -s -X PATCH -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" $URL -d '{"prerelease":false}'
+          curl -s -X PATCH -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" $URL -d '{"prerelease":false}' > /dev/null
       - name: Delete release
         run: |
+          ID="$(curl -s -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/${{ github.repository }}/releases/tags/outdated | jq -r .id)"
+          curl -s -X DELETE -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/${{ github.repository }}/releases/$ID
           curl -s -X DELETE -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/${{ github.repository }}/git/refs/tags/outdated
