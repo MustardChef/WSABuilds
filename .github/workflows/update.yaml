@@ -5,18 +5,18 @@ on:
   workflow_dispatch:
 
 permissions:
-    actions:	write
+    actions: write
     checks: write
     contents: write
-    deployments: write
-    id-token: write
-    issues: write
-    packages: write
-    pages: write
-    pull-requests: write
-    repository-projects: write
-    security-events: write
-    statuses: write
+#     deployments: write
+#     id-token: write
+#     issues: write
+#     packages: write
+#     pages: write
+#     pull-requests: write
+#     repository-projects: write
+#     security-events: write
+#     statuses: write
 
 jobs:
   update:
