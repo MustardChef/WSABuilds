@@ -54,12 +54,12 @@ on:
                 type: string
             remove_amazon:
                 description: "Remove Amazon AppStore"
-                required: false
+                required: true
                 default: true
                 type: boolean
             tag:
                 description: "Release tag name"
-                required: false
+                required: true
                 default: "WSA"
                 type: string
             prerelease:
