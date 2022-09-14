@@ -399,7 +399,7 @@ if [ "$GAPPS_BRAND" != 'none' ]; then
 fi
 
 echo "Expand images"
-
+if [ ! -f /etc/mtab ]; then sudo ln -s /proc/self/mounts /etc/mtab; fi
 e2fsck -yf "$WORK_DIR"/wsa/"$ARCH"/system_ext.img || abort
 SYSTEM_EXT_SIZE=$(($(du --apparent-size -sB512 "$WORK_DIR"/wsa/"$ARCH"/system_ext.img | cut -f1) + 20000))
 if [ -d "$WORK_DIR"/gapps/system_ext ]; then
