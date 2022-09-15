@@ -57,6 +57,11 @@ on:
                 required: true
                 default: true
                 type: boolean
+            title:
+                description: "Release title"
+                required: true
+                default: "WSA"
+                type: string
             tag:
                 description: "Release tag name"
                 required: true
@@ -257,6 +262,6 @@ jobs:
               uses: softprops/action-gh-release@v1
               with:
                   files: ./output/${{ env.release_asset_name }}.zip
-                  name: "WSA"
+                  name: ${{ inputs.title }}
                   tag_name: ${{ inputs.tag }}
                   prerelease: ${{ inputs.prerelease }}
