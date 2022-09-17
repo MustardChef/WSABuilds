@@ -359,6 +359,11 @@ if [ -f "$MAGISK_PATH" ]; then
         CLEAN_DOWNLOAD_MAGISK=1
         abort
     fi
+    sudo patchelf --replace-needed libc.so "../linker/$HOST_ARCH/libc.so" "$WORK_DIR"/magisk/magiskpolicy || abort
+    sudo patchelf --replace-needed libm.so "../linker/$HOST_ARCH/libm.so" "$WORK_DIR"/magisk/magiskpolicy || abort
+    sudo patchelf --replace-needed libdl.so "../linker/$HOST_ARCH/libdl.so" "$WORK_DIR"/magisk/magiskpolicy || abort
+    sudo patchelf --set-interpreter "../linker/$HOST_ARCH/linker64" "$WORK_DIR"/magisk/magiskpolicy || abort
+    chmod +x "$WORK_DIR"/magisk/magiskpolicy || abort
 elif [ -z "${CUSTOM_MAGISK+x}" ]; then
     echo "The Magisk zip package does not exist, is the download incomplete?"
     exit 1
@@ -476,11 +481,7 @@ EOF
     sudo find "$MOUNT_DIR"/sbin -type f -exec chmod 0755 {} \;
     sudo find "$MOUNT_DIR"/sbin -type f -exec chown root:root {} \;
     sudo find "$MOUNT_DIR"/sbin -type f -exec chcon --reference "$MOUNT_DIR"/product {} \;
-    sudo patchelf --replace-needed libc.so "../linker/$HOST_ARCH/libc.so" "$WORK_DIR"/magisk/magiskpolicy || abort
-    sudo patchelf --replace-needed libm.so "../linker/$HOST_ARCH/libm.so" "$WORK_DIR"/magisk/magiskpolicy || abort
-    sudo patchelf --replace-needed libdl.so "../linker/$HOST_ARCH/libdl.so" "$WORK_DIR"/magisk/magiskpolicy || abort
-    sudo patchelf --set-interpreter "../linker/$HOST_ARCH/linker64" "$WORK_DIR"/magisk/magiskpolicy || abort
-    chmod +x "$WORK_DIR"/magisk/magiskpolicy || abort
+
     TMP_PATH=$(Gen_Rand_Str 8)
     echo "/dev/$TMP_PATH(/.*)?    u:object_r:magisk_file:s0" | sudo tee -a "$MOUNT_DIR"/vendor/etc/selinux/vendor_file_contexts
     echo '/data/adb/magisk(/.*)?   u:object_r:magisk_file:s0' | sudo tee -a "$MOUNT_DIR"/vendor/etc/selinux/vendor_file_contexts
@@ -623,12 +624,7 @@ if [ "$GAPPS_BRAND" != 'none' ]; then
         find "$WORK_DIR"/gapps/system_ext/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I dir sudo find "$MOUNT_DIR"/system_ext/priv-app/dir -type f -exec chcon --reference="$MOUNT_DIR"/system_ext/priv-app/Settings/Settings.apk {} \;
     fi
 
-    sudo patchelf --replace-needed libc.so "../linker/$HOST_ARCH/libc.so" "$WORK_DIR"/magisk/magiskpolicy || abort
-    sudo patchelf --replace-needed libm.so "../linker/$HOST_ARCH/libm.so" "$WORK_DIR"/magisk/magiskpolicy || abort
-    sudo patchelf --replace-needed libdl.so "../linker/$HOST_ARCH/libdl.so" "$WORK_DIR"/magisk/magiskpolicy || abort
-    sudo patchelf --set-interpreter "../linker/$HOST_ARCH/linker64" "$WORK_DIR"/magisk/magiskpolicy || abort
-    chmod +x "$WORK_DIR"/magisk/magiskpolicy || abort
-    sudo "$WORK_DIR"/magisk/magiskpolicy --load "$MOUNT_DIR"/vendor/etc/selinux/precompiled_sepolicy --save "$MOUNT_DIR"/vendor/etc/selinux/precompiled_sepolicy "allow gmscore_app gmscore_app vsock_socket { create connect write read }" "allow gmscore_app device_config_runtime_native_boot_prop file read" "allow gmscore_app system_server_tmpfs dir search" "allow gmscore_app system_server_tmpfs file open" || abort
+    sudo "$WORK_DIR"/magisk/magiskpolicy --load "$MOUNT_DIR"/vendor/etc/selinux/precompiled_sepolicy --save "$MOUNT_DIR"/vendor/etc/selinux/precompiled_sepolicy "allow gmscore_app gmscore_app vsock_socket { create connect write read }" "allow gmscore_app device_config_runtime_native_boot_prop file read" "allow gmscore_app system_server_tmpfs dir search" "allow gmscore_app system_server_tmpfs file open" "allow gmscore_app system_server_tmpfs filesystem getattr" "allow gmscore_app gpu_device dir search" || abort
     echo -e "Integrate GApps done\n"
 fi
 
