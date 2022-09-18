@@ -5,7 +5,7 @@
 
 # MagiskOnWSA (also includes Google Play Services)
 
-> Note: This repository is designed specifically not to be forked. This does not use the same mechanism as the original MagiskOnWSA. Don't fork this repository unless you're a developer and want to modify the code itself or want to download a specific configuration of WSA not already available in this repository.
+> Note: This repository is designed specifically not to be forked. This does not use the same mechanism as the original MagiskOnWSA. Don't fork this repository unless you're a developer and want to modify the code itself or want to download a specific configuration of WSA not already available in the [Releases page](https://github.com/PeterNjeim/MagiskOnWSA/releases).
 
 ## Installation
 
