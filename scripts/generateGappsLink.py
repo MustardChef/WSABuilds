@@ -21,7 +21,6 @@
 import sys
 
 import requests
-import os
 import json
 import re
 from pathlib import Path

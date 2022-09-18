@@ -31,15 +31,15 @@ arch = sys.argv[1]
 
 zip_name = ""
 wsa_zip_path= Path(sys.argv[2]).resolve()
-workdir = Path.cwd().parent / sys.argv[3] / "wsa"
-if not os.path.exists(workdir):
-    os.makedirs(workdir)
+workdir = Path(sys.argv[3]) / "wsa"
+if not Path(workdir).is_dir():
+    workdir.mkdir()
 with zipfile.ZipFile(wsa_zip_path) as zip:
     for f in zip.filelist:
         if arch in f.filename.lower():
             zip_name = f.filename
             output_name = zip_name[11:-5]
-            if not os.path.isfile(workdir / zip_name):
+            if not Path(workdir / zip_name).is_file():
                 zip_path = workdir / zip_name
                 print(f"unzipping to {workdir}", flush=True)
                 zip.extract(f, workdir)
@@ -69,6 +69,6 @@ with zipfile.ZipFile(wsa_zip_path) as zip:
                         g.filename = f'{name}.xml'
                         l.extract(g, workdir / 'xml')
 with zipfile.ZipFile(zip_path) as zip:
-    if not os.path.isdir(workdir / arch):
+    if not Path(workdir / arch).is_dir():
         print(f"unzipping from {zip_path}", flush=True)
         zip.extractall(workdir / arch)

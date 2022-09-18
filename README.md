@@ -18,7 +18,7 @@
 5. Move the newly extracted folder to a suitable location (Documents folder is a good choice), as you will need to keep the folder on your PC to use MagiskOnWSA
 > Note: If you're updating WSA, merge the folders and replace the files for all items when asked
 
-6. Open the WSA folder and right-click `Install.ps1`, then select `Run with PowerShell`
+6. Open the WSA folder and double-click `Run.bat`
 7. Once the installation process completes, WSA will launch (if this is a first-time install, a window asking for consent to diagnositic information will be shown instead. Sometimes two identical windows will show, this is fine and nothing bad happens if you click OK in both windows)
 8. Click on the PowerShell window, then press any key on the keyboard, the PowerShell window should close
 9. Close File Explorer
@@ -58,7 +58,7 @@ Can I pass SafetyNet/Play Integrity?
 
 What is virtualization?
 
-- Virtualization is required to run virtual machines like WSA. `Install.ps1` helps you enable it. After rebooting, re-run `Install.ps1` to install WSA. If it's still not working, you have to enable virtualization in your BIOS/UEFI. Instructions vary by PC vendor, look for help online
+- Virtualization is required to run virtual machines like WSA. `Run.bat` helps you enable it. After rebooting, re-run `Run.bat` to install WSA. If it's still not working, you have to enable virtualization in your BIOS/UEFI. Instructions vary by PC vendor, look for help online
 
 Can I remount system partition as read-write?
 

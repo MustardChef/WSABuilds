@@ -275,6 +275,12 @@ if [ "$DEBUG" ]; then
     set -x
 fi
 
+require_su() {
+    if [ "$(sudo whoami)" != "root" ]; then
+        sudo echo "sudo is required to run this script"
+    fi
+}
+
 declare -A RELEASE_NAME_MAP=(["retail"]="Retail" ["RP"]="Release Preview" ["WIS"]="Insider Slow" ["WIF"]="Insider Fast")
 RELEASE_NAME=${RELEASE_NAME_MAP[$RELEASE_TYPE]} || abort
 
@@ -295,11 +301,10 @@ if [ "$GAPPS_BRAND" = "OpenGApps" ]; then
 else
     GAPPS_PATH="$DOWNLOAD_DIR"/MindTheGapps-"$ARCH".zip
 fi
-if [ "$(sudo whoami)" != "root" ]; then
-    sudo echo "sudo is required to run this script"
-fi
+
 if [ -z "${OFFLINE+x}" ]; then
     trap 'rm -f -- "${DOWNLOAD_DIR:?}/${DOWNLOAD_CONF_NAME}"' EXIT
+    require_su
     echo "Generate Download Links"
     python3 generateWSALinks.py "$ARCH" "$RELEASE_TYPE" "$DOWNLOAD_DIR" "$DOWNLOAD_CONF_NAME" || abort
     if [ -z "${CUSTOM_MAGISK+x}" ]; then
@@ -332,12 +337,14 @@ else
         echo "Offline mode: Some files are missing, please disable offline mode."
         exit 1
     fi
+    require_su
 fi
 
 echo "Extract WSA"
 if [ -f "$WSA_ZIP_PATH" ]; then
     WSA_WORK_ENV="${WORK_DIR:?}"/ENV
     if [ -f "$WSA_WORK_ENV" ]; then rm -f "${WSA_WORK_ENV:?}"; fi
+    touch "$WSA_WORK_ENV"
     export WSA_WORK_ENV
     if ! python3 extractWSA.py "$ARCH" "$WSA_ZIP_PATH" "$WORK_DIR"; then
         echo "Unzip WSA failed, is the download incomplete?"
@@ -351,8 +358,8 @@ else
     echo "The WSA zip package does not exist, is the download incomplete?"
     exit 1
 fi
-echo "Extract Magisk"
 
+echo "Extract Magisk"
 if [ -f "$MAGISK_PATH" ]; then
     if ! python3 extractMagisk.py "$ARCH" "$MAGISK_PATH" "$WORK_DIR"; then
         echo "Unzip Magisk failed, is the download incomplete?"
@@ -658,7 +665,7 @@ sudo rm -rf "${WORK_DIR:?}"/wsa/"$ARCH"/\[Content_Types\].xml "$WORK_DIR"/wsa/"$
 cp "$vclibs_PATH" "$xaml_PATH" "$WORK_DIR"/wsa/"$ARCH" || abort
 tee "$WORK_DIR"/wsa/"$ARCH"/Install.ps1 <<EOF
 # Automated Install script by Midonei
-# http://github.com/doneibcn
+\$Host.UI.RawUI.WindowTitle = "Installing MagiskOnWSA..."
 function Test-Administrator {
     [OutputType([bool])]
     param()
@@ -674,23 +681,23 @@ function Finish {
     Start-Process "wsa://com.android.vending"
 }
 
-if (-not (Test-Administrator)) {
+If (-Not (Test-Administrator)) {
     Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Bypass -Force
-    \$proc = Start-Process -PassThru -WindowStyle Hidden -Verb RunAs powershell.exe -Args "-executionpolicy bypass -command Set-Location '\$PSScriptRoot'; &'\$PSCommandPath' EVAL"
+    \$proc = Start-Process -PassThru -WindowStyle Hidden -Verb RunAs powershell.exe -Args "-ExecutionPolicy Bypass -Command Set-Location '\$PSScriptRoot'; &'\$PSCommandPath' EVAL"
     \$proc.WaitForExit()
-    if (\$proc.ExitCode -ne 0) {
+    If (\$proc.ExitCode -Ne 0) {
         Clear-Host
         Write-Warning "Failed to launch start as Administrator\`r\`nPress any key to exit"
         \$null = \$Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
     }
     exit
 }
-elseif ((\$args.Count -eq 1) -and (\$args[0] -eq "EVAL")) {
-    Start-Process powershell.exe -Args "-executionpolicy bypass -command Set-Location '\$PSScriptRoot'; &'\$PSCommandPath'"
+ElseIf ((\$args.Count -Eq 1) -And (\$args[0] -Eq "EVAL")) {
+    Start-Process powershell.exe -Args "-ExecutionPolicy Bypass -Command Set-Location '\$PSScriptRoot'; &'\$PSCommandPath'"
     exit
 }
 
-if (((Test-Path -Path $(find "$WORK_DIR"/wsa/"$ARCH" -maxdepth 1 -mindepth 1 -printf "\"%P\"\n" | paste -sd "," -)) -eq \$false).Count) {
+If (((Test-Path -Path $(find "$WORK_DIR"/wsa/"$ARCH" -maxdepth 1 -mindepth 1 -printf "\"%P\"\n" | paste -sd "," -)) -Eq \$false).Count) {
     Write-Error "Some files are missing in the folder. Please try to build again. Press any key to exist"
     \$null = \$Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown')
     exit 1
@@ -698,13 +705,12 @@ if (((Test-Path -Path $(find "$WORK_DIR"/wsa/"$ARCH" -maxdepth 1 -mindepth 1 -pr
 
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"
 
-\$VMP = Get-WindowsOptionalFeature -Online -FeatureName 'VirtualMachinePlatform'
-if (\$VMP.State -ne "Enabled") {
+If (\$(Get-WindowsOptionalFeature -Online -FeatureName 'VirtualMachinePlatform').State -Ne "Enabled") {
     Enable-WindowsOptionalFeature -Online -NoRestart -FeatureName 'VirtualMachinePlatform'
     Clear-Host
     Write-Warning "Need restart to enable virtual machine platform\`r\`nPress y to restart or press any key to exit"
     \$key = \$Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown')
-    If ("y" -eq \$key.Character) {
+    If ("y" -Eq \$key.Character) {
         Restart-Computer -Confirm
     }
     Else {
@@ -718,11 +724,11 @@ Add-AppxPackage -ForceApplicationShutdown -ForceUpdateFromAnyVersion -Path xaml-
 \$Installed = \$null
 \$Installed = Get-AppxPackage -Name 'MicrosoftCorporationII.WindowsSubsystemForAndroid'
 
-If ((\$null -ne \$Installed) -and (-not (\$Installed.IsDevelopmentMode))) {
+If ((\$null -Ne \$Installed) -And (-Not (\$Installed.IsDevelopmentMode))) {
     Clear-Host
     Write-Warning "There is already one installed WSA. Please uninstall it first.\`r\`nPress y to uninstall existing WSA or press any key to exit"
     \$key = \$Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown')
-    If ("y" -eq \$key.Character) {
+    If ("y" -Eq \$key.Character) {
         Remove-AppxPackage -Package \$Installed.PackageFullName
     }
     Else {
@@ -731,22 +737,36 @@ If ((\$null -ne \$Installed) -and (-not (\$Installed.IsDevelopmentMode))) {
 }
 Clear-Host
 Write-Host "Installing MagiskOnWSA..."
-Stop-Process -Name "wsaclient" -ErrorAction "silentlycontinue"
+Stop-Process -Name "WsaClient" -ErrorAction SilentlyContinue
 Add-AppxPackage -ForceApplicationShutdown -ForceUpdateFromAnyVersion -Register .\AppxManifest.xml
-if (\$?) {
+If (\$?) {
     Finish
 }
-Elseif (\$null -ne \$Installed) {
+ElseIf (\$null -Ne \$Installed) {
     Clear-Host
     Write-Host "Failed to update, try to uninstall existing installation while preserving userdata..."
     Remove-AppxPackage -PreserveApplicationData -Package \$Installed.PackageFullName
     Add-AppxPackage -ForceApplicationShutdown -ForceUpdateFromAnyVersion -Register .\AppxManifest.xml
-    if (\$?) {
+    If (\$?) {
         Finish
     }
 }
-Write-Host "All Done\`r\`nPress any key to exit"
+Write-Host "All Done!\`r\`nPress any key to exit"
 \$null = \$Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown')
+EOF
+tee "$WORK_DIR"/wsa/"$ARCH"/Run.bat <<EOF
+:: Automated Install batch script by Syuugo
+
+@echo off
+if not exist Install.ps1 (
+    echo "Install.ps1" is not found.
+    echo Press any key to exit
+    pause>nul
+    exit 1
+) else (
+    start powershell.exe -File .\Install.ps1 -ExecutionPolicy Bypass
+    exit
+)
 EOF
 echo -e "Remove signature and add scripts done\n"
 
