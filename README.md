@@ -5,13 +5,13 @@
 
 # MagiskOnWSA (also includes Google Play Services)
 
-> Note: This repository is designed specifically not to be forked. This does not use the same mechanism as the original MagiskOnWSA. Don't fork this repository unless you're a developer and want to modify the code itself or want to download a specific configuration of WSA not already available in the [Releases page](https://github.com/PeterNjeim/MagiskOnWSA/releases).
+> Note: This repository is designed specifically not to be forked. This does not use the same mechanism as the original MagiskOnWSA. Don't fork this repository unless you're a developer and want to modify the code itself or want to download a specific configuration of WSA not already available in the [Releases page](https://github.com/PeterNjeim/MagiskOnWSA/releases/latest).
 
 ## Installation
 
 > Note: If you have the official WSA installed, you must [completely uninstall](#uninstallation) it to use MagiskOnWSA
 
-1. Go to the [Releases page](https://github.com/PeterNjeim/MagiskOnWSA/releases)
+1. Go to the [Releases page](https://github.com/PeterNjeim/MagiskOnWSA/releases/latest)
 2. In the latest release, go to the Assets section and download the WSA version of your choosing (do not download "Source code")
 3. Extract the zip file
 4. Delete the zip file
@@ -66,7 +66,7 @@ Can I remount system partition as read-write?
 
 How do I uninstall Magisk?
 
-- Download a WSA version that doesn't include Magisk from the [Releases page](https://github.com/PeterNjeim/MagiskOnWSA/releases). Then follow the [Installation instructions](#installation)
+- Download a WSA version that doesn't include Magisk from the [Releases page](https://github.com/PeterNjeim/MagiskOnWSA/releases/latest). Then follow the [Installation instructions](#installation)
 
 Can I switch between OpenGApps and MindTheGapps?
 
