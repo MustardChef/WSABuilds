@@ -1,6 +1,6 @@
 <div align="center">
 
-###### FORKING NOT REQUIRED
+###### DO NOT FORK
 </div>
 
 # MagiskOnWSA (also includes Google Play Services)
