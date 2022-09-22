@@ -85,7 +85,7 @@ jobs:
             - name: Install Dependencies
               working-directory: ./scripts
               run: |
-                  sudo apt update && sudo apt -y install setools lzip wine winetricks patchelf e2fsprogs python3-pip aria2
+                  sudo apt update && sudo apt -y install setools lzip wine winetricks patchelf e2fsprogs python3-pip aria2 attr
                   python3 -m pip install requests
                   cp -r ../wine/.cache/* ~/.cache
                   winetricks msxml6
