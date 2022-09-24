@@ -38,20 +38,24 @@ DOWNLOAD_DIR=../download
 DOWNLOAD_CONF_NAME=download.list
 OUTPUT_DIR=../output
 MOUNT_DIR="$WORK_DIR"/system
+SUDO="$(which sudo 2>/dev/null)"
+if [ -z "$SUDO" ]; then
+    unset SUDO
+fi
 umount_clean() {
     if [ -d "$MOUNT_DIR" ]; then
         echo "Cleanup Work Directory"
         if [ -d "$MOUNT_DIR/vendor" ]; then
-            sudo umount "$MOUNT_DIR"/vendor
+            $SUDO umount "$MOUNT_DIR"/vendor
         fi
         if [ -d "$MOUNT_DIR/product" ]; then
-            sudo umount "$MOUNT_DIR"/product
+            $SUDO umount "$MOUNT_DIR"/product
         fi
         if [ -d "$MOUNT_DIR/system_ext" ]; then
-            sudo umount "$MOUNT_DIR"/system_ext
+            $SUDO umount "$MOUNT_DIR"/system_ext
         fi
-        sudo umount "$MOUNT_DIR"
-        sudo rm -rf "${WORK_DIR:?}"
+        $SUDO umount "$MOUNT_DIR"
+        $SUDO rm -rf "${WORK_DIR:?}"
     else
         rm -rf "${WORK_DIR:?}"
     fi
@@ -276,15 +280,18 @@ if [ "$DEBUG" ]; then
 fi
 
 require_su() {
-    if [ "$(sudo whoami)" != "root" ]; then
-        sudo echo "sudo is required to run this script"
+    if test "$(whoami)" != "root"; then
+        if [ -z "$SUDO" ] || [ "$($SUDO whoami)" != "root" ]; then
+            echo "ROOT/SUDO is required to run this script"
+            abort
+        fi
     fi
 }
 
 declare -A RELEASE_NAME_MAP=(["retail"]="Retail" ["RP"]="Release Preview" ["WIS"]="Insider Slow" ["WIF"]="Insider Fast")
 RELEASE_NAME=${RELEASE_NAME_MAP[$RELEASE_TYPE]} || abort
 
-echo -e "build: RELEASE_TYPE=$RELEASE_NAME"
+echo -e "Build: RELEASE_TYPE=$RELEASE_NAME"
 
 WSA_ZIP_PATH=$DOWNLOAD_DIR/wsa-$ARCH-$RELEASE_TYPE.zip
 vclibs_PATH=$DOWNLOAD_DIR/vclibs-"$ARCH".appx
@@ -366,10 +373,10 @@ if [ -f "$MAGISK_PATH" ]; then
         CLEAN_DOWNLOAD_MAGISK=1
         abort
     fi
-    sudo patchelf --replace-needed libc.so "../linker/$HOST_ARCH/libc.so" "$WORK_DIR"/magisk/magiskpolicy || abort
-    sudo patchelf --replace-needed libm.so "../linker/$HOST_ARCH/libm.so" "$WORK_DIR"/magisk/magiskpolicy || abort
-    sudo patchelf --replace-needed libdl.so "../linker/$HOST_ARCH/libdl.so" "$WORK_DIR"/magisk/magiskpolicy || abort
-    sudo patchelf --set-interpreter "../linker/$HOST_ARCH/linker64" "$WORK_DIR"/magisk/magiskpolicy || abort
+    $SUDO patchelf --replace-needed libc.so "../linker/$HOST_ARCH/libc.so" "$WORK_DIR"/magisk/magiskpolicy || abort
+    $SUDO patchelf --replace-needed libm.so "../linker/$HOST_ARCH/libm.so" "$WORK_DIR"/magisk/magiskpolicy || abort
+    $SUDO patchelf --replace-needed libdl.so "../linker/$HOST_ARCH/libdl.so" "$WORK_DIR"/magisk/magiskpolicy || abort
+    $SUDO patchelf --set-interpreter "../linker/$HOST_ARCH/linker64" "$WORK_DIR"/magisk/magiskpolicy || abort
     chmod +x "$WORK_DIR"/magisk/magiskpolicy || abort
 elif [ -z "${CUSTOM_MAGISK+x}" ]; then
     echo "The Magisk zip package does not exist, is the download incomplete?"
@@ -411,7 +418,7 @@ if [ "$GAPPS_BRAND" != 'none' ]; then
 fi
 
 echo "Expand images"
-if [ ! -f /etc/mtab ]; then sudo ln -s /proc/self/mounts /etc/mtab; fi
+if [ ! -f /etc/mtab ]; then $SUDO ln -s /proc/self/mounts /etc/mtab; fi
 e2fsck -pf "$WORK_DIR"/wsa/"$ARCH"/system_ext.img || abort
 SYSTEM_EXT_SIZE=$(($(du --apparent-size -sB512 "$WORK_DIR"/wsa/"$ARCH"/system_ext.img | cut -f1) + 20000))
 if [ -d "$WORK_DIR"/gapps/system_ext ]; then
@@ -451,28 +458,28 @@ resize2fs "$WORK_DIR"/wsa/"$ARCH"/vendor.img "$VENDOR_SIZE"s || abort
 echo -e "Expand images done\n"
 
 echo "Mount images"
-sudo mkdir "$MOUNT_DIR" || abort
-sudo mount -o loop "$WORK_DIR"/wsa/"$ARCH"/system.img "$MOUNT_DIR" || abort
-sudo mount -o loop "$WORK_DIR"/wsa/"$ARCH"/vendor.img "$MOUNT_DIR"/vendor || abort
-sudo mount -o loop "$WORK_DIR"/wsa/"$ARCH"/product.img "$MOUNT_DIR"/product || abort
-sudo mount -o loop "$WORK_DIR"/wsa/"$ARCH"/system_ext.img "$MOUNT_DIR"/system_ext || abort
+$SUDO mkdir "$MOUNT_DIR" || abort
+$SUDO mount -o loop "$WORK_DIR"/wsa/"$ARCH"/system.img "$MOUNT_DIR" || abort
+$SUDO mount -o loop "$WORK_DIR"/wsa/"$ARCH"/vendor.img "$MOUNT_DIR"/vendor || abort
+$SUDO mount -o loop "$WORK_DIR"/wsa/"$ARCH"/product.img "$MOUNT_DIR"/product || abort
+$SUDO mount -o loop "$WORK_DIR"/wsa/"$ARCH"/system_ext.img "$MOUNT_DIR"/system_ext || abort
 echo -e "done\n"
 
 if [ "$REMOVE_AMAZON" ]; then
-    echo "Remove Amazon AppStore"
-    find "${MOUNT_DIR:?}"/product/{etc/permissions,etc/sysconfig,framework,priv-app} | grep -e amazon -e venezia | sudo xargs rm -rf
+    echo "Remove Amazon Appstore"
+    find "${MOUNT_DIR:?}"/product/{etc/permissions,etc/sysconfig,framework,priv-app} | grep -e amazon -e venezia | $SUDO xargs rm -rf
     echo -e "done\n"
 fi
 
 if [ "$ROOT_SOL" = 'magisk' ] || [ "$ROOT_SOL" = '' ]; then
     echo "Integrate Magisk"
-    sudo mkdir "$MOUNT_DIR"/sbin
-    sudo setfattr -n security.selinux -v "u:object_r:rootfs:s0" "$MOUNT_DIR"/sbin || abort
-    sudo chown root:root "$MOUNT_DIR"/sbin
-    sudo chmod 0700 "$MOUNT_DIR"/sbin
-    sudo cp "$WORK_DIR"/magisk/magisk/* "$MOUNT_DIR"/sbin/
-    sudo cp "$MAGISK_PATH" "$MOUNT_DIR"/sbin/magisk.apk
-    sudo tee -a "$MOUNT_DIR"/sbin/loadpolicy.sh <<EOF
+    $SUDO mkdir "$MOUNT_DIR"/sbin
+    $SUDO setfattr -n security.selinux -v "u:object_r:rootfs:s0" "$MOUNT_DIR"/sbin || abort
+    $SUDO chown root:root "$MOUNT_DIR"/sbin
+    $SUDO chmod 0700 "$MOUNT_DIR"/sbin
+    $SUDO cp "$WORK_DIR"/magisk/magisk/* "$MOUNT_DIR"/sbin/
+    $SUDO cp "$MAGISK_PATH" "$MOUNT_DIR"/sbin/magisk.apk
+    $SUDO tee -a "$MOUNT_DIR"/sbin/loadpolicy.sh <<EOF
 #!/system/bin/sh
 mkdir -p /data/adb/magisk
 cp /sbin/* /data/adb/magisk/
@@ -485,19 +492,19 @@ for module in \$(ls /data/adb/modules); do
 done
 EOF
 
-    sudo find "$MOUNT_DIR"/sbin -type f -exec chmod 0755 {} \;
-    sudo find "$MOUNT_DIR"/sbin -type f -exec chown root:root {} \;
-    sudo find "$MOUNT_DIR"/sbin -type f -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
+    $SUDO find "$MOUNT_DIR"/sbin -type f -exec chmod 0755 {} \;
+    $SUDO find "$MOUNT_DIR"/sbin -type f -exec chown root:root {} \;
+    $SUDO find "$MOUNT_DIR"/sbin -type f -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
 
     TMP_PATH=$(Gen_Rand_Str 8)
-    echo "/dev/$TMP_PATH(/.*)?    u:object_r:magisk_file:s0" | sudo tee -a "$MOUNT_DIR"/vendor/etc/selinux/vendor_file_contexts
-    echo '/data/adb/magisk(/.*)?   u:object_r:magisk_file:s0' | sudo tee -a "$MOUNT_DIR"/vendor/etc/selinux/vendor_file_contexts
-    sudo "$WORK_DIR"/magisk/magiskpolicy --load "$MOUNT_DIR"/vendor/etc/selinux/precompiled_sepolicy --save "$MOUNT_DIR"/vendor/etc/selinux/precompiled_sepolicy --magisk "allow * magisk_file lnk_file *" || abort
+    echo "/dev/$TMP_PATH(/.*)?    u:object_r:magisk_file:s0" | $SUDO tee -a "$MOUNT_DIR"/vendor/etc/selinux/vendor_file_contexts
+    echo '/data/adb/magisk(/.*)?   u:object_r:magisk_file:s0' | $SUDO tee -a "$MOUNT_DIR"/vendor/etc/selinux/vendor_file_contexts
+    $SUDO "$WORK_DIR"/magisk/magiskpolicy --load "$MOUNT_DIR"/vendor/etc/selinux/precompiled_sepolicy --save "$MOUNT_DIR"/vendor/etc/selinux/precompiled_sepolicy --magisk "allow * magisk_file lnk_file *" || abort
     SERVER_NAME1=$(Gen_Rand_Str 12)
     SERVER_NAME2=$(Gen_Rand_Str 12)
     SERVER_NAME3=$(Gen_Rand_Str 12)
     SERVER_NAME4=$(Gen_Rand_Str 12)
-    sudo tee -a "$MOUNT_DIR"/system/etc/init/hw/init.rc <<EOF
+    $SUDO tee -a "$MOUNT_DIR"/system/etc/init/hw/init.rc <<EOF
 on post-fs-data
     start adbd
     mkdir /dev/$TMP_PATH
@@ -569,84 +576,84 @@ sed -i -zE "s/<Resources.*Resources>/<Resources>\n$(cat "$WORK_DIR"/wsa/xml/* | 
 echo -e "Merge Language Resources done\n"
 
 echo "Add extra packages"
-sudo cp -r ../"$ARCH"/system/* "$MOUNT_DIR" || abort
-find ../"$ARCH"/system/system/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder sudo find "$MOUNT_DIR"/system/priv-app/placeholder -type d -exec chmod 0755 {} \;
-find ../"$ARCH"/system/system/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder sudo find "$MOUNT_DIR"/system/priv-app/placeholder -type f -exec chmod 0644 {} \;
-find ../"$ARCH"/system/system/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder sudo find "$MOUNT_DIR"/system/priv-app/placeholder -exec chown root:root {} \;
-find ../"$ARCH"/system/system/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder sudo find "$MOUNT_DIR"/system/priv-app/placeholder -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
-find ../"$ARCH"/system/system/etc/permissions/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder sudo find "$MOUNT_DIR"/system/etc/permissions/placeholder -type f -exec chmod 0644 {} \;
-find ../"$ARCH"/system/system/etc/permissions/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder sudo find "$MOUNT_DIR"/system/etc/permissions/placeholder -exec chown root:root {} \;
-find ../"$ARCH"/system/system/etc/permissions/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder sudo find "$MOUNT_DIR"/system/etc/permissions/placeholder -type f -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
+$SUDO cp -r ../"$ARCH"/system/* "$MOUNT_DIR" || abort
+find ../"$ARCH"/system/system/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder $SUDO find "$MOUNT_DIR"/system/priv-app/placeholder -type d -exec chmod 0755 {} \;
+find ../"$ARCH"/system/system/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder $SUDO find "$MOUNT_DIR"/system/priv-app/placeholder -type f -exec chmod 0644 {} \;
+find ../"$ARCH"/system/system/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder $SUDO find "$MOUNT_DIR"/system/priv-app/placeholder -exec chown root:root {} \;
+find ../"$ARCH"/system/system/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder $SUDO find "$MOUNT_DIR"/system/priv-app/placeholder -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
+find ../"$ARCH"/system/system/etc/permissions/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder $SUDO find "$MOUNT_DIR"/system/etc/permissions/placeholder -type f -exec chmod 0644 {} \;
+find ../"$ARCH"/system/system/etc/permissions/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder $SUDO find "$MOUNT_DIR"/system/etc/permissions/placeholder -exec chown root:root {} \;
+find ../"$ARCH"/system/system/etc/permissions/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder $SUDO find "$MOUNT_DIR"/system/etc/permissions/placeholder -type f -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
 echo -e "Add extra packages done\n"
 
 if [ "$GAPPS_BRAND" != 'none' ]; then
     echo "Integrate $GAPPS_BRAND"
 
-    find "$WORK_DIR/gapps/" -mindepth 1 -type d -exec sudo chmod 0755 {} \;
-    find "$WORK_DIR/gapps/" -mindepth 1 -type d -exec sudo chown root:root {} \;
+    find "$WORK_DIR/gapps/" -mindepth 1 -type d -exec $SUDO chmod 0755 {} \;
+    find "$WORK_DIR/gapps/" -mindepth 1 -type d -exec $SUDO chown root:root {} \;
     file_list="$(find "$WORK_DIR/gapps/" -mindepth 1 -type f | cut -d/ -f5-)"
     for file in $file_list; do
-        sudo chown root:root "$WORK_DIR/gapps/${file}"
-        sudo chmod 0644 "$WORK_DIR/gapps/${file}"
+        $SUDO chown root:root "$WORK_DIR/gapps/${file}"
+        $SUDO chmod 0644 "$WORK_DIR/gapps/${file}"
     done
 
     if [ "$GAPPS_BRAND" = "OpenGApps" ]; then
-        find "$WORK_DIR"/gapps/ -maxdepth 1 -mindepth 1 -type d -not -path '*product' -exec sudo cp --preserve=all -r {} "$MOUNT_DIR"/system \; || abort
+        find "$WORK_DIR"/gapps/ -maxdepth 1 -mindepth 1 -type d -not -path '*product' -exec $SUDO cp --preserve=all -r {} "$MOUNT_DIR"/system \; || abort
     elif [ "$GAPPS_BRAND" = "MindTheGapps" ]; then
-        sudo cp --preserve=all -r "$WORK_DIR"/gapps/system_ext/* "$MOUNT_DIR"/system_ext/ || abort
+        $SUDO cp --preserve=all -r "$WORK_DIR"/gapps/system_ext/* "$MOUNT_DIR"/system_ext/ || abort
         if [ -e "$MOUNT_DIR"/system_ext/priv-app/SetupWizard ]; then
             rm -rf "${MOUNT_DIR:?}/system_ext/priv-app/Provision"
         fi
     fi
-    sudo cp --preserve=all -r "$WORK_DIR"/gapps/product/* "$MOUNT_DIR"/product || abort
+    $SUDO cp --preserve=all -r "$WORK_DIR"/gapps/product/* "$MOUNT_DIR"/product || abort
 
-    find "$WORK_DIR"/gapps/product/overlay -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder sudo find "$MOUNT_DIR"/product/overlay/placeholder -type f -exec setfattr -n security.selinux -v "u:object_r:vendor_overlay_file:s0" {} \; || abort
+    find "$WORK_DIR"/gapps/product/overlay -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder $SUDO find "$MOUNT_DIR"/product/overlay/placeholder -type f -exec setfattr -n security.selinux -v "u:object_r:vendor_overlay_file:s0" {} \; || abort
 
     if [ "$GAPPS_BRAND" = "OpenGApps" ]; then
-        find "$WORK_DIR"/gapps/app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder sudo find "$MOUNT_DIR"/system/app/placeholder -type d -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
-        find "$WORK_DIR"/gapps/framework/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder sudo find "$MOUNT_DIR"/system/framework/placeholder -type d -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
-        find "$WORK_DIR"/gapps/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder sudo find "$MOUNT_DIR"/system/priv-app/placeholder -type d -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
-        find "$WORK_DIR"/gapps/app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder sudo find "$MOUNT_DIR"/system/app/placeholder -type f -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
-        find "$WORK_DIR"/gapps/framework/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder sudo find "$MOUNT_DIR"/system/framework/placeholder -type f -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
-        find "$WORK_DIR"/gapps/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder sudo find "$MOUNT_DIR"/system/priv-app/placeholder -type f -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
-        find "$WORK_DIR"/gapps/etc/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder sudo find "$MOUNT_DIR"/system/etc/placeholder -type d -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
-        find "$WORK_DIR"/gapps/etc/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder sudo find "$MOUNT_DIR"/system/etc/placeholder -type f -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
+        find "$WORK_DIR"/gapps/app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder $SUDO find "$MOUNT_DIR"/system/app/placeholder -type d -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
+        find "$WORK_DIR"/gapps/framework/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder $SUDO find "$MOUNT_DIR"/system/framework/placeholder -type d -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
+        find "$WORK_DIR"/gapps/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder $SUDO find "$MOUNT_DIR"/system/priv-app/placeholder -type d -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
+        find "$WORK_DIR"/gapps/app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder $SUDO find "$MOUNT_DIR"/system/app/placeholder -type f -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
+        find "$WORK_DIR"/gapps/framework/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder $SUDO find "$MOUNT_DIR"/system/framework/placeholder -type f -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
+        find "$WORK_DIR"/gapps/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder $SUDO find "$MOUNT_DIR"/system/priv-app/placeholder -type f -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
+        find "$WORK_DIR"/gapps/etc/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder $SUDO find "$MOUNT_DIR"/system/etc/placeholder -type d -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
+        find "$WORK_DIR"/gapps/etc/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder $SUDO find "$MOUNT_DIR"/system/etc/placeholder -type f -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
     else
-        find "$WORK_DIR"/gapps/product/app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder sudo find "$MOUNT_DIR"/product/app/placeholder -type d -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
-        find "$WORK_DIR"/gapps/product/etc/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder sudo find "$MOUNT_DIR"/product/etc/placeholder -type d -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
-        find "$WORK_DIR"/gapps/product/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder sudo find "$MOUNT_DIR"/product/priv-app/placeholder -type d -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
-        find "$WORK_DIR"/gapps/product/framework/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder sudo find "$MOUNT_DIR"/product/framework/placeholder -type d -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
+        find "$WORK_DIR"/gapps/product/app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder $SUDO find "$MOUNT_DIR"/product/app/placeholder -type d -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
+        find "$WORK_DIR"/gapps/product/etc/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder $SUDO find "$MOUNT_DIR"/product/etc/placeholder -type d -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
+        find "$WORK_DIR"/gapps/product/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder $SUDO find "$MOUNT_DIR"/product/priv-app/placeholder -type d -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
+        find "$WORK_DIR"/gapps/product/framework/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder $SUDO find "$MOUNT_DIR"/product/framework/placeholder -type d -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
 
-        find "$WORK_DIR"/gapps/product/app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder sudo find "$MOUNT_DIR"/product/app/placeholder -type f -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
-        find "$WORK_DIR"/gapps/product/etc/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder sudo find "$MOUNT_DIR"/product/etc/placeholder -type f -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
-        find "$WORK_DIR"/gapps/product/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder sudo find "$MOUNT_DIR"/product/priv-app/placeholder -type f -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
-        find "$WORK_DIR"/gapps/product/framework/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder sudo find "$MOUNT_DIR"/product/framework/placeholder -type f -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
-        find "$WORK_DIR"/gapps/system_ext/etc/permissions/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder sudo find "$MOUNT_DIR"/system_ext/etc/permissions/placeholder -type f -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
+        find "$WORK_DIR"/gapps/product/app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder $SUDO find "$MOUNT_DIR"/product/app/placeholder -type f -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
+        find "$WORK_DIR"/gapps/product/etc/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder $SUDO find "$MOUNT_DIR"/product/etc/placeholder -type f -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
+        find "$WORK_DIR"/gapps/product/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder $SUDO find "$MOUNT_DIR"/product/priv-app/placeholder -type f -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
+        find "$WORK_DIR"/gapps/product/framework/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder $SUDO find "$MOUNT_DIR"/product/framework/placeholder -type f -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
+        find "$WORK_DIR"/gapps/system_ext/etc/permissions/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder $SUDO find "$MOUNT_DIR"/system_ext/etc/permissions/placeholder -type f -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
 
-        sudo setfattr -n security.selinux -v "u:object_r:system_lib_file:s0" "$MOUNT_DIR"/product/lib || abort
-        find "$WORK_DIR"/gapps/product/lib/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder sudo find "$MOUNT_DIR"/product/lib/placeholder -exec setfattr -n security.selinux -v "u:object_r:system_lib_file:s0" {} \; || abort
-        find "$WORK_DIR"/gapps/product/lib64/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder sudo find "$MOUNT_DIR"/product/lib64/placeholder -type f -exec setfattr -n security.selinux -v "u:object_r:system_lib_file:s0" {} \; || abort
-        find "$WORK_DIR"/gapps/system_ext/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder sudo find "$MOUNT_DIR"/system_ext/priv-app/placeholder -type d -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
-        find "$WORK_DIR"/gapps/system_ext/etc/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder sudo find "$MOUNT_DIR"/system_ext/etc/placeholder -type d -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
-        find "$WORK_DIR"/gapps/system_ext/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder sudo find "$MOUNT_DIR"/system_ext/priv-app/placeholder -type f -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
+        $SUDO setfattr -n security.selinux -v "u:object_r:system_lib_file:s0" "$MOUNT_DIR"/product/lib || abort
+        find "$WORK_DIR"/gapps/product/lib/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder $SUDO find "$MOUNT_DIR"/product/lib/placeholder -exec setfattr -n security.selinux -v "u:object_r:system_lib_file:s0" {} \; || abort
+        find "$WORK_DIR"/gapps/product/lib64/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder $SUDO find "$MOUNT_DIR"/product/lib64/placeholder -type f -exec setfattr -n security.selinux -v "u:object_r:system_lib_file:s0" {} \; || abort
+        find "$WORK_DIR"/gapps/system_ext/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder $SUDO find "$MOUNT_DIR"/system_ext/priv-app/placeholder -type d -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
+        find "$WORK_DIR"/gapps/system_ext/etc/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder $SUDO find "$MOUNT_DIR"/system_ext/etc/placeholder -type d -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
+        find "$WORK_DIR"/gapps/system_ext/priv-app/ -maxdepth 1 -mindepth 1 -printf '%P\n' | xargs -I placeholder $SUDO find "$MOUNT_DIR"/system_ext/priv-app/placeholder -type f -exec setfattr -n security.selinux -v "u:object_r:system_file:s0" {} \; || abort
     fi
 
-    sudo "$WORK_DIR"/magisk/magiskpolicy --load "$MOUNT_DIR"/vendor/etc/selinux/precompiled_sepolicy --save "$MOUNT_DIR"/vendor/etc/selinux/precompiled_sepolicy "allow gmscore_app gmscore_app vsock_socket { create connect write read }" "allow gmscore_app device_config_runtime_native_boot_prop file read" "allow gmscore_app system_server_tmpfs dir search" "allow gmscore_app system_server_tmpfs file open" "allow gmscore_app system_server_tmpfs filesystem getattr" "allow gmscore_app gpu_device dir search" || abort
+    $SUDO "$WORK_DIR"/magisk/magiskpolicy --load "$MOUNT_DIR"/vendor/etc/selinux/precompiled_sepolicy --save "$MOUNT_DIR"/vendor/etc/selinux/precompiled_sepolicy "allow gmscore_app gmscore_app vsock_socket { create connect write read }" "allow gmscore_app device_config_runtime_native_boot_prop file read" "allow gmscore_app system_server_tmpfs dir search" "allow gmscore_app system_server_tmpfs file open" "allow gmscore_app system_server_tmpfs filesystem getattr" "allow gmscore_app gpu_device dir search" || abort
     echo -e "Integrate $GAPPS_BRAND done\n"
 fi
 
 if [ "$GAPPS_BRAND" != 'none' ]; then
     echo "Fix $GAPPS_BRAND prop"
-    sudo python3 fixGappsProp.py "$MOUNT_DIR" || abort
+    $SUDO python3 fixGappsProp.py "$MOUNT_DIR" || abort
     echo -e "done\n"
 fi
 
 echo "Umount images"
-sudo find "$MOUNT_DIR" -exec touch -hamt 200901010000.00 {} \;
-sudo umount "$MOUNT_DIR"/vendor
-sudo umount "$MOUNT_DIR"/product
-sudo umount "$MOUNT_DIR"/system_ext
-sudo umount "$MOUNT_DIR"
+$SUDO find "$MOUNT_DIR" -exec touch -hamt 200901010000.00 {} \;
+$SUDO umount "$MOUNT_DIR"/vendor
+$SUDO umount "$MOUNT_DIR"/product
+$SUDO umount "$MOUNT_DIR"/system_ext
+$SUDO umount "$MOUNT_DIR"
 echo -e "done\n"
 
 echo "Shrink images"
@@ -661,7 +668,7 @@ resize2fs -M "$WORK_DIR"/wsa/"$ARCH"/system_ext.img || abort
 echo -e "Shrink images done\n"
 
 echo "Remove signature and add scripts"
-sudo rm -rf "${WORK_DIR:?}"/wsa/"$ARCH"/\[Content_Types\].xml "$WORK_DIR"/wsa/"$ARCH"/AppxBlockMap.xml "$WORK_DIR"/wsa/"$ARCH"/AppxSignature.p7x "$WORK_DIR"/wsa/"$ARCH"/AppxMetadata || abort
+$SUDO rm -rf "${WORK_DIR:?}"/wsa/"$ARCH"/\[Content_Types\].xml "$WORK_DIR"/wsa/"$ARCH"/AppxBlockMap.xml "$WORK_DIR"/wsa/"$ARCH"/AppxSignature.p7x "$WORK_DIR"/wsa/"$ARCH"/AppxMetadata || abort
 cp "$vclibs_PATH" "$xaml_PATH" "$WORK_DIR"/wsa/"$ARCH" || abort
 tee "$WORK_DIR"/wsa/"$ARCH"/Install.ps1 <<EOF
 # Automated Install script by Midonei
@@ -795,20 +802,21 @@ artifact_name="WSA${name1}${name2}_${WSA_VER}_${ARCH}_${WSA_REL}"
 echo "$artifact_name"
 echo -e "\nFinishing building...."
 if [ -f "$OUTPUT_DIR" ]; then
-    sudo rm -rf "${OUTPUT_DIR:?}"
+    $SUDO rm -rf "${OUTPUT_DIR:?}"
 fi
 if [ ! -d "$OUTPUT_DIR" ]; then
     mkdir -p "$OUTPUT_DIR"
 fi
 if [ "$COMPRESS_OUTPUT" ]; then
     rm -f "${OUTPUT_DIR:?}"/"$artifact_name.7z" || abort
-    7z a "$OUTPUT_DIR"/"$artifact_name.7z" "$WORK_DIR/wsa/$ARCH/" || abort
+    mv "$WORK_DIR/wsa/$ARCH" "$WORK_DIR/wsa/$artifact_name"
+    7z a "$OUTPUT_DIR"/"$artifact_name.7z" "$WORK_DIR/wsa/$artifact_name" || abort
 else
     rm -rf "${OUTPUT_DIR:?}/${artifact_name}" || abort
-    mv "$WORK_DIR"/wsa/"$ARCH" "$OUTPUT_DIR/$artifact_name" || abort
+    cp -r "$WORK_DIR"/wsa/"$ARCH" "$OUTPUT_DIR/$artifact_name" || abort
 fi
 echo -e "done\n"
 
 echo "Cleanup Work Directory"
-sudo rm -rf "${WORK_DIR:?}"
+$SUDO rm -rf "${WORK_DIR:?}"
 echo "done"
