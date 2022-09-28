@@ -1,6 +1,6 @@
 <div align="center">
 
-###### DO NOT FORK
+`DO NOT FORK`
 </div>
 
 # MagiskOnWSA (also includes Google Play Services)
