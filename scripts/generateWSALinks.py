@@ -112,4 +112,4 @@ for i, v, f in identities:
 tmpdownlist.writelines(f'https://aka.ms/Microsoft.VCLibs.{arch}.14.00.Desktop.appx\n')
 tmpdownlist.writelines(f'  dir={download_dir}\n')
 tmpdownlist.writelines(f'  out=vclibs-{arch}.appx\n')
-tmpdownlist.close
+tmpdownlist.close()
