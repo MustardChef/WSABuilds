@@ -85,11 +85,11 @@ if not download_dir.is_dir():
 tmpdownlist = open(download_dir/tempScript, 'a')
 for i, v, f in identities:
     if re.match(f"Microsoft\.UI\.Xaml\..*_{arch}_.*\.appx", f):
-        out_file_name = f"xaml-{arch}.appx"
+        out_file_name = f"Microsoft.UI.Xaml_{arch}.appx"
         out_file = download_dir / out_file_name
     # elif re.match(f"Microsoft\.VCLibs\..+\.UWPDesktop_.*_{arch}_.*\.appx", f):
-    #     out_file = download_dir / "vclibs.appx"
-    #     out_file_name = "vclibs.appx"
+    #     out_file_name = f"Microsoft.VCLibs.140.00.UWPDesktop_{arch}.appx"
+    #     out_file = download_dir / out_file_name
     elif re.match(f"MicrosoftCorporationII\.WindowsSubsystemForAndroid_.*\.msixbundle", f):
         out_file_name = f"wsa-{arch}-{release_type}.zip"
         out_file = download_dir / out_file_name
@@ -111,5 +111,4 @@ for i, v, f in identities:
             tmpdownlist.writelines(f'  out={out_file_name}\n')
 tmpdownlist.writelines(f'https://aka.ms/Microsoft.VCLibs.{arch}.14.00.Desktop.appx\n')
 tmpdownlist.writelines(f'  dir={download_dir}\n')
-tmpdownlist.writelines(f'  out=vclibs-{arch}.appx\n')
 tmpdownlist.close()
