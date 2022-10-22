@@ -66,11 +66,11 @@ on:
                     - ZIP
                     - 7-Zip
                     - XZ
-            title:
-                description: "Release Title"
-                required: true
-                default: "WSA"
-                type: string
+            # title:
+            #     description: "Release Title"
+            #     required: true
+            #     default: "WSA"
+            #     type: string
             tag:
                 description: "Release Tag Name"
                 required: true
@@ -283,6 +283,7 @@ jobs:
               uses: softprops/action-gh-release@v1
               with:
                   files: ./output/${{ env.release_asset_name }}.*
-                  name: ${{ inputs.title }}
+                  # name: ${{ inputs.title }}
+                  name: WSA
                   tag_name: ${{ inputs.tag }}
                   prerelease: ${{ inputs.prerelease }}
