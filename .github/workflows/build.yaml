@@ -213,9 +213,9 @@ jobs:
 
                   REMOVE_AMAZON="${opts[REMOVE_AMAZON,${{ inputs.remove_amazon }}]}"
 
-                #   if [[ "${{ inputs.compression }}" != "ZIP" ]]; then
-                #       COMPRESSION="--compress --compress-format ${opts[COMPRESSION,${{ inputs.compression }}]}"
-                #   fi
+                  # if [[ "${{ inputs.compression }}" != "ZIP" ]]; then
+                  #     COMPRESSION="--compress --compress-format ${opts[COMPRESSION,${{ inputs.compression }}]}"
+                  # fi
 
                   if [[ "${{ inputs.gapps_var }}" == "Custom"* ]]; then
                       echo "Generate Download Links"
