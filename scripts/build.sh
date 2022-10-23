@@ -877,6 +877,7 @@ if [ "$COMPRESS_OUTPUT" ] || [ -n "$COMPRESS_FORMAT" ]; then
             tar -cPJvf "${OUTPUT_PATH:?}" "$WORK_DIR/wsa/$artifact_name" || abort
         fi
     elif [ "$COMPRESS_FORMAT" = "zip" ]; then
+        echo "Compressing with zip"
         7z -tzip a "${OUTPUT_PATH:?}" "$WORK_DIR/wsa/$artifact_name" || abort
     fi
 else
