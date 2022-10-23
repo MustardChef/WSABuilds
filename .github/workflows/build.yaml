@@ -260,7 +260,7 @@ jobs:
                   fi
 
                   echo "release_asset_name=WSA_${{ env.WSA_VER }}_${{ inputs.arch }}$magiskVer$gappsVar${amazon}" >> $GITHUB_ENV
-                  find . -maxdepth 1 -type f -name 'WSA.*' -exec bash -c 'mv "$1" "${{ env.release_asset_name }}.${1##*.}"' _ {} \;
+                  find . -maxdepth 1 -type f -name 'WSA.*' -exec bash -c 'mv "$1" "WSA_${{ env.WSA_VER }}_${{ inputs.arch }}$magiskVer$gappsVar${amazon}.${1##*.}"' _ {} \;
             - name: Upload Asset
               uses: softprops/action-gh-release@v1
               with:
