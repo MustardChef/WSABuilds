@@ -229,7 +229,7 @@ jobs:
                   echo "COMMAND_LINE=${COMMAND_LINE[*]}"
 
                   chmod +x ./build.sh
-                  ./build.sh "${COMMAND_LINE[@]}"
+                  ./build.sh $(echo "${COMMAND_LINE[@]}")
             - name: Generate Release Asset Name
               working-directory: ./output
               run: |
