@@ -152,6 +152,7 @@ ROOT_SOL_MAP=(
 COMPRESS_FORMAT_MAP=(
     "7z"
     "xz"
+    "zip"
 )
 
 ARR_TO_STR() {
@@ -844,8 +845,7 @@ else
         echo ":warning: Since OpenGApps doesn't officially support Android 12.1 yet, lock the variant to pico!"
     fi
 fi
-artifact_name="WSA${name1}${name2}_${WSA_VER}_${ARCH}_${WSA_REL}"
-echo "$artifact_name"
+artifact_name="WSA"
 echo -e "\nFinishing building...."
 if [ -f "$OUTPUT_DIR" ]; then
     $SUDO rm -rf "${OUTPUT_DIR:?}"
@@ -853,23 +853,35 @@ fi
 if [ ! -d "$OUTPUT_DIR" ]; then
     mkdir -p "$OUTPUT_DIR"
 fi
+OUTPUT_PATH="${OUTPUT_DIR:?}/$artifact_name"
 if [ "$COMPRESS_OUTPUT" ] || [ -n "$COMPRESS_FORMAT" ]; then
     mv "$WORK_DIR/wsa/$ARCH" "$WORK_DIR/wsa/$artifact_name"
-    if [ "$COMPRESS_FORMAT" = "7z" ]; then
-        rm -f "${OUTPUT_DIR:?}"/"$artifact_name.7z" || abort
-        echo "Compressing with 7z"
-        7z a "$OUTPUT_DIR"/"$artifact_name.7z" "$WORK_DIR/wsa/$artifact_name" || abort
-    elif [ "$COMPRESS_FORMAT" = "xz" ]; then
-        rm -f "${OUTPUT_DIR:?}"/"$artifact_name.tar.xz" || abort
-        echo "Compressing with tar xz"
-        if ! (tar -cP -I 'xz -9 -T0' -f "$OUTPUT_DIR"/"$artifact_name.tar.xz" "$WORK_DIR/wsa/$artifact_name"); then
-            echo "Out of memory? Trying again with single threads..."
-            tar -cPJvf "$OUTPUT_DIR"/"$artifact_name.tar.xz" "$WORK_DIR/wsa/$artifact_name" || abort
+    if [ -z "$COMPRESS_FORMAT" ]; then
+        COMPRESS_FORMAT="7z"
+    fi
+    if [ -n "$COMPRESS_FORMAT" ]; then
+        FILE_EXT=".$COMPRESS_FORMAT"
+        if [ "$FILE_EXT" = ".xz" ]; then
+            FILE_EXT=".tar$FILE_EXT"
         fi
+        OUTPUT_PATH="$OUTPUT_PATH$FILE_EXT"
+    fi
+    rm -f "${OUTPUT_PATH:?}" || abort
+    if [ "$COMPRESS_FORMAT" = "7z" ]; then
+        echo "Compressing with 7z"
+        7z a "${OUTPUT_PATH:?}" "$WORK_DIR/wsa/$artifact_name" || abort
+    elif [ "$COMPRESS_FORMAT" = "xz" ]; then
+        echo "Compressing with tar xz"
+        if ! (tar -cP -I 'xz -9 -T0' -f "${OUTPUT_PATH:?}" "$WORK_DIR/wsa/$artifact_name"); then
+            echo "Out of memory? Trying again with single threads..."
+            tar -cPJvf "${OUTPUT_PATH:?}" "$WORK_DIR/wsa/$artifact_name" || abort
+        fi
+    elif [ "$COMPRESS_FORMAT" = "zip" ]; then
+        7z -tzip a "${OUTPUT_PATH:?}" "$WORK_DIR/wsa/$artifact_name" || abort
     fi
 else
-    rm -rf "${OUTPUT_DIR:?}/${artifact_name}" || abort
-    cp -r "$WORK_DIR"/wsa/"$ARCH" "$OUTPUT_DIR/$artifact_name" || abort
+    rm -rf "${OUTPUT_PATH:?}" || abort
+    cp -r "$WORK_DIR"/wsa/"$ARCH" "$OUTPUT_PATH" || abort
 fi
 echo -e "done\n"
 

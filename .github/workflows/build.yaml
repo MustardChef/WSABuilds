@@ -66,11 +66,6 @@ on:
                     - ZIP
                     - 7-Zip
                     - XZ
-            # title:
-            #     description: "Release Title"
-            #     required: true
-            #     default: "WSA"
-            #     type: string
             tag:
                 description: "Release Tag Name"
                 required: true
@@ -94,7 +89,7 @@ jobs:
             - name: Install Dependencies
               working-directory: ./scripts
               run: |
-                  sudo apt update && sudo apt -y install setools lzip wine winetricks patchelf e2fsprogs python3-pip aria2 p7zip-full attr xz-utils
+                  sudo apt update && sudo apt -y install setools lzip wine winetricks patchelf e2fsprogs python3-pip aria2 p7zip-full attr xz-utils unzip
                   python3 -m pip install requests
                   cp -r ../wine/.cache/* ~/.cache
                   winetricks msxml6
@@ -104,7 +99,7 @@ jobs:
                   DOWNLOAD_DIR=../download
                   DOWNLOAD_CONF_NAME=download.list
 
-                  declare -A opts=( ["ARCH,x86_64"]="x64" ["ARCH,ARM64"]="arm64" ["RELEASE_TYPE,General Availability Channel"]="retail" ["RELEASE_TYPE,Release Preview Channel"]="RP" ["RELEASE_TYPE,Beta Channel"]="WIS" ["RELEASE_TYPE,Dev Channel"]="WIF" ["MAGISK_VER,Stable"]="stable" ["MAGISK_VER,Beta"]="beta" ["MAGISK_VER,Canary"]="canary" ["MAGISK_VER,Debug"]="debug" ["MAGISK_VER,Custom"]="--magisk-custom" ["GAPPS_VAR,None"]="none" ["GAPPS_VAR,Pico"]="pico" ["GAPPS_VAR,Full"]="full" ["REMOVE_AMAZON,true"]="--remove-amazon" ["REMOVE_AMAZON,false"]="" ["COMPRESSION,7-Zip"]="7z" ["COMPRESSION,XZ"]="xz" )
+                  declare -A opts=( ["ARCH,x86_64"]="x64" ["ARCH,ARM64"]="arm64" ["RELEASE_TYPE,General Availability Channel"]="retail" ["RELEASE_TYPE,Release Preview Channel"]="RP" ["RELEASE_TYPE,Beta Channel"]="WIS" ["RELEASE_TYPE,Dev Channel"]="WIF" ["MAGISK_VER,Stable"]="stable" ["MAGISK_VER,Beta"]="beta" ["MAGISK_VER,Canary"]="canary" ["MAGISK_VER,Debug"]="debug" ["MAGISK_VER,Custom"]="--magisk-custom" ["GAPPS_VAR,None"]="none" ["GAPPS_VAR,Pico"]="pico" ["GAPPS_VAR,Full"]="full" ["REMOVE_AMAZON,true"]="--remove-amazon" ["REMOVE_AMAZON,false"]="" ["COMPRESSION,ZIP"]="zip" ["COMPRESSION,7-Zip"]="7z" ["COMPRESSION,XZ"]="xz" )
 
                   ARCH="${opts[ARCH,${{ inputs.arch }}]}"
 
@@ -213,9 +208,7 @@ jobs:
 
                   REMOVE_AMAZON="${opts[REMOVE_AMAZON,${{ inputs.remove_amazon }}]}"
 
-                  # if [[ "${{ inputs.compression }}" != "ZIP" ]]; then
-                  #     COMPRESSION="--compress --compress-format ${opts[COMPRESSION,${{ inputs.compression }}]}"
-                  # fi
+                  COMPRESSION="--compress --compress-format ${opts[COMPRESSION,${{ inputs.compression }}]}"
 
                   if [[ "${{ inputs.gapps_var }}" == "Custom"* ]]; then
                       echo "Generate Download Links"
@@ -267,23 +260,11 @@ jobs:
                   fi
 
                   echo "release_asset_name=WSA_${{ env.WSA_VER }}_${{ inputs.arch }}$magiskVer$gappsVar${amazon}" >> $GITHUB_ENV
-            - name: Compress Asset
-              working-directory: ./output
-              run: |
-                  find ./ -maxdepth 1 -type d -not -path './' -exec mv "{}" WSA \;
-
-                  if [[ "${{ inputs.compression }}" == "ZIP" ]]; then
-                      zip -qrv "${{ env.release_asset_name }}.zip" ./*
-                  elif [[ "${{ inputs.compression }}" == "7-Zip" ]]; then
-                      7z a "${{ env.release_asset_name }}.7z" ./*
-                  else
-                      tar -cP -I 'xz -9 -T0' -f "${{ env.release_asset_name }}.tar.xz" ./*
-                  fi
+                  find . -maxdepth 1 -type f -name 'WSA.*' -exec bash -c 'mv "$1" "${{ env.release_asset_name }}.${1##*.}"' _ {} \;
             - name: Upload Asset
               uses: softprops/action-gh-release@v1
               with:
                   files: ./output/${{ env.release_asset_name }}.*
-                  # name: ${{ inputs.title }}
                   name: WSA
                   tag_name: ${{ inputs.tag }}
                   prerelease: ${{ inputs.prerelease }}
