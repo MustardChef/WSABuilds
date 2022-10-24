@@ -548,6 +548,7 @@ on post-fs-data
     mkdir /dev/$TMP_PATH/.magisk/mirror 700
     mkdir /dev/$TMP_PATH/.magisk/block 700
     copy /sbin/magisk.apk /dev/$TMP_PATH/stub.apk
+    chmod 0644 /dev/$TMP_PATH/stub.apk
     rm /dev/.magisk_unblock
     start $SERVER_NAME1
     start $SERVER_NAME2
