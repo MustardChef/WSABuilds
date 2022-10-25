@@ -242,6 +242,7 @@ jobs:
                   else
                       magiskVer="_Magisk-$(curl -s https://raw.githubusercontent.com/topjohnwu/magisk-files/master/${magisk_vers[${{ inputs.magisk_ver }}]}.json | jq -r ".magisk.version")"
                   fi
+                  export magiskVer
 
                   if [[ "${{ inputs.gapps_var }}" == "None" ]]; then
                       gappsVar=""
@@ -252,15 +253,17 @@ jobs:
                   else
                       gappsVar="_OpenGApps-${{ inputs.gapps_var }}"
                   fi
+                  export gappsVar
 
                   if [[ "${{ inputs.remove_amazon }}" == "true" ]]; then
                       amazon=""
                   else
                       amazon="_Amazon-AppStore"
                   fi
+                  export amazon
 
                   echo "release_asset_name=WSA_${{ env.WSA_VER }}_${{ inputs.arch }}$magiskVer$gappsVar${amazon}" >> $GITHUB_ENV
-                  find . -maxdepth 1 -type f -name 'WSA.*' -exec bash -c 'mv "$1" "WSA_${{ env.WSA_VER }}_${{ inputs.arch }}$magiskVer$gappsVar${amazon}${1##*WSA}"' _ {} \;
+                  find . -maxdepth 1 -type f -name 'WSA.*' -exec bash -c 'mv "$1" "WSA_${{ env.WSA_VER }}_${{ inputs.arch }}${magiskVer}${gappsVar}${amazon}${1##*WSA}"' _ {} \;
             - name: Upload Asset
               uses: softprops/action-gh-release@v1
               with:
