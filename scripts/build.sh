@@ -124,6 +124,7 @@ MAGISK_VER_MAP=(
     "beta"
     "canary"
     "debug"
+    "release"
 )
 
 GAPPS_BRAND_MAP=(
@@ -250,7 +251,6 @@ while [[ $# -gt 0 ]]; do
    case "$1" in
         --arch            ) ARCH="$2"; shift 2 ;;
         --release-type    ) RELEASE_TYPE="$2"; shift 2 ;;
-        --magisk-ver      ) MAGISK_VER="$2"; shift 2 ;;
         --gapps-brand     ) GAPPS_BRAND="$2"; shift 2 ;;
         --gapps-variant   ) GAPPS_VARIANT="$2"; shift 2 ;;
         --root-sol        ) ROOT_SOL="$2"; shift 2 ;;
@@ -259,6 +259,7 @@ while [[ $# -gt 0 ]]; do
         --compress        ) COMPRESS_OUTPUT="yes"; shift ;;
         --offline         ) OFFLINE="on"; shift ;;
         --magisk-custom   ) CUSTOM_MAGISK="debug"; MAGISK_VER=$CUSTOM_MAGISK; shift ;;
+        --magisk-ver      ) MAGISK_VER="$2"; shift 2 ;;
         --debug           ) DEBUG="on"; shift ;;
         --help            ) usage; exit 0 ;;
         --                ) shift; break;;
@@ -314,11 +315,18 @@ echo -e "Build: RELEASE_TYPE=$RELEASE_NAME"
 WSA_ZIP_PATH=$DOWNLOAD_DIR/wsa-$ARCH-$RELEASE_TYPE.zip
 vclibs_PATH=$DOWNLOAD_DIR/Microsoft.VCLibs."$ARCH".14.00.Desktop.appx
 xaml_PATH=$DOWNLOAD_DIR/Microsoft.UI.Xaml_"$ARCH".appx
-MAGISK_PATH=$DOWNLOAD_DIR/magisk-$MAGISK_VER.zip
+MAGISK_ZIP=magisk-$MAGISK_VER.zip
+MAGISK_PATH=$DOWNLOAD_DIR/$MAGISK_ZIP
 if [ "$CUSTOM_MAGISK" ]; then
     if [ ! -f "$MAGISK_PATH" ]; then
-        echo "Custom Magisk not found, please rename it to magisk-debug.zip and put it in $DOWNLOAD_DIR"
-        abort
+        echo "Custom Magisk $MAGISK_ZIP not found"
+        MAGISK_ZIP=app-$MAGISK_VER.apk
+        echo "Fallback to $MAGISK_ZIP"
+        MAGISK_PATH=$DOWNLOAD_DIR/$MAGISK_ZIP
+        if [ ! -f "$MAGISK_PATH" ]; then
+            echo -e "Custom Magisk $MAGISK_ZIP not found\nPlease put custom Magisk in $DOWNLOAD_DIR"
+            abort
+        fi
     fi
 fi
 if [ "$GAPPS_BRAND" = "OpenGApps" ]; then
