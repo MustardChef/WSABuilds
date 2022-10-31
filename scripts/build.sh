@@ -515,6 +515,7 @@ if [ "$ROOT_SOL" = 'magisk' ] || [ "$ROOT_SOL" = '' ]; then
 #!/system/bin/sh
 mkdir -p /data/adb/magisk
 cp /sbin/* /data/adb/magisk/
+sync
 chmod -R 755 /data/adb/magisk
 restorecon -R /data/adb/magisk
 for module in \$(ls /data/adb/modules); do
@@ -558,7 +559,7 @@ on post-fs-data
     copy /sbin/magisk.apk /dev/$TMP_PATH/stub.apk
     chmod 0644 /dev/$TMP_PATH/stub.apk
     rm /dev/.magisk_unblock
-    start $SERVER_NAME1
+    exec_start $SERVER_NAME1
     start $SERVER_NAME2
     wait /dev/.magisk_unblock 40
     rm /dev/.magisk_unblock
