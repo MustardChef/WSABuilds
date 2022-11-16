@@ -77,7 +77,7 @@ How do I install custom Magisk or GApps?
 1. Fork this repository
 2. **A)** Magisk
    1. **a)** Via local file:
-      1. Create a folder named `download in the root
+      1. Create a folder named `download` in the root
       2. Move your custom Magisk APK/ZIP file to the `download` folder and rename it to `magisk-debug.zip`
    2. In GitHub Actions, click on `Build MagiskOnWSA`
    3. Choose `Custom` in the `Magisk Version` field
@@ -85,7 +85,7 @@ How do I install custom Magisk or GApps?
       1. Input the URL pointing to your custom Magisk APK/ZIP file in the `Custom Magisk APK/ZIP URL` field
 3. **B)** GApps
    1. **a)** Via local file:
-      1. Create a folder named `download in the root
+      1. Create a folder named `download` in the root
       2. Move your custom OpenGApps or MindTheGapps ZIP file to the `download` folder and rename it to `OpenGApps-{arch}-{variant}.zip` or `MindTheGapps-{arch}.zip` *(e.g. `OpenGApps-x64-pico.zip` or `MindTheGapps-arm64.zip`)*
    2. In GitHub Actions, click on `Build MagiskOnWSA`
    3. Choose `Custom (OpenGApps)` or `Custom (MindTheGapps)` in the `GApps Variant` field
