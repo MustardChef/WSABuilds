@@ -57,6 +57,11 @@ on:
                 required: true
                 default: true
                 type: boolean
+            # nofix_props:
+            #     description: Props Remain Unfixed
+            #     required: true
+            #     default: false
+            #     type: boolean
             compression:
                 description: "Compression Algorithm"
                 required: true
@@ -99,7 +104,7 @@ jobs:
                   DOWNLOAD_DIR=../download
                   DOWNLOAD_CONF_NAME=download.list
 
-                  declare -A opts=( ["ARCH,x86_64"]="x64" ["ARCH,ARM64"]="arm64" ["RELEASE_TYPE,General Availability Channel"]="retail" ["RELEASE_TYPE,Release Preview Channel"]="RP" ["RELEASE_TYPE,Beta Channel"]="WIS" ["RELEASE_TYPE,Dev Channel"]="WIF" ["MAGISK_VER,Stable"]="stable" ["MAGISK_VER,Beta"]="beta" ["MAGISK_VER,Canary"]="canary" ["MAGISK_VER,Debug"]="debug" ["MAGISK_VER,Custom"]="--magisk-custom" ["GAPPS_VAR,None"]="none" ["GAPPS_VAR,Pico"]="pico" ["GAPPS_VAR,Full"]="full" ["REMOVE_AMAZON,true"]="--remove-amazon" ["COMPRESSION,ZIP"]="zip" ["COMPRESSION,7-Zip"]="7z" ["COMPRESSION,XZ"]="xz" )
+                  declare -A opts=( ["ARCH,x86_64"]="x64" ["ARCH,ARM64"]="arm64" ["RELEASE_TYPE,General Availability Channel"]="retail" ["RELEASE_TYPE,Release Preview Channel"]="RP" ["RELEASE_TYPE,Beta Channel"]="WIS" ["RELEASE_TYPE,Dev Channel"]="WIF" ["MAGISK_VER,Stable"]="stable" ["MAGISK_VER,Beta"]="beta" ["MAGISK_VER,Canary"]="canary" ["MAGISK_VER,Debug"]="debug" ["MAGISK_VER,Custom"]="--magisk-custom" ["GAPPS_VAR,None"]="none" ["GAPPS_VAR,Pico"]="pico" ["GAPPS_VAR,Full"]="full" ["REMOVE_AMAZON,true"]="--remove-amazon" ["NOFIX_PROPS,true"]="--nofix-props" ["COMPRESSION,ZIP"]="zip" ["COMPRESSION,7-Zip"]="7z" ["COMPRESSION,XZ"]="xz" )
 
                   ARCH="${opts[ARCH,${{ inputs.arch }}]}"
 
@@ -208,6 +213,8 @@ jobs:
 
                   REMOVE_AMAZON="${opts[REMOVE_AMAZON,${{ inputs.remove_amazon }}]}"
 
+                  NOFIX_PROPS="${opts[NOFIX_PROPS,${{ inputs.nofix_props }}]}"
+
                   COMPRESSION="--compress --compress-format ${opts[COMPRESSION,${{ inputs.compression }}]}"
 
                   if [[ "${{ inputs.gapps_var }}" == "Custom"* ]]; then
@@ -225,7 +232,7 @@ jobs:
                       OFFLINE="--offline"
                   fi
 
-                  COMMAND_LINE=(--arch "$ARCH" --release-type "$RELEASE_TYPE" --root-sol "$ROOT_SOL" --magisk-ver "$MAGISK_VER" "$CUSTOM_MAGISK" --gapps-brand "$GAPPS_BRAND" --gapps-variant "$GAPPS_VAR" "$COMPRESSION" "$REMOVE_AMAZON" "$OFFLINE")
+                  COMMAND_LINE=(--arch "$ARCH" --release-type "$RELEASE_TYPE" --root-sol "$ROOT_SOL" --magisk-ver "$MAGISK_VER" "$CUSTOM_MAGISK" --gapps-brand "$GAPPS_BRAND" --gapps-variant "$GAPPS_VAR" "$COMPRESSION" "$REMOVE_AMAZON" "$NOFIX_PROPS" "$OFFLINE")
                   echo "COMMAND_LINE=${COMMAND_LINE[*]}"
 
                   chmod +x ./build.sh

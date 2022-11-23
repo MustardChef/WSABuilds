@@ -162,9 +162,13 @@ ARR_TO_STR() {
     printf -v joined "%s, " "${arr[@]}"
     echo "${joined%, }"
 }
+GAPPS_PROPS_MSG1="\033[0;31mWARNING: Services such as the Play Store may stop working properly."
+GAPPS_PROPS_MSG2="We are not responsible for any problems caused by this!\033[0m"
+GAPPS_PROPS_MSG3="Info: https://support.google.com/android/answer/10248227"
 usage() {
     default
-    echo "Usage:
+    echo -e "
+Usage:
     --arch          Architecture of WSA.
 
                     Possible values: $(ARR_TO_STR "${ARCH_MAP[@]}")
@@ -211,10 +215,14 @@ Additional Options:
     --magisk-custom Install custom Magisk
     --debug         Debug build mode
     --help          Show this help message and exit
+    --nofix-props   No fix \"build.prop\"
+                    $GAPPS_PROPS_MSG1
+                    $GAPPS_PROPS_MSG2
+                    $GAPPS_PROPS_MSG3
 
 Example:
     ./build.sh --release-type RP --magisk-ver beta --gapps-variant pico --remove-amazon
-    ./build.sh --arch arm64 --release-type WIF --gapps-brand MindTheGapps
+    ./build.sh --arch arm64 --release-type WIF --gapps-brand OpenGApps --nofix-props
     ./build.sh --release-type WIS --gapps-brand none
     ./build.sh --offline --gapps-variant pico --magisk-custom
     "
@@ -226,6 +234,7 @@ ARGUMENT_LIST=(
     "magisk-ver:"
     "gapps-brand:"
     "gapps-variant:"
+    "nofix-props"
     "root-sol:"
     "compress-format:"
     "remove-amazon"
@@ -253,18 +262,25 @@ while [[ $# -gt 0 ]]; do
         --release-type    ) RELEASE_TYPE="$2"; shift 2 ;;
         --gapps-brand     ) GAPPS_BRAND="$2"; shift 2 ;;
         --gapps-variant   ) GAPPS_VARIANT="$2"; shift 2 ;;
+        --nofix-props     ) NOFIX_PROPS="yes"; shift ;;
         --root-sol        ) ROOT_SOL="$2"; shift 2 ;;
         --compress-format ) COMPRESS_FORMAT="$2"; shift 2 ;;
-        --remove-amazon   ) REMOVE_AMAZON="remove"; shift ;;
+        --remove-amazon   ) REMOVE_AMAZON="yes"; shift ;;
         --compress        ) COMPRESS_OUTPUT="yes"; shift ;;
         --offline         ) OFFLINE="on"; shift ;;
-        --magisk-custom   ) CUSTOM_MAGISK="debug"; MAGISK_VER=$CUSTOM_MAGISK; shift ;;
+        --magisk-custom   ) CUSTOM_MAGISK="debug"; shift ;;
         --magisk-ver      ) MAGISK_VER="$2"; shift 2 ;;
         --debug           ) DEBUG="on"; shift ;;
         --help            ) usage; exit 0 ;;
         --                ) shift; break;;
    esac
 done
+
+if [ "$CUSTOM_MAGISK" ]; then
+    if [ -z "$MAGISK_VER" ]; then
+        MAGISK_VER=$CUSTOM_MAGISK
+    fi
+fi
 
 check_list() {
     local input=$1
@@ -312,7 +328,7 @@ RELEASE_NAME=${RELEASE_NAME_MAP[$RELEASE_TYPE]} || abort
 
 echo -e "Build: RELEASE_TYPE=$RELEASE_NAME"
 
-WSA_ZIP_PATH=$DOWNLOAD_DIR/wsa-$ARCH-$RELEASE_TYPE.zip
+WSA_ZIP_PATH=$DOWNLOAD_DIR/wsa-$RELEASE_TYPE.zip
 vclibs_PATH=$DOWNLOAD_DIR/Microsoft.VCLibs."$ARCH".14.00.Desktop.appx
 xaml_PATH=$DOWNLOAD_DIR/Microsoft.UI.Xaml_"$ARCH".appx
 MAGISK_ZIP=magisk-$MAGISK_VER.zip
@@ -433,10 +449,6 @@ if [ "$GAPPS_BRAND" != 'none' ]; then
             rm -rf "${WORK_DIR:?}"/gapps/system || abort
         fi
         cp -r ../"$ARCH"/gapps/* "$WORK_DIR"/gapps || abort
-        if [ "$GAPPS_BRAND" = "MindTheGapps" ]; then
-            mv "$WORK_DIR"/gapps/priv-app/* "$WORK_DIR"/gapps/system_ext/priv-app || abort
-            rm -rf "${WORK_DIR:?}"/gapps/priv-app || abort
-        fi
     else
         echo "The $GAPPS_BRAND zip package does not exist."
         abort
@@ -674,9 +686,13 @@ if [ "$GAPPS_BRAND" != 'none' ]; then
 fi
 
 if [ "$GAPPS_BRAND" != 'none' ]; then
-    echo "Fix $GAPPS_BRAND prop"
-    $SUDO python3 fixGappsProp.py "$MOUNT_DIR" || abort
-    echo -e "done\n"
+    if [ "$NOFIX_PROPS" ]; then
+        echo -e "Skip fix $GAPPS_BRAND prop!\n$GAPPS_PROPS_MSG1\n$GAPPS_PROPS_MSG2\n$GAPPS_PROPS_MSG3\n"
+    else
+        echo "Fix $GAPPS_BRAND prop"
+        $SUDO python3 fixGappsProp.py "$MOUNT_DIR" || abort
+        echo -e "done\n"
+    fi
 fi
 
 echo "Umount images"

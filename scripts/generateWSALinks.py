@@ -91,7 +91,7 @@ for i, v, f in identities:
     #     out_file_name = f"Microsoft.VCLibs.140.00.UWPDesktop_{arch}.appx"
     #     out_file = download_dir / out_file_name
     elif re.match(f"MicrosoftCorporationII\.WindowsSubsystemForAndroid_.*\.msixbundle", f):
-        out_file_name = f"wsa-{arch}-{release_type}.zip"
+        out_file_name = f"wsa-{release_type}.zip"
         out_file = download_dir / out_file_name
     else:
         continue
