@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 #
 # This file is part of MagiskOnWSALocal.
 #
@@ -31,9 +31,13 @@ variant = sys.argv[3]
 download_dir = Path.cwd().parent / \
     "download" if sys.argv[4] == "" else Path(sys.argv[4]).resolve()
 tempScript = sys.argv[5]
+android_api = sys.argv[6]
+file_name = sys.argv[7]
 print(
     f"Generating {brand} download link: arch={arch} variant={variant}", flush=True)
 abi_map = {"x64": "x86_64", "arm64": "arm64"}
+android_api_map = {"30": "11.0", "32": "12.1", "33": "13.0"}
+release = android_api_map[android_api]
 if brand == "OpenGApps":
     # Use Android 12.1 build of OpenGApps (also supports more variants like Full)
     if arch == "x64" and variant == "pico":
@@ -42,10 +46,6 @@ if brand == "OpenGApps":
         link = "http://peternjeim.ddns.net:8081/ipfs/QmULfSMwWuukQR7r9KEvwD2XzsChHTvpswmNqJyEU64jwM"
     # Use official Android 11.0 build of OpenGApps (since I didn't build all variants)
     else:
-        # TODO: keep it 11.0 since official opengapps does not support 12+ yet
-        # As soon as opengapps is available for 12+, we need to get the sdk/release from build.prop and
-        # download the corresponding version
-        release = "11.0"
         try:
             res = requests.get(f"https://api.opengapps.org/list")
             j = json.loads(res.content)
@@ -63,7 +63,7 @@ if brand == "OpenGApps":
 elif brand == "MindTheGapps":
     res = requests.get(
         f'https://sourceforge.net/projects/wsa-mtg/rss?path=/{abi_map[arch]}&limit=100')
-    link = re.search(f'https://.*{abi_map[arch]}/.*\.zip/download', res.text).group().replace(
+    link = re.search(f'https://.*{release}.*{abi_map[arch]}.*\.zip/download', res.text).group().replace(
         '.zip/download', '.zip').replace('sourceforge.net/projects/wsa-mtg/files', 'downloads.sourceforge.net/project/wsa-mtg')
 
 print(f"download link: {link}", flush=True)
@@ -71,7 +71,4 @@ print(f"download link: {link}", flush=True)
 with open(download_dir/tempScript, 'a') as f:
     f.writelines(f'{link}\n')
     f.writelines(f'  dir={download_dir}\n')
-    if brand == "OpenGApps":
-        f.writelines(f'  out={brand}-{arch}-{variant}.zip\n')
-    elif brand == "MindTheGapps":
-        f.writelines(f'  out={brand}-{arch}.zip\n')
+    f.writelines(f'  out={file_name}\n')

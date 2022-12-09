@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 #
 # This file is part of MagiskOnWSALocal.
 #
@@ -23,6 +23,7 @@ import sys
 import zipfile
 from pathlib import Path
 import platform
+import os
 
 is_x86_64 = platform.machine() in ("AMD64", "x86_64")
 host_abi = "x64" if is_x86_64 else "arm64"
@@ -40,6 +41,10 @@ def extract_as(zip, name, as_name, dir):
     zip.extract(info, workdir / dir)
 
 with zipfile.ZipFile(magisk_zip) as zip:
+    comment = zip.comment.decode('utf-8')
+    with open(os.environ['WSA_WORK_ENV'], 'a') as environ_file:
+        environ_file.write(f'{comment}\n')
+    print(f'{comment}', flush=True)
     extract_as(
         zip, f"lib/{ abi_map[arch][0] }/libmagisk64.so", "magisk64", "magisk")
     extract_as(

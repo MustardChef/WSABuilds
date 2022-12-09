@@ -1,3 +1,4 @@
+*.py text eol=lf
 *.sh text eol=lf
 *.exe binary
 *.apk binary
