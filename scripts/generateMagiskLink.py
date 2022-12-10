@@ -37,7 +37,7 @@ if magisk_ver == "stable" or magisk_ver == "beta" or magisk_ver == "canary" or m
             f"https://github.com/topjohnwu/magisk-files/raw/master/{magisk_ver}.json").content)['magisk']['link']
         magisk_version = json.loads(requests.get(
             f"https://github.com/topjohnwu/magisk-files/raw/master/{magisk_ver}.json").content)['magisk']['version']
-        with open(os.environ['WSA_WORK_ENV'], 'a') as environ_file:
+        with open(os.environ['GITHUB_ENV'], 'a') as environ_file:
                 environ_file.write(f'MAGISK_VERSION={magisk_version}\n')
     except Exception:
         print("Failed to fetch from GitHub API, fallbacking to jsdelivr...")
@@ -45,7 +45,7 @@ if magisk_ver == "stable" or magisk_ver == "beta" or magisk_ver == "canary" or m
             f"https://fastly.jsdelivr.net/gh/topjohnwu/magisk-files@master/{magisk_ver}.json").content)['magisk']['link']
         magisk_version = json.loads(requests.get(
             f"https://fastly.jsdelivr.net/gh/topjohnwu/magisk-files@master/{magisk_ver}.json").content)['magisk']['version']
-        with open(os.environ['WSA_WORK_ENV'], 'a') as environ_file:
+        with open(os.environ['GITHUB_ENV'], 'a') as environ_file:
                 environ_file.write(f'MAGISK_VERSION={magisk_version}\n')
 print(f"download link: {magisk_link}", flush=True)
 
