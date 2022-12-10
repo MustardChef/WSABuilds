@@ -53,6 +53,8 @@ with zipfile.ZipFile(wsa_zip_path) as zip:
                     environ_file.write(f'WSA_VER={long_ver}\n')
                     environ_file.write(f'WSA_MAIN_VER={main_ver}\n')
                     environ_file.write(f'WSA_REL={rel_long}\n')
+                with open(os.environ['GITHUB_ENV'], 'a') as environ_file:
+                    environ_file.write(f'WSA_VER={long_ver}\n')
         if 'language' in f.filename.lower() or 'scale' in f.filename.lower():
             name = f.filename.split("-", 1)[1].split(".")[0]
             zip.extract(f, workdir)
