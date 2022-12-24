@@ -108,6 +108,7 @@ jobs:
               run: |
                   DOWNLOAD_DIR=../download
                   DOWNLOAD_CONF_NAME=download.list
+                  mkdir -p "$DOWNLOAD_DIR"
 
                   declare -A opts=( ["ARCH,x86_64"]="x64" ["ARCH,ARM64"]="arm64" ["RELEASE_TYPE,General Availability Channel"]="retail" ["RELEASE_TYPE,Release Preview Channel"]="RP" ["RELEASE_TYPE,Beta Channel"]="WIS" ["RELEASE_TYPE,Dev Channel"]="WIF" ["MAGISK_VER,Stable"]="stable" ["MAGISK_VER,Beta"]="beta" ["MAGISK_VER,Canary"]="canary" ["MAGISK_VER,Debug"]="debug" ["MAGISK_VER,Custom"]="--magisk-custom" ["GAPPS_VAR,None"]="none" ["GAPPS_VAR,Pico"]="pico" ["GAPPS_VAR,Full"]="full" ["REMOVE_AMAZON,true"]="--remove-amazon" ["NOFIX_PROPS,true"]="--nofix-props" ["SKIP_DOWNLOAD_WSA,true"]="--skip-download-wsa" ["COMPRESSION,ZIP"]="zip" ["COMPRESSION,7-Zip"]="7z" ["COMPRESSION,XZ"]="xz" )
 
