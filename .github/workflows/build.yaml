@@ -121,9 +121,9 @@ jobs:
                       if [[ "${{ inputs.magisk_ver }}" != "Custom" ]]; then
                           MAGISK_VER="${opts[MAGISK_VER,${{ inputs.magisk_ver }}]}"
                       else
-                          echo "${{ inputs.magisk_url }}" > "$DOWNLOAD_DIR"/"$DOWNLOAD_CONF_NAME"
+                          echo "${{ inputs.magisk_url }}\n out=magisk-debug.zip" > "$DOWNLOAD_DIR"/"$DOWNLOAD_CONF_NAME"
 
-                          if ! aria2c --no-conf --log-level=info --log="$DOWNLOAD_DIR/aria2_custom_magisk_download.log" -x16 -s16 -j5 -c -R -m0 --async-dns=false --check-integrity --continue --allow-overwrite --conditional-get -d"$DOWNLOAD_DIR" -o magisk-debug.zip -i"$DOWNLOAD_DIR"/"$DOWNLOAD_CONF_NAME"; then
+                          if ! aria2c --no-conf --log-level=info --log="$DOWNLOAD_DIR/aria2_custom_magisk_download.log" -x16 -s16 -j5 -c -R -m0 --async-dns=false --check-integrity --continue --allow-overwrite --conditional-get -d"$DOWNLOAD_DIR" -i"$DOWNLOAD_DIR"/"$DOWNLOAD_CONF_NAME"; then
                               echo "Magisk download error!"
                               exit 1
                           fi
@@ -190,8 +190,8 @@ jobs:
                                   echo "opengapps_var=${GAPPS_VAR^}" >> $GITHUB_ENV
                               else
                                   GAPPS_VAR="pico"
-                                  echo "${{ inputs.gapps_url }}" > -i"$DOWNLOAD_DIR"/"$DOWNLOAD_CONF_NAME"
-                                  if ! aria2c --no-conf --log-level=info --log="$DOWNLOAD_DIR/aria2_gapps_download.log" -x16 -s16 -j5 -c -R -m0 --async-dns=false --check-integrity --continue --allow-overwrite --conditional-get -d"$DOWNLOAD_DIR" -o OpenGApps-"$ARCH"-"$GAPPS_VAR".zip -i"$DOWNLOAD_DIR"/"$DOWNLOAD_CONF_NAME"; then
+                                  echo "${{ inputs.gapps_url }}\n out=OpenGApps-"$ARCH"-"$GAPPS_VAR".zip" > -i"$DOWNLOAD_DIR"/"$DOWNLOAD_CONF_NAME"
+                                  if ! aria2c --no-conf --log-level=info --log="$DOWNLOAD_DIR/aria2_gapps_download.log" -x16 -s16 -j5 -c -R -m0 --async-dns=false --check-integrity --continue --allow-overwrite --conditional-get -d"$DOWNLOAD_DIR" -i"$DOWNLOAD_DIR"/"$DOWNLOAD_CONF_NAME"; then
                                       echo "OpenGApps download error!"
                                       exit 1
                                   fi
@@ -203,9 +203,9 @@ jobs:
                           GAPPS_BRAND="MindTheGapps"
                           if [[ "${{ inputs.gapps_var }}" == "Custom (MindTheGapps)" ]]; then
                               if [[ -n "${${{ inputs.gapps_url }}+x}" ]]; then
-                                  echo "${{ inputs.gapps_url }}" > -i"$DOWNLOAD_DIR"/"$DOWNLOAD_CONF_NAME"
+                                  echo "${{ inputs.gapps_url }}\n out=MindTheGapps-"$ARCH".zip" > -i"$DOWNLOAD_DIR"/"$DOWNLOAD_CONF_NAME"
 
-                                  if ! aria2c --no-conf --log-level=info --log="$DOWNLOAD_DIR/aria2_gapps_download.log" -x16 -s16 -j5 -c -R -m0 --async-dns=false --check-integrity --continue --allow-overwrite --conditional-get -d"$DOWNLOAD_DIR" -o MindTheGapps-"$ARCH".zip -i"$DOWNLOAD_DIR"/"$DOWNLOAD_CONF_NAME"; then
+                                  if ! aria2c --no-conf --log-level=info --log="$DOWNLOAD_DIR/aria2_gapps_download.log" -x16 -s16 -j5 -c -R -m0 --async-dns=false --check-integrity --continue --allow-overwrite --conditional-get -d"$DOWNLOAD_DIR" -i"$DOWNLOAD_DIR"/"$DOWNLOAD_CONF_NAME"; then
                                       echo "MindTheGapps download error!"
                                       exit 1
                                   fi
