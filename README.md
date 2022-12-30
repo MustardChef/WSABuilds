@@ -11,7 +11,7 @@
 | - RAM: 8 GB (minimum) and 16 GB (recommended).|- RAM: 8 GB (minimum) and 16 GB (recommended).|
 |- Processor: Your PC should meet the basic Windows 11 requirements i.e Core i3 8th Gen, Ryzen 3000, Snapdragon 8c, or above.| - Processor: N/A (This is a bit of a hit or miss)
 |- Processor type: x64 or ARM64.| - Processor type: x64 or ARM64.|
-|- Virtual Machine Platform: This optional setting is for virtualization and you can enable the setting from Control Panel.| - Virtual Machine Platform: This optional setting is for virtualization and you can enable the setting from Control Panel.|
+|- Virtual Machine Platform Enabled: This optional setting is for virtualization and you can enable the setting from Control Panel.| - Virtual Machine Platform Enabled: This optional setting is for virtualization and you can enable the setting from Control Panel.|
 |- Storage: Solid-state drive (SSD) or Hard Disk Drive (HDD) (NOT RECOMMENDED).| - Storage: Solid-state drive (SSD) or Hard Disk Drive (HDD) (NOT RECOMMENDED).|
 |- Windows 11: Build 22000.526 or higher.| - Windows 10: 22H2 10.0.19045.2311 or higher.|
 
