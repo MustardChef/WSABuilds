@@ -94,6 +94,7 @@ How do I install custom Magisk or GApps?
 
 ## Credits
 
+- [PeterNjeim](https://github.com/PeterNjeim/MagiskOnWSA): For providing and continuing the development of the script
 - [StoreLib](https://github.com/StoreDev/StoreLib): API for downloading WSA
 - [Magisk](https://github.com/topjohnwu/Magisk): The Magic Mask for Android
 - [The Open Google Apps Project](https://opengapps.org): Script the automatic generation of up-to-date Google Apps packages
