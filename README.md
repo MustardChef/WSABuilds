@@ -1,5 +1,5 @@
-
-# MagiskOnWSA (Google Play Services and Magisk on Windows Subsystem For Android)
+# MagiskOnWSA 
+## (Google Play Services and Magisk on Windows Subsystem For Android)
 
 | :exclamation: **Important:**  &nbsp;  `⚠️DO NOT FORK⚠️`               |
 |------------------------------------------------------------------------|
@@ -93,6 +93,7 @@ How do I install custom Magisk or GApps?
 
 ## Credits
 
+- [Microsoft](https://apps.microsoft.com/store/detail/windows-subsystem-for-android%E2%84%A2-with-amazon-appstore/9P3395VX91NR): For providing Windows Subsystem For Android™ and related files. Windows Subsystem For Android™ and Windows Subsystem For Android™ Logo are trademarks of Microsoft Corporation. Microsoft Corporation reserves all rights to these trademarks. By downloading and installing Windows Subsystem For Android™, you agree to the [Terms and Conditions](https://support.microsoft.com/en-gb/windows/microsoft-software-license-terms-microsoft-windows-subsystem-for-android-cf8dfb03-ba62-4daa-b7f3-e2cb18f968ad) and [Privacy Policy](https://privacy.microsoft.com/en-gb/privacystatement)
 - [PeterNjeim](https://github.com/PeterNjeim/MagiskOnWSA): For providing and continuing the development of the script
 - [StoreLib](https://github.com/StoreDev/StoreLib): API for downloading WSA
 - [Magisk](https://github.com/topjohnwu/Magisk): The Magic Mask for Android
