@@ -8,7 +8,7 @@
 ## Requirements
 |     ![win11](https://img.icons8.com/color/48/null/windows-11.png) &nbsp; Windows 11        |     ![win10](https://img.icons8.com/fluency/48/null/windows-10.png) &nbsp; **Windows 10**       |
 |-------------------------|-----------------------|
-   | [![win11down](https://img.shields.io/badge/Download-Windows%2011-blue?style=for-the-badge&logo=windows11)]("https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_22.10.4000.7.0_x86_64") | [![win11down](https://img.shields.io/badge/Download-Windows%2010-blue?style=for-the-badge&logo=windows)]("https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_22.10.4000.7.0_x86_64")
+   | [![win11down](https://img.shields.io/badge/Download-Windows%2011-blue?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_22.10.4000.7.0_x86_64) | [![win11down](https://img.shields.io/badge/Download-Windows%2010-blue?style=for-the-badge&logo=windows)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_22.10.4000.7.0_x86_64)
 | - RAM: 6 GB (not recommended), 8 GB (minimum) and 16 GB (recommended).|- RAM: 6 GB (not recommended), 8 GB (minimum) and 16 GB (recommended).|
 |- Processor: Your PC should meet the basic Windows 11 requirements i.e Core i3 8th Gen, Ryzen 3000, Snapdragon 8c, or above.| - Processor: N/A (This is a bit of a hit or miss)
 |- Processor type: x64 or ARM64.| - Processor type: x64 or ARM64.|
