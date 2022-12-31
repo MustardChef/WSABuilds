@@ -1,4 +1,4 @@
-# MagiskOnWSA 
+# MagiskOnWSA (For Windows 10 and 11)
 ## (Google Play Services and Magisk on Windows Subsystem For Android)
 
 | :exclamation: **Important:**  &nbsp;  `⚠️DO NOT FORK⚠️`               |
@@ -8,7 +8,7 @@
 ## Requirements
 |     ![win11](https://img.icons8.com/color/48/null/windows-11.png) &nbsp; Windows 11        |     ![win10](https://img.icons8.com/fluency/48/null/windows-10.png) &nbsp; **Windows 10**       |
 |-------------------------|-----------------------|
-| - RAM: 8 GB (minimum) and 16 GB (recommended).|- RAM: 8 GB (minimum) and 16 GB (recommended).|
+| - RAM: 6 GB (not recommended) 8 GB (minimum) and 16 GB (recommended).|- RAM: 6 GB (not recommended) 8 GB (minimum) and 16 GB (recommended).|
 |- Processor: Your PC should meet the basic Windows 11 requirements i.e Core i3 8th Gen, Ryzen 3000, Snapdragon 8c, or above.| - Processor: N/A (This is a bit of a hit or miss)
 |- Processor type: x64 or ARM64.| - Processor type: x64 or ARM64.|
 |- Virtual Machine Platform Enabled: This optional setting is for virtualization and you can enable the setting from Control Panel/ Optional Features.| - Virtual Machine Platform Enabled: This optional setting is for virtualization and you can enable the setting from Control Panel/ Optional Features.|
@@ -48,6 +48,14 @@
 10. Once the WSA app shows, click `Uninstall` in the right pane
 
 ## Help
+
+Help me, I am having problems with the MagiskOnWSA
+
+- Open an issue and describe the issue with sufficent detail
+
+Help me, I am having problems with installing WSA on Windows 10
+
+- I am not working on the patch, and nor claim to. For full support visit the project homepage and open an issue there: https://github.com/cinit/WSAPatch/issues/
 
 How do I get a logcat?
 
