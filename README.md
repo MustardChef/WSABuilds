@@ -1,7 +1,10 @@
 # MagiskOnWSA (For Windows 10 and 11)
 ## (Google Play Services and Magisk on Windows Subsystem For Android)
  [![win11down](https://img.shields.io/badge/Download-Windows%2011-blue?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11) &nbsp; &nbsp; [![win11down](https://img.shields.io/badge/Download-Windows%2010-blue?style=for-the-badge&logo=windows)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10)
-
+ 
+> **Note**
+>: To request a newer WSA build or a WSA with a different version of GApps or Magisk or you have any questions, feel free to open an issue in the [Issues page](https://github.com/MustardChef/WSABuilds/issues).
+ 
 | :exclamation: **Important:**  &nbsp;  `⚠️DO NOT FORK⚠️`               |
 |------------------------------------------------------------------------|
 **This repository is designed specifically not to be forked. This does not use the same mechanism as the original MagiskOnWSA, as the original mechanism is slow and unreliable, and also violates GitHub's Terms of Service due to abuse of GitHub Actions in forks. Don't fork this repository unless you're a developer and want to modify the code itself or want to download a specific configuration of WSA not already available in the [Releases page](https://github.com/MustardChef/WSABuilds/releases/latest).**
