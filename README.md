@@ -1,9 +1,9 @@
 # MagiskOnWSA (For Windows 10 and 11)
-## (Google Play Services and Magisk on Windows Subsystem For Android)
+## (Windows Subsystem For Android with Google Play Services and / or Magisk)
  [![win11down](https://img.shields.io/badge/Download-Windows%2011-blue?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11) &nbsp; &nbsp; [![win11down](https://img.shields.io/badge/Download-Windows%2010-blue?style=for-the-badge&logo=windows)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10)
  
 > **Note**
->: To request a newer WSA build or a WSA with a different version of GApps or Magisk or you have any questions, feel free to open an issue in the [Issues page](https://github.com/MustardChef/WSABuilds/issues).
+>: To request a newer WSA build or a WSA build with a different version of GApps or Magisk or a without them (root or Google Play) or you have any questions, feel free to open an issue in the [Issues page](https://github.com/MustardChef/WSABuilds/issues).
  
 | :exclamation: **Important:**  &nbsp;  `⚠️DO NOT FORK⚠️`               |
 |------------------------------------------------------------------------|
