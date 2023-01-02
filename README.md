@@ -1,11 +1,12 @@
 # MagiskOnWSA (For Windows 10 and 11)
-## (Windows Subsystem For Android with Google Play Services and / or Magisk)
- [![win11down](https://img.shields.io/badge/Download%20Stable-Windows%2011-blue?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11) &nbsp; &nbsp; [![win11down](https://img.shields.io/badge/Download%20Stable-Windows%2010-blue?style=for-the-badge&logo=windows)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10)
- 
- [![win11downpre](https://img.shields.io/badge/Download%20Preview%20Build-Windows%2011-red?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_PreviewBuild) &nbsp;  [![win10downpre](https://img.shields.io/badge/Download%20Preview%20Build-Windows%2010-red?style=for-the-badge&logo=windows)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_PreviewBuild)
- 
+## (Windows Subsystem For Android™ (WSA) with Google Play Services and / or Magisk)
+
 > **Note**
->: To request a newer WSA build or a WSA build with a different version of GApps or Magisk or a build without them (root or Google Play) or you have any questions, feel free to open an issue in the [Issues page](https://github.com/MustardChef/WSABuilds/issues).
+>  ### *Prebuilt WSA Builds for Windows 11 in [Releases]("https://github.com/MustardChef/WSABuilds/releases") have not been modified in anyway prior and subsequent to running the MagiskOnWSA script and upload to Github. Prebuilt WSA Builds for Windows 10 releases only have had AppxManifest.xml, icu.dll and WsaPatch.dll patched according to the WSAPatch guide before upload to Github.* 
+ [![win11down](https://img.shields.io/badge/Download%20Stable-Windows%2011-blue?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11) &nbsp; &nbsp; [![win11down](https://img.shields.io/badge/Download%20Stable-Windows%2010-blue?style=for-the-badge&logo=windows)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10)
+
+[![win11downpre](https://img.shields.io/badge/Download%20Preview%20Build-Windows%2011-red?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_PreviewBuild) &nbsp;  [![win10downpre](https://img.shields.io/badge/Download%20Preview%20Build-Windows%2010-red?style=for-the-badge&logo=windows)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_PreviewBuild)
+ 
  
 | :exclamation: **Important:**  &nbsp;  `⚠️DO NOT FORK⚠️`               |
 |------------------------------------------------------------------------|
@@ -24,9 +25,14 @@
 
 ## Installation
 
-> Note: If you have the official WSA installed, you must [completely uninstall](#uninstallation) it to use MagiskOnWSA
+> **Note** : 
+> If you have the official WSA installed, you must [completely uninstall](#uninstallation) it to use MagiskOnWSA
 
 1. Go to the [Releases page](https://github.com/PeterNjeim/MagiskOnWSA/releases/latest)
+
+> **Note**
+>: To request a newer WSA build or a WSA build with a different version of GApps or Magisk or a build without them (root or Google Play), feel free to open an issue in the [Issues page](https://github.com/MustardChef/WSABuilds/issues).
+
 2. In the latest release, go to the Assets section and download the WSA version of your choosing (do not download "Source code")
 3. Extract the zip file
 4. Delete the zip file
