@@ -19,7 +19,7 @@
 |- Processor type: x64 or ARM64.| - Processor type: x64 or ARM64.|
 |- Virtual Machine Platform Enabled: This optional setting is for virtualization and you can enable the setting from Control Panel/ Optional Features.| - Virtual Machine Platform Enabled: This optional setting is for virtualization and you can enable the setting from Control Panel/ Optional Features.|
 |- Storage: Solid-state drive (SSD) or Hard Disk Drive (HDD) (NOT RECOMMENDED).| - Storage: Solid-state drive (SSD) or Hard Disk Drive (HDD) (NOT RECOMMENDED).|
-|- Windows 11: Build 22000.526 or higher.| - Windows 10: 22H2 10.0.19045.2311 or higher.|
+|- Windows 11: Build 22000.526 or higher.| - Windows 10: 22H2 10.0.19045.2311 or higher. May work on Windows 10 21H2 10.0.19044.2311|
 |- The Computer must support virtualization and be enabled in BIOS/UEFI and Optional Features. ![Guide]("https://support.microsoft.com/en-us/windows/enable-virtualization-on-windows-11-pcs-c5578302-6e43-4b4b-a449-8ced115f58e1")|- The Computer must support virtualization and be enabled in BIOS/UEFI and Optional Features. ![Guide]("https://support.microsoft.com/en-us/windows/enable-virtualization-on-windows-11-pcs-c5578302-6e43-4b4b-a449-8ced115f58e1")|
 
 ## Installation
