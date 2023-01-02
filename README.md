@@ -1,16 +1,13 @@
 # MagiskOnWSA (For Windows 10 and 11)
 ## (Windows Subsystem For Android™ (WSA) with Google Play Services and / or Magisk)
 
-> **Note**
->  ### *Prebuilt WSA Builds for Windows 11 in [Releases]("https://github.com/MustardChef/WSABuilds/releases") have not been modified in anyway prior and subsequent to running the MagiskOnWSA script and upload to Github. Prebuilt WSA Builds for Windows 10 releases only have had AppxManifest.xml, icu.dll and WsaPatch.dll patched according to the WSAPatch guide before upload to Github.* 
+> :exclamation: **Important:**
+>  #### **Prebuilt WSA Builds for Windows 11 in [Releases]("https://github.com/MustardChef/WSABuilds/releases") have not been modified in anyway prior and subsequent to running the MagiskOnWSA script and upload to Github. Prebuilt WSA Builds for Windows 10 releases only have had AppxManifest.xml, icu.dll and WsaPatch.dll patched according to the WSAPatch guide before upload to Github.** 
  [![win11down](https://img.shields.io/badge/Download%20Stable-Windows%2011-blue?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11) &nbsp; &nbsp; [![win11down](https://img.shields.io/badge/Download%20Stable-Windows%2010-blue?style=for-the-badge&logo=windows)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10)
 
 [![win11downpre](https://img.shields.io/badge/Download%20Preview%20Build-Windows%2011-red?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_PreviewBuild) &nbsp;  [![win10downpre](https://img.shields.io/badge/Download%20Preview%20Build-Windows%2010-red?style=for-the-badge&logo=windows)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_PreviewBuild)
  
- 
-| :exclamation: **Important:**  &nbsp;  `⚠️DO NOT FORK⚠️`               |
-|------------------------------------------------------------------------|
-**This repository is designed specifically not to be forked. This does not use the same mechanism as the original MagiskOnWSA, as the original mechanism is slow and unreliable, and also violates GitHub's Terms of Service due to abuse of GitHub Actions in forks. Don't fork this repository unless you're a developer and want to modify the code itself or want to download a specific configuration of WSA not already available in the [Releases page](https://github.com/MustardChef/WSABuilds/releases/latest).**
+
 
 ## Requirements
 |     <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" width=40% height=40%>        |  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" width=50% height=50%>     |
@@ -58,6 +55,12 @@
 8. Go to the Start Menu
 9. Type `Windows Subsystem for Android`
 10. Once the WSA app shows, click `Uninstall` in the right pane
+
+## Before Forking
+| :exclamation: **Important:**  &nbsp;  `⚠️DO NOT FORK⚠️`               |
+|------------------------------------------------------------------------|
+**This repository is designed specifically not to be forked. This does not use the same mechanism as the original MagiskOnWSA, as the original mechanism is slow and unreliable, and also violates GitHub's Terms of Service due to abuse of GitHub Actions in forks. Don't fork this repository unless you're a developer and want to modify the code itself or want to download a specific configuration of WSA not already available in the [Releases page](https://github.com/MustardChef/WSABuilds/releases/latest).**
+
 
 ## Help
 
