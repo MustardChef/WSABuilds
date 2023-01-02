@@ -2,7 +2,7 @@
 ## (Windows Subsystem For Android with Google Play Services and / or Magisk)
  [![win11down](https://img.shields.io/badge/Download%20Stable-Windows%2011-blue?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11) &nbsp; &nbsp; [![win11down](https://img.shields.io/badge/Download%20Stable-Windows%2010-blue?style=for-the-badge&logo=windows)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10)
  
- [![win11downpre](https://img.shields.io/badge/Download%20Preview%20Build-Windows%2011-red?style=for-the-badge&logo=windows)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_PreviewBuild) &nbsp;  [![win10downpre](https://img.shields.io/badge/Download%20Preview%20Build-Windows%2010-red?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_PreviewBuild)
+ [![win11downpre](https://img.shields.io/badge/Download%20Preview%20Build-Windows%2011-red?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_PreviewBuild) &nbsp;  [![win10downpre](https://img.shields.io/badge/Download%20Preview%20Build-Windows%2010-red?style=for-the-badge&logo=windows)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_PreviewBuild)
  
 > **Note**
 >: To request a newer WSA build or a WSA build with a different version of GApps or Magisk or a build without them (root or Google Play) or you have any questions, feel free to open an issue in the [Issues page](https://github.com/MustardChef/WSABuilds/issues).
