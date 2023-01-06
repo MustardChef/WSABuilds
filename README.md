@@ -1,18 +1,23 @@
 # MagiskOnWSA (For Windows 10 and 11)
 ## (Windows Subsystem For Android™ (WSA) with Google Play Services and / or Magisk)
-### **Before Continuing**
+### **Before Continuing:**
 > **Warning** 
 > ### [Read this before forking](https://github.com/MustardChef/WSABuilds#before-forking)
 > ### :exclamation: **Important:**
 >  ### Prebuilt WSA Builds for Windows 11 in [Releases](https://github.com/MustardChef/WSABuilds/releases) have not been modified in anyway prior and subsequent to running the MagiskOnWSA script and upload to Github. 
 > ### Prebuilt WSA Builds for Windows 10 in [Releases](https://github.com/MustardChef/WSABuilds/releases) only have had AppxManifest.xml, icu.dll and WsaPatch.dll patched according to the WSAPatch guide before upload to Github.
 > #### The same level of scrutiny should be applied with the WSA builds as with any other program that you download from the internet
+&nbsp;
 
- [![win11down](https://img.shields.io/badge/Download%20Stable-Windows%2011-blue?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11) &nbsp; &nbsp; [![win11down](https://img.shields.io/badge/Download%20Stable-Windows%2010-blue?style=for-the-badge&logo=windows)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10)
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" width=14% height=14%>
 
-[![win11downpre](https://img.shields.io/badge/Download%20Preview%20Build-Windows%2011-red?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_PreviewBuild) &nbsp;  [![win10downpre](https://img.shields.io/badge/Download%20Preview%20Build-Windows%2010-red?style=for-the-badge&logo=windows)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_PreviewBuild)
- 
+[![win11down](https://img.shields.io/badge/Download%20Stable-Windows%2011-blue?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11) &nbsp; &nbsp; [![win11downpre](https://img.shields.io/badge/Download%20Preview%20Build-Windows%2011-red?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_PreviewBuild)
 
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" width=13% height=13%>
+
+[![win10down](https://img.shields.io/badge/Download%20Stable-Windows%2010-blue?style=for-the-badge&logo=windows)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10) &nbsp;  [![win10downpre](https://img.shields.io/badge/Download%20Preview%20Build-Windows%2010-red?style=for-the-badge&logo=windows)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_PreviewBuild)
+
+&nbsp;
 
 ## Requirements
 |     <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" width=40% height=40%>        |  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" width=50% height=50%>     |
