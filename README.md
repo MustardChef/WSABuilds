@@ -1,9 +1,11 @@
 # MagiskOnWSA (For Windows 10 and 11)
 ## (Windows Subsystem For Android™ (WSA) with Google Play Services and / or Magisk)
-
+### **Before Continuing**
+> **Warning** 
+> ### [Read this before forking](https://github.com/MustardChef/WSABuilds#before-forking)
 > ### :exclamation: **Important:**
->  ### Prebuilt WSA Builds for Windows 11 in [Releases]("https://github.com/MustardChef/WSABuilds/releases") have not been modified in anyway prior and subsequent to running the MagiskOnWSA script and upload to Github. 
-> ### Prebuilt WSA Builds for Windows 10 releases only have had AppxManifest.xml, icu.dll and WsaPatch.dll patched according to the WSAPatch guide before upload to Github.
+>  ### Prebuilt WSA Builds for Windows 11 in [Releases](https://github.com/MustardChef/WSABuilds/releases) have not been modified in anyway prior and subsequent to running the MagiskOnWSA script and upload to Github. 
+> ### Prebuilt WSA Builds for Windows 10 in [Releases](https://github.com/MustardChef/WSABuilds/releases) only have had AppxManifest.xml, icu.dll and WsaPatch.dll patched according to the WSAPatch guide before upload to Github.
 > #### The same level of scrutiny should be applied with the WSA builds as any other program that you download from the internet
 
  [![win11down](https://img.shields.io/badge/Download%20Stable-Windows%2011-blue?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11) &nbsp; &nbsp; [![win11down](https://img.shields.io/badge/Download%20Stable-Windows%2010-blue?style=for-the-badge&logo=windows)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10)
