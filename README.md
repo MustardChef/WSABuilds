@@ -4,8 +4,8 @@
 > **Warning** 
 > ### [Read this before forking](https://github.com/MustardChef/WSABuilds#before-forking)
 > ### :exclamation: **Important:**
->  ### Prebuilt WSA Builds for Windows 11 in [Releases](https://github.com/MustardChef/WSABuilds/releases) have not been modified in anyway prior and subsequent to running the MagiskOnWSA script and upload to Github. 
-> ### Prebuilt WSA Builds for Windows 10 in [Releases](https://github.com/MustardChef/WSABuilds/releases) only have had AppxManifest.xml, icu.dll and WsaPatch.dll patched according to the WSAPatch guide before upload to Github.
+>  ### Prebuilt WSA Builds for Windows 11 in [Releases](https://github.com/MustardChef/WSABuilds/releases) HAVE NOT been modified in anyway prior and subsequent to running the MagiskOnWSA script and upload to Github. 
+> ### Prebuilt WSA Builds for Windows 10 in [Releases](https://github.com/MustardChef/WSABuilds/releases) ONLY have had AppxManifest.xml, icu.dll and WsaPatch.dll patched according to the WSAPatch guide before upload to Github.
 > #### The same level of scrutiny should be applied with the WSA builds as with any other program that you download from the internet
 &nbsp;
 
