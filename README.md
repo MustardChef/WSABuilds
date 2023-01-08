@@ -1,5 +1,7 @@
 # MagiskOnWSA (For Windows 10 and 11)
 ## (Windows Subsystem For Android™ (WSA) with Google Play Services and / or Magisk)
+<img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/>
+
 ### **Before Continuing:**
 > **Warning** 
 > ### [Read this before forking](https://github.com/MustardChef/WSABuilds#before-forking)
