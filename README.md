@@ -76,15 +76,15 @@
 
 ## Help
 
-Help me, I am having problems with the MagiskOnWSA
+**Help me, I am having problems with the MagiskOnWSA**
 
 - Open an issue and describe the issue with sufficent detail
 
-Help me, I am having problems with installing WSA on Windows 10
+**Help me, I am having problems with installing WSA on Windows 10**
 
 - I am not working on the patch, and nor claim to. For full support visit the project homepage and open an issue there: https://github.com/cinit/WSAPatch/issues/
 
-How do I get a logcat?
+**How do I get a logcat?**
 
 - `adb logcat`
 
@@ -92,31 +92,31 @@ or
 
 - `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalState\diagnostics\logcat`
 
-How do I update Magisk?
+**How do I update Magisk?**
 
 - Wait for a new MagiskOnWSA release that includes the newer Magisk version, then follow the [Installation instructions](#installation) to update
 
-Can I pass SafetyNet/Play Integrity?
+**Can I pass SafetyNet/Play Integrity?**
 
 - No. Virtual machines like WSA cannot pass these mechanisms on their own due to the lack of signing by Google. Passing requires more exotic (and untested) solutions: <https://github.com/kdrag0n/safetynet-fix/discussions/145#discussioncomment-2170917>
 
-What is virtualization?
+**What is virtualization?**
 
 - Virtualization is required to run virtual machines like WSA. `Run.bat` helps you enable it. After rebooting, re-run `Run.bat` to install WSA. If it's still not working, you have to enable virtualization in your BIOS/UEFI. Instructions vary by PC vendor, look for help online
 
-Can I remount system partition as read-write?
+**Can I remount system partition as read-write?**
 
 - No. WSA is mounted as read-only by Hyper-V. You can, however, modify the system partition by creating a Magisk module, or by directly modifying the system.img file
 
-How do I uninstall Magisk?
+**How do I uninstall Magisk?**
 
 - Download a WSA version that doesn't include Magisk from the [Releases page](https://github.com/MustardChef/WSABuilds/releases/latest). Then follow the [Installation instructions](#installation)
 
-Can I switch between OpenGApps and MindTheGapps?
+**Can I switch between OpenGApps and MindTheGapps?**
 
 - No. GApps will no longer function. Do a [complete uninstallation](#uninstallation) before switching
 
-How do I install custom Magisk or GApps?
+**How do I install custom Magisk or GApps?**
 
 1. Fork this repository
 2. **A)** Magisk
