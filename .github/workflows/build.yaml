@@ -2,6 +2,14 @@ name: Build MagiskOnWSA
 on:
     workflow_dispatch:
         inputs:
+            windows_version:
+                description: "WSA Architecture"
+                required: true
+                default: "xWindows 11"
+                type: choice
+                options:
+                    - Windows 10
+                    - Windows 11
             arch:
                 description: "WSA Architecture"
                 required: true
