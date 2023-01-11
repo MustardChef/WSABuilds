@@ -13,11 +13,11 @@
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" width=14% height=14%>
 
-[![win11down](https://img.shields.io/badge/Download%20Stable-Windows%2011-blue?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11) &nbsp; &nbsp; [![win11downpre](https://img.shields.io/badge/Download%20Preview%20Build-Windows%2011-red?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_PreviewBuild)
+[![win11down](https://img.shields.io/badge/Download%20Stable-Windows%2011-blue?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2210.40000.7.0) &nbsp; &nbsp; [![win11downpre](https://img.shields.io/badge/Download%20Insider%20Build-Windows%2011-red?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2211.40000.10.0)
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" width=14% height=14%>
 
-[![win10down](https://img.shields.io/badge/Download%20Stable-Windows%2010-blue?style=for-the-badge&logo=windows)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10) &nbsp; &nbsp; [![win10downpre](https://img.shields.io/badge/Download%20Preview%20Build-Windows%2010-red?style=for-the-badge&logo=windows)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_PreviewBuild)
+[![win10down](https://img.shields.io/badge/Download%20Stable-Windows%2010-blue?style=for-the-badge&logo=windows)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2210.40000.7.0) &nbsp; &nbsp; [![win10downpre](https://img.shields.io/badge/Download%20Insider%20Build-Windows%2010-red?style=for-the-badge&logo=windows)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2211.40000.10.0)
 
 &nbsp;
 
