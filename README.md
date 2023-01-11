@@ -110,7 +110,7 @@ or
 
 **How do I uninstall Magisk?**
 
-- Download a WSA version that doesn't include Magisk from the [Releases page](https://github.com/MustardChef/WSABuilds/releases/latest). Then follow the [Installation instructions](#installation)
+- Request, using [Issues](https://github.com/MustardChef/WSABuilds/issues), a WSA version that doesn't include Magisk from the [Releases page](https://github.com/MustardChef/WSABuilds/releases/latest). Then follow the [Installation instructions](#installation)
 
 **Can I switch between OpenGApps and MindTheGapps?**
 
@@ -118,6 +118,9 @@ or
 
 **How do I install custom Magisk or GApps?**
 
+You can achieve this by using the [MagiskOnWSALocal](https://github.com/LSPosed/MagiskOnWSALocal) Script and following the provided instructions located in the repo.
+
+<!--
 1. Fork this repository
 2. **A)** Magisk
    1. **a)** Via local file:
@@ -135,6 +138,7 @@ or
    3. Choose `Custom (OpenGApps)` or `Custom (MindTheGapps)` in the `GApps Variant` field
    4. **b)** Via URL:
       1. Input the URL pointing to your custom OpenGApps or MindTheGapps ZIP file in the `Custom GApps ZIP URL` field
+-->
 
 ## Credits
 
