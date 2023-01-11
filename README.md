@@ -37,7 +37,7 @@
 > **Note** : 
 > If you have the official WSA installed, you must [completely uninstall](#uninstallation) it to use MagiskOnWSA
 
-1. Go to the [Releases page](https://github.com/PeterNjeim/MagiskOnWSA/releases/latest)
+1. Go to the [Releases page](https://github.com/MustardChef/WSABuilds/releases/latest)
 
 > **Note**
 >: To request a newer WSA build or a WSA build with a different version of GApps or Magisk or a build without them (root or Google Play), feel free to open an issue in the [Issues page](https://github.com/MustardChef/WSABuilds/issues).
@@ -139,7 +139,9 @@ or
 ## Credits
 
 - [Microsoft](https://apps.microsoft.com/store/detail/windows-subsystem-for-android%E2%84%A2-with-amazon-appstore/9P3395VX91NR): For providing Windows Subsystem For Android™ and related files. Windows Subsystem For Android™, Windows Subsystem For Android™ Logo, Windows™ 10 and Windows™ 11 Logos are trademarks of Microsoft Corporation. Microsoft Corporation reserves all rights to these trademarks. By downloading and installing Windows Subsystem For Android™, you agree to the [Terms and Conditions](https://support.microsoft.com/en-gb/windows/microsoft-software-license-terms-microsoft-windows-subsystem-for-android-cf8dfb03-ba62-4daa-b7f3-e2cb18f968ad) and [Privacy Policy](https://privacy.microsoft.com/en-gb/privacystatement)
+<!-- 
 - [PeterNjeim](https://github.com/PeterNjeim/MagiskOnWSA): For providing and continuing the development of the script made by LSPosed, this Github Repository and the Github Action workflow is based on his Github Repo. I do not claim his work and the work of the many contributers as my own and nor intend to do so. Most Windows 11 Build rely on the Github Action provided to build, hence credit is given where due
+-->
 - [Cinit and the WSAPatch Guide](https://github.com/cinit/WSAPatch): Many thanks for the comprehensive guide, files and support provided by Cinit and the contributers at the WSAPatch repository. Windows 10 Builds in this repo rely on the hard work of this project and  hence credit is given where due
 - [StoreLib](https://github.com/StoreDev/StoreLib): API for downloading WSA
 - [Magisk](https://github.com/topjohnwu/Magisk): The Magic Mask for Android
