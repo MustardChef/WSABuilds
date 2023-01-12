@@ -2,6 +2,8 @@
 ## (Windows Subsystem For Android™ (WSA) with Google Play Services and / or Magisk)
 <img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/>
 
+[![Discord](https://invidget.switchblade.xyz/2thee7zzHZ)](https://discord.gg/2thee7zzHZ)
+
 | :exclamation: **Important:**  &nbsp;  `⚠️DO NOT FORK⚠️`               |
 |------------------------------------------------------------------------|
 |**This repository is designed specifically not to be forked. MagiskOnWSA and some of the various forks and clones that have sprung up on the platform (***potentially***) violate GitHub's Terms of Service due to abuse of GitHub Actions and have been ultimately warned, disabled or banned.**| 
