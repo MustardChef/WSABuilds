@@ -1,9 +1,13 @@
 # MagiskOnWSA (For Windows 10 and 11) &nbsp; &nbsp; <img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/>
 ## (Windows Subsystem For Android™ (WSA) with Google Play Services and / or Magisk)
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" width=14% height=14%> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" width=14% height=14%>
+## Downloads
+||
+|------------------------------------------------------------------------| 
+|<img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" width=17% height=17%> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [![win10down](https://img.shields.io/badge/Download%20Latest%20Build-Windows%2010-blue?style=for-the-badge&logo=windows)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2211.40000.11.0) <br /> |
+| <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" width=17% height=17%> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [![win11down](https://img.shields.io/badge/Download%20Latest%20Build-Windows%2011-blue?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2211.40000.11.0)    |
+| [![windownold](https://img.shields.io/badge/Windows%2010%2F11-Older%20Builds-red?style=for-the-badge&logo=windowsxp)](https://github.com/MustardChef/WSABuilds/OldBuilds.md)|
 
-[![win11down](https://img.shields.io/badge/Download%20Latest%20Build-Windows%2011-blue?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2211.40000.11.0) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [![win10down](https://img.shields.io/badge/Download%20Latest%20Build-Windows%2010-blue?style=for-the-badge&logo=windows)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2211.40000.11.0)
 
 &nbsp;
 
