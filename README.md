@@ -1,14 +1,20 @@
-# MagiskOnWSA (For Windows 10 and 11)
+# MagiskOnWSA (For Windows 10 and 11) <img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/>
 ## (Windows Subsystem For Android™ (WSA) with Google Play Services and / or Magisk)
-<img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/>
 
-[![Discord](https://invidget.switchblade.xyz/2thee7zzHZ)](https://discord.gg/2thee7zzHZ)
+## Download 
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" width=14% height=14%> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" width=14% height=14%>
+
+[![win11down](https://img.shields.io/badge/Download%20Latest%20Build-Windows%2011-blue?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2211.40000.11.0) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [![win10down](https://img.shields.io/badge/Download%20Latest%20Build-Windows%2010-blue?style=for-the-badge&logo=windows)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2211.40000.11.0)
+
+&nbsp;
 
 | :exclamation: **Important:**  &nbsp;  `⚠️DO NOT FORK⚠️`               |
 |------------------------------------------------------------------------|
 |**This repository is designed specifically not to be forked. MagiskOnWSA and some of the various forks and clones that have sprung up on the platform (***potentially***) violate GitHub's Terms of Service due to abuse of GitHub Actions and have been ultimately warned, disabled or banned.**| 
 |**We would like to say one thing: We respect the Terms and Conditions set out by Github to its users. MagiskOnWSA Builds are built using the MagiskOnWSALocal script, patched in the case of Windows 10 Builds and uploaded onto Github and hence do not rely on the use of Github Actions.**|
 |**Therefore, don't fork this repository unless you're a developer and want to modify the code itself and/or want to contribute to this Github repository.**|
+
+&nbsp;
 
 ### **Before Continuing:**
 > **Warning** 
@@ -18,16 +24,9 @@
 > #### The same level of scrutiny should be applied with the WSA builds as with any other program that you download from the internet
 &nbsp;
 
-## Download 
-<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" width=14% height=14%>
+## Join The Discord!
 
-[![win11down](https://img.shields.io/badge/Download%20Latest%20Build-Windows%2011-blue?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2211.40000.11.0)
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" width=14% height=14%>
-
-[![win10down](https://img.shields.io/badge/Download%20Latest%20Build-Windows%2010-blue?style=for-the-badge&logo=windows)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2211.40000.11.0)
-
-&nbsp;
+[![Discord](https://invidget.switchblade.xyz/2thee7zzHZ)](https://discord.gg/2thee7zzHZ)
 
 ## Requirements
 |     <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" width=40% height=40%>        |  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" width=50% height=50%>     |
