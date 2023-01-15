@@ -1,5 +1,5 @@
 # WSABuilds &nbsp; &nbsp; <img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/> 
-### MagiskOnWSA (For Windows 10 and 11) 
+### MagiskOnWSA (For Windows™ 10 and 11) 
 #### Windows Subsystem For Android™ (WSA) with Google Play Services and (or) Magisk
 
 &nbsp;
@@ -27,8 +27,8 @@
 ### **Before Continuing:**
 > **Warning** 
 > ### :exclamation: **Important:**
->  ### Prebuilt WSA Builds for Windows 11 in [Releases](https://github.com/MustardChef/WSABuilds/releases) HAVE NOT been modified in anyway prior and subsequent to running the MagiskOnWSA script and upload to Github. 
-> ### Prebuilt WSA Builds for Windows 10 in [Releases](https://github.com/MustardChef/WSABuilds/releases) ONLY have had AppxManifest.xml, icu.dll and WsaPatch.dll patched according to the WSAPatch guide before upload to Github.
+>  ### Prebuilt WSA Builds for Windows™ 11 in [Releases](https://github.com/MustardChef/WSABuilds/releases) HAVE NOT been modified in anyway prior and subsequent to running the MagiskOnWSA script and upload to Github. 
+> ### Prebuilt WSA Builds for Windows™ 10 in [Releases](https://github.com/MustardChef/WSABuilds/releases) ONLY have had AppxManifest.xml, icu.dll and WsaPatch.dll patched according to the WSAPatch guide before upload to Github.
 > #### The same level of scrutiny should be applied with the WSA builds as with any other program that you download from the internet
 &nbsp;
 
@@ -40,11 +40,11 @@
 |     <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" width=40% height=40%>        |  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" width=50% height=50%>     |
 |-----------------------|-----------------------|
 | - RAM: 6 GB (not recommended), 8 GB (minimum) and 16 GB (recommended).|- RAM: 6 GB (not recommended), 8 GB (minimum) and 16 GB (recommended).|
-|- Processor: Your PC should meet the basic Windows 11 requirements i.e Core i3 8th Gen, Ryzen 3000, Snapdragon 8c, or above.| - Processor: N/A (This is a bit of a hit or miss)
+|- Processor: Your PC should meet the basic Windows™ 11 requirements i.e Core i3 8th Gen, Ryzen 3000, Snapdragon 8c, or above.| - Processor: N/A (This is a bit of a hit or miss)
 |- Processor type: x64 or ARM64.| - Processor type: x64 or ARM64.|
 |- Virtual Machine Platform Enabled: <br /> This optional setting is for virtualization and you can enable the setting from Control Panel/ Optional Features.| - Virtual Machine Platform Enabled: <br /> This optional setting is for virtualization and you can enable the setting from Control Panel/ Optional Features.|
 |- Storage: Solid-state drive (SSD) <br /> - Hard Disk Drive (HDD) (NOT RECOMMENDED).| - Storage: Solid-state drive (SSD) <br /> - Hard Disk Drive (HDD) (NOT RECOMMENDED).|
-|- Windows 11: Build 22000.526 or higher.| - Windows 10: 22H2 10.0.19045.2311 or higher. <br /> - May work on Windows 10 [21H2 10.0.19044.2311](https://user-images.githubusercontent.com/68516357/210234947-233d9207-6b54-4f70-99b3-2267bb542098.png)|
+|- Windows™ 11: Build 22000.526 or higher.| - Windows™ 10: 22H2 10.0.19045.2311 or higher. <br /> - May work on Windows™ 10 [21H2 10.0.19044.2311](https://user-images.githubusercontent.com/68516357/210234947-233d9207-6b54-4f70-99b3-2267bb542098.png)|
 |- The Computer must support virtualization and be enabled in BIOS/UEFI and Optional Features. [Guide](https://support.microsoft.com/en-us/windows/enable-virtualization-on-windows-11-pcs-c5578302-6e43-4b4b-a449-8ced115f58e1)|- The Computer must support virtualization and be enabled in BIOS/UEFI and Optional Features. [Guide](https://support.microsoft.com/en-us/windows/enable-virtualization-on-windows-11-pcs-c5578302-6e43-4b4b-a449-8ced115f58e1)|
 
 ## Installation
@@ -66,7 +66,7 @@
 6. Open the WSA folder: Search for and double-click `Run.bat`
    - If you previously have a MagiskOnWSA installation, it will automatically uninstall the previous one while preserving all user data and install the new one, so don't worry about your data.
    - If the popup windows disappear without asking administrative permission and WSA is not installed successfully, you should manually run Install.ps1 as administrator:
-      - Press Win+x and select Windows Terminal (Admin)
+      - Press Win+x and select Windows™ Terminal (Admin)
       - Input cd "{X:\path\to\your\extracted\folder}" and press enter, and remember to replace {X:\path\to\your\extracted\folder} including the {}, for example cd "D:\wsa"
       - Input PowerShell.exe -ExecutionPolicy Bypass -File .\Install.ps1 and press enter
       - The script will run and WSA will be installed
@@ -101,7 +101,7 @@
 
 - Open an [issue in Github](https://github.com/MustardChef/WSABuilds/issues) or [join the Discord](https://github.com/MustardChef/WSABuilds#join-the-discord) and describe the issue with sufficent detail
 
-**Help me, I am having problems with installing WSA on Windows 10**
+**Help me, I am having problems with installing WSA on Windows™ 10**
 
 - I am not working on the patch, and nor claim to.  Open an issue in the Discord or Github, and I will try to assist you with the problem if possible. For full support visit the project homepage and open an issue there: https://github.com/cinit/WSAPatch/issues/
 
@@ -183,9 +183,9 @@ or
 
 - [Microsoft](https://apps.microsoft.com/store/detail/windows-subsystem-for-android%E2%84%A2-with-amazon-appstore/9P3395VX91NR): For providing Windows Subsystem For Android™ and related files. Windows Subsystem For Android™, Windows Subsystem For Android™ Logo, Windows™ 10 and Windows™ 11 Logos are trademarks of Microsoft Corporation. Microsoft Corporation reserves all rights to these trademarks. By downloading and installing Windows Subsystem For Android™, you agree to the [Terms and Conditions](https://support.microsoft.com/en-gb/windows/microsoft-software-license-terms-microsoft-windows-subsystem-for-android-cf8dfb03-ba62-4daa-b7f3-e2cb18f968ad) and [Privacy Policy](https://privacy.microsoft.com/en-gb/privacystatement)
 <!-- 
-- [PeterNjeim](https://github.com/PeterNjeim/MagiskOnWSA): For providing and continuing the development of the script made by LSPosed, this Github Repository and the Github Action workflow is based on his Github Repo. I do not claim his work and the work of the many contributers as my own and nor intend to do so. Most Windows 11 Build rely on the Github Action provided to build, hence credit is given where due
+- [PeterNjeim](https://github.com/PeterNjeim/MagiskOnWSA): For providing and continuing the development of the script made by LSPosed, this Github Repository and the Github Action workflow is based on his Github Repo. I do not claim his work and the work of the many contributers as my own and nor intend to do so. Most Windows™ 11 Build rely on the Github Action provided to build, hence credit is given where due
 -->
-- [Cinit and the WSAPatch Guide](https://github.com/cinit/WSAPatch): Many thanks for the comprehensive guide, files and support provided by Cinit and the contributers at the WSAPatch repository. Windows 10 Builds in this repo rely on the hard work of this project and  hence credit is given where due
+- [Cinit and the WSAPatch Guide](https://github.com/cinit/WSAPatch): Many thanks for the comprehensive guide, files and support provided by Cinit and the contributers at the WSAPatch repository. Windows™ 10 Builds in this repo rely on the hard work of this project and  hence credit is given where due
 - [StoreLib](https://github.com/StoreDev/StoreLib): API for downloading WSA
 - [Magisk](https://github.com/topjohnwu/Magisk): The Magic Mask for Android
 - [The Open Google Apps Project](https://opengapps.org): Script the automatic generation of up-to-date Google Apps packages
@@ -197,4 +197,4 @@ or
 
 ***The repository is provided as a utility.***
 
-***Android is a trademark of Google LLC. Windows is a trademark of Microsoft LLC.***
+***Android is a trademark of Google LLC. Windows™ is a trademark of Microsoft LLC.***
