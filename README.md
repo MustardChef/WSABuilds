@@ -5,6 +5,9 @@
 &nbsp;
 
 ## Downloads
+> **Note**
+>: To request a newer WSA build or a WSA build with a different version of GApps or Magisk or a build without them (root or Google Play), feel free to open an issue in the [Issues page](https://github.com/MustardChef/WSABuilds/issues).
+
 |****Operating System****|****Download Page****|
 |----------|-----------| 
 |<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" style="width: 200px;"/> | [![win11down](https://img.shields.io/badge/Download%20Latest%20Build-Windows%2011-blue?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2211.40000.11.0)|
@@ -47,23 +50,32 @@
 ## Installation
 
 > **Note** : 
-> If you have the official WSA installed, you must [completely uninstall](#uninstallation) it to use MagiskOnWSA
+> If you have the official WSA installed, you must [completely uninstall](#uninstallation) it to use MagiskOnWSA. 
+
+> In case you want to preserve your data from the previous installation (official or MagiskOnWSA), you can backup %LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx before uninstallation and restore it after installation.
 
 1. Go to the [Releases page](https://github.com/MustardChef/WSABuilds/releases/latest)
-
-> **Note**
->: To request a newer WSA build or a WSA build with a different version of GApps or Magisk or a build without them (root or Google Play), feel free to open an issue in the [Issues page](https://github.com/MustardChef/WSABuilds/issues).
-
 2. In the latest release, go to the Assets section and download the WSA version of your choosing (do not download "Source code")
 3. Extract the zip file
 4. Delete the zip file
 5. Move the newly extracted folder to a suitable location (Documents folder is a good choice), as you will need to keep the folder on your PC to use MagiskOnWSA
-> Note: If you're updating WSA, merge the folders and replace the files for all items when asked
 
-6. Open the WSA folder and double-click `Run.bat`
+> **Note** :  
+> If you're updating WSA, merge the folders and replace the files for all items when asked
+
+6. Open the WSA folder: Search for and double-click `Run.bat`
+   - If you previously have a MagiskOnWSA installation, it will automatically uninstall the previous one while preserving all user data and install the new one, so don't worry about your data.
+   - If the popup windows disappear without asking administrative permission and WSA is not installed successfully, you should manually run Install.ps1 as administrator:
+      - Press Win+x and select Windows Terminal (Admin)
+      - Input cd "{X:\path\to\your\extracted\folder}" and press enter, and remember to replace {X:\path\to\your\extracted\folder} including the {}, for example cd "D:\wsa"
+      - Input PowerShell.exe -ExecutionPolicy Bypass -File .\Install.ps1 and press enter
+      - The script will run and WSA will be installed
+      - If this workaround does not work, your PC is not supported for WSA
+      
 7. Once the installation process completes, WSA will launch (if this is a first-time install, a window asking for consent to diagnositic information will be shown instead. Sometimes two identical windows will show, this is fine and nothing bad happens if you click OK in both windows)
 8. Click on the PowerShell window, then press any key on the keyboard, the PowerShell window should close
 9. Close File Explorer
+10. **Enjoy**
 
 ## Uninstallation
 
@@ -81,15 +93,15 @@
 10. Once the WSA app shows, click `Uninstall` in the right pane
 
 
-## Help
+## FAQ
 
 **Help me, I am having problems with the MagiskOnWSA Builds**
 
-- Open an issue and describe the issue with sufficent detail
+- Open an [issue in Github](https://github.com/MustardChef/WSABuilds/issues) or [join the Discord](https://github.com/MustardChef/WSABuilds#join-the-discord) and describe the issue with sufficent detail
 
 **Help me, I am having problems with installing WSA on Windows 10**
 
-- I am not working on the patch, and nor claim to. For full support visit the project homepage and open an issue there: https://github.com/cinit/WSAPatch/issues/
+- I am not working on the patch, and nor claim to.  Open an issue in the Discord or Github, and I will try to assist you with the problem if possible. For full support visit the project homepage and open an issue there: https://github.com/cinit/WSAPatch/issues/
 
 **How do I get a logcat?**
 
@@ -99,13 +111,21 @@ or
 
 - `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalState\diagnostics\logcat`
 
+**Can I delete the installed folder?**
+
+- No.
+
+**How can I update WSA to a new version?**
+
+- As Explained [Installation instructions](#installation). Download the [latest WSA Version](#downloads) and replace the content of your previous installation and rerun Install.ps1. Don't worry, your data will be preserved
+
 **How do I update Magisk?**
 
-- Wait for a new MagiskOnWSA release that includes the newer Magisk version, then follow the [Installation instructions](#installation) to update
+- Do the same as updating WSA. Wait for a new MagiskOnWSA release that includes the newer Magisk version, then follow the [Installation instructions](#installation) to update
 
 **Can I pass SafetyNet/Play Integrity?**
 
-- No. Virtual machines like WSA cannot pass these mechanisms on their own due to the lack of signing by Google. Passing requires more exotic (and untested) solutions: <https://github.com/kdrag0n/safetynet-fix/discussions/145#discussioncomment-2170917>
+- No. Virtual machines like WSA cannot pass these mechanisms on their own due to the lack of signing by Google. Passing requires more exotic (and untested) solutions like: <https://github.com/kdrag0n/safetynet-fix/discussions/145#discussioncomment-2170917>
 
 **What is virtualization?**
 
@@ -114,6 +134,14 @@ or
 **Can I remount system partition as read-write?**
 
 - No. WSA is mounted as read-only by Hyper-V. You can, however, modify the system partition by creating a Magisk module, or by directly modifying the system.img file
+
+**I cannot adb connect localhost:58526**
+
+- Make sure developer mode is enabled. If the issue persists, check the IP address of WSA on the Settings ---> Developer page and try `adb connect ip:5555`
+
+**Magisk online module list is empty?**
+
+- Magisk actively removes the online module repository. You can install the module locally or by `adb push module.zip /data/local/tmp` and `adb shell su -c magisk --install-module /data/local/tmp/module.zip`
 
 **How do I uninstall Magisk?**
 
@@ -125,7 +153,9 @@ or
 
 **How do I install custom Magisk or GApps?**
 
-You can achieve this by using the [MagiskOnWSALocal](https://github.com/LSPosed/MagiskOnWSALocal) Script and following the provided instructions located in the repo.
+- You can achieve this by using the [MagiskOnWSALocal](https://github.com/LSPosed/MagiskOnWSALocal) Script and following the provided instructions located in the repo.
+
+
 
 <!--
 1. Fork this repository
