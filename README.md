@@ -6,7 +6,7 @@
 
 ## Downloads
 > **Note**
->: To request a newer WSA build or a WSA build with a different version of GApps or Magisk or a build without them (root or Google Play), feel free to open an issue in the [Issues page](https://github.com/MustardChef/WSABuilds/issues).
+>: To request a newer WSA build or a WSA build with a different version of GApps or Magisk (root) or a build without them (root or Google Play), feel free to open an issue in the [Issues page](https://github.com/MustardChef/WSABuilds/issues).
 
 |****Operating System****|****Download Page****|
 |----------|-----------| 
