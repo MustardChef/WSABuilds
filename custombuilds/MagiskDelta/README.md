@@ -8,6 +8,8 @@
 > **Note**
 >: To request a newer WSA build or a WSA build with a different version of GApps or Magisk (root) or a build without them (root or Google Play), feel free to open an issue in the [Issues page](https://github.com/MustardChef/WSABuilds/issues). Requested (Custom) Builds can be found by pressing the "Custom Build" button below.
 
+> **Warning** : These Custom Builds are hosted on Mega.nz
+
 |****Operating System****|****Download Page****|
 |----------|-----------| 
 |<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" style="width: 200px;"/> | [![win11down](https://img.shields.io/badge/Download%20Latest%20Build-Windows%2011-blue?style=for-the-badge&logo=windows11)](https://mega.nz/file/AzoSUDKT#PNuK7uQqvn8NmUDXcrHy6ii3TqLfK5207p89N637k14)|
