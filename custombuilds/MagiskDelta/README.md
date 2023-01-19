@@ -1,6 +1,6 @@
 # WSABuilds &nbsp; &nbsp; <img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/> 
-### MagiskOnWSA (For Windows™ 10 and 11) 
-#### Windows Subsystem For Android™ (WSA) with Google Play Services and (or) Magisk
+### MagiskOnWSA (Magisk Delta) (For Windows™ 10 and 11) 
+#### Windows Subsystem For Android™ (WSA) with Google Play Services and (or) Magisk Delta
 
 &nbsp;
 
@@ -8,12 +8,12 @@
 > **Note**
 >: To request a newer WSA build or a WSA build with a different version of GApps or Magisk (root) or a build without them (root or Google Play), feel free to open an issue in the [Issues page](https://github.com/MustardChef/WSABuilds/issues). <br /> Requested (Custom) Builds can be found by pressing the "Custom Build" button below.
 
+>**Warning** : These Custom Builds are hosted on mega.nz
+
 |****Operating System****|****Download Page****|
 |----------|-----------| 
-|<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" style="width: 200px;"/> | [![win11down](https://img.shields.io/badge/Download%20Latest%20Build-Windows%2011-blue?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2211.40000.11.0)|
-|<img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" style="width: 200px;"/> | [![win10down](https://img.shields.io/badge/Download%20Latest%20Build-Windows%2010-blue?style=for-the-badge&logo=windows)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2211.40000.11.0)|
-| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img src="https://img.icons8.com/color/240/null/windows-11.png" style="width: 50px;"/> <img src="https://img.icons8.com/color/240/null/windows-10.png" style="width: 50px;"/>  |[![windownold](https://img.shields.io/badge/Windows%2010%2F11-Older%20Builds-red?style=for-the-badge)](https://github.com/MustardChef/WSABuilds/blob/master/OldBuilds.md)|
-| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img src="https://img.icons8.com/color/240/null/windows-11.png" style="width: 50px;"/> <img src="https://img.icons8.com/color/240/null/windows-10.png" style="width: 50px;"/>  |[![windownold](https://img.shields.io/badge/Windows%2010%2F11-Custom%20Builds-382bef?style=for-the-badge)](https://github.com/MustardChef/WSABuilds/tree/master/custombuilds)|
+|<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" style="width: 200px;"/> | [![win11down](https://img.shields.io/badge/Download%20Latest%20Build-Windows%2011-blue?style=for-the-badge&logo=windows11)](https://mega.nz/file/AzoSUDKT#PNuK7uQqvn8NmUDXcrHy6ii3TqLfK5207p89N637k14)|
+|<img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" style="width: 200px;"/> | [![win10down](https://img.shields.io/badge/Download%20Latest%20Build-Windows%2010-blue?style=for-the-badge&logo=windows)](https://mega.nz/file/YrZjjbxS#BrnY3rOvcejPCh6w1m9seXVfOb1JtKXJlsvd_oBqjD0)|
 
 &nbsp;
 
