@@ -1,6 +1,6 @@
 # WSABuilds &nbsp; &nbsp; <img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/> &nbsp; 
-### MagiskOnWSA (For Windows™ 10 and 11) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [<img align="right" src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/>](https://discord.gg/2thee7zzHZ)
-#### Windows Subsystem For Android™ (WSA) with Google Play Services and (or) Magisk &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+### MagiskOnWSA (For Windows™ 10 and 11) [<img align="right" src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/>](https://discord.gg/2thee7zzHZ)
+#### Windows Subsystem For Android™ (WSA) with Google Play Services and (or) Magisk 
 
 &nbsp;
 
