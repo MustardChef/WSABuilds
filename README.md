@@ -1,6 +1,6 @@
-# WSABuilds &nbsp; &nbsp; <img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/> 
-### MagiskOnWSA (For Windows™ 10 and 11) 
-#### Windows Subsystem For Android™ (WSA) with Google Play Services and (or) Magisk
+# WSABuilds &nbsp; &nbsp; <img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/> &nbsp; 
+### MagiskOnWSA (For Windows™ 10 and 11) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [<img align="right" src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/>](https://discord.gg/2thee7zzHZ)
+#### Windows Subsystem For Android™ (WSA) with Google Play Services and (or) Magisk &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 
 &nbsp;
 
@@ -10,10 +10,11 @@
 
 |****Operating System****|****Download Page****|
 |----------|-----------| 
-|<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" style="width: 200px;"/> | [![win11down](https://img.shields.io/badge/Download%20Latest%20Build-Windows%2011-blue?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2211.40000.11.0)|
+|<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" style="width: 200px;"/> | [![win11down](https://img.shields.io/badge/Download%20Latest%20Build-Windows%2011-blue?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2211.40000.11.0)|![image](https://user-images.githubusercontent.com/68516357/213565690-f2f3710b-7673-4ac1-b8b4-0c6f58028c6f.png)
 |<img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" style="width: 200px;"/> | [![win10down](https://img.shields.io/badge/Download%20Latest%20Build-Windows%2010-blue?style=for-the-badge&logo=windows)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2211.40000.11.0)|
 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img src="https://img.icons8.com/color/240/null/windows-11.png" style="width: 50px;"/> <img src="https://img.icons8.com/color/240/null/windows-10.png" style="width: 50px;"/>  |[![windownold](https://img.shields.io/badge/Windows%2010%2F11-Older%20Builds-red?style=for-the-badge)](https://github.com/MustardChef/WSABuilds/blob/master/OldBuilds.md)|
-| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img src="https://img.icons8.com/color/240/null/windows-11.png" style="width: 50px;"/> <img src="https://img.icons8.com/color/240/null/windows-10.png" style="width: 50px;"/>  |[![windownold](https://img.shields.io/badge/Windows%2010%2F11-Custom%20Builds-382bef?style=for-the-badge)](https://github.com/MustardChef/WSABuilds/tree/master/custombuilds)|
+| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img src="https://img.icons8.com/color/240/null/windows-11.png" style="width: 50px;"/> <img src="https://img.icons8.com/color/240/null/windows-10.png" style="width: 50px;"/>  |[![windownold](https://img.shields.io/badge/Windows%2010%2F11-Custom%20Builds-382bef?style=for-the-badge)](https://github.com/MustardChef/WSABuilds/tree/master/custombuilds)|![image](https://user-images.githubusercontent.com/68516357/213565463-21ebdf11-ef6b-448a-bbda-f8e55fd95374.png)
+
 
 &nbsp;
 
@@ -33,10 +34,6 @@
 > #### The same level of scrutiny should be applied with the WSA builds as with any other program that you download from the internet
 &nbsp;
 
-## Join The Discord!
-
-[![Discord](https://invidget.switchblade.xyz/2thee7zzHZ)](https://discord.gg/2thee7zzHZ)
-
 ## Requirements
 |     <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" width=40% height=40%>        |  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" width=50% height=50%>     |
 |-----------------------|-----------------------|
@@ -45,6 +42,7 @@
 |- Processor type: x64 or ARM64.| - Processor type: x64 or ARM64.|
 |- Virtual Machine Platform Enabled: <br /> This optional setting is for virtualization and you can enable the setting from Control Panel/ Optional Features.| - Virtual Machine Platform Enabled: <br /> This optional setting is for virtualization and you can enable the setting from Control Panel/ Optional Features.|
 |- Storage: Solid-state drive (SSD) <br /> - Hard Disk Drive (HDD) (NOT RECOMMENDED).| - Storage: Solid-state drive (SSD) <br /> - Hard Disk Drive (HDD) (NOT RECOMMENDED).|
+| - Partition: NTFS <br /> WSA can only be  installed on a NTFS partition, not on an exFAT partition |- Partition: NTFS <br /> WSA can only be  installed on a NTFS partition, not on an exFAT partition|
 |- Windows™ 11: Build 22000.526 or higher.| - Windows™ 10: 22H2 10.0.19045.2311 or higher. <br /> - May work on Windows™ 10 [21H2 10.0.19044.2311](https://user-images.githubusercontent.com/68516357/210234947-233d9207-6b54-4f70-99b3-2267bb542098.png)|
 |- The Computer must support virtualization and be enabled in BIOS/UEFI and Optional Features. [Guide](https://support.microsoft.com/en-us/windows/enable-virtualization-on-windows-11-pcs-c5578302-6e43-4b4b-a449-8ced115f58e1)|- The Computer must support virtualization and be enabled in BIOS/UEFI and Optional Features. [Guide](https://support.microsoft.com/en-us/windows/enable-virtualization-on-windows-11-pcs-c5578302-6e43-4b4b-a449-8ced115f58e1)|
 
@@ -78,14 +76,13 @@
 9. Close File Explorer
 10. **Enjoy**
 
-### Notice: For the Windows 10 Builds
+### Notice (Applicable for both Windows 10 and 11):
 
-1. You can only install WSA on a NTFS partition, not on an exFAT partition.
-2. You can NOT delete the WSA installation folder.
+1. You can NOT delete the WSA installation folder.
    What `Add-AppxPackage -Register .\AppxManifest.xml` does is to register an appx package with some existing unpackaged files,
    so you need to keep them as long as you want to use WSA.
    Check https://learn.microsoft.com/en-us/powershell/module/appx/add-appxpackage?view=windowsserver2022-ps for more details.
-3. You need to register your WSA appx package before you can run WSA.
+2. You need to register your WSA appx package before you can run WSA.
    For [WSABuilds](https://github.com/MustardChef/WSABuilds) and [MagiskOnWSALocal](https://github.com/LSPosed/MagiskOnWSALocal) users, you need to run `Run.bat` in the extracted dir.
    If the script fails, you can take the following steps for diagnosis (admin privilege required):
     1. Open a PowerShell window and change working directory to your WSA directory.
