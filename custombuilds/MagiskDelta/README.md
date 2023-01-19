@@ -1,19 +1,19 @@
 # WSABuilds &nbsp; &nbsp; <img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/> 
-### MagiskOnWSA (Magisk Delta) (For Windows™ 10 and 11) 
-#### Windows Subsystem For Android™ (WSA) with Google Play Services and (or) Magisk Delta
+### MagiskOnWSA (For Windows™ 10 and 11) 
+#### Windows Subsystem For Android™ (WSA) with Google Play Services and (or) Magisk
 
 &nbsp;
 
 ## Downloads
 > **Note**
->: To request a newer WSA build or a WSA build with a different version of GApps or Magisk (root) or a build without them (root or Google Play), feel free to open an issue in the [Issues page](https://github.com/MustardChef/WSABuilds/issues). Requested (Custom) Builds can be found by pressing the "Custom Build" button below.
-
-> **Warning** : These Custom Builds are hosted on mega.nz
+>: To request a newer WSA build or a WSA build with a different version of GApps or Magisk (root) or a build without them (root or Google Play), feel free to open an issue in the [Issues page](https://github.com/MustardChef/WSABuilds/issues). <br /> Requested (Custom) Builds can be found by pressing the "Custom Build" button below.
 
 |****Operating System****|****Download Page****|
 |----------|-----------| 
-|<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" style="width: 200px;"/> | [![win11down](https://img.shields.io/badge/Download%20Latest%20Build-Windows%2011-blue?style=for-the-badge&logo=windows11)](https://mega.nz/file/AzoSUDKT#PNuK7uQqvn8NmUDXcrHy6ii3TqLfK5207p89N637k14)|
-|<img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" style="width: 200px;"/> | [![win10down](https://img.shields.io/badge/Download%20Latest%20Build-Windows%2010-blue?style=for-the-badge&logo=windows)](https://mega.nz/file/YrZjjbxS#BrnY3rOvcejPCh6w1m9seXVfOb1JtKXJlsvd_oBqjD0)|
+|<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" style="width: 200px;"/> | [![win11down](https://img.shields.io/badge/Download%20Latest%20Build-Windows%2011-blue?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2211.40000.11.0)|
+|<img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" style="width: 200px;"/> | [![win10down](https://img.shields.io/badge/Download%20Latest%20Build-Windows%2010-blue?style=for-the-badge&logo=windows)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2211.40000.11.0)|
+| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img src="https://img.icons8.com/color/240/null/windows-11.png" style="width: 50px;"/> <img src="https://img.icons8.com/color/240/null/windows-10.png" style="width: 50px;"/>  |[![windownold](https://img.shields.io/badge/Windows%2010%2F11-Older%20Builds-red?style=for-the-badge)](https://github.com/MustardChef/WSABuilds/blob/master/OldBuilds.md)|
+| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img src="https://img.icons8.com/color/240/null/windows-11.png" style="width: 50px;"/> <img src="https://img.icons8.com/color/240/null/windows-10.png" style="width: 50px;"/>  |[![windownold](https://img.shields.io/badge/Windows%2010%2F11-Custom%20Builds-382bef?style=for-the-badge)](https://github.com/MustardChef/WSABuilds/tree/master/custombuilds)|
 
 &nbsp;
 
@@ -77,6 +77,23 @@
 8. Click on the PowerShell window, then press any key on the keyboard, the PowerShell window should close
 9. Close File Explorer
 10. **Enjoy**
+
+### Notice: For the Windows 10 Builds
+
+1. You can only install WSA on a NTFS partition, not on an exFAT partition.
+2. You can NOT delete the WSA installation folder.
+   What `Add-AppxPackage -Register .\AppxManifest.xml` does is to register an appx package with some existing unpackaged files,
+   so you need to keep them as long as you want to use WSA.
+   Check https://learn.microsoft.com/en-us/powershell/module/appx/add-appxpackage?view=windowsserver2022-ps for more details.
+3. You need to register your WSA appx package before you can run WSA.
+   For [WSABuilds](https://github.com/MustardChef/WSABuilds) and [MagiskOnWSALocal](https://github.com/LSPosed/MagiskOnWSALocal) users, you need to run `Run.bat` in the extracted dir.
+   If the script fails, you can take the following steps for diagnosis (admin privilege required):
+    1. Open a PowerShell window and change working directory to your WSA directory.
+    2. Run `Add-AppxPackage -ForceApplicationShutdown -ForceUpdateFromAnyVersion -Register .\AppxManifest.xml` in PowerShell.
+       This should fail with an ActivityID, which is a UUID required for the next step.
+    3. Run `Get-AppPackageLog -ActivityID <UUID>` in PowerShell.
+       This should print the log of the failed operation.
+    4. Check the log for the reason of failure and fix it.
 
 ## Uninstallation
 
