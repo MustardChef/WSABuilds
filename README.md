@@ -42,8 +42,8 @@
 |- Processor type: x64 or ARM64.| - Processor type: x64 or ARM64.|
 |- Virtual Machine Platform Enabled: <br /> This optional setting is for virtualization and you can enable the setting from Control Panel/ Optional Features.| - Virtual Machine Platform Enabled: <br /> This optional setting is for virtualization and you can enable the setting from Control Panel/ Optional Features.|
 |- Storage: Solid-state drive (SSD) <br /> - Hard Disk Drive (HDD) (NOT RECOMMENDED).| - Storage: Solid-state drive (SSD) <br /> - Hard Disk Drive (HDD) (NOT RECOMMENDED).|
-| - Partition: NTFS <br /> WSA can only be  installed on a NTFS partition, not on an exFAT partition |- Partition: NTFS <br /> WSA can only be  installed on a NTFS partition, not on an exFAT partition|
-|- Windows™ 11: Build 22000.526 or higher.| - Windows™ 10: 22H2 10.0.19045.2311 or higher. <br /> - May work on Windows™ 10 [21H2 10.0.19044.2311](https://user-images.githubusercontent.com/68516357/210234947-233d9207-6b54-4f70-99b3-2267bb542098.png)|
+| - Partition: NTFS <br /> WSA can only be installed on a NTFS partition, not on an exFAT partition |- Partition: NTFS <br /> WSA can only be installed on a NTFS partition, not on an exFAT partition|
+|- Windows™ 11: Build 22000.526 or higher.| - Windows™ 10: 22H2 10.0.19045.2311 or higher. <br /> <br /> - May work on Windows™ 10 [21H2 10.0.19044.2311](https://user-images.githubusercontent.com/68516357/210234947-233d9207-6b54-4f70-99b3-2267bb542098.png) <br /> However, MinVersion ---> TargetDeviceFamily node in AppxManifest.xml must be modified before trying|
 |- The Computer must support virtualization and be enabled in BIOS/UEFI and Optional Features. [Guide](https://support.microsoft.com/en-us/windows/enable-virtualization-on-windows-11-pcs-c5578302-6e43-4b4b-a449-8ced115f58e1)|- The Computer must support virtualization and be enabled in BIOS/UEFI and Optional Features. [Guide](https://support.microsoft.com/en-us/windows/enable-virtualization-on-windows-11-pcs-c5578302-6e43-4b4b-a449-8ced115f58e1)|
 
 ## Installation
