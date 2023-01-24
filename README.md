@@ -66,9 +66,19 @@
 6. Open the Windows Subsystem For Android™ folder: Search for and double-click `Run.bat`
    - If you previously have a MagiskOnWSA installation, it will automatically uninstall the previous one while preserving all user data and install the new one, so don't worry about your data.
    - If the popup windows disappear without asking administrative permission and Windows Subsystem For Android™ is not installed successfully, you should manually run Install.ps1 as administrator:
+      
       - Press Win+x and select Windows™ Terminal (Admin)
-      - Input cd "{X:\path\to\your\extracted\folder}" and press enter, and remember to replace {X:\path\to\your\extracted\folder} including the {}, for example cd "D:\wsa"
-      - Input PowerShell.exe -ExecutionPolicy Bypass -File .\Install.ps1 and press enter
+      
+      - Input the command below and press enter, replacing {X:\path\to\your\extracted\folder} including the {} with the path of the extracted folder
+        ```Powershell
+        cd "{X:\path\to\your\extracted\folder}"
+        ```  
+        
+      - Input the command below and press enter   
+        ```Powershell
+        PowerShell.exe -ExecutionPolicy Bypass -File .\Install.ps1
+        ```
+        
       - The script will run and Windows Subsystem For Android™ will be installed
       - If this workaround does not work, your PC is not supported for WSA
       
@@ -76,6 +86,8 @@
 8. Click on the PowerShell window, then press any key on the keyboard, the PowerShell window should close
 9. Close File Explorer
 10. **Enjoy**
+
+&nbsp;
 
 ### Notice (Applicable for both Windows 10 and 11):
 
@@ -87,11 +99,19 @@
    For [WSABuilds](https://github.com/MustardChef/WSABuilds) and [MagiskOnWSALocal](https://github.com/LSPosed/MagiskOnWSALocal) users, you need to run `Run.bat` in the extracted dir.
    If the script fails, you can take the following steps for diagnosis (admin privilege required):
     1. Open a PowerShell window and change working directory to your Windows Subsystem For Android™ directory.
-    2. Run `Add-AppxPackage -ForceApplicationShutdown -ForceUpdateFromAnyVersion -Register .\AppxManifest.xml` in PowerShell.
-       This should fail with an ActivityID, which is a UUID required for the next step.
-    3. Run `Get-AppPackageLog -ActivityID <UUID>` in PowerShell.
-       This should print the log of the failed operation.
+    
+    2. Run the command below in PowerShell. This should fail with an ActivityID, which is a UUID required for the next step.
+       ```Powershell
+       Add-AppxPackage -ForceApplicationShutdown -ForceUpdateFromAnyVersion -Register .\AppxManifest.xml
+       ```
+       
+    3. Run the command below in PowerShell. This should print the log of the failed operation.
+       ```Powershell
+       Get-AppPackageLog -ActivityID <UUID>
+       ```
     4. Check the log for the reason of failure and fix it.
+
+&nbsp;
 
 ## Uninstallation
 
@@ -110,6 +130,7 @@
 9. Type `Windows Subsystem for Android`
 10. Once the Windows Subsystem For Android™ app shows, click `Uninstall` in the right pane
 
+&nbsp;
 
 ## FAQ
 
@@ -122,12 +143,13 @@
 - I am not working on the patch, and nor claim to.  Open an issue in the Discord or Github, and I will try to assist you with the problem if possible. For full support visit the project homepage and open an issue there: https://github.com/cinit/WSAPatch/issues/
 
 **How do I get a logcat?**
+- There are two ways:
+   ```
+   adb logcat
+   ```
+   or
 
-- `adb logcat`
-
-or
-
-- `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalState\diagnostics\logcat`
+-  Location in Windows ---> <br/> `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalState\diagnostics\logcat`
 
 **Can I delete the installed folder?**
 
@@ -155,11 +177,24 @@ or
 
 **I cannot adb connect localhost:58526**
 
-- Make sure developer mode is enabled. If the issue persists, check the IP address of Windows Subsystem For Android™ on the Settings ---> Developer page and try `adb connect ip:5555`
+- Make sure developer mode is enabled. If the issue persists, check the IP address of Windows Subsystem For Android™ on the Settings ---> Developer page and try 
+
+   ```
+   adb connect ip:5555
+   ```
 
 **Magisk online module list is empty?**
 
-- Magisk actively removes the online module repository. You can install the module locally or by `adb push module.zip /data/local/tmp` and `adb shell su -c magisk --install-module /data/local/tmp/module.zip`
+- Magisk actively removes the online module repository. You can install the module locally or by 
+  
+   **Step 1** 
+      
+      adb push module.zip /data/local/tmp
+
+   **Step 2**  
+
+      adb shell su -c magisk --install-module /data/local/tmp/module.zip
+
 
 **How do I uninstall Magisk?**
 
