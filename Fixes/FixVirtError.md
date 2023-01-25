@@ -1,0 +1,41 @@
+# WSABuilds &nbsp; &nbsp; <img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/> &nbsp; 
+
+&nbsp;
+&nbsp;
+
+## Issues:
+
+&nbsp;
+&nbsp;
+
+<img src="https://user-images.githubusercontent.com/68629435/213985345-a6fc6e97-63f3-4741-8965-8d62a0d6b824.png"/>
+
+## Solution: 
+
+You may encounter this problem, even if Virtualization is enabled on your PC (in the BIOS) and shows up as enabled in Task Manager (as seen below) and Virtual Machine Platform + Windows Hypervisor Platform is Enabled. The solution is:
+
+&nbsp;
+
+**1.** ***Remove WSA***
+
+**2.** ***Go to "Turn Windows features on and off" and disable Hyper-V, Virtual Machine Platform, Windows Hypervisor Platform, and Windows Subsystem for Linux, then restart.****
+
+**3.** ***Reenable these features and restart a second time.*** 
+
+**4.** ***Make sure Core Isolation is turned off.*** 
+
+**5.**  ***In registry editor (regedit), go to “\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\FsDepends"***
+
+    Change the value of “Start” from “3” to “0”
+
+> **Note**
+> You can change it back to 3, if it makes no difference
+
+**6.** ***Then in CMD (Run as Adminstrator), paste:*** 
+```cmd
+bcdedit /set hypervisorlaunchtype auto
+```
+**7.** ***Reinstall WSA by downloading from prebuilt builds (Not self promoting but: [WSABuilds](https://github.com/MustardChef/WSABuilds)) or patching it yourself using the excellent guide in this repo and running `Run.bat`***
+
+
+**Hope this works for you!**
