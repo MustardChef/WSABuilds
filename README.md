@@ -225,6 +225,10 @@
 - To request a build with custom Magisk or GApps, feel free to open an issue in the [Issues page](https://github.com/MustardChef/WSABuilds/issues.) You can also achieve this by using the [MagiskOnWSALocal](https://github.com/LSPosed/MagiskOnWSALocal) Script and following the provided instructions located in the repo.
 </details>
 
+&nbsp;
+
+<details>     
+   <summary><img style="float: right;" src="https://img.icons8.com/external-soft-fill-juicy-fish/96/null/external-bug-coding-and-development-soft-fill-soft-fill-juicy-fish-2.png" width="60" height="60"/><h1> &nbsp; Having Issues?<h1></summary>
 
 <!--
 1. Fork this repository
