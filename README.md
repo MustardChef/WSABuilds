@@ -16,7 +16,7 @@
 
 ## Downloads
 <details>     
-   <summary><h3> &nbsp; ℹ️Before Downloading <h3></summary>
+   <summary><h3> &nbsp; ℹ️Download Disclaimer <h3></summary>
    
 > **Warning** 
 > ### :exclamation: **Important:**
@@ -24,9 +24,12 @@
 > ### Prebuilt Windows Subsystem For Android™ Builds for Windows™ 10 in [Releases](https://github.com/MustardChef/WSABuilds/releases) ONLY have had AppxManifest.xml, icu.dll and WsaPatch.dll patched according to the WSAPatch guide before upload to Github.
 > #### The same level of scrutiny should be applied with the Windows Subsystem For Android™ builds as with any other program that you download from the internet
 </details> 
-
+<details>     
+   <summary><h3> &nbsp; ❓Want to request a build❓ <h3></summary>
+   
 > **Note**
 > <br /> To request: <br /> - A newer build <br /> - A build with a different version of GApps (Google Play Services) or Magisk (root) <br /> - A build without Magisk (root) or GApps (Google Play Services) <br /> Feel free to open an issue in the [Issues page](https://github.com/MustardChef/WSABuilds/issues). <br /><br /> Requested (Custom) Builds can be found by pressing the "Custom Build" button below.
+</details>
 
 |****Operating System****|****Download Page****|
 |----------|-----------| 
@@ -259,7 +262,8 @@
 
 &nbsp;      
       
-## Credits
+<details>     
+   <summary><img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-credits-movie-theater-flaticons-lineal-color-flat-icons.png" width="60" height="60"/><h1> &nbsp; Credits<h1></summary>
 
 - [Microsoft](https://apps.microsoft.com/store/detail/windows-subsystem-for-android%E2%84%A2-with-amazon-appstore/9P3395VX91NR): For providing Windows Subsystem For Android™ and related files. Windows Subsystem For Android™, Windows Subsystem For Android™ Logo, Windows™ 10 and Windows™ 11 Logos are trademarks of Microsoft Corporation. Microsoft Corporation reserves all rights to these trademarks. By downloading and installing Windows Subsystem For Android™, you agree to the [Terms and Conditions](https://support.microsoft.com/en-gb/windows/microsoft-software-license-terms-microsoft-windows-subsystem-for-android-cf8dfb03-ba62-4daa-b7f3-e2cb18f968ad) and [Privacy Policy](https://privacy.microsoft.com/en-gb/privacystatement)
 <!-- 
@@ -278,3 +282,5 @@
 ***The repository is provided as a utility.***
 
 ***Android is a trademark of Google LLC. Windows™ is a trademark of Microsoft LLC.***
+
+</details> 
