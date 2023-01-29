@@ -1,3 +1,9 @@
+# WSABuilds &nbsp; &nbsp; <img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/> &nbsp; 
+
+
+### Guide: Sideloading APKs (installing from Windows) into Windows Subsystem For Android™
+&nbsp;
+
 **Step 1:** &nbsp; Download and install [**WSA Pacman**](https://github.com/alesimula/wsa_pacman/releases) or [**WSA Sideloader**](https://github.com/infinitepower18/WSA-Sideloader).
 
 &nbsp;
