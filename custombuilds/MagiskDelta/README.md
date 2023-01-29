@@ -14,6 +14,7 @@
 |----------|-----------| 
 |<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" style="width: 200px;"/> | [![win11down](https://img.shields.io/badge/Download%20Latest%20Build-Windows%2011-blue?style=for-the-badge&logo=windows11)](https://mega.nz/file/AzoSUDKT#PNuK7uQqvn8NmUDXcrHy6ii3TqLfK5207p89N637k14)|
 |<img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" style="width: 200px;"/> | [![win10down](https://img.shields.io/badge/Download%20Latest%20Build-Windows%2010-blue?style=for-the-badge&logo=windows)](https://mega.nz/file/YrZjjbxS#BrnY3rOvcejPCh6w1m9seXVfOb1JtKXJlsvd_oBqjD0)|
+| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img src="https://img.icons8.com/color/240/null/windows-11.png" style="width: 50px;"/> <img src="https://img.icons8.com/color/240/null/windows-10.png" style="width: 50px;"/>  |[![windownold](https://img.shields.io/badge/Windows%2010%2F11-All%20Builds-red?style=for-the-badge)](https://mega.nz/folder/c7BQFaKZ#tMOqdGBnQ6x3jg57wyTErQ)|
 
 
 
