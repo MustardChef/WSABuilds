@@ -16,13 +16,13 @@ You may encounter this problem, even if Virtualization is enabled on your PC (in
 
 &nbsp;
 
-1. ***Remove WSA***
+1. ***Remove WSA***: Right clicking on "Windows Subsystem for Android™ Settings" and pressing uninstall + Deleting the extracted WSA (MagiskOnWSA folder that you extracted and installed from)
 
 2. ***Go to "Turn Windows features on and off" and disable Hyper-V, Virtual Machine Platform, Windows Hypervisor Platform, and Windows Subsystem for Linux, then restart.****
 
 3. ***Reenable these features and restart a second time.*** 
 
-4. ***Make sure Core Isolation is turned off.*** 
+4. ***Make sure Core Isolation is turned off by going into Windows Defender Security Center.*** 
 
 5.  ***In registry editor (regedit), go to “\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\FsDepends"***
 
