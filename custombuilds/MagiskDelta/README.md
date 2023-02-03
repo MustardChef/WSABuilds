@@ -38,9 +38,9 @@
 
 |****Operating System****|****Download Page****|
 |----------|-----------| 
-|<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" style="width: 200px;"/> | [![win11down](https://img.shields.io/badge/Download%20Latest%20Build-Windows%2011-blue?style=for-the-badge&logo=windows11)](https://mega.nz/file/17JglZrY#fI_UnKWiRvW6zxPwdaVBLnaUHT_Qvm0Im8lB9iLkrdo)|
-|<img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" style="width: 200px;"/> | [![win10down](https://img.shields.io/badge/Download%20Latest%20Build-Windows%2010-blue?style=for-the-badge&logo=windows)](https://mega.nz/file/ZiRDxDBT#9X-iz1PJEmlYp5TuicPwQK3dgA5MQogidkybOMQUx8g)|
-| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img src="https://img.icons8.com/color/240/null/windows-11.png" style="width: 50px;"/> <img src="https://img.icons8.com/color/240/null/windows-10.png" style="width: 50px;"/>  |[![windownold](https://img.shields.io/badge/Windows%2010%2F11-All%20Builds-red?style=for-the-badge)](https://mega.nz/folder/c7BQFaKZ#tMOqdGBnQ6x3jg57wyTErQ)|
+|<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" style="width: 200px;"/> | [![win11down](https://img.shields.io/badge/Download%20Latest%20Build-Windows%2011-blue?style=for-the-badge&logo=windows11)](https://mega.nz/file/snQk3D5K#fI_UnKWiRvW6zxPwdaVBLnaUHT_Qvm0Im8lB9iLkrdo)|
+|<img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" style="width: 200px;"/> | [![win10down](https://img.shields.io/badge/Download%20Latest%20Build-Windows%2010-blue?style=for-the-badge&logo=windows)](https://mega.nz/file/56RXmBLL#9X-iz1PJEmlYp5TuicPwQK3dgA5MQogidkybOMQUx8g)|
+| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img src="https://img.icons8.com/color/240/null/windows-11.png" style="width: 50px;"/> <img src="https://img.icons8.com/color/240/null/windows-10.png" style="width: 50px;"/>  |[![windownold](https://img.shields.io/badge/Windows%2010%2F11-All%20Builds-red?style=for-the-badge)](https://mega.nz/folder/UiRGxAhJ#6JCAh0R4fag5WTIq5Q33TA)|
 ||[<img src="https://img.shields.io/badge/Magisk%20Delta-Changelog-FF7920?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/HuskyDG/magisk-files/blob/main/note.md)|
 
 &nbsp;
