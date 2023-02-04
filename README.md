@@ -246,7 +246,7 @@
 [<img src="https://img.shields.io/badge/-How%20to%20Sideload%20apps-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Guides/Sideloading.md)
 
 ### Moving WSA to another drive or partition:
-[<img src="https://img.shields.io/badge/-How%20to%20Move%20WSA%20to%20anothe%20drive%20or%20partition-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Guides/MoveToExtDrive.md)
+[<img src="https://img.shields.io/badge/-How%20to%20Move%20WSA%20to%20another%20drive%20or%20partition-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Guides/MoveToExtDrive.md)
 
 
 </details> 
