@@ -45,7 +45,7 @@
 &nbsp;
 
 ## Requirements
-|     <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" width=40% height=40%>        |  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" width=50% height=50%>     |
+|     <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" width=40% height=40%>        |  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" width=40% height=40%>     |
 |-----------------------|-----------------------|
 | - RAM: 6 GB (not recommended), 8 GB (minimum) and 16 GB (recommended).|- RAM: 6 GB (not recommended), 8 GB (minimum) and 16 GB (recommended).|
 |- Processor: Your PC should meet the basic Windows™ 11 requirements i.e Core i3 8th Gen, Ryzen 3000, Snapdragon 8c, or above.| - Processor: N/A (This is a bit of a hit or miss)
@@ -133,7 +133,19 @@
 
 <details>     
    <summary><img style="float: right;" src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/null/external-updating-tools-and-material-ecommerce-flaticons-flat-flat-icons.png" width="60" height="60"/><h1> &nbsp; Updating<h1></summary>
-   
+
+### How do I update without losing any of my apps and data on Windows Subsystem for Android (WSA)
+
+1. [Download the latest build](https://github.com/MustardChef/WSABuilds#downloads) (that you want to update to)
+2. Make sure Windows Subsystem For Android is not running (Click on "Turn off" in the WSA Settings and wait for the spinning loader to disappear)
+2. Open the .zip file using 7-Zip or WinRAR (or any other tool) and open the .zip archive
+3. Within the .zip archive open the subfolder (Example: WSA_2xxx.xxxxx.xx.x_xx_Release-Nightly-with-magisk-xxxxxxx-MindTheGapps-xx.x-RemovedAmazon)
+4. Select all the files that are within this subfolder and extract them to the current folder of Windows Subsystem For Android
+5. When prompted to replace folders, select "Do this for all current items" and click on "Yes" 
+6. When prompted to replace files, click on "Replace the files in the destination"
+7. Run  ``Run.bat``
+
+
 </details>   
 
 &nbsp;
