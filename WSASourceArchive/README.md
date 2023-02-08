@@ -11,4 +11,4 @@
 
 |**Windows Subsystem for Android**|****Download Page****|
 |----------|-----------| 
-|<img src="https://user-images.githubusercontent.com/68516357/216449394-f4129e99-9c4c-4532-8b1a-742d547a74bf.png" style="width: 200px;"/> | [<img src="https://img.shields.io/badge/-Browse%20Archive%20Builds-D9272E?style=for-the-badge&logoColor=white&logo=mega" style="width: 300px;" />](https://mega.nz/folder/pEdQgBRQ#DGLj8Gdns-isv28zC2Ii0Q)
+|<img src="https://user-images.githubusercontent.com/68516357/216449394-f4129e99-9c4c-4532-8b1a-742d547a74bf.png" style="width: 200px;"/> | [<img src="https://img.shields.io/badge/-Browse%20.msix%20Archive%20Builds-D9272E?style=for-the-badge&logoColor=white&logo=mega" style="width: 300px;" />](https://mega.nz/folder/pEdQgBRQ#DGLj8Gdns-isv28zC2Ii0Q)
