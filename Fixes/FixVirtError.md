@@ -22,7 +22,7 @@ You may encounter this problem, even if Virtualization is enabled on your PC (in
 
 3. ***Reenable these features and restart a second time.*** 
 
-4. ***Make sure Core Isolation is turned off by going into Windows Defender Security Center.*** 
+4. ***Ensure that you have Control Flow Guard enabled in Windows Security > Apps & browser control > Exploit protection.*** This is a known issue that can prevent WSA from starting
 
 5.  ***In registry editor (regedit), go to “\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\FsDepends"***
 
