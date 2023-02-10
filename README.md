@@ -169,7 +169,7 @@
 
    - **1.)** Make sure that Windows Subsystem For Android™ is not running
    - **2.)** Search for ``Windows Subsystem For Android™ Settings`` using the built-in Windows Search, or through Add and Remove Programs and press uninstall
-   - **3.)** Delete the WSA folder that extracted and Run.bat was run from (MagiskOnWSA folder)
+   - **3.)** Delete the WSA folder that extracted you extracted and Run.bat was run from to install WSA (MagiskOnWSA folder)
    - **4.)** Go to ``%LOCALAPPDATA%/Packages/`` and delete the folder named ``MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe``
             
       - If you get an error that states that the file(s) could not be deleted, make sure that WSA is turned off
