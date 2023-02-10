@@ -161,18 +161,23 @@
 
 ### New CLI and GUI Uninstall Tool Coming Soon! Join the Discord for announcements and updates.
 
-> Note: If you want to preseve your data, make a backup of the `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx` file. After uninstalling, copy the VHDX file back to the `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache` folder.
+> **Note**: 
+> 
+> If you want to preseve your data, make a backup of the `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx` file. After uninstalling, copy the VHDX file back to the `%LOCALAPPDATA%\Package\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache` folder.
 
-1. Go to the Start Menu
-2. Type `Windows Subsystem for Android`
-3. Once the Windows Subsystem For Android™ app shows, click `App settings` in the right pane
-4. In the Settings window that opens, scroll down and click `Terminate`
-5. Click `Repair`
-6. Click `Reset`
-7. Close the Settings app
-8. Go to the Start Menu
-9. Type `Windows Subsystem for Android`
-10. Once the Windows Subsystem For Android™ app shows, click `Uninstall` in the right pane
+- To remove WSA installed through WSABuild:
+
+   - **1.)** Make sure that Windows Subsystem For Android™ is not running
+   - **2.)** Search for ``Windows Subsystem For Android™ Settings`` using the built-in Windows Search, or through Add and Remove Programs and press uninstall
+   - **3.)** Delete the WSA folder that extracted and Run.bat was run from (MagiskOnWSA folder)
+   - **4.)** Go to ``%LOCALAPPDATA%/Packages/`` and delete the folder named ``MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe``
+            
+      - If you get an error that states that the file(s) could not be deleted, make sure that WSA is turned off
+     
+- To remove WSA installed from the Microsoft Store: 
+        
+   - **1.)** Search for ``Windows Subsystem For Android™ Settings`` using the built-in Windows Search, or through Add and Remove Programs and press uninstall
+
 </details>
 
 &nbsp;
