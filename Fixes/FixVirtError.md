@@ -16,7 +16,7 @@ You may encounter this problem, even if Virtualization is enabled on your PC (in
 
 &nbsp;
 
-1. ***Remove WSA***: Right clicking on "Windows Subsystem for Android™ Settings" and pressing uninstall + Deleting the extracted WSA (MagiskOnWSA folder that you extracted and installed from)
+1. ***Remove WSA***: Right clicking on "Windows Subsystem for Android™ Settings" and pressing uninstall + Deleting the extracted WSA (MagiskOnWSA folder that you extracted and installed from) + Go to %LOCALAPPDATA%/Packages/ and delete the folder: MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe
 
 2. ***Go to "Turn Windows features on and off" and disable Hyper-V, Virtual Machine Platform, Windows Hypervisor Platform, and Windows Subsystem for Linux, then restart.****
 
