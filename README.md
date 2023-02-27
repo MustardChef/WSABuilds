@@ -26,28 +26,23 @@
 > ### I will move to a more transparent method of building MagiskOnWSA builds soon, due to the overarching concerns with safety, transparancy and build integrity
 
 > #### The same level of scrutiny should be applied with the Windows Subsystem For Android™ builds as with any other program that you download from the internet
-</details> 
-<details>     
-   <summary><h3> &nbsp; ❓Want to request a custom build❓ <h3></summary>
-   
-> **Note**
-> <br /> To request: <br /> - A newer build <br /> - A build with a different version of GApps (Google Play Services) or Magisk (root) <br /> - A build without Magisk (root) or GApps (Google Play Services) <br /> Feel free to open an issue in the [Issues page](https://github.com/MustardChef/WSABuilds/issues). <br /><br /> Requested (Custom) Builds can be found by pressing the "Custom Build" button below.
 </details>
-
-<details>     
-   <summary><h3> &nbsp; ❓Want to build a custom build❓ <h3></summary>
+      
+ <details>     
+   <summary><h3> &nbsp; ❓Want to build your own custom build❓ <h3></summary>
    
 > **Note**
-> <br> If you can, please download WSA from the [Release](https://github.com/MustardChef/WSABuild/releases/latest) or request a prebuilt custom build using the [Issues page](https://github.com/MustardChef/WSABuilds/issues.)<br />
+> <br> If you can, please download WSA from the [Releases](https://github.com/MustardChef/WSABuilds/releases) or request a prebuilt custom build using the [Issues page](https://github.com/MustardChef/WSABuilds/issues.)<br />
 > <br>However, this guide gives you the option to build your own build using the MagiskOnWSA Github Actions Script from the community<br />
 
 > **Warning** 
 > **Important:**
-> Please **do not directly fork** the repo provided in the instructions below. Instead, follow the instructions set out clearly.
+> Please **do not directly fork** the repo provided in the instructions below. Instead, follow the instructions set out clearly, to avoid the repo from being taken down as a result of a misuse of Github Actions due to the large number of forks.
 
-<br />
-
+### **Instructions**
+      
 ---
+     
 #### **1. Log into your Github Account (this is necessary) and in the home page, click on the button (shown below) and select "import a repository" or go to [this page directly](https://github.com/new/import)**
    ***Step 1:***
    
@@ -99,7 +94,13 @@
 
 ---    
 </details>
-
+      
+<details>     
+   <summary><h3> &nbsp; ❓Want to request a custom build❓ <h3></summary>
+   
+> **Note**
+> <br /> To request: <br /> - A newer build <br /> - A build with a different version of GApps (Google Play Services) or Magisk (root) <br /> - A build without Magisk (root) or GApps (Google Play Services) <br /> Feel free to open an issue in the [Issues page](https://github.com/MustardChef/WSABuilds/issues). <br /><br /> Requested (Custom) Builds can be found by pressing the "Custom Build" button below.
+</details>
 
 |****Operating System****|****Download Page****|
 |----------|-----------| 
