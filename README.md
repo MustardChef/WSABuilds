@@ -34,6 +34,30 @@
 > <br /> To request: <br /> - A newer build <br /> - A build with a different version of GApps (Google Play Services) or Magisk (root) <br /> - A build without Magisk (root) or GApps (Google Play Services) <br /> Feel free to open an issue in the [Issues page](https://github.com/MustardChef/WSABuilds/issues). <br /><br /> Requested (Custom) Builds can be found by pressing the "Custom Build" button below.
 </details>
 
+<details>     
+   <summary><h3> &nbsp; ❓Want to build a custom build❓ <h3></summary>
+   
+> **Note**
+> <br> If you can, please download WSA from the [Release](https://github.com/MustardChef/WSABuild/releases/latest) or request a prebuilt custom build using the [Issues page](https://github.com/MustardChef/WSABuilds/issues.)<br />
+> <br>However, this guide gives you the option to build your own build using the MagiskOnWSA Github Actions Script from the community<br />
+
+      
+1. Star (if you like) and [Fork this repository](https://github.com/YT-Advanced/WSA-Script/fork)
+    ![Fork Button](https://docs.github.com/assets/images/help/repository/fork_button.png)
+1. Go to the **Action** tab in your forked repo
+    ![Action Tab](https://docs.github.com/assets/images/help/repository/actions-tab.png)
+1. In the left sidebar, click the **Custom Build** workflow.
+    ![Workflow](https://docs.github.com/assets/images/help/repository/actions-select-workflow-2022.png)
+1. Above the list of workflow runs, select **Run workflow**
+    ![Run Workflow](https://docs.github.com/assets/images/actions-workflow-dispatch.png)
+1. Select the option then click **Run workflow**
+    ![Run Workflow](https://docs.github.com/assets/images/actions-manually-run-workflow.png)
+1. Wait for the action to complete and download the artifact
+**DO NOT download it via multithread downloaders like IDM**
+    ![Download](https://docs.github.com/assets/images/help/repository/artifact-drop-down-updated.png)
+</details>
+
+
 |****Operating System****|****Download Page****|
 |----------|-----------| 
 |<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" style="width: 200px;"/> | [![win11down](https://img.shields.io/badge/Download%20Latest%20Build-Windows%2011%20x64-blue?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2301.40000.7.0) <br /> [![win11down](https://img.shields.io/badge/Download%20Latest%20Build-Windows%2011%20arm64-blue?style=for-the-badge&logo=windows11)](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2301.40000.7.0_arm64)|![image](https://user-images.githubusercontent.com/68516357/213565690-f2f3710b-7673-4ac1-b8b4-0c6f58028c6f.png)
