@@ -277,6 +277,9 @@
 ### Moving WSA to another drive or partition:
 [<img src="https://img.shields.io/badge/-How%20to%20Move%20WSA%20to%20another%20drive%20or%20partition-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Guides/MoveToExtDrive.md)
 
+### Installing KernalSU
+[<img src="https://img.shields.io/badge/-How%20to%20install%20KernelSU-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Guides/KernelSU.md)
+
 
 </details> 
 
