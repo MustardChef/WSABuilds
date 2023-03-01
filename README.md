@@ -67,35 +67,38 @@
 ---
 #### **5. Now, Go to the **Action** tab**
 
-![Action Tab](https://docs.github.com/assets/images/help/repository/actions-tab.png)
+![CvYhP0B0CI](https://user-images.githubusercontent.com/68516357/222221960-f48ab9c3-eb77-4cb0-b932-5cd343381048.png)
+
     
 ---
 #### **4. In the left sidebar, click the **Custom Build** workflow.**
     
-![Workflow](https://docs.github.com/assets/images/help/repository/actions-select-workflow-2022.png)
+![image](https://user-images.githubusercontent.com/68516357/222221307-8a4571d2-ac3e-410b-b999-0eb62b14d8d5.png)
     
 ---
 #### **5. Above the list of workflow runs, select **Run workflow****
     
-![Run Workflow](https://docs.github.com/assets/images/actions-workflow-dispatch.png)
+![image](https://user-images.githubusercontent.com/68516357/222222850-f991890c-5a80-4cc2-b83d-0ef35c24a79e.png)
     
 ---
 #### **6. Select your desired options such as ***Magisk Version***, ***WSA Release Channel + WSA Archetecture*** , ***GApps Varient*** and ***Compression Format*** then click **Run workflow****
     
-![Run Workflow](https://docs.github.com/assets/images/actions-manually-run-workflow.png)
+![image](https://user-images.githubusercontent.com/68516357/222224185-abcfa0cf-c8c6-46e3-bc38-871c968b86f2.png)
     
 ---    
 #### **7. Wait for the action to complete and download the artifact**
 
 **DO NOT download it via multithread downloaders like IDM**
 
-![Download](https://docs.github.com/assets/images/help/repository/artifact-drop-down-updated.png)
+![image](https://user-images.githubusercontent.com/68516357/222224469-5748b78a-158e-46ff-9f65-317dbb519aac.png)
 
-#### **8. Install like normal using the instructions in this repository**
+---
+#### **8. Install like normal using the instructions in this repository** and most important of all....
+
 
 <br/>
 
-### **Enjoy**
+### **Enjoy!**
  
 <br/>
 
