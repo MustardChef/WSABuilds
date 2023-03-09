@@ -35,7 +35,11 @@ You may encounter this problem, even if Virtualization is enabled on your PC (in
 ```cmd
 bcdedit /set hypervisorlaunchtype auto
 ```
-7. ***Reinstall WSA by running `Run.bat`***
+
+7. ***Restart the Computer***
+
+8. ***Reinstall WSA by running `Run.bat`***
+
 
 &nbsp;
 
