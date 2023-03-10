@@ -30,20 +30,17 @@
       
  <details>     
    <summary><h3> &nbsp; ❓Want to build your own custom build❓ <h3></summary>
-   
-> **Note**
-> <br> If you can, please download WSA from the [Releases](https://github.com/MustardChef/WSABuilds/releases) or request a prebuilt custom build using the [Issues page](https://github.com/MustardChef/WSABuilds/issues.)<br />
-> <br>However, this guide gives you the option to build your own build using the MagiskOnWSA Github Actions Script from the community<br />
-
-> **Warning** 
-> **Important:**
-> Please **do not directly fork** the repo provided in the instructions below. Instead, follow the instructions set out clearly, to avoid the repo from being taken down as a result of a misuse of Github Actions due to the large number of forks.
-
-### **Instructions**
+         
+| :exclamation: **Important:**  &nbsp;  `⚠️DO NOT FORK⚠️`               |
+|------------------------------------------------------------------------|
+|**The repository shown in this is designed specifically not to be forked. MagiskOnWSA and some of the various forks and clones that have sprung up on the platform (***potentially***) violate GitHub's Terms of Service due to abuse of GitHub Actions and have been ultimately warned, disabled or banned.**| 
+|**Therefore, don't fork this repository unless you're a developer and want to modify the code itself and/or want to contribute to the Github repository.**|
+|**If you want to create your Custom Build, please follow the instructions set out clearly, to avoid the repo from being taken down as a result of a misuse of Github Actions due to the large number of forks.**|
       
 ---
-     
-#### **1. Log into your Github Account (this is necessary) and in the home page, click on the button (shown below) and select "import a repository" or go to [this page directly](https://github.com/new/import)**
+#### **1. Check the version from [Release](https://github.com/YT-Advanced/WSA-Script/releases/latest) and [Action Tab](https://github.com/YT-Advanced/WSA-Script/actions/workflows/custom_build.yml) first. If it don't have the version you want to build, go to next step.**
+      
+#### **2. Log into your Github Account (this is necessary) and in the home page, click on the button (shown below) and select "import a repository" or go to [this page directly](https://github.com/new/import)**
    ***Step 1:***
    
    <img src="https://user-images.githubusercontent.com/68516357/221636520-78d0716a-247b-4034-aa9d-bdbe2277950c.png" style="width: 350px;"/>
@@ -53,12 +50,12 @@
    ![image](https://user-images.githubusercontent.com/68516357/221641202-e3ef4deb-f2dd-46e6-82c8-fb4767f82e99.png)
    
 ---   
-#### **2. [Copy the URL of this Repo](https://github.com/WellCodeIsDelicious/WSA-Script) and paste it into the the text box below and press "Import"** 
+#### **3. [Copy the URL of this Repo](https://github.com/YT-Advanced/WSA-Script) and paste it into the the text box below and press "Import"** 
 
 ![image](https://user-images.githubusercontent.com/68516357/221643582-72d71f68-8f53-48d9-a940-692a54d42098.png)
 
 ---
-#### **3. Go to the **Setting** tab in your newly imported repo and enable "Github Actions"**
+#### **4. Go to the **Setting** tab in your newly imported repo and enable "Github Actions"**
 
 ![Settings](https://user-images.githubusercontent.com/68516357/222214308-b52b1c6f-a60b-44ef-9ce0-bc335087e3a2.png)
 ![MRq9WD3SO2](https://user-images.githubusercontent.com/68516357/222215598-30d68ad3-9700-4061-bba4-815b3befcb10.png)
@@ -71,30 +68,29 @@
 
     
 ---
-#### **4. In the left sidebar, click the **Custom Build** workflow.**
+#### **6. In the left sidebar, click the **Custom Build** workflow.**
     
 ![image](https://user-images.githubusercontent.com/68516357/222221307-8a4571d2-ac3e-410b-b999-0eb62b14d8d5.png)
     
 ---
-#### **5. Above the list of workflow runs, select **Run workflow****
+#### **7. Above the list of workflow runs, select **Run workflow****
     
 ![image](https://user-images.githubusercontent.com/68516357/222222850-f991890c-5a80-4cc2-b83d-0ef35c24a79e.png)
     
 ---
-#### **6. Select your desired options such as ***Magisk Version***, ***WSA Release Channel + WSA Archetecture*** , ***GApps Varient*** and ***Compression Format*** then click **Run workflow****
+#### **8. Select your desired options such as ***Magisk Version***, ***WSA Release Channel + WSA Archetecture*** , ***GApps Varient*** and ***Compression Format*** then click **Run workflow****
     
 ![image](https://user-images.githubusercontent.com/68516357/222224185-abcfa0cf-c8c6-46e3-bc38-871c968b86f2.png)
     
 ---    
-#### **7. Wait for the action to complete and download the artifact**
+#### **9. Wait for the action to complete and download the artifact**
 
 **DO NOT download it via multithread downloaders like IDM**
 
 ![image](https://user-images.githubusercontent.com/68516357/222224469-5748b78a-158e-46ff-9f65-317dbb519aac.png)
 
 ---
-#### **8. Install like normal using the instructions in this repository** and most important of all....
-
+#### **10. Install like normal using the instructions in this repository** and most important of all....
 
 <br/>
 
