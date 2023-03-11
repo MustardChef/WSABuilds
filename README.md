@@ -38,7 +38,7 @@
 |**If you want to create your Custom Build, please follow the instructions set out clearly, to avoid the repo from being taken down as a result of a misuse of Github Actions due to the large number of forks.**|
       
 ---
-#### **1. Check the version from [Release](https://github.com/YT-Advanced/WSA-Script/releases/latest) and [Action Tab](https://github.com/YT-Advanced/WSA-Script/actions/workflows/custom_build.yml) first. If it don't have the version you want to build, go to next step.**
+#### **1. Check the version from [Releases](https://github.com/MustardChef/WSABuilds/releases) first. If it does not have the version you want, continue to follow this guide. If it does, then feel free to use those prebuild WSA builds**
       
 #### **2. Log into your Github Account (this is necessary) and in the home page, click on the button (shown below) and select "import a repository" or go to [this page directly](https://github.com/new/import)**
    ***Step 1:***
