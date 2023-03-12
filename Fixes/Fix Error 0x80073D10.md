@@ -15,6 +15,6 @@
 
 **2. Click on the badge/button matching your Operating System (OS) and CPU Archetecture**
 
-**3. Download the package from the release page that opens**
+**3. Download the package and then install it, by following the [Installation guide](https://github.com/MustardChef/WSABuilds#--installation) in README.md**
 
 **4. Enjoy**
