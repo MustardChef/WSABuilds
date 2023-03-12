@@ -26,7 +26,7 @@ In E:\WSA\Install.ps1:102 Character:1
 
 **2. Redownload WSA Build .zip (sometime the files can be corrupted during download and extraction)**
 
-**3. Delete all folders containing "WindowsSubsystemForAndroid" in the following directories:** 
+**3. Delete all folders containing "WindowsSubsystemForAndroid" in the following directories/paths:** 
 
 <br>
 
