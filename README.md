@@ -60,37 +60,42 @@
 ![Settings](https://user-images.githubusercontent.com/68516357/222214308-b52b1c6f-a60b-44ef-9ce0-bc335087e3a2.png)
 ![MRq9WD3SO2](https://user-images.githubusercontent.com/68516357/222215598-30d68ad3-9700-4061-bba4-815b3befcb10.png)
 
+---
+#### **5. Then, scroll down until you reach the section titled "Workflow Permission" and follow the steps as shown in the image below**
+
+![image](https://user-images.githubusercontent.com/68516357/224546417-a82249b4-3864-42bd-8a29-32350b8b0c97.png)
+
 
 ---
-#### **5. Now, Go to the **Action** tab**
+#### **6. Now, Go to the **Action** tab**
 
 ![CvYhP0B0CI](https://user-images.githubusercontent.com/68516357/222221960-f48ab9c3-eb77-4cb0-b932-5cd343381048.png)
 
     
 ---
-#### **6. In the left sidebar, click the **Custom Build** workflow.**
+#### **7. In the left sidebar, click the **Custom Build** workflow.**
     
 ![image](https://user-images.githubusercontent.com/68516357/222221307-8a4571d2-ac3e-410b-b999-0eb62b14d8d5.png)
     
 ---
-#### **7. Above the list of workflow runs, select **Run workflow****
+#### **8. Above the list of workflow runs, select **Run workflow****
     
 ![image](https://user-images.githubusercontent.com/68516357/222222850-f991890c-5a80-4cc2-b83d-0ef35c24a79e.png)
     
 ---
-#### **8. Select your desired options such as ***Magisk Version***, ***WSA Release Channel + WSA Archetecture*** , ***GApps Varient*** and ***Compression Format*** then click **Run workflow****
+#### **9. Select your desired options such as ***Magisk Version***, ***WSA Release Channel + WSA Archetecture*** , ***GApps Varient*** and ***Compression Format*** then click **Run workflow****
     
 ![image](https://user-images.githubusercontent.com/68516357/222224185-abcfa0cf-c8c6-46e3-bc38-871c968b86f2.png)
     
 ---    
-#### **9. Wait for the action to complete and download the artifact**
+#### **10. Wait for the action to complete and download the artifact**
 
 **DO NOT download it via multithread downloaders like IDM**
 
 ![image](https://user-images.githubusercontent.com/68516357/222224469-5748b78a-158e-46ff-9f65-317dbb519aac.png)
 
 ---
-#### **10. Install like normal using the instructions in this repository** and most important of all....
+#### **11. Install like normal using the instructions in this repository** and most important of all....
 
 <br/>
 
