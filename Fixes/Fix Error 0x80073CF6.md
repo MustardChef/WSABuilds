@@ -47,14 +47,16 @@ In E:\WSA\Install.ps1:102 Character:1
 ---
 ## Solution 2: Firewall is blocking installation
 
-#### Windows Firewall
+### **Windows Firewall**
+
 **1. Ensure that Windows Firewall is on and is working with "Recommended Settings" being enabled**
 
 **2. Ensure that Windows Firewall service is running. If not, enable it.**
 
 **3. Restart your PC**
 
-#### Other Firewalls
+### Other Firewalls
+
 **1. Ensure that your Firewall is on and is working with "Recommended Settings" being enabled**
 
 **2. Ensure that your Firewall is not blocking or preventing new entries**
