@@ -3,7 +3,7 @@
 ---
 ## Issue: </br> Error 0x80073CF6 when "Run.bat" is executed to install Windows Subystem for Android (WSA)
 ### Preface:
-##### This issue can arise due to many factors. Although there is no definite solution, we can try these steps to try to fix the problem 
+##### This issue can arise due to many factors that is preventing the app from being registered. Although there is no definite solution, we can try these steps to try to fix the problem
 
 </br>
 
@@ -20,7 +20,7 @@ In E:\WSA\Install.ps1:102 Character:1
 </br>
 
 ---
-## Solution
+## Solution 1: Previous installation is blocking installation
 
 **1. Ensure the partition/drive you are installing from is NTFS**
 
@@ -44,6 +44,22 @@ In E:\WSA\Install.ps1:102 Character:1
 
 **Hope this works for you!**
 
+---
+## Solution 2: Firewall is blocking installation
+
+#### Windows Firewall
+**1. Ensure that Windows Firewall is on and is working with "Recommended Settings" being enabled**
+**2. Ensure that Windows Firewall service is running. If not, enable it.**
+**3. Restart your PC**
+
+#### Other Firewalls
+**1. Ensure that your Firewall is on and is working with "Recommended Settings" being enabled**
+**2. Ensure that your Firewall is not blocking or preventing new entries**
+**3. Restart your PC**
+
+<br>
+
+**Hope this works for you!**
 ---
 
 ### Have futher question or need help?
