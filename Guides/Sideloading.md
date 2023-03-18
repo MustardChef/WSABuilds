@@ -1,36 +1,14 @@
 # WSABuilds &nbsp; &nbsp; <img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/> &nbsp; 
 
 
-### Guide: Sideloading APKs (installing from Windows) into Windows Subsystem For Android™
-&nbsp;
+## Guide: Sideloading APKs
 
-**Step 1:** &nbsp; Download and install [**WSA Pacman**](https://github.com/alesimula/wsa_pacman/releases) or [**WSA Sideloader**](https://github.com/infinitepower18/WSA-Sideloader).
+### This guide covers the three different method of sideloading and installing APKs (from Windows) into Windows Subsystem For Android™
 
-&nbsp;
-&nbsp;
+|Application|
+|-----------|
+|[<img src="https://user-images.githubusercontent.com/68516357/226143645-0a0ff0df-00f4-4d69-a257-1ffbee039f36.png" style="width: 250px;"/>](https://github.com/MustardChef/WSABuilds/blob/master/Guides/WSA-Sideloader.md)|
+|[<img src="https://user-images.githubusercontent.com/68516357/226144462-25e8ba07-9f5b-424b-9ecf-b973e8f396b2.png" style="width: 300px;" style="float: left;"/>](https://github.com/MustardChef/WSABuilds/blob/master/Guides/WSAPacman.md)|
+|[<img src="https://user-images.githubusercontent.com/68516357/226143960-70ba58b6-7339-48c8-9f25-602e7236eaf5.png" style="width: 240px;" style="float: left;"/>](https://github.com/MustardChef/WSABuilds/blob/master/Guides/ADB-Sideloading.md)|
 
-**Step 2:** &nbsp; Go to `Windows Subsystem for Android` → `Developer` and turn on **Developer mode**.
-> **Warning**:
-> #### You have to give WSAPacman or other sideloaders, ADB Debugging permission.
-> 
-> ![](https://media.discordapp.net/attachments/1015131233824538624/1062611905249820733/allow.png)
 
-&nbsp;
-&nbsp;
-
-> **Note** 
-> #### If the "Install" button is greyed out while installing apk
->
-> ![image](https://user-images.githubusercontent.com/68516357/215341077-162f64c0-bea5-4f39-9f48-a8d5acaa5cf3.png)
->
-> #### Solution: Open WSAPacman and turn on WSA from there. 
->![](https://media.discordapp.net/attachments/1015131233824538624/1062610433506287708/WSA-pacman_x7UaiviLSW.png)
-
-</br>
-
-> **Note** 
-> #### If WSAPacman states that the "Installation timed out": 
->
-> <img src="https://user-images.githubusercontent.com/68516357/222983664-cf41ac0b-194b-4c11-9b40-2975eea6c176.png" style="width: 350px;"/>
->
-> #### Solution: Wait for a few minutes, and see if the app is installed and shows in the Start Menu. If not retry the installation </br> In the case that nothing works, report this to the [WSAPacman Github](https://github.com/alesimula/wsa_pacman)  
