@@ -73,3 +73,9 @@ If you get an error like the one below, check that you have allowed the ADB auth
 If you continue to face problems, make a note of the error info displayed in WSA Sideloader and join the Discord server below for further assistance.
 
 [<img src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/>](https://discord.gg/2thee7zzHZ)
+
+## Credits
+
+#### Special Thanks to infinitepower18
+#### Feel free to Star the [WSA-Sideloader Github Repo](https://github.com/infinitepower18/WSA-Sideloader/) or leave a review on the [Microsoft Store Page](https://www.microsoft.com/store/apps/9NMFSJB25QJR), if you found the app useful
+
