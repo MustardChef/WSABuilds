@@ -17,7 +17,7 @@ Operating System|Downloads
 
 ## Setup
 
-***1.  Once installed, you should see this screen:***
+***Step 1.  Once installed, you should see this screen:***
 
 ![image](https://user-images.githubusercontent.com/44692189/226059063-9148821a-8661-4f38-9089-bfd6bb72b135.png)
 
@@ -26,25 +26,25 @@ Operating System|Downloads
 
 </br>
 
-***2. Next, open WSA Settings from the start menu or by typing wsa-settings:// in your browser's address bar, select Developer and enable Developer mode. Most likely the IP address shown is 127.0.0.1:58526 which is already entered by default in WSA Sideloader, however if the IP address is different for you make sure to change it in the sideloader.***
+***Step 2. Next, open WSA Settings from the start menu or by typing wsa-settings:// in your browser's address bar, select Developer and enable Developer mode. Most likely the IP address shown is 127.0.0.1:58526 which is already entered by default in WSA Sideloader, however if the IP address is different for you make sure to change it in the sideloader.***
 
 ![image](https://user-images.githubusercontent.com/44692189/226059697-9d54c122-8674-46f4-871a-4937805498ef.png)
 
 </br>
 
-***3. Now, you can click the Browse button to select your APK file. You can also double click a file in File Explorer to automatically open WSA Sideloader with the APK file already selected.***
+***Step 3. Now, you can click the Browse button to select your APK file. You can also double click a file in File Explorer to automatically open WSA Sideloader with the APK file already selected.***
 
 <img width="1157" alt="image" src="https://user-images.githubusercontent.com/44692189/226060206-ffc9a9af-42b2-4281-859d-bb83c3e8b019.png">
 
 </br>
 
-***4. The first time you install an APK, it will ask to allow ADB debugging. Allow it and attempt the installation again. Check the always allow box if you don't want to manually accept the permission every time you install an app.***
+***Step 4. The first time you install an APK, it will ask to allow ADB debugging. Allow it and attempt the installation again. Check the always allow box if you don't want to manually accept the permission every time you install an app.***
 
 <img width="485" alt="image" src="https://user-images.githubusercontent.com/44692189/226060674-233a60b5-56d7-4dcf-a626-295d21a4c464.png">
 
 </br>
 
-***5. It should take a few seconds to install the APK. Once it says `The application has been successfully installed`, you can click Open app.***
+***Step 5. It should take a few seconds to install the APK. Once it says `The application has been successfully installed`, you can click Open app.***
 
 >**Note** : 
 > If WSA is off, WSA Sideloader will start it for you. After 30 seconds, the installation will automatically continue.
