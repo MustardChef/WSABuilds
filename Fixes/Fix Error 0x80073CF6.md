@@ -20,13 +20,13 @@ In E:\WSA\Install.ps1:102 Character:1
 </br>
 
 ---
-## Solution 1: Previous installation is blocking installation
+## Prequisite Steps:
 
 **1. Ensure the partition/drive you are installing from is NTFS**
 
 **2. Redownload WSA Build .zip (sometime the files can be corrupted during download and extraction)**
 
-**3. Delete all folders containing "WindowsSubsystemForAndroid" in the following directories/paths:** 
+**3. If you have installed WSA prior, make sure that it has been uninstalled and delete all folders containing "WindowsSubsystemForAndroid" from the following directories/paths and the subdirectories within:** 
 
 <br>
 
@@ -42,11 +42,32 @@ In E:\WSA\Install.ps1:102 Character:1
 
 <br>
 
-**Hope this works for you!**
+If the issue has been fixed, then there is no need to follow through the rest of the guide.
+However, if you have the same issue, it is vital that you obtain the logs and try to decipher what is causing the error
+
+To obtain the logs (admin privilege required):
+
+1. Open a PowerShell window and change working directory to your Windows Subsystem For Android™ directory.
+    
+2. Run the command below in PowerShell. This should fail with an ActivityID, which is a UUID required for the next step.
+      ```Powershell
+       Add-AppxPackage -ForceApplicationShutdown -ForceUpdateFromAnyVersion -Register .\AppxManifest.xml
+      ```   
+3. Run the command below in PowerShell. This should print the log of the failed operation.
+      
+      ```Powershell
+       Get-AppPackageLog -ActivityID <UUID>
+      ```
+      
+</br>
+</br>
+
 
 ---
-## Solution 2: Firewall is blocking installation
 
+### There are various causes that lead to error 0x80073CF6 </br> Find the fix that matches the error presented in the logs obtained from the instructions above
+
+---
 ### **Windows Firewall**
 
 **1. Ensure that Windows Firewall is on and is working with "Recommended Settings" being enabled**
@@ -65,7 +86,19 @@ In E:\WSA\Install.ps1:102 Character:1
 
 <br>
 
-**Hope this works for you!**
+---
+
+```powershell
+Installing MagiskOnWSA...
+Add AppxPackage: Deployment failed due to HRESULT: 0x80073CF6, unable to register the package.
+AppxManifest.xml (24,27): Error 0x80073B06: Unable to install or update package MicrosoftCorporateII.WindowsSubsystemForAndroid_ 8wekyb 3d8bbwe because the initial screen image for the current application context cannot be recognized. The application context may include specific language, DPI, contrast, or other special conditions. If you cannot recognize a context specific splash screen image, add a splash screen image to use as the default setting. Note: For additional information, look for [ActivityId] 94c065bb-5a2a-0004-129b-c1942a5ad901 in the event log, or use the command line Get AppPackageLo g - ActivityID 94c065bb-5a2a-0004-129b-c1942a5ad901 in the location D:  WSA  WSA  Install.ps1:106 Character: 1
++ Add-AppxPackage -ForceApplicationShutdown -ForceUpdateFromAnyVersion  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++ CategoryInfo          : WriteError: (D:\WSA\WSA\AppxManifest.xml:String) [Add-AppxPackage], IOException
++ FullyQualifiedErrorId : DeploymentError,Microsoft.Windows.Appx.PackageManager.Commands.AddAppxPackageCommand
+```
+
+**Hope these fixes work for you!**
 ---
 
 ### Have futher question or need help?
