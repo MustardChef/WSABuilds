@@ -68,6 +68,10 @@ To obtain the logs (admin privilege required):
 ### There are various causes that lead to error 0x80073CF6 </br> Find the fix that matches the error presented in the logs obtained from the instructions above
 
 ---
+## Issue 1: 0x800706D9 "There are no more endpoints avaliable from endpoint mapper"
+
+<img src="https://user-images.githubusercontent.com/68516357/227363632-7270ee01-9a98-44c2-9ccc-1fb2ef24897c.jpg" style="width: 900px;"/>
+
 ### **Windows Firewall**
 
 **1. Ensure that Windows Firewall is on and is working with "Recommended Settings" being enabled**
@@ -85,8 +89,10 @@ To obtain the logs (admin privilege required):
 **3. Restart your PC**
 
 <br>
+<br>
 
 ---
+## Issue 2: 0x80073B06 "Initial screen image for the current application context cannot be recognized"
 
 ```powershell
 Installing MagiskOnWSA...
@@ -97,11 +103,20 @@ AppxManifest.xml (24,27): Error 0x80073B06: Unable to install or update package 
 + CategoryInfo          : WriteError: (D:\WSA\WSA\AppxManifest.xml:String) [Add-AppxPackage], IOException
 + FullyQualifiedErrorId : DeploymentError,Microsoft.Windows.Appx.PackageManager.Commands.AddAppxPackageCommand
 ```
+### Solution:
 
-**Hope these fixes work for you!**
+**1.** If you encounter this problem when installing from a build built using [MagiskOnWSALocal](https://github.com/LSPosed/MagiskOnWSALocal) or [WSA-Script](https://github.com/YT-Advanced/WSA-Script), try deleting the previously built builds and rebuild. Make sure to delete and reclone the git repo if you are building using MagiskOnWSALocal.
+
+***Or***
+
+**2.** If you encounter this problem when installing using prebuilt builds from [Releases](https://github.com/LSPosed/MagiskOnWSALocal) from this repo, try redownloading the latest build. If the issue persists, report to the [Discord](https://discord.gg/2thee7zzHZ) and I will be happy to assist you
+
+
 ---
 
-### Have futher question or need help?
+**Hope these fixes work for you!**
+
+## Have futher question or need help?
 
 Join the Discord if you have any other questions or need help!
 
