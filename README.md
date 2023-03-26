@@ -50,7 +50,7 @@
    ![image](https://user-images.githubusercontent.com/68516357/221641202-e3ef4deb-f2dd-46e6-82c8-fb4767f82e99.png)
    
 ---   
-#### **3. [Copy the URL of this Repo](https://github.com/YT-Advanced/WSA-Script) and paste it into the the text box below and press "Import"** 
+#### **3. [Copy the URL of this Repo](https://github.com/WellCodeIsDelicious/WSA-Script) and paste it into the the text box below and press "Import"** 
 
 ![image](https://user-images.githubusercontent.com/68516357/221643582-72d71f68-8f53-48d9-a940-692a54d42098.png)
 
