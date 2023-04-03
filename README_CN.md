@@ -227,7 +227,7 @@ Add-AppxPackage -Register .\AppxManifest.xml 的作用是将 appx 包与一些�
 <details>     
    <summary><img style="float: right;" src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/null/external-updating-tools-and-material-ecommerce-flaticons-flat-flat-icons.png" width="60" height="60"/><h1> &nbsp; 更新<h1></summary>
 
-### How do I update without losing any of my apps and data on Windows Subsystem for Android (WSA)
+### 如何在不丢失任何应用程序和数据的情况下更新Android的Windows Subsystem（WSA）？
 
 1. [下载最新版本](https://github.com/MustardChef/WSABuilds#downloads)(您想要更新到的版本）
 2. 确保 Windows 子系统 For Android 没有运行（在 WSA 设置中单击 “关闭” 并等待旋转加载器消失）
@@ -322,7 +322,7 @@ Add-AppxPackage -Register .\AppxManifest.xml 的作用是将 appx 包与一些�
 
 **我无法adb connect localhost:58526**
 
-- Make sure developer mode is enabled. If the issue persists, check the IP address of Windows Subsystem For Android™ on the Settings ---> Developer page and try 
+- 确保开发者模式被启用。如果问题仍然存在，请在 "设置"--->"开发人员 "页面上检查Windows Subsystem For Android™的IP地址，并尝试:
 
    ```
    adb connect ip:5555
