@@ -2,6 +2,8 @@
 ### MagiskOnWSA (For Windows™ 10 and 11) [<img align="right" src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/>](https://discord.gg/2thee7zzHZ) 
 #### Windows Subsystem For Android™ (WSA) with Google Play Services and (or) Magisk 
 
+<br/>
+
 <details>     
    <summary><h4> &nbsp; ⚠️ Forking Information ⚠️<h4></summary>
 
@@ -13,6 +15,14 @@
 </details>  
 
 &nbsp;
+     
+      
+
+## Language/语言
+ - [中文](README_CN.md)
+ - [English](README.md)
+
+<br/>
 
 ## Downloads
 <details>     
