@@ -276,7 +276,7 @@ Add-AppxPackage -Register .\AppxManifest.xml 的作用是将 appx 包与一些�
 &nbsp;
 
 <details>     
-   <summary><img style="float: right;" src="https://img.icons8.com/3d-fluency/94/null/help.png" width="60" height="60"/><h1> &nbsp; FAQ<h1></summary>
+   <summary><img style="float: right;" src="https://img.icons8.com/3d-fluency/94/null/help.png" width="60" height="60"/><h1> &nbsp; 常见问题<h1></summary>
 
 &nbsp;
 **帮助我，我在使用MagiskOnWSA构建时遇到了问题**
