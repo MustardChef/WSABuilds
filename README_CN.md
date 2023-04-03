@@ -157,7 +157,7 @@
 &nbsp;
 
 <details>     
-   <summary><img style="float: right;" src="https://img.icons8.com/color/96/null/software-installer.png" width="60" height="60"/><h1> &nbsp; Installation<h1></summary>
+   <summary><img style="float: right;" src="https://img.icons8.com/color/96/null/software-installer.png" width="60" height="60"/><h1> &nbsp; 安装<h1></summary>
 
 &nbsp;
 
@@ -225,7 +225,7 @@ Add-AppxPackage -Register .\AppxManifest.xml 的作用是将 appx 包与一些�
 
 
 <details>     
-   <summary><img style="float: right;" src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/null/external-updating-tools-and-material-ecommerce-flaticons-flat-flat-icons.png" width="60" height="60"/><h1> &nbsp; Updating<h1></summary>
+   <summary><img style="float: right;" src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/null/external-updating-tools-and-material-ecommerce-flaticons-flat-flat-icons.png" width="60" height="60"/><h1> &nbsp; 更新<h1></summary>
 
 ### How do I update without losing any of my apps and data on Windows Subsystem for Android (WSA)
 
@@ -248,7 +248,7 @@ Add-AppxPackage -Register .\AppxManifest.xml 的作用是将 appx 包与一些�
 &nbsp;
 
 <details>     
-   <summary><img style="float: right;" src="https://img.icons8.com/color/96/null/uninstall-programs.png" width="60" height="60"/><h1> &nbsp; Uninstallation<h1></summary>
+   <summary><img style="float: right;" src="https://img.icons8.com/color/96/null/uninstall-programs.png" width="60" height="60"/><h1> &nbsp; 卸载<h1></summary>
 
 &nbsp;
 
