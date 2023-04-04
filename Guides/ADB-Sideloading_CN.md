@@ -46,5 +46,5 @@
 ### 推荐在 WSA 上安装的应用程序列表：
 - [microG](https://microg.org/): A free-as-in-freedom re-implementation of Google’s proprietary Android user space apps and libraries.
 - [Aurora Store](https://files.auroraoss.com/AuroraStore/Stable/): an app store that lets you download apps from Google Play without a Google account.
-- [FX File Explorer](https://www.nextapp.com/fx/): FX File Explorer is a mix of explorers (SD, FTP, Lan, Cloud and other storage explorers) and has a fast, smooth, beautiful, reliable and full-featured file manager with a simple and intuitive user interface.
+- [FX File Explorer](https://www.nextapp.com/fx/): FX File Explorer is a mix of explorers (SD, FTP, Lan, Cloud and other storage explorers) and is a fast, smooth, beautiful, reliable and full-featured file manager with a simple and intuitive user interface.
 - [Bromite](https://github.com/bromite/bromite): A Chromium fork with support for ad blocking and enhanced privacy.
