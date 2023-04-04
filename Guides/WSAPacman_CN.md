@@ -1,3 +1,5 @@
+# WSABuilds &nbsp; &nbsp; <img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/> &nbsp; 
+
 # WSAPacman
 
 **步骤1：** &nbsp; 下载并安装 [**WSA Pacman**](https://github.com/alesimula/wsa_pacman/releases) 
