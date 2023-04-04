@@ -1,9 +1,9 @@
 # WSABuilds &nbsp; &nbsp; <img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/> &nbsp; 
 
 
-## Guide: Sideloading APKs
+## 指南：APK侧载
 
-### This guide covers the four different method of sideloading and installing APKs (from Windows) into Windows Subsystem For Android™
+### 这个指南涵盖了将APK（从Windows）侧向加载并安装到Windows Subsystem For Android中的四种不同方法。
 
 |Application|
 |-----------|
