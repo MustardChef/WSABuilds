@@ -25,7 +25,7 @@ Here's the [direct download link](https://github.com/bromite/bromite/releases/la
 - Launch Windows Terminal.
 - Use ``adb install <file path>`` to install the APK.   
 [**P.S.** You can right click to paste in Terminal]
-- Repeat this process for a file manager app. I recommend using MiX, you can use what you want.
+- Repeat this process for a file manager app. I recommend using FX File Explorer, you can use what you want.
 
 ## After installation using ADB
 You can now open the web browser you installed in Android, and download and install Aurora Store like you do on any Android device - normally sideloading APK without using ADB.
@@ -35,5 +35,5 @@ You can now open the web browser you installed in Android, and download and inst
 ### A list of suggested apps to install on WSA:
 - [microG](https://microg.org/): A free-as-in-freedom re-implementation of Google’s proprietary Android user space apps and libraries.
 - [Aurora Store](https://files.auroraoss.com/AuroraStore/Stable/): an app store that lets you download apps from Google Play without a Google account.
-- [MiX](https://forum.xda-developers.com/t/app-2-2-mixplorer-v6-x-released-fully-featured-file-manager.1523691/): MiXplorer mix of explorers (SD, FTP, Lan, Cloud and other storage explorers) is a fast, smooth, beautiful, reliable and full-featured file manager with a simple and intuitive user interface.
+- [FX File Explorer](https://www.nextapp.com/fx/): FX File Explorer is a mix of explorers (SD, FTP, Lan, Cloud and other storage explorers) and is a fast, smooth, beautiful, reliable and full-featured file manager with a simple and intuitive user interface.
 - [Bromite](https://github.com/bromite/bromite): A Chromium fork with support for ad blocking and enhanced privacy.
