@@ -151,7 +151,7 @@
 |- 虚拟机平台已启用：<br /> 此可选设置用于虚拟化，您可以从控制面板/可选功能启用此设置。|- 虚拟机平台已启用：<br /> 此可选设置用于虚拟化，您可以从控制面板/可选功能启用此设置。|
 |- 存储：固态硬盘（SSD）<br /> - 磁盘驱动器（HDD）（不建议使用）。|- 存储：固态硬盘（SSD）<br /> - 磁盘驱动器（HDD）（不建议使用）。|
 |- 分区：NTFS<br /> Windows Subsystem For Android™ 仅能安装在 NTFS 分区上，而不能安装在 exFAT 分区上。|- 分区：NTFS<br /> Windows Subsystem For Android™ 仅能安装在 NTFS 分区上，而不能安装在 exFAT 分区上。|
-|- Windows™ 11：Build 22000.526 或更高版本。|- Windows™ 10：22H2 10.0.19045.2311 或更高版本。<br /> <br /> 从此版本库的 WSA 版本 2301.40000.7.0 及更高版本开始，对 Windows™ 10：20H1 10.0.19041.264 或更高版本提供非官方支持，因此您必须安装 [KB5014032](https://www.catalog.update.microsoft.com/Search.aspx?q=KB5014032)，然后安装 [KB5022282](https://www.catalog.update.microsoft.com/Search.aspx?q=KB5022282) 才能在这些旧版 Windows 上使用 WSA。 <br /> <br />|
+|- Windows™ 11：Build 22000.526 或更高版本。|- Windows™ 10：22H2 10.0.19045.2311 或更高版本。<br /> <br /> 从此版本库的 WSA 版本 2301.40000.7.0 及更高版本开始，对 Windows™ 10：20H1 10.0.19041.264 或更高版本提供非官方支持，因此您必须安装 [KB5014032](https://www.catalog.update.microsoft.com/Search.aspx?q=KB5014032)，然后安装 [KB5022834](https://www.catalog.update.microsoft.com/Search.aspx?q=KB5022834) 才能在这些旧版 Windows 上使用 WSA。 <br /> <br />|
 |- 计算机必须支持虚拟化，并在 BIOS/UEFI 和可选功能中启用。[指南](https://support.microsoft.com/zh-cn/windows/%E5%9C%A8-windows-11-pc-%E4%B8%8A%E5%90%AF%E7%94%A8%E8%99%9A%E6%8B%9F%E5%8C%96-c5578302-6e43-4b4b-a449-8ced115f58e1)|- 计算机必须支持虚拟化，并在 BIOS/UEFI 和可选功能中启用。[指南](https://support.microsoft.com/zh-cn/windows/%E5%9C%A8-windows-11-pc-%E4%B8%8A%E5%90%AF%E7%94%A8%E8%99%9A%E6%8B%9F%E5%8C%96-c5578302-6e43-4b4b-a449-8ced115f58e1)|
 
 &nbsp;
