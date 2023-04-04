@@ -1,3 +1,6 @@
+# WSABuilds &nbsp; &nbsp; <img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/> &nbsp; 
+
+
 # WSA Sideloader使用指南
 #### 使用WSA Sideloader，您可以将任何APK文件安装到WSA上。
 #### 本指南将向您展示如何使用它。
