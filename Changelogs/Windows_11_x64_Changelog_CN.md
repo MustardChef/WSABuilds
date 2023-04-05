@@ -1,4 +1,4 @@
-# Windows 子系统 for Android：ARM 处理器上的 Windows 11（Windows_11_WSA_2303.40000.2.0_arm64）
+# Windows 子系统 For Android：Windows 11 x64（Windows_11_WSA_2303.40000.2.0_x64）。
 
 ![win11downcpre](https://img.shields.io/github/downloads/MustardChef/WSABuilds/Windows_11_2302.40000.9.0_arm64/total?label=Downloads&style=for-the-badge)
 
@@ -32,10 +32,10 @@
 
 ## 更新日志
 - [微软官方更新日志](https://github.com/microsoft/WSA/discussions/277)
-- 从 WSA v2302.40000.9.0 arm64 更新至 WSA v2303.40000.2.0 arm64 
+- 从 WSA v2302.40000.9.0 x86_64 更新至 WSA v2303.40000.2.0 x86_64 
 - WSA Android 版本：Android 13 
-- MindTheGapps 13.0 arm64
-- Magisk Canary v69529ac5 (25211)
+- MindTheGapps 13.0 x86_64
+- Magisk Canary 
 - KernelSU v0.5.0
 - 移除了亚马逊应用商店
 
