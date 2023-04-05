@@ -1,4 +1,4 @@
-name: Bug Report
+name: Bug Report (错误报告)
 description: Create a report to receive assistance with any issues that you face during the installation of WSA and/or during the use of WSA. | 创建一份报告，以便在安装WSA和/或使用WSA过程中遇到任何问题时获得帮助。
 title: "[BUG]"
 labels: bug
