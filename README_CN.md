@@ -1,6 +1,7 @@
 # WSABuilds &nbsp; &nbsp; <img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/> &nbsp; [<img src="https://img.shields.io/badge/XDA%20Developers-WSABuilds-EA7100?style=for-the-badge&logoColor=white&logo=XDA-Developers" />](https://forum.xda-developers.com/t/wsabuilds-latest-windows-subsystem-for-android-wsa-builds-for-windows-10-and-11-with-magisk-and-google-play-store.4545087/)
 ### MagiskOnWSA（用于Windows™ 10和11） [<img align="right" src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/>](https://discord.gg/2thee7zzHZ) 
 #### Windows Subsystem For Android™（WSA）与Google Play服务和（或）Magisk 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N0K08AC)
 
 <br/>
 
@@ -21,6 +22,7 @@
 ## Language/语言
  - [中文](README_CN.md)
  - [English](README.md)
+ - Want to contribute to the translation of this repo, feel free to open a pull request./如果您想为该版本的翻译工作做出贡献，请随时打开一个拉动请求。
 
 <br/>      
       
