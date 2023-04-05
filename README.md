@@ -21,6 +21,7 @@
 ## Language/语言
  - [中文](README_CN.md)
  - [English](README.md)
+ - Want to contribute to the translation of this repo, feel free to open a pull request./如果您想为该版本的翻译工作做出贡献，请随时打开一个拉动请求。
 
 <br/>
 
