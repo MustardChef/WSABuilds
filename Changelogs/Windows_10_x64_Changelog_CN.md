@@ -68,6 +68,9 @@
     - 包含 KernelSU（用于 Root 访问）。
 ---
 
+## 附加信息
+-如果在安装WSA后Magisk应用程序未出现，请从[这里](https://github.com/topjohnwu/Magisk/releases)下载并[侧载](https://github.com/MustardChef/WSABuilds/blob/master/Guides/Sideloading.md)到WSA中。
+
 ## 鸣谢：
 
 https://github.com/LSPosed/MagiskOnWSALocal
