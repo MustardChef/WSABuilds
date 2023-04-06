@@ -28,4 +28,4 @@ Get-AppPackageLog -ActivityID 8b8599fb-55c1-0002-338b-868bc155d901
 
 ***或***
 
-使用[Windows 10 更新助手Fix Error 0x80073CFD.md](https://support.microsoft.com/en-us/topic/windows-10-update-assistant-3550dfb2-a015-7765-12ea-fba2ac36fb3f)
+使用[Windows 10 更新助手](https://support.microsoft.com/en-us/topic/windows-10-update-assistant-3550dfb2-a015-7765-12ea-fba2ac36fb3f)
