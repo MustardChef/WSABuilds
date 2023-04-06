@@ -1,7 +1,7 @@
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" width=20% height=20%>
 
-![win10downcpre](https://img.shields.io/github/downloads/MustardChef/WSABuilds/Windows_10_2302.40000.9.0/total?label=Downloads&style=for-the-badge)
+![win10downcpre](https://img.shields.io/github/downloads/MustardChef/WSABuilds/Windows_10_2303.40000.2.0/total?label=Downloads&style=for-the-badge)
 
 ## Builds Last Updated: 06/04/2023 12:27 GMT </br> (Reason: Initial Release)
 
