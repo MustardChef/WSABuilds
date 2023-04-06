@@ -1,9 +1,10 @@
+# Windows 子系统 For Android：Windows 10 x64（Windows_10_WSA_2303.40000.2.0_x64）。
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" width=20% height=20%>
 
 ![win10downcpre](https://img.shields.io/github/downloads/MustardChef/WSABuilds/Windows_10_2303.40000.2.0/total?label=Downloads&style=for-the-badge)
 
-## Builds Last Updated: 06/04/2023 12:27 GMT </br> (Reason: Initial Release)
+## 最新版本：2023年4月6日 12:27 GMT</br>（原因：初始发布）
 
 > **警告**
 > #### **在安装之前，请完全阅读[指南](https://github.com/MustardChef/WSABuilds/blob/master/README.md)，确保您满足安装Windows 10上WSA的全部[要求](https://github.com/MustardChef/WSABuilds#requirements)。**
