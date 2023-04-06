@@ -3,7 +3,7 @@
 
 ![win10downcpre](https://img.shields.io/github/downloads/MustardChef/WSABuilds/Windows_10_2302.40000.9.0/total?label=Downloads&style=for-the-badge)
 
-## Builds Last Updated: 05/04/2023 23:03 GMT </br> (Reason: Initial Release)
+## Builds Last Updated: 06/04/2023 12:27 GMT </br> (Reason: Initial Release)
 
 > **警告**
 > #### **在安装之前，请完全阅读[指南](https://github.com/MustardChef/WSABuilds/blob/master/README.md)，确保您满足安装Windows 10上WSA的全部[要求](https://github.com/MustardChef/WSABuilds#requirements)。**
@@ -45,7 +45,7 @@
 - 更新 WSA 版本从 v2302.40000.9.0 x86_64 ----> WSA v2303.40000.2.0 x86_64
 - WSA Android 版本：Android 13
 - MindTheGapps 13.0 x86_64
-- Magisk Canary v69529ac5 (25211)
+- Magisk Canary e2545e57 (26001)
 - KernelSU v0.5.0
 - 删除了亚马逊应用商店
 
