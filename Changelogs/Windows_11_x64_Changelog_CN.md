@@ -1,8 +1,8 @@
 # Windows 子系统 For Android：Windows 11 x64（Windows_11_WSA_2303.40000.2.0_x64）。
 
-![win11downcpre](https://img.shields.io/github/downloads/MustardChef/WSABuilds/Windows_11_2302.40000.9.0_arm64/total?label=Downloads&style=for-the-badge)
+![win11downcpre](https://img.shields.io/github/downloads/MustardChef/WSABuilds/Windows_11_2303.40000.2.0_arm64/total?label=Downloads&style=for-the-badge)
 
-## 最新版本：2023年4月5日 23:03 GMT</br>（原因：初始发布）
+## 最新版本：2023年4月6日 12:27 GMT</br>（原因：初始发布）
 
 > **警告**
 > #### **在安装之前，请完整阅读[指南](https://github.com/MustardChef/WSABuilds/blob/master/README.md)，确保满足在Windows 11上安装的所有[要求](https://github.com/MustardChef/WSABuilds#requirements)。**
@@ -35,7 +35,7 @@
 - 从 WSA v2302.40000.9.0 x86_64 更新至 WSA v2303.40000.2.0 x86_64 
 - WSA Android 版本：Android 13 
 - MindTheGapps 13.0 x86_64
-- Magisk Canary 
+- Magisk Canary e2545e57 (26001)
 - KernelSU v0.5.0
 - 移除了亚马逊应用商店
 
