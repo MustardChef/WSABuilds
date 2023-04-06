@@ -12,7 +12,7 @@
 <details>     
    <summary><h2>Main Solution:<h2></summary>
 
-#### This issue should have been fix as of the latest builds on the WSABuild release (2302.40000.8.0) and [this commit](https://github.com/LSPosed/MagiskOnWSALocal/commit/975bdcf4d82ef6fbca53ad5b7ea20380fcd94fdd) for [MagiskOnWSALocal](https://github.com/LSPosed/MagiskOnWSALocal/) 
+#### This issue should have been fix as of the latest builds on the WSABuild releases and [this commit](https://github.com/LSPosed/MagiskOnWSALocal/commit/975bdcf4d82ef6fbca53ad5b7ea20380fcd94fdd) for [MagiskOnWSALocal](https://github.com/LSPosed/MagiskOnWSALocal/) 
 
 #### Make sure that you delete the extracted WSA folder and download the latest build from [Releases](https://github.com/MustardChef/WSABuilds/releases). Or make sure to reclone the [MagiskOnWSALocal Repo](https://github.com/LSPosed/MagiskOnWSALocal/) and rebuild. If the issue still persists, report this in [the GitHub Issues of this repo](https://github.com/MustardChef/WSABuilds/issues) or to the [Github Issues of the MagiskOnWSALocal Repo](https://github.com/LSPosed/MagiskOnWSALocal/issues)
      
