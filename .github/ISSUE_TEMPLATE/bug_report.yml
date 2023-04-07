@@ -39,7 +39,7 @@ body:
       description: You can find the build number by typing winver in the Windows search box. | 你可以通过在Windows搜索框中输入winver来找到构建号。
     validations:
       required: true
-  - type: input
+  - type: description
     id: pcspecs
     attributes: 
       label: PC Specification | 个人电脑规格
