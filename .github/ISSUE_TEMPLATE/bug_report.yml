@@ -39,6 +39,13 @@ body:
       description: You can find the build number by typing winver in the Windows search box. | 你可以通过在Windows搜索框中输入winver来找到构建号。
     validations:
       required: true
+  - type: input
+    id: pcspecs
+    attributes: 
+      label: PC Specification | 个人电脑规格
+      description: You can find your PC Specification by searching for msinfo32 in Windows Search and click the top result to open the System Information app. | 你可以通过在Windows搜索中搜索msinfo32并点击顶部的结果打开系统信息应用程序来查找你的PC规格。
+    validations:
+      required: true
   - type: textarea
     id: other
     attributes:
