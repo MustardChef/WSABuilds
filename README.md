@@ -354,7 +354,7 @@
 
 &nbsp;
 
-https://github.com/MustardChef/WSABuilds/blob/master/README.md?plain=1<details>     
+<details>     
    <summary><img style="float: right;" src="https://img.icons8.com/external-xnimrodx-lineal-color-xnimrodx/96/null/external-guide-education-xnimrodx-lineal-color-xnimrodx.png" width="60" height="60"/><h1> &nbsp; Usage Guides<h1></summary>
 
 &nbsp;
