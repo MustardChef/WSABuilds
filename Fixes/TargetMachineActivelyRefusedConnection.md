@@ -1,7 +1,7 @@
 # WSABuilds &nbsp; &nbsp; <img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/> &nbsp; 
 
 ---
-## Issue: </br> Error: No connection could be made because the target machine actively refused it
+## Issue: </br> Error: No connection could be made because the target machine actively refused it (10061)
 ### Preface:
 ##### This issue occurs when you are either using a sideloading application such as [WSA-Sideloader](https://github.com/infinitepower18/WSA-Sideloader) or [WSAPacman](https://github.com/alesimula/wsa_pacman), or when you try to connect to a device using ``adb.exe`` via [Android SDK Platform Tools](https://developer.android.com/tools/releases/platform-tools). This issue arises due to an issue with the inability of Hyper V to reserve port 58526 causing the issue, as seen below.
 
