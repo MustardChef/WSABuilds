@@ -406,6 +406,8 @@ Add-AppxPackage -Register .\AppxManifest.xml 的作用是将 appx 包与一些�
 [<img src="https://img.shields.io/badge/-Fix%20Path%20Too%20Long-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/FixPathTooLong_CN.md)
 
 [<img src="https://img.shields.io/badge/-Fix%20Missing%20Icons%20Issue-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/MissingIcons_CN.md)
+      
+[<img src="https://img.shields.io/badge/-Fix%20Target%20Machine%20Actively%20Refused%20Connection-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/TargetMachineActivelyRefusedConnection_CN.md)
 
 </details>  
 
