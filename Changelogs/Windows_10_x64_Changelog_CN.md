@@ -43,7 +43,7 @@
 - 如果您的 WSA 在启动时崩溃（或突然消失），请尝试将 Windows 升级到 Windows 10 22H2 10.0.19045.2311。（有人报告说 WSA 在 22H2 19045.2251 上启动失败，但升级到 19045.2311 后就可以工作。）
 
 ## 变更日志
-- Microsoft的官方变更日志：发布此版本时还没有官方变更日志。如果提供了一个，我将更新此版本说明
+- [Microsoft的官方变更日志](https://blogs.windows.com/windows-insider/2023/04/11/update-to-windows-subsystem-for-android-on-windows-11-april-2023/)
 - 增加了对 Windows 10 的支持（Credit: WSAPatch)
 - 从WSA v2303.40000.2.0 x86_64更新-> WSA v2303.40000.3.0 x86_64
 - WSA Android版本：Android 13
