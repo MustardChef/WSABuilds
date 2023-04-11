@@ -1,4 +1,4 @@
-# WSABuilds &nbsp; &nbsp; <img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/> &nbsp; [<img src="https://img.shields.io/badge/XDA%20Developers-WSABuilds-EA7100?style=for-the-badge&logoColor=white&logo=XDA-Developers" />](https://forum.xda-developers.com/t/wsabuilds-latest-windows-subsystem-for-android-wsa-builds-for-windows-10-and-11-with-magisk-and-google-play-store.4545087/)
+# WSABuilds &nbsp; &nbsp; [<img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/>](https://github.com/MustardChef/WSABuilds#downloads) &nbsp; [<img src="https://img.shields.io/badge/XDA%20Developers-WSABuilds-EA7100?style=for-the-badge&logoColor=white&logo=XDA-Developers" />](https://forum.xda-developers.com/t/wsabuilds-latest-windows-subsystem-for-android-wsa-builds-for-windows-10-and-11-with-magisk-and-google-play-store.4545087/)
 ### MagiskOnWSA (For Windows™ 10 and 11) [<img align="right" src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/>](https://discord.gg/2thee7zzHZ) 
 #### Windows Subsystem For Android™ (WSA) with Google Play Services and (or) Magisk 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N0K08AC)
@@ -151,7 +151,7 @@
 &nbsp;
 
 <details>     
-   <summary><img style="float: right;" src="https://img.icons8.com/color/96/null/software-installer.png" width="60" height="60"/><h1> &nbsp; Installation<h1></summary>
+   <summary><picture><img style="float: right;" src="https://img.icons8.com/color/96/null/software-installer.png" width="60" height="60"/></picture><h1> &nbsp; Installation<h1></summary>
 
 &nbsp;
 
@@ -223,7 +223,7 @@
 
 
 <details>     
-   <summary><img style="float: right;" src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/null/external-updating-tools-and-material-ecommerce-flaticons-flat-flat-icons.png" width="60" height="60"/><h1> &nbsp; Updating<h1></summary>
+   <summary><picture><img style="float: right;" src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/null/external-updating-tools-and-material-ecommerce-flaticons-flat-flat-icons.png" width="60" height="60"/></picture><h1> &nbsp; Updating<h1></summary>
 
 ### How do I update without losing any of my apps and data on Windows Subsystem for Android (WSA)
 
@@ -246,7 +246,7 @@
 &nbsp;
 
 <details>     
-   <summary><img style="float: right;" src="https://img.icons8.com/color/96/null/uninstall-programs.png" width="60" height="60"/><h1> &nbsp; Uninstallation<h1></summary>
+   <summary><picture><img style="float: right;" src="https://img.icons8.com/color/96/null/uninstall-programs.png" width="60" height="60"/></picture><h1> &nbsp; Uninstallation<h1></summary>
 
 &nbsp;
 
@@ -274,7 +274,7 @@
 &nbsp;
 
 <details>     
-   <summary><img style="float: right;" src="https://img.icons8.com/3d-fluency/94/null/help.png" width="60" height="60"/><h1> &nbsp; FAQ<h1></summary>
+   <summary><picture><img style="float: right;" src="https://img.icons8.com/3d-fluency/94/null/help.png" width="60" height="60"/></picture><h1> &nbsp; FAQ<h1></summary>
 
 &nbsp;
 **Help me, I am having problems with the MagiskOnWSA Builds**
@@ -355,7 +355,7 @@
 &nbsp;
 
 <details>     
-   <summary><img style="float: right;" src="https://img.icons8.com/external-xnimrodx-lineal-color-xnimrodx/96/null/external-guide-education-xnimrodx-lineal-color-xnimrodx.png" width="60" height="60"/><h1> &nbsp; Usage Guides<h1></summary>
+   <summary><picture><img style="float: right;" src="https://img.icons8.com/external-xnimrodx-lineal-color-xnimrodx/96/null/external-guide-education-xnimrodx-lineal-color-xnimrodx.png" width="60" height="60"/></picture><h1> &nbsp; Usage Guides<h1></summary>
 
 &nbsp;
 
@@ -380,7 +380,7 @@
 &nbsp;
 
 <details>     
-   <summary><img style="float: right;" src="https://img.icons8.com/external-soft-fill-juicy-fish/96/null/external-bug-coding-and-development-soft-fill-soft-fill-juicy-fish-2.png" width="60" height="60"/><h1> &nbsp; Having Issues?<h1></summary>
+   <summary><picture><img style="float: right;" src="https://img.icons8.com/external-soft-fill-juicy-fish/96/null/external-bug-coding-and-development-soft-fill-soft-fill-juicy-fish-2.png" width="60" height="60"/></picture><h1> &nbsp; Having Issues?<h1></summary>
 
 ### Common Issues:
 [<img src="https://img.shields.io/badge/-Fix%20Install.ps1%20Issue-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/FixInstallps1.md)
@@ -411,7 +411,7 @@
 &nbsp;      
       
 <details>     
-   <summary><img style="float: right;" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-credits-movie-theater-flaticons-lineal-color-flat-icons.png" width="60" height="60"/><h1> &nbsp; Credits<h1></summary>
+   <summary><picture><img style="float: right;" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-credits-movie-theater-flaticons-lineal-color-flat-icons.png" width="60" height="60"/></picture><h1> &nbsp; Credits<h1></summary>
 
 - [Microsoft](https://apps.microsoft.com/store/detail/windows-subsystem-for-android%E2%84%A2-with-amazon-appstore/9P3395VX91NR): For providing Windows Subsystem For Android™ and related files. Windows Subsystem For Android™, Windows Subsystem For Android™ Logo, Windows™ 10 and Windows™ 11 Logos are trademarks of Microsoft Corporation. Microsoft Corporation reserves all rights to these trademarks. By downloading and installing Windows Subsystem For Android™, you agree to the [Terms and Conditions](https://support.microsoft.com/en-gb/windows/microsoft-software-license-terms-microsoft-windows-subsystem-for-android-cf8dfb03-ba62-4daa-b7f3-e2cb18f968ad) and [Privacy Policy](https://privacy.microsoft.com/en-gb/privacystatement)
 - [YT-Advanced](https://github.com/YT-Advanced/WSA-Script): For providing and continuing the development of the script made by LSPosed, the Github Action workflow guide is based on his Github Repo. I do not claim his work and the work of the many contributers as my own and nor intend to do so. 
