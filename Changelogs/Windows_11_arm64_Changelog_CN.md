@@ -1,4 +1,81 @@
+# Windows 子系统 for Android：ARM 处理器上的 Windows 11（Windows_11_WSA_2303.40000.3.0_arm64）
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" width=20% height=20%>
+
+![win11downcpre](https://img.shields.io/github/downloads/MustardChef/WSABuilds/Windows_11_2303.40000.3.0_arm64/total?label=Downloads&style=for-the-badge)
+
+## Builds Last Updated: 11/04/2023 20:28 GMT </br> (Reason: Initial Release)
+
+### Language/语言
+ - [中文](https://github.com/MustardChef/WSABuilds/blob/master/Changelogs/Windows_11_arm64_Changelog_CN.md)
+---
+> **警告**
+> #### **在安装之前，请完整阅读[指南](https://github.com/MustardChef/WSABuilds/blob/master/README.md)，确保您满足在Windows 11上进行安装的全部[要求](https://github.com/MustardChef/WSABuilds#requirements)。**
+> **注意** 
+>#### **如果您正在更新WSA，请在被要求时合并文件夹并替换所有项目的文件** 
+### 按照以下步骤在Windows 11上安装WSA。
+#### 包含Magisk和（或）MindTheGAPPS
+> **注意**： 
+> 如果您安装了官方WSA版本，则必须[完全卸载](https://github.com/MustardChef/WSABuilds#uninstallation)它才能使用MagiskOnWSA
+1. 解压缩zip文件
+2. 删除zip文件（**建议在安装并正常运行WSA之前保留.zip文件**）
+3. 将新提取的文件夹移动到适当的位置（文档文件夹是一个不错的选择），因为您需要将文件夹保留在计算机上才能使用MagiskOnWSA
+4. 打开WSA文件夹，双击Run.bat
+
+### 注意： 
+
+1. 如[要求](https://github.com/MustardChef/WSABuilds#requirements)中所述，您只能在NTFS分区上安装WSA，不能在exFAT分区上安装。
+2. 您不能删除WSA安装文件夹。
+   `Add-AppxPackage -Register .\AppxManifest.xml`的作用是注册一个带有一些已解压缩文件的appx包，所以只要您想要使用WSA，就需要保留它们。
+   请查看https://learn.microsoft.com/en-us/powershell/module/appx/add-appxpackage?view=windowsserver2022-ps获取更多详细信息。
+3. 在运行WSA之前，您需要注册您的WSA appx包。
+   对于[WSABuilds]（https://github.com/MustardChef/WSABuilds）和[MagiskOnWSALocal]（https://github.com/LSPosed/MagiskOnWSALocal）用户，您需要在提取的目录中运行`Run.bat`。
+   如果脚本失败，您可以采取以下诊断步骤（需要管理员权限）：
+    1. 打开PowerShell窗口，并将工作目录更改为您的WSA目录。
+    2. 在PowerShell中运行`Add-AppxPackage-ForceApplicationShutdown-ForceUpdateFromAnyVersion-Register.\AppxManifest.xml`。
+       这应该会失败，其中包含一个ActivityID，该ActivityID是下一步所需的UUID。
+    3. 在PowerShell中运行`Get-AppPackageLog-ActivityID<UUID>`。
+       这应该会打印失败操作的日志。
+    4. 检查日志以查找失败原因并修复它。
+
+## 变更日志
+- Microsoft的官方变更日志：发布此版本时还没有官方变更日志。如果提供了一个，我将更新此版本说明
+- 从WSA v2303.40000.2.0 arm64更新-> WSA v2303.40000.3.0 arm64
+- WSA Android版本：Android 13
+- MindTheGapps 13.0 arm64
+- Magisk Canary d0c93842（26101）
+- KernelSU v0.5.1
+- 已删除Amazon Appstore
+
+## 此版本中的版本差异：
+- **WSA_XXXX.X0000.X.0_XXXX_Release-Nightly-MindTheGapps-XX.X-RemovedAmazon.zip**
+          - 仅包含Google Play商店和服务
+---           
+- **WSA_XXXX.X0000.X.0_XXXX_Release-Nightly-magisk-XXXXX.XXXX.-canary-MindTheGapps-XX.X-RemovedAmazon.zip**
+          - 包含Google Play商店和服务
+          ** _and_ **
+          - 包含Magisk（用于Root访问）
+---
+- **WSA_XXXX.X0000.X.0_XXXX_Release-Nightly-kernelsu-vX.X.X-MindTheGapps-XX.X-RemovedAmazon.zip**
+          - 包含Google Play商店和服务
+          ** _and_ **
+          - 包含KernelSU（用于Root访问）
+---
+
+## 附加信息
+- 如果安装了带有Magisk的WSA构建之后Magisk应用程序未出现，请从[此处]（https://github.com/topjohnwu/Magisk/releases）下载并[sideload]（https://github.com/MustardChef/WSABuilds/blob/master/Guides/Sideloading.md）它到WSA
+
+## 版权：
+https://github.com/LSPosed/MagiskOnWSALocal
+
+
+<br/>
+<br/>
+<br/>
+
 # Windows 子系统 for Android：ARM 处理器上的 Windows 11（Windows_11_WSA_2303.40000.2.0_arm64）
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" width=20% height=20%>
 
 ![win11downcpre](https://img.shields.io/github/downloads/MustardChef/WSABuilds/Windows_11_2303.40000.2.0_arm64/total?label=Downloads&style=for-the-badge)
 
