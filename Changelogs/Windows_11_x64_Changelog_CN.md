@@ -6,8 +6,6 @@
 
 ## Builds Last Updated: 11/04/2023 20:28 GMT </br> (Reason: Initial Release)
 
-### Language/语言
- - [中文](https://github.com/MustardChef/WSABuilds/blob/master/Changelogs/Windows_11_arm64_Changelog_CN.md)
 ---
 > **警告**
 > #### **在安装之前，请完整阅读[指南](https://github.com/MustardChef/WSABuilds/blob/master/README.md)，确保您满足在Windows 11上进行安装的全部[要求](https://github.com/MustardChef/WSABuilds#requirements)。**
@@ -49,17 +47,27 @@
 
 ## 此版本中的版本差异：
 - **WSA_XXXX.X0000.X.0_XXXX_Release-Nightly-MindTheGapps-XX.X-RemovedAmazon.zip**
-          - 仅包含Google Play商店和服务
+         
+  - 仅包含Google Play商店和服务
+ 
 ---           
 - **WSA_XXXX.X0000.X.0_XXXX_Release-Nightly-magisk-XXXXX.XXXX.-canary-MindTheGapps-XX.X-RemovedAmazon.zip**
-          - 包含Google Play商店和服务
-          ** _and_ **
-          - 包含Magisk（用于Root访问）
+
+  - 包含Google Play商店和服务
+ 
+   ** _and_ **
+   
+  - 包含Magisk（用于Root访问）
+
 ---
 - **WSA_XXXX.X0000.X.0_XXXX_Release-Nightly-kernelsu-vX.X.X-MindTheGapps-XX.X-RemovedAmazon.zip**
-          - 包含Google Play商店和服务
-          ** _and_ **
-          - 包含KernelSU（用于Root访问）
+  
+  - 包含Google Play商店和服务
+  
+   ** _and_ **
+   
+  - 包含KernelSU（用于Root访问）
+ 
 ---
 
 ## 附加信息
