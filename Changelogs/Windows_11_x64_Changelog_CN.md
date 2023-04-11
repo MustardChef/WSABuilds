@@ -37,7 +37,7 @@
     4. 检查日志以查找失败原因并修复它。
 
 ## 变更日志
-- Microsoft的官方变更日志：发布此版本时还没有官方变更日志。如果提供了一个，我将更新此版本说明
+- [Microsoft的官方变更日志](https://blogs.windows.com/windows-insider/2023/04/11/update-to-windows-subsystem-for-android-on-windows-11-april-2023/)
 - 从WSA v2303.40000.2.0 x86_64更新-> WSA v2303.40000.3.0 x86_64
 - WSA Android版本：Android 13
 - MindTheGapps 13.0 x86_64
