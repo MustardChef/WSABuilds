@@ -205,7 +205,7 @@
     <td colspan="2">Hyper V Enabled (Optional)</td>
   </tr>
   <tr>
-    <td colspan="2"><b><i>These optional settings are for virtualization and provide components that are needed to run WSA. You can enable these settings by pressing the Windows Key + R on your keyboard and typing "OptionalFeatures.exe" into the box<b><i></td>
+    <td colspan="2"><b><i>These optional settings are for virtualization and provide components that are needed to run WSA. You can enable these settings by pressing the Windows Key + R on your keyboard and typing "OptionalFeatures.exe" into the box, pressing enter and selecting the features above followed by pressing apply<b><i></td>
   </tr>
   <tr>
     <td><img style="float: right;" src="https://user-images.githubusercontent.com/68516357/230759907-5d11950e-1b17-4811-8f4e-a0f82e598079.png" width="60" height="60"/><h4>Virtualization<h4></td>
