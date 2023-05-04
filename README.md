@@ -66,7 +66,7 @@
 
 ![image](https://user-images.githubusercontent.com/68516357/222224469-5748b78a-158e-46ff-9f65-317dbb519aac.png)
 
-#### **7. Install like normal using [the instructions](https://github.com/YT-Advanced/WSA-Script#--installation) in this repository**
+#### **7. Install like normal using [the instructions](https://github.com/MustardChef/WSABuilds#--installation) in this repository**
 
 ---
 <summary><h3> &nbsp; The workflow didn't work ❓ Follow these step <h3></summary>
@@ -137,7 +137,7 @@
 ![image](https://user-images.githubusercontent.com/68516357/222224469-5748b78a-158e-46ff-9f65-317dbb519aac.png)
 
 ---
-#### **14. Install like normal using [the instructions](https://github.com/YT-Advanced/WSA-Script#--installation) in this repository** and most important of all....
+#### **14. Install like normal using [the instructions](https://github.com/MustardChef/WSABuilds#--installation) in this repository** and most important of all....
 
 ### **Enjoy!**
 
