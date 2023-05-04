@@ -59,7 +59,7 @@
 ![image](https://user-images.githubusercontent.com/70064328/236150320-65fdd492-9fc4-4176-b3bd-a3cee8b7753d.png)
 
 #### **5. After about 15 minutes, the bot will reply that the workflow have built successfully (like the picture below), OPEN THE LINK BELOW THE BOT COMMENT**
-![image](https://user-images.githubusercontent.com/70064328/236154819-75dd1997-1999-43fd-a482-050f21e34b72.png)
+![image](https://user-images.githubusercontent.com/68516357/236199088-81ecece8-cb3c-4181-a2b7-782ad6d8a762.png)
 
 #### **6. Download the package as artifact**
 **DO NOT download it via multithread downloaders like IDM**
