@@ -52,7 +52,7 @@
 
 #### **2. Check the version from [Releases](https://github.com/MustardChef/WSABuilds/releases) first. If it does not have the version you want, continue to follow this guide. If it does, then feel free to use those prebuild WSA builds**
 
-#### **3. Open [this page directly](https://wellcodeisdelicious.github.io/WSA-Script/Issues.html) then choose the option that you want to build**  
+#### **3. Open [this page directly](https://yt-advanced.github.io/WSA-Script/Issues.html) then choose the option that you want to build**  
 ![image](https://user-images.githubusercontent.com/70064328/236150011-191bf3a8-2efb-44a1-af44-202c6ea9fe66.png)
 
 #### **4. Click "Create Issues" Button, the issues page will be generated and open. Then you click "Submit New Issues" (green button) and wait.**
