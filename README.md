@@ -342,7 +342,7 @@
 
 > **Note**: 
 > 
-> If you want to preseve your data, make a backup of the `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx` file. After uninstalling, copy the VHDX file back to the `%LOCALAPPDATA%\Package\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache` folder.
+> If you want to preseve your data, make a backup of the `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx` file. After uninstalling, copy the VHDX file back to the `%LOCALAPPDATA%\Package\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache` folder. For a more comprehensive and detailed guide, take a look at the **Backup and Restore section** in this README markdown
 
 - To remove WSA installed through WSABuild:
 
@@ -360,7 +360,28 @@
 </details>
 
 &nbsp;
+       
+<details>     
+   <summary><picture><img style="float: right;" src="https://img.icons8.com/fluency/96/cloud-backup-restore.png" width="60" height="60"/></picture><h1> &nbsp; Backup and Restore Userdata<h1></summary>
 
+## Backing Up Your Userdata
+      
+In order to make a backup of your WSA data you must copy the Userdata.vhdx (which includes, but is not limited Android Apps and their data, settings etc.), located at `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx`, to a safe location     
+      
+## Restoring Your Backup
+      
+Before attempting to restore your backup, you must remove WSA if installed. Then before you run the "Run.bat" script (to reinstall WSA after removing it), you need to remove these two lines from Install.ps1: 
+```powershell
+Start-Process "wsa://com.topjohnwu.magisk"
+Start-Process "wsa://com.android.vending"
+``` 
+After running the script, do not run WSA at all, and go to %localappdata%\Packages and (if the folders do not exist, create them) in MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\ paste the userdata.vhdx
+
+Now run WSA and your serdata should hopefully be restored
+</details>      
+         
+&nbsp;
+      
 <details>     
    <summary><picture><img style="float: right;" src="https://img.icons8.com/3d-fluency/94/null/help.png" width="60" height="60"/></picture><h1> &nbsp; FAQ<h1></summary>
 
