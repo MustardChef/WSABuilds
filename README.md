@@ -180,20 +180,26 @@
   </tr>
   <tr>
     <td><img style="float: right;" src="https://img.icons8.com/external-smashingstocks-flat-smashing-stocks/66/null/external-RAM-technology-and-devices-smashingstocks-flat-smashing-stocks.png" width="60" height="60"/><h4>RAM<h4></td>
-    <td colspan="2">6 GB (not recommended), 8 GB (minimum) and 16 GB (recommended)</td>
+    <td colspan="2"><ul><li>4 to 6 GB (Not Recommended)</li><li>8 GB (Minimum)</li><li>16 GB (Recommended)</li></ul></td>
   </tr>
   <tr>
-    <td><img style="float: right;" src="https://img.icons8.com/3d-fluency/94/null/electronics.png" width="60" height="60"/><h4>Processor<h4></td>
+    <td rowspan="2"><img style="float: right;" src="https://img.icons8.com/3d-fluency/94/null/electronics.png" width="60" height="60"/><h4>Processor<h4></td>
+    <td colspan="2"><b><i>CPU Architecture: x86_64 or arm64<b><i></td>
+  </tr>
+  <tr>
     <td>Your PC should meet the basic Windows™ 11 requirements i.e Core i3 8th Gen, Ryzen 3000, Snapdragon 8c, or above</td>
-    <td>N/A </br></br> This is a bit of a hit or miss, but it is highly recommended that your processor is listed in the <a href="https://learn.microsoft.com/en-gb/windows-hardware/design/minimum/windows-processor-requirements" target="_blank" rel="noopener noreferrer">supported CPU lists for Windows 11 requirements</a></td>
+    <td>N/A </br></br> This is a bit of a hit or miss, but it is highly recommended that your processor is listed in the <a href="https://learn.microsoft.com/en-gb/windows-hardware/design/minimum/windows-processor-requirements" target="_blank" rel="noopener noreferrer">supported CPU lists for Windows 11 requirements</a></td>     
   </tr>
   <tr>
     <td><img style="float: right;" src="https://img.icons8.com/3d-fluency/94/null/video-card.png" width="60" height="60"/><h4>GPU<h4></td>
       <td colspan="2">Any compatible Intel, AMD or Nvidia GPU. <br /> GPU Performance may vary depending on its compatibility with Windows Subsystem For Android™  <br /><br /><details><summary><h4>Users with Intel HD Graphics 530 and older<h4></summary><br /><h5> WSA may not start or graphical glitches will occur when Intel HD Graphics 530 and Older iGPUs are used. This is a known issue, but unfortunately there are no fixes that I currently know of, plus, these GPUs are too old and do not meet Windows 11 requirements and hence are not offical supported. <a href="https://github.com/MustardChef/WSABuilds/blob/master/Guides/ChangingGPU.md" target="_blank" rel="noopener noreferrer">Follow this guide</a> to switch to another iGPU/dGPU/eGPU that you may have or Microsoft Basic Renderer<h5></details><br/><details><summary><h4>Users with Nvidia GPUs<h4></summary><br /><h5> Nvidia GPUs are known to cause problems. If Windows Subsystem For Android™ does not start or there are graphical glitches when an Nvidia GPU is used, <a href="https://github.com/MustardChef/WSABuilds/blob/master/Guides/ChangingGPU.md" target="_blank" rel="noopener noreferrer">follow this guide</a> to switch to another iGPU/dGPU/eGPU  that you may have or Microsoft Basic Renderer<h5></details></td>
   </tr>
   <tr>
-    <td><img style="float: right;" src="https://img.icons8.com/3d-fluency/94/null/ssd.png" width="60" height="60"/><h4>Storage<h4></td>
+    <td rowspan="2"><img style="float: right;" src="https://img.icons8.com/3d-fluency/94/null/ssd.png" width="60" height="60"/><h4>Storage<h4></td>
     <td colspan="2"><b><i>Solid-state drive (RECOMMENDED)<i><b> <br />OR</br> <b><i>Hard Disk Drive (HDD)<i><b>   (NOT RECOMMENDED)<i></td>
+  </tr>
+  <tr>
+     <td colspan="2"><b><i>Minimum Storage Requirements: You must have at least 10GB free on the system drive (C:\)<b><i></td>
   </tr>
   <tr>
     <td><img style="float: right;" src="https://img.icons8.com/stickers/100/null/storage.png" width="60" height="60"/><h4>Partition<h4></td>
