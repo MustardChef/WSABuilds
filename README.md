@@ -183,9 +183,12 @@
     <td colspan="2"><ul><li>4 to 6 GB (Not Recommended)</li><li>8 GB (Minimum)</li><li>16 GB (Recommended)</li></ul></td>
   </tr>
   <tr>
-    <td><img style="float: right;" src="https://img.icons8.com/3d-fluency/94/null/electronics.png" width="60" height="60"/><h4>Processor<h4></td>
+    <td rowspan="2"><img style="float: right;" src="https://img.icons8.com/3d-fluency/94/null/electronics.png" width="60" height="60"/><h4>Processor<h4></td>
+    <td colspan="2"><b><i>CPU Architecture: x86_64 or arm64<b><i></td>
+  </tr>
+  <tr>
     <td>Your PC should meet the basic Windows™ 11 requirements i.e Core i3 8th Gen, Ryzen 3000, Snapdragon 8c, or above</td>
-    <td>N/A </br></br> This is a bit of a hit or miss, but it is highly recommended that your processor is listed in the <a href="https://learn.microsoft.com/en-gb/windows-hardware/design/minimum/windows-processor-requirements" target="_blank" rel="noopener noreferrer">supported CPU lists for Windows 11 requirements</a></td>
+    <td>N/A </br></br> This is a bit of a hit or miss, but it is highly recommended that your processor is listed in the <a href="https://learn.microsoft.com/en-gb/windows-hardware/design/minimum/windows-processor-requirements" target="_blank" rel="noopener noreferrer">supported CPU lists for Windows 11 requirements</a></td>     
   </tr>
   <tr>
     <td><img style="float: right;" src="https://img.icons8.com/3d-fluency/94/null/video-card.png" width="60" height="60"/><h4>GPU<h4></td>
