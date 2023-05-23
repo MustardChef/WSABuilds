@@ -227,12 +227,12 @@
   <tr>
     <td>v2304.40000.5.0</td>
     <td>⚠️</td>
-    <td>⛔</td>
+    <td><a href="https://github.com/cinit/WSAPatch/issues/33" target="_blank" rel="noopener noreferrer">⛔</a></td>
   </tr>
   <tr>
     <td>v2304.40000.6.0</td>
     <td>➖</td>
-    <td>⛔</td>
+    <td><a href="https://github.com/cinit/WSAPatch/issues/33" target="_blank" rel="noopener noreferrer">⛔</a></td>
   </tr>
 </tbody>
 </table>
@@ -245,16 +245,16 @@
 </thead>
 <tbody>
   <tr>
-    <td>✅ Stable<br></td>
+    <td><b><i>✅ Stable &nbsp; &nbsp; (Everything works as intended)<b><i><br></td>
   </tr>
   <tr>
-    <td>⚠️ Unstable</td>
+    <td><b><i>⚠️ Unstable &nbsp; &nbsp; (Experience may not be smooth)<b><i></td>
   </tr>
   <tr>
-    <td>⛔ Not Working</td>
+    <td><b><i>⛔ Not Working &nbsp; &nbsp; (Click on the Emoji for more information)<b><i></td>
   </tr>
   <tr>
-    <td>➖ No Information Yet<br></td>
+    <td><b><i>➖ No Information Yet<b><i><br/>(Not enough information to confirm status. Please join the Discord and confirm whether or not the builds are working)</td>
   </tr>
 </tbody>
 </table>
