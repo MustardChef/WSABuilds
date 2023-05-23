@@ -149,6 +149,120 @@
 > **Note**
 > <br /> To request: <br /> - A newer build <br /> - A build with a different version of GApps (Google Play Services) or Magisk (root) <br /> - A build without Magisk (root) or GApps (Google Play Services) <br /> Feel free to open an issue in the [Issues page](https://github.com/MustardChef/WSABuilds/issues). <br /><br /> Requested (Custom) Builds can be in the "Custom Builds" section below.
 </details>
+      
+<details>     
+   <summary><picture><img style="float: right;" src="https://img.icons8.com/3d-fluency/94/ok.png" width="35" height="35"/></picture><h3> &nbsp; WSABuilds Builds Status<h3></summary>
+      
+## Builds Status and Stability
+
+<center><table>
+<thead>
+  <tr>
+    <th>WSA Version:</th>
+    <th><img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" style="width: 200px;"/></th>
+    <th><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" style="width: 200px;"/></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>v2210.40000.7.0</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>v2211.40000.10.0</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>v2211.40000.11.0</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>v2301.40000.4.0</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>v2301.40000.7.0</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>v2302.40000.6.0</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>v2302.40000.8.0</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>v2302.40000.9.0</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>v2303.40000.2.0</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>v2303.40000.3.0</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>v2303.40000.4.0</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>v2303.40000.5.0</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>v2304.40000.5.0</td>
+    <td>⚠️</td>
+    <td>⛔</td>
+  </tr>
+  <tr>
+    <td>v2304.40000.6.0</td>
+    <td>➖</td>
+    <td>⛔</td>
+  </tr>
+</tbody>
+</table>
+  
+<table>
+<thead>
+  <tr>
+    <th>Indicator Keys<br></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>✅ Stable<br></td>
+  </tr>
+  <tr>
+    <td>⚠️ Unstable</td>
+  </tr>
+  <tr>
+    <td>⛔ Not Working</td>
+  </tr>
+  <tr>
+    <td>➖ No Information Yet<br></td>
+  </tr>
+</tbody>
+</table>
+   
+<br/>
+<br/>  
+   
+</details>    
 
 |****Operating System****|****Download Page****|****Download Mirrors****|
 |----------|-----------|--------------|
