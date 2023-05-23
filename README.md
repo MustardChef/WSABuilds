@@ -116,12 +116,12 @@
   </tr>
   <tr>
     <td>v2304.40000.5.0</td>
-    <td>⚠️</td>
+    <td><a href="https://github.com/LSPosed/MagiskOnWSALocal/issues/550" target="_blank" rel="noopener noreferrer">⚠️</a></td>
     <td><a href="https://github.com/cinit/WSAPatch/issues/33" target="_blank" rel="noopener noreferrer">⛔</a></td>
   </tr>
   <tr>
     <td>v2304.40000.6.0</td>
-    <td>➖</td>
+    <td><a href="https://github.com/LSPosed/MagiskOnWSALocal/issues/550" target="_blank" rel="noopener noreferrer">⚠️</a></td>
     <td><a href="https://github.com/cinit/WSAPatch/issues/33" target="_blank" rel="noopener noreferrer">⛔</a></td>
   </tr>
 </tbody>
@@ -138,7 +138,7 @@
     <td><b><i>✅ Stable &nbsp; &nbsp; (Everything works as intended)<b><i><br></td>
   </tr>
   <tr>
-    <td><b><i>⚠️ Unstable &nbsp; &nbsp; (Experience may not be smooth)<b><i></td>
+    <td><b><i>⚠️ Unstable &nbsp; &nbsp; (Experience may not be smooth) (Click on the Emoji for more information)<b><i></td>
   </tr>
   <tr>
     <td><b><i>⛔ Not Working &nbsp; &nbsp; (Click on the Emoji for more information)<b><i></td>
