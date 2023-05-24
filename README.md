@@ -41,7 +41,7 @@
           
       
 <details>     
-   <summary><picture><img style="float: right;" src="https://img.icons8.com/3d-fluency/94/ok.png" width="35" height="35"/></picture><h3> &nbsp; WSABuilds Builds Status<h3></summary>
+   <summary><picture><img style="float: right;" src="https://img.icons8.com/3d-fluency/94/ok.png" width="35" height="35"/></picture><h3> &nbsp; WSABuilds Builds Status (IMPORTANT: Read Before Downloading)<h3></summary>
       
 ## Builds Status and Stability
 
