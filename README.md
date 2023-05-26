@@ -126,7 +126,7 @@
   </tr>
   <tr>
     <td>v2304.40000.7.0</td>
-    <td>➖</td>
+    <td>✅</td>
     <td><a href="https://github.com/cinit/WSAPatch/issues/33" target="_blank" rel="noopener noreferrer">⛔</a></td>
   </tr>
 </tbody>
