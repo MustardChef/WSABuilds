@@ -135,21 +135,31 @@
 <table>
 <thead>
   <tr>
-    <th>Indicator Keys<br></th>
+    <th colspan="4">Indicator Keys</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td><b><i>✅ Stable &nbsp; &nbsp; (Everything works as intended)<b><i><br></td>
+    <td>✅</td>
+    <td>Stable</td>
+    <td colspan="2">Everything works as intended</td>
   </tr>
   <tr>
-    <td><b><i>⚠️ Unstable &nbsp; &nbsp; (Experience may not be smooth) (Click on the Emoji for more information)<b><i></td>
+    <td>⚠️</td>
+    <td>Unstable</td>
+    <td>Experience may not be smooth due to known bugs or issues</td>
+    <td><b><i><u>Click on the Emoji for more information<b><i></u></td>
   </tr>
   <tr>
-    <td><b><i>⛔ Not Working &nbsp; &nbsp; (Click on the Emoji for more information)<b><i></td>
+    <td>⛔</td>
+    <td>Not Working</td>
+    <td>Build is not working. DO NOT DOWNLOAD! </td>
+     <td><b><i><u>Click on the Emoji for more information<b><i></u></td>
   </tr>
   <tr>
-    <td><b><i>➖ No Information Yet<b><i><br/>(Not enough information to confirm status. Please join the Discord and confirm whether or not the builds are working)</td>
+    <td>➖</td>
+    <td>No Information Yet</td>
+    <td colspan="2">Not enough information to confirm status. Please join the <a href="https://discord.gg/2thee7zzHZ" target="_blank" rel="noopener noreferrer">Discord</a> and confirm whether or not the builds are working.</td>
   </tr>
 </tbody>
 </table>
