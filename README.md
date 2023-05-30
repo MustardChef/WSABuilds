@@ -394,17 +394,34 @@
 In order to make a backup of your WSA data you must copy the Userdata.vhdx (which includes, but is not limited Android Apps and their data, settings etc.), located at `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx`, to a safe location     
       
 ## Restoring Your Backup
-      
-Before attempting to restore your backup, you must remove WSA if installed. Then before you run the "Run.bat" script (to reinstall WSA after removing it), you need to remove these two lines from Install.ps1: 
-```powershell
+
+Before attempting to restore your backup, you must remove WSA if installed. Then before you run the "Run.bat" script (to reinstall WSA after removing it), you need to remove these lines from Install.ps1: 
+
+Official Magisk:
+```pwsh
 Start-Process "wsa://com.topjohnwu.magisk"
+```
+Magisk Delta:
+```pwsh
+Start-Process "wsa://io.github.huskydg.magisk"
+```
+Magisk Alpha:
+```pwsh
+Start-Process "wsa://io.github.vvb2060.magisk"
+```
+Google Play Store:
+```pwsh
 Start-Process "wsa://com.android.vending"
+```
+Amazon Appstore:
+```pwsh
+Start-Process "wsa://com.amazon.venezia"
 ``` 
 After running the script, do not run WSA at all, and go to %localappdata%\Packages and (if the folders do not exist, create them) in MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\ paste the userdata.vhdx
 
-Now run WSA and your serdata should hopefully be restored
-</details>      
-         
+Now run WSA and your userdata should hopefully be restored
+</details>
+      
 &nbsp;
       
 <details>     
