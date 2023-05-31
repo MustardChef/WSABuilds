@@ -68,7 +68,7 @@ Therefore, it's highly recommended you keep it up to date.
 - If you installed through other methods, the sideloader will notify you of an update the next time you launch it.
 
 ## Troubleshooting
-If you get an error like the one below, check that you have allowed the ADB authorization and enabled Developer Mode. Also try disabling and enabling USB debugging as that can sometimes fix issues with the ADB connection.
+If you get an error like the one below, check that you have allowed the ADB authorization and enabled Developer Mode. Also try disabling and enabling USB debugging under manage developer settings as that can sometimes fix issues with the ADB connection.
 
 <img width="446" alt="image" src="https://user-images.githubusercontent.com/44692189/226061768-61743f6c-2ed3-401a-a561-8754c297ad74.png">
 
