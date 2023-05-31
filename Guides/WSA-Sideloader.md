@@ -13,9 +13,9 @@
 #### You can download WSA Sideloader in 3 different ways:
 Operating System|Downloads
 |---------|---------|
-|<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" style="width: 150px;"/></br><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" style="width: 150px;"/> |[<img src="https://user-images.githubusercontent.com/49786146/159123331-729ae9f2-4cf9-439b-8515-16a4ef991089.png" style="width: 200px;"/>](https://winget.run/pkg/infinitepower18/WSASideloader)|
+|<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" style="width: 150px;"/></br><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" style="width: 150px;"/> |[<img src="https://user-images.githubusercontent.com/49786146/159123331-729ae9f2-4cf9-439b-8515-16a4ef991089.png" style="width: 200px;"/>](https://winstall.app/apps/infinitepower18.WSASideloader)|
 |<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" style="width: 150px;"/></br><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" style="width: 150px;"/> |[<img src="https://user-images.githubusercontent.com/68516357/226141505-c93328f9-d6ae-4838-b080-85b073bfa1e0.png" style="width: 200px;"/>](https://github.com/infinitepower18/WSA-Sideloader/releases/latest)|
-|<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" style="width: 150px;"/>|`winget install wsa-sideloader`|
+|<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" style="width: 150px;"/>|[<img src="https://get.microsoft.com/images/en-us%20dark.svg" style="width: 200px;"/>](https://apps.microsoft.com/store/detail/9NMFSJB25QJR?launch=true&cid=wsabuilds&mode=mini)|
 
 ## Setup
 
@@ -68,9 +68,11 @@ Therefore, it's highly recommended you keep it up to date.
 - If you installed through other methods, the sideloader will notify you of an update the next time you launch it.
 
 ## Troubleshooting
-If you get an error like the one below, check that you have allowed the ADB authorization and enabled Developer Mode.
+If you get an error like the one below, check that you have allowed the ADB authorization and enabled Developer Mode. Also try disabling and enabling USB debugging under manage developer settings as that can sometimes fix issues with the ADB connection.
 
 <img width="446" alt="image" src="https://user-images.githubusercontent.com/44692189/226061768-61743f6c-2ed3-401a-a561-8754c297ad74.png">
+
+If you get a message saying `No connection could be made because the target machine actively refused it`, follow [this guide](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/TargetMachineActivelyRefusedConnection.md)
 
 If you continue to face problems, make a note of the error info displayed in WSA Sideloader and join the Discord server below for further assistance.
 
