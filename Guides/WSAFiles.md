@@ -18,7 +18,7 @@ Also note that APK files will need to be stored somewhere in your user directory
 
 <img width="443" alt="image" src="https://github.com/MustardChef/WSABuilds/assets/44692189/9e0698de-e47e-45c9-83a0-8c8ea1297cd4">
 
-5. Once installed, you can launch the sideloaded app from the Start Menu.
+Once installed, you can launch the sideloaded app from the Start Menu.
 
 If you're facing problems, try disabling `Block installation of malicious apps` in the WSA app.
 
