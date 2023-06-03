@@ -539,6 +539,10 @@ Now run WSA and your userdata should hopefully be restored
 ### Installing BusyBox
 
 [<img src="https://img.shields.io/badge/-How%20to%20install%20BusyBox-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Guides/BusyBox.md)
+      
+### Localhost Loopback
+      
+[<img src="https://img.shields.io/badge/-Localhost%20Loopback-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Guides/LocalHostLoopback.md)  
 
 </details> 
 
