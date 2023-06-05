@@ -131,7 +131,7 @@
   </tr>
   <tr>
     <td>v2305.40000.2.0</td>
-    <td>➖</td>
+    <td>✅</td>
     <td><a href="https://github.com/cinit/WSAPatch/issues/33" target="_blank" rel="noopener noreferrer">⛔</a></td>
   </tr>
 </tbody>
@@ -147,7 +147,7 @@
   <tr>
     <td>✅</td>
     <td>Stable</td>
-    <td colspan="2">Everything works as intended</td>
+    <td colspan="2">Everything works as intended. <br/> If you think that the build is not stable, please open a <a href="https://github.com/MustardChef/WSABuilds/issues" target="_blank" rel="noopener noreferrer">GitHub Issue</a> or report the issue in our <a href="https://discord.gg/2thee7zzHZ" target="_blank" rel="noopener noreferrer">Discord</a></td>
   </tr>
   <tr>
     <td>⚠️</td>
