@@ -239,7 +239,7 @@
     <td colspan="2">Virtual Machine Platform Enabled</td>
   </tr>
   <tr>
-    <td colspan="2">Windows Hypervisor Platform Enabled</td>
+    <td colspan="2">Windows Hypervisor Platform Enabled (Optional)</td>
   </tr>
   <tr>
     <td colspan="2">Windows Subsystem For Linux™ Enabled (Optional)</td>
