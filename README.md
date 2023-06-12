@@ -588,6 +588,8 @@ Now run WSA and your userdata should hopefully be restored
 [<img src="https://img.shields.io/badge/-Fix%20Missing%20Icons%20Issue-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/MissingIcons.md)
 
 [<img src="https://img.shields.io/badge/-Fix%20Target%20Machine%20Actively%20Refused%20Connection-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/TargetMachineActivelyRefusedConnection.md)
+      
+[<img src="https://img.shields.io/badge/-Google%20Play%20Issues-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Google%20Play%20Issues.md)      
 
 </details>  
 
