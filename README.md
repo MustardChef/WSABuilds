@@ -131,7 +131,7 @@
   </tr>
     <td>v2304.40000.10.0</td>
     <td>✅</td>
-    <td>➖</td>
+    <td><a href="https://github.com/cinit/WSAPatch/issues/33" target="_blank" rel="noopener noreferrer">⛔</a></td>
   <tr>
     <td>v2305.40000.2.0</td>
     <td>✅</td>
@@ -149,8 +149,8 @@
   </tr>
   <tr>
     <td>v2305.40000.5.0</td>
-    <td>➖</td>
-    <td>➖</td>
+    <td>✅</td>
+    <td>✅</td>
   </tr>   
 </tbody>
 </table>
