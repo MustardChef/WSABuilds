@@ -1,7 +1,7 @@
 # WSABuilds &nbsp; &nbsp; <img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/> &nbsp; 
 
 # WSA Sideloader Usage Guide
-#### With WSA Sideloader, you can install any APK file onto WSA. 
+#### With WSA Sideloader, you can install any APK file onto WSA, as well as XAPK, APKM and APKS files.
 #### This guide will show you how to use it.
 
 </br>
@@ -21,14 +21,14 @@ Operating System|Downloads
 
 ***Step 1.  Once installed, you should see this screen:***
 
-![image](https://user-images.githubusercontent.com/44692189/226059063-9148821a-8661-4f38-9089-bfd6bb72b135.png)
+<img width="311" alt="image" src="https://github.com/infinitepower18/WSA-Sideloader/assets/44692189/ede49229-4667-47b1-ac2d-84f2d71b954f">
 
 >**Note** :
 > If you get a message that says WSA is not installed, check that you have downloaded and installed WSA correctly as per the WSABuilds instructions.
 
 </br>
 
-***Step 2. Next, open WSA Settings from the start menu or by typing wsa-settings:// in your browser's address bar, select Developer and enable Developer mode. Most likely the IP address shown is 127.0.0.1:58526 which is already entered by default in WSA Sideloader, however if the IP address is different for you make sure to change it in the sideloader.***
+***Step 2. Next, open WSA Settings from the start menu or by typing wsa-settings:// in your browser's address bar, select Developer and enable Developer mode.***
 
 ![image](https://user-images.githubusercontent.com/44692189/226059697-9d54c122-8674-46f4-871a-4937805498ef.png)
 
@@ -36,7 +36,7 @@ Operating System|Downloads
 
 ***Step 3. Now, you can click the Browse button to select your APK file. You can also double click a file in File Explorer to automatically open WSA Sideloader with the APK file already selected.***
 
-<img width="1157" alt="image" src="https://user-images.githubusercontent.com/44692189/226060206-ffc9a9af-42b2-4281-859d-bb83c3e8b019.png">
+<img width="1160" alt="image" src="https://github.com/infinitepower18/WSABuilds/assets/44692189/5fda33d9-2a5e-4d3a-98ba-f3fe75ac4abc">
 
 </br>
 
@@ -46,7 +46,7 @@ Operating System|Downloads
 
 </br>
 
-***Step 5. It should take a few seconds to install the APK. Once it says `The application has been successfully installed`, you can click Open app.***
+***Step 5. It should take a few seconds to install the APK. Once it says `The application has been successfully installed`, you can click Open app. Bundle files may take longer depending on the file size.***
 
 >**Note** : 
 > If WSA is off, WSA Sideloader will start it for you. After 30 seconds, the installation will automatically continue.
@@ -74,9 +74,7 @@ If you get an error like the one below, check that you have allowed the ADB auth
 
 If you get a message saying `No connection could be made because the target machine actively refused it`, follow [this guide](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/TargetMachineActivelyRefusedConnection.md)
 
-If you continue to face problems, make a note of the error info displayed in WSA Sideloader and join the Discord server below for further assistance.
-
-[<img src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/>](https://discord.gg/2thee7zzHZ)
+If you continue to face problems, make a note of the error info displayed in WSA Sideloader and join the [Discord server](https://discord.gg/2thee7zzHZ) for further assistance.
 
 ## Credits
 
