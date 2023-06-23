@@ -45,6 +45,11 @@
       
 ## Builds Status and Stability
 
+#### Known Issues that may affect your WSA experiences:
+- ***GApps Issues : https://github.com/LSPosed/MagiskOnWSALocal/issues/595***
+
+<br>
+
 <center><table>
 <thead>
   <tr>
