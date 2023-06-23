@@ -36,7 +36,7 @@ Operating System|Downloads
 
 ***Step 3. Now, you can click the Browse button to select your APK file. You can also double click a file in File Explorer to automatically open WSA Sideloader with the APK file already selected.***
 
-<img width="1160" alt="image" src="https://github.com/infinitepower18/WSABuilds/assets/44692189/5fda33d9-2a5e-4d3a-98ba-f3fe75ac4abc">
+<img width="1144" alt="image" src="https://github.com/MustardChef/WSABuilds/assets/44692189/a66efe96-8f0c-4a2c-930d-a9c60c7f1945">
 
 </br>
 
