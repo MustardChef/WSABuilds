@@ -159,8 +159,8 @@
   </tr>
   <tr>
     <td>v2305.40000.6.0</td>
-    <td>➖</td>
-    <td>➖</td>
+    <td>✅</td>
+    <td>✅</td>
   </tr>  
 </tbody>
 </table>
