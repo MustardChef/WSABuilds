@@ -1,13 +1,12 @@
 # WSABuilds &nbsp; &nbsp; <img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/> &nbsp; 
 
-# **⚠️ Guide Is Incomplete ⚠️**
-
 &nbsp;
 &nbsp;
 
 ## Issues:
-### No Internet 
-![image](https://user-images.githubusercontent.com/68516357/215296995-4a8c9184-321e-438f-9483-6983ce65ce47.png)
+### No Internet
+
+![image](https://user-images.githubusercontent.com/68516357/215296995-4a8c9184-321e-438f-9483-6983ce65ce47.png) ![IMG-20230627-WA0012 cropped](https://github.com/MustardChef/WSABuilds/assets/68516357/a108b1df-2e03-4a52-9e0a-d0004a9d3585)
 
 &nbsp;
 &nbsp;
@@ -16,6 +15,8 @@
 
 ## Solution: 
 These will be split into multiple solutions due to the different causes of the problem of no internet on Windows Subsystem for Android (WSA) and Windows Subsytem for Linux (WSL) 
+
+---
 
 <details>     
    <summary><h3>Fix #1: Uninstalling Hyper-V Network Adapters<h3></summary>
@@ -43,9 +44,51 @@ These will be split into multiple solutions due to the different causes of the p
 ![image](https://user-images.githubusercontent.com/68516357/215347543-91c71429-26fe-44a2-b818-dd9bfeb6bcaf.png)
 #### **Step 4: Restart Windows**
 ![](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.4winkey.com%2Fimages%2Farticle%2Fwindows-tips%2Frestart-screen-stuck.jpg&f=1&nofb=1&ipt=2b826a4d045dc39aaa0487ea2338289d905c9f94c365f5f606334100a1ec9cb1&ipo=images)
-
 </details>
 
+---
+
+<details>     
+   <summary><h3>Fix #2: Checking Firewall Settings<h3></summary>
+   
+
+<details>     
+   <summary><h4>Users with Windows Firewall<h4></summary>
+
+
+       
+</details>
+
+<details>     
+   <summary><h4>Bitdefender Users (with Bitdefender's inbuilt firewall enabled)<h4></summary>
+
+It is a known issue that Bitdefender's firewall can prevent the internet for Windows Subystem for Linux (WSL) and Windows Susbsystem for Android (WSA) from working.
+There is currently no easy solution (there may be workarounds floating on the internet which involve whitelisting certain processes to fix these issues) that I know of, for WSA, that can fix this issue other than the Bitdefender team fixing this at their end or turning off the firewall when using WSA or WSL.
+
+Source: From my own experience and [this](https://community.bitdefender.com/en/discussion/91237/bitdefender-blocking-wsl2-traffic-solution-to-a-thread-that-was-left-unresolved)  
+</details> 
+
+
+
+<details>     
+   <summary><h3>Fix #3: Changing Android DNS Settings<h3></summary>
+
+
+
+</details> 
+
+
+<details>     
+   <summary><h3>Fix #4: Disabling Advanced Networking from WSA Settings<h3></summary>
+
+   
+
+</details>   
+   
+   
+
+
+   
 <!--
 ![image](https://user-images.githubusercontent.com/68516357/215297044-40f32db5-2b0e-40bd-be50-11d451b7811e.png)
 
