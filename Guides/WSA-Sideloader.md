@@ -74,7 +74,9 @@ If you get an error like the one below, check that you have allowed the ADB auth
 
 If you get a message saying `No connection could be made because the target machine actively refused it`, follow [this guide](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/TargetMachineActivelyRefusedConnection.md)
 
-If you continue to face problems, make a note of the error info displayed in WSA Sideloader and join the [Discord server](https://discord.gg/2thee7zzHZ) for further assistance.
+If you continue to face problems, make a note of the error info displayed in WSA Sideloader and join the Discord server below for further assistance.
+
+[<img src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/>](https://discord.gg/2thee7zzHZ)
 
 ## Credits
 
