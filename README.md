@@ -1,45 +1,18 @@
 # WSABuilds &nbsp; &nbsp; [<img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/>](https://github.com/MustardChef/WSABuilds#downloads) &nbsp; [<img src="https://img.shields.io/badge/XDA%20Developers-WSABuilds-EA7100?style=for-the-badge&logoColor=white&logo=XDA-Developers" />](https://forum.xda-developers.com/t/wsabuilds-latest-windows-subsystem-for-android-wsa-builds-for-windows-10-and-11-with-magisk-and-google-play-store.4545087/)
 ### MagiskOnWSA (For Windows™ 10 and 11) [<img align="right" src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/>](https://discord.gg/2thee7zzHZ)
 #### Windows Subsystem For Android™ (WSA) with Google Play Services and (or) Magisk 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N0K08AC)
+
 <br/>
 
-<details>     
-   <summary><h4> &nbsp; ⚠️ Forking Information ⚠️<h4></summary>
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N0K08AC)
 
-| :exclamation: **Important:**  &nbsp;  `⚠️DO NOT FORK⚠️`               |
-|------------------------------------------------------------------------|
-|**This repository is designed specifically not to be forked. MagiskOnWSA and some of the various forks and clones that have sprung up on the platform (***potentially***) violate GitHub's Terms of Service due to abuse of GitHub Actions and have been ultimately warned, disabled or banned.**| 
-|**We would like to say one thing: We respect the Terms and Conditions set out by Github to its users. MagiskOnWSA Builds are built using the MagiskOnWSALocal script, patched in the case of Windows 10 Builds and uploaded onto Github and hence do not rely on the use of Github Actions.**|
-|**Therefore, don't fork this repository unless you're a developer and want to modify the code itself and/or want to contribute to this Github repository.**|
-</details>  
+<br/>
+
 
 &nbsp;
-     
-      
-
-## Language/语言
- - [中文](README_CN.md)
- - [English](README.md)
- - Want to contribute to the translation of this repo? Feel free to open a pull request. <br/> 如果您想为该版本的翻译工作做出贡献，请随时打开一个拉动请求。
-
-<br/>
-
-## Downloads
-<details>     
-   <summary><h3> &nbsp; ℹ️Download Disclaimer <h3></summary>
    
-> **Warning** 
-> ### :exclamation: **Important:**
->  ### Prebuilt Windows Subsystem For Android™ Builds for Windows™ 11 in [Releases](https://github.com/MustardChef/WSABuilds/releases) HAVE NOT been modified in anyway prior and subsequent to running the MagiskOnWSA script and upload to Github. 
-> ### Prebuilt Windows Subsystem For Android™ Builds for Windows™ 10 in [Releases](https://github.com/MustardChef/WSABuilds/releases) ONLY have had AppxManifest.xml, icu.dll and WsaPatch.dll patched according to the WSAPatch guide before upload to Github.
-
-> ### I will move to a more transparent method of building MagiskOnWSA builds soon, due to the overarching concerns with safety, transparancy and build integrity
-
-> #### The same level of scrutiny should be applied with the Windows Subsystem For Android™ builds as with any other program that you download from the internet
-</details>
-          
-      
+## Downloads
+           
 <details>     
    <summary><picture><img style="float: right;" src="https://img.icons8.com/3d-fluency/94/ok.png" width="35" height="35"/></picture><h3> &nbsp; WSABuilds Builds Status (⚠️❗IMPORTANT: Read Before Downloading❗⚠️)<h3></summary>
       
@@ -163,7 +136,12 @@
     <td>✅</td>
   </tr> 
    <tr>
-    <td>v2306.40000.16.0</td>
+    <td>v2306.40000.1.0</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>v2306.40000.2.0</td>
     <td>➖</td>
     <td>➖</td>
   </tr>  
@@ -215,8 +193,33 @@
 | <p align="center"><img src="https://img.icons8.com/color/240/null/windows-11.png" style="width: 50px;"/> <img src="https://img.icons8.com/color/240/null/windows-10.png" style="width: 50px;"/></p>|[![windownold](https://img.shields.io/badge/Windows%2010%2F11-Older%20Builds-red?style=for-the-badge)](https://github.com/MustardChef/WSABuilds/blob/master/OldBuilds.md)|[<img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&logo=Microsoft%20OneDrive&logoColor=0078D4" style="width: 150px;"/>](https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/EgNsfSstHBtIuAZgiNVkanYBTwu0kKVC_QvOiW7i0IojdQ)|
 |<p align="center"><img src="https://img.icons8.com/color/240/null/windows-11.png" style="width: 50px;"/> <img src="https://img.icons8.com/color/240/null/windows-10.png" style="width: 50px;"/></p>| <h4>Custom Builds:<h4> [![windownmagikdelta](https://img.shields.io/badge/Windows%2010%2F11-Magisk%20Delta-382bef?style=for-the-badge)](https://github.com/MustardChef/WSAMagiskDelta)|  |
 |<p align="center"><img align="centre;" src="https://user-images.githubusercontent.com/68516357/216452358-8137df76-875f-4b59-b77d-ca34c8a2d6d3.png" style="width: 80px;"/></p>|[<img src="https://img.shields.io/badge/Download-.msix%20Sources-3A6B35?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSAPackages)|[<img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&logo=Microsoft%20OneDrive&logoColor=0078D4" style="width: 150px;"/>](https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/EgSWYr5JLjFNkSmNydPNFKsBJAlCKj61c6BbbbVGPglASA?e=weIk7y)|
---!>
-   
+-->
+<br/>
+
+<table>
+<thead>
+  <tr>
+    <th>Badge Text/Colour</th>
+    <th>Differences:</th>
+    <th>WSA Version:</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><picture><img src="https://img.shields.io/badge/Pre--Release%20Builds-%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20-orange?style=for-the-badge" width="223" height="28"></picture></td>
+    <td><strong>Newest WSA versions. (Follows WSA Preview Program Channel.)</strong></td>
+    <td><strong>2306.40000.2.0</strong><br></td>
+  </tr>
+  <tr>
+    <td><picture><img src="https://img.shields.io/badge/Stable%20Builds-%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20-blue?style=for-the-badge" alt="Image" width="186" height="28"></picture></td>
+    <td><strong>Older WSA versions, but are mostly stable.</strong></td>
+    <td><strong>2305.40000.6.0</strong></td>
+  </tr>
+</tbody>
+</table>
+
+</br>
+
 <table>
 <thead>
   <tr>
@@ -228,11 +231,11 @@
 <tbody>
   <tr>
     <td rowspan="4"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" style="width: 200px;"/></td>
-    <td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2306.40000.1.0"><img src="https://img.shields.io/badge/Download%20Latest%20Pre Release%20Builds-Windows%2011%20x64-orange?style=for-the-badge&amp;logo=windows11" alt="win11downpre"></a></p></td>
-    <td rowspan="2"><p><a href="https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/EiLOL5EJCtRHgB9jCbXm1Z4BdQycuzp7CTylWEPRkLj_og"><img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&logo=Microsoft%20OneDrive&logoColor=0078D4" style="width: 150px;"/></a></p></td>
+    <td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2306.40000.2.0"><img src="https://img.shields.io/badge/Download%20Latest%20Pre--Release%20Builds-Windows%2011%20x64-orange?style=for-the-badge&amp;logo=windows11" alt="win11downpre"></a></p></td>
+    <td rowspan="2"><p><a href="https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/Eg8bpR8otf5OrjXzSAjv4nABnFtHy3pBh9gkKQI_LG1N_g?e=5lqv9o"><img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&logo=Microsoft%20OneDrive&logoColor=0078D4" style="width: 150px;"/></a></p></td>
   </tr>
   <tr>
-    <td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2306.40000.1.0"><img src="https://img.shields.io/badge/Download%20Latest%20Pre Release%20Builds-Windows%2011%20arm64-orange?style=for-the-badge&amp;logo=windows11" alt="win11downpre"></a></p></td>
+    <td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2306.40000.2.0"><img src="https://img.shields.io/badge/Download%20Latest%20Pre--Release%20Builds-Windows%2011%20arm64-orange?style=for-the-badge&amp;logo=windows11" alt="win11downpre"></a></p></td>
   </tr>
   <tr>
     <td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2305.40000.6.0"><img src="https://img.shields.io/badge/Download%20Latest%20Stable%20Builds-Windows%2011%20x64-blue?style=for-the-badge&amp;logo=windows11" alt="win11down"></a></p></td>
@@ -244,9 +247,9 @@
   </tr>
   <tr>
     <td rowspan="2"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" style="width: 200px;"/></td>
-    <td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2306.40000.1.0"><img src="https://img.shields.io/badge/Download%20Latest%20Pre Release%20Builds-Windows%2010%20x64-orange?style=for-the-badge&logo=windows" alt="win10down"></a></p>
+    <td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2306.40000.2.0"><img src="https://img.shields.io/badge/Download%20Latest%20Pre--Release%20Builds-Windows%2010%20x64-orange?style=for-the-badge&logo=windows" alt="win10down"></a></p>
 </td>
-    <td><p><a href="https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/EthcegO3SmdLuzhphYJlUfkBLJqPHbBgDSufxA1n-HwIRg?e=zDjfD1"><img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&logo=Microsoft%20OneDrive&logoColor=0078D4" style="width: 150px;"/></a></p>
+    <td><p><a href="https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/Euve2cr7t8FGtqXAr2IAOKEBT-da1NdYtAucQvFjwRer4A"><img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&logo=Microsoft%20OneDrive&logoColor=0078D4" style="width: 150px;"/></a></p>
 </td>
   </tr>
   <tr>
