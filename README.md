@@ -207,7 +207,7 @@
 <tbody>
   <tr>
     <td><picture><img src="https://img.shields.io/badge/Pre--Release%20Builds-%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20-orange?style=for-the-badge" width="223" height="28"></picture></td>
-    <td><strong>Newest WSA versions. (Follows WSA Preview Program Channel.)</strong></td>
+    <td><strong>Newest WSA versions. (Follows the WSA Preview Program Channel.)</strong></td>
     <td><strong>2306.40000.2.0</strong><br></td>
   </tr>
   <tr>
