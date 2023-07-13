@@ -201,23 +201,25 @@
   <tr>
     <th>Badge Text/Colour</th>
     <th>Differences:</th>
-    <th>WSA Version:</th>
+    <th>Version:</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td><picture><img src="https://img.shields.io/badge/Pre--Release%20Builds-%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20-orange?style=for-the-badge" width="223" height="28"></picture></td>
-    <td><strong>Newest WSA versions. (Follows the WSA Preview Program Channel.)</strong></td>
-    <td><strong>2306.40000.2.0</strong><br></td>
+    <td><img src="https://img.shields.io/badge/Pre--Release%20Builds-%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20-orange?style=for-the-badge" width="223" height="28"></td>
+    <td>Newest WSA versions. (Follows WSA Preview Program Channel.)</td>
+    <td>2306.40000.2.0<br></td>
   </tr>
   <tr>
-    <td><picture><img src="https://img.shields.io/badge/Stable%20Builds-%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20-blue?style=for-the-badge" alt="Image" width="186" height="28"></picture></td>
-    <td><strong>Older WSA versions, but are mostly stable.</strong></td>
-    <td><strong>2305.40000.6.0</strong></td>
+    <td><img src="https://img.shields.io/badge/Stable%20Builds-%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20-blue?style=for-the-badge" alt="Image" width="186" height="28"></td>
+    <td>Older WSA versions, but mostly stable.</td>
+    <td>2305.40000.6.0</td>
+  </tr>
+  <tr>
+    <td colspan="3"><h3>It is recommend that you to check this table regularly to see if there is a newer update avaliable for WSA for the Stable Builds and Pre-Release Builds<h3><br></td>
   </tr>
 </tbody>
 </table>
-
 </br>
 
 <table>
