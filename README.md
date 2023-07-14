@@ -216,7 +216,7 @@
     <td>2305.40000.6.0</td>
   </tr>
   <tr>
-    <td colspan="3"><h3>It is recommend that you to check this table regularly to see if there is a newer update avaliable for WSA for the Stable Builds and Pre-Release Builds<h3><br></td>
+    <td colspan="3"><h3>It is recommend to check this table regularly to see if there is a newer update avaliable for WSA for the Stable Builds and Pre-Release Builds<h3><br></td>
   </tr>
 </tbody>
 </table>
