@@ -207,12 +207,12 @@
 <tbody>
   <tr>
     <td><img src="https://img.shields.io/badge/Pre--Release%20Builds-%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20-orange?style=for-the-badge" width="223" height="28"></td>
-    <td>Newest WSA versions. (Follows WSA Preview Program Channel.)</td>
+    <td>Newest WSA versions. <br> (Follows the "WSA Preview Program Channel")</td>
     <td>2306.40000.2.0<br></td>
   </tr>
   <tr>
     <td><img src="https://img.shields.io/badge/Stable%20Builds-%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20-blue?style=for-the-badge" alt="Image" width="186" height="28"></td>
-    <td>Older WSA versions, but mostly stable.</td>
+    <td>Older WSA versions, but mostly stable. <br> (Follows the "WSA Retail or Fast Channel")</td>
     <td>2305.40000.6.0</td>
   </tr>
   <tr>
