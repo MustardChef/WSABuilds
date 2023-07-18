@@ -142,6 +142,11 @@
   </tr>
   <tr>
     <td>v2306.40000.2.0</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>v2306.40000.3.0</td>
     <td>➖</td>
     <td>➖</td>
   </tr>  
@@ -202,21 +207,24 @@
     <th>Badge Text/Colour</th>
     <th>Differences:</th>
     <th>Version:</th>
+    <th>Date:</th>
   </tr>
 </thead>
 <tbody>
   <tr>
     <td><img src="https://img.shields.io/badge/Pre--Release%20Builds-%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20-orange?style=for-the-badge" width="223" height="28"></td>
-    <td>Newest WSA versions. <br> (Follows the "WSA Preview Program Channel")</td>
-    <td>2306.40000.2.0<br></td>
+    <td>Newest WSA versions. <br> <br> (Follows the "WSA Preview Program Channel")</td>
+    <td>2306.40000.3.0<br></td>
+    <td>Builds Released: 18/07/2023</td>
   </tr>
   <tr>
     <td><img src="https://img.shields.io/badge/Stable%20Builds-%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20-blue?style=for-the-badge" alt="Image" width="186" height="28"></td>
-    <td>Older WSA versions, but mostly stable. <br> (Follows the "WSA Retail or Fast Channel")</td>
-    <td>2305.40000.6.0</td>
+    <td>Older WSA versions, but mostly stable. <br> <br> (Follows the "WSA Retail or Fast Channel")</td>
+    <td>2305.40000.6.0<br></td>
+    <td>Builds Released: 22/06/2023</td>
   </tr>
   <tr>
-    <td colspan="3"><h3>It is recommend to check this table regularly to see if there is a newer update avaliable for WSA for the Stable Builds and Pre-Release Builds<h3><br></td>
+    <td colspan="4"><h3>It is recommend to check this table regularly to see if there is a newer update avaliable for WSA for the Stable Builds and Pre-Release Builds<h3><br></td>
   </tr>
 </tbody>
 </table>
@@ -233,11 +241,11 @@
 <tbody>
   <tr>
     <td rowspan="4"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" style="width: 200px;"/></td>
-    <td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2306.40000.2.0"><img src="https://img.shields.io/badge/Download%20Latest%20Pre--Release%20Builds-Windows%2011%20x64-orange?style=for-the-badge&amp;logo=windows11" alt="win11downpre"></a></p></td>
-    <td rowspan="2"><p><a href="https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/Eg8bpR8otf5OrjXzSAjv4nABnFtHy3pBh9gkKQI_LG1N_g?e=5lqv9o"><img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&logo=Microsoft%20OneDrive&logoColor=0078D4" style="width: 150px;"/></a></p></td>
+    <td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2306.40000.3.0"><img src="https://img.shields.io/badge/Download%20Latest%20Pre--Release%20Builds-Windows%2011%20x64-orange?style=for-the-badge&amp;logo=windows11" alt="win11downpre"></a></p></td>
+    <td rowspan="2"><p><a href="https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/Eu9slB4gySJOnV7G6UTPMXwBcjIKcqzIWdchEZKZWLkGgg"><img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&logo=Microsoft%20OneDrive&logoColor=0078D4" style="width: 150px;"/></a></p></td>
   </tr>
   <tr>
-    <td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2306.40000.2.0"><img src="https://img.shields.io/badge/Download%20Latest%20Pre--Release%20Builds-Windows%2011%20arm64-orange?style=for-the-badge&amp;logo=windows11" alt="win11downpre"></a></p></td>
+    <td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2306.40000.3.0"><img src="https://img.shields.io/badge/Download%20Latest%20Pre--Release%20Builds-Windows%2011%20arm64-orange?style=for-the-badge&amp;logo=windows11" alt="win11downpre"></a></p></td>
   </tr>
   <tr>
     <td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2305.40000.6.0"><img src="https://img.shields.io/badge/Download%20Latest%20Stable%20Builds-Windows%2011%20x64-blue?style=for-the-badge&amp;logo=windows11" alt="win11down"></a></p></td>
@@ -249,9 +257,9 @@
   </tr>
   <tr>
     <td rowspan="2"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" style="width: 200px;"/></td>
-    <td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2306.40000.2.0"><img src="https://img.shields.io/badge/Download%20Latest%20Pre--Release%20Builds-Windows%2010%20x64-orange?style=for-the-badge&logo=windows" alt="win10down"></a></p>
+    <td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2306.40000.3.0"><img src="https://img.shields.io/badge/Download%20Latest%20Pre--Release%20Builds-Windows%2010%20x64-orange?style=for-the-badge&logo=windows" alt="win10down"></a></p>
 </td>
-    <td><p><a href="https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/Euve2cr7t8FGtqXAr2IAOKEBT-da1NdYtAucQvFjwRer4A"><img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&logo=Microsoft%20OneDrive&logoColor=0078D4" style="width: 150px;"/></a></p>
+    <td><p><a href="https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/EjqVvtEH1tBAhS_7pW8k_IUBmH_aK94S-klRTO8PiSo-JQ"><img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&logo=Microsoft%20OneDrive&logoColor=0078D4" style="width: 150px;"/></a></p>
 </td>
   </tr>
   <tr>
