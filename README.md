@@ -218,13 +218,13 @@
 <tbody>
   <tr>
     <td><img src="https://img.shields.io/badge/Pre--Release%20Builds-%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20-orange?style=for-the-badge" width="223" height="28"></td>
-    <td>Newest WSA versions. <br> <br> (Follows the "WSA Preview Program Channel")</td>
+    <td>Newest WSA versions. <br> <br> Follows the "WSA Preview Program Channel"</td>
     <td>2306.40000.4.0<br></td>
     <td>Builds Released: 19/07/2023</td>
   </tr>
   <tr>
     <td><img src="https://img.shields.io/badge/Stable%20Builds-%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20-blue?style=for-the-badge" alt="Image" width="186" height="28"></td>
-    <td>Older WSA versions, but mostly stable. <br> <br> (Follows the "WSA Retail or Fast Channel")</td>
+    <td>Older WSA versions, but mostly stable. <br> <br> Follows the "WSA Retail or Fast Channel"</td>
     <td>2305.40000.6.0<br></td>
     <td>Builds Released: 22/06/2023</td>
   </tr>
