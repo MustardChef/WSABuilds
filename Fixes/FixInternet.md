@@ -132,7 +132,7 @@ Source: From my own experience and [this](https://community.bitdefender.com/en/d
 <details>     
    <summary><h3>Fix #3: Changing Android DNS Settings<h3></summary>
 
-****1. Open Windows Firewall by pressing the Windows Key and "R" key, Open Run****
+****1. By pressing the Windows Key and "R" key, Open Run****
 
 ****2. Type wsa://com.android.settings, and then select OK.****
 
