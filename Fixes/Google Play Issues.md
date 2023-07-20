@@ -1,6 +1,64 @@
 # WSABuilds &nbsp; &nbsp; <img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/> &nbsp; 
 <br/>
 
+
+## Issue: After signing in to your Google Account from the Play Store App, Play Store keeps crashing
+
+### Preface: 
+##### This issue will prevent you from opening Play Store and effectively prevent the function of MindTheGapps/OpenGapps. This issue may usually occur after signing in. Known cases indicate that this issue is pretty common on newer hardware (12th or 13th Gen Intel Processors, for example)
+
+---
+
+## Solution:
+
+######  Step 1. 
+
+Open Android Settings by pressing the Windows Key and "R" key, Open Run****
+
+######  Step 2. 
+
+****Type wsa://com.android.settings, and then select OK.****
+
+######  Step 3. 
+
+****Wait for Android Settings to load and open.****
+
+######  Step 4. 
+
+****In Android Settings, click on the "Apps" Section and then click on "All Apps".****
+
+######  Step 5. 
+
+****In the "All Apps" Section, find the "Google Play Services" app .****
+
+######  Step 6. 
+
+****Click on the "Google Play Services" app, which should open a page with various different options for the app ("Permissions", "Notification", "Storage and Cache" etc.)****
+
+######  Step 7. 
+
+****Click on "Storage and Cache"****
+
+######  Step 8. 
+
+****Find the "Manage Space" button and click on it, which should popup a window reading "Google Play services storage"****
+
+######  Step 9. 
+
+****Click on "Clear All Data"****
+
+</br>
+
+The issue should now be fixed
+
+
+</br>
+</br>
+</br>
+</br>
+
+
+
 ## Issue: Could not sign-in. There was a problem connecting to play.google.com
 
 ### Preface: 
