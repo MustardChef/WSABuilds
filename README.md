@@ -211,27 +211,27 @@
   <tr>
     <th>Badge Text/Colour</th>
     <th>Differences:</th>
-    <th>Version:</th>
+    <th>Current Version:</th>
     <th>Date:</th>
   </tr>
 </thead>
 <tbody>
   <tr>
     <td><img src="https://img.shields.io/badge/Pre--Release%20Builds-%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20-orange?style=for-the-badge" width="223" height="28"></td>
-    <td>Newest WSA versions. <br> <br> Follows the "WSA Preview Program Channel"</td>
+    <td>Follows the "WSA Preview Program Channel" </br> </br> Builds are generally newer than the "WSA Retail" and "Insider Fast Channel"</td>
     <td>2306.40000.4.0<br></td>
     <td>Builds Released: 19/07/2023</td>
   </tr>
   <tr>
     <td><img src="https://img.shields.io/badge/Stable%20Builds-%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20-blue?style=for-the-badge" alt="Image" width="186" height="28"></td>
-    <td>Older WSA versions, but mostly stable. <br> <br> Follows the "WSA Retail or Fast Channel"</td>
+    <td>Follows the "WSA Retail" or "Insider Fast Channel" <br><br> Builds are generally more stable than the builds in the "WSA Preview Program Channel" </td>
     <td>2306.40000.4.0<br></td>
     <td>Builds Released: 19/07/2023</td>
   </tr>
   <tr>
-    <td colspan="4"><h3>It is recommend to check this table regularly to see if there is a newer update avaliable for WSA for the Stable Builds and Pre-Release Builds<h3><br></td>
+    <td colspan="4"><h4>It is recommend to check this table regularly to see if there is a newer update avaliable for WSA for the Stable Builds and Pre-Release Builds<h4><br></td>
   </tr>
-</tbody>
+  </tbody>
 </table>
 </br>
 
