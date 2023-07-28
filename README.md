@@ -697,7 +697,7 @@ Now run WSA and your userdata should hopefully be restored
 [<img src="https://img.shields.io/badge/-WSA%20Settings%20App%20Crashes%20%2B%20Android%20Apps%20Do%20Not%20Load%20After%20Installation-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/WSA%20Settings%20App%20Crashes%20%2B%20Android%20Apps%20Do%20Not%20Load%20After%20Installation.md
 )   
 
-[<img src="https://img.shields.io/badge/-WSA Does Not Load After Install %2B No Splashscreen.md-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/MustardChef-Guides-WSA-Not-Working/Fixes/WSA%20Does%20Not%20Load%20After%20Install%20%2B%20No%20Splashscreen.md)   
+[<img src="https://img.shields.io/badge/-WSA Does Not Load After Install %2B No Splashscreen-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/MustardChef-Guides-WSA-Not-Working/Fixes/WSA%20Does%20Not%20Load%20After%20Install%20%2B%20No%20Splashscreen.md)   
 
 </details>  
 
