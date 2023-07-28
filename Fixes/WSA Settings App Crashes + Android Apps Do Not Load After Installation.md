@@ -10,7 +10,7 @@
 
 
 
-https://github.com/MustardChef/WSABuilds/assets/68516357/13f75b9a-b530-4535-94b0-4343bf16ea64
+https://github.com/MustardChef/WSABuilds/assets/68516357/7333e8b4-7c09-4032-b816-47fc0d83767b
 
 
 
@@ -25,7 +25,11 @@ and Ensure that 'Run.bat' is run as Administrator**
 
 
 
-https://github.com/MustardChef/WSABuilds/assets/68516357/4c36032c-5dc0-4529-932c-dde26bf97aef
+
+
+
+https://github.com/MustardChef/WSABuilds/assets/68516357/7a33df5b-e68b-43b1-9365-9c4d7ff5c2db
+
 
 
 
