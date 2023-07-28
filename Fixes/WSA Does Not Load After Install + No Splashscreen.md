@@ -1,7 +1,7 @@
 # WSABuilds &nbsp; &nbsp; <img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/> &nbsp; 
 
 ---
-## Issue: </br> Windows Subystem for Android (WSA) Settings app crashes after installation, when opened, and you are unable to run any apps.
+## Issue: </br> Windows Subystem for Android (WSA) is unable to run any apps and there is no splashscreen (when opening the Files app from the settings) and no icons for Android apps.
 ### Preface:
 ##### Why this occurs is unknown. However, after multiple attempts trying to fix this issue, a solution was found.
 
@@ -10,7 +10,10 @@
 
 
 
-https://github.com/MustardChef/WSABuilds/assets/68516357/7333e8b4-7c09-4032-b816-47fc0d83767b
+
+https://github.com/MustardChef/WSABuilds/assets/68516357/a9690842-5159-470a-b472-5990faabeac8
+
+
 
 
 
@@ -28,7 +31,8 @@ and Ensure that 'Run.bat' is run as Administrator**
 
 
 
-https://github.com/MustardChef/WSABuilds/assets/68516357/7a33df5b-e68b-43b1-9365-9c4d7ff5c2db
+
+https://github.com/MustardChef/WSABuilds/assets/68516357/626ec699-6f74-40ff-94fb-26fbe1c4f182
 
 
 
