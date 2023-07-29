@@ -152,8 +152,8 @@
   </tr>
     <tr>
     <td>v2306.40000.4.0</td>
-    <td>➖</td>
-    <td>➖</td>
+    <td>✅</td>
+    <td>✅</td>
   </tr>   
 </tbody>
 </table>
@@ -209,7 +209,7 @@
 <table>
 <thead>
   <tr>
-    <th>Badge Text/Colour</th>
+    <th>Download Variant</th>
     <th>Differences:</th>
     <th>Current Version:</th>
     <th>Date:</th>
