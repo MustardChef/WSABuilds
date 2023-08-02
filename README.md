@@ -400,7 +400,7 @@
 
 1. Go to the [Releases page](https://github.com/MustardChef/WSABuilds/releases/latest)
 2. In the latest release, go to the Assets section and download the Windows Subsystem For Android™ version of your choosing (do not download "Source code")
-3. Extract the zip file
+3. Extract the zip file and rename the folder (that you extracted) to ``WSA``
 4. Delete the zip file
 5. Move the newly extracted folder to a suitable location (Documents folder is a good choice), as you will need to keep the folder on your PC to use MagiskOnWSA
 
