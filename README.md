@@ -306,11 +306,6 @@
   </tr>
   <tr>
   </tr>
-  <tr>
-    <td rowspan="2"><p align="center"><img align="centre;" src="https://avatars.githubusercontent.com/u/75879071?s=200&v=4" style="width: 80px;"/></p></td>
-    <td rowspan="2"><h4>MagiskOnWSALocal Script Used:<h4> <p><a href="https://github.com/WSABuilds/MagiskOnWSALocal"><img src="https://github.com/MustardChef/WSABuilds/assets/68516357/2224552f-6046-4125-9a77-00b54c6f0c15" style="width: 200px;"/></a></p></td>
-    <td rowspan="2"></td>
-  </tr>       
 </tbody>
 </table>
 
@@ -837,7 +832,7 @@ Now run WSA and your userdata should hopefully be restored
       
 </details>     
 
-&nbsp;      
+&nbsp;   
       
 <details>     
    <summary><picture><img style="float: right;" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-credits-movie-theater-flaticons-lineal-color-flat-icons.png" width="60" height="60"/></picture><h1> &nbsp; Credits<h1></summary>
