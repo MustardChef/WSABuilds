@@ -286,7 +286,7 @@
     <td><p><a href="https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/EmDgNyJb2pBMuULbE8ZvBhEBeU8ppyCH81SHbGeRBb61AQ"><img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&logo=Microsoft%20OneDrive&logoColor=0078D4" style="width: 150px;"/></a></p></td>
   </tr>
   <tr>
-    <td rowspan="2"><p align="center"><img src="https://img.icons8.com/color/240/null/windows-11.png" style="width: 50px;"/> <img src="https://img.icons8.com/color/240/null/windows-10.png" style="width: 50px;"/></p></td>
+    <td rowspan="2"><p align="center"><img src="https://img.icons8.com/color/240/null/windows-11.png" style="width: 50px;"/><img src="https://img.icons8.com/color/240/null/windows-10.png" style="width: 50px;"/></p></td>
     <td rowspan="2"><p><a href="https://github.com/MustardChef/WSABuilds/blob/master/OldBuilds.md"><img src="https://img.shields.io/badge/Windows%2010%2F11-Older%20Builds-red?style=for-the-badge" alt="windownold"></a></p></td>
     <td rowspan="2"><p><a href="https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/EgNsfSstHBtIuAZgiNVkanYBTwu0kKVC_QvOiW7i0IojdQ"><img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&logo=Microsoft%20OneDrive&logoColor=0078D4" style="width: 150px;"/></a></p></td>
   </tr>
@@ -300,12 +300,17 @@
   <tr>
   </tr>
   <tr>
-    <td rowspan="2"><p align="center"><img align="centre;" src="https://user-images.githubusercontent.com/68516357/216452358-8137df76-875f-4b59-b77d-ca34c8a2d6d3.png" style="width: 80px;"/></p></td>
+    <td rowspan="2"><picture><p align="center"><img align="centre;" src="https://user-images.githubusercontent.com/68516357/216452358-8137df76-875f-4b59-b77d-ca34c8a2d6d3.png" style="width: 80px;"/></p></picture></td>
     <td rowspan="2"><p><a href="https://github.com/MustardChef/WSAPackages"><img src="https://img.shields.io/badge/Download-.msix%20Sources-3A6B35?style=for-the-badge&logoColor=white&logo=Github" /></a></p></td>
     <td rowspan="2"><p><a href="https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/EgSWYr5JLjFNkSmNydPNFKsBJAlCKj61c6BbbbVGPglASA?e=weIk7y"><img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&logo=Microsoft%20OneDrive&logoColor=0078D4" style="width: 150px;"/></a></p></td>
   </tr>
   <tr>
   </tr>
+  <tr>
+    <td rowspan="2"><p align="center"><img align="centre;" src="https://avatars.githubusercontent.com/u/75879071?s=200&v=4" style="width: 80px;"/></p></td>
+    <td rowspan="2"><h4>MagiskOnWSALocal Script Used:<h4> <p><a href="https://github.com/WSABuilds/MagiskOnWSALocal"><img src="https://github.com/MustardChef/WSABuilds/assets/68516357/2224552f-6046-4125-9a77-00b54c6f0c15" style="width: 200px;"/></a></p></td>
+    <td rowspan="2"></td>
+  </tr>       
 </tbody>
 </table>
 
