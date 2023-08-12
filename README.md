@@ -408,6 +408,7 @@
 > [!NOTE]  
 > If you have the official Windows Subsystem For Android™ installed, you must [completely uninstall](#uninstallation) it to use MagiskOnWSA. 
 
+> [!IMPORTANT]  
 > In case you want to preserve your data from the previous installation (official or MagiskOnWSA), you can backup %LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx before uninstallation and restore it after installation.
 
 1. Go to the [Releases page](https://github.com/MustardChef/WSABuilds/releases/latest)
