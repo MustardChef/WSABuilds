@@ -543,7 +543,11 @@ Before attempting to restore your backup, you must remove WSA if installed. Then
 > The Lines (as shown below) that you need to remove in ``Install.ps1`` may vary depending on the type of WSA Build that you are trying to install.    
       
 &nbsp;
-      
+
+Android Settings:
+```pwsh
+Start-Process "wsa://com.android.settings"
+```
 Official Magisk:
 ```pwsh
 Start-Process "wsa://com.topjohnwu.magisk"
