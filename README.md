@@ -708,6 +708,12 @@ Now run WSA and your userdata should hopefully be restored
       
 [<img src="https://img.shields.io/badge/-NamedResource%20Not%20Found:%20Fix%20Error%200x80073B17-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/NamedResource%20Not%20Found%20-%20Fix%20Error%200x80073B17.md)    
 
+[<img src="https://img.shields.io/badge/-Fix%20Internet%20Security%20Settings%20Blocks%20Installation-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/InternetSecuritySettingsBlock.md)
+
+[<img src="https://img.shields.io/badge/-Fix%20Keyboard%20Not%20Working%20In%20WSA-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Keyboard%20Is%20Not%20Working.md)
+
+[<img src="https://img.shields.io/badge/-Fix%20Path%20Too%20Long-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/FixPathTooLong.md)
+
 [<img src="https://img.shields.io/badge/-Fix%20Path%20Too%20Long-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/FixPathTooLong.md)
 
 [<img src="https://img.shields.io/badge/-Fix%20Missing%20Icons%20Issue-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/MissingIcons.md)
