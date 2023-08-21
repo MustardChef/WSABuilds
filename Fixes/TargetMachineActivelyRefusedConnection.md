@@ -20,7 +20,7 @@ If you still get this error, try these steps:
 
 1. Make sure WSA is turned off and disable WSA autostart in Task Manager ---> Startup Apps before proceeding
 
-2. Disable Hyper-V using the command ``dism.exe /Online /Disable-Feature:Microsoft-Hyper-V`` and reboot your PC
+2. Disable Hyper-V (if enabled) using the command ``dism.exe /Online /Disable-Feature:Microsoft-Hyper-V`` and reboot your PC
 
 3. Reserve port 58526 so Hyper-V doesn't reserve it back using the command `netsh int ipv4 add excludedportrange protocol=tcp startport=58526 numberofports=1`
 
