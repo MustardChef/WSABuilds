@@ -12,7 +12,7 @@
 &nbsp;
 &nbsp;
 
-##### ***You may encounter this problem, WSA has been working fine for you, but all of a sudden, it breaks/ stops working. You are distraught. What do you do, when WSA beloved had been borked.*** 
+##### ***You may encounter this problem. WSA has been working fine for you, but all of a sudden, it breaks/ stops working. You are distraught. What do you do, when WSA beloved had been borked.*** 
 
 &nbsp;
 
@@ -21,7 +21,7 @@
 
 &nbsp;
 
-1. ***Go to "Turn Windows features on and off" and if the features below are enabled, DISABLE THEM.****
+1. ***Go to "Turn Windows features on and off" and if any of these features below are enabled, DISABLE THEM.***
 
 - Hyper-V
 - Virtual Machine Platform
