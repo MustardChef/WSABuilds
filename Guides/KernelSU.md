@@ -6,7 +6,7 @@
 
 - ### Download the KernelSU Manager .apk
 
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [<img src="https://user-images.githubusercontent.com/68516357/226141505-c93328f9-d6ae-4838-b080-85b073bfa1e0.png" style="width: 200px;"/>](https://github.com/tiann/KernelSU/releases/download/v0.6.6/KernelSU_v0.6.6_11184-release.apk)
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [<img src="https://user-images.githubusercontent.com/68516357/226141505-c93328f9-d6ae-4838-b080-85b073bfa1e0.png" style="width: 200px;"/>](https://github.com/tiann/KernelSU/releases/download/v0.6.7/KernelSU_v0.6.7_11210-release.apk)
 
 - ### Sideload the KernelSU Manager .apk into WSA
   
