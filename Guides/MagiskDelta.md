@@ -1,0 +1,6 @@
+<p align="center"><picture><img src="https://github.com/MustardChef/WSABuilds/assets/68516357/cfa27ee2-fad0-4cea-9b2e-bc6008cd6fff" width="55%" height="55%"/></p>
+
+
+<h1><p align="center">You Have Successfully Installed Windows Subsystem For Android with Magisk Delta and MindTheGapps (and Amazon Appstore removed)!</p></h1>
+<h2><p align="center">Stability: ⚠️ Unstable</p></h2> <h2><p align="center"><i><b>ISSUE: Module Disappears after install and reboot (https://github.com/MustardChef/WSABuilds/issues/154) on some PCs<i><b></p></h2>
+
