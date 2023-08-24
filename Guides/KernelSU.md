@@ -1,10 +1,12 @@
 <p align="center"><picture><img src="https://github.com/MustardChef/WSABuilds/assets/68516357/49843526-2329-414e-a4b4-7e6fa9aca250" width="50%" height="50%"/></p>
 
+<h1><p align="center">You Have Successfully Installed Windows Subsystem For Android with KernelSU and MindTheGapps!</p></h1>
 
+<br>
 
-## You Have Successfully Installed Windows Subsystem For Android with KernelSU!
+## Next Steps:
 
-### Next Steps:
+<br>
 
 - ### Download the KernelSU Manager .apk
 
@@ -16,7 +18,8 @@
 
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [<img src="https://img.shields.io/badge/-How%20to%20Sideload%20apps-474154?style=for-the-badge&logoColor=white&logo=github" style="width: 300px;"/>](https://github.com/MustardChef/WSABuilds/blob/master/Guides/Sideloading.md)
 
+<br>
 
-### Enjoy WSA with KernelSU!
+## Enjoy WSA with KernelSU!
 
 
