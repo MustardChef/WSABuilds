@@ -5,3 +5,11 @@
 <h2><p align="center">Stability: ⚠️ Unstable</p></h2> <h2><p align="center"><i><b>ISSUE: Module Disappears after install and reboot (https://github.com/MustardChef/WSABuilds/issues/154) on some PCs<i><b></p></h2>
 
 
+<br>
+<br>
+
+
+# Having any issues?
+
+### Join the WSA Community Discord server via the invite below to recieve advice and support!
+[<img align="left" src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/>](https://discord.gg/2thee7zzHZ)
