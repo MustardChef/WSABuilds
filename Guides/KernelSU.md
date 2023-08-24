@@ -1,7 +1,7 @@
 <p align="center"><picture><img src="https://github.com/MustardChef/WSABuilds/assets/68516357/baed9995-189a-4e3e-bf9c-d075a009b433" width="50%" height="50%"/></p>
 
   
-<h1><p align="center">You Have Successfully Installed Windows Subsystem For Android with KernelSU and MindTheGapps!</p></h1>
+<h1><p align="center">You Have Successfully Installed Windows Subsystem For Android with KernelSU and MindTheGapps (and Amazon Appstore removed)!</p></h1>
 <h2><p align="center">Stability: ✅Stable &nbsp; &nbsp; &nbsp;→ &nbsp; &nbsp; &nbsp; <i><b>No issues reported<i><b></p></h2>
 
 <br>
