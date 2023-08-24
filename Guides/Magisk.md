@@ -2,5 +2,6 @@
 
 
 <h1><p align="center">You Have Successfully Installed Windows Subsystem For Android with Magisk and MindTheGapps!</p></h1>
+<h2><p align="center">Stability: ⚠️ Unstable</p></h2> <h2><p align="center"><i><b>Issue: Module Disappears after install and reboot https://github.com/MustardChef/WSABuilds/issues/154 on some PCs<i><b></p></h2>
 
 
