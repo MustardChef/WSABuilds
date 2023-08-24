@@ -1,4 +1,6 @@
-# WSABuilds &nbsp; &nbsp; <img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/> &nbsp; 
+<p align="center"><picture><img src="https://github.com/MustardChef/WSABuilds/assets/68516357/49843526-2329-414e-a4b4-7e6fa9aca250" width="50%" height="50%"/></p>
+
+
 
 ## You Have Successfully Installed Windows Subsystem For Android with KernelSU!
 
