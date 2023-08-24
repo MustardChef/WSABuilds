@@ -26,3 +26,12 @@
 ## Enjoy WSA with KernelSU!
 
 
+<br>
+<br>
+
+
+# Having any issues?
+
+### Join the WSA Community Discord server via the invite below to recieve advice and support!
+[<img align="left" src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/>](https://discord.gg/2thee7zzHZ)
+
