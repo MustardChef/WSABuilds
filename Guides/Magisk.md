@@ -1,4 +1,4 @@
-<p align="center"><picture><img src="https://github.com/MustardChef/WSABuilds/assets/68516357/ad30e8bd-2c13-4d8f-b97c-1f8359bf74d7" width="53%" height="53%"/></p>
+<p align="center"><picture><img src="https://github.com/MustardChef/WSABuilds/assets/68516357/176a31b4-b7d3-443c-99bf-51f0a41e9f12" width="55%" height="55%"/></p>
 
 
 <h1><p align="center">You Have Successfully Installed Windows Subsystem For Android with Magisk and MindTheGapps!</p></h1>
