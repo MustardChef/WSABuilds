@@ -60,7 +60,7 @@ bcdedit /set hypervisorlaunchtype auto
 
 &nbsp;
 
-8. ***ENABLE the features that you disabled in ``Step 1`` and restart a second time.*** 
+8. ***ENABLE the features that you disabled in ``Step 2`` and restart a second time.*** 
 
 &nbsp;
 
