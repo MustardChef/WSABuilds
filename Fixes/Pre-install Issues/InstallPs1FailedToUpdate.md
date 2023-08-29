@@ -14,7 +14,7 @@
 
 &nbsp;
 
-1. Execute:
+**1. Execute:**
 ```powershell
 PowerShell.exe -ExecutionPolicy Bypass -File .\Install.ps1
 ```
@@ -22,6 +22,13 @@ PowerShell.exe -ExecutionPolicy Bypass -File .\Install.ps1
 
 **Hope this works for you!**
 
-Join the Discord if you have any other questions or need help!
+
+<br>
+
+---
+
+## Have futher question or need help?
+
+#### Join the Discord if you have any other questions or need help!
 
 [<img src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/>](https://discord.gg/2thee7zzHZ)

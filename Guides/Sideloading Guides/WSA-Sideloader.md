@@ -23,7 +23,7 @@ Operating System|Downloads
 
 <img width="311" alt="image" src="https://github.com/infinitepower18/WSA-Sideloader/assets/44692189/ede49229-4667-47b1-ac2d-84f2d71b954f">
 
->**Note** :
+> [!NOTE]
 > If you get a message that says WSA is not installed, check that you have downloaded and installed WSA correctly as per the WSABuilds instructions.
 
 </br>
@@ -48,7 +48,7 @@ Operating System|Downloads
 
 ***Step 5. It should take a few seconds to install the APK. Once it says `The application has been successfully installed`, you can click Open app. Bundle files may take longer depending on the file size.***
 
->**Note** : 
+> [!NOTE] 
 > If WSA is off, WSA Sideloader will start it for you. After 30 seconds, the installation will automatically continue.
 
 <img width="314" alt="image" src="https://user-images.githubusercontent.com/44692189/226061387-f0126c32-3a2f-49c4-8ecf-83ad5809ab38.png">

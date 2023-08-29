@@ -4,7 +4,7 @@
 ## Issue: </br> Error 0x80073CF6 when "Run.bat" is executed to install Windows Subystem for Android (WSA)
 ### Preface:
 ##### This issue can arise due to many factors that is preventing the app from being registered. Although there is no definite solution, we can try these steps to try to fix the problem
-
+##### This installation issue may also arise in systems that are using Modified Windows OSes such as ReviOS, Tiny10/11, etc. This is due to the fact that these OSes have been modified to remove certain features that are deemed unnecessary. This may cause issues with the installation of WSA.
 </br>
 
 ```Powershell
@@ -24,7 +24,7 @@ In E:\WSA\Install.ps1:102 Character:1
 
 **1. Ensure the partition/drive you are installing from is NTFS**
 
-**2. Redownload WSA Build .zip (sometime the files can be corrupted during download and extraction)**
+**2. Redownload WSA Build .zip/.7z artifact (sometime the files can be corrupted during download and extraction)**
 
 **3. If you have installed WSA prior, make sure that it has been uninstalled and delete all folders containing "WindowsSubsystemForAndroid" from the following directories/paths and the subdirectories within:** 
 
@@ -112,12 +112,14 @@ AppxManifest.xml (24,27): Error 0x80073B06: Unable to install or update package 
 **2.** If you encounter this problem when installing using prebuilt builds from [Releases](https://github.com/LSPosed/MagiskOnWSALocal) from this repo, try redownloading the latest build. If the issue persists, report to the [Discord](https://discord.gg/2thee7zzHZ) and I will be happy to assist you
 
 
----
-
 **Hope these fixes work for you!**
+
+<br>
+
+---
 
 ## Have futher question or need help?
 
-Join the Discord if you have any other questions or need help!
+#### Join the Discord if you have any other questions or need help!
 
 [<img src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/>](https://discord.gg/2thee7zzHZ)

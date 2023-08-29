@@ -6,7 +6,7 @@
 
 **Step 2:** &nbsp; Go to `Windows Subsystem for Android` → `Developer` and turn on **Developer mode**.
 
-> **Warning**:
+> [!IMPORTANT]
 > #### You have to give WSAPacman, ADB Debugging permission.
 > 
 > ![](https://media.discordapp.net/attachments/1015131233824538624/1062611905249820733/allow.png)
@@ -16,7 +16,7 @@
 
 ## Issues and Solutions
 
-> **Note** 
+> [!NOTE]
 > #### If the "Install" button is greyed out while installing apk
 >
 > ![image](https://user-images.githubusercontent.com/68516357/215341077-162f64c0-bea5-4f39-9f48-a8d5acaa5cf3.png)
@@ -26,7 +26,7 @@
 
 </br>
 
-> **Note** 
+> [!NOTE]
 > #### If WSAPacman states that the "Installation timed out": 
 >
 > <img src="https://user-images.githubusercontent.com/68516357/222983664-cf41ac0b-194b-4c11-9b40-2975eea6c176.png" style="width: 350px;"/>

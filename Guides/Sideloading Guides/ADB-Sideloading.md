@@ -5,10 +5,8 @@
 
 ## Setting up ADB to work with WSA
 - Launch **Windows Subsystem for Android**.
-- Here, enable **Developer mode** then tap on **Manage developer settings**.
-- Use your left mousebutton to scroll down until you find **Wireless debugging**. Tap to open it and enable it.
-- Tap on **Pair device with pairing code**. 
-- Take note of **Wi-Fi pairing code**, and **IP address and port**.
+- Here, click on **Advanced Settings** and then enable **Developer mode** by clicking on the toggle button.
+- Take note of **IP address and port** shown in the Developer mode section.
 - Launch Windows Terminal and make sure ADB is installed ([install ADB](https://www.xda-developers.com/install-adb-windows-macos-linux/#adbsetupwindows)).
 - Use command ``adb pair <IP:port>`` to pair ADB with WSA.
 - In Wireless debugging window, see **Device name** and under it **IP address and port**.
@@ -19,13 +17,13 @@ Once this is done, use command ``adb devices`` to make sure that WSA is connecte
 
 ## Installing APKs using ADB
 Now you can install any app you want, but I personally suggest installing a web browser and a file manager first. 
-Here's the [direct download link](https://github.com/bromite/bromite/releases/latest/download/x64_ChromePublic.apk) to the latest Bromite x64 build.
+
 - Download the APK.
 - Open File Explorer, right click on downloaded APK and tap on Copy as path.
 - Launch Windows Terminal.
 - Use ``adb install <file path>`` to install the APK.   
 [**P.S.** You can right click to paste in Terminal]
-- Repeat this process for a file manager app. I recommend using FX File Explorer, you can use what you want.
+
 
 ## After installation using ADB
 You can now open the web browser you installed in Android, and download and install Aurora Store like you do on any Android device - normally sideloading APK without using ADB.

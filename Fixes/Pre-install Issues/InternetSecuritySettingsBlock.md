@@ -13,9 +13,21 @@
 
 The solution is simple, all you have to do is:
 
-**1. Rename the .zip folder to a shorter name, which can be anything to your choosing </br> (For example: WSA_2XXX.XXXXX.X.X_XXXX_Release-Nightly-with-magisk-XXXXXXX-XXXXXX-MindTheGapps-XX.X-RemovedAmazon ----> WSAArchive2XXX)**
+**1. Rename the .zip/.7z file to a shorter name, which can be anything to your choosing** </br> 
 
-**2. Rename the extracted folder to a shorter name, which can be anything to your choosing </br> (For example: WSA_2XXX.XXXXX.X.X_XXXX_Release-Nightly-with-magisk-XXXXXXX-XXXXXX-MindTheGapps-XX.X-RemovedAmazon ----> WSAExtracted2XXX)**
+- For example: 
+
+    - **Before:** WSA_2XXX.XXXXX.X.X_XXXX_Release-Nightly-with-magisk-XXXXXXX-XXXXXX-MindTheGapps-XX.X-RemovedAmazon
+
+    - **After:** WSAArchive2XXX
+
+**2. Rename the extracted folder to a shorter name, which can be anything to your choosing** </br> 
+
+- For example:
+
+   - **Before:** WSA_2XXX.XXXXXXX_XXXX_Release-Nightly-with-magisk-XXXXXXX-XXXXXX-MindTheGapps-XX.X-RemovedAmazon 
+
+   - **After:** WSAArchive2XXX
 
 ---
 

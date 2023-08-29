@@ -18,3 +18,14 @@
 **3. Download the package and then install it, by following the [Installation guide](https://github.com/MustardChef/WSABuilds#--installation) in README.md**
 
 **4. Enjoy**
+
+
+<br>
+
+---
+
+## Have futher question or need help?
+
+#### Join the Discord if you have any other questions or need help!
+
+[<img src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/>](https://discord.gg/2thee7zzHZ)

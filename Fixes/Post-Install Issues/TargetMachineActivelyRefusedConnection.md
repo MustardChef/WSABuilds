@@ -24,7 +24,7 @@ If you still get this error, try these steps:
 
 3. Reserve port 58526 so Hyper-V doesn't reserve it back using the command `netsh int ipv4 add excludedportrange protocol=tcp startport=58526 numberofports=1`
 
-4. Re-enable Hyper-V using the command `dism.exe /Online /Enable-Feature:Microsoft-Hyper-V /All` and reboot your PC
+4. Re-enable Hyper-V (if it was previously enabled) using the command `dism.exe /Online /Enable-Feature:Microsoft-Hyper-V /All` and reboot your PC
 
 Your issue should be fixed now!
 
@@ -33,7 +33,14 @@ Your issue should be fixed now!
 
 **Hope this works for you!**
 
-Join the Discord if you have any other questions or need help!
+<br>
+
+---
+
+## Have futher question or need help?
+
+#### Join the Discord if you have any other questions or need help!
 
 [<img src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/>](https://discord.gg/2thee7zzHZ)
+
 

@@ -170,23 +170,27 @@ Your Internet should now be fixed!
 1. Go to the Start Menu and search for Windows Subsystem for Android™
 2. Depending on your WSA version, the Advanced Networking setting is located in different places witin the WSA Settings app
 
-- For 2305 and newer builds, you must go to "Advanced settings" and then to "Experimental features"
-- For 2304 and older builds, this setting is located in the "System" tab/ main screen when you open the Settings app
+   - For 2305 and newer builds, you must go to "Advanced settings" and then to "Experimental features"
+   - For 2304 and older builds, this setting is located in the "System" tab/ main screen when you open the Settings app
 
 3. Make sure that if Advanced Networking is enabled, you disable it as this may be causing issues with the internet
 
-This should fix the internet if Advanced Networking was on and the internet was not working due to this
+This should fix the internet if Advanced Networking was On, and the internet was not working due to this
 
 </details> 
 
 
 
-<br>
+<br>  
 <br>
 
-   
----   
+---
 
+## Have futher question or need help?
+
+#### Join the Discord if you have any other questions or need help!
+
+[<img src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/>](https://discord.gg/2thee7zzHZ)
 
    
 <!--

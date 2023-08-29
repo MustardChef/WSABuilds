@@ -34,8 +34,8 @@ You may encounter this problem, even if Virtualization is enabled on your PC (in
 
 4. ***Boot into your BIOS, and DISABLE Virtualization.***
 
-  - ***[Click here for a guide for Windows 11](https://support.microsoft.com/en-us/windows/enable-virtualization-on-windows-11-pcs-c5578302-6e43-4b4b-a449-8ced115f58e1)***
-  - ***[Click here for a guide for Windows 10](https://support.microsoft.com/en-us/windows/enable-virtualization-on-windows-10-pcs-c5578302-6e43-4b4b-a449-8ced115f58e1)***
+    - ***[Click here for a guide for Windows 11](https://support.microsoft.com/en-us/windows/enable-virtualization-on-windows-11-pcs-c5578302-6e43-4b4b-a449-8ced115f58e1)***
+    - ***[Click here for a guide for Windows 10](https://support.microsoft.com/en-us/windows/enable-virtualization-on-windows-10-pcs-c5578302-6e43-4b4b-a449-8ced115f58e1)***
 
 &nbsp;
 
@@ -67,8 +67,8 @@ bcdedit /set hypervisorlaunchtype auto
 
 9. ***Boot into your BIOS, and ENABLE Virtualization.***
 
-  - ***[Click here for a guide for Windows 11](https://support.microsoft.com/en-us/windows/enable-virtualization-on-windows-11-pcs-c5578302-6e43-4b4b-a449-8ced115f58e1)***
-  - ***[Click here for a guide for Windows 10](https://support.microsoft.com/en-us/windows/enable-virtualization-on-windows-10-pcs-c5578302-6e43-4b4b-a449-8ced115f58e1)***
+    - ***[Click here for a guide for Windows 11](https://support.microsoft.com/en-us/windows/enable-virtualization-on-windows-11-pcs-c5578302-6e43-4b4b-a449-8ced115f58e1)***
+    - ***[Click here for a guide for Windows 10](https://support.microsoft.com/en-us/windows/enable-virtualization-on-windows-10-pcs-c5578302-6e43-4b4b-a449-8ced115f58e1)***
 
 &nbsp;
 
@@ -83,6 +83,15 @@ bcdedit /set hypervisorlaunchtype auto
 
 **Hope this works for you!**
 
-Join the Discord if you have any other questions or need help!
+<br>
+
+
+<br>
+
+---
+
+## Have futher question or need help?
+
+#### Join the Discord if you have any other questions or need help!
 
 [<img src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/>](https://discord.gg/2thee7zzHZ)

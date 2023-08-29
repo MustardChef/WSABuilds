@@ -30,3 +30,15 @@ Using the [Microsoft Guide](https://support.microsoft.com/en-gb/windows/update-w
 ***Or***
 
 Using the [Windows 10 Update Assistant](https://support.microsoft.com/en-us/topic/windows-10-update-assistant-3550dfb2-a015-7765-12ea-fba2ac36fb3f), update Windows 10 to the latest version
+
+
+
+<br>
+
+---
+
+## Have futher question or need help?
+
+#### Join the Discord if you have any other questions or need help!
+
+[<img src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/>](https://discord.gg/2thee7zzHZ)

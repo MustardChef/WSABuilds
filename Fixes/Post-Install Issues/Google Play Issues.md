@@ -91,3 +91,15 @@ You should now be able to log in to Google Play and hopefully download apps!
 ### Internet is not working on other app in WSA?
 
 ##### Take a look at the [Internet Fixes Guide](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/FixInternet.md)
+
+
+
+<br>
+
+---
+
+## Have futher question or need help?
+
+#### Join the Discord if you have any other questions or need help!
+
+[<img src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/>](https://discord.gg/2thee7zzHZ)

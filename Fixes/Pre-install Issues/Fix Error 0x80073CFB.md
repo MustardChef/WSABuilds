@@ -23,7 +23,7 @@ Get-AppxPackage -Name "MicrosoftCorporationII.WindowsSubsystemForAndroid" -AllUs
 ```
 <br>
 
-**3. Delete all folders related to WSA (expect the .zip files for WSA Builds), which include folders extracted for WSA installation.**
+**3. Delete all folders related to WSA (expect the .zip or .7z files (depends on the release ) for WSA Builds), which include folders extracted for WSA installation.**
 
 <br>
 
@@ -33,12 +33,13 @@ Get-AppxPackage -Name "MicrosoftCorporationII.WindowsSubsystemForAndroid" -AllUs
 
 ***The issue should now be fixed***
 
+
+<br>
+
 ---
 
-&nbsp;
+## Have futher question or need help?
 
-**Hope this works for you!**
-
-Join the Discord if you have any other questions or need help!
+#### Join the Discord if you have any other questions or need help!
 
 [<img src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/>](https://discord.gg/2thee7zzHZ)
