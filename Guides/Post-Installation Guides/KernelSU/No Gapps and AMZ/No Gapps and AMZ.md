@@ -1,4 +1,5 @@
-<p align="center"><picture><img src="https://github.com/MustardChef/WSABuilds/assets/68516357/456369e0-c83e-478c-9c1b-bb5f304ec04d" width="55%" height="55%"/></p>
+<p align="center"><picture><img src="https://github.com/MustardChef/WSABuilds/assets/68516357/c4f864d8-e796-460f-9008-79105b23e410" width="55%" height="55%"/></p>
+
 
 
 <h1><p align="center">You Have Successfully Installed Windows Subsystem For Android with KernelSU, Amazon Appstore and No Google Apps (No MindTheGapps)!</p></h1>
