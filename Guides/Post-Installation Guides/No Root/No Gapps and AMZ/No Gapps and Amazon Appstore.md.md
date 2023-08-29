@@ -2,7 +2,7 @@
 
 
 
-<h1><p align="center">You Have Successfully Installed Windows Subsystem For Android with Amazon Appstore and No Google Apps!</p></h1>
+<h1><p align="center">You Have Successfully Installed Windows Subsystem For Android with Amazon Appstore and No Google Apps (No MindTheGapps)!</p></h1>
 <h2><p align="center">Stability: ✅Stable &nbsp; &nbsp; &nbsp;→ &nbsp; &nbsp; &nbsp; <i><b>No issues reported<i><b></p></h2>
 
 <br>
