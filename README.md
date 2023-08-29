@@ -661,24 +661,24 @@ Now run WSA and your userdata should hopefully be restored
 &nbsp;
 
 ### GPU Guide:
-[<img src="https://img.shields.io/badge/-How%20to%20Change%20the%20GPU%20Used-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Guides/ChangingGPU.md)
+[<img src="https://img.shields.io/badge/-How%20to%20Change%20the%20GPU%20Used-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Guides/General%20Usage%20Guides/ChangingGPU.md)
 
 ### Sideload Guide:
-[<img src="https://img.shields.io/badge/-How%20to%20Sideload%20apps-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Guides/Sideloading.md)
+[<img src="https://img.shields.io/badge/-How%20to%20Sideload%20apps-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Guides/Sideloading%20Guides/Sideloading.md)
 
 ### Moving WSA to another drive or partition:
-[<img src="https://img.shields.io/badge/-How%20to%20Move%20WSA%20to%20another%20drive%20or%20partition-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Guides/MoveToExtDrive.md)
+[<img src="https://img.shields.io/badge/-How%20to%20Move%20WSA%20to%20another%20drive%20or%20partition-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Guides/General%20Usage%20Guides/MoveToExtDrive.md)
 
 ### Installing KernelSU
-[<img src="https://img.shields.io/badge/-How%20to%20install%20KernelSU-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Guides/KernelSU.md)
+[<img src="https://img.shields.io/badge/-How%20to%20install%20KernelSU-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Guides/General%20Usage%20Guides/KernelSU.md)
 
 ### Installing BusyBox
 
-[<img src="https://img.shields.io/badge/-How%20to%20install%20BusyBox-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Guides/BusyBox.md)
+[<img src="https://img.shields.io/badge/-How%20to%20install%20BusyBox-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Guides/General%20Usage%20Guides/BusyBox.md)
       
 ### Localhost Loopback Guide
       
-[<img src="https://img.shields.io/badge/-Localhost%20Loopback-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Guides/LocalHostLoopback.md)  
+[<img src="https://img.shields.io/badge/-Localhost%20Loopback-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Guides/General%20Usage%20Guides/LocalHostLoopback.md)  
 
 </details> 
 
@@ -690,13 +690,13 @@ Now run WSA and your userdata should hopefully be restored
 ### Common Issues:
 [<img src="https://img.shields.io/badge/-Fix%20Install.ps1%20Issue-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Pre-install%20Issues/FixInstallps1.md)
 
-[<img src="https://img.shields.io/badge/-Fix Virtualization and Virtual Machine Platform Error-%23EF2D5E?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Post-install%20Issues/FixVirtError.md)
+[<img src="https://img.shields.io/badge/-Fix Virtualization and Virtual Machine Platform Error-%23EF2D5E?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Post-Install%20Issues/FixVirtError.md)
 
-[<img src="https://img.shields.io/badge/-Fix%20Internet%20Issues-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Post-install%20Issues/FixInternet.md)
+[<img src="https://img.shields.io/badge/-Fix%20Internet%20Issues-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Post-Install%20Issues/FixInternet.md)
 
 [<img src="https://img.shields.io/badge/-Fix%20Error%200x80073CF0-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Pre-install%20Issues/Fix%20Error%200x80073CF0.md)
 
-**[<img src="https://img.shields.io/badge/-Fix%20Error%200x80073CFB-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Fix%20Error%200x80073CFB.md)**
+[<img src="https://img.shields.io/badge/-Fix%20Error%200x80073CFB-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Pre-install%20Issues/Fix%20Error%200x80073CFB.md)
 
 [<img src="https://img.shields.io/badge/-Fix%20Error%200x80073CFD-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Pre-install%20Issues/Fix%20Error%200x80073CFD.md)
 
@@ -710,26 +710,25 @@ Now run WSA and your userdata should hopefully be restored
 
 [<img src="https://img.shields.io/badge/-Fix%20Internet%20Security%20Settings%20Blocks%20Installation-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Pre-install%20Issues/InternetSecuritySettingsBlock.md)
 
-[<img src="https://img.shields.io/badge/-Fix%20Keyboard%20Not%20Working%20In%20WSA-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Post-install%20Issues/Keyboard%20Is%20Not%20Working.md)
+[<img src="https://img.shields.io/badge/-Fix%20Keyboard%20Not%20Working%20In%20WSA-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Post-Install%20Issues/Keyboard%20Is%20Not%20Working.md)
 
 [<img src="https://img.shields.io/badge/-Fix%20Path%20Too%20Long-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Pre-install%20Issues/FixPathTooLong.md)
 
-[<img src="https://img.shields.io/badge/-Fix%20Missing%20Icons%20Issue-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Post-install%20Issues/MissingIcons.md)
+[<img src="https://img.shields.io/badge/-Fix%20Missing%20Icons%20Issue-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Post-Install%20Issues/MissingIcons.md)
 
-[<img src="https://img.shields.io/badge/-Fix%20Target%20Machine%20Actively%20Refused%20Connection-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Post-install%20Issues/TargetMachineActivelyRefusedConnection.md)
+[<img src="https://img.shields.io/badge/-Fix%20Target%20Machine%20Actively%20Refused%20Connection-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Post-Install%20Issues/TargetMachineActivelyRefusedConnection.md)
       
-[<img src="https://img.shields.io/badge/-Google%20Play%20Issues-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Post-install%20Issues/Google%20Play%20Issues.md)  
+[<img src="https://img.shields.io/badge/-Google%20Play%20Issues-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Post-Install%20Issues/Google%20Play%20Issues.md)  
 
-[<img src="https://img.shields.io/badge/-WSA%20Settings%20App%20Crashes%20%2B%20Android%20Apps%20Do%20Not%20Load%20After%20Installation-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Pre-install%20Issues/WSA%20Settings%20App%20Crashes%20%2B%20Android%20Apps%20Do%20Not%20Load%20After%20Installation.md
+[<img src="https://img.shields.io/badge/-WSA%20Settings%20App%20Crashes%20%2B%20Android%20Apps%20Do%20Not%20Load%20After%20Installation-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Post-Install%20Issues/WSA%20Settings%20App%20Crashes%20%2B%20Android%20Apps%20Do%20Not%20Load%20After%20Installation.md
 )   
 
-[<img src="https://img.shields.io/badge/-WSA Does Not Load After Install %2B No Splashscreen-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Pre-install%20Issues/WSA%20Does%20Not%20Load%20After%20Install%20%2B%20No%20Splashscreen.md) 
+[<img src="https://img.shields.io/badge/-WSA Does Not Load After Install %2B No Splashscreen-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Post-Install%20Issues/WSA%20Does%20Not%20Load%20After%20Install%20%2B%20No%20Splashscreen.md) 
 
-[<img src="https://img.shields.io/badge/-WSA%20Stopped%20Working!-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Post-install%20Issues/WSA%20Stopped%20Working!.md) 
+[<img src="https://img.shields.io/badge/-WSA%20Stopped%20Working!-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Post-Install%20Issues/WSA%20Stopped%20Working!.md) 
 
-[<img src="https://img.shields.io/badge/-Install.ps1%20Failed%20To%20Update-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Pre-install%20Issues/Install.ps1%20Failed%20To%20Update.md) 
+[<img src="https://img.shields.io/badge/-Install.ps1%20Failed%20To%20Update-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Pre-install%20Issues/InstallPs1FailedToUpdate.md) 
 
-Install.ps1 Failed To Update
 
 </details>  
 
