@@ -1,4 +1,4 @@
-<p align="center"><picture><img src="https://github.com/MustardChef/WSABuilds/assets/68516357/61a0a62f-316f-4478-924b-1c528fbf55b1" width="55%" height="55%"/></p>
+<p align="center"><picture><img src="https://github.com/MustardChef/WSABuilds/assets/68516357/f700076a-27f0-47bb-89da-c5703732a055" width="55%" height="55%"/></p>
 
 
 
