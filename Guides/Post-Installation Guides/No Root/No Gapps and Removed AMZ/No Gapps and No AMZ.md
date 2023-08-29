@@ -8,8 +8,5 @@
 <br>
 <br>
 
-
-# Having any issues?
-
-### Join the WSA Community Discord server via the invite below to recieve advice and support!
-[<img align="left" src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/>](https://discord.gg/2thee7zzHZ)
+ <h1><p align="center">Having any issues? &nbsp; &nbsp; &nbsp;<a href=""><img src="https://img.shields.io/badge/Troubleshoot-1c86af?style=for-the-badge&logoColor=white&logo=github" width="20%" height="20%"/></a></p><h3> Click on the "Troubleshoot" button above or join the WSA Community Discord server via the invite below to recieve advice and support!</h3><h1><p align="center"><a href="https://discord.gg/2thee7zzHZ"><img src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 420px;"/></a></p></h1>
+ 
