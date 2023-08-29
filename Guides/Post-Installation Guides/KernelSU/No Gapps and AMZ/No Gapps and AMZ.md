@@ -2,7 +2,7 @@
 
 
 
-<h1><p align="center">You Have Successfully Installed Windows Subsystem For Android with KernelSU and the Amazon Appstore!</p></h1>
+<h1><p align="center">You Have Successfully Installed Windows Subsystem For Android with KernelSU, the Amazon Appstore and No Gapps (MindTheGapps)!</p></h1>
 <h2><p align="center">Stability: ✅Stable &nbsp; &nbsp; &nbsp;→ &nbsp; &nbsp; &nbsp; <i><b>No issues reported<i><b></p></h2>
 
 <br>
