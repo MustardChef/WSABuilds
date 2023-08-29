@@ -6,7 +6,7 @@
 
 <br> 
 
-> [!NOTE]
+> [!IMPORTANT]
 > This guide is only applicable for WSA versions 2305 and above. If you're using an older version, you will need to use [ADB](https://github.com/MustardChef/WSABuilds/blob/master/Guides/Sideloading%20Guides/ADB-Sideloading.md) or one of the [listed APK installers](https://github.com/MustardChef/WSABuilds/blob/master/Guides/Sideloading%20Guides/Sideloading.md).
 
 <br> 
