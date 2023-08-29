@@ -1,6 +1,6 @@
 <p align="center"><picture><img src="https://github.com/MustardChef/WSABuilds/assets/68516357/6b1f3c7b-ba56-4f92-b84a-50142d9c16fd" width="55%" height="55%"/></p>
 
-<h1><p align="center">You Have Successfully Installed Windows Subsystem For Android with Google Apps (MindTheGapps) and Removed Amazon!</p></h1>
+<h1><p align="center">You Have Successfully Installed Windows Subsystem For Android with KernelSU, Google Apps (MindTheGapps) and the Amazon Appstore!</p></h1>
 <h2><p align="center">Stability: ✅Stable &nbsp; &nbsp; &nbsp;→ &nbsp; &nbsp; &nbsp; <i><b>No issues reported<i><b></p></h2>
 
 <br>
