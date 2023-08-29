@@ -72,7 +72,7 @@ If you get an error like the one below, check that you have allowed the ADB auth
 
 <img width="446" alt="image" src="https://user-images.githubusercontent.com/44692189/226061768-61743f6c-2ed3-401a-a561-8754c297ad74.png">
 
-If you get a message saying `No connection could be made because the target machine actively refused it`, follow [this guide](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Post-install%20Issues/TargetMachineActivelyRefusedConnection.md)
+If you get a message saying `No connection could be made because the target machine actively refused it`, follow [this guide](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Post-Install%20Issues/TargetMachineActivelyRefusedConnection.md)
 
 If you continue to face problems, make a note of the error info displayed in WSA Sideloader and join the Discord server below for further assistance.
 
