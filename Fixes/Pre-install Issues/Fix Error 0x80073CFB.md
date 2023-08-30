@@ -23,7 +23,7 @@ Get-AppxPackage -Name "MicrosoftCorporationII.WindowsSubsystemForAndroid" -AllUs
 ```
 <br>
 
-**3. Delete all folders related to WSA (expect the .zip or .7z files (depends on the release ) for WSA Builds), which include folders extracted for WSA installation.**
+**3. Delete all folders related to WSA (except the .zip or .7z files (depends on the release ) for WSA Builds), which include folders extracted for WSA installation.**
 
 <br>
 
