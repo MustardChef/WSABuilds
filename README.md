@@ -277,7 +277,7 @@
   </tr>
   <tr>
     <td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2307.40000.6.0"><img src="https://img.shields.io/badge/Download%20Latest%20Stable%20Builds-Windows%2011%20x64-blue?style=for-the-badge&amp;logo=windows11" alt="win11down"></a></p></td>
-    <td rowspan="2"><p><a href="https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/ErwC8IlU321Ckqgar5KxngQBW--F0xFCEEFcf9S2r6efOg?e=CmWgVC"><img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&logo=Microsoft%20OneDrive&logoColor=0078D4" style="width: 150px;"/></a></p>
+    <td rowspan="2"><p><a href="https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/Eg1mhwzTGkJMqfa7NU3ZaL8BN1fdiyPhLLMC4YvRffqiGQ?e=9xqamn"><img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&logo=Microsoft%20OneDrive&logoColor=0078D4" style="width: 150px;"/></a></p>
 </td>
   </tr>
   <tr>
