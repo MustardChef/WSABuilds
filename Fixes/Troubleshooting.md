@@ -55,9 +55,6 @@
 
 ---
 
-### Step 2: 
-#### If your issue is not listed in the list of "Common Issues" or the fixes in the guides in "Common Issues" do not work:
-
 
 
 
