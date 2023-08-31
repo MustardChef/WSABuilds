@@ -249,7 +249,7 @@
     <td><img src="https://img.shields.io/badge/Stable%20Builds-%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20-blue?style=for-the-badge" alt="Image" width="186" height="28"></td>
     <td>Follows the "WSA Retail" or "Insider Fast Channel" <br><br> Builds are generally more stable than the builds in the "WSA Preview Program Channel" </td>
     <td>2307.40000.6.0<br></td>
-    <td>Builds Released: 31/07/2023</td>
+    <td>Builds Released: 31/08/2023</td>
   </tr>
   <tr>
     <td colspan="4"><h4>It is recommend to check this table regularly to see if there is a newer update avaliable for WSA for the Stable Builds and Pre-Release Builds<h4><br></td>
