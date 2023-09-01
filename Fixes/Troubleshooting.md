@@ -1,7 +1,5 @@
 # Troubleshooting Your Issue
 
-## Diagnosis
-
 - ### Check if your issue is listed in the list of "Common Issues" below:
 
 <details>     
