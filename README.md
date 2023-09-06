@@ -483,11 +483,14 @@
 
 ### How do I update without losing any of my apps and data on Windows Subsystem for Android (WSA)
 
+> [!IMPORTANT]
+> Make sure that WSA has been turned off from the settings and that tools such has WSA-System-Control, WSA-Sideloader, WSAPacman etc are not running.
+
 1. [Download the latest build](https://github.com/MustardChef/WSABuilds#downloads) (that you want to update to)
 2. Make sure Windows Subsystem For Android is not running (Click on "Turn off" in the WSA Settings and wait for the spinning loader to disappear)
 2. Using 7-Zip, WinRAR or any other tool of choice, open the .7z archive 
 3. Within the .7z archive, open the subfolder (Example: WSA_2xxx.xxxxx.xx.x_xx_Release-Nightly-with-magisk-xxxxxxx-MindTheGapps-xx.x-RemovedAmazon)
-4. Select all the files that are within this subfolder and extract them to the current folder where the file for Windows Subsystem For Android are (the folder you extracted, and installed WSA from)
+4. Select all the files that are within this subfolder and extract them to the current folder where the file for Windows Subsystem For Android (the folder you extracted, and installed WSA from) are located 
 5. When prompted to replace folders, select "Do this for all current items" and click on "Yes" 
 6. When prompted to replace files, click on "Replace the files in the destination"
 7. Run  the ``Run.bat`` file
