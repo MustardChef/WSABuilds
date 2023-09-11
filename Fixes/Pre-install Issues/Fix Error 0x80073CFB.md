@@ -12,7 +12,7 @@
 ---
 ## Solution
 
-**1. Go to ``%localappdata/packages``, and make sure that the folder ``MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe`` is deleted. (If it does not exist, move on to Step **2**.)**
+**1. Go to ``%LOCALAPPDATA%/Packages/``, and make sure that the folder ``MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe`` is deleted. (If it does not exist, move on to Step **2**.)**
 
 <br>
 
