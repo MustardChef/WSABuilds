@@ -341,9 +341,12 @@
 </thead>
 <tbody>
   <tr>
-    <td><img style="float: right;" src="https://img.icons8.com/fluency/96/null/windows-update--v1.png" width="60" height="60"/><h4>Windows Build Number<h4></td>
+    <td rowspan="2"><img style="float: right;" src="https://img.icons8.com/fluency/96/null/windows-update--v1.png" width="60" height="60"/><h4>Windows Build Number<h4></td>
     <td>Windows™ 11: Build 22000.526 or higher.</td>
-    <td>Windows™ 10: 22H2 10.0.19045.2311 or higher. <br /><br /><b>From WSA version 2301.40000.7.0 and higher in this repo, there is Unofficial support for Windows™ 10: 20H1 10.0.19041.264 or higher**. You must install <a href="https://www.catalog.update.microsoft.com/Search.aspx?q=KB5014032" target="_blank" rel="noopener noreferrer">KB5014032</a> then install <a href="https://www.catalog.update.microsoft.com/Search.aspx?q=KB5022834" target="_blank" rel="noopener noreferrer">KB5022834</a> to use WSA on these older Windows 10 builds<b><br /><br /><b></td>
+    <td>Windows™ 10: 22H2 10.0.19045.2311 or higher. <br /><b><i>May work on Windows™ 10: 20H1 10.0.19041.264 or higher.<b></i><sup>1</sup></br></br><sub><sup>1. You may need to install <a href="https://www.catalog.update.microsoft.com/Search.aspx?q=KB5014032" target="_blank" rel="noopener noreferrer">KB5014032</a> then install <a href="https://www.catalog.update.microsoft.com/Search.aspx?q=KB5022834" target="_blank" rel="noopener noreferrer">KB5022834</a> to use WSA on these older Windows 10 builds<b><br /><br /><b></td></sup></sub>
+  </tr>
+  <tr>
+    <td colspan="2"><h5><b><i>Custom/modfied Windows OS installations (such as ReviOS, Tiny 10/11 and Ghost Spectre etc.) may have issues with running WSA.<br></i></b></h5></td>
   </tr>
   <tr>
     <td><img style="float: right;" src="https://img.icons8.com/external-smashingstocks-flat-smashing-stocks/66/null/external-RAM-technology-and-devices-smashingstocks-flat-smashing-stocks.png" width="60" height="60"/><h4>RAM<h4></td>
