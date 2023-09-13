@@ -2,11 +2,11 @@
 ### MagiskOnWSA (For Windows™ 10 and 11) [<img align="right" src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/>](https://discord.gg/2thee7zzHZ)
 #### Windows Subsystem For Android™ (WSA) with Google Play Services and (or) Magisk 
 
-<br/>
+<br />
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N0K08AC)
 
-<br/>
+<br />
 
 
 &nbsp;
@@ -197,7 +197,7 @@
   <tr>
     <td>✅</td>
     <td>Stable</td>
-    <td colspan="2">Everything works as intended. <br/> If you think that the build is not stable, please open a <a href="https://github.com/MustardChef/WSABuilds/issues" target="_blank" rel="noopener noreferrer">GitHub Issue</a> or report the issue in our <a href="https://discord.gg/2thee7zzHZ" target="_blank" rel="noopener noreferrer">Discord</a></td>
+    <td colspan="2">Everything works as intended. <br /> If you think that the build is not stable, please open a <a href="https://github.com/MustardChef/WSABuilds/issues" target="_blank" rel="noopener noreferrer">GitHub Issue</a> or report the issue in our <a href="https://discord.gg/2thee7zzHZ" target="_blank" rel="noopener noreferrer">Discord</a></td>
   </tr>
   <tr>
     <td>⚠️</td>
@@ -219,8 +219,8 @@
 </tbody>
 </table>
    
-<br/>
-<br/>  
+<br />
+<br />  
    
 </details>  
 
@@ -233,7 +233,7 @@
 |<p align="center"><img src="https://img.icons8.com/color/240/null/windows-11.png" style="width: 50px;"/> <img src="https://img.icons8.com/color/240/null/windows-10.png" style="width: 50px;"/></p>| <h4>Custom Builds:<h4> [![windownmagikdelta](https://img.shields.io/badge/Windows%2010%2F11-Magisk%20Delta-382bef?style=for-the-badge)](https://github.com/MustardChef/WSAMagiskDelta)|  |
 |<p align="center"><img align="centre;" src="https://user-images.githubusercontent.com/68516357/216452358-8137df76-875f-4b59-b77d-ca34c8a2d6d3.png" style="width: 80px;"/></p>|[<img src="https://img.shields.io/badge/Download-.msix%20Sources-3A6B35?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSAPackages)|[<img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&logo=Microsoft%20OneDrive&logoColor=0078D4" style="width: 150px;"/>](https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/EgSWYr5JLjFNkSmNydPNFKsBJAlCKj61c6BbbbVGPglASA?e=weIk7y)|
 -->
-<br/>
+<br />
 
 <table>
 <thead>
@@ -247,7 +247,7 @@
 <tbody>
   <tr>
     <td><picture><img src="https://img.shields.io/badge/Pre--Release%20Builds-%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20-orange?style=for-the-badge" width="223" height="28"></picture></td>
-    <td>Follows the "WSA Preview Program Channel" </br> </br> Builds are generally newer than the "WSA Retail" and "Insider Fast Channel"</td>
+    <td>Follows the "WSA Preview Program Channel" <br /> <br /> Builds are generally newer than the "WSA Retail" and "Insider Fast Channel"</td>
     <td>2308.40000.1.0<br></td>
     <td>Builds Released: 08/09/2023</td>
   </tr>
@@ -262,7 +262,7 @@
   </tr>
   </tbody>
 </table>
-</br>
+<br />
 
 <table>
 <thead>
@@ -343,7 +343,7 @@
   <tr>
     <td rowspan="2"><img style="float: right;" src="https://img.icons8.com/fluency/96/null/windows-update--v1.png" width="60" height="60"/><h4>Windows Build Number<h4></td>
     <td>Windows™ 11: Build 22000.526 or higher.</td>
-    <td>Windows™ 10: 22H2 10.0.19045.2311 or higher. <br /><b><i>May work on Windows™ 10: 20H1 10.0.19041.264 or higher.<b></i><sup>1</sup></br></br><sub><sup>1. You may need to install <a href="https://www.catalog.update.microsoft.com/Search.aspx?q=KB5014032" target="_blank" rel="noopener noreferrer">KB5014032</a> then install <a href="https://www.catalog.update.microsoft.com/Search.aspx?q=KB5022834" target="_blank" rel="noopener noreferrer">KB5022834</a> to use WSA on these older Windows 10 builds<b><br /><br /><b></td></sup></sub>
+    <td>Windows™ 10: 22H2 10.0.19045.2311 or higher. <br /><br /><b><i>May work on Windows™ 10: 20H1 10.0.19041.264 or higher.<b></i><sup>1</sup><br /><br /><sub><sup>1. You may need to install <a href="https://www.catalog.update.microsoft.com/Search.aspx?q=KB5014032" target="_blank" rel="noopener noreferrer">KB5014032</a> then install <a href="https://www.catalog.update.microsoft.com/Search.aspx?q=KB5022834" target="_blank" rel="noopener noreferrer">KB5022834</a> to use WSA on these older Windows 10 builds<b><br /><br /><b></td></sup></sub>
   </tr>
   <tr>
     <td colspan="2"><h5><b><i>Custom/modfied Windows OS installations (such as ReviOS, Tiny 10/11 and Ghost Spectre etc.) may have issues with running WSA.<br></i></b></h5></td>
@@ -358,15 +358,15 @@
   </tr>
   <tr>
     <td>Your PC should meet the basic Windows™ 11 requirements i.e Core i3 8th Gen, Ryzen 3000, Snapdragon 8c, or above</td>
-    <td>N/A </br></br> This is a bit of a hit or miss, but it is highly recommended that your processor is listed in the <a href="https://learn.microsoft.com/en-gb/windows-hardware/design/minimum/windows-processor-requirements" target="_blank" rel="noopener noreferrer">supported CPU lists for Windows 11 requirements</a></td>     
+    <td>N/A <br /><br /> This is a bit of a hit or miss, but it is highly recommended that your processor is listed in the <a href="https://learn.microsoft.com/en-gb/windows-hardware/design/minimum/windows-processor-requirements" target="_blank" rel="noopener noreferrer">supported CPU lists for Windows 11 requirements</a></td>     
   </tr>
   <tr>
     <td><img style="float: right;" src="https://img.icons8.com/3d-fluency/94/null/video-card.png" width="60" height="60"/><h4>GPU<h4></td>
-      <td colspan="2">Any compatible Intel, AMD or Nvidia GPU. <br /> GPU Performance may vary depending on its compatibility with Windows Subsystem For Android™  <br /><br /><details><summary><h4>Users with Intel HD Graphics 530 and older<h4></summary><br /><h5> WSA may not start or graphical glitches will occur when Intel HD Graphics 530 and Older iGPUs are used. This is a known issue, but unfortunately there are no fixes that I currently know of, plus, these GPUs are too old and do not meet Windows 11 requirements and hence are not official supported. <a href="https://github.com/MustardChef/WSABuilds/blob/master/Guides/ChangingGPU.md" target="_blank" rel="noopener noreferrer">Follow this guide</a> to switch to another iGPU/dGPU/eGPU that you may have or Microsoft Basic Renderer<h5></details><br/><details><summary><h4>Users with Nvidia GPUs<h4></summary><br /><h5> Nvidia GPUs are known to cause problems. If Windows Subsystem For Android™ does not start or there are graphical glitches when an Nvidia GPU is used, <a href="https://github.com/MustardChef/WSABuilds/blob/master/Guides/ChangingGPU.md" target="_blank" rel="noopener noreferrer">follow this guide</a> to switch to another iGPU/dGPU/eGPU  that you may have or Microsoft Basic Renderer<h5></details></td>
+      <td colspan="2">Any compatible Intel, AMD or Nvidia GPU. <br /> GPU Performance may vary depending on its compatibility with Windows Subsystem For Android™  <br /><br /><details><summary><h4>Users with Intel HD Graphics 530 and older<h4></summary><br /><h5> WSA may not start or graphical glitches will occur when Intel HD Graphics 530 and Older iGPUs are used. This is a known issue, but unfortunately there are no fixes that I currently know of, plus, these GPUs are too old and do not meet Windows 11 requirements and hence are not official supported. <a href="https://github.com/MustardChef/WSABuilds/blob/master/Guides/ChangingGPU.md" target="_blank" rel="noopener noreferrer">Follow this guide</a> to switch to another iGPU/dGPU/eGPU that you may have or Microsoft Basic Renderer<h5></details><br /><details><summary><h4>Users with Nvidia GPUs<h4></summary><br /><h5> Nvidia GPUs are known to cause problems. If Windows Subsystem For Android™ does not start or there are graphical glitches when an Nvidia GPU is used, <a href="https://github.com/MustardChef/WSABuilds/blob/master/Guides/ChangingGPU.md" target="_blank" rel="noopener noreferrer">follow this guide</a> to switch to another iGPU/dGPU/eGPU  that you may have or Microsoft Basic Renderer<h5></details></td>
   </tr>
   <tr>
     <td rowspan="2"><img style="float: right;" src="https://img.icons8.com/3d-fluency/94/null/ssd.png" width="60" height="60"/><h4>Storage<h4></td>
-    <td colspan="2"><b><i>Solid-state drive (RECOMMENDED)<i><b> <br />OR</br> <b><i>Hard Disk Drive (HDD)<i><b>   (NOT RECOMMENDED)<i></td>
+    <td colspan="2"><b><i>Solid-state drive (RECOMMENDED)<i><b> <br />OR<br /> <b><i>Hard Disk Drive (HDD)<i><b>   (NOT RECOMMENDED)<i></td>
   </tr>
   <tr>
      <td colspan="2"><b><i>Minimum Storage Requirements: You must have at least 10GB free on the system drive (C:\)<b><i></td>
@@ -376,24 +376,18 @@
     <td colspan="2"><b><i>NTFS ONLY<b><i> <br /><br /> Windows Subsystem For Android™ can only be installed on a NTFS partition, not on an exFAT partition</td>
   </tr>
   <tr>
-    <td rowspan="5"><img style="float: left;" src="https://user-images.githubusercontent.com/68516357/230764789-ad8f7361-4a3b-49a8-a8e9-24fdc87d5781.png" width="66" height="58"/><h4>Windows Features Needed<h4></td>
+    <td rowspan="3"><img style="float: left;" src="https://user-images.githubusercontent.com/68516357/230764789-ad8f7361-4a3b-49a8-a8e9-24fdc87d5781.png" width="66" height="58"/><h4>Windows Features Needed<h4></td>
     <td colspan="2">Virtual Machine Platform Enabled</td>
   </tr>
   <tr>
-    <td colspan="2">Windows Hypervisor Platform Enabled (Optional)</td>
+    <td colspan="2">Windows Hypervisor Platform Enabled</td>
   </tr>
   <tr>
-    <td colspan="2">Windows Subsystem For Linux™ Enabled (Optional)</td>
-  </tr>
-  <tr>
-    <td colspan="2">Hyper V Enabled (Optional)</td>
-  </tr>
-  <tr>
-    <td colspan="2"><b><i>These optional settings are for virtualization and provide components that are needed to run WSA. You can enable these settings by pressing the Windows Key + R on your keyboard and typing "OptionalFeatures.exe" into the box, pressing enter and selecting the features above followed by pressing apply<b><i></td>
+    <td colspan="2"><sub><b><i>These optional settings are for virtualization and provide components that are needed to run WSA. You can enable these settings by pressing the Windows Key + R on your keyboard and typing "OptionalFeatures.exe" into the box, pressing enter and selecting the features above followed by pressing apply</b></i></sub></td>
   </tr>
   <tr>
     <td><img style="float: right;" src="https://user-images.githubusercontent.com/68516357/230759907-5d11950e-1b17-4811-8f4e-a0f82e598079.png" width="60" height="60"/><h4>Virtualization<h4></td>
-    <td colspan="2">The Computer must support virtualization and be enabled in BIOS/UEFI and Optional Features. </br> <h3><a href="https://support.microsoft.com/en-us/windows/enable-virtualization-on-windows-11-pcs-c5578302-6e43-4b4b-a449-8ced115f58e1" target="_blank" rel="noopener noreferrer">Guide on how to enable</a><h3></td>
+    <td colspan="2">The Computer must support virtualization and be enabled in BIOS/UEFI and Optional Features. <br /> <h3><a href="https://support.microsoft.com/en-us/windows/enable-virtualization-on-windows-11-pcs-c5578302-6e43-4b4b-a449-8ced115f58e1" target="_blank" rel="noopener noreferrer">Guide on how to enable</a><h3></td>
   </tr>
 </tbody>
 </table>
@@ -403,9 +397,9 @@
 |-----------------|-----------------------|-----------------------|
 |<img style="float: right;" src="https://img.icons8.com/fluency/96/null/windows-update--v1.png" width="60" height="60"/><h4>Windows Build Number<h4>|Windows™ 11: Build 22000.526 or higher.|Windows™ 10: 22H2 10.0.19045.2311 or higher. <br /> <br /> **From WSA version 2301.40000.7.0 and higher in this repo, there is Unofficial support for Windows™ 10: 20H1 10.0.19041.264 or higher**. You must install [KB5014032](https://www.catalog.update.microsoft.com/Search.aspx?q=KB5014032) then install [KB5022834](https://www.catalog.update.microsoft.com/Search.aspx?q=KB5022834) to use WSA on these older Windows 10 builds <br /> <br /> |
 |<img style="float: right;" src="https://img.icons8.com/external-smashingstocks-flat-smashing-stocks/66/null/external-RAM-technology-and-devices-smashingstocks-flat-smashing-stocks.png" width="60" height="60"/><h4>RAM<h4>|6 GB (not recommended), 8 GB (minimum) and 16 GB (recommended).|6 GB (not recommended), 8 GB (minimum) and 16 GB (recommended).|
-|<img style="float: right;" src="https://img.icons8.com/3d-fluency/94/null/electronics.png" width="60" height="60"/><h4>Processor<h4>|Your PC should meet the basic Windows™ 11 requirements i.e Core i3 8th Gen, Ryzen 3000, Snapdragon 8c, or above.|N/A </br></br> This is a bit of a hit or miss, but it is highly recommended that your processor is listed in the [supported CPU lists for Windows 11 requirements](https://learn.microsoft.com/en-gb/windows-hardware/design/minimum/windows-processor-requirements)
+|<img style="float: right;" src="https://img.icons8.com/3d-fluency/94/null/electronics.png" width="60" height="60"/><h4>Processor<h4>|Your PC should meet the basic Windows™ 11 requirements i.e Core i3 8th Gen, Ryzen 3000, Snapdragon 8c, or above.|N/A <br /><br /> This is a bit of a hit or miss, but it is highly recommended that your processor is listed in the [supported CPU lists for Windows 11 requirements](https://learn.microsoft.com/en-gb/windows-hardware/design/minimum/windows-processor-requirements)
 |<h4>Processor type<h4>|x64 or ARM64.|x64 or ARM64.|
-|<img style="float: right;" src="https://img.icons8.com/3d-fluency/94/null/video-card.png" width="60" height="60"/><h4>GPU<h4>|Any compatible Intel, AMD or Nvidia GPU. <br /> GPU Performance may vary depending on its compatibility with Windows Subsystem For Android™  <br /><br /><h3> **Users with Intel HD Graphics 530 and older** <h3><br /><h5> WSA may not start or graphical glitches will occur when Intel HD Graphics 530 and Older iGPUs are used. This is a known issue, but unfortunately there are no fixes that I currently know, plus, these GPUs are too old and do not meet Windows 11 requirements and hence are not official supported. [Follow this guide](https://github.com/MustardChef/WSABuilds/blob/master/Guides/ChangingGPU.md) to switch to another iGPU/dGPU/eGPU  that you may have or Microsoft Basic Renderer <h5> <br /><br/> <h3> **Users with Nvidia GPUs** <h3><br /><h5> Nvidia GPUs are known to cause problems. If Windows Subsystem For Android™ does not start or there are graphical glitches when an Nvidia GPU is used, [follow this guide](https://github.com/MustardChef/WSABuilds/blob/master/Guides/ChangingGPU.md) to switch to another iGPU/dGPU/eGPU  that you may have or Microsoft Basic Renderer <h5>|Any compatible Intel, AMD or Nvidia GPU. <br /> GPU Performance may vary depending on its compatibility with Windows Subsystem For Android™  <br /><br /><h3> **Users with Intel HD Graphics 530 and older** <h3><br /><h5> WSA may not start or graphical glitches will occur when Intel HD Graphics 530 and Older iGPUs are used. This is a known issue, but unfortunately there are no fixes that I currently know, plus, these GPUs are too old and do not meet Windows 11 requirements and hence are not official supported. [Follow this guide](https://github.com/MustardChef/WSABuilds/blob/master/Guides/ChangingGPU.md) to switch to another iGPU/dGPU/eGPU  that you may have or Microsoft Basic Renderer <h5> <br /><br/> <h3> **Users with Nvidia GPUs** <h3><br /><h5> Nvidia GPUs are known to cause problems. If Windows Subsystem For Android™ does not start or there are graphical glitches when an Nvidia GPU is used, [follow this guide](https://github.com/MustardChef/WSABuilds/blob/master/Guides/ChangingGPU.md) to switch to another iGPU/dGPU/eGPU  that you may have or Microsoft Basic Renderer <h5>|
+|<img style="float: right;" src="https://img.icons8.com/3d-fluency/94/null/video-card.png" width="60" height="60"/><h4>GPU<h4>|Any compatible Intel, AMD or Nvidia GPU. <br /> GPU Performance may vary depending on its compatibility with Windows Subsystem For Android™  <br /><br /><h3> **Users with Intel HD Graphics 530 and older** <h3><br /><h5> WSA may not start or graphical glitches will occur when Intel HD Graphics 530 and Older iGPUs are used. This is a known issue, but unfortunately there are no fixes that I currently know, plus, these GPUs are too old and do not meet Windows 11 requirements and hence are not official supported. [Follow this guide](https://github.com/MustardChef/WSABuilds/blob/master/Guides/ChangingGPU.md) to switch to another iGPU/dGPU/eGPU  that you may have or Microsoft Basic Renderer <h5> <br /><> <h3> **Users with Nvidia GPUs** <h3><br /><h5> Nvidia GPUs are known to cause problems. If Windows Subsystem For Android™ does not start or there are graphical glitches when an Nvidia GPU is used, [follow this guide](https://github.com/MustardChef/WSABuilds/blob/master/Guides/ChangingGPU.md) to switch to another iGPU/dGPU/eGPU  that you may have or Microsoft Basic Renderer <h5>|Any compatible Intel, AMD or Nvidia GPU. <br /> GPU Performance may vary depending on its compatibility with Windows Subsystem For Android™  <br /><br /><h3> **Users with Intel HD Graphics 530 and older** <h3><br /><h5> WSA may not start or graphical glitches will occur when Intel HD Graphics 530 and Older iGPUs are used. This is a known issue, but unfortunately there are no fixes that I currently know, plus, these GPUs are too old and do not meet Windows 11 requirements and hence are not official supported. [Follow this guide](https://github.com/MustardChef/WSABuilds/blob/master/Guides/ChangingGPU.md) to switch to another iGPU/dGPU/eGPU  that you may have or Microsoft Basic Renderer <h5> <br /><br /> <h3> **Users with Nvidia GPUs** <h3><br /><h5> Nvidia GPUs are known to cause problems. If Windows Subsystem For Android™ does not start or there are graphical glitches when an Nvidia GPU is used, [follow this guide](https://github.com/MustardChef/WSABuilds/blob/master/Guides/ChangingGPU.md) to switch to another iGPU/dGPU/eGPU  that you may have or Microsoft Basic Renderer <h5>|
 <img style="float: right;" src="https://img.icons8.com/3d-fluency/94/null/ssd.png" width="60" height="60"/><h4>Storage<h4>|Solid-state drive (SSD) <br /> - Hard Disk Drive (HDD) (NOT RECOMMENDED).|Solid-state drive (SSD) <br /> - Hard Disk Drive (HDD) (NOT RECOMMENDED).|
 |<img style="float: right;" src="https://img.icons8.com/stickers/100/null/storage.png" width="60" height="60"/><h4>Partition<h4>|NTFS <br /> Windows Subsystem For Android™ can only be installed on a NTFS partition, not on an exFAT partition |NTFS <br /> Windows Subsystem For Android™ can only be installed on a NTFS partition, not on an exFAT partition|
 |<img style="float: left;" src="https://user-images.githubusercontent.com/68516357/230764789-ad8f7361-4a3b-49a8-a8e9-24fdc87d5781.png" width="66" height="58"/><h4>Windows Features Needed<h4>|- Virtual Machine Platform Enabled <br /> - Windows Hypervisor Platform Enabled <br /> - Hyper V Enabled (Optional)<br /> - Windows Subsystem For Linux™ Enabled (Optional) <br /><br /> These optional settings are for virtualization and provide components that are needed to run WSA. You can enable these settings from Control Panel/ Optional Features.|- Virtual Machine Platform Enabled <br /> - Windows Hypervisor Platform Enabled <br /> - Hyper V Enabled (Optional)<br /> - Windows Subsystem For Linux™ Enabled (Optional) <br /><br /> These optional settings are for virtualization and provide components that are needed to run WSA. You can enable these settings from Control Panel/ Optional Features.|
@@ -611,7 +605,7 @@ Now run WSA and your userdata should hopefully be restored
    ```
    or
 
--  Location in Windows ---> <br/> `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalState\diagnostics\logcat`
+-  Location in Windows ---> <br /> `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalState\diagnostics\logcat`
 
 **Can I delete the installed folder?**
 
