@@ -1,5 +1,10 @@
 # WSABuilds &nbsp; &nbsp; <img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/> &nbsp; 
 ## Guide: LocalHost Loopback
+
+### Localhost Loopback has now been officially added to the update 2308 of WSA, and so this guide is probably outdated now.
+
+---
+
 #### Preface: You want to connect WSA to the localhost (Windows 11 hosting machine) or to a development server I run on Windows 11 or any such scenario where you would want to connect to the Windows 11 localhost, but are unable to 
 
 ## Process:
