@@ -184,6 +184,10 @@
     <td>➖</td>
     <td>➖</td>
   </tr> 
+    <tr>
+    <td>v2308.40000.2.0</td>
+    <td colspan="2"><b><i>Update Skipped to allow time for adjusting the Docs and the build script (MagiskOnWSALocal). <br /> Sorry for any Inconvenence. Updates will resume as normal after this.<b><i></td>
+  </tr>
 </tbody>
 </table>
   
