@@ -188,6 +188,11 @@
     <td>v2308.40000.2.0</td>
     <td colspan="2"><b><i>Update Skipped to allow time for adjusting the Docs and the build script (MagiskOnWSALocal). <br /> Sorry for any Inconvenence. Updates will resume as normal after this.<b><i></td>
   </tr>
+    <tr>
+    <td>v2308.40000.3.0</td>
+    <td>➖</td>
+    <td>➖</td>
+  </tr> 
 </tbody>
 </table>
   
@@ -253,8 +258,8 @@
   <tr>
     <td><picture><img src="https://img.shields.io/badge/Pre--Release%20Builds-%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20-orange?style=for-the-badge" width="223" height="28"></picture></td>
     <td>Follows the "WSA Preview Program Channel" <br /> <br /> Builds are generally newer than the "WSA Retail" and "Insider Fast Channel"</td>
-    <td>2308.40000.1.0<br></td>
-    <td>Builds Released: 08/09/2023</td>
+    <td>2308.40000.3.0<br></td>
+    <td>Builds Released: 19/09/2023</td>
     <td>Multiple Updates Every Month</td> 
   </tr>
   <tr>
@@ -282,11 +287,11 @@
 <tbody>
   <tr>
     <td rowspan="4"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" style="width: 200px;"/></td>
-    <td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2308.40000.1.0"><img src="https://img.shields.io/badge/Download%20Latest%20Pre--Release%20Builds-Windows%2011%20x64-orange?style=for-the-badge&amp;logo=windows11" alt="win11downpre"></a></p></td>
-    <td rowspan="2"><p><a href="https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/EkQZ7h7_RKlOpew255EZndMBsw-0G60OA2L0Tu8U4tI97g?e=0dUinN"><img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&logo=Microsoft%20OneDrive&logoColor=0078D4" style="width: 150px;"/></a></p></td>
+    <td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2308.40000.3.0"><img src="https://img.shields.io/badge/Download%20Latest%20Pre--Release%20Builds-Windows%2011%20x64-orange?style=for-the-badge&amp;logo=windows11" alt="win11downpre"></a></p></td>
+    <td rowspan="2"><p><a href="https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/EuMN-LoFJG1JtMqB9Jnb_cYBxMY-tgt2kf354Bo1l441RA?e=T7Zjmt"><img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&logo=Microsoft%20OneDrive&logoColor=0078D4" style="width: 150px;"/></a></p></td>
   </tr>
   <tr>
-    <td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2308.40000.1.0_arm64"><img src="https://img.shields.io/badge/Download%20Latest%20Pre--Release%20Builds-Windows%2011%20arm64-orange?style=for-the-badge&amp;logo=windows11" alt="win11downpre"></a></p></td>
+    <td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2308.40000.3.0_arm64"><img src="https://img.shields.io/badge/Download%20Latest%20Pre--Release%20Builds-Windows%2011%20arm64-orange?style=for-the-badge&amp;logo=windows11" alt="win11downpre"></a></p></td>
   </tr>
   <tr>
     <td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2307.40000.6.0"><img src="https://img.shields.io/badge/Download%20Latest%20Stable%20Builds-Windows%2011%20x64-blue?style=for-the-badge&amp;logo=windows11" alt="win11down"></a></p></td>
@@ -298,9 +303,9 @@
   </tr>
   <tr>
     <td rowspan="2"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" style="width: 200px;"/></td>
-    <td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2308.40000.1.0"><img src="https://img.shields.io/badge/Download%20Latest%20Pre--Release%20Builds-Windows%2010%20x64-orange?style=for-the-badge&logo=windows" alt="win10down"></a></p>
+    <td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2308.40000.3.0"><img src="https://img.shields.io/badge/Download%20Latest%20Pre--Release%20Builds-Windows%2010%20x64-orange?style=for-the-badge&logo=windows" alt="win10down"></a></p>
 </td>
-    <td><p><a href="https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/EuGeOHGR6dRJm0NidudSG5MBIPdtHGJD11gSWNPXRbpnzg?e=SAhrHU"><img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&logo=Microsoft%20OneDrive&logoColor=0078D4" style="width: 150px;"/></a></p>
+    <td><p><a href="https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/EoEPOBJHQV1JoXoykkTY36kBzzTtKL_JejybHWZ05L2uXg?e=KMLjmQ"><img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&logo=Microsoft%20OneDrive&logoColor=0078D4" style="width: 150px;"/></a></p>
 </td>
   </tr>
   <tr>
