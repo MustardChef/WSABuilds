@@ -256,14 +256,14 @@
 </thead>
 <tbody>
   <tr>
-    <td><picture><img src="https://img.shields.io/badge/Pre--Release%20Builds-%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20-orange?style=for-the-badge" width="223" height="28"></picture></td>
+    <td><picture><img src="https://img.shields.io/badge/Pre--Release%20Builds-%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20-orange?style=for-the-badge" /></picture></td>
     <td>Follows the "WSA Preview Program Channel" <br /> <br /> Builds are generally newer than the "WSA Retail" and "Insider Fast Channel"</td>
     <td>2308.40000.3.0<br></td>
     <td>Builds Released: 19/09/2023</td>
     <td>Multiple Updates Every Month</td> 
   </tr>
   <tr>
-    <td><picture><img src="https://img.shields.io/badge/Stable%20Builds-%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20-blue?style=for-the-badge" alt="Image" width="186" height="28"></picture></td>
+    <td><picture><img src="https://img.shields.io/badge/Stable%20Builds-%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20%E2%80%8E%20-blue?style=for-the-badge" alt="Image" /></picture></td>
     <td>Follows the "WSA Retail" or "Insider Fast Channel" <br><br> Builds are generally more stable than the builds in the "WSA Preview Program Channel" </td>
     <td>2307.40000.6.0<br></td>
     <td>Builds Released: 31/08/2023</td>
