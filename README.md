@@ -265,12 +265,12 @@
   <tr>
     <td><b>Current Version:</b></td>
     <td>2308.40000.3.0<br></td>
-    <td colspan="2">2307.40000.6.0<br></td>
+    <td colspan="2">2308.40000.3.0<br></td>
   </tr>
   <tr>
     <td><b>Release Date:</b></td>
     <td>Builds Released: 19/09/2023</td>
-    <td colspan="2">Builds Released: 31/08/2023</td>
+    <td colspan="2">Builds Released: 19/09/2023</td>
   </tr>
   <tr>
     <td>Update Frequency:</td>
@@ -302,12 +302,12 @@
     <td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2308.40000.3.0_arm64"><img src="https://img.shields.io/badge/Download%20Latest%20Pre--Release%20Builds-Windows%2011%20arm64-orange?style=for-the-badge&amp;logo=windows11" alt="win11downpre"></a></p></td>
   </tr>
   <tr>
-    <td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2307.40000.6.0"><img src="https://img.shields.io/badge/Download%20Latest%20Stable%20Builds-Windows%2011%20x64-blue?style=for-the-badge&amp;logo=windows11" alt="win11down"></a></p></td>
-    <td rowspan="2"><p><a href="https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/Eg1mhwzTGkJMqfa7NU3ZaL8BN1fdiyPhLLMC4YvRffqiGQ?e=9xqamn"><img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&logo=Microsoft%20OneDrive&logoColor=0078D4" style="width: 150px;"/></a></p>
+    <td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2308.40000.3.0"><img src="https://img.shields.io/badge/Download%20Latest%20Stable%20Builds-Windows%2011%20x64-blue?style=for-the-badge&amp;logo=windows11" alt="win11down"></a></p></td>
+    <td rowspan="2"><p><a href="https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/EuMN-LoFJG1JtMqB9Jnb_cYBxMY-tgt2kf354Bo1l441RA?e=T7Zjmt"><img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&logo=Microsoft%20OneDrive&logoColor=0078D4" style="width: 150px;"/></a></p>
 </td>
   </tr>
   <tr>
-    <td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2307.40000.6.0_arm64"><img src="https://img.shields.io/badge/Download%20Latest%20Stable%20Builds-Windows%2011%20arm64-blue?style=for-the-badge&amp;logo=windows11" alt="win11down"></a></p></td>
+    <td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2308.40000.3.0_arm64"><img src="https://img.shields.io/badge/Download%20Latest%20Stable%20Builds-Windows%2011%20arm64-blue?style=for-the-badge&amp;logo=windows11" alt="win11down"></a></p></td>
   </tr>
   <tr>
     <td rowspan="2"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" style="width: 200px;"/></td>
@@ -319,7 +319,7 @@
   <tr>
     <td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2307.40000.6.0"><img src="https://img.shields.io/badge/Download%20Latest%20Stable%20Builds-Windows%2010%20x64-blue?style=for-the-badge&logo=windows" alt="win10down"></a></p>
 </td>
-    <td><p><a href="https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/ErwC8IlU321Ckqgar5KxngQBW--F0xFCEEFcf9S2r6efOg?e=CmWgVC"><img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&logo=Microsoft%20OneDrive&logoColor=0078D4" style="width: 150px;"/></a></p></td>
+    <td><p><a href="https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/EoEPOBJHQV1JoXoykkTY36kBzzTtKL_JejybHWZ05L2uXg?e=KMLjmQ"><img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&logo=Microsoft%20OneDrive&logoColor=0078D4" style="width: 150px;"/></a></p></td>
   </tr>
   <tr>
     <td rowspan="2"><p align="center"><img src="https://img.icons8.com/color/240/null/windows-11.png" style="width: 50px;"/><img src="https://img.icons8.com/color/240/null/windows-10.png" style="width: 50px;"/></p></td>
