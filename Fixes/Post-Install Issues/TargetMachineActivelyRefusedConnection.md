@@ -14,20 +14,36 @@ cannot connect to ||127.0.0.1:58526:|| No connection could be made because the t
 
 ## Solution
 
-This is a [bug](https://github.com/microsoft/WSA/issues/136) with the subsystem itself, restarting the PC will usually fix it.
+This is a [bug](https://github.com/microsoft/WSA/issues/136) with the subsystem itself, restarting the PC will usually fix it. But, if you still get this error, try these steps:
 
-If you still get this error, try these steps:
+<br />
 
-1. Make sure WSA is turned off and disable WSA autostart in Task Manager ---> Startup Apps before proceeding
+- ##### _**1. Make sure WSA is turned off and disable WSA autostart in Task Manager ---> Startup Apps before proceeding**_
 
-2. Disable Hyper-V (if enabled) using the command ``dism.exe /Online /Disable-Feature:Microsoft-Hyper-V`` and reboot your PC
+<br />
 
-3. Reserve port 58526 so Hyper-V doesn't reserve it back using the command `netsh int ipv4 add excludedportrange protocol=tcp startport=58526 numberofports=1`
+- ##### _**2. Disable Hyper-V (if it is enabled) using the command**_
 
-4. Re-enable Hyper-V (if it was previously enabled) using the command `dism.exe /Online /Enable-Feature:Microsoft-Hyper-V /All` and reboot your PC
+```powershell
+dism.exe /Online /Disable-Feature:Microsoft-Hyper-V
+```
 
-Your issue should be fixed now!
+<br />
 
+- ##### **3. Reboot your PC**
+ 
+<br />
+
+- ##### _**4. Reserve port 58526 so Hyper-V doesn't reserve it back using the command**_
+```cmd
+netsh int ipv4 add excludedportrange protocol=tcp startport=58526 numberofports=1
+```
+
+<br />
+
+- ##### _**5. Re-enable Hyper-V (if it was previously enabled) using the command `dism.exe /Online /Enable-Feature:Microsoft-Hyper-V /All` and reboot your PC**_
+
+<br/>
 <br/>
 <br/>
 
