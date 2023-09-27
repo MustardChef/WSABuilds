@@ -2,8 +2,7 @@
 
 
 <h1><p align="center">You Have Successfully Installed Windows Subsystem For Android with Magisk Alpha, Google Apps (MindTheGapps) and Removed Amazon!</p></h1>
-<h2><p align="center">Stability: ⚠️ Unstable</p></h2> <h2><p align="center"><i><b>ISSUE: Module Disappears after install and reboot (https://github.com/MustardChef/WSABuilds/issues/154) on some PCs<i><b></p></h2>
-
+<h2><p align="center">Stability: ⚠️ Unstable</p></h2> <h2><p align="center"><i><b>ISSUE: Module Disappears after install and reboot (https://github.com/MustardChef/WSABuilds/issues/154) on some PCs<i><b><br /><br /><a href="https://github.com/MustardChef/WSABuilds/issues/154#issuecomment-1729105000"><img alt="Static Badge" src="https://img.shields.io/badge/temporary%20Workaround-0349aa?style=for-the-badge&logo=github" style="width: 320px;"/></a></p></h2>
 <br>
 <br>
 
