@@ -46,6 +46,8 @@ These will be split into multiple solutions due to the different causes of the p
 ![image](https://user-images.githubusercontent.com/68516357/215347543-91c71429-26fe-44a2-b818-dd9bfeb6bcaf.png)
 #### **Step 4: Restart Windows**
 ![](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.4winkey.com%2Fimages%2Farticle%2Fwindows-tips%2Frestart-screen-stuck.jpg&f=1&nofb=1&ipt=2b826a4d045dc39aaa0487ea2338289d905c9f94c365f5f606334100a1ec9cb1&ipo=images)
+#### **Step 5: Restart your PC**
+
 </details>
 
 
@@ -112,12 +114,12 @@ Sometimes Windows Firewall and other Firewall tools and software may be the caus
 </details>
 
 <details>     
-   <summary><h4>Bitdefender Users (with Bitdefender's inbuilt firewall enabled)<h4></summary>
+   <summary><h4>Antivirus Users <h4></summary>
 
-It is a known issue that Bitdefender's firewall can prevent the internet for Windows Subystem for Linux (WSL) and Windows Susbsystem for Android (WSA) from working.
-There is currently no easy solution that I know of ( but there may be workarounds floating on the internet which involve whitelisting certain processes to fix these issues), for WSA and WSL, that can fix these issues other than the Bitdefender team fixing this at their end or the user having to turn off their firewall when using WSA or WSL.
+It is a known issue that some antivirus firewall such as those built-in to ESET, Bitdefender, AVG and many others, can prevent the internet for Windows Susbsystem for Android (WSA) from working.
+It is highly recommended to disable the firewall provided by these Antivirus/Antimalware tools and fallback to Windows Firewall, to see if the internet starts working.
 
-Source: From my own experience and [this](https://community.bitdefender.com/en/discussion/91237/bitdefender-blocking-wsl2-traffic-solution-to-a-thread-that-was-left-unresolved) 
+Source: From my own experience and reports from others in the Discord community linked at the end. If disabling a certain antivirus/antimalware's built-in firewall works, please join the Discord server (invite at the end of this guide) and inform us.
 
 </details> 
 
@@ -165,17 +167,25 @@ Your Internet should now be fixed!
 ---
 
 <details>     
-   <summary><h3>Fix #4: Disabling Advanced Networking from WSA Settings<h3></summary>
+   <summary><h3>Fix #4: Enabling and Disabling Advanced Networking from WSA Settings<h3></summary>
 
 1. Go to the Start Menu and search for Windows Subsystem for Android™
-2. Depending on your WSA version, the Advanced Networking setting is located in different places witin the WSA Settings app
 
+<br />
+
+2. Depending on your WSA version, the Advanced Networking setting is located in different places witin the WSA Settings app
    - For 2305 and newer builds, you must go to "Advanced settings" and then to "Experimental features"
    - For 2304 and older builds, this setting is located in the "System" tab/ main screen when you open the Settings app
 
-3. Make sure that if Advanced Networking is enabled, you disable it as this may be causing issues with the internet
+<br />
 
-This should fix the internet if Advanced Networking was On, and the internet was not working due to this
+3.
+   - If Advanced Networking is ***ENABLED***, disable it as this may be causing issues with the internet and restart WSA and check if the interet is working now
+   - If Advanced Networking is ***DISABLED***, enable it as this may be causing issues with the internet and restart WSA and check if the interet is working now
+
+<br />
+
+This may fix the internet on WSA.
 
 </details> 
 
