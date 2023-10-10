@@ -1,4 +1,5 @@
-# WSABuilds &nbsp; &nbsp; [<img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/>](https://github.com/MustardChef/WSABuilds#downloads) &nbsp; [<img src="https://img.shields.io/badge/XDA%20Developers-WSABuilds-EA7100?style=for-the-badge&logoColor=white&logo=XDA-Developers" />](https://forum.xda-developers.com/t/wsabuilds-latest-windows-subsystem-for-android-wsa-builds-for-windows-10-and-11-with-magisk-and-google-play-store.4545087/)
+# WSABuilds &nbsp; &nbsp; 
+[<img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/>](https://github.com/MustardChef/WSABuilds#downloads) &nbsp; [<img src="https://img.shields.io/badge/XDA%20Developers-WSABuilds-EA7100?style=for-the-badge&logoColor=white&logo=XDA-Developers" />](https://forum.xda-developers.com/t/wsabuilds-latest-windows-subsystem-for-android-wsa-builds-for-windows-10-and-11-with-magisk-and-google-play-store.4545087/)
 ### MagiskOnWSA (For Windows™ 10 and 11) [<img align="right" src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/>](https://discord.gg/2thee7zzHZ)
 #### Windows Subsystem For Android™ (WSA) with Google Play Services and (or) Magisk 
 
@@ -14,7 +15,7 @@
 ## Downloads
            
 <details>     
-   <summary><picture><img style="float: right;" src="https://img.icons8.com/3d-fluency/94/ok.png" width="35" height="35"/></picture><h3> &nbsp; WSABuilds Builds Status (⚠️❗IMPORTANT: Read Before Downloading❗⚠️)<h3></summary>
+   <summary><a href=""><img style="float: left;" src="https://img.icons8.com/3d-fluency/94/ok.png" width="35" height="35"/></picture><h3> &nbsp; WSABuilds Builds Status (⚠️❗IMPORTANT: Read Before Downloading❗⚠️)</h3></a></summary>
       
 ## Builds Status and Stability
 
@@ -366,7 +367,7 @@
 </thead>
 <tbody>
   <tr>
-    <td rowspan="2"><img style="float: right;" src="https://img.icons8.com/fluency/96/null/windows-update--v1.png" width="60" height="60"/><h4>Windows Build Number<h4></td>
+    <td rowspan="2"><img style="float: left;" src="https://img.icons8.com/fluency/96/null/windows-update--v1.png" width="60" height="60"/><h4>Windows Build Number<h4></td>
     <td>Windows™ 11: Build 22000.526 or higher.</td>
     <td>Windows™ 10: 22H2 10.0.19045.2311 or higher. <br /><br /><b><i>May work on Windows™ 10: 20H1 10.0.19041.264 or higher.<b></i><sup>1</sup><br /><br /><sub><sup>1. You may need to install <a href="https://www.catalog.update.microsoft.com/Search.aspx?q=KB5014032" target="_blank" rel="noopener noreferrer">KB5014032</a> then install <a href="https://www.catalog.update.microsoft.com/Search.aspx?q=KB5022834" target="_blank" rel="noopener noreferrer">KB5022834</a> to use WSA on these older Windows 10 builds<b><br /><br /><b></td></sup></sub>
   </tr>
@@ -374,11 +375,11 @@
     <td colspan="2"><h5><b><i>Custom/modfied Windows OS installations (such as ReviOS, Tiny 10/11 and Ghost Spectre etc.) may have issues with running WSA.<br></i></b></h5></td>
   </tr>
   <tr>
-    <td><img style="float: right;" src="https://img.icons8.com/external-smashingstocks-flat-smashing-stocks/66/null/external-RAM-technology-and-devices-smashingstocks-flat-smashing-stocks.png" width="60" height="60"/><h4>RAM<h4></td>
+    <td><img style="float: left;" src="https://img.icons8.com/external-smashingstocks-flat-smashing-stocks/66/null/external-RAM-technology-and-devices-smashingstocks-flat-smashing-stocks.png" width="60" height="60"/><h4>RAM<h4></td>
     <td colspan="2"><ul><li>4 to 6 GB (Not Recommended)</li><li>8 GB (Minimum)</li><li>16 GB (Recommended)</li></ul></td>
   </tr>
   <tr>
-    <td rowspan="2"><img style="float: right;" src="https://img.icons8.com/3d-fluency/94/null/electronics.png" width="60" height="60"/><h4>Processor<h4></td>
+    <td rowspan="2"><img style="float: left;" src="https://img.icons8.com/3d-fluency/94/null/electronics.png" width="60" height="60"/><h4>Processor<h4></td>
     <td colspan="2"><b><i>CPU Architecture: x86_64 or arm64<b><i></td>
   </tr>
   <tr>
@@ -386,18 +387,18 @@
     <td>N/A <br /><br /> This is a bit of a hit or miss, but it is highly recommended that your processor is listed in the <a href="https://learn.microsoft.com/en-gb/windows-hardware/design/minimum/windows-processor-requirements" target="_blank" rel="noopener noreferrer">supported CPU lists for Windows 11 requirements</a></td>     
   </tr>
   <tr>
-    <td><img style="float: right;" src="https://img.icons8.com/3d-fluency/94/null/video-card.png" width="60" height="60"/><h4>GPU<h4></td>
+    <td><img style="float: left;" src="https://img.icons8.com/3d-fluency/94/null/video-card.png" width="60" height="60"/><h4>GPU<h4></td>
       <td colspan="2">Any compatible Intel, AMD or Nvidia GPU. <br /> GPU Performance may vary depending on its compatibility with Windows Subsystem For Android™  <br /><br /><details><summary><h4>Users with Intel HD Graphics 530 and older<h4></summary><br /><h5> WSA may not start or graphical glitches will occur when Intel HD Graphics 530 and Older iGPUs are used. This is a known issue, but unfortunately there are no fixes that I currently know of, plus, these GPUs are too old and do not meet Windows 11 requirements and hence are not official supported. <a href="https://github.com/MustardChef/WSABuilds/blob/master/Guides/ChangingGPU.md" target="_blank" rel="noopener noreferrer">Follow this guide</a> to switch to another iGPU/dGPU/eGPU that you may have or Microsoft Basic Renderer<h5></details><br /><details><summary><h4>Users with Nvidia GPUs<h4></summary><br /><h5> Nvidia GPUs are known to cause problems. If Windows Subsystem For Android™ does not start or there are graphical glitches when an Nvidia GPU is used, <a href="https://github.com/MustardChef/WSABuilds/blob/master/Guides/ChangingGPU.md" target="_blank" rel="noopener noreferrer">follow this guide</a> to switch to another iGPU/dGPU/eGPU  that you may have or Microsoft Basic Renderer<h5></details></td>
   </tr>
   <tr>
-    <td rowspan="2"><img style="float: right;" src="https://img.icons8.com/3d-fluency/94/null/ssd.png" width="60" height="60"/><h4>Storage<h4></td>
+    <td rowspan="2"><img style="float: left;" src="https://img.icons8.com/3d-fluency/94/null/ssd.png" width="60" height="60"/><h4>Storage<h4></td>
     <td colspan="2"><b><i>Solid-state drive (RECOMMENDED)<i><b> <br />OR<br /> <b><i>Hard Disk Drive (HDD)<i><b>   (NOT RECOMMENDED)<i></td>
   </tr>
   <tr>
      <td colspan="2"><b><i>Minimum Storage Requirements: You must have at least 10GB free on the system drive (C:\)<b><i></td>
   </tr>
   <tr>
-    <td><img style="float: right;" src="https://img.icons8.com/stickers/100/null/storage.png" width="60" height="60"/><h4>Partition<h4></td>
+    <td><img style="float: left;" src="https://img.icons8.com/stickers/100/null/storage.png" width="60" height="60"/><h4>Partition<h4></td>
     <td colspan="2"><b><i>NTFS ONLY<b><i> <br /><br /> Windows Subsystem For Android™ can only be installed on a NTFS partition, not on an exFAT partition</td>
   </tr>
   <tr>
@@ -411,30 +412,16 @@
     <td colspan="2"><sub><b><i>These optional settings are for virtualization and provide components that are needed to run WSA. You can enable these settings by pressing the Windows Key + R on your keyboard and typing "OptionalFeatures.exe" into the box, pressing enter and selecting the features above followed by pressing apply</b></i></sub></td>
   </tr>
   <tr>
-    <td><img style="float: right;" src="https://user-images.githubusercontent.com/68516357/230759907-5d11950e-1b17-4811-8f4e-a0f82e598079.png" width="60" height="60"/><h4>Virtualization<h4></td>
+    <td><img style="float: left;" src="https://user-images.githubusercontent.com/68516357/230759907-5d11950e-1b17-4811-8f4e-a0f82e598079.png" width="60" height="60"/><h4>Virtualization<h4></td>
     <td colspan="2">The Computer must support virtualization and be enabled in BIOS/UEFI and Optional Features. <br /> <h3><a href="https://support.microsoft.com/en-us/windows/enable-virtualization-on-windows-11-pcs-c5578302-6e43-4b4b-a449-8ced115f58e1" target="_blank" rel="noopener noreferrer">Guide on how to enable</a><h3></td>
   </tr>
 </tbody>
 </table>
 
-<!--
-|Component|     <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" style="width: 200px;"/>|  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" style="width: 200px;"/>     |
-|-----------------|-----------------------|-----------------------|
-|<img style="float: right;" src="https://img.icons8.com/fluency/96/null/windows-update--v1.png" width="60" height="60"/><h4>Windows Build Number<h4>|Windows™ 11: Build 22000.526 or higher.|Windows™ 10: 22H2 10.0.19045.2311 or higher. <br /> <br /> **From WSA version 2301.40000.7.0 and higher in this repo, there is Unofficial support for Windows™ 10: 20H1 10.0.19041.264 or higher**. You must install [KB5014032](https://www.catalog.update.microsoft.com/Search.aspx?q=KB5014032) then install [KB5022834](https://www.catalog.update.microsoft.com/Search.aspx?q=KB5022834) to use WSA on these older Windows 10 builds <br /> <br /> |
-|<img style="float: right;" src="https://img.icons8.com/external-smashingstocks-flat-smashing-stocks/66/null/external-RAM-technology-and-devices-smashingstocks-flat-smashing-stocks.png" width="60" height="60"/><h4>RAM<h4>|6 GB (not recommended), 8 GB (minimum) and 16 GB (recommended).|6 GB (not recommended), 8 GB (minimum) and 16 GB (recommended).|
-|<img style="float: right;" src="https://img.icons8.com/3d-fluency/94/null/electronics.png" width="60" height="60"/><h4>Processor<h4>|Your PC should meet the basic Windows™ 11 requirements i.e Core i3 8th Gen, Ryzen 3000, Snapdragon 8c, or above.|N/A <br /><br /> This is a bit of a hit or miss, but it is highly recommended that your processor is listed in the [supported CPU lists for Windows 11 requirements](https://learn.microsoft.com/en-gb/windows-hardware/design/minimum/windows-processor-requirements)
-|<h4>Processor type<h4>|x64 or ARM64.|x64 or ARM64.|
-|<img style="float: right;" src="https://img.icons8.com/3d-fluency/94/null/video-card.png" width="60" height="60"/><h4>GPU<h4>|Any compatible Intel, AMD or Nvidia GPU. <br /> GPU Performance may vary depending on its compatibility with Windows Subsystem For Android™  <br /><br /><h3> **Users with Intel HD Graphics 530 and older** <h3><br /><h5> WSA may not start or graphical glitches will occur when Intel HD Graphics 530 and Older iGPUs are used. This is a known issue, but unfortunately there are no fixes that I currently know, plus, these GPUs are too old and do not meet Windows 11 requirements and hence are not official supported. [Follow this guide](https://github.com/MustardChef/WSABuilds/blob/master/Guides/ChangingGPU.md) to switch to another iGPU/dGPU/eGPU  that you may have or Microsoft Basic Renderer <h5> <br /><> <h3> **Users with Nvidia GPUs** <h3><br /><h5> Nvidia GPUs are known to cause problems. If Windows Subsystem For Android™ does not start or there are graphical glitches when an Nvidia GPU is used, [follow this guide](https://github.com/MustardChef/WSABuilds/blob/master/Guides/ChangingGPU.md) to switch to another iGPU/dGPU/eGPU  that you may have or Microsoft Basic Renderer <h5>|Any compatible Intel, AMD or Nvidia GPU. <br /> GPU Performance may vary depending on its compatibility with Windows Subsystem For Android™  <br /><br /><h3> **Users with Intel HD Graphics 530 and older** <h3><br /><h5> WSA may not start or graphical glitches will occur when Intel HD Graphics 530 and Older iGPUs are used. This is a known issue, but unfortunately there are no fixes that I currently know, plus, these GPUs are too old and do not meet Windows 11 requirements and hence are not official supported. [Follow this guide](https://github.com/MustardChef/WSABuilds/blob/master/Guides/ChangingGPU.md) to switch to another iGPU/dGPU/eGPU  that you may have or Microsoft Basic Renderer <h5> <br /><br /> <h3> **Users with Nvidia GPUs** <h3><br /><h5> Nvidia GPUs are known to cause problems. If Windows Subsystem For Android™ does not start or there are graphical glitches when an Nvidia GPU is used, [follow this guide](https://github.com/MustardChef/WSABuilds/blob/master/Guides/ChangingGPU.md) to switch to another iGPU/dGPU/eGPU  that you may have or Microsoft Basic Renderer <h5>|
-<img style="float: right;" src="https://img.icons8.com/3d-fluency/94/null/ssd.png" width="60" height="60"/><h4>Storage<h4>|Solid-state drive (SSD) <br /> - Hard Disk Drive (HDD) (NOT RECOMMENDED).|Solid-state drive (SSD) <br /> - Hard Disk Drive (HDD) (NOT RECOMMENDED).|
-|<img style="float: right;" src="https://img.icons8.com/stickers/100/null/storage.png" width="60" height="60"/><h4>Partition<h4>|NTFS <br /> Windows Subsystem For Android™ can only be installed on a NTFS partition, not on an exFAT partition |NTFS <br /> Windows Subsystem For Android™ can only be installed on a NTFS partition, not on an exFAT partition|
-|<img style="float: left;" src="https://user-images.githubusercontent.com/68516357/230764789-ad8f7361-4a3b-49a8-a8e9-24fdc87d5781.png" width="66" height="58"/><h4>Windows Features Needed<h4>|- Virtual Machine Platform Enabled <br /> - Windows Hypervisor Platform Enabled <br /> - Hyper V Enabled (Optional)<br /> - Windows Subsystem For Linux™ Enabled (Optional) <br /><br /> These optional settings are for virtualization and provide components that are needed to run WSA. You can enable these settings from Control Panel/ Optional Features.|- Virtual Machine Platform Enabled <br /> - Windows Hypervisor Platform Enabled <br /> - Hyper V Enabled (Optional)<br /> - Windows Subsystem For Linux™ Enabled (Optional) <br /><br /> These optional settings are for virtualization and provide components that are needed to run WSA. You can enable these settings from Control Panel/ Optional Features.|
-|<img style="float: right;" src="https://user-images.githubusercontent.com/68516357/230759907-5d11950e-1b17-4811-8f4e-a0f82e598079.png" width="60" height="60"/><h4>Virtualization<h4>|- The Computer must support virtualization and be enabled in BIOS/UEFI and Optional Features. [Guide](https://support.microsoft.com/en-us/windows/enable-virtualization-on-windows-11-pcs-c5578302-6e43-4b4b-a449-8ced115f58e1)|- The Computer must support virtualization and be enabled in BIOS/UEFI and Optional Features. [Guide](https://support.microsoft.com/en-us/windows/enable-virtualization-on-windows-11-pcs-c5578302-6e43-4b4b-a449-8ced115f58e1)|
--->
-
 &nbsp;
 
 <details>     
-   <summary><picture><img style="float: right;" src="https://img.icons8.com/color/96/null/software-installer.png" width="60" height="60"/></picture><h1> &nbsp; Installation<h1></summary>
+   <summary><a href=""><img style="float: left;" src="https://img.icons8.com/color/96/null/software-installer.png" width="60" height="60"/></picture><h1> &nbsp; Installation<h1></a></summary>
 
 &nbsp;
 
@@ -507,7 +494,7 @@
 
 
 <details>     
-   <summary><picture><img style="float: right;" src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/null/external-updating-tools-and-material-ecommerce-flaticons-flat-flat-icons.png" width="60" height="60"/></picture><h1> &nbsp; Updating<h1></summary>
+   <summary><a href=""><img style="float: left;" src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/null/external-updating-tools-and-material-ecommerce-flaticons-flat-flat-icons.png" width="60" height="60"/><h1> &nbsp; Updating</h1></a></summary>
 
 ### How do I update without losing any of my apps and data on Windows Subsystem for Android (WSA)
 
@@ -515,17 +502,37 @@
 > Make sure that WSA has been turned off from the settings and that tools such has WSA-System-Control, WSA-Sideloader, WSAPacman etc are not running.
 
 1. [Download the latest build](https://github.com/MustardChef/WSABuilds#downloads) (that you want to update to)
+
 2. Make sure Windows Subsystem For Android is not running (Click on "Turn off" in the WSA Settings and wait for the spinning loader to disappear)
+
 2. Using 7-Zip, WinRAR or any other tool of choice, open the .7z archive 
-3. Within the .7z archive, open the subfolder (Example: WSA_2xxx.xxxxx.xx.x_xx_Release-Nightly-with-magisk-xxxxxxx-MindTheGapps-xx.x-RemovedAmazon)
+
+3. Within the .7z archive, open the subfolder 
+    - Example: 
+        - WSA_2xxx.xxxxx.xx.x_xx 
+        
+        or 
+        
+        - WSA_2xxx.xxxxx.xx.x_xx_Release-Nightly-with-magisk-xxxxxxx-MindTheGapps-xx.x-RemovedAmazon)
+
 4. Select all the files that are within this subfolder and extract them to the current folder where the file for Windows Subsystem For Android (the folder you extracted, and installed WSA from) are located 
+
 5. When prompted to replace folders, select "Do this for all current items" and click on "Yes" 
+
 6. When prompted to replace files, click on "Replace the files in the destination"
+
 7. Run  the ``Run.bat`` file
+
 8. Launch Windows Subsystem For Android Settings app and go to the ``About`` tab using the sidebar
+
 9. Check if the WSA version matches the latest version/ the version number that you want to update to
 
+---
+
 **Join the Discord if you are having any difficulties**
+
+[<img align="left" src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/>](https://discord.gg/2thee7zzHZ)
+
 
 
 </details>   
@@ -533,7 +540,7 @@
 &nbsp;
 
 <details>     
-   <summary><picture><img style="float: right;" src="https://img.icons8.com/color/96/null/uninstall-programs.png" width="60" height="60"/></picture><h1> &nbsp; Uninstallation<h1></summary>
+   <summary><a href=""><img style="float: left;" src="https://img.icons8.com/color/96/null/uninstall-programs.png" width="60" height="60"/></picture><h1> &nbsp; Uninstallation</h1></a></summary>
 
 &nbsp;
 
@@ -570,7 +577,7 @@
 &nbsp;
        
 <details>     
-   <summary><picture><img style="float: right;" src="https://img.icons8.com/fluency/96/cloud-backup-restore.png" width="60" height="60"/></picture><h1> &nbsp; Backup and Restore Userdata<h1></summary>
+   <summary><a href=""><img style="float: left;" src="https://img.icons8.com/fluency/96/cloud-backup-restore.png" width="60" height="60"/></picture><h1> &nbsp; Backup and Restore Userdata</h1></a></summary>
 
 ## Backing Up Your Userdata
       
@@ -623,7 +630,7 @@ Now run WSA and your userdata should hopefully be restored
 &nbsp;
       
 <details>     
-   <summary><picture><img style="float: right;" src="https://img.icons8.com/3d-fluency/94/null/help.png" width="60" height="60"/></picture><h1> &nbsp; FAQ<h1></summary>
+   <summary><a href=""><img style="float: left;" src="https://img.icons8.com/3d-fluency/94/null/help.png" width="60" height="60"/><h1> &nbsp; FAQ</h1></a></summary>
 
 &nbsp;
 **Help me, I am having problems with the MagiskOnWSA Builds**
@@ -704,7 +711,7 @@ Now run WSA and your userdata should hopefully be restored
 &nbsp;
 
 <details>     
-   <summary><picture><img style="float: right;" src="https://img.icons8.com/external-xnimrodx-lineal-color-xnimrodx/96/null/external-guide-education-xnimrodx-lineal-color-xnimrodx.png" width="60" height="60"/></picture><h1> &nbsp; Usage Guides<h1></summary>
+   <summary><a href=""><img style="float: left;" src="https://img.icons8.com/external-xnimrodx-lineal-color-xnimrodx/96/null/external-guide-education-xnimrodx-lineal-color-xnimrodx.png" width="60" height="60"/><h1> &nbsp; Usage Guides</h1></a></summary>
 
 &nbsp;
 
@@ -733,7 +740,7 @@ Now run WSA and your userdata should hopefully be restored
 &nbsp;
 
 <details>     
-   <summary><picture><img style="float: right;" src="https://img.icons8.com/external-soft-fill-juicy-fish/96/null/external-bug-coding-and-development-soft-fill-soft-fill-juicy-fish-2.png" width="60" height="60"/></picture><h1> &nbsp; Having Issues?<h1></summary>
+   <summary><a href=""><img style="float: left;" src="https://img.icons8.com/external-soft-fill-juicy-fish/96/null/external-bug-coding-and-development-soft-fill-soft-fill-juicy-fish-2.png" width="60" height="60"/><h1> &nbsp; Having Issues?<h1></a></summary>
 
 ### Common Issues:
 [<img src="https://img.shields.io/badge/-Fix%20Install.ps1%20Issue-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Pre-install%20Issues/FixInstallps1.md)
@@ -783,7 +790,7 @@ Now run WSA and your userdata should hopefully be restored
 &nbsp;
       
 <details>     
-   <summary><picture><img style="float: right;" src="https://img.icons8.com/fluency/96/request-service.png" width="60" height="60"/></picture><h1> &nbsp; Custom Builds Requests<h1></summary>    
+   <summary><a href=""><img style="float: left;" src="https://img.icons8.com/fluency/96/request-service.png" width="60" height="60"/><h1> &nbsp; Custom Builds Requests</h1></a></summary>    
    
 <h3> &nbsp; ❓Want to request a prebuilt custom build❓ <h3>
 
@@ -797,19 +804,101 @@ Now run WSA and your userdata should hopefully be restored
 &nbsp;   
       
 <details>     
-   <summary><picture><img style="float: right;" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-credits-movie-theater-flaticons-lineal-color-flat-icons.png" width="60" height="60"/></picture><h1> &nbsp; Credits<h1></summary>
+   <summary><a href=""><img style="float: left;" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-credits-movie-theater-flaticons-lineal-color-flat-icons.png" width="60" height="60"/><h1> &nbsp; Credits</h1></a></summary>
 
-- [Microsoft](https://apps.microsoft.com/store/detail/windows-subsystem-for-android%E2%84%A2-with-amazon-appstore/9P3395VX91NR): For providing Windows Subsystem For Android™ and related files. Windows Subsystem For Android™, Windows Subsystem For Android™ Logo, Windows™ 10 and Windows™ 11 Logos are trademarks of Microsoft Corporation. Microsoft Corporation reserves all rights to these trademarks. By downloading and installing Windows Subsystem For Android™, you agree to the [Terms and Conditions](https://support.microsoft.com/en-gb/windows/microsoft-software-license-terms-microsoft-windows-subsystem-for-android-cf8dfb03-ba62-4daa-b7f3-e2cb18f968ad) and [Privacy Policy](https://privacy.microsoft.com/en-gb/privacystatement)
-- [YT-Advanced](https://github.com/YT-Advanced/WSA-Script): For providing and continuing the development of the script made by LSPosed, the Github Action workflow guide is based on his Github Repo. I do not claim his work and the work of the many contributers as my own and nor intend to do so. 
-- [Cinit and the WSAPatch Guide](https://github.com/cinit/WSAPatch): Many thanks for the comprehensive guide, files and support provided by Cinit and the contributers at the WSAPatch repository. Windows™ 10 Builds in this repo rely on the hard work of this project and  hence credit is given where due
+<table>
+<thead>
+  <tr>
+    <th>Resource</th>
+    <th>Authors</th>
+    <th>Description of resource used<br></th>
+    <th>License</th>
+    <th>In Use?<br></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><a href="https://github.com/LSPosed/MagiskOnWSALocal" target="_blank" rel="noopener noreferrer">MagiskOnWSALocal</a></td>
+    <td>LSPosed and contributors</td>
+    <td>Set of scripts and utilities used by this project to integrate Magisk root and Google Apps into WSA.</td>
+    <td><a href="https://github.com/LSPosed/MagiskOnWSALocal/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">AGPLv3</a></td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/YT-Advanced/WSA-Script" target="_blank" rel="noopener noreferrer">WSA-Script</a></td>
+    <td>YT-Advanced and contributors</td>
+    <td>Github Action workflow implementation of MagiskOnWSALocal, similar to the original MagiskOnWSA repo (taken-down). The GitHub workflows used in this repo are based on the workflows avaliable in this project.</td>
+    <td><a href="https://github.com/YT-Advanced/WSA-Script/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">AGPLv3</a></td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/cinit/WSAPatch" target="_blank" rel="noopener noreferrer">WSAPatch</a></td>
+    <td>Cinit</td>
+    <td>Patches for WSA to enable WSA (Windows Subsystem for Android) to run on Windows 10, used in the WSA builds for Windows 10.</td>
+    <td><a href="https://github.com/cinit/WSAPatch/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">Unlicenced License</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://commons.wikimedia.org/wiki/File:Windows_logo_-_2012_(dark_blue).svg" target="_blank" rel="noopener noreferrer">Windows 10 Logo</a></td>
+    <td>Microsoft (original), AkshayAnand </td>
+    <td>WIndows 10 Logo used in this repo. Follows Microsoft's Brand/Trademark Guidelines.</td>
+    <td>Public Domain</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td><a href="https://commons.wikimedia.org/wiki/File:Windows_logo_-_2021.svg" target="_blank" rel="noopener noreferrer">Windows 11 Logo</a></td>
+    <td>Microsoft (original), OAOV</td>
+    <td>WIndows 11 Logo used in this repo. Follows Microsoft's Brand/Trademark Guidelines.</td>
+    <td>Public Domain</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td><a href="https://commons.wikimedia.org/wiki/File:Windows_10-Logo.png" target="_blank" rel="noopener noreferrer">WIndows 10 Logo with wordmark</a></td>
+    <td>Microsoft</td>
+    <td>WIndows 10 Logo used in this repo. Follows Microsoft's Brand/Trademark Guidelines.<br></td>
+    <td><a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC-BY-SA 4.0</a><br></td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td><a href="https://commons.wikimedia.org/wiki/File:Windows_11_logo.svg" target="_blank" rel="noopener noreferrer">WIndows 11 Logo with workmark</a></td>
+    <td>Microsoft</td>
+    <td>WIndows 11 Logo used in this repo. Follows Microsoft's Brand/Trademark Guidelines.</td>
+    <td>Public Domain</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>Icon8</td>
+    <td>Icons8 and authors,</td>
+    <td>Some icons used in this repo were obtained from Icons8. To view the specific icons used, check the raw Markdown and HTML files,</td>
+    <td><a href="https://icons8.com/license" target="_blank" rel="noopener noreferrer">Icons8 License</a></td>
+    <td></td>
+  </tr>
+</tbody>
+</table>
+
+---
+
+### Other Resources used as reference
+
 - [StoreLib](https://github.com/StoreDev/StoreLib): API for downloading WSA
 - [Magisk](https://github.com/topjohnwu/Magisk): The Magic Mask for Android
 - [The Open Google Apps Project](https://opengapps.org): Script the automatic generation of up-to-date Google Apps packages
 - [KernelSU](https://github.com/tiann/KernelSU): A Kernel based root solution for Android
 - [WSAGAScript](https://github.com/ADeltaX/WSAGAScript): The first GApps integration script for WSA
 - [MagiskOnWSA](https://github.com/LSPosed/MagiskOnWSA): `Deprecated` Integrate Magisk root and Google Apps into WSA
-- [MagiskOnWSALocal](https://github.com/LSPosed/MagiskOnWSALocal): Integrate Magisk root and Google Apps into WSA
-- [Icons8](https://icons8.com/icons/): Icons used in this repo were obtained from Icon8. To view the links to the specific icons used in this Markdown, [press here](https://github.com/MustardChef/WSABuilds/blob/master/README.md?plain=1)
+
+---
+
+### Is this GitHub Repo affiliated with Microsoft™ or Google™?
+
+- Microsoft and the Dev team at MSFT are the developers of Windows Subsystem For Android. We do not claim to develop, or have a part in developing this emulator. We also have no real influence on the direction of development of WSA nor do we claim to have.
+
+- What the WSABuild repo does is that it provides prebuilt WSA builds with Root and GMS built using the MagiskOnWSALocal project (and WSAPatch for the Windows 10 patch.) That is that we simply modify the emulator to add extra functionality to it.
+
+- All this is, is an unofficial project not related in any way to Microsoft and the team working on Windows Subsystem For Android.
+
+
+---
 
 ***The repository is provided as a utility.***
 
