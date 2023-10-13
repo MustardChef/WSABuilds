@@ -261,17 +261,17 @@
 <tbody>
   <tr>
     <td rowspan="2"><b>Differences:</b></td>
-    <td>Follows the "WSA Preview Program Channel" <br></td>
-    <td colspan="2">Follows the "WSA Retail" or "Insider Fast Channel" <br></td>
+    <td>Follows the "WSA Preview Program Channel" <br /></td>
+    <td colspan="2">Follows the "WSA Retail" or "Insider Fast Channel" <br /></td>
   </tr>
   <tr>
-    <td>Builds are generally newer than the "WSA Retail" and "Insider Fast Channel"<br></td>
+    <td>Builds are generally newer than the "WSA Retail" and "Insider Fast Channel"<br /></td>
     <td colspan="2">Builds are generally more stable than the builds in the "WSA Preview Program Channel"</td>
   </tr>
   <tr>
     <td><b>Current Version:</b></td>
-    <td>2309.40000.2.0<br></td>
-    <td colspan="2">2308.40000.3.0<br></td>
+    <td>2309.40000.2.0<br /></td>
+    <td colspan="2">2308.40000.3.0<br /></td>
   </tr>
   <tr>
     <td><b>Release Date:</b></td>
@@ -372,7 +372,7 @@
     <td>Windows™ 10: 22H2 10.0.19045.2311 or higher. <br /><br /><b><i>May work on Windows™ 10: 20H1 10.0.19041.264 or higher.<b></i><sup>1</sup><br /><br /><sub><sup>1. You may need to install <a href="https://www.catalog.update.microsoft.com/Search.aspx?q=KB5014032" target="_blank" rel="noopener noreferrer">KB5014032</a> then install <a href="https://www.catalog.update.microsoft.com/Search.aspx?q=KB5022834" target="_blank" rel="noopener noreferrer">KB5022834</a> to use WSA on these older Windows 10 builds<b><br /><br /><b></td></sup></sub>
   </tr>
   <tr>
-    <td colspan="2"><h5><b><i>Custom/modfied Windows OS installations (such as ReviOS, Tiny 10/11 and Ghost Spectre etc.) may have issues with running WSA.<br></i></b></h5></td>
+    <td colspan="2"><h5><b><i>Custom/modfied Windows OS installations (such as ReviOS, Tiny 10/11 and Ghost Spectre etc.) may have issues with running WSA.<br /></i></b></h5></td>
   </tr>
   <tr>
     <td><img style="float: left;" src="https://img.icons8.com/external-smashingstocks-flat-smashing-stocks/66/null/external-RAM-technology-and-devices-smashingstocks-flat-smashing-stocks.png" width="60" height="60"/><h4>RAM<h4></td>
@@ -388,7 +388,7 @@
   </tr>
   <tr>
     <td><img style="float: left;" src="https://img.icons8.com/3d-fluency/94/null/video-card.png" width="60" height="60"/><h4>GPU<h4></td>
-      <td colspan="2">Any compatible Intel, AMD or Nvidia GPU. <br /> GPU Performance may vary depending on its compatibility with Windows Subsystem For Android™  <br /><br /><details><summary><h4>Users with Intel HD Graphics 530 and older<h4></summary><br /><h5> WSA may not start or graphical glitches will occur when Intel HD Graphics 530 and Older iGPUs are used. This is a known issue, but unfortunately there are no fixes that I currently know of, plus, these GPUs are too old and do not meet Windows 11 requirements and hence are not official supported. <a href="https://github.com/MustardChef/WSABuilds/blob/master/Guides/ChangingGPU.md" target="_blank" rel="noopener noreferrer">Follow this guide</a> to switch to another iGPU/dGPU/eGPU that you may have or Microsoft Basic Renderer<h5></details><br /><details><summary><h4>Users with Nvidia GPUs<h4></summary><br /><h5> Nvidia GPUs are known to cause problems. If Windows Subsystem For Android™ does not start or there are graphical glitches when an Nvidia GPU is used, <a href="https://github.com/MustardChef/WSABuilds/blob/master/Guides/ChangingGPU.md" target="_blank" rel="noopener noreferrer">follow this guide</a> to switch to another iGPU/dGPU/eGPU  that you may have or Microsoft Basic Renderer<h5></details></td>
+      <td colspan="2">Any compatible Intel, AMD or Nvidia GPU. <br /> GPU Performance may vary depending on its compatibility with Windows Subsystem For Android™  <br /><br /><details><summary><h4>Users with Intel HD Graphics 530 and older<h4></summary><br /><h5> WSA may not start or graphical glitches will occur when Intel HD Graphics 530 and Older iGPUs are used. This is a known issue, but unfortunately there are no fixes that I currently know of, plus, these GPUs are too old and do not meet Windows 11 requirements and hence are not official supported. <a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Usage%20Guides/ChangingGPU.md" target="_blank" rel="noopener noreferrer">Follow this guide</a> to switch to another iGPU/dGPU/eGPU that you may have or Microsoft Basic Renderer<h5></details><br /><details><summary><h4>Users with Nvidia GPUs<h4></summary><br /><h5> Nvidia GPUs are known to cause problems. If Windows Subsystem For Android™ does not start or there are graphical glitches when an Nvidia GPU is used, <a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Usage%20Guides/ChangingGPU.md" target="_blank" rel="noopener noreferrer">follow this guide</a> to switch to another iGPU/dGPU/eGPU  that you may have or Microsoft Basic Renderer<h5></details></td>
   </tr>
   <tr>
     <td rowspan="2"><img style="float: left;" src="https://img.icons8.com/3d-fluency/94/null/ssd.png" width="60" height="60"/><h4>Storage<h4></td>
@@ -592,7 +592,7 @@ Before attempting to restore your backup, you must remove WSA if installed. Then
 > <picture>
 >   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/light-theme/tip.svg">
 >   <img alt="Tip" src="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/dark-theme/tip.svg">
-> </picture><br>
+> </picture><br />
 >     
 > The Lines (as shown below) that you need to remove in ``Install.ps1`` may vary depending on the type of WSA Build that you are trying to install.    
       
@@ -716,24 +716,24 @@ Now run WSA and your userdata should hopefully be restored
 &nbsp;
 
 ### GPU Guide:
-[<img src="https://img.shields.io/badge/-How%20to%20Change%20the%20GPU%20Used-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Guides/General%20Usage%20Guides/ChangingGPU.md)
+[<img src="https://img.shields.io/badge/-How%20to%20Change%20the%20GPU%20Used-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Usage%20Guides/General%20Usage%20Guides/ChangingGPU.md)
 
 ### Sideload Guide/Installing an APK:
-[<img src="https://img.shields.io/badge/-How%20to%20Sideload%20apps-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Guides/Sideloading%20Guides/Sideloading.md)
+[<img src="https://img.shields.io/badge/-How%20to%20Sideload%20apps-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Usage%20Guides/Sideloading%20Guides/Sideloading.md)
 
 ### Moving WSA to another drive or partition:
-[<img src="https://img.shields.io/badge/-How%20to%20Move%20WSA%20to%20another%20drive%20or%20partition-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Guides/General%20Usage%20Guides/MoveToExtDrive.md)
+[<img src="https://img.shields.io/badge/-How%20to%20Move%20WSA%20to%20another%20drive%20or%20partition-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Usage%20Guides/General%20Usage%20Guides/MoveToExtDrive.md)
 
 ### Installing KernelSU
-[<img src="https://img.shields.io/badge/-How%20to%20install%20KernelSU-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Guides/General%20Usage%20Guides/KernelSU.md)
+[<img src="https://img.shields.io/badge/-How%20to%20install%20KernelSU-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Usage%20Guides/General%20Usage%20Guides/KernelSU.md)
 
 ### Installing BusyBox
 
-[<img src="https://img.shields.io/badge/-How%20to%20install%20BusyBox-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Guides/General%20Usage%20Guides/BusyBox.md)
+[<img src="https://img.shields.io/badge/-How%20to%20install%20BusyBox-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Usage%20Guides/General%20Usage%20Guides/BusyBox.md)
       
 ### Localhost Loopback Guide
       
-[<img src="https://img.shields.io/badge/-Localhost%20Loopback-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Guides/General%20Usage%20Guides/LocalHostLoopback.md)  
+[<img src="https://img.shields.io/badge/-Localhost%20Loopback-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Usage%20Guides/General%20Usage%20Guides/LocalHostLoopback.md)  
 
 </details> 
 
@@ -743,46 +743,46 @@ Now run WSA and your userdata should hopefully be restored
    <summary><a href=""><img style="float: left;" src="https://img.icons8.com/external-soft-fill-juicy-fish/96/null/external-bug-coding-and-development-soft-fill-soft-fill-juicy-fish-2.png" width="60" height="60"/><h1> &nbsp; Having Issues?<h1></a></summary>
 
 ### Common Issues:
-[<img src="https://img.shields.io/badge/-Fix%20Install.ps1%20Issue-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Pre-install%20Issues/FixInstallps1.md)
+[<img src="https://img.shields.io/badge/-Fix%20Install.ps1%20Issue-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fixes%20Guides/Pre-install%20Issues/FixInstallps1.md)
 
-[<img src="https://img.shields.io/badge/-Fix Virtualization and Virtual Machine Platform Error-%23EF2D5E?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Post-Install%20Issues/FixVirtError.md)
+[<img src="https://img.shields.io/badge/-Fix Virtualization and Virtual Machine Platform Error-%23EF2D5E?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fixes%20Guides/Post-Install%20Issues/FixVirtError.md)
 
-[<img src="https://img.shields.io/badge/-Fix%20Internet%20Issues-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Post-Install%20Issues/FixInternet.md)
+[<img src="https://img.shields.io/badge/-Fix%20Internet%20Issues-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fixes%20Guides/Post-Install%20Issues/FixInternet.md)
 
-[<img src="https://img.shields.io/badge/-Fix%20Error%200x80073CF0-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Pre-install%20Issues/Fix%20Error%200x80073CF0.md)
+[<img src="https://img.shields.io/badge/-Fix%20Error%200x80073CF0-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fixes%20Guides/Pre-install%20Issues/Fix%20Error%200x80073CF0.md)
 
-[<img src="https://img.shields.io/badge/-Fix%20Error%200x80073CFB-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Pre-install%20Issues/Fix%20Error%200x80073CFB.md)
+[<img src="https://img.shields.io/badge/-Fix%20Error%200x80073CFB-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fixes%20Guides/Pre-install%20Issues/Fix%20Error%200x80073CFB.md)
 
-[<img src="https://img.shields.io/badge/-Fix%20Error%200x80073CFD-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Pre-install%20Issues/Fix%20Error%200x80073CFD.md)
+[<img src="https://img.shields.io/badge/-Fix%20Error%200x80073CFD-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fixes%20Guides/Pre-install%20Issues/Fix%20Error%200x80073CFD.md)
 
-[<img src="https://img.shields.io/badge/-Fix%20Error%200x80073CF6-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Pre-install%20Issues/Fix%20Error%200x80073CF6.md)
+[<img src="https://img.shields.io/badge/-Fix%20Error%200x80073CF6-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fixes%20Guides/Pre-install%20Issues/Fix%20Error%200x80073CF6.md)
 
-[<img src="https://img.shields.io/badge/-Fix%20Error%200x80073CF9-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Pre-install%20Issues/Fix%20Error%200x80073CF9.md)
+[<img src="https://img.shields.io/badge/-Fix%20Error%200x80073CF9-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fixes%20Guides/Pre-install%20Issues/Fix%20Error%200x80073CF9.md)
 
-[<img src="https://img.shields.io/badge/-Fix%20Error%200x80073D10-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Pre-install%20Issues/Fix%20Error%200x80073D10.md)
+[<img src="https://img.shields.io/badge/-Fix%20Error%200x80073D10-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fixes%20Guides/Pre-install%20Issues/Fix%20Error%200x80073D10.md)
       
-[<img src="https://img.shields.io/badge/-NamedResource%20Not%20Found:%20Fix%20Error%200x80073B17-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Pre-install%20Issues/NamedResource%20Not%20Found%20-%20Fix%20Error%200x80073B17.md)    
+[<img src="https://img.shields.io/badge/-NamedResource%20Not%20Found:%20Fix%20Error%200x80073B17-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fixes%20Guides/Pre-install%20Issues/NamedResource%20Not%20Found%20-%20Fix%20Error%200x80073B17.md)    
 
-[<img src="https://img.shields.io/badge/-Fix%20Internet%20Security%20Settings%20Blocks%20Installation-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Pre-install%20Issues/InternetSecuritySettingsBlock.md)
+[<img src="https://img.shields.io/badge/-Fix%20Internet%20Security%20Settings%20Blocks%20Installation-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fixes%20Guides/Pre-install%20Issues/InternetSecuritySettingsBlock.md)
 
-[<img src="https://img.shields.io/badge/-Fix%20Keyboard%20Not%20Working%20In%20WSA-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Post-Install%20Issues/Keyboard%20Is%20Not%20Working.md)
+[<img src="https://img.shields.io/badge/-Fix%20Keyboard%20Not%20Working%20In%20WSA-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fixes%20Guides/Post-Install%20Issues/Keyboard%20Is%20Not%20Working.md)
 
-[<img src="https://img.shields.io/badge/-Fix%20Path%20Too%20Long-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Pre-install%20Issues/FixPathTooLong.md)
+[<img src="https://img.shields.io/badge/-Fix%20Path%20Too%20Long-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fixes%20Guides/Pre-install%20Issues/FixPathTooLong.md)
 
-[<img src="https://img.shields.io/badge/-Fix%20Missing%20Icons%20Issue-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Post-Install%20Issues/MissingIcons.md)
+[<img src="https://img.shields.io/badge/-Fix%20Missing%20Icons%20Issue-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fixes%20Guides/Post-Install%20Issues/MissingIcons.md)
 
-[<img src="https://img.shields.io/badge/-Fix%20Target%20Machine%20Actively%20Refused%20Connection-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Post-Install%20Issues/TargetMachineActivelyRefusedConnection.md)
+[<img src="https://img.shields.io/badge/-Fix%20Target%20Machine%20Actively%20Refused%20Connection-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fixes%20Guides/Post-Install%20Issues/TargetMachineActivelyRefusedConnection.md)
       
-[<img src="https://img.shields.io/badge/-Google%20Play%20Issues-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Post-Install%20Issues/Google%20Play%20Issues.md)  
+[<img src="https://img.shields.io/badge/-Google%20Play%20Issues-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fixes%20Guides/Post-Install%20Issues/Google%20Play%20Issues.md)  
 
-[<img src="https://img.shields.io/badge/-WSA%20Settings%20App%20Crashes%20%2B%20Android%20Apps%20Do%20Not%20Load%20After%20Installation-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Post-Install%20Issues/WSA%20Settings%20App%20Crashes%20%2B%20Android%20Apps%20Do%20Not%20Load%20After%20Installation.md
+[<img src="https://img.shields.io/badge/-WSA%20Settings%20App%20Crashes%20%2B%20Android%20Apps%20Do%20Not%20Load%20After%20Installation-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fixes%20Guides/Post-Install%20Issues/WSA%20Settings%20App%20Crashes%20%2B%20Android%20Apps%20Do%20Not%20Load%20After%20Installation.md
 )   
 
-[<img src="https://img.shields.io/badge/-WSA Does Not Load After Install %2B No Splashscreen-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Post-Install%20Issues/WSA%20Does%20Not%20Load%20After%20Install%20%2B%20No%20Splashscreen.md) 
+[<img src="https://img.shields.io/badge/-WSA Does Not Load After Install %2B No Splashscreen-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fixes%20Guides/Post-Install%20Issues/WSA%20Does%20Not%20Load%20After%20Install%20%2B%20No%20Splashscreen.md) 
 
-[<img src="https://img.shields.io/badge/-WSA%20Stopped%20Working!-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Post-Install%20Issues/WSA%20Stopped%20Working!.md) 
+[<img src="https://img.shields.io/badge/-WSA%20Stopped%20Working!-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fixes%20Guides/Post-Install%20Issues/WSA%20Stopped%20Working!.md) 
 
-[<img src="https://img.shields.io/badge/-Install.ps1%20Failed%20To%20Update-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Fixes/Pre-install%20Issues/InstallPs1FailedToUpdate.md) 
+[<img src="https://img.shields.io/badge/-Install.ps1%20Failed%20To%20Update-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fixes%20Guides/Pre-install%20Issues/InstallPs1FailedToUpdate.md) 
 
 
 </details>  
@@ -811,9 +811,9 @@ Now run WSA and your userdata should hopefully be restored
   <tr>
     <th>Resource</th>
     <th>Authors</th>
-    <th>Description of resource used<br></th>
+    <th>Description of resource used<br /></th>
     <th>License</th>
-    <th>In Use?<br></th>
+    <th>In Use?<br /></th>
   </tr>
 </thead>
 <tbody>
@@ -855,8 +855,8 @@ Now run WSA and your userdata should hopefully be restored
   <tr>
     <td><a href="https://commons.wikimedia.org/wiki/File:Windows_10-Logo.png" target="_blank" rel="noopener noreferrer">WIndows 10 Logo with wordmark</a></td>
     <td>Microsoft</td>
-    <td>WIndows 10 Logo used in this repo. Follows Microsoft's Brand/Trademark Guidelines.<br></td>
-    <td><a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC-BY-SA 4.0</a><br></td>
+    <td>WIndows 10 Logo used in this repo. Follows Microsoft's Brand/Trademark Guidelines.<br /></td>
+    <td><a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC-BY-SA 4.0</a><br /></td>
     <td>✅</td>
   </tr>
   <tr>

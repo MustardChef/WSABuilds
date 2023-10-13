@@ -33,42 +33,42 @@
     <td>Cinit</td>
     <td>Patches for WSA to enable WSA (Windows Subsystem for Android) to run on Windows 10, used in the WSA builds for Windows 10.</td>
     <td><a href="https://github.com/cinit/WSAPatch/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">Unlicenced License</a></td>
-    <td></td>
+    <td>✅</td>
   </tr>
   <tr>
     <td><a href="https://commons.wikimedia.org/wiki/File:Windows_logo_-_2012_(dark_blue).svg" target="_blank" rel="noopener noreferrer">Windows 10 Logo</a></td>
-    <td>Microsoft (original), AkshayAnand </td>
+    <td>Microsoft (Original Author), AkshayAnand (Image)</td>
     <td>WIndows 10 Logo used in this repo. Follows Microsoft's Brand/Trademark Guidelines.</td>
     <td>Public Domain</td>
     <td>✅</td>
   </tr>
   <tr>
     <td><a href="https://commons.wikimedia.org/wiki/File:Windows_logo_-_2021.svg" target="_blank" rel="noopener noreferrer">Windows 11 Logo</a></td>
-    <td>Microsoft (original), OAOV</td>
+    <td>Microsoft (Original Author), OAOV (Image)</td>
     <td>WIndows 11 Logo used in this repo. Follows Microsoft's Brand/Trademark Guidelines.</td>
     <td>Public Domain</td>
     <td>✅</td>
   </tr>
   <tr>
-    <td><a href="https://commons.wikimedia.org/wiki/File:Windows_10-Logo.png" target="_blank" rel="noopener noreferrer">WIndows 10 Logo with wordmark</a></td>
+    <td><a href="https://commons.wikimedia.org/wiki/File:Windows_10-Logo.png" target="_blank" rel="noopener noreferrer">WIndows 10 Logo with "Windows" wordmark</a></td>
     <td>Microsoft</td>
     <td>WIndows 10 Logo used in this repo. Follows Microsoft's Brand/Trademark Guidelines.<br></td>
     <td><a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC-BY-SA 4.0</a><br></td>
     <td>✅</td>
   </tr>
   <tr>
-    <td><a href="https://commons.wikimedia.org/wiki/File:Windows_11_logo.svg" target="_blank" rel="noopener noreferrer">WIndows 11 Logo with workmark</a></td>
+    <td><a href="https://commons.wikimedia.org/wiki/File:Windows_11_logo.svg" target="_blank" rel="noopener noreferrer">WIndows 11 Logo with "Windows" wordmark</a></td>
     <td>Microsoft</td>
     <td>WIndows 11 Logo used in this repo. Follows Microsoft's Brand/Trademark Guidelines.</td>
     <td>Public Domain</td>
     <td>✅</td>
   </tr>
   <tr>
-    <td>Icon8</td>
-    <td>Icons8 and authors,</td>
+    <td>Icons8</td>
+    <td>Icons8</td>
     <td>Some icons used in this repo were obtained from Icons8. To view the specific icons used, check the raw Markdown and HTML files,</td>
     <td><a href="https://icons8.com/license" target="_blank" rel="noopener noreferrer">Icons8 License</a></td>
-    <td></td>
+    <td>✅</td>
   </tr>
 </tbody>
 </table>
@@ -83,21 +83,34 @@
 - [KernelSU](https://github.com/tiann/KernelSU): A Kernel based root solution for Android
 - [WSAGAScript](https://github.com/ADeltaX/WSAGAScript): The first GApps integration script for WSA
 - [MagiskOnWSA](https://github.com/LSPosed/MagiskOnWSA): `Deprecated` Integrate Magisk root and Google Apps into WSA
+<br />
+<br />
+<br />
+---
+
+### Is this GitHub Repo affiliated with Microsoft™?
+
+<center><h3>NO!</h3></center>
+
+###### - Microsoft and the Dev team at MSFT are the developers of Windows Subsystem For Android. We do not claim to develop, or have a part in developing this emulator. We also have no real influence on the direction of development of WSA and nor do we claim to.
+
+###### - What the WSABuild repo does is that it provides prebuilt WSA builds with Root and GMS built using the MagiskOnWSALocal project (and WSAPatch for the Windows 10 patch.) That is that we simply modify the emulator to add extra functionality to it.
+
+###### - All this is, is an unofficial project not related in any way to Microsoft and the team working on Windows Subsystem For Android.
 
 ---
 
-### Is this GitHub Repo affiliated with Microsoft™ or Google™?
+### Is this GitHub Repo affiliated with Google™ or Android™?
 
-- Microsoft and the Dev team at MSFT are the developers of Windows Subsystem For Android. We do not claim to develop, or have a part in developing this emulator. We also have no real influence on the direction of development of WSA nor do we claim to have.
+<center><h3>NO!</h3></center>
 
-- What the WSABuild repo does is that it provides prebuilt WSA builds with Root and GMS built using the MagiskOnWSALocal project (and WSAPatch for the Windows 10 patch.) That is that we simply modify the emulator to add extra functionality to it.
-
-- All this is, is an unofficial project not related in any way to Microsoft and the team working on Windows Subsystem For Android.
-
+###### This is an unofficial project not related in any way to Google and the team working on Android.
 
 ---
 
-***The repository is provided as a utility.***
+<br />
 
-***Android is a trademark of Google LLC. Windows™ is a trademark of Microsoft LLC.***
+> [!IMPORTANT]
+> ***The repository is provided as a utility.***
+>***Android is a trademark of Google LLC. Windows™ and Windows Subsystem for Android™ are trademarks of Microsoft LLC.***
 
