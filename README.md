@@ -15,7 +15,7 @@
 ## Downloads
            
 <details>     
-   <summary><a href=""><img style="float: left;" src="https://img.icons8.com/3d-fluency/94/ok.png" width="35" height="35"/></picture><h3> &nbsp; WSABuilds Builds Status (⚠️❗IMPORTANT: Read Before Downloading❗⚠️)</h3></a></summary>
+   <summary><a href="https://github.com/MustardChef/WSABuilds/tree/master/Documentation/WSABuilds/Information.md"><img style="float: left;" src="https://img.icons8.com/3d-fluency/94/ok.png" width="35" height="35"/></picture><h3> &nbsp; WSABuilds Project Status</h3></a></summary>
       
 ## Builds Status and Stability
 
@@ -421,7 +421,7 @@
 &nbsp;
 
 <details>     
-   <summary><a href=""><img style="float: left;" src="https://img.icons8.com/color/96/null/software-installer.png" width="60" height="60"/></picture><h1> &nbsp; Installation<h1></a></summary>
+   <summary><a href="https://github.com/MustardChef/WSABuilds/tree/master/Documentation/WSABuilds/Installation.png" width="60" height="60"/></picture><h1> &nbsp; Installation<h1></a></summary>
 
 &nbsp;
 
@@ -494,7 +494,7 @@
 
 
 <details>     
-   <summary><a href=""><img style="float: left;" src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/null/external-updating-tools-and-material-ecommerce-flaticons-flat-flat-icons.png" width="60" height="60"/><h1> &nbsp; Updating</h1></a></summary>
+   <summary><a href="https://github.com/MustardChef/WSABuilds/tree/master/Documentation/WSABuilds/Updating.md"><img style="float: left;" src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/null/external-updating-tools-and-material-ecommerce-flaticons-flat-flat-icons.png" width="60" height="60"/><h1> &nbsp; Updating</h1></a></summary>
 
 ### How do I update without losing any of my apps and data on Windows Subsystem for Android (WSA)
 
@@ -540,7 +540,7 @@
 &nbsp;
 
 <details>     
-   <summary><a href=""><img style="float: left;" src="https://img.icons8.com/color/96/null/uninstall-programs.png" width="60" height="60"/></picture><h1> &nbsp; Uninstallation</h1></a></summary>
+   <summary><a href="https://github.com/MustardChef/WSABuilds/tree/master/Documentation/WSABuilds/Uninstallation.md"><img style="float: left;" src="https://img.icons8.com/color/96/null/uninstall-programs.png" width="60" height="60"/></picture><h1> &nbsp; Uninstallation</h1></a></summary>
 
 &nbsp;
 
@@ -577,7 +577,7 @@
 &nbsp;
        
 <details>     
-   <summary><a href=""><img style="float: left;" src="https://img.icons8.com/fluency/96/cloud-backup-restore.png" width="60" height="60"/></picture><h1> &nbsp; Backup and Restore Userdata</h1></a></summary>
+   <summary><a href="https://github.com/MustardChef/WSABuilds/tree/master/Documentation/WSABuilds/Backup%20and%20Restore.md"><img style="float: left;" src="https://img.icons8.com/fluency/96/cloud-backup-restore.png" width="60" height="60"/></picture><h1> &nbsp; Backup and Restore Userdata</h1></a></summary>
 
 ## Backing Up Your Userdata
       
@@ -622,7 +622,7 @@ Amazon Appstore:
 ```pwsh
 Start-Process "wsa://com.amazon.venezia"
 ``` 
-After running the script, do not run WSA at all, and go to ``%localappdata%\Packages`` and (if the folders do not exist, create them) in ``MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\`` paste the userdata.vhdx
+After running the script, do not run WSA at all, and go to ``%localappdata%\Packages`` and (if these folders/directory do not exist, create them) in ``MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\`` paste the userdata.vhdx
 
 Now run WSA and your userdata should hopefully be restored
 </details>
@@ -630,7 +630,7 @@ Now run WSA and your userdata should hopefully be restored
 &nbsp;
       
 <details>     
-   <summary><a href=""><img style="float: left;" src="https://img.icons8.com/3d-fluency/94/null/help.png" width="60" height="60"/><h1> &nbsp; FAQ</h1></a></summary>
+   <summary><a href="https://github.com/MustardChef/WSABuilds/tree/master/Documentation/WSABuilds/FAQ.md"><img style="float: left;" src="https://img.icons8.com/3d-fluency/94/null/help.png" width="60" height="60"/><h1> &nbsp; FAQ</h1></a></summary>
 
 &nbsp;
 **Help me, I am having problems with the MagiskOnWSA Builds**
@@ -711,7 +711,7 @@ Now run WSA and your userdata should hopefully be restored
 &nbsp;
 
 <details>     
-   <summary><a href=""><img style="float: left;" src="https://img.icons8.com/external-xnimrodx-lineal-color-xnimrodx/96/null/external-guide-education-xnimrodx-lineal-color-xnimrodx.png" width="60" height="60"/><h1> &nbsp; Usage Guides</h1></a></summary>
+   <summary><a href="https://github.com/MustardChef/WSABuilds/tree/master/Documentation/WSABuilds/Usage%20Guides.md"><img style="float: left;" src="https://img.icons8.com/external-xnimrodx-lineal-color-xnimrodx/96/null/external-guide-education-xnimrodx-lineal-color-xnimrodx.png" width="60" height="60"/><h1> &nbsp; Usage Guides</h1></a></summary>
 
 &nbsp;
 
@@ -740,7 +740,7 @@ Now run WSA and your userdata should hopefully be restored
 &nbsp;
 
 <details>     
-   <summary><a href=""><img style="float: left;" src="https://img.icons8.com/external-soft-fill-juicy-fish/96/null/external-bug-coding-and-development-soft-fill-soft-fill-juicy-fish-2.png" width="60" height="60"/><h1> &nbsp; Having Issues?<h1></a></summary>
+   <summary><a href="https://github.com/MustardChef/WSABuilds/tree/master/Documentation/WSABuilds/Having%20Issues.md"><img style="float: left;" src="https://img.icons8.com/external-soft-fill-juicy-fish/96/null/external-bug-coding-and-development-soft-fill-soft-fill-juicy-fish-2.png" width="60" height="60"/><h1> &nbsp; Having Issues?<h1></a></summary>
 
 ### Common Issues:
 [<img src="https://img.shields.io/badge/-Fix%20Install.ps1%20Issue-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fixes%20Guides/Pre-install%20Issues/FixInstallps1.md)
@@ -790,7 +790,7 @@ Now run WSA and your userdata should hopefully be restored
 &nbsp;
       
 <details>     
-   <summary><a href=""><img style="float: left;" src="https://img.icons8.com/fluency/96/request-service.png" width="60" height="60"/><h1> &nbsp; Custom Builds Requests</h1></a></summary>    
+   <summary><a href="https://github.com/MustardChef/WSABuilds/tree/master/Documentation/WSABuilds/Custom%20Builds.md"><img style="float: left;" src="https://img.icons8.com/fluency/96/request-service.png" width="60" height="60"/><h1> &nbsp; Custom Builds Requests</h1></a></summary>    
    
 <h3> &nbsp; ❓Want to request a prebuilt custom build❓ <h3>
 
@@ -804,7 +804,7 @@ Now run WSA and your userdata should hopefully be restored
 &nbsp;   
       
 <details>     
-   <summary><a href=""><img style="float: left;" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-credits-movie-theater-flaticons-lineal-color-flat-icons.png" width="60" height="60"/><h1> &nbsp; Credits</h1></a></summary>
+   <summary><a href="https://github.com/MustardChef/WSABuilds/tree/master/Documentation/WSABuilds/Credits.md"><img style="float: left;" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-credits-movie-theater-flaticons-lineal-color-flat-icons.png" width="60" height="60"/><h1> &nbsp; Credits</h1></a></summary>
 
 <table>
 <thead>

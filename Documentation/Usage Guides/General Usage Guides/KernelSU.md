@@ -19,7 +19,7 @@
   
 <br>
 
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [<img src="https://img.shields.io/badge/-How%20to%20Sideload%20apps-474154?style=for-the-badge&logoColor=white&logo=github" style="width: 300px;"/>](https://github.com/MustardChef/WSABuilds/blob/master/Guides/Sideloading%20Guides/Sideloading.md)
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [<img src="https://img.shields.io/badge/-How%20to%20Sideload%20apps-474154?style=for-the-badge&logoColor=white&logo=github" style="width: 300px;"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Usage%20Guides/Sideloading%20Guides/Sideloading.md)
 
 <br>
 

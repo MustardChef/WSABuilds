@@ -75,17 +75,26 @@
 
 ---
 
-### Other Resources used as reference
+### Other Projects used as reference or referenced
+
+- [WSA-Sideloader](https://github.com/infinitepower18/WSA-Sideloader/) - Easily sideload Android apps on Windows Subsystem for Android  
+
+- [WSAPacman](https://github.com/alesimula/wsa_pacman) - A GUI package manager and package installer for Windows Subsystem for Android (WSA) 
+
+- [APK-Installer](https://github.com/Paving-Base/APK-Installer) - An Android Application Installer for Windows 
 
 - [StoreLib](https://github.com/StoreDev/StoreLib): API for downloading WSA
+
 - [Magisk](https://github.com/topjohnwu/Magisk): The Magic Mask for Android
-- [The Open Google Apps Project](https://opengapps.org): Script the automatic generation of up-to-date Google Apps packages
+
 - [KernelSU](https://github.com/tiann/KernelSU): A Kernel based root solution for Android
+
 - [WSAGAScript](https://github.com/ADeltaX/WSAGAScript): The first GApps integration script for WSA
+
 - [MagiskOnWSA](https://github.com/LSPosed/MagiskOnWSA): `Deprecated` Integrate Magisk root and Google Apps into WSA
+
 <br />
-<br />
-<br />
+
 ---
 
 ### Is this GitHub Repo affiliated with Microsoft™?
