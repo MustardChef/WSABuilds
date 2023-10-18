@@ -7,11 +7,12 @@
 
 <br />
 
-<a href="https://discord.gg/2thee7zzHZ"><img align="right" src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/></a></h3>
+<a href="https://discord.gg/2thee7zzHZ"><img align="right" src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/></a>
 
 <br />
 <br />
-
+<br />
+<br />
    
 ## Downloads
            
