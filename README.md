@@ -1,11 +1,11 @@
 <p align="center">
    <a href="https://github.com/MustardChef/WSABuilds#downloads"><img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/></a> <a href="https://forum.xda-developers.com/t/wsabuilds-latest-windows-subsystem-for-android-wsa-builds-for-   windows-10-and-11-with-magisk-and-google-play-store.4545087/"><img src="https://img.shields.io/badge/XDA%20Developers-WSABuilds-EA7100?style=for-the-badge&logoColor=white&logo=XDA-Developers" /></a> <a href="https://ko-fi.com/N4N0K08AC"><img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="ko-fi"></a>
 </p>
-<img align="left" src="https://github.com/MustardChef/WSABuilds/assets/68516357/c507fca8-f40a-4804-96e8-9d778cab3a87" style="width: 250px;"/>
+<img align="left" src="https://github.com/MustardChef/WSABuilds/assets/68516357/c507fca8-f40a-4804-96e8-9d778cab3a87" style="width: 200px;"/>
 <h1>WSABuilds</h1>
 <h3>MagiskOnWSA (For Windows™ 10 and 11)</h3>
 <h5>Windows Subsystem For Android™ (WSA) with Google Play Services and Magisk and KernelSU</h5>
-<br /><a href="https://discord.gg/2thee7zzHZ"><img src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/></a><br /><br /><br />
+<br /><br /><a href="https://discord.gg/2thee7zzHZ"><img align="right" src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/></a><br /><br /><br />
 
 ## Downloads
            
