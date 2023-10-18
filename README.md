@@ -5,7 +5,7 @@
 <h1>WSABuilds</h1>
 <h3>MagiskOnWSA (For Windows™ 10 and 11)</h3>
 <h5>Windows Subsystem For Android™ (WSA) with Google Play Services and Magisk and KernelSU</h5>
-<br /><br /><a href="https://discord.gg/2thee7zzHZ"><img align="right" src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/></a>
+<br /><a href="https://discord.gg/2thee7zzHZ"><img align="right" src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/></a>
 
 <br /> <br /> <br /> <br />
 
