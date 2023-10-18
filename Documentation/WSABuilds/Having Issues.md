@@ -43,3 +43,6 @@
 
 [<img src="https://img.shields.io/badge/-Install.ps1%20Failed%20To%20Update-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fixes%20Guides/Pre-install%20Issues/InstallPs1FailedToUpdate.md) 
 
+[<img src="https://img.shields.io/badge/-Appx%20Module%20Cannot%20Be%20Loaded-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fixes%20Guides/Pre-install%20Issues/Appx%20Module%20Cannot%20Be%20Loaded.md) 
+
+[<img src="https://img.shields.io/badge/-Specified%20Logon%20Error-%23EF2D5E?style=for-the-badge&logoColor=white&logo=Github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fixes%20Guides/Pre-install%20Issues/Specified%20Logon%20Error.md) 

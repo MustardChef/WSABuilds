@@ -13,13 +13,17 @@
 ### Moving WSA to another drive or partition:
 [<img src="https://img.shields.io/badge/-How%20to%20Move%20WSA%20to%20another%20drive%20or%20partition-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Usage%20Guides/General%20Usage%20Guides/MoveToExtDrive.md)
 
-### Installing KernelSU
+### Installing KernelSU:
 [<img src="https://img.shields.io/badge/-How%20to%20install%20KernelSU-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Usage%20Guides/General%20Usage%20Guides/KernelSU.md)
 
-### Installing BusyBox
+### Installing BusyBox:
 
 [<img src="https://img.shields.io/badge/-How%20to%20install%20BusyBox-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Usage%20Guides/General%20Usage%20Guides/BusyBox.md)
       
-### Localhost Loopback Guide
+### Localhost Loopback Guide:
       
-[<img src="https://img.shields.io/badge/-Localhost%20Loopback-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Usage%20Guides/General%20Usage%20Guides/LocalHostLoopback.md)  
+[<img src="https://img.shields.io/badge/-Localhost%20Loopback-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Usage%20Guides/General%20Usage%20Guides/LocalHostLoopback.md) 
+
+### Remove Non-Existent App Entries: 
+
+[<img src="https://img.shields.io/badge/-Remove%20Non--Existent%20App%20Entries-474154?style=for-the-badge&logoColor=white&logo=github" />](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Usage%20Guides/General%20Usage%20Guides/Remove%20Non%20Existent%20App%20Entries.md) 

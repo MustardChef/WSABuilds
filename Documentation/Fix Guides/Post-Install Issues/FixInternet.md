@@ -117,7 +117,7 @@ Sometimes Windows Firewall and other Firewall tools and software may be the caus
    <summary><h4>Antivirus Users <h4></summary>
 
 It is a known issue that some antivirus firewall such as those built-in to ESET, Bitdefender, AVG and many others, can prevent the internet for Windows Susbsystem for Android (WSA) from working.
-It is highly recommended to disable the firewall provided by these Antivirus/Antimalware tools and fallback to Windows Firewall, to see if the internet starts working.
+It is highly recommended to disable the firewall provided by these Antivirus/Antimalware tools and fallback to Windows Firewall (default), to see if the internet starts working.
 
 Source: From my own experience and reports from others in the Discord community linked at the end. If disabling a certain antivirus/antimalware's built-in firewall works, please join the Discord server (invite at the end of this guide) and inform us.
 
