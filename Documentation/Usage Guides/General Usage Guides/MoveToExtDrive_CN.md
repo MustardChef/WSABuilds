@@ -4,7 +4,7 @@
 ## 指南：将 Windows Subsystem For Android™（WSA）移动/安装到其他分区或磁盘
 
 ### 前言：
-##### WSA 可以占用大量存储空间，因此您想将其移动到具有更多空间的其他分区或磁盘。<br>本指南介绍了一种方法，通过该方法，您可以从其他磁盘安装 WSA 并将数据存储在该驱动器中（而不是“%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe”）。
+##### WSA 可以占用大量存储空间，因此您想将其移动到具有更多空间的其他分区或磁盘。<br />本指南介绍了一种方法，通过该方法，您可以从其他磁盘安装 WSA 并将数据存储在该驱动器中（而不是“%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe”）。
 
 ### 先决条件：
 - 您要将 Windows Subsystem For Android™ 移动/安装到的分区/磁盘，**必须**为 **NTFS**

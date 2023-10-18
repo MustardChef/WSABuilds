@@ -28,7 +28,7 @@ In E:\WSA\Install.ps1:102 Character:1
 
 **3. If you have installed WSA prior, make sure that it has been uninstalled and delete all folders containing "WindowsSubsystemForAndroid" from the following directories/paths and the subdirectories within:** 
 
-<br>
+<br />
 
    - *C:\ProgramData\Microsoft\Windows\AppRepository*
    
@@ -36,11 +36,11 @@ In E:\WSA\Install.ps1:102 Character:1
    
    - *%localappdata\ProgramData\Packages*
 
-<br>
+<br />
 
 **4. Restart your Computer**
 
-<br>
+<br />
 
 If the issue has been fixed, then there is no need to follow through the rest of the guide.
 However, if you have the same issue, it is vital that you obtain the logs and try to decipher what is causing the error
@@ -88,8 +88,8 @@ To obtain the logs (admin privilege required):
 
 **3. Restart your PC**
 
-<br>
-<br>
+<br />
+<br />
 
 ---
 ## Issue 2: 0x80073B06 "Initial screen image for the current application context cannot be recognized"
@@ -114,7 +114,7 @@ AppxManifest.xml (24,27): Error 0x80073B06: Unable to install or update package 
 
 **Hope these fixes work for you!**
 
-<br>
+<br />
 
 ---
 

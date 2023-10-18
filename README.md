@@ -421,7 +421,7 @@
 &nbsp;
 
 <details>     
-   <summary><a href="https://github.com/MustardChef/WSABuilds/tree/master/Documentation/WSABuilds/Installation.png" width="60" height="60"/></picture><h1> &nbsp; Installation<h1></a></summary>
+   <summary><a href="https://github.com/MustardChef/WSABuilds/tree/master/Documentation/WSABuilds/Installation.png" width="60" height="60"/><img style="float: left;" src="https://img.icons8.com/color/96/null/software-installer.png" width="60" height="60"/><h1> &nbsp; Installation<h1></a></summary>
 
 &nbsp;
 
@@ -622,9 +622,20 @@ Amazon Appstore:
 ```pwsh
 Start-Process "wsa://com.amazon.venezia"
 ``` 
-After running the script, do not run WSA at all, and go to ``%localappdata%\Packages`` and (if these folders/directory do not exist, create them) in ``MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\`` paste the userdata.vhdx
 
-Now run WSA and your userdata should hopefully be restored
+After removing the lines above, run the script. 
+
+When the Powershell window states "Press any key to quit", at that time multiple dialouge boxes will open:
+
+<-- <add Images here> -->
+
+> [!IMPORTANT]
+> ****Ignore these and do not click on anything or close these popups****
+
+Go to ``%localappdata%\Packages`` and (if these folders/directory do not exist, create them) in ``MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\`` paste the userdata.vhdx
+
+Now close the popups and run WSA and your userdata should hopefully be restored
+
 </details>
       
 &nbsp;

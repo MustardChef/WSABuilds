@@ -85,7 +85,7 @@ bcdedit /set hypervisorlaunchtype auto
 
 **Hope this works for you!**
 
-<br>
+<br />
 
 ---
 

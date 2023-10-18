@@ -8,9 +8,9 @@
   <tr>
     <th>Resource</th>
     <th>Authors</th>
-    <th>Description of resource used<br></th>
+    <th>Description of resource used<br /></th>
     <th>License</th>
-    <th>In Use?<br></th>
+    <th>In Use?<br /></th>
   </tr>
 </thead>
 <tbody>
@@ -52,8 +52,8 @@
   <tr>
     <td><a href="https://commons.wikimedia.org/wiki/File:Windows_10-Logo.png" target="_blank" rel="noopener noreferrer">WIndows 10 Logo with "Windows" wordmark</a></td>
     <td>Microsoft</td>
-    <td>WIndows 10 Logo used in this repo. Follows Microsoft's Brand/Trademark Guidelines.<br></td>
-    <td><a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC-BY-SA 4.0</a><br></td>
+    <td>WIndows 10 Logo used in this repo. Follows Microsoft's Brand/Trademark Guidelines.<br /></td>
+    <td><a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC-BY-SA 4.0</a><br /></td>
     <td>✅</td>
   </tr>
   <tr>

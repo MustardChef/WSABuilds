@@ -14,7 +14,6 @@
 
 You may encounter this problem, even if Virtualization is enabled on your PC (in the BIOS) and shows up as enabled in Task Manager (as seen below) and Virtual Machine Platform + Windows Hypervisor Platform is Enabled. The solution is:
 
-
 &nbsp;
 
 1. ***Remove WSA***: Right clicking on "Windows Subsystem for Android™ Settings" and pressing uninstall + Deleting the extracted WSA (MagiskOnWSA/WSABuilds) folder that you extracted and installed from.
@@ -83,10 +82,21 @@ bcdedit /set hypervisorlaunchtype auto
 
 **Hope this works for you!**
 
-<br>
+<br />
+<br />
+
+- ### For AtlasOS Users:
 
 
-<br>
+    - #### If the steps above still do not fix your issue, go to the AtlasOS configuration folder and run the "Enable Hyper-V and VBS" CMD file. Then restart your PC and try running WSA again  
+
+
+        <img src="https://github.com/MustardChef/WSABuilds/assets/68516357/1c8ec5b1-b071-4923-9c00-2f7449adf75c" width=70% height=70%>
+
+        <img src="https://github.com/MustardChef/WSABuilds/assets/68516357/738d4850-f7da-4408-b2f5-8483c30e1a9f" alt="Image description">
+
+<br />
+<br />
 
 ---
 

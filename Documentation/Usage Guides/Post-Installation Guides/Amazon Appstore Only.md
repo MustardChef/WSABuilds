@@ -5,8 +5,8 @@
 <h1><p align="center">You Have Successfully Installed Windows Subsystem For Android with Amazon Appstore Only!</p></h1>
 <h2><p align="center">Stability: ✅Stable &nbsp; &nbsp; &nbsp;→ &nbsp; &nbsp; &nbsp; <i><b>No issues reported<i><b></p></h2>
 
-<br>
-<br>
+<br />
+<br />
 
 
 # Having any issues?

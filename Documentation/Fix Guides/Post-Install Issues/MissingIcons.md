@@ -15,11 +15,11 @@
  
 **1.** Backup `userdata.vhdx` from `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\` folder
 
-<br>
+<br />
 
 **2.** Uninstall WSA by [following this guide](https://github.com/MustardChef/WSABuilds#--uninstallation)
 
-<br>
+<br />
  
 **3.** Remove the two lines in `Install.ps1` that automatically launches Magisk and Play Store after the installation is finished
 
@@ -31,15 +31,15 @@ function Finish {
 }
 ```
 
-<br>
+<br />
 
 **4.** Install WSA by running `Run.bat` or `Install.ps1`
  
-<br>
+<br />
 
 **5.** Restore `userdata.vhdx`  to `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx`
 
-<br>
+<br />
 
 **6.** Start WSA
 
@@ -51,7 +51,7 @@ function Finish {
 </br>
 
 
-<br>
+<br />
 
 ---
 

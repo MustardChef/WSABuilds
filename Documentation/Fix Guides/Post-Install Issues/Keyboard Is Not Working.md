@@ -12,29 +12,29 @@
 
 #### 1. ***Open Run by pressing the Windows Key and R***
 
-<br>
+<br />
 
 #### 2. ***Type in services.msc in the box and then select OK***
 
-<br>
+<br />
 
 #### 3. ***Search for Touch Keyboard and Handwriting Panel***
 
-<br>
+<br />
 
 #### 4. ***Enable it by switching startup type to automatic***
 
-<br>
+<br />
 
 #### 5. ***Click apply*** 
 
-<br>
+<br />
 
 #### 6. ***Restart your computer.*** 
 
 
 
-<br>
+<br />
 
 ---
 

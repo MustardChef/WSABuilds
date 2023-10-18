@@ -4,7 +4,7 @@
 &nbsp;
 
 ## Issues: 
-  - ## Install.ps1 is not recognized/found <br>
+  - ## Install.ps1 is not recognized/found <br />
   - ## Some files are missing in the folder
 
 &nbsp;
@@ -16,8 +16,8 @@
 <img src="https://user-images.githubusercontent.com/68516357/215262023-89e0e0fa-3dd7-4d6d-b93a-224169f61971.png" />
  
 
-<br>
-<br>
+<br />
+<br />
 
 ## Solution
 
@@ -34,11 +34,11 @@ If the popup windows disappear without asking administrative permission and Wind
 
    - **After:** WSAArchive2XXX
 
-<br>
+<br />
 
 **2. Copy the path of the folder by right clicking on the folder and select "Show More Options" and click on "Copy as path"**
 
-<br>
+<br />
 
 **3. Press Win + X on your keyboard and select Windows™ Terminal (Admin) or Powershell (Admin) depending on the version of Windows™ you are running**
 
@@ -48,7 +48,7 @@ If the popup windows disappear without asking administrative permission and Wind
 |![215262254-7466d964-3956-4d71-8014-e2c5869ca4d4](https://user-images.githubusercontent.com/68516357/215263173-500591dd-c6d5-4c2d-9d38-58bc065fff28.png)|![winx_editor-1](https://user-images.githubusercontent.com/68516357/215263348-022dc031-802f-4e93-8999-05d0aa6744b9.png)|
 
 
-<br>
+<br />
 
 **4. Input the command below and press enter, replacing {X:\path\to\your\extracted\folder} including the {} with the path of the extracted folder**
     
@@ -56,7 +56,7 @@ If the popup windows disappear without asking administrative permission and Wind
   cd "{X:\path\to\your\extracted\folder}"
 ```
 
-<br>
+<br />
 
 **5. Input the command below and press enter** 
     
@@ -64,12 +64,12 @@ If the popup windows disappear without asking administrative permission and Wind
   PowerShell.exe -ExecutionPolicy Bypass -File .\Install.ps1
 ```
 
-<br>
+<br />
 
 **6. The script will run and Windows Subsystem For Android™ will be installed**
 
 
-<br>
+<br />
 
 ---
 

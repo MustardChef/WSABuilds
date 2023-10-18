@@ -14,27 +14,27 @@
 
 **1. Go to ``%LOCALAPPDATA%/Packages/``, and make sure that the folder ``MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe`` is deleted. (If it does not exist, move on to Step **2**.)**
 
-<br>
+<br />
 
 **2. Open Powershell (as Admin) and run the following command:**
 
 ```powershell
 Get-AppxPackage -Name "MicrosoftCorporationII.WindowsSubsystemForAndroid" -AllUsers | Remove-AppxPackage -AllUsers
 ```
-<br>
+<br />
 
 **3. Delete all folders related to WSA (except the .zip or .7z files (depends on the release ) for WSA Builds), which include folders extracted for WSA installation.**
 
-<br>
+<br />
 
 **4. Rextract and re-run ``Run.bat``**
 
-<br>
+<br />
 
 ***The issue should now be fixed***
 
 
-<br>
+<br />
 
 ---
 

@@ -12,19 +12,19 @@
 
 **1. Ensure the partition/drive you are installing from is NTFS**
 
-<br>
+<br />
 
 **2. Redownload WSA Build .zip/.7z  file from the [Releases page](https://github.com/MustardChef/WSABuilds/releases) (sometime the files can be corrupted during download and extraction)**
 
-<br>
+<br />
 
 **3. Rename the .zip/.7z  file to a shorter name, which can be anything to your choosing </br> (For example: WSA_2XXX.XXXXX.X.X_XXXX_Release-Nightly-with-magisk-XXXXXXX-XXXXXX-MindTheGapps-XX.X-RemovedAmazon ----> WSAArchive2XXX)**
 
-<br>
+<br />
 
 **4. Extract the .zip or .7z archive (depends on the release) using 7-zip or a proper archive tool and not the built in Windows archive extractor** 
 
-<br>
+<br />
 
 **5. Rename the extracted folder(s) to a shorter name, which can be anything to your choosing** 
 
@@ -32,14 +32,14 @@
 - **Before:** WSA_2XXX.XXXXX.X.X_XXXX_Release-Nightly-with-magisk-XXXXXXX-XXXXXX-MindTheGapps-XX.X-RemovedAmazon
 - **After:** WSAExtracted2XXX
 
-<br>
+<br />
 
 **6. Ensure that 'Run.bat' is run as Administrator**
 
 **Hope this works for you!**
 
 
-<br>
+<br />
 
 ---
 

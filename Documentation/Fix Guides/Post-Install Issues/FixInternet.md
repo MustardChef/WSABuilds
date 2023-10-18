@@ -21,7 +21,7 @@ These will be split into multiple solutions due to the different causes of the p
 <details>     
    <summary><h3>Fix #1: Uninstalling Hyper-V Network Adapters<h3></summary>
 
-<br>
+<br />
 
 **Some Hyper-V Network Drivers may be interferring with WSA or WSL**
 &nbsp;
@@ -51,8 +51,8 @@ These will be split into multiple solutions due to the different causes of the p
 </details>
 
 
-<br>
-<br>
+<br />
+<br />
 
 ---
 
@@ -61,8 +61,8 @@ These will be split into multiple solutions due to the different causes of the p
    
 Sometimes Windows Firewall and other Firewall tools and software may be the cause of internet issues. It is therefore important that we check them if we are facing issues with internet on WSA.    
 
-<br>
-<br>
+<br />
+<br />
 
 <details>     
    <summary><h4>Users with Windows Firewall<h4></summary>
@@ -98,18 +98,18 @@ Sometimes Windows Firewall and other Firewall tools and software may be the caus
 
 ****5. Confirm that these entries are Enabled and "Action" is set to "Allow" for both UDP and TCP for all entries (as shown above)**** 
 
-<br>
+<br />
 
 > <picture>
 >   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/light-theme/tip.svg">
 >   <img alt="Tip" src="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/dark-theme/tip.svg">
-> </picture><br>
+> </picture><br />
 >     
 > You may not have as many entries for "Windows Subsystem for Android™", as shown in the screenshots provded. These are just for illustration purposes and Firewall entries may look different on your device.    
 
-<br>
-<br>
-<br>
+<br />
+<br />
+<br />
 
 </details>
 
@@ -126,8 +126,8 @@ Source: From my own experience and reports from others in the Discord community 
 
 </details> 
 
-<br>
-<br>
+<br />
+<br />
 
 ---
 
@@ -160,8 +160,8 @@ Your Internet should now be fixed!
 </details> 
 
 
-<br>
-<br>
+<br />
+<br />
 
 
 ---
@@ -191,8 +191,8 @@ This may fix the internet on WSA.
 
 
 
-<br>  
-<br>
+<br />  
+<br />
 
 ---
 

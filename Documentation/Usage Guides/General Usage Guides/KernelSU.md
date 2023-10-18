@@ -4,12 +4,12 @@
 <h1><p align="center">You Have Successfully Installed Windows Subsystem For Android with KernelSU</p></h1>
 <h2><p align="center">Stability: ✅Stable &nbsp; &nbsp; &nbsp;→ &nbsp; &nbsp; &nbsp; <i><b>No issues reported<i><b></p></h2>
 
-<br>
+<br />
 
 
 ## Next Steps:
 
-<br>
+<br />
 
 ### 1. Download the KernelSU Manager .apk
 
@@ -17,17 +17,17 @@
 
 ### 2. Sideload the KernelSU Manager .apk into WSA
   
-<br>
+<br />
 
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [<img src="https://img.shields.io/badge/-How%20to%20Sideload%20apps-474154?style=for-the-badge&logoColor=white&logo=github" style="width: 300px;"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Usage%20Guides/Sideloading%20Guides/Sideloading.md)
 
-<br>
+<br />
 
 ## Enjoy WSA with KernelSU!
 
 
-<br>
-<br>
+<br />
+<br />
 
 
 # Having any issues?

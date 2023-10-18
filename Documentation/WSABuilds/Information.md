@@ -2,11 +2,11 @@
 
 <picture><img style="float: left;" src="https://img.icons8.com/3d-fluency/94/ok.png" width="35" height="35"/></picture><h1> &nbsp; WSABuilds Builds Info</h1>
 
-<br>      
+<br />      
 
 <center><h3>⚠️❗IMPORTANT: Read Before Downloading❗⚠️<h3></center>
 
-<br>
+<br />
 
 ## Builds Status and Stability
 
@@ -176,7 +176,7 @@
   </tr>
   <tr>
     <td>v2308.40000.2.0</td>
-    <td colspan="2">Update Skipped to allow time for adjusting the Docs and the build script (MagiskOnWSALocal). <br> Sorry for any Inconvenence. Updates will resume as normal after this.</td>
+    <td colspan="2">Update Skipped to allow time for adjusting the Docs and the build script (MagiskOnWSALocal). <br /> Sorry for any Inconvenence. Updates will resume as normal after this.</td>
   </tr>
   <tr>
     <td>v2308.40000.3.0</td>
@@ -190,7 +190,7 @@
   </tr>
   <tr>
     <td>v2309.40000.4.0</td>
-    <td colspan="2" rowspan="4">"Updates have been skipped, in order to allow time to switch to GitHub Actions from my Linux Server, which I have been using since the start of the GitHub repo. Rest assure that this will likely be the last disruption. Once again I appologise and would also like to thank you for using this repo."<br><br>MustardChef<br></td>
+    <td colspan="2" rowspan="4">"Updates have been skipped, in order to allow time to switch to GitHub Actions from my Linux Server, which I have been using since the start of the GitHub repo. Rest assure that this will likely be the last disruption. Once again I appologise and would also like to thank you for using this repo."<br /><br />MustardChef<br /></td>
   </tr>
   <tr>
     <td>v2309.40000.5.0</td>

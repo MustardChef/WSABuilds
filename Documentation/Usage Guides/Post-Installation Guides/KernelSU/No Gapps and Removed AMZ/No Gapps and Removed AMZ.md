@@ -5,11 +5,11 @@
 <h1><p align="center">You Have Successfully Installed Windows Subsystem For Android with KernelSU, No Google Apps (No MindTheGapps) and Removed Amazon!</p></h1>
 <h2><p align="center">Stability: ✅Stable &nbsp; &nbsp; &nbsp;→ &nbsp; &nbsp; &nbsp; <i><b>No issues reported<i><b></p></h2>
 
-<br>
+<br />
 
 ## Next Steps:
 
-<br>
+<br />
 
 ### 1. Download the KernelSU Manager .apk
 
@@ -17,15 +17,15 @@
 
 ### 2. Sideload the KernelSU Manager .apk into WSA
   
-<br>
+<br />
 
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [<img src="https://img.shields.io/badge/-How%20to%20Sideload%20apps-474154?style=for-the-badge&logoColor=white&logo=github" style="width: 300px;"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Usage%20Guides/Sideloading%20Guides/Sideloading.md)
 
-<br>
+<br />
 
 ---
 
-<br>
+<br />
 
  <h1><p align="center">Having any issues? &nbsp; &nbsp; &nbsp;<a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fix%20Guides/Troubleshooting.md"><img src="https://img.shields.io/badge/Troubleshoot-1c86af?style=for-the-badge&logoColor=white&logo=github" width="20%" height="20%"/></a></p><h3> Click on the "Troubleshoot" button above or join the WSA Community Discord server via the invite below to recieve advice and support!</h3><h1><p align="center"><a href="https://discord.gg/2thee7zzHZ"><img src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 420px;"/></a></p></h1>
 

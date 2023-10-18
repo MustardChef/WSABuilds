@@ -23,7 +23,7 @@ PowerShell.exe -ExecutionPolicy Bypass -File .\Install.ps1
 **Hope this works for you!**
 
 
-<br>
+<br />
 
 ---
 

@@ -94,7 +94,7 @@ You should now be able to log in to Google Play and hopefully download apps!
 
 
 
-<br>
+<br />
 
 ---
 
