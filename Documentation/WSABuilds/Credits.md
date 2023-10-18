@@ -77,11 +77,11 @@
 
 ### Other Projects used as reference or referenced
 
-- [WSA-Sideloader](https://github.com/infinitepower18/WSA-Sideloader/) - Easily sideload Android apps on Windows Subsystem for Android  
+- [WSA-Sideloader](https://github.com/infinitepower18/WSA-Sideloader/): Easily sideload Android apps on Windows Subsystem for Android  
 
-- [WSAPacman](https://github.com/alesimula/wsa_pacman) - A GUI package manager and package installer for Windows Subsystem for Android (WSA) 
+- [WSAPacman](https://github.com/alesimula/wsa_pacman): A GUI package manager and package installer for Windows Subsystem for Android (WSA) 
 
-- [APK-Installer](https://github.com/Paving-Base/APK-Installer) - An Android Application Installer for Windows 
+- [APK-Installer](https://github.com/Paving-Base/APK-Installer): An Android Application Installer for Windows 
 
 - [StoreLib](https://github.com/StoreDev/StoreLib): API for downloading WSA
 

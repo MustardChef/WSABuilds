@@ -842,7 +842,6 @@ Now close the popups and run WSA and your userdata should hopefully be restored
    <summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Credits.md"><img style="float: left;" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-credits-movie-theater-flaticons-lineal-color-flat-icons.png" width="60" height="60"/><h1> &nbsp; Credits</h1></a></summary>
 
 <table>
-<table>
 <thead>
   <tr>
     <th>Resource</th>
@@ -916,11 +915,11 @@ Now close the popups and run WSA and your userdata should hopefully be restored
 
 ### Other Projects used as reference or referenced
 
-- [WSA-Sideloader](https://github.com/infinitepower18/WSA-Sideloader/) - Easily sideload Android apps on Windows Subsystem for Android  
+- [WSA-Sideloader](https://github.com/infinitepower18/WSA-Sideloader/): Easily sideload Android apps on Windows Subsystem for Android  
 
-- [WSAPacman](https://github.com/alesimula/wsa_pacman) - A GUI package manager and package installer for Windows Subsystem for Android (WSA) 
+- [WSAPacman](https://github.com/alesimula/wsa_pacman): A GUI package manager and package installer for Windows Subsystem for Android (WSA) 
 
-- [APK-Installer](https://github.com/Paving-Base/APK-Installer) - An Android Application Installer for Windows 
+- [APK-Installer](https://github.com/Paving-Base/APK-Installer): An Android Application Installer for Windows 
 
 - [StoreLib](https://github.com/StoreDev/StoreLib): API for downloading WSA
 
@@ -961,6 +960,5 @@ Now close the popups and run WSA and your userdata should hopefully be restored
 > [!IMPORTANT]
 > ***The repository is provided as a utility.***
 >***Android is a trademark of Google LLC. Windows™ and Windows Subsystem for Android™ are trademarks of Microsoft LLC.***
->***This project is not affiliated with Google LLC or Microsoft LLC.***
 
 </details> 
