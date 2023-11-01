@@ -8,6 +8,15 @@
 
 <br />
 
+---
+### Wondering Why There Has Been No Updates To This Repo?
+#### Don't worry, this project is not dead!
+#### This repo is being revamped and I have been preoccupied with other things. 
+#### Changes to expect in these next 2 weeks:
+   - [ ] "Pre-alpha" WSA Manager for Builds from this repo
+   - [ ] Automated WSA Releases via GitHub Actions
+   - [ ] Changes to the WSABuilds Documentation
+---
 
 &nbsp;
    
