@@ -9,7 +9,7 @@
 <br />
 
 ---
-### Wondering Why There Has Been No Updates To This Repo?
+### Wondering Why There Have Been No Updates To This Repo?
 #### Don't worry, this project is not dead!
 #### This repo is being revamped and I have been preoccupied with other things. 
 #### Changes to expect in these next 2 weeks:
