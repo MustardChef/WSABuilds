@@ -13,7 +13,7 @@
 #### Don't worry, this project is not dead! It is just that I have been preoccupied with work, leading to the lack of updates.
 #### Changes to expect in these next 2 weeks:
    - [ ] "Pre-alpha" WSA Manager for Builds from this repo
-   - [ ] Automated WSA Releases via GitHub Actions and adding latest WSA builds to this repo
+   - [ ] Automated WSA Releases via GitHub Actions + Making sure that the latest WSA builds are avaliable in this repo
    - [ ] Changes to the WSABuilds Documentation
 ---
 
