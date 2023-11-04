@@ -5,9 +5,19 @@
 ### Preface:
 ##### Sometimes, switching from a WSA Build with Amazon Appstore to a build with "Removed Amazon Appstore" or a build with "MindTheGapps" to a build with "No-Gapps" etc., the system apps that were installed (either Google Play Store and related apps and/or the Amazon Appstore) from the previous build may still show up in the WSA Settings's "Apps" section. This guide goes through a method by which you can remove these entries from the WSA Settings's "Apps" section.
 
+##### Sometimes after uninstalling WSA completely, apps still show up on Add and Remove programs or third-party uninstallers/app managers
+
+<br />
+<br />
+
 ### Example:
 <img src="https://github.com/MustardChef/WSABuilds/assets/68516357/695fc699-3ee9-4687-98a7-905ae9f6a3ec">
 
+![image](https://github.com/MustardChef/WSABuilds/assets/68516357/0d214864-9d46-48e0-8c57-17ccdcefb2e7)
+
+---
+
+<br />
 
 
 ## Steps:
