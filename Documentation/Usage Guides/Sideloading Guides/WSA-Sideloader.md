@@ -21,7 +21,7 @@ Operating System|Downloads
 
 ***Step 1.  Once installed, you should see this screen:***
 
-<img width="311" alt="image" src="https://github.com/infinitepower18/WSA-Sideloader/assets/44692189/ede49229-4667-47b1-ac2d-84f2d71b954f">
+<img width="311" alt="image" src="https://github.com/infinitepower18/WSA-Sideloader/assets/44692189/8f0681b8-5597-4719-86d3-405e8d132722">
 
 > [!NOTE]
 > If you get a message that says WSA is not installed, check that you have downloaded and installed WSA correctly as per the WSABuilds instructions.
@@ -36,13 +36,13 @@ Operating System|Downloads
 
 ***Step 3. Now, you can click the Browse button to select your APK file. You can also double click a file in File Explorer to automatically open WSA Sideloader with the APK file already selected.***
 
-<img width="1144" alt="image" src="https://github.com/MustardChef/WSABuilds/assets/44692189/a66efe96-8f0c-4a2c-930d-a9c60c7f1945">
+<img width="1222" alt="Screenshot" src="https://github.com/MustardChef/WSABuilds/assets/44692189/ae20582f-6e24-412a-a1da-cb9a79f17ad0">
 
 </br>
 
 ***Step 4. The first time you install an APK, it will ask to allow ADB debugging. Allow it and attempt the installation again. Check the always allow box if you don't want to manually accept the permission every time you install an app.***
 
-<img width="485" alt="image" src="https://user-images.githubusercontent.com/44692189/226060674-233a60b5-56d7-4dcf-a626-295d21a4c464.png">
+<img width="539" alt="image" src="https://github.com/infinitepower18/WSA-Sideloader/assets/44692189/b3e17d61-cd8e-4347-a674-4f738bc24fc1">
 
 </br>
 
@@ -70,7 +70,7 @@ Therefore, it's highly recommended you keep it up to date.
 ## Troubleshooting
 If you get an error like the one below, check that you have allowed the ADB authorization and enabled Developer Mode. Also try disabling and enabling USB debugging under manage developer settings as that can sometimes fix issues with the ADB connection.
 
-<img width="446" alt="image" src="https://user-images.githubusercontent.com/44692189/226061768-61743f6c-2ed3-401a-a561-8754c297ad74.png">
+<img width="446" alt="image" src="https://github.com/MustardChef/WSABuilds/assets/44692189/e4c65a16-9cca-465f-bfa5-9ea2d8a1b7e3">
 
 If you get a message saying `No connection could be made because the target machine actively refused it`, follow [this guide](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fix%20Guides/Post-Install%20Issues/TargetMachineActivelyRefusedConnection.md)
 
