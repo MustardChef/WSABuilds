@@ -1,7 +1,7 @@
 <p align="center">
 <a href="https://github.com/MustardChef/WSABuilds#downloads"><img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&amp;style=for-the-badge"/></a> <a href="https://forum.xda-developers.com/t/wsabuilds-latest-windows-subsystem-for-android-wsa-builds-for-   windows-10-and-11-with-magisk-and-google-play-store.4545087/"><img src="https://img.shields.io/badge/XDA%20Developers-WSABuilds-EA7100?style=for-the-badge&amp;logoColor=white&amp;logo=XDA-Developers"/></a> <a href="https://ko-fi.com/N4N0K08AC"><img alt="ko-fi" src="https://ko-fi.com/img/githubbutton_sm.svg"/></a>
 </p>
-<img align="left" src="https://github.com/MustardChef/WSABuilds/assets/68516357/c507fca8-f40a-4804-96e8-9d778cab3a87" style="width: 200px;">
+<img align="left" src="https://github.com/MustardChef/WSABuilds/assets/68516357/c507fca8-f40a-4804-96e8-9d778cab3a87" style="width: 200px;"/>
 <h1>WSABuilds</h1>
 <h3>MagiskOnWSA (For Windows™ 10 and 11)</h3>
 <h5>Windows Subsystem For Android™ (WSA) with Google Play Services and Magisk and KernelSU</h5>
@@ -331,14 +331,14 @@
 <td><p><a href="https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/EoEPOBJHQV1JoXoykkTY36kBzzTtKL_JejybHWZ05L2uXg?e=KMLjmQ"><img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&amp;logo=Microsoft%20OneDrive&amp;logoColor=0078D4" style="width: 150px;"/></a></p></td>
 </tr>
 <tr>
-<td rowspan="2"><p align="center"><img src="https://img.icons8.com/color/240/null/windows-11.png" style="width: 50px;"><img src="https://img.icons8.com/color/240/null/windows-10.png" style="width: 50px;"/></img></p></td>
+<td rowspan="2"><p align="center"><img src="https://img.icons8.com/color/240/null/windows-11.png" style="width: 50px;"/><img src="https://img.icons8.com/color/240/null/windows-10.png" style="width: 50px;"/></p></td>
 <td rowspan="2"><p><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/OldBuilds.md"><img alt="windownold" src="https://img.shields.io/badge/Windows%2010%2F11-Older%20Builds-red?style=for-the-badge"/></a></p></td>
 <td rowspan="2"><p><a href="https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/EgNsfSstHBtIuAZgiNVkanYBTwu0kKVC_QvOiW7i0IojdQ"><img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&amp;logo=Microsoft%20OneDrive&amp;logoColor=0078D4" style="width: 150px;"/></a></p></td>
 </tr>
 <tr>
 </tr>
 <tr>
-<td rowspan="2"><p align="center"><img src="https://img.icons8.com/color/240/null/windows-11.png" style="width: 50px;"> <img src="https://img.icons8.com/color/240/null/windows-10.png" style="width: 50px;"/></img></p></td>
+<td rowspan="2"><p align="center"><img src="https://img.icons8.com/color/240/null/windows-11.png" style="width: 50px;"/> <img src="https://img.icons8.com/color/240/null/windows-10.png" style="width: 50px;"/></p></td>
 <td rowspan="2"><h4>Custom Builds:<h4><p><a href="https://github.com/MustardChef/WSAMagiskDelta"><img alt="windownmagikdelta" src="https://img.shields.io/badge/Windows%2010%2F11-Magisk%20Delta-382bef?style=for-the-badge"/></a></p></h4></h4></td>
 <td rowspan="2"></td>
 </tr>
@@ -644,7 +644,7 @@ Now close the popups and run WSA and your userdata should hopefully be restored
  
       
 <details>
-<summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/FAQ.md"><img height="60" src="https://img.icons8.com/3d-fluency/94/null/help.png" style="float: left;" width="60"><h1>   FAQ</h1></img></a></summary>
+<summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/FAQ.md"><img height="60" src="https://img.icons8.com/3d-fluency/94/null/help.png" style="float: left;" width="60"/><h1>   FAQ</h1></a></summary>
 
  
 **Help me, I am having problems with the MagiskOnWSA Builds**
@@ -1562,4 +1562,4 @@ wsa://com.apple.android.music
 &gt;***Android is a trademark of Google LLC. Windows™ and Windows Subsystem for Android™ are trademarks of Microsoft LLC.***
 
 </details>
-</center></img>
+</center>
