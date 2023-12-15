@@ -11,8 +11,9 @@
 
 <img width="54" height="54" src="https://img.icons8.com/3d-fluency/94/downloads-folder.png" alt="downloads-folder" align="left"/><h2>Downloads</h2>
            
-<center><details>     
-   <summary><center><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Information.md"><img style="float: center;" src="https://img.icons8.com/3d-fluency/94/ok.png" width="35" height="35"/></picture><h3> &nbsp; WSABuilds Project Status</h3></a></center></summary>
+<p align="center">
+<details>     
+   <summary><p align="center"><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Information.md"><img style="float: center;" src="https://img.icons8.com/3d-fluency/94/ok.png" width="35" height="35"/></picture><h3> &nbsp; WSABuilds Project Status</h3></a></p></summary>
       
 <center><h3>⚠️❗IMPORTANT: Read Before Downloading❗⚠️</h3></center>
 
@@ -250,7 +251,8 @@
 <br />
 <br />  
 
-</details></center>  
+</details>
+</p>  
 
 <!--
 |****Operating System****|****Download Page****|****Download Mirrors****|
