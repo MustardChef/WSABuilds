@@ -1,11 +1,11 @@
-name: Feature request (功能请求)
-description: Suggest an idea for this project or Prebuilt WSA Build that you want to be added to Releases | 为这个项目或已构建的WSA版本提出一个想法，您希望将其添加到发布版本中。
+name: Feature request 
+description: Suggest an idea for this project or Prebuilt WSA Build that you want to be added to Releases
 title: "[REQUEST]"
 labels: enhancement
 body:
     - type: textarea
       id: description
       attributes:
-        label: Describe your request | 描述您的要求
+        label: Describe your request
       validations:
         required: true

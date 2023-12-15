@@ -1,11 +1,11 @@
-name: Documentation (文档)
-description: Report an issue with the project's documentation | 报告项目文件中的一个问题
+name: Documentation 
+description: Report an issue with or request something regarding the project's documentation.
 title: "[DOC]"
 labels: documentation
 body:
   - type: textarea
     id: description
     attributes:
-      label: Please provide a clear and concise description of the changes you would like to see made to the documentation. | 请清晰简明地描述你希望看到的对文件的修改。
+      label: Please provide a clear and concise description of the changes you would like to see made to the documentation.
     validations:
       required: true

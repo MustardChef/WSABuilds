@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
-  - name: FAQs (常见问题)
+  - name: FAQs 
     url: https://github.com/MustardChef/WSABuilds#--uninstallation
-    about: Have you taken a look at the FAQs? | 你看了一下常见问题吗？
-  - name: General Support (一般支持)
+    about: Have you taken a look at the FAQs? 
+  - name: General Support
     url: https://discord.gg/2thee7zzHZ
-    about: For general support queries, please ask in the Discord. | 对于一般的支持查询，请在讨论区询问, Discord。
+    about: For general support queries, please ask in the Discord. 

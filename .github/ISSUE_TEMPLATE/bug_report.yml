@@ -1,5 +1,5 @@
-name: Bug Report (错误报告)
-description: Create a report to receive assistance with any issues that you face during the installation of WSA and/or during the use of WSA. | 创建一份报告，以便在安装WSA和/或使用WSA过程中遇到任何问题时获得帮助。
+name: Bug Report
+description: Create a report to receive assistance with any issues that you face during the installation of WSA and/or during the use of WSA.
 title: "[BUG]"
 labels: bug
 
@@ -7,49 +7,49 @@ body:
   - type: textarea
     id: description
     attributes:
-      label: Describe the bug | 描述一下这个错误
-      description: A clear and concise description of what the bug is. Include screenshots if possible | 简明扼要地描述该错误是什么。如果可能的话，包括屏幕截图
+      label: Describe the bug 
+      description: A clear and concise description of what the bug is. Include screenshots if possible. 
     validations:
       required: true
   - type: textarea
     id: reproduce
     attributes:
-      label: Steps to reproduce the issue | 重现该问题的步骤
-      description: Include steps to reproduce the behaviour. | 包括重现该行为的步骤
+      label: Steps to reproduce the issue 
+      description: Include steps to reproduce the behaviour.
     validations:
       required: true
   - type: textarea
     id: expected
     attributes:
-      label: Expected behaviour | 预期的行为
-      description: A clear and concise description of what you expected to happen. | 清晰而简明地描述你所期望发生的事情
+      label: Expected behaviour 
+      description: A clear and concise description of what you expected to happen. 
     validations:
       required: true
   - type: textarea
     id: source
     attributes:
-      label: Downloaded Build Of WSA | 已下载的WSA版本
-      description: Which build of WSA did you download? Provide the name of the .zip/.7z file, and the link to the download page if possible. | 您下载的是哪个版本的WSA？如果可能的话，请提供.zip文件的名称，以及下载页面的链接。
+      label: Downloaded Build Of WSA 
+      description: Which build of WSA did you download? Provide the name of the .zip/.7z file, and the link to the download page if possible. 
     validations:
       required: true
   - type: input
     id: winbuild
     attributes: 
-      label: Windows build number | Windows构建号
-      description: You can find the build number by typing winver in the Windows search box. | 你可以通过在Windows搜索框中输入winver来找到构建号。
+      label: Windows build number 
+      description: You can find the build number by typing winver in the Windows search box. 
     validations:
       required: true
   - type: textarea
     id: pcspecs
     attributes: 
-      label: PC Specification | 个人电脑规格
-      description: You can find your PC Specification by searching for msinfo32 in Windows Search and click the top result to open the System Information app. | 你可以通过在Windows搜索中搜索msinfo32并点击顶部的结果打开系统信息应用程序来查找你的PC规格。
+      label: PC Specification 
+      description: You can find your PC Specification by searching for msinfo32 in Windows Search and click the top result to open the System Information app. 
     validations:
       required: true
   - type: textarea
     id: other
     attributes:
-      label: Additional context | 额外的背景
-      description: Add any other context about the problem here. | 在此添加关于该问题的任何其他背景
+      label: Additional context 
+      description: Add any other context about the problem here. 
     validations:
       required: false
