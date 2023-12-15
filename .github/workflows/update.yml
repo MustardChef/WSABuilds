@@ -30,32 +30,32 @@ jobs:
 
       - name: Check WSA Insider Version ✅
         run: |
-            wget https://github.com/MustardChef/WSABuilds/raw/main/MagiskOnWSA/Update%20Check/WSAInsiderUpdateCheck.py
+            wget https://github.com/MustardChef/WSABuilds/raw/master/MagiskOnWSA/Update%20Check/WSAInsiderUpdateCheck.py
             python3 WSAInsiderUpdateCheck.py
 
       - name: Check WSA Retail Version ☑️
         run: |
-            wget https://github.com/MustardChef/WSABuilds/raw/main/MagiskOnWSA/Update%20Check/WSARetailUpdateCheck.py
+            wget https://github.com/MustardChef/WSABuilds/raw/master/MagiskOnWSA/Update%20Check/WSARetailUpdateCheck.py
             python3 WSARetailUpdateCheck.py
 
       - name: Check Magisk Stable Version ✅
         run: |
-            wget https://github.com/MustardChef/WSABuilds/raw/main/MagiskOnWSA/Update%20Check/MagiskStableUpdateCheck.py
+            wget https://github.com/MustardChef/WSABuilds/raw/master/MagiskOnWSA/Update%20Check/MagiskStableUpdateCheck.py
             python3 MagiskStableUpdateCheck.py
 
       - name: Check Magisk Canary Version ☑️
         run: |
-            wget https://github.com/MustardChef/WSABuilds/raw/main/MagiskOnWSA/Update%20Check/MagiskCanaryUpdateCheck.py
+            wget https://github.com/MustardChef/WSABuilds/raw/master/MagiskOnWSA/Update%20Check/MagiskCanaryUpdateCheck.py
             python3 MagiskCanaryUpdateCheck.py
 
       - name: Check KernelSU Version ✅
         run: |
-            wget https://github.com/MustardChef/WSABuilds/raw/main/MagiskOnWSA/Update%20Check/KernelSUUpdateCheck.py
+            wget https://github.com/MustardChef/WSABuilds/raw/master/MagiskOnWSA/Update%20Check/KernelSUUpdateCheck.py
             python3 KernelSUUpdateCheck.py
 
       - name: Check MindTheGapps Version ☑️
         run: |
-            wget https://github.com/MustardChef/WSABuilds/raw/main/MagiskOnWSA/Update%20Check/MTGUpdateCheck.py
+            wget https://github.com/MustardChef/WSABuilds/raw/master/MagiskOnWSA/Update%20Check/MTGUpdateCheck.py
             python3 MTGUpdateCheck.py
 
       - name: Check GitHub ENVs
@@ -161,7 +161,7 @@ jobs:
           git config --global user.email "68516357+MustardChef@users.noreply.github.com"
           git config --global user.name "MustardChef"
           git commit -am "Update Download Links for Update: ${{ env.LATEST_VER }}" || exit 0
-          git pull --rebase origin main
+          git pull --rebase origin master
           git push
 
   update-downloadvartable:
