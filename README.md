@@ -10,7 +10,7 @@
 <img align="left" alt="downloads-folder" height="54" src="https://img.icons8.com/3d-fluency/94/downloads-folder.png" width="54"/><h2>Downloads</h2>
 <div align="center">
 <details>
-<summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Information.md"><img height="35" src="https://img.icons8.com/3d-fluency/94/ok.png" style="float: left;" width="35"/><h3>   WSABuilds Project Status</h3></a></summary>
+<summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Information.md"><img height="35" src="https://img.icons8.com/3d-fluency/94/ok.png" style="float: left;" width="35"/><h3><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Information.md">   WSABuilds Project Status</a></h3></a></summary>
 <center><h3>⚠️❗IMPORTANT: Read Before Downloading❗⚠️</h3></center>
 <div align="left">  
    
