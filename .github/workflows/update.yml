@@ -138,7 +138,7 @@ jobs:
           else
               verofwsa=${{ needs.check.outputs.LATEST_RETAIL_VER }}
               win11x64_link="<p><a href=\"https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_${verofwsa}\"><img alt=\"win11x64downstable\" src=\"https://img.shields.io/badge/Download%20Latest%20Stable%20Builds-Windows%2011%20x64-blue?style=for-the-badge&amp;logo=windows11\"/></a></p>"
-              win11arm64_link="<p><a href=\"https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_${verofwsa}_arm64\"><img alt=\"win11arm64downstable\" src=\"https://img.shields.io/badge/https://img.shields.io/badge/Download%20Latest%20Stable%20Builds-Windows%2011%20arm64-blue?style=for-the-badge&amp;logo=windows11\"/></a></p>"
+              win11arm64_link="<p><a href=\"https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_${verofwsa}_arm64\"><img alt=\"win11arm64downstable\" src=\"https://img.shields.io/badge/Download%20Latest%20Stable%20Builds-Windows%2011%20arm64-blue?style=for-the-badge&amp;logo=windows11\"/></a></p>"
               win10x64_link="<p><a href=\"https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_${verofwsa}\"><img alt=\"win10x64down\" src=\"https://img.shields.io/badge/Download%20Latest%20Stable%20Builds-Windows%2010%20x64-blue?style=for-the-badge&amp;logo=windows\"/></a></p>"
           fi
           echo "LINK_FOR_W11X64=$win11x64_link" >> $GITHUB_ENV

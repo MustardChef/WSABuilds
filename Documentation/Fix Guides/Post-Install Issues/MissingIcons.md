@@ -45,8 +45,8 @@ function Finish {
 
 </br>
 
-> **Warning**
->**Do not start WSA before restoring user data.**
+> [!WARNING]
+> **Do not start WSA before restoring user data.**
 
 </br>
 

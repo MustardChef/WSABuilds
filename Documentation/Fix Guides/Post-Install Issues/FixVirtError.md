@@ -46,7 +46,7 @@ You may encounter this problem, even if Virtualization is enabled on your PC (in
 
     Change the value of “Start” from “3” to “0”
 
-> **Note**
+> [!NOTE]
 > You can change it back to 3, if it makes no difference
 
 &nbsp;

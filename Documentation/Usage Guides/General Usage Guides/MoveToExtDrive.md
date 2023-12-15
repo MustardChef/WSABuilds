@@ -13,7 +13,7 @@
 - Basic knowledge on Command Prompt (CMD) usage
 - There must be enough space on the disk/partiton that you are installing/moving WSA to (recommended 20GB, as the VHDX can become very large in size)
 
-> **Note** 
+> [!NOTE] 
 > 
 > If you want to preseve your data, make a backup of the `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx` file. After uninstalling, copy the VHDX file back to the `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache` folder.
 
