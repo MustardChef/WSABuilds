@@ -426,11 +426,11 @@
 
  
 
->[!NOTE]  
->If you have the official Windows Subsystem For Android™ installed, you must [completely uninstall](#uninstallation) it to use MagiskOnWSA. 
+> [!NOTE]  
+> If you have the official Windows Subsystem For Android™ installed, you must [completely uninstall](#uninstallation) it to use MagiskOnWSA. 
 
->[!IMPORTANT]  
->In case you want to preserve your data from the previous installation (official or MagiskOnWSA), you can backup Userdata.vhdx, located at ``%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx`` before uninstallation and restore it after installation. A guide for this process is located further down in this README.
+> [!IMPORTANT]  
+> In case you want to preserve your data from the previous installation (official or MagiskOnWSA), you can backup Userdata.vhdx, located at ``%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx`` before uninstallation and restore it after installation. A guide for this process is located further down in this README.
 
 1. Go to the [Releases page](https://github.com/MustardChef/WSABuilds/releases/latest)
 2. In the latest release, go to the Assets section and download the Windows Subsystem For Android™ version of your choosing (do not download "Source code")
@@ -438,8 +438,8 @@
 4. Delete the .7z archive
 5. Move the newly extracted folder to a suitable location (Documents folder is a good choice), as you will need to keep the folder on your PC to use MagiskOnWSA
 
->[!NOTE]   
->If you're updating WSA, merge the folders and replace the files for all items when asked
+> [!NOTE]   
+> If you're updating WSA, merge the folders and replace the files for all items when asked
 
 6. Open the Windows Subsystem For Android™ folder: Search for and double-click `Run.bat`
    - If you previously have a MagiskOnWSA installation, it will automatically uninstall the previous one while preserving all user data and install the new one, so don't worry about your data.
@@ -499,8 +499,8 @@
 
 ### How do I update without losing any of my apps and data on Windows Subsystem for Android (WSA)
 
->[!IMPORTANT]
->Make sure that WSA has been turned off from the settings and that tools such has WSA-System-Control, WSA-Sideloader, WSAPacman etc are not running.
+> [!IMPORTANT]
+> Make sure that WSA has been turned off from the settings and that tools such has WSA-System-Control, WSA-Sideloader, WSAPacman etc are not running.
 
 1. [Download the latest build](https://github.com/MustardChef/WSABuilds#downloads) (that you want to update to)
 
@@ -545,9 +545,9 @@
 
  
 
->[!NOTE]   
+> [!NOTE]   
 >
->If you want to preseve your data, make a backup of the `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx` file. After uninstalling, copy the VHDX file back to the `%LOCALAPPDATA%\Package\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache` folder. For a more comprehensive and detailed guide, take a look at the **Backup and Restore section** in this README markdown
+> If you want to preseve your data, make a backup of the `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx` file. After uninstalling, copy the VHDX file back to the `%LOCALAPPDATA%\Package\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache` folder. For a more comprehensive and detailed guide, take a look at the **Backup and Restore section** in this README markdown
 
 ### To remove WSA installed through WSABuild:
 
@@ -588,16 +588,10 @@ In order to make a backup of your WSA data you must copy the ``Userdata.vhdx`` (
 
 Before attempting to restore your backup, you must remove WSA if installed. Then before you run the ``Run.bat`` script (to reinstall WSA after removing it), you need to remove these lines from ``Install.ps1``, located in the your extracted WSA folder:
       
- 
+      
+> [!TIP]
+> The Lines (as shown below) that you need to remove in ``Install.ps1`` may vary depending on the type of WSA Build that you are trying to install.    
       
-><picture>
-><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/light-theme/tip.svg"/>
-><img alt="Tip" src="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/dark-theme/tip.svg"/>
-></picture><br/>
->    
->The Lines (as shown below) that you need to remove in ``Install.ps1`` may vary depending on the type of WSA Build that you are trying to install.    
-      
- 
 
 Android Settings:
 ```pwsh
@@ -630,8 +624,8 @@ When the Powershell window states "Press any key to quit", at that time multiple
 
 &lt;-- <add here="" images=""> --&gt;
 
->[!IMPORTANT]
->****Ignore these and do not click on anything or close these popups****
+> [!IMPORTANT]
+> ****Ignore these and do not click on anything or close these popups****
 
 Go to ``%localappdata%\Packages`` and (if these folders/directory do not exist, create them) in ``MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\`` paste the userdata.vhdx
 
@@ -1432,8 +1426,8 @@ wsa://com.apple.android.music
 <h4> If you can't find the build that you are looking for, I will be happy to fufill any custom build requests. <h4>
 <h4> Open an issue in the [Issues page](https://github.com/MustardChef/WSABuilds/issues) with the information below. <h4> 
    
->[!IMPORTANT]
->- State the [Device Model](https://github.com/WSABuilds/MagiskOnWSALocal#--custom-model) (Default: Pixel 5)? <br/> - Root Solution (Magisk, KernelSU or none)? <br/> - If you want a WSA build with Magisk, what [variant of magisk](https://github.com/WSABuilds/MagiskOnWSALocal#--magisk-ver) would you like? <br/> - Would you like GApps (Google Play Store and Play Services (GMS))? <br/> - Would you like to keep the Amazon Appstore? 
+> [!IMPORTANT]
+> - State the [Device Model](https://github.com/WSABuilds/MagiskOnWSALocal#--custom-model) (Default: Pixel 5)? <br/> - Root Solution (Magisk, KernelSU or none)? <br/> - If you want a WSA build with Magisk, what [variant of magisk](https://github.com/WSABuilds/MagiskOnWSALocal#--magisk-ver) would you like? <br/> - Would you like GApps (Google Play Store and Play Services (GMS))? <br/> - Would you like to keep the Amazon Appstore? 
 </h4></h4></h4></h4></h3></h3></details>      
 
     
@@ -1556,8 +1550,8 @@ wsa://com.apple.android.music
 
 <br/>
 
->[!IMPORTANT]
->***The repository is provided as a utility.***
+> [!IMPORTANT]
+> ***The repository is provided as a utility.***
 &gt;***Android is a trademark of Google LLC. Windows™ and Windows Subsystem for Android™ are trademarks of Microsoft LLC.***
 
 </details>
