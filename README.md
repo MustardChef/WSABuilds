@@ -541,7 +541,7 @@
  
 
 <details>
-<summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Uninstallation.md"><img height="60" src="https://img.icons8.com/color/96/null/uninstall-programs.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Uninstallation.md"><img height="60" src="https://img.icons8.com/color/96/null/uninstall-programs.png" style="float: left;" width="60"/>   Uninstallation</a></h1></a></summary>
+<summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Uninstallation.md"><img height="60" src="https://img.icons8.com/color/96/null/uninstall-programs.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Uninstallation.md">   Uninstallation</a></h1></a></summary>
 
  
 
@@ -713,7 +713,7 @@ Now close the popups and run WSA and your userdata should hopefully be restored
 **How do I install custom Magisk or GApps?**
 
 - To request a build with custom Magisk or GApps, feel free to open an issue in the [Issues page](https://github.com/MustardChef/WSABuilds/issues.) You can also achieve this by using the [MagiskOnWSALocal](https://github.com/LSPosed/MagiskOnWSALocal) Script and following the provided instructions located in the repo.
-</https:></details>
+</details>
 
  
 
@@ -1327,13 +1327,14 @@ wsa://com.apple.android.music
 | プロジェクトセカイ カラフルステージ！ feat. 初音ミク (Project Sekai Colorful Stage JP) | 1.3.2 | 12, 11 | ❌ | App either crashes when loading into game after login or app screen turns dark
 | 世界計畫 繽紛舞台! feat. 初音未來 (Project Sekai Colorful Stage TW) | 2.3.1.10995 | 13, 12 | ❌ | App hangs when loading LIVE or crashes. Performance issues such as FPS spikes, freezing, etc. Broken textures and animations.
 | Subtransit Drive | 1.0.7.2 | 11 | ❌ | Crashes at startup because Vulkan or OpenGL ES 3.1 is required
-
 </details>
+
+&nbsp; 
+
 
 <details>
 <summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Usage%20Guides.md"><img height="60" src="https://img.icons8.com/external-xnimrodx-lineal-color-xnimrodx/96/null/external-guide-education-xnimrodx-lineal-color-xnimrodx.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Usage%20Guides.md">   Usage Guides</a></h1></a></summary>
 
- 
 
 ### GPU Guide:
 [<img src="https://img.shields.io/badge/-How%20to%20Change%20the%20GPU%20Used-474154?style=for-the-badge&amp;logoColor=white&amp;logo=github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Usage%20Guides/General%20Usage%20Guides/ChangingGPU.md)
