@@ -17,7 +17,6 @@
       
 <center><h3>⚠️❗IMPORTANT: Read Before Downloading❗⚠️</h3></center>
 
-<br />
 
 <div align="left">  
    
