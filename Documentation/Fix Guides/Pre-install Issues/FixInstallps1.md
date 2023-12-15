@@ -26,7 +26,7 @@ If the popup windows disappear without asking administrative permission and Wind
 
 &nbsp;  
 
-**1. Redownload the WSA Build and rename the extracted folder to a shorter name, which can be anything to your choosing** </br> 
+**1. Redownload the WSA Build and rename the extracted folder to a shorter name, which can be anything to your choosing** <br /> 
 
 - For example:
 

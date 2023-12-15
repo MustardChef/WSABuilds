@@ -1,7 +1,7 @@
 ## Issues / Support
 
 We can't offer support for the Windows Subsystem for Android (WSA) or Android apps.
-Instead, try asking the folks that hang out in the [WSA Community Discord]() or [WSA subreddit](https://www.reddit.com/r/WSA/). Good luck!
+Instead, try asking the folks that hang out in the [WSA Community Discord](https://discord.gg/2thee7zzHZ) or [WSA subreddit](https://www.reddit.com/r/WSA/). Good luck!
 
 ## Legend
 
@@ -97,7 +97,7 @@ wsa://com.apple.android.music
 | Boost for Reddit | 1.12.5 | 12 | ✅
 | Bouncer | 1.26.3 | 11 | ⚠️
 | Brave Browser | 1.30.87 | 11 | ✅
-| BritBox by BBC & ITV | 2.1.2 (20043) | 11 | ❌ | App crashes on start
+| BritBox by BBC &amp; ITV | 2.1.2 (20043) | 11 | ❌ | App crashes on start
 | Bromite | 94.0.4606.94 | 11 | ✅ || Use x64 build
 | CamScanner | 6.3.0.2110240000 | 11 | ❌ | WSA freezes after taking a snap
 | Canvas Student | 6.14.1 | 11 | ✅
@@ -231,7 +231,7 @@ wsa://com.apple.android.music
 | microG Settings | N/A | 11 | ❌ | App crashes, doesn't load
 | Microsoft Authenticator | 6.2112.8213 | 11 | ✅ || Some features might require GMS
 | Microsoft Azure | 3.9.2.2021.09.30-19.35.50 | 11 | ✅
-| Microsoft Bing - Search & earn | 23.5.401109307 | 12 | ✅
+| Microsoft Bing - Search &amp; earn | 23.5.401109307 | 12 | ✅
 | Microsoft Edge | 95.0.1020.42 | 11 | ❌ | App frequently crashes
 | Microsoft Edge Canary | 103.0.1264.1 | 11 | ❌ || Fails to load websites
 | Microsoft Launcher | 6.230703.0.1122680 | 13, 11 | ✅ | Can't set wallpaper
@@ -313,7 +313,7 @@ wsa://com.apple.android.music
 | Remote Desktop (Microsoft) | 10.0.12.1148 | 11 | ✅
 | ReVanced Manager | 1.9.5 | 13 | ✅ | 
 | Rider | 1.59 | 11 | ✅
-| Robinhood - Food & Booking | 2.2.2 | 12 | ⚠️ | App having trouble loading content. Maps & Location picker don't work (Requires GMS). | You can log in only on one device at the same time. Previous device will log out upon signing in on new device.
+| Robinhood - Food &amp; Booking | 2.2.2 | 12 | ⚠️ | App having trouble loading content. Maps &amp; Location picker don't work (Requires GMS). | You can log in only on one device at the same time. Previous device will log out upon signing in on new device.
 | Rootless Launcher | 3.9.1 | 11 | ❌ | App crashes
 | Rootless Pixel Launcher | 3.9.1 | 13 | ✅ |
 | Ruler (F-Droid) | 1.1 | 12 | ❌ | While the app is correctly installed, the ruler lengths are wildly off-course no matter how much in-app calibration is done. | The app also refuses to recognise values above circa 100mm for the 70mm calibration line.
@@ -372,10 +372,10 @@ wsa://com.apple.android.music
 | TikTok (Global) | 25.0.3 | 12, 11 | ✅
 | TikTok (TV Version) | 1.6.0 | 11 | ❌ | App crashes
 | TikTok Lite | 21.7.1 | 11 | ❌ | App crashes
-| Tivimate | 4.4.0 | 11 | ✅ | Compatibility Options -> Force App to be non-resizeable ; Disable smooth resize ; Keyboard Compatibility ; ForceFullScreen [F11] Note: Version 4.5. And above force crashes, the latest working version remains 4.4.0
+| Tivimate | 4.4.0 | 11 | ✅ | Compatibility Options ->Force App to be non-resizeable ; Disable smooth resize ; Keyboard Compatibility ; ForceFullScreen [F11] Note: Version 4.5. And above force crashes, the latest working version remains 4.4.0
 | TP-Link Tapo | 2.4.25 | 11 | ✅
 | Trello | 2021.14.1.16332-production | 11 | ⚠️ | Login needs web browser installed in WSA, using Windows' default browser will not work
-| Trust: Crypto & Bitcoin Wallet | 6.57.1 | 12 | ✅ || For login, you have to go to Android settings => System => Date & Time and toggle the "Set Time Automatically" option. you can access it by this command .\adb.exe shell "am start -n com.android.settings/.Settings"
+| Trust: Crypto &amp; Bitcoin Wallet | 6.57.1 | 12 | ✅ || For login, you have to go to Android settings =>System =>Date &amp; Time and toggle the "Set Time Automatically" option. you can access it by this command .\adb.exe shell "am start -n com.android.settings/.Settings"
 | Tune In Pro | 28.7 (267721) | 11 | ✅
 | Twitter | 9.16.1-release.00 | 11 | ✅ | Optionally requires GMS
 | Twitter Lite | 3.1.1 | 12 | ✅ ||
@@ -417,7 +417,7 @@ wsa://com.apple.android.music
 | YouTube Music (Google) | 5.07.50 | 11 | 🆖 | Requires GMS
 | YouTube Music Vanced | 43.9.50 | 11 | ✅
 | YouTube Music ReVanced | 6.19.51 | 13 | ✅ || Used the x86-64 version as base
-| Youtube Vanced | 16.29.39 | 11 | ⚠️ | Picture-in-picture doesn't work & Can't join channel membership
+| Youtube Vanced | 16.29.39 | 11 | ⚠️ | Picture-in-picture doesn't work &amp; Can't join channel membership
 | ZArchiver | 0.9.5.8 (9596) | 11 | ✅
 | Zenly (w/o GMS) | 4.55.2 | 11 | ⚠️ | App crashes after login, but background location works
 | Zoom | 5.8.3.2634 | 11 | ⚠️ | Camera severely glitched, share screen doesn't work due to WSA's windowed nature.
@@ -476,7 +476,7 @@ wsa://com.apple.android.music
 | Clash Mini | 1.1142.10 | 11 | ❌ | App crashes
 | Clash of Clans | 15.292.12 | 13 | ❌ | App crashes
 | Clash Royale | 3.6.1 | 11 | ❌ | App crashes
-| Clouds & Sheep 2 | 1.4.6 | 11 | ✅ | Optionally uses GMS
+| Clouds &amp; Sheep 2 | 1.4.6 | 11 | ✅ | Optionally uses GMS
 | Command and Conquer: Rivals | 1.8.1 | 12, 11 | ✅ || It will pop up "Won't run without GPlay services" when starts, but works fine except GPlay login. You may use link email instead.
 | Crazy Taxi Classic | 4.7 | 12 | ❌ | An error message on startup says "Download failed because the resources could not be found." | OBB installation has not yet been tested.
 | Cricket (Play Games) | 2023.08.46243 | 13 | 🆖 || Requires GMS
@@ -486,7 +486,7 @@ wsa://com.apple.android.music
 | Dwarf Balls | 3.5.2 | 11 | 🆖 | Requires GMS for Google Play login.
 | Endless Frontier - Idle RPG | 3.5.3 | 12 | ❌ | OpenGL ES 3.1 is unsupported
 | Epic Seven | 1.0.406 | 11 | ⚠️ | Low FPS, unable to sign in with Google
-| Extreme Car Driving Simulator | 6.74.0 | 13, 12, 11 | ✅ | Keyboard & controller supported
+| Extreme Car Driving Simulator | 6.74.0 | 13, 12, 11 | ✅ | Keyboard &amp; controller supported
 | F1 Mobile Racing | 5.1.11 | 13 - 7 | ❌ | No 3D rendering with any of the GPUs selected. Just shows a purple screen in game.
 | Fancade | 1.7.6 | 11 | ❌ | App crashes
 | Fate/Grand Order (US) FGO | 2.34.0 | 12, 11 | 🆖 || Require Google Play Services, skippable if you have Google Play Service (APK) installed

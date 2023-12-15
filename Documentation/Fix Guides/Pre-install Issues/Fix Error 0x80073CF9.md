@@ -1,7 +1,7 @@
 # WSABuilds &nbsp; &nbsp; <img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/> &nbsp; 
 
 ---
-## Issue: </br> Error 0x80073CF9 when "Run.bat" is executed to install Windows Subystem for Android (WSA)
+## Issue: <br /> Error 0x80073CF9 when "Run.bat" is executed to install Windows Subystem for Android (WSA)
 ### Preface:
 ##### This issue can arise due to many factors such as corruption of files when downloading the .zip files or extracting from the .zip files. This can be also caused if the folder name is too long (This is the case as MagiskOnWSA tends to generate a long string for the .zip file and the folder within the archive.)
 
@@ -18,7 +18,7 @@
 
 <br />
 
-**3. Rename the .zip/.7z  file to a shorter name, which can be anything to your choosing </br> (For example: WSA_2XXX.XXXXX.X.X_XXXX_Release-Nightly-with-magisk-XXXXXXX-XXXXXX-MindTheGapps-XX.X-RemovedAmazon ----> WSAArchive2XXX)**
+**3. Rename the .zip/.7z  file to a shorter name, which can be anything to your choosing <br /> (For example: WSA_2XXX.XXXXX.X.X_XXXX_Release-Nightly-with-magisk-XXXXXXX-XXXXXX-MindTheGapps-XX.X-RemovedAmazon ----> WSAArchive2XXX)**
 
 <br />
 

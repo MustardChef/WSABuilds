@@ -1,7 +1,7 @@
 # WSABuilds &nbsp; &nbsp; <img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/> &nbsp; 
 
 ---
-## Issue: </br> Windows Subystem for Android (WSA) is unable to run any apps and there is no splashscreen (when opening the Files app from the settings) and no icons for Android apps.
+## Issue: <br /> Windows Subystem for Android (WSA) is unable to run any apps and there is no splashscreen (when opening the Files app from the settings) and no icons for Android apps.
 ### Preface:
 ##### Why this occurs is unknown. However, after multiple attempts trying to fix this issue, a solution was found.
 

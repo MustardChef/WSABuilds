@@ -1,11 +1,11 @@
 # WSABuilds &nbsp; &nbsp; <img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/> &nbsp; 
 
 ---
-## Issue: </br> Error 0x80073CFD when "Run.bat" is executed to install Windows Subystem for Android (WSA)
+## Issue: <br /> Error 0x80073CFD when "Run.bat" is executed to install Windows Subystem for Android (WSA)
 ### Preface:
 ##### This issue is caused by having a Windows 10 Build that is too old to run WSA and hence the installer halts and presents the error, as shown below 
 
-</br>
+<br />
 
 ```Powershell
 Registering AppxManifest.xml... 
@@ -18,7 +18,7 @@ Get-AppPackageLog -ActivityID 8b8599fb-55c1-0002-338b-868bc155d901
 ```
 
 
-</br>
+<br />
 
 ---
 ## Solution:

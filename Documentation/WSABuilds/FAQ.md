@@ -3,6 +3,7 @@
 <picture><img style="float: left;" src="https://img.icons8.com/3d-fluency/94/null/help.png" width="60" height="60"/></picture><h1> &nbsp; FAQ</h1>
 
 &nbsp;
+
 **Help me, I am having problems with the MagiskOnWSA Builds**
 
 - Open an [issue in Github](https://github.com/MustardChef/WSABuilds/issues) or [join the Discord](https://github.com/MustardChef/WSABuilds#join-the-discord) and describe the issue with sufficent detail
@@ -18,7 +19,7 @@
    ```
    or
 
--  Location in Windows ---> <br /> `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalState\diagnostics\logcat`
+-  Location in Windows ---><br/> `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalState\diagnostics\logcat`
 
 **Can I delete the installed folder?**
 
@@ -34,7 +35,7 @@
 
 **Can I pass SafetyNet/Play Integrity?**
 
-- No. Virtual machines like Windows Subsystem For Android™ cannot pass these mechanisms on their own due to the lack of signing by Google. Passing requires more exotic (and untested) solutions like: <https://github.com/kdrag0n/safetynet-fix/discussions/145#discussioncomment-2170917>
+- No. Virtual machines like Windows Subsystem For Android™ cannot pass these mechanisms on their own due to the lack of signing by Google. Passing requires more exotic (and untested) solutions like: <https: 145#discussioncomment-2170917="" discussions="" github.com="" kdrag0n="" safetynet-fix="">
 
 **What is virtualization?**
 
@@ -76,4 +77,3 @@
 **How do I install custom Magisk or GApps?**
 
 - To request a build with custom Magisk or GApps, feel free to open an issue in the [Issues page](https://github.com/MustardChef/WSABuilds/issues.) You can also achieve this by using the [MagiskOnWSALocal](https://github.com/LSPosed/MagiskOnWSALocal) Script and following the provided instructions located in the repo.
-</details>

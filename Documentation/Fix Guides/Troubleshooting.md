@@ -19,11 +19,11 @@
    
    I would very much recommend you to file a Feedback Hub report. Make sure you are logged into a Microsoft Account when filing a report. (You can only file a report using the official version)
    
-   </br>
+   <br />
    
    Instructions: (As shown by one of devs in WSA Development team at Microsoft)
    
-   </br>
+   <br />
    
    ![image](https://github.com/MustardChef/WSABuilds/assets/68516357/1969caa3-2f1d-4967-9166-6833e7509ba5)
    ![image](https://github.com/MustardChef/WSABuilds/assets/68516357/3a343513-896c-4f7d-b425-3e6ad9aac1a8)

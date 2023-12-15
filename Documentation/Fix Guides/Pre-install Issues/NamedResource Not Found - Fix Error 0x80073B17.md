@@ -1,7 +1,7 @@
 # WSABuilds &nbsp; &nbsp; <img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/> &nbsp; 
 
 ---
-## Issue: </br> Error 0x80073B17 when "Run.bat" is executed to install Windows Subystem for Android (WSA)
+## Issue: <br /> Error 0x80073B17 when "Run.bat" is executed to install Windows Subystem for Android (WSA)
 ### Preface:
 ##### This issue is caused/ associated with the Language Resource creation step which has moved from being processed within the Linux Bash script to a Windows PowerShell script ``MakePri.ps1/MakePri.exe``. Hence this may be caused by ``MakePri.ps1`` failing to run, and the reason for your installation failure is that the content of ``resources.pri`` is incorrect.
 

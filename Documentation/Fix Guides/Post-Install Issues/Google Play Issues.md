@@ -47,15 +47,15 @@ Open Android Settings by pressing the Windows Key and "R" key, Open Run****
 
 ****Click on "Clear All Data"****
 
-</br>
+<br />
 
 The issue should now be fixed
 
 
-</br>
-</br>
-</br>
-</br>
+<br />
+<br />
+<br />
+<br />
 
 
 

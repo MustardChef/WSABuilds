@@ -1,11 +1,11 @@
 # WSABuilds &nbsp; &nbsp; <img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/> &nbsp; 
 
 ---
-## Issue: </br> Error 0x80073CF6 when "Run.bat" is executed to install Windows Subystem for Android (WSA)
+## Issue: <br /> Error 0x80073CF6 when "Run.bat" is executed to install Windows Subystem for Android (WSA)
 ### Preface:
 ##### This issue can arise due to many factors that is preventing the app from being registered. Although there is no definite solution, we can try these steps to try to fix the problem
 ##### This installation issue may also arise in systems that are using Modified Windows OSes such as ReviOS, Tiny10/11, etc. This is due to the fact that these OSes have been modified to remove certain features that are deemed unnecessary. This may cause issues with the installation of WSA.
-</br>
+<br />
 
 ```Powershell
 Add-AppxPackage : Deployment failed with HRESULT: 0x80073CF6, Package could not be registered
@@ -17,7 +17,7 @@ In E:\WSA\Install.ps1:102 Character:1
 ```
 
 
-</br>
+<br />
 
 ---
 ## Prequisite Steps:
@@ -59,13 +59,13 @@ To obtain the logs (admin privilege required):
        Get-AppPackageLog -ActivityID <UUID>
       ```
       
-</br>
-</br>
+<br />
+<br />
 
 
 ---
 
-### There are various causes that lead to error 0x80073CF6 </br> Find the fix that matches the error presented in the logs obtained from the instructions above
+### There are various causes that lead to error 0x80073CF6 <br /> Find the fix that matches the error presented in the logs obtained from the instructions above
 
 ---
 ## Issue 1: 0x800706D9 "There are no more endpoints avaliable from endpoint mapper"

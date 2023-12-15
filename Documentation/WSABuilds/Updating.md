@@ -35,6 +35,6 @@
 
 ---
 
-### **Join the Discord if you are having any difficulties**
+**Join the Discord if you are having any difficulties**
 
 [<img align="left" src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/>](https://discord.gg/2thee7zzHZ)

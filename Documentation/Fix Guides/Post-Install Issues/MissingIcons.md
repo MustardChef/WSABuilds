@@ -3,13 +3,13 @@
 
 ## Issue: Icons have disappeared or have turned white after updating WSA or after restarting your computer
 
-</br>
+<br />
 
 ### Preface:
 ##### This looks like a bug in the WSA itself and the icons can be restored by the following steps.
 
-</br>
-</br>
+<br />
+<br />
 
 ## Solution
  
@@ -43,12 +43,12 @@ function Finish {
 
 **6.** Start WSA
 
-</br>
+<br />
 
 > [!WARNING]
 > **Do not start WSA before restoring user data.**
 
-</br>
+<br />
 
 
 <br />

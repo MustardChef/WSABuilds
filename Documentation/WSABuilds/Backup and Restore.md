@@ -10,16 +10,10 @@ In order to make a backup of your WSA data you must copy the ``Userdata.vhdx`` (
 
 Before attempting to restore your backup, you must remove WSA if installed. Then before you run the ``Run.bat`` script (to reinstall WSA after removing it), you need to remove these lines from ``Install.ps1``, located in the your extracted WSA folder:
       
-&nbsp;
-      
-> <picture>
->   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/light-theme/tip.svg">
->   <img alt="Tip" src="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/dark-theme/tip.svg">
-> </picture><br />
->     
+      
+> [!TIP]
 > The Lines (as shown below) that you need to remove in ``Install.ps1`` may vary depending on the type of WSA Build that you are trying to install.    
       
-&nbsp;
 
 Android Settings:
 ```pwsh
@@ -48,9 +42,9 @@ Start-Process "wsa://com.amazon.venezia"
 
 After removing the lines above, run the script. 
 
-When the Powershell window states "Press any key to quit", at that time multiple dialogue boxes will open:
+When the Powershell window states "Press any key to quit", at that time multiple dialouge boxes will open:
 
-<-- <add Images here> -->
+&lt;-- <add here="" images=""> --&gt;
 
 > [!IMPORTANT]
 > ****Ignore these and do not click on anything or close these popups****

@@ -1,7 +1,7 @@
 # WSABuilds &nbsp; &nbsp; <img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&style=for-the-badge"/> &nbsp; 
 
 ---
-## Issue: </br> Error 0x80073CFB when "Run.bat" is executed to install Windows Subystem for Android (WSA)
+## Issue: <br /> Error 0x80073CFB when "Run.bat" is executed to install Windows Subystem for Android (WSA)
 ### Preface:
 ##### This issue can arise due to the fact that "the provided package is already installed, and reinstallation of the package was blocked. Check the AppXDeployment-Server event log for details." 
 
