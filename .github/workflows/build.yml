@@ -186,17 +186,17 @@ jobs:
         id: run
         run: ("hash=" + $(Get-FileHash -Path ${{ needs.build.outputs.zipname }}.7z -Algorithm SHA256).Hash.ToLower().ToString()) | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding UTF8 -Append
 
-      # - name: Setup rclone 🎚️
-      #   uses: AnimMouse/setup-rclone@v1.5.1
-      #   with:
-      #       rclone_config: ${{ secrets.RCLONE_CONFIG }}
+      - name: Setup rclone 🎚️
+        uses: AnimMouse/setup-rclone@v1.5.1
+        with:
+             rclone_config: ${{ secrets.RCLONE_CONFIG }}
 
-      # - name: Upload build to OneDrive for Windows 11 x64 Build⏫
-      #   run: |
-      #       echo ${{ needs.build.outputs.onedrivepath }}
-      #      rclone copy ${{ needs.build.outputs.zipname }}.7z OneDrive:"${{ needs.build.outputs.onedrivepath }}" --create-empty-src-dirs
-      #  env:
-      #       RCLONE_CONFIG_PASS: ${{ secrets.RCLONE_CONFIG_PASS }}
+      - name: Upload build to OneDrive for Windows 11 x64 Build⏫
+        run: |
+           echo ${{ needs.build.outputs.onedrivepath }}
+           rclone copy ${{ needs.build.outputs.zipname }}.7z OneDrive:"${{ needs.build.outputs.onedrivepath }}" --create-empty-src-dirs
+        env:
+           RCLONE_CONFIG_PASS: ${{ secrets.RCLONE_CONFIG_PASS }}
 
       - name: Upload Windows 11 x64 build to release 🤌
         uses: softprops/action-gh-release@v1
@@ -241,12 +241,12 @@ jobs:
         id: run2
         run: ("hash=" + $(Get-FileHash -Path "${{ needs.build.outputs.zipname }}_Windows_10.7z" -Algorithm SHA256).Hash.ToLower().ToString()) | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding UTF8 -Append
 
-      # - name: Upload build to OneDrive for Windows 10 x64 Build⏫
-      #  run: |
-      #       echo ${{ needs.build.outputs.onedrivepathwin10 }}
-      #       rclone copy ${{ needs.build.outputs.zipname }}_Windows_10.7z OneDrive:"${{ needs.build.outputs.onedrivepathwin10 }}" --create-empty-src-dirs
-      # env:
-      #       RCLONE_CONFIG_PASS: ${{ secrets.RCLONE_CONFIG_PASS }}
+      - name: Upload build to OneDrive for Windows 10 x64 Build⏫
+        run: |
+              echo ${{ needs.build.outputs.onedrivepathwin10 }}
+              rclone copy ${{ needs.build.outputs.zipname }}_Windows_10.7z OneDrive:"${{ needs.build.outputs.onedrivepathwin10 }}" --create-empty-src-dirs
+        env:
+            RCLONE_CONFIG_PASS: ${{ secrets.RCLONE_CONFIG_PASS }}
         
       - name: Upload Windows 10 x64 build to release 🤌
         uses: softprops/action-gh-release@v1
