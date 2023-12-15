@@ -112,6 +112,11 @@ jobs:
     if: needs.check.outputs.SHOULD_BUILD == 'yes'
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout 🔄
+        uses: actions/checkout@v4.1.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Checkout code
         uses: actions/checkout@v2
 
@@ -170,6 +175,11 @@ jobs:
     needs: [check, update-downloadlinks]
     if: needs.check.outputs.SHOULD_BUILD == 'yes'
     steps:
+      - name: Checkout 🔄
+        uses: actions/checkout@v4.1.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Checkout code
         uses: actions/checkout@v2
 
