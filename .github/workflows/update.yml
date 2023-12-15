@@ -223,7 +223,9 @@ jobs:
           git config --global user.email "68516357+MustardChef@users.noreply.github.com"
           git config --global user.name "MustardChef"
           git commit -am "Update Download Variant Table for Update: ${{ env.LATEST_VER }}" || exit 0
+          git pull --rebase origin master
           git push
+
 
   check-and-create-tag:
     name: Creates the release tags
