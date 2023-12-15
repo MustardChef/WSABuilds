@@ -1,3 +1,5 @@
+## Updated on 15/12/2023
+
 ## Issues / Support
 
 We can't offer support for the Windows Subsystem for Android (WSA) or Android apps.
