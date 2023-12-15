@@ -426,11 +426,11 @@
 
  
 
-&gt; [!NOTE]  
-&gt; If you have the official Windows Subsystem For Android™ installed, you must [completely uninstall](#uninstallation) it to use MagiskOnWSA. 
+>[!NOTE]  
+>If you have the official Windows Subsystem For Android™ installed, you must [completely uninstall](#uninstallation) it to use MagiskOnWSA. 
 
-&gt; [!IMPORTANT]  
-&gt; In case you want to preserve your data from the previous installation (official or MagiskOnWSA), you can backup Userdata.vhdx, located at ``%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx`` before uninstallation and restore it after installation. A guide for this process is located further down in this README.
+>[!IMPORTANT]  
+>In case you want to preserve your data from the previous installation (official or MagiskOnWSA), you can backup Userdata.vhdx, located at ``%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx`` before uninstallation and restore it after installation. A guide for this process is located further down in this README.
 
 1. Go to the [Releases page](https://github.com/MustardChef/WSABuilds/releases/latest)
 2. In the latest release, go to the Assets section and download the Windows Subsystem For Android™ version of your choosing (do not download "Source code")
@@ -438,8 +438,8 @@
 4. Delete the .7z archive
 5. Move the newly extracted folder to a suitable location (Documents folder is a good choice), as you will need to keep the folder on your PC to use MagiskOnWSA
 
-&gt; [!NOTE]   
-&gt; If you're updating WSA, merge the folders and replace the files for all items when asked
+>[!NOTE]   
+>If you're updating WSA, merge the folders and replace the files for all items when asked
 
 6. Open the Windows Subsystem For Android™ folder: Search for and double-click `Run.bat`
    - If you previously have a MagiskOnWSA installation, it will automatically uninstall the previous one while preserving all user data and install the new one, so don't worry about your data.
@@ -489,7 +489,7 @@
        ```
     4. Check the log for the reason of failure and fix it.
 
-</uuid></details> 
+</details> 
 
  
 
@@ -499,8 +499,8 @@
 
 ### How do I update without losing any of my apps and data on Windows Subsystem for Android (WSA)
 
-&gt; [!IMPORTANT]
-&gt; Make sure that WSA has been turned off from the settings and that tools such has WSA-System-Control, WSA-Sideloader, WSAPacman etc are not running.
+>[!IMPORTANT]
+>Make sure that WSA has been turned off from the settings and that tools such has WSA-System-Control, WSA-Sideloader, WSAPacman etc are not running.
 
 1. [Download the latest build](https://github.com/MustardChef/WSABuilds#downloads) (that you want to update to)
 
@@ -545,9 +545,9 @@
 
  
 
-&gt; [!NOTE]   
-&gt; 
-&gt; If you want to preseve your data, make a backup of the `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx` file. After uninstalling, copy the VHDX file back to the `%LOCALAPPDATA%\Package\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache` folder. For a more comprehensive and detailed guide, take a look at the **Backup and Restore section** in this README markdown
+>[!NOTE]   
+>
+>If you want to preseve your data, make a backup of the `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx` file. After uninstalling, copy the VHDX file back to the `%LOCALAPPDATA%\Package\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache` folder. For a more comprehensive and detailed guide, take a look at the **Backup and Restore section** in this README markdown
 
 ### To remove WSA installed through WSABuild:
 
@@ -590,12 +590,12 @@ Before attempting to restore your backup, you must remove WSA if installed. Then
       
  
       
-&gt; <picture>
-&gt;   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/light-theme/tip.svg"/>
-&gt;   <img alt="Tip" src="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/dark-theme/tip.svg"/>
-&gt; </picture><br/>
-&gt;     
-&gt; The Lines (as shown below) that you need to remove in ``Install.ps1`` may vary depending on the type of WSA Build that you are trying to install.    
+><picture>
+><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/light-theme/tip.svg"/>
+><img alt="Tip" src="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/dark-theme/tip.svg"/>
+></picture><br/>
+>    
+>The Lines (as shown below) that you need to remove in ``Install.ps1`` may vary depending on the type of WSA Build that you are trying to install.    
       
  
 
@@ -630,8 +630,8 @@ When the Powershell window states "Press any key to quit", at that time multiple
 
 &lt;-- <add here="" images=""> --&gt;
 
-&gt; [!IMPORTANT]
-&gt; ****Ignore these and do not click on anything or close these popups****
+>[!IMPORTANT]
+>****Ignore these and do not click on anything or close these popups****
 
 Go to ``%localappdata%\Packages`` and (if these folders/directory do not exist, create them) in ``MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\`` paste the userdata.vhdx
 
@@ -661,7 +661,7 @@ Now close the popups and run WSA and your userdata should hopefully be restored
    ```
    or
 
--  Location in Windows ---&gt; <br/> `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalState\diagnostics\logcat`
+-  Location in Windows ---><br/> `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalState\diagnostics\logcat`
 
 **Can I delete the installed folder?**
 
@@ -689,7 +689,7 @@ Now close the popups and run WSA and your userdata should hopefully be restored
 
 **I cannot adb connect localhost:58526**
 
-- Make sure developer mode is enabled. If the issue persists, check the IP address of Windows Subsystem For Android™ on the Settings ---&gt; Developer page and try 
+- Make sure developer mode is enabled. If the issue persists, check the IP address of Windows Subsystem For Android™ on the Settings ---> Developer page and try 
 
    ```
    adb connect ip:5555
@@ -1100,10 +1100,10 @@ wsa://com.apple.android.music
 | TikTok (Global) | 25.0.3 | 12, 11 | ✅
 | TikTok (TV Version) | 1.6.0 | 11 | ❌ | App crashes
 | TikTok Lite | 21.7.1 | 11 | ❌ | App crashes
-| Tivimate | 4.4.0 | 11 | ✅ | Compatibility Options -&gt; Force App to be non-resizeable ; Disable smooth resize ; Keyboard Compatibility ; ForceFullScreen [F11] Note: Version 4.5. And above force crashes, the latest working version remains 4.4.0
+| Tivimate | 4.4.0 | 11 | ✅ | Compatibility Options ->Force App to be non-resizeable ; Disable smooth resize ; Keyboard Compatibility ; ForceFullScreen [F11] Note: Version 4.5. And above force crashes, the latest working version remains 4.4.0
 | TP-Link Tapo | 2.4.25 | 11 | ✅
 | Trello | 2021.14.1.16332-production | 11 | ⚠️ | Login needs web browser installed in WSA, using Windows' default browser will not work
-| Trust: Crypto &amp; Bitcoin Wallet | 6.57.1 | 12 | ✅ || For login, you have to go to Android settings =&gt; System =&gt; Date &amp; Time and toggle the "Set Time Automatically" option. you can access it by this command .\adb.exe shell "am start -n com.android.settings/.Settings"
+| Trust: Crypto &amp; Bitcoin Wallet | 6.57.1 | 12 | ✅ || For login, you have to go to Android settings =>System =>Date &amp; Time and toggle the "Set Time Automatically" option. you can access it by this command .\adb.exe shell "am start -n com.android.settings/.Settings"
 | Tune In Pro | 28.7 (267721) | 11 | ✅
 | Twitter | 9.16.1-release.00 | 11 | ✅ | Optionally requires GMS
 | Twitter Lite | 3.1.1 | 12 | ✅ ||
@@ -1336,8 +1336,6 @@ wsa://com.apple.android.music
 
 </details>
 
- 
-
 <details>
 <summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Usage%20Guides.md"><img height="60" src="https://img.icons8.com/external-xnimrodx-lineal-color-xnimrodx/96/null/external-guide-education-xnimrodx-lineal-color-xnimrodx.png" style="float: left;" width="60"/><h1>   Usage Guides</h1></a></summary>
 
@@ -1365,9 +1363,11 @@ wsa://com.apple.android.music
 
 ### Remove Non-Existent App Entries: 
 
-[<img src="https://img.shields.io/badge/-Remove%20Non--Existent%20App%20Entries-474154?style=for-the-badge&amp;logoColor=white&amp;logo=github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Usage%20Guides/General%20Usage%20Guides/Remove%20Non%20Existent%20App%20Entries.md) 
+[<img src="https://img.shields.io/badge/-Remove%20Non--Existent%20App%20Entries-474154?style=for-the-badge&amp;logoColor=white&amp;logo=github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Usage%20Guides/General%20Usage%20Guides/Remove%20Non%20Existent%20Entries.md) 
 
-</details> 
+
+</details>
+</a>
 
  
 
@@ -1375,7 +1375,7 @@ wsa://com.apple.android.music
 <summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Having%20Issues.md"><img height="60" src="https://img.icons8.com/external-soft-fill-juicy-fish/96/null/external-bug-coding-and-development-soft-fill-soft-fill-juicy-fish-2.png" style="float: left;" width="60"/><h1>   Having Issues?<h1></h1></h1></a></summary>
 
 ### Common Issues:
-[<img src="https://img.shields.io/badge/-Fix%20Install.ps1%20Issue-%23EF2D5E?style=for-the-badge&amp;logoColor=white&amp;logo=Github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fix%20Guides/Post-Install%20Issues/FixInstallps1.md)
+[<img src="https://img.shields.io/badge/-Fix%20Install.ps1%20Issue-%23EF2D5E?style=for-the-badge&amp;logoColor=white&amp;logo=Github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fix%20Guides/Pre-Install%20Issues/FixInstallps1.md)
 
 [<img src="https://img.shields.io/badge/-Fix Virtualization and Virtual Machine Platform Error-%23EF2D5E?style=for-the-badge&amp;logoColor=white&amp;logo=github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fix%20Guides/Post-Install%20Issues/FixVirtError.md)
 
@@ -1432,8 +1432,8 @@ wsa://com.apple.android.music
 <h4> If you can't find the build that you are looking for, I will be happy to fufill any custom build requests. <h4>
 <h4> Open an issue in the [Issues page](https://github.com/MustardChef/WSABuilds/issues) with the information below. <h4> 
    
-&gt; [!IMPORTANT]
-&gt; - State the [Device Model](https://github.com/WSABuilds/MagiskOnWSALocal#--custom-model) (Default: Pixel 5)? <br/> - Root Solution (Magisk, KernelSU or none)? <br/> - If you want a WSA build with Magisk, what [variant of magisk](https://github.com/WSABuilds/MagiskOnWSALocal#--magisk-ver) would you like? <br/> - Would you like GApps (Google Play Store and Play Services (GMS))? <br/> - Would you like to keep the Amazon Appstore? 
+>[!IMPORTANT]
+>- State the [Device Model](https://github.com/WSABuilds/MagiskOnWSALocal#--custom-model) (Default: Pixel 5)? <br/> - Root Solution (Magisk, KernelSU or none)? <br/> - If you want a WSA build with Magisk, what [variant of magisk](https://github.com/WSABuilds/MagiskOnWSALocal#--magisk-ver) would you like? <br/> - Would you like GApps (Google Play Store and Play Services (GMS))? <br/> - Would you like to keep the Amazon Appstore? 
 </h4></h4></h4></h4></h3></h3></details>      
 
     
@@ -1556,8 +1556,8 @@ wsa://com.apple.android.music
 
 <br/>
 
-&gt; [!IMPORTANT]
-&gt; ***The repository is provided as a utility.***
+>[!IMPORTANT]
+>***The repository is provided as a utility.***
 &gt;***Android is a trademark of Google LLC. Windows™ and Windows Subsystem for Android™ are trademarks of Microsoft LLC.***
 
 </details>
