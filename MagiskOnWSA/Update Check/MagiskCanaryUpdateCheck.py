@@ -6,7 +6,7 @@ import subprocess
 logging.captureWarnings(True)
 env_file = os.getenv('GITHUB_ENV')
 new_version_found = False
-currentver = requests.get(f"https://raw.githubusercontent.com/MustardChef/test1.0/update/magiskcanary.appversion").text.replace('\n', '')
+currentver = requests.get(f"https://raw.githubusercontent.com/MustardChef/WSABuilds/update/magiskcanary.appversion").text.replace('\n', '')
 git = (
     "git checkout -f update || git switch --discard-changes --orphan update"
 )

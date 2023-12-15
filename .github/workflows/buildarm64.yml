@@ -87,13 +87,13 @@ jobs:
         id: releasetag
         run: |
           if [[ "${{ inputs.release_type }}" == "WIF" ]]; then
-            currentver=$(curl -s https://raw.githubusercontent.com/MustardChef/test1.0/update/WIF.appversion)
+            currentver=$(curl -s https://raw.githubusercontent.com/MustardChef/WSABuilds/update/WIF.appversion)
             folderpath="/WSABuilds/Builds/Windows Subsystem For Android™ v$currentver/Windows 11/Windows 11 arm64"
             echo "DRIVE_FOLDER_PATH=$folderpath" >> $GITHUB_ENV  
             echo "WSA_TAG=Windows_11_${currentver}_arm64" >> $GITHUB_ENV
             echo "WSA_VER=$currentver" >> $GITHUB_ENV 
           else
-            currentver=$(curl -s https://raw.githubusercontent.com/MustardChef/test1.0/update/retail.appversion)
+            currentver=$(curl -s https://raw.githubusercontent.com/MustardChef/WSABuilds/update/retail.appversion)
             folderpath="/WSABuilds/Builds/Windows Subsystem For Android™ v$currentver/Windows 11/Windows 11 arm64"
             echo "DRIVE_FOLDER_PATH=$folderpath" >> $GITHUB_ENV  
             echo "WSA_TAG=Windows_11_${currentver}_arm64" >> $GITHUB_ENV

@@ -66,10 +66,10 @@ except:
 users = {"", user_code}
 
 # The code inside the function WSAInsiderUpdateChecker starts here
-currentver = requests.get(f"https://raw.githubusercontent.com/MustardChef/test1.0/update/WIF.appversion").text.replace('\n', '')
+currentver = requests.get(f"https://raw.githubusercontent.com/MustardChef/WSABuilds/update/WIF.appversion").text.replace('\n', '')
 
 print("Current working directory:", os.getcwd())
-print("Files in '/home/runner/work/test1.0/test1.0/MagiskOnWSALocal2/xml':", os.listdir('/home/runner/work/test1.0/test1.0/MagiskOnWSALocal2/xml'))
+print("Files in '/home/runner/work/WSABuilds/WSABuilds/MagiskOnWSALocal2/xml':", os.listdir('/home/runner/work/WSABuilds/WSABuilds/MagiskOnWSALocal2/xml'))
 
 # Write for pushing later
 try:
@@ -83,7 +83,7 @@ except Exception as e:
 
 if not new_version_found:
     # Get information
-    with open("/home/runner/work/test1.0/test1.0/MagiskOnWSALocal2/xml/GetCookie.xml", "r") as f:
+    with open("/home/runner/work/WSABuilds/WSABuilds/MagiskOnWSALocal2/xml/GetCookie.xml", "r") as f:
         cookie_content = f.read().format(user_code)
     try:
         out = session.post(
@@ -96,7 +96,7 @@ if not new_version_found:
         exit(1)
     doc = minidom.parseString(out.text)
     cookie = doc.getElementsByTagName('EncryptedData')[0].firstChild.nodeValue
-    with open("/home/runner/work/test1.0/test1.0/MagiskOnWSALocal2/xml/WUIDRequest.xml", "r") as f:
+    with open("/home/runner/work/WSABuilds/WSABuilds/MagiskOnWSALocal2/xml/WUIDRequest.xml", "r") as f:
         cat_id_content = f.read().format(user_code, cookie, cat_id, release_type)
     try:
         out = session.post(

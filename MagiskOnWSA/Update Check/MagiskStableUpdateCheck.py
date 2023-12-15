@@ -9,7 +9,7 @@ new_version_found = False
 git = (
     "git checkout -f update || git switch --discard-changes --orphan update"
 )
-currentver = requests.get(f"https://raw.githubusercontent.com/MustardChef/test1.0/update/magiskstable.appversion").text.replace('\n', '')
+currentver = requests.get(f"https://raw.githubusercontent.com/MustardChef/WSABuilds/update/magiskstable.appversion").text.replace('\n', '')
 with open('magiskstable.appversion', 'w') as file:
     file.write(currentver)
 if not new_version_found:
