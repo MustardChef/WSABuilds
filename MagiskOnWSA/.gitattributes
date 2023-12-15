@@ -1,0 +1,10 @@
+* text eol=lf merge=theirs
+
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+
+*.exe binary
+*.dll binary
+*.erofs binary
+linker64 binary
+*.so binary
