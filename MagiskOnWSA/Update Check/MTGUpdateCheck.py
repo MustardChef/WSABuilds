@@ -15,7 +15,7 @@ with open('gapps.appversion', 'w') as file:
 if not new_version_found:
     latestver = ""
     mtgmsg = ""
-    latestver = json.loads(requests.get(f"https://api.github.com/repos/MustardChef/MindTheGappsForWSABuilds/releases/latest").content)['name'].replace('\n', '')
+    latestver = json.loads(requests.get(f"https://api.github.com/repos/MustardChef/MindTheGappsArchived/releases/latest").content)['name'].replace('\n', '')
     mtgmsg="Update MindTheGapps Version from `v" + currentver + "` to `v" + latestver + "`"
     if currentver != latestver:
         print("New version found: " + latestver)
