@@ -422,9 +422,7 @@
  
 
 <details>
-<summary><a height="60" href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Installation.png" width="60"></a><img height="60" src="https://img.icons8.com/color/96/null/software-installer.png" style="float: left;" width="60"/><h1>   Installation<h1></h1></h1></summary>
-
- 
+<summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Updating.md"><img height="60" src="https://img.icons8.com/color/96/null/software-installer.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Updating.md">   Installation</a></h1></a></summary>
 
 > [!NOTE]
 > 
@@ -497,7 +495,7 @@
 
 
 <details>
-<summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Updating.md"><img height="60" src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/null/external-updating-tools-and-material-ecommerce-flaticons-flat-flat-icons.png" style="float: left;" width="60"/><h1>   Updating</h1></a></summary>
+<summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Updating.md"><img height="60" src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/null/external-updating-tools-and-material-ecommerce-flaticons-flat-flat-icons.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Updating.md">   Updating</a></h1></a></summary>
 
 ### How do I update without losing any of my apps and data on Windows Subsystem for Android (WSA)
 
@@ -580,7 +578,7 @@
  
        
 <details>
-<summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Backup%20and%20Restore.md"><img height="60" src="https://img.icons8.com/fluency/96/cloud-backup-restore.png" style="float: left;" width="60"/><h1>   Backup and Restore Userdata</h1></a></summary>
+<summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Backup%20and%20Restore.md"><img height="60" src="https://img.icons8.com/fluency/96/cloud-backup-restore.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Backup%20and%20Restore.md">   Backup and Restore Userdata</a></h1></a></summary>
 
 ## Backing Up Your Userdata
       
@@ -633,7 +631,7 @@ Go to ``%localappdata%\Packages`` and (if these folders/directory do not exist, 
 
 Now close the popups and run WSA and your userdata should hopefully be restored
 
-</add></details>
+</details>
     
 
  
@@ -720,7 +718,7 @@ Now close the popups and run WSA and your userdata should hopefully be restored
  
 
 <details>
-<summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/App%20Compatibility.md"><img height="60" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-compatibility-relationship-flaticons-lineal-color-flat-icons-2.png" style="float: left;" width="60"/><h1>   App Compatibility</h1></a></summary>
+<summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/App%20Compatibility.md"><img height="60" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-compatibility-relationship-flaticons-lineal-color-flat-icons-2.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/App%20Compatibility.md">   App Compatibility</a></h1></a></summary>
 
 ## Issues / Support
 
@@ -1333,7 +1331,7 @@ wsa://com.apple.android.music
 </details>
 
 <details>
-<summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Usage%20Guides.md"><img height="60" src="https://img.icons8.com/external-xnimrodx-lineal-color-xnimrodx/96/null/external-guide-education-xnimrodx-lineal-color-xnimrodx.png" style="float: left;" width="60"/><h1>   Usage Guides</h1></a></summary>
+<summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Usage%20Guides.md"><img height="60" src="https://img.icons8.com/external-xnimrodx-lineal-color-xnimrodx/96/null/external-guide-education-xnimrodx-lineal-color-xnimrodx.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Usage%20Guides.md">   Usage Guides</a></h1></a></summary>
 
  
 
@@ -1363,12 +1361,12 @@ wsa://com.apple.android.music
 
 
 </details>
-</a>
+
 
  
 
 <details>
-<summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Having%20Issues.md"><img height="60" src="https://img.icons8.com/external-soft-fill-juicy-fish/96/null/external-bug-coding-and-development-soft-fill-soft-fill-juicy-fish-2.png" style="float: left;" width="60"/><h1>   Having Issues?<h1></h1></h1></a></summary>
+<summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Having%20Issues.md"><img height="60" src="https://img.icons8.com/external-soft-fill-juicy-fish/96/null/external-bug-coding-and-development-soft-fill-soft-fill-juicy-fish-2.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Having%20Issues.md">   Having Issues?</a></h1></a></summary>
 
 ### Common Issues:
 [<img src="https://img.shields.io/badge/-Fix%20Install.ps1%20Issue-%23EF2D5E?style=for-the-badge&amp;logoColor=white&amp;logo=Github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fix%20Guides/Pre-Install%20Issues/FixInstallps1.md)
@@ -1403,8 +1401,7 @@ wsa://com.apple.android.music
       
 [<img src="https://img.shields.io/badge/-Google%20Play%20Issues-%23EF2D5E?style=for-the-badge&amp;logoColor=white&amp;logo=Github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fix%20Guides/Post-Install%20Issues/Google%20Play%20Issues.md)  
 
-[<img src="https://img.shields.io/badge/-WSA%20Settings%20App%20Crashes%20%2B%20Android%20Apps%20Do%20Not%20Load%20After%20Installation-%23EF2D5E?style=for-the-badge&amp;logoColor=white&amp;logo=Github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fix%20Guides/Post-Install%20Issues/WSA%20Settings%20App%20Crashes%20%2B%20Android%20Apps%20Do%20Not%20Load%20After%20Installation.md
-)   
+[<img src="https://img.shields.io/badge/-WSA%20Settings%20App%20Crashes%20%2B%20Android%20Apps%20Do%20Not%20Load%20After%20Installation-%23EF2D5E?style=for-the-badge&amp;logoColor=white&amp;logo=Github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fix%20Guides/Post-Install%20Issues/WSA%20Settings%20App%20Crashes%20%2B%20Android%20Apps%20Do%20Not%20Load%20After%20Installation.md)   
 
 [<img src="https://img.shields.io/badge/-WSA Does Not Load After Install %2B No Splashscreen-%23EF2D5E?style=for-the-badge&amp;logoColor=white&amp;logo=Github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fix%20Guides/Post-Install%20Issues/WSA%20Does%20Not%20Load%20After%20Install%20%2B%20No%20Splashscreen.md) 
 
@@ -1423,19 +1420,22 @@ wsa://com.apple.android.music
  
       
 <details>
-<summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Custom%20Builds.md"><img height="60" src="https://img.icons8.com/fluency/96/request-service.png" style="float: left;" width="60"/><h1>   Custom Builds Requests</h1></a></summary>
+<summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Custom%20Builds.md"><img height="60" src="https://img.icons8.com/fluency/96/request-service.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Custom%20Builds.md">   Custom Builds Requests</a></h1></a></summary>
+
 <h3>   ❓Want to request a prebuilt custom build❓ <h3>
 <h4> If you can't find the build that you are looking for, I will be happy to fufill any custom build requests. <h4>
 <h4> Open an issue in the [Issues page](https://github.com/MustardChef/WSABuilds/issues) with the information below. <h4> 
    
 > [!IMPORTANT]
 > - State the [Device Model](https://github.com/WSABuilds/MagiskOnWSALocal#--custom-model) (Default: Pixel 5)? <br/> - Root Solution (Magisk, KernelSU or none)? <br/> - If you want a WSA build with Magisk, what [variant of magisk](https://github.com/WSABuilds/MagiskOnWSALocal#--magisk-ver) would you like? <br/> - Would you like GApps (Google Play Store and Play Services (GMS))? <br/> - Would you like to keep the Amazon Appstore? 
-</h4></h4></h4></h4></h3></h3></details>      
+</h4></h4></h4></h4></h3></h3>
+
+</details>      
 
     
       
 <details>
-<summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Credits.md"><img height="60" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-credits-movie-theater-flaticons-lineal-color-flat-icons.png" style="float: left;" width="60"/><h1>   Credits</h1></a></summary>
+<summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Credits.md"><img height="60" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-credits-movie-theater-flaticons-lineal-color-flat-icons.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Credits.md">   Credits</a></h1></a></summary>
 <table>
 <thead>
 <tr>
