@@ -541,7 +541,7 @@
  
 
 <details>
-<summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Uninstallation.md"><img height="60" src="https://img.icons8.com/color/96/null/uninstall-programs.png" style="float: left;" width="60"/><h1>   Uninstallation</h1></a></summary>
+<summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Uninstallation.md"><img height="60" src="https://img.icons8.com/color/96/null/uninstall-programs.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Uninstallation.md"><img height="60" src="https://img.icons8.com/color/96/null/uninstall-programs.png" style="float: left;" width="60"/>   Uninstallation</a></h1></a></summary>
 
  
 
@@ -593,27 +593,27 @@ Before attempting to restore your backup, you must remove WSA if installed. Then
 > The Lines (as shown below) that you need to remove in ``Install.ps1`` may vary depending on the type of WSA Build that you are trying to install.    
       
 
-Android Settings:
+#### Android Settings:
 ```pwsh
 Start-Process "wsa://com.android.settings"
 ```
-Official Magisk:
+#### Official Magisk:
 ```pwsh
 Start-Process "wsa://com.topjohnwu.magisk"
 ```
-Magisk Delta:
+#### Magisk Delta:
 ```pwsh
 Start-Process "wsa://io.github.huskydg.magisk"
 ```
-Magisk Alpha:
+#### Magisk Alpha:
 ```pwsh
 Start-Process "wsa://io.github.vvb2060.magisk"
 ```
-Google Play Store:
+#### Google Play Store:
 ```pwsh
 Start-Process "wsa://com.android.vending"
 ```
-Amazon Appstore:
+#### Amazon Appstore:
 ```pwsh
 Start-Process "wsa://com.amazon.venezia"
 ``` 
@@ -637,7 +637,7 @@ Now close the popups and run WSA and your userdata should hopefully be restored
  
       
 <details>
-<summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/FAQ.md"><img height="60" src="https://img.icons8.com/3d-fluency/94/null/help.png" style="float: left;" width="60"/><h1>   FAQ</h1></a></summary>
+<summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/FAQ.md"><img height="60" src="https://img.icons8.com/3d-fluency/94/null/help.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/FAQ.md">   FAQ</a></h1></a></summary>
 
  
 **Help me, I am having problems with the MagiskOnWSA Builds**

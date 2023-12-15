@@ -15,27 +15,27 @@ Before attempting to restore your backup, you must remove WSA if installed. Then
 > The Lines (as shown below) that you need to remove in ``Install.ps1`` may vary depending on the type of WSA Build that you are trying to install.    
       
 
-Android Settings:
+#### Android Settings:
 ```pwsh
 Start-Process "wsa://com.android.settings"
 ```
-Official Magisk:
+#### Official Magisk:
 ```pwsh
 Start-Process "wsa://com.topjohnwu.magisk"
 ```
-Magisk Delta:
+#### Magisk Delta:
 ```pwsh
 Start-Process "wsa://io.github.huskydg.magisk"
 ```
-Magisk Alpha:
+#### Magisk Alpha:
 ```pwsh
 Start-Process "wsa://io.github.vvb2060.magisk"
 ```
-Google Play Store:
+#### Google Play Store:
 ```pwsh
 Start-Process "wsa://com.android.vending"
 ```
-Amazon Appstore:
+#### Amazon Appstore:
 ```pwsh
 Start-Process "wsa://com.amazon.venezia"
 ``` 
