@@ -720,6 +720,8 @@ Now close the popups and run WSA and your userdata should hopefully be restored
 <details>
 <summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/App%20Compatibility.md"><img height="60" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-compatibility-relationship-flaticons-lineal-color-flat-icons-2.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/App%20Compatibility.md">   App Compatibility</a></h1></a></summary>
 
+## Updated on 15/12/2023
+
 ## Issues / Support
 
 We can't offer support for the Windows Subsystem for Android (WSA) or Android apps.
@@ -742,7 +744,7 @@ This page currently uses Unicode characters from [Unicode Emoji (1.0)](https://u
 | Virtual Wifi (VirtWifi) | ✅
 | IPv6 | ✅ | Loading `ipv6.google.com` in Fennec F-Droid on a PC with IPv6 access, works well
 | Fingerprint Reader | ❌ | Test failed on ROG Flow X13, with SATRIA app
-| VPN | ❌ | VPN Connection request dialog does not appear
+| VPN | ⚠️ | VPNs may not work as intended
 | OpenGL ES 3.1 | ❌
 | Vulkan | ✅ | Added as experimental feature in [2307.40000.2.0](https://github.com/microsoft/WSA/discussions/374)
 
