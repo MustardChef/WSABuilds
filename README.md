@@ -9,12 +9,12 @@
 
 <br /> <br /> <br /> <br />
 
-## Downloads
+<img width="54" height="54" src="https://img.icons8.com/3d-fluency/94/downloads-folder.png" alt="downloads-folder" align="left"/><h2>Downloads</h2>
            
 <details>     
-   <summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Information.md"><img style="float: left;" src="https://img.icons8.com/3d-fluency/94/ok.png" width="35" height="35"/></picture><h3> &nbsp; WSABuilds Project Status</h3></a></summary>
+   <summary><center><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Information.md"><img style="float: center;" src="https://img.icons8.com/3d-fluency/94/ok.png" width="35" height="35"/></picture><h3> &nbsp; WSABuilds Project Status</h3></a></center></summary>
       
-<center><h3>⚠️❗IMPORTANT: Read Before Downloading❗⚠️<h3></center>
+<center><h3>⚠️❗IMPORTANT: Read Before Downloading❗⚠️</h3></center>
 
 <br />
 
@@ -185,7 +185,7 @@
     <td>✅</td>
   </tr>
   <tr>
-    <td>v2308.40000.2.0</td>
+    <td><b><i>v2308.40000.2.0<i><b></td>
     <td colspan="2">Update Skipped to allow time for adjusting the Docs and the build script (MagiskOnWSALocal). <br /> Sorry for any Inconvenence. Updates will resume as normal after this.</td>
   </tr>
   <tr>
@@ -199,20 +199,18 @@
     <td>✅</td>
   </tr>
   <tr>
-    <td>v2309.40000.4.0</td>
-    <td colspan="2" rowspan="5">"Updates have been skipped, in order to allow time to switch to GitHub Actions from my Linux Server, which I have been using since the start of the GitHub repo. Rest assure that this will likely be the last disruption. Once again I appologise and would also like to thank you for using this repo."<br /><br />MustardChef<br /></td>
+    <td><b><i>v2309.40000.4.0<i> to <i>2310.40000.1.0 and 2311.40000.3.0<i><b></td>
+    <td colspan="2" rowspan="1">"Updates have been skipped, in order to allow time to switch to GitHub Actions from my Linux Server, which I have been using since the start of the GitHub repo. Rest assure that this will likely be the last disruption. Once again I appologise and would also like to thank you for using this repo."<br /><br />MustardChef<br /></td>
   </tr>
   <tr>
-    <td>v2309.40000.5.0</td>
+    <td>v2310.40000.2.0</td>
+    <td>➖</td>
+    <td>➖</td>
   </tr>
   <tr>
-    <td>v2309.40000.7.0</td>
-  </tr>
-  <tr>
-    <td>v2308.40000.4.0</td>
-  </tr>
-    <tr>
-    <td>v2309.40000.8.0</td>
+    <td>v2311.40000.4.0</td>
+    <td>➖</td>
+    <td>➖</td>
   </tr>
 </tbody>
 </table>
@@ -370,7 +368,7 @@
 
       
       
-<h2>Requirements</h2>
+<img width="58" height="58" src="https://img.icons8.com/fluency/48/system-information.png" alt="system-information" align="left"/><h2>Requirements</h2>
 
 <center><table>
 <thead>
