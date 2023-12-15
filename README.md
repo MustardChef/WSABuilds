@@ -317,7 +317,7 @@
 </td>
 </tr>
 <tr>
-<td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2310.40000.2.0_arm64"><img alt="win11arm64downstable" src="https://img.shields.io/badge/https://img.shields.io/badge/Download%20Latest%20Stable%20Builds-Windows%2011%20arm64-blue?style=for-the-badge&amp;logo=windows11"/></a></p></td>
+<td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2310.40000.2.0_arm64"><img alt="win11arm64downstable" src="https://img.shields.io/badge/Download%20Latest%20Stable%20Builds-Windows%2011%20arm64-blue?style=for-the-badge&amp;logo=windows11"/></a></p></td>
 </tr>
 <tr>
 <td rowspan="2"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" style="width: 200px;"/></td>
