@@ -276,12 +276,12 @@
 <tr>
 <td><b>Current Version:</b></td>
 <td>2311.40000.4.0</td>
-<td colspan="2">2308.40000.3.0<br/></td>
+<td colspan="2">2310.40000.2.0</td>
 </tr>
 <tr>
 <td><b>Release Date:</b></td>
 <td>15/12/2023</td>
-<td colspan="2">Builds Released: 19/09/2023</td>
+<td colspan="2">15/12/2023</td>
 </tr>
 <tr>
 <td>Update Frequency:</td>
