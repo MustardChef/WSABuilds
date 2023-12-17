@@ -37,8 +37,7 @@
       
 [<img src="https://img.shields.io/badge/-Google%20Play%20Issues-%23EF2D5E?style=for-the-badge&amp;logoColor=white&amp;logo=Github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fix%20Guides/Post-Install%20Issues/Google%20Play%20Issues.md)  
 
-[<img src="https://img.shields.io/badge/-WSA%20Settings%20App%20Crashes%20%2B%20Android%20Apps%20Do%20Not%20Load%20After%20Installation-%23EF2D5E?style=for-the-badge&amp;logoColor=white&amp;logo=Github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fix%20Guides/Post-Install%20Issues/WSA%20Settings%20App%20Crashes%20%2B%20Android%20Apps%20Do%20Not%20Load%20After%20Installation.md
-)   
+[<img src="https://img.shields.io/badge/-WSA%20Settings%20App%20Crashes%20%2B%20Android%20Apps%20Do%20Not%20Load%20After%20Installation-%23EF2D5E?style=for-the-badge&amp;logoColor=white&amp;logo=Github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fix%20Guides/Post-Install%20Issues/WSA%20Settings%20App%20Crashes%20%2B%20Android%20Apps%20Do%20Not%20Load%20After%20Installation.md)   
 
 [<img src="https://img.shields.io/badge/-WSA Does Not Load After Install %2B No Splashscreen-%23EF2D5E?style=for-the-badge&amp;logoColor=white&amp;logo=Github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fix%20Guides/Post-Install%20Issues/WSA%20Does%20Not%20Load%20After%20Install%20%2B%20No%20Splashscreen.md) 
 
@@ -49,4 +48,6 @@
 [<img src="https://img.shields.io/badge/-Appx%20Module%20Cannot%20Be%20Loaded-%23EF2D5E?style=for-the-badge&amp;logoColor=white&amp;logo=Github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fix%20Guides/Pre-Install%20Issues/Appx%20Module%20Cannot%20Be%20Loaded.md) 
 
 [<img src="https://img.shields.io/badge/-Specified%20Logon%20Error-%23EF2D5E?style=for-the-badge&amp;logoColor=white&amp;logo=Github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fix%20Guides/Pre-Install%20Issues/Specified%20Logon%20Error.md) 
+
+
 
