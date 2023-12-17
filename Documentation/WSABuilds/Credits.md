@@ -70,6 +70,12 @@
 <td><a href="https://icons8.com/license" rel="noopener noreferrer" target="_blank">Icons8 License</a></td>
 <td>✅</td>
 </tr>
+<td>wsa-app-compatibility</td>
+<td>riverar and contributors</td>
+<td>App compatibility table has been obtained from this repo</td>
+<td>No License</td>
+<td>✅</td>
+</tr>
 </tbody>
 </table>
 

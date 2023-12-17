@@ -422,7 +422,7 @@
  
 
 <details>
-<summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Updating.md"><img height="60" src="https://img.icons8.com/color/96/null/software-installer.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Updating.md">   Installation</a></h1></a></summary>
+<summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Installation.md"><img height="60" src="https://img.icons8.com/color/96/null/software-installer.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Installation.md">   Installation</a></h1></a></summary>
 
 > [!NOTE]
 > 
@@ -742,6 +742,7 @@ This page currently uses Unicode characters from [Unicode Emoji (1.0)](https://u
 |---------|---------------|-------|
 | Multi-touch | ✅ | Demo: [Arcaea](https://www.bilibili.com/video/BV1Ph411n7M5)
 | Virtual Wifi (VirtWifi) | ✅
+| Bluetooth | ❌
 | IPv6 | ✅ | Loading `ipv6.google.com` in Fennec F-Droid on a PC with IPv6 access, works well
 | Fingerprint Reader | ❌ | Test failed on ROG Flow X13, with SATRIA app
 | VPN | ⚠️ | VPNs may not work as intended
@@ -1335,7 +1336,7 @@ wsa://com.apple.android.music
 
 
 <details>
-<summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Usage%20Guides.md"><img height="60" src="https://img.icons8.com/external-xnimrodx-lineal-color-xnimrodx/96/null/external-guide-education-xnimrodx-lineal-color-xnimrodx.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Usage%20Guides.md">   Usage Guides</a></h1></a></summary>
+<summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Usage%20Guide.md"><img height="60" src="https://img.icons8.com/external-xnimrodx-lineal-color-xnimrodx/96/null/external-guide-education-xnimrodx-lineal-color-xnimrodx.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Usage%20Guide.md">   Usage Guides</a></h1></a></summary>
 
 
 ### GPU Guide:
@@ -1504,6 +1505,13 @@ wsa://com.apple.android.music
 <td>Icons8</td>
 <td>Some icons used in this repo were obtained from Icons8. To view the specific icons used, check the raw Markdown and HTML files,</td>
 <td><a href="https://icons8.com/license" rel="noopener noreferrer" target="_blank">Icons8 License</a></td>
+<td>✅</td>
+</tr>
+</tr>
+<td>wsa-app-compatibility</td>
+<td>riverar and contributors</td>
+<td>App compatibility table has been obtained from this repo</td>
+<td>No License</td>
 <td>✅</td>
 </tr>
 </tbody>
