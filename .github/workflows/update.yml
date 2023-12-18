@@ -92,7 +92,7 @@ jobs:
           delete_workflow_pattern: "Check update"
           
       - name: Checkout Again! 🔄
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4
       
     outputs:
       SHOULD_BUILD: ${{ env.SHOULD_BUILD }}
@@ -113,12 +113,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🔄
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -176,12 +176,12 @@ jobs:
     if: needs.check.outputs.SHOULD_BUILD == 'yes'
     steps:
       - name: Checkout 🔄
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -244,7 +244,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🔄
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4
 
       - name: Prepare release tag 🏷️
         id: releasetag
