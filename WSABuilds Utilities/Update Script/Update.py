@@ -1,4 +1,4 @@
-#    <UNINSTALL SCRIPT FOR WSABUILDS>
+#    <UPDATER SCRIPT FOR WSABUILDS>
 #    Copyright (C) <2023>  <MustardChef (https://github.com/MustardChef)>
 #
 #    This program is free software: you can redistribute it and/or modify
