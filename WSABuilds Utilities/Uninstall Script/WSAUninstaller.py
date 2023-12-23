@@ -1,18 +1,25 @@
-#    <UNINSTALL SCRIPT FOR WSABUILDS>
-#    Copyright (C) <2023>  <MustardChef (https://github.com/MustardChef)>
+# WSAUninstaller 
+# Version: 1.1.0
 #
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or any later version.
 #
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
+# This file is part of the WSABuilds project.
 #
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+# WSAUninstaller is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as
+# published by the Free Software Foundation, either version 3 of the
+# License, or (at your option) any later version.
+#
+# WSAUninstaller is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with WSAUninstaller.  If not, see <https://www.gnu.org/licenses/>.
+#
+# Copyright (C) 2023 MustardChef
+#
+
 
 import os
 import shutil
@@ -20,8 +27,10 @@ import subprocess
 import winreg
 import ctypes
 import logging
+import tkinter as tk
+from tkinter import messagebox
 
-
+# Check if the script is running as an administrator
 def is_admin():
     try:
         return ctypes.windll.shell32.IsUserAnAdmin()
@@ -35,12 +44,18 @@ if not is_admin():
 # Define the package full name
 package_full_name = 'MicrosoftCorporationII.WindowsSubsystemForAndroid'
 
+target_string = "MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe"
+start_menu_dir = "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs"
+
 # Define the directories to check
 dirs_to_check = [
-    os.path.expandvars(r'%AppData%\Local\Microsoft\WindowsApps\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe'),
-    os.path.expandvars(r'%AppData%\Local\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe')
+    os.path.expandvars(r'%LocalAppData%\Microsoft\WindowsApps\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe'),
+    os.path.expandvars(r'%LocalAppData%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe'),
+    os.path.expandvars(r'C:\Windows\System32\config\systemprofile\AppData\Local\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe'),
+    os.path.expandvars(r'%LocalAppData%\Microsoft\WindowsApps\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe'),
+    os.path.expandvars(r'C:\ProgramData\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe'),
+    os.path.expandvars(r'%LocalAppData%\Local\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe')
 ]
-
 
 def with_restore_point_creation_frequency(minutes, func):
     # Define the key path
@@ -117,6 +132,38 @@ def delete_registry_folders():
             break
     winreg.CloseKey(key)
 
+def delete_folders_and_files(root_path):
+    target_string = 'MicrosoftCorporationII.WindowsSubsystemForAndroid'
+    
+    # Walk through the file system starting from the root_path
+    for dirpath, dirnames, filenames in os.walk(root_path):
+        
+        # Check each directory
+        for dirname in dirnames:
+            if target_string in dirname:
+                full_dir_path = os.path.join(dirpath, dirname)
+                print(f"Deleting directory: {full_dir_path}")
+                shutil.rmtree(full_dir_path)
+        
+        # Check each file
+        for filename in filenames:
+            if target_string in filename:
+                full_file_path = os.path.join(dirpath, filename)
+                print(f"Deleting file: {full_file_path}")
+                os.remove(full_file_path)    
+
+def delete_shortcuts(target_string, start_menu_dir):
+    # Walk through the file system starting from the start_menu_dir
+    for dirpath, dirnames, filenames in os.walk(start_menu_dir):
+        for filename in filenames:
+            full_file_path = os.path.join(dirpath, filename)
+            target_location = os.path.realpath(full_file_path)
+            if target_string in target_location:
+                print(f"Deleting shortcut: {full_file_path}")
+                os.remove(full_file_path)
+
+
+
 def main():
     # Create a system restore point
     create_restore_point("WSABuilds Uninstallation Script Restore Point")
@@ -128,8 +175,14 @@ def main():
     for dir_path in dirs_to_check:
         delete_directory(dir_path)
 
+    # Delete the files and folders in the WindowsApps folder
+    delete_folders_and_files('C:\\ProgramData\\Microsoft\\Windows\\WindowsApps')
+
     # Delete the registry folders
     delete_registry_folders()
+    
+    # Delete the shortcuts
+    delete_shortcuts(target_string, start_menu_dir)
 
 if __name__ == '__main__':
     with_restore_point_creation_frequency(0, main)
