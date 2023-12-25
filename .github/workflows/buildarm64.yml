@@ -140,7 +140,7 @@ jobs:
           name: ${{ needs.build.outputs.zipname }}-${{ needs.build.outputs.built }}
 
       - name: Remove unused artifact ❌
-        uses: geekyeggo/delete-artifact@v2
+        uses: geekyeggo/delete-artifact@v4
         with:
           name: ${{ needs.build.outputs.zipname }}-${{ needs.build.outputs.built }}
 
