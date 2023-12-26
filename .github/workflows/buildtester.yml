@@ -1,0 +1,218 @@
+name: Custom Build (for testing purpose)
+run-name: WSA ${{ inputs.release_type }} ${{ inputs.arch }} with ${{ inputs.root_sol }} and ${{ inputs.gapps_brand }} as ${{ inputs.custom_model }}
+on:
+  workflow_dispatch:
+    inputs:
+      wintype:
+        type: choice
+        description: Target Windows version.
+        required: true
+        options: ["Windows 10","Windows 11"]
+        default: "Windows 11"  
+      arch:
+        type: choice
+        description: Target CPU architecture of WSA.
+        required: true
+        options: [x64, arm64]
+        default: x64
+      release_type:
+        type: choice
+        description: WSA Release Channel
+        required: true
+        options: ["Retail","Release Preview","Insider Slow","Insider Fast","Insider Private"]
+        default: "Retail"
+      user_code:
+        type: string
+        description: User code for WSA Insider User (Optional)
+        required: false
+        default: ""
+      root_sol:
+        type: choice
+        description: Root solution
+        required: true
+        options: ["Non-root","KernelSU","Magisk Stable","Magisk Beta","Magisk Canary","Magisk Debug","Magisk Alpha (vvb2060)","Magisk Delta (HuskyDG)"]
+        default: "Magisk Stable"
+      gapps_brand:
+        type: choice
+        description: Google Apps brand
+        required: true
+        options: ["MindTheGapps v13.0","No GApps"]
+        default: "MindTheGapps v13.0"
+      custom_model:
+        type: choice
+        description: Custom model
+        required: true
+        options: ["WSA Default", "Pixel 4a", "Pixel 4a (5G)", "Pixel 5", "Pixel 5a", "Pixel 6", "Pixel 6 Pro", "Pixel 6a", "Pixel 7", "Pixel 7 Pro", "Pixel 7a", "Pixel Tablet", "Pixel Fold"]
+        default: "Pixel 5"
+      compression:
+        type: choice
+        description: Compression format.
+        required: true
+        options: [".zip",".7z"]
+        default: ".7z"
+      remove_amazon:
+        description: "Remove Amazon Appstore from the system"
+        required: true
+        default: true
+        type: boolean
+
+jobs:
+  build:
+    name: Build WSA
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check inputs
+        run: |
+            if [[ "${{ github.event.inputs.wintype }}" == "Windows 10" && "${{ github.event.inputs.arch }}" == "arm64" ]]; then
+                echo "Windows 10 patch does not support arm64 architecture"
+                exit 1
+            else
+                echo "Inputs are valid"        
+            fi
+
+      - name: Checkout ♻️
+        uses: actions/checkout@v4
+
+      - name: Setup Python 👷
+        uses: actions/setup-python@v5
+        with:
+          check-latest: true
+          python-version: '3.x'
+          cache: 'pip'
+          cache-dependency-path: scripts/
+
+      - name: Setup Python3 Virtual Enviroment 🐍
+        working-directory: MagiskOnWSA/scripts
+        run: |
+          sudo apt-get update
+          PYTHON_VENV_DIR="$(dirname "$PWD")/python3-env"
+          python3 -m venv "$PYTHON_VENV_DIR" || abort "Failed to create python3 virtual env"
+          # shellcheck disable=SC1091
+          source "$PYTHON_VENV_DIR/bin/activate" || abort "Failed to activate python3 virtual env"
+          python3 -c "import pkg_resources; pkg_resources.require(open('requirements.txt',mode='r'))" &>/dev/null || {
+              echo "Installing Python3 dependencies"
+              python3 -m pip install --upgrade -r requirements.txt || abort "Failed to install python3 dependencies"
+          }
+          deactivate
+
+      - name: Install Ubuntu Dependencies 🧑‍🏭
+        uses: awalsh128/cache-apt-pkgs-action@v1
+        with:
+          packages: e2fsprogs attr unzip qemu-utils python3-venv
+          version: 1.0
+
+      - name: Build WSA 🏗️
+        id: wsa
+        working-directory: MagiskOnWSA
+        run: |
+          declare -A opts=( ["RELEASE_TYPE,Retail"]="retail" ["RELEASE_TYPE,Release Preview"]="RP" ["RELEASE_TYPE,Insider Slow"]="WIS" ["RELEASE_TYPE,Insider Fast"]="WIF" ["RELEASE_TYPE,Insider Private"]="latest" ["ROOT_SOL,Magisk Stable"]="stable" ["ROOT_SOL,Magisk Beta"]="beta" ["ROOT_SOL,Magisk Canary"]="canary" ["ROOT_SOL,Magisk Debug"]="debug" ["ROOT_SOL,Magisk Delta (HuskyDG)"]="delta" ["ROOT_SOL,Magisk Alpha (vvb2060)"]="alpha" ["ROOT_SOL,KernelSU"]="kernelsu" ["ROOT_SOL,Non-root"]="none" ["GAPPS_BRAND,MindTheGapps v13.0"]="MindTheGapps" ["GAPPS_BRAND,No GApps"]="none" ["CUSTOM_MODEL,WSA Default"]="none" ["CUSTOM_MODEL,Pixel 4a"]="sunfish" ["CUSTOM_MODEL,Pixel 4a (5G)"]="bramble" ["CUSTOM_MODEL,Pixel 5"]="redfin" ["CUSTOM_MODEL,Pixel 5a"]="barbet" ["CUSTOM_MODEL,Pixel 6 Pro"]="raven" ["CUSTOM_MODEL,Pixel 6"]="oriole" ["CUSTOM_MODEL,Pixel 6a"]="bluejay" ["CUSTOM_MODEL,Pixel 7"]="panther" ["CUSTOM_MODEL,Pixel 7 Pro"]="cheetah" ["CUSTOM_MODEL,Pixel 7a"]="lynx" ["CUSTOM_MODEL,Pixel Tablet"]="tangorpro" ["CUSTOM_MODEL,Pixel Fold"]="felix" ["REMOVE_AMAZON,true"]="--remove-amazon" ["COMPRESSION,.zip"]="zip" ["COMPRESSION,.7z"]="7z" )
+
+          if [[ "${{ inputs.root_sol }}" == *Magisk* ]]; then
+              MAGISK_VER="${opts[ROOT_SOL,${{ inputs.root_sol }}]}"
+              ROOT_SOL="magisk"
+          else
+              MAGISK_VER="${opts[ROOT_SOL,Magisk Stable]}"
+              ROOT_SOL="${opts[ROOT_SOL,${{ inputs.root_sol }}]}"
+          fi
+          chmod -R 777 ./
+          mkdir -p download
+          echo -e "user_code=$(cat $GITHUB_EVENT_PATH | jq -r '.inputs.user_code')" > download/.ms_account
+          ./scripts/build.sh --arch ${{ inputs.arch }} --release-type ${opts[RELEASE_TYPE,${{ inputs.release_type }}]} --magisk-ver $MAGISK_VER --gapps-brand ${opts[GAPPS_BRAND,${{ inputs.gapps_brand }}]} --custom-model ${opts[CUSTOM_MODEL,${{ inputs.custom_model }}]} --root-sol $ROOT_SOL --compress-format ${opts[COMPRESSION,${{ inputs.compression }}]} ${opts[REMOVE_AMAZON,${{ inputs.remove_amazon }}]} --after-compress
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+  
+      - name: Pass to Windows 💸
+        uses: actions/cache/save@v3
+        with:
+          path: output
+          key: ${{ steps.wsa.outputs.artifact }}-${{ steps.wsa.outputs.built }}
+          enableCrossOsArchive: true
+
+    outputs:
+      artifact: ${{ steps.wsa.outputs.artifact }}
+      built: ${{ steps.wsa.outputs.built }}
+
+  make-pri:
+    name: Merge PRI resources
+    runs-on: windows-latest
+    needs: build
+    steps:
+      - name: Checkout ♻️
+        uses: actions/checkout@v4
+
+      - name: Download built artifact ⌛
+        uses: actions/cache/restore@v3
+        with:
+          path: output
+          key: ${{ needs.build.outputs.artifact }}-${{ needs.build.outputs.built }}
+          enableCrossOsArchive: true
+          fail-on-cache-miss: true
+
+      - name: Merge language and density resources 🧙🏻‍♂️
+        run: |
+          if ("${{ inputs.arch }}" -eq "x64") {
+            (Start-Process pwsh.exe -NoNewWindow -PassThru -Args "-ExecutionPolicy Bypass -File MakePri.ps1" -WorkingDirectory "${{ github.workspace }}\output\${{ needs.build.outputs.artifact }}").WaitForExit()
+          } else {
+            Copy-Item -Force "C:\Program Files (x86)\Windows Kits\10\bin\10.0.22621.0\arm64\makepri.exe" "${{ github.workspace }}\output\${{ needs.build.outputs.artifact }}"
+          }
+
+      - name: Compact Images 💿
+        run: |
+         foreach ($Partition in 'system','product','system_ext','vendor') {
+             Write-Output "Optimizing of $Partition..."
+             Write-Output "SELECT VDISK FILE=`"${{ github.workspace }}\output\${{ needs.build.outputs.artifact }}\$Partition.vhdx`"`
+             ATTACH VDISK READONLY`
+             COMPACT VDISK`
+             DETACH VDISK" | Set-Content -Path "$Partition.txt" -Encoding Ascii
+             Start-Process -NoNewWindow -Wait "diskpart.exe" -Args "/s $Partition.txt" -RedirectStandardOutput NUL
+         }
+
+      - name: Run WSA Windows 10 PowerShell Patch Script
+        if: inputs.wintype == 'Windows 10'
+        run: |
+            Write-Output "`r`nPatching Windows 10 AppxManifest file..."
+            $outputDir = "${{ github.workspace }}\output\${{ needs.build.outputs.artifact_folder }}"
+            $xml = [xml](Get-Content "$outputDir\AppxManifest.xml")
+            $nsm = New-Object Xml.XmlNamespaceManager($xml.NameTable)
+            $nsm.AddNamespace('rescap', "http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities")
+            $nsm.AddNamespace('desktop6', "http://schemas.microsoft.com/appx/manifest/desktop/windows10/6")
+            $node = $xml.Package.Capabilities.SelectSingleNode("rescap:Capability[@Name='customInstallActions']", $nsm)
+            $xml.Package.Capabilities.RemoveChild($node) | Out-Null
+            $node = $xml.Package.Extensions.SelectSingleNode("desktop6:Extension[@Category='windows.customInstall']", $nsm)
+            $xml.Package.Extensions.RemoveChild($node) | Out-Null
+            $xml.Package.Dependencies.TargetDeviceFamily.MinVersion = "10.0.19041.264"
+            $xml.Save("$outputDir\AppxManifest.xml")
+            Write-Output "`r`nDownloading modifided DLL file..."
+            $ProgressPreference = 'SilentlyContinue'
+            Invoke-WebRequest -Uri "https://github.com/MustardChef/WSAPatch/raw/main/DLLs%20for%20WSABuilds/winhttp.dll" -OutFile "$outputDir\WSAClient\winhttp.dll"
+            Invoke-WebRequest -Uri "https://github.com/MustardChef/WSAPatch/raw/main/DLLs%20for%20WSABuilds/WsaPatch.dll" -OutFile "$outputDir\WSAClient\WsaPatch.dll"
+            Invoke-WebRequest -Uri "https://github.com/MustardChef/WSAPatch/raw/main/DLLs%20for%20WSABuilds/icu.dll" -OutFile "$outputDir\WSAClient\icu.dll"
+        shell: pwsh 
+
+      - name: Compress 7-Zip and Add checksum (Windows 10) ✔️
+        if: inputs.compression == '.7z' && inputs.wintype == 'Windows 10'
+        working-directory: output
+        run: |
+            7z a -t7z -mx=6 -m0=LZMA2 -ms=on -mmt=8 -sdel -- ${{ needs.build.outputs.artifact }}_Windows_10.7z ${{ needs.build.outputs.artifact }}\*
+            ($(Get-FileHash -Path ${{ needs.build.outputs.artifact }}_Windows_10.7z -Algorithm SHA256).Hash.ToLower().ToString() + "  " + "${{ needs.build.outputs.artifact }}_Windows_10.7z") | Out-File -FilePath sha256-checksum.txt -Encoding UTF8
+
+         
+      - name: Compress 7-Zip and Add checksum (Windows 11) ✔️
+        if: inputs.compression == '.7z'
+        working-directory: output
+        run: |
+          7z a -t7z -mx=6 -m0=LZMA2 -ms=on -mmt=8 -sdel -- ${{ needs.build.outputs.artifact }}.7z ${{ needs.build.outputs.artifact }}\*
+          ($(Get-FileHash -Path ${{ needs.build.outputs.artifact }}.7z -Algorithm SHA256).Hash.ToLower().ToString() + "  " + "${{ needs.build.outputs.artifact }}.7z") | Out-File -FilePath sha256-checksum.txt -Encoding UTF8
+
+      - name: Upload Windows 11 Artifact 📦
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ needs.build.outputs.artifact }}-compressed
+          path: output
+
+      - name: Upload Windows 10 Artifact 📦
+        if: inputs.wintype == 'Windows 10'
+        uses: actions/upload-artifact@v4
+        with:
+            name: ${{ needs.build.outputs.artifact }}_Windows_10-compressed
+            path: output
