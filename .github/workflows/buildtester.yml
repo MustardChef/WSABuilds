@@ -124,7 +124,7 @@ jobs:
       - name: Pass to Windows 💸
         uses: actions/cache/save@v3
         with:
-          path: output
+          path: MagiskOnWSA/output
           key: ${{ steps.wsa.outputs.artifact }}-${{ steps.wsa.outputs.built }}
           enableCrossOsArchive: true
 
