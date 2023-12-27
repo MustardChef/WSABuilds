@@ -120,17 +120,23 @@ jobs:
           ./scripts/build.sh --arch ${{ inputs.arch }} --release-type ${opts[RELEASE_TYPE,${{ inputs.release_type }}]} --magisk-ver $MAGISK_VER --gapps-brand ${opts[GAPPS_BRAND,${{ inputs.gapps_brand }}]} --custom-model ${opts[CUSTOM_MODEL,${{ inputs.custom_model }}]} --root-sol $ROOT_SOL --compress-format ${opts[COMPRESSION,${{ inputs.compression }}]} ${opts[REMOVE_AMAZON,${{ inputs.remove_amazon }}]} --after-compress
         env:
           API_KEY: ${{ secrets.API_KEY }}
+
+      - name: Set date
+        id: date
+        run: echo "DATE=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+        shell: bash
   
       - name: Pass to Windows 💸
         uses: actions/cache/save@v3
         with:
           path: MagiskOnWSA/output
-          key: ${{ steps.wsa.outputs.artifact }}-${{ steps.wsa.outputs.built }}
+          key: ${{ steps.wsa.outputs.artifact }}-${{ steps.wsa.outputs.built }}-${{ steps.date.outputs.date }}
           enableCrossOsArchive: true
 
     outputs:
       artifact: ${{ steps.wsa.outputs.artifact }}
       built: ${{ steps.wsa.outputs.built }}
+      date: ${{ steps.date.outputs.date }}
 
   make-pri:
     name: Merge PRI resources
@@ -144,7 +150,7 @@ jobs:
         uses: actions/cache/restore@v3
         with:
           path: output
-          key: ${{ needs.build.outputs.artifact }}-${{ needs.build.outputs.built }}
+          key: ${{ needs.build.outputs.artifact }}-${{ needs.build.outputs.built }}-${{ needs.build.outputs.date }}
           enableCrossOsArchive: true
           fail-on-cache-miss: true
 
