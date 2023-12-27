@@ -5,11 +5,12 @@
 &nbsp;
 
 ### Common Issues:
+[<img src="https://img.shields.io/badge/-Fix%20Extraction%20Errors-%23EF2D5E?style=for-the-badge&amp;logoColor=white&amp;logo=Github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fix%20Guides/Pre-Install%20Issues/Extraction%20Errors.md)
+
+
 [<img src="https://img.shields.io/badge/-Fix%20Install.ps1%20Issue-%23EF2D5E?style=for-the-badge&amp;logoColor=white&amp;logo=Github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fix%20Guides/Pre-Install%20Issues/FixInstallps1.md)
 
 [<img src="https://img.shields.io/badge/-Fix Virtualization and Virtual Machine Platform Error-%23EF2D5E?style=for-the-badge&amp;logoColor=white&amp;logo=github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fix%20Guides/Post-Install%20Issues/FixVirtError.md)
-
-[<img src="https://img.shields.io/badge/-Fix%20Internet%20Issues-%23EF2D5E?style=for-the-badge&amp;logoColor=white&amp;logo=Github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fix%20Guides/Post-Install%20Issues/FixInternet.md)
 
 [<img src="https://img.shields.io/badge/-Fix%20Error%200x80073CF0-%23EF2D5E?style=for-the-badge&amp;logoColor=white&amp;logo=Github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fix%20Guides/Pre-Install%20Issues/Fix%20Error%200x80073CF0.md)
 
@@ -49,5 +50,4 @@
 
 [<img src="https://img.shields.io/badge/-Specified%20Logon%20Error-%23EF2D5E?style=for-the-badge&amp;logoColor=white&amp;logo=Github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fix%20Guides/Pre-Install%20Issues/Specified%20Logon%20Error.md) 
 
-
-
+[<img src="https://img.shields.io/badge/-Fix%20Internet%20Issues-%23EF2D5E?style=for-the-badge&amp;logoColor=white&amp;logo=Github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fix%20Guides/Post-Install%20Issues/FixInternet.md)

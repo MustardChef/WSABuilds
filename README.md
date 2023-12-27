@@ -331,7 +331,7 @@
 </tr>
 <tr>
 <td rowspan="2"><p align="center"><img src="https://img.icons8.com/color/240/null/windows-11.png" style="width: 50px;"/><img src="https://img.icons8.com/color/240/null/windows-10.png" style="width: 50px;"/></p></td>
-<td rowspan="2"><p><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/OldBuilds.md"><img alt="windownold" src="https://img.shields.io/badge/Windows%2010%2F11-Older%20Builds-red?style=for-the-badge"/></a></p></td>
+<td rowspan="2"><p><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/OldBuilds.md"><img alt="windownold" src="https://img.shields.io/badge/Windows%2010%2F11-Older%20Builds-red?style=for-the-badge"/></a></p></td>
 <td rowspan="2"><p><a href="https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/EgNsfSstHBtIuAZgiNVkanYBTwu0kKVC_QvOiW7i0IojdQ"><img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&amp;logo=Microsoft%20OneDrive&amp;logoColor=0078D4" style="width: 150px;"/></a></p></td>
 </tr>
 <tr>
@@ -1373,11 +1373,12 @@ wsa://com.apple.android.music
 <summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Having%20Issues.md"><img height="60" src="https://img.icons8.com/external-soft-fill-juicy-fish/96/null/external-bug-coding-and-development-soft-fill-soft-fill-juicy-fish-2.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Having%20Issues.md">   Having Issues?</a></h1></a></summary>
 
 ### Common Issues:
+[<img src="https://img.shields.io/badge/-Fix%20Extraction%20Errors-%23EF2D5E?style=for-the-badge&amp;logoColor=white&amp;logo=Github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fix%20Guides/Pre-Install%20Issues/Extraction%20Errors.md)
+
+
 [<img src="https://img.shields.io/badge/-Fix%20Install.ps1%20Issue-%23EF2D5E?style=for-the-badge&amp;logoColor=white&amp;logo=Github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fix%20Guides/Pre-Install%20Issues/FixInstallps1.md)
 
 [<img src="https://img.shields.io/badge/-Fix Virtualization and Virtual Machine Platform Error-%23EF2D5E?style=for-the-badge&amp;logoColor=white&amp;logo=github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fix%20Guides/Post-Install%20Issues/FixVirtError.md)
-
-[<img src="https://img.shields.io/badge/-Fix%20Internet%20Issues-%23EF2D5E?style=for-the-badge&amp;logoColor=white&amp;logo=Github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fix%20Guides/Post-Install%20Issues/FixInternet.md)
 
 [<img src="https://img.shields.io/badge/-Fix%20Error%200x80073CF0-%23EF2D5E?style=for-the-badge&amp;logoColor=white&amp;logo=Github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fix%20Guides/Pre-Install%20Issues/Fix%20Error%200x80073CF0.md)
 
@@ -1416,6 +1417,8 @@ wsa://com.apple.android.music
 [<img src="https://img.shields.io/badge/-Appx%20Module%20Cannot%20Be%20Loaded-%23EF2D5E?style=for-the-badge&amp;logoColor=white&amp;logo=Github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fix%20Guides/Pre-Install%20Issues/Appx%20Module%20Cannot%20Be%20Loaded.md) 
 
 [<img src="https://img.shields.io/badge/-Specified%20Logon%20Error-%23EF2D5E?style=for-the-badge&amp;logoColor=white&amp;logo=Github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fix%20Guides/Pre-Install%20Issues/Specified%20Logon%20Error.md) 
+
+[<img src="https://img.shields.io/badge/-Fix%20Internet%20Issues-%23EF2D5E?style=for-the-badge&amp;logoColor=white&amp;logo=Github"/>](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Fix%20Guides/Post-Install%20Issues/FixInternet.md)
 
 
 
