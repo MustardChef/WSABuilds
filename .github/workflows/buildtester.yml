@@ -118,8 +118,8 @@ jobs:
           mkdir -p download
           echo -e "user_code=$(cat $GITHUB_EVENT_PATH | jq -r '.inputs.user_code')" > download/.ms_account
           ./scripts/build.sh --arch ${{ inputs.arch }} --release-type ${opts[RELEASE_TYPE,${{ inputs.release_type }}]} --magisk-ver $MAGISK_VER --gapps-brand ${opts[GAPPS_BRAND,${{ inputs.gapps_brand }}]} --custom-model ${opts[CUSTOM_MODEL,${{ inputs.custom_model }}]} --root-sol $ROOT_SOL --compress-format ${opts[COMPRESSION,${{ inputs.compression }}]} ${opts[REMOVE_AMAZON,${{ inputs.remove_amazon }}]} --after-compress
-        env:
-          API_KEY: ${{ secrets.API_KEY }}
+        shell: bash
+
 
       - name: Set date
         id: date
@@ -130,7 +130,7 @@ jobs:
         uses: actions/cache/save@v3
         with:
           path: MagiskOnWSA/output
-          key: ${{ steps.wsa.outputs.artifact }}-${{ steps.wsa.outputs.built }}-${{ steps.date.outputs.date }}
+          key: ${{ steps.wsa.outputs.artifact }}-${{ steps.date.outputs.date }}
           enableCrossOsArchive: true
 
     outputs:
@@ -150,7 +150,7 @@ jobs:
         uses: actions/cache/restore@v3
         with:
           path: output
-          key: ${{ needs.build.outputs.artifact }}-${{ needs.build.outputs.built }}-${{ needs.build.outputs.date }}
+          key: ${{ needs.build.outputs.artifact }}-${{ needs.build.outputs.date }}
           enableCrossOsArchive: true
           fail-on-cache-miss: true
 
