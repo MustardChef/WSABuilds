@@ -5,6 +5,7 @@
 
 <br/>
 
+
 > [!NOTE]
 > 
 > If you have the official Windows Subsystem For Android™ installed, you must [completely uninstall](#uninstallation) it to use MagiskOnWSA. 
@@ -13,6 +14,15 @@
 > 
 > In case you want to preserve your data from the previous installation (official or MagiskOnWSA), you can backup Userdata.vhdx, located at ``%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx`` before uninstallation and restore it after installation. A guide for this process is located further down in this README.
 
+---
+
+### Video Guide:
+##### Special Thanks to kilObit (creator of the video)
+<a href="https://www.youtube.com/watch?v=11lw-IHPH3A"><img src="https://github.com/MustardChef/WSABuilds/assets/68516357/68874bad-9f71-436b-a35b-f06eb7f9fa57" style="float: left;" height="40%" width="40%"/>
+
+---
+
+### Text Guide:
 1. Go to the [Releases page](https://github.com/MustardChef/WSABuilds/releases/latest)
 2. In the latest release, go to the Assets section and download the Windows Subsystem For Android™ version of your choosing (do not download "Source code")
 3. Extract the .7z archive and rename the folder (that you extracted) to ``WSA``
@@ -46,7 +56,7 @@
 9. Close File Explorer
 10. **Enjoy**
 
- 
+--- 
 
 ### Notice (Applicable for both Windows 10 and 11):
 
