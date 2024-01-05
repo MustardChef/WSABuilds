@@ -1,7 +1,7 @@
 <p align="center">
 <a href="https://github.com/MustardChef/WSABuilds#downloads"><img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&amp;style=for-the-badge"/></a> <a href="https://forum.xda-developers.com/t/wsabuilds-latest-windows-subsystem-for-android-wsa-builds-for-   windows-10-and-11-with-magisk-and-google-play-store.4545087/"><img src="https://img.shields.io/badge/XDA%20Developers-WSABuilds-EA7100?style=for-the-badge&amp;logoColor=white&amp;logo=XDA-Developers"/></a> <a href="https://ko-fi.com/N4N0K08AC"><img alt="ko-fi" src="https://ko-fi.com/img/githubbutton_sm.svg"/></a>
 </p>
-<picture><img align="left" src="https://github.com/MustardChef/WSABuilds/assets/68516357/35cd1d5d-e464-4eb8-a676-b451341f65ad" width="20%" height="20%"/></picture>
+<picture><img align="left" height="20%" src="https://github.com/MustardChef/WSABuilds/assets/68516357/35cd1d5d-e464-4eb8-a676-b451341f65ad" width="20%"/></picture>
 <h1>WSABuilds</h1>
 <h3>MagiskOnWSA (For Windows™ 10 and 11)</h3>
 <h5>Windows Subsystem For Android™ (WSA) with Google Play Services and Magisk and KernelSU</h5>
@@ -305,11 +305,11 @@
 <tbody>
 <tr>
 <td rowspan="4"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" style="width: 200px;"/></td>
-<td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2311.40000.4.0"><img alt="win11x64downpre" src="https://img.shields.io/badge/Download%20Latest%20Pre--Release%20Builds-Windows%2011%20x64-orange?style=for-the-badge&amp;logo=windows11"/></a></p></td>
+<td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2311.40000.5.0"><img alt="win11x64downpre" src="https://img.shields.io/badge/Download%20Latest%20Pre--Release%20Builds-Windows%2011%20x64-orange?style=for-the-badge&amp;logo=windows11"/></a></p></td>
 <td rowspan="2"><p><a href="https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/Ese8EArJURBDq0RrwG2NY8YBpW0vuQpZPlOTE0vT06ELEw"><img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&amp;logo=Microsoft%20OneDrive&amp;logoColor=0078D4" style="width: 150px;"/></a></p></td>
 </tr>
 <tr>
-<td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2311.40000.4.0_arm64"><img alt="win11arm64downpre" src="https://img.shields.io/badge/Download%20Latest%20Pre--Release%20Builds-Windows%2011%20arm64-orange?style=for-the-badge&amp;logo=windows11"/></a></p></td>
+<td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2311.40000.5.0_arm64"><img alt="win11arm64downpre" src="https://img.shields.io/badge/Download%20Latest%20Pre--Release%20Builds-Windows%2011%20arm64-orange?style=for-the-badge&amp;logo=windows11"/></a></p></td>
 </tr>
 <tr>
 <td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2310.40000.2.0"><img alt="win11x64downstable" src="https://img.shields.io/badge/Download%20Latest%20Stable%20Builds-Windows%2011%20x64-blue?style=for-the-badge&amp;logo=windows11"/></a></p></td>
@@ -321,7 +321,7 @@
 </tr>
 <tr>
 <td rowspan="2"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" style="width: 200px;"/></td>
-<td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2311.40000.4.0"><img alt="win10x64down" src="https://img.shields.io/badge/Download%20Latest%20Pre--Release%20Builds-Windows%2010%20x64-orange?style=for-the-badge&amp;logo=windows"/></a></p></td>
+<td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2311.40000.5.0"><img alt="win10x64down" src="https://img.shields.io/badge/Download%20Latest%20Pre--Release%20Builds-Windows%2010%20x64-orange?style=for-the-badge&amp;logo=windows"/></a></p></td>
 <td><p><a href="https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/EokTMLUn3UxPkqF8DH7vp6gBSYMhrfPjtjwr_WNMTDY6uQ"><img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&amp;logo=Microsoft%20OneDrive&amp;logoColor=0078D4" style="width: 150px;"/></a></p>
 </td>
 </tr>
@@ -424,19 +424,19 @@
 <details>
 <summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Installation.md"><img height="60" src="https://img.icons8.com/color/96/null/software-installer.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Installation.md">   Installation</a></h1></a></summary>
 
-> [!NOTE]
-> 
-> If you have the official Windows Subsystem For Android™ installed, you must [completely uninstall](#uninstallation) it to use MagiskOnWSA. 
+&gt; [!NOTE]
+&gt; 
+&gt; If you have the official Windows Subsystem For Android™ installed, you must [completely uninstall](#uninstallation) it to use MagiskOnWSA. 
 
-> [!IMPORTANT]
-> 
-> In case you want to preserve your data from the previous installation (official or MagiskOnWSA), you can backup Userdata.vhdx, located at ``%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx`` before uninstallation and restore it after installation. A guide for this process is located further down in this README.
+&gt; [!IMPORTANT]
+&gt; 
+&gt; In case you want to preserve your data from the previous installation (official or MagiskOnWSA), you can backup Userdata.vhdx, located at ``%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx`` before uninstallation and restore it after installation. A guide for this process is located further down in this README.
 
 ---
 
 ### Video Guide:
 ##### Special Thanks to kilObit (creator of the video)
-<a href="https://www.youtube.com/watch?v=11lw-IHPH3A"><img src="https://github.com/MustardChef/WSABuilds/assets/68516357/68874bad-9f71-436b-a35b-f06eb7f9fa57" style="float: left;" height="40%" width="40%"/>
+<a href="https://www.youtube.com/watch?v=11lw-IHPH3A"><img height="40%" src="https://github.com/MustardChef/WSABuilds/assets/68516357/68874bad-9f71-436b-a35b-f06eb7f9fa57" style="float: left;" width="40%"/>
 
 ---
 
@@ -447,8 +447,8 @@
 4. Delete the .7z archive
 5. Move the newly extracted folder to a suitable location (Documents folder is a good choice), as you will need to keep the folder on your PC to use MagiskOnWSA
 
-> [!NOTE]   
-> If you're updating WSA, merge the folders and replace the files for all items when asked
+&gt; [!NOTE]   
+&gt; If you're updating WSA, merge the folders and replace the files for all items when asked
 
 6. Open the Windows Subsystem For Android™ folder: Search for and double-click `Run.bat`
    - If you previously have a MagiskOnWSA installation, it will automatically uninstall the previous one while preserving all user data and install the new one, so don't worry about your data.
@@ -498,7 +498,7 @@
        ```
     4. Check the log for the reason of failure and fix it.
 
-</details> 
+</uuid></a></details> 
 
  
 
@@ -508,8 +508,8 @@
 
 ### How do I update without losing any of my apps and data on Windows Subsystem for Android (WSA)
 
-> [!IMPORTANT]
-> Make sure that WSA has been turned off from the settings and that tools such has WSA-System-Control, WSA-Sideloader, WSAPacman etc are not running.
+&gt; [!IMPORTANT]
+&gt; Make sure that WSA has been turned off from the settings and that tools such has WSA-System-Control, WSA-Sideloader, WSAPacman etc are not running.
 
 1. [Download the latest build](https://github.com/MustardChef/WSABuilds#downloads) (that you want to update to)
 
@@ -554,9 +554,9 @@
 
  
 
-> [!NOTE]   
->
-> If you want to preseve your data, make a backup of the `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx` file. After uninstalling, copy the VHDX file back to the `%LOCALAPPDATA%\Package\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache` folder. For a more comprehensive and detailed guide, take a look at the **Backup and Restore section** in this README markdown
+&gt; [!NOTE]   
+&gt;
+&gt; If you want to preseve your data, make a backup of the `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx` file. After uninstalling, copy the VHDX file back to the `%LOCALAPPDATA%\Package\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache` folder. For a more comprehensive and detailed guide, take a look at the **Backup and Restore section** in this README markdown
 
 ### To remove WSA installed through WSABuild:
 
@@ -598,8 +598,8 @@ In order to make a backup of your WSA data you must copy the ``Userdata.vhdx`` (
 Before attempting to restore your backup, you must remove WSA if installed. Then before you run the ``Run.bat`` script (to reinstall WSA after removing it), you need to remove these lines from ``Install.ps1``, located in the your extracted WSA folder:
       
       
-> [!TIP]
-> The Lines (as shown below) that you need to remove in ``Install.ps1`` may vary depending on the type of WSA Build that you are trying to install.    
+&gt; [!TIP]
+&gt; The Lines (as shown below) that you need to remove in ``Install.ps1`` may vary depending on the type of WSA Build that you are trying to install.    
       
 
 #### Android Settings:
@@ -633,14 +633,14 @@ When the Powershell window states "Press any key to quit", at that time multiple
 
 &lt;-- <add here="" images=""> --&gt;
 
-> [!IMPORTANT]
-> ****Ignore these and do not click on anything or close these popups****
+&gt; [!IMPORTANT]
+&gt; ****Ignore these and do not click on anything or close these popups****
 
 Go to ``%localappdata%\Packages`` and (if these folders/directory do not exist, create them) in ``MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\`` paste the userdata.vhdx
 
 Now close the popups and run WSA and your userdata should hopefully be restored
 
-</details>
+</add></details>
     
 
  
@@ -664,7 +664,7 @@ Now close the popups and run WSA and your userdata should hopefully be restored
    ```
    or
 
--  Location in Windows ---><br/> `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalState\diagnostics\logcat`
+-  Location in Windows ---&gt;<br/> `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalState\diagnostics\logcat`
 
 **Can I delete the installed folder?**
 
@@ -692,7 +692,7 @@ Now close the popups and run WSA and your userdata should hopefully be restored
 
 **I cannot adb connect localhost:58526**
 
-- Make sure developer mode is enabled. If the issue persists, check the IP address of Windows Subsystem For Android™ on the Settings ---> Developer page and try 
+- Make sure developer mode is enabled. If the issue persists, check the IP address of Windows Subsystem For Android™ on the Settings ---&gt; Developer page and try 
 
    ```
    adb connect ip:5555
@@ -722,7 +722,7 @@ Now close the popups and run WSA and your userdata should hopefully be restored
 **How do I install custom Magisk or GApps?**
 
 - To request a build with custom Magisk or GApps, feel free to open an issue in the [Issues page](https://github.com/MustardChef/WSABuilds/issues.) You can also achieve this by using the [MagiskOnWSALocal](https://github.com/LSPosed/MagiskOnWSALocal) Script and following the provided instructions located in the repo.
-</details>
+</https:></details>
 
  
 
@@ -1106,10 +1106,10 @@ wsa://com.apple.android.music
 | TikTok (Global) | 25.0.3 | 12, 11 | ✅
 | TikTok (TV Version) | 1.6.0 | 11 | ❌ | App crashes
 | TikTok Lite | 21.7.1 | 11 | ❌ | App crashes
-| Tivimate | 4.4.0 | 11 | ✅ | Compatibility Options ->Force App to be non-resizeable ; Disable smooth resize ; Keyboard Compatibility ; ForceFullScreen [F11] Note: Version 4.5. And above force crashes, the latest working version remains 4.4.0
+| Tivimate | 4.4.0 | 11 | ✅ | Compatibility Options -&gt;Force App to be non-resizeable ; Disable smooth resize ; Keyboard Compatibility ; ForceFullScreen [F11] Note: Version 4.5. And above force crashes, the latest working version remains 4.4.0
 | TP-Link Tapo | 2.4.25 | 11 | ✅
 | Trello | 2021.14.1.16332-production | 11 | ⚠️ | Login needs web browser installed in WSA, using Windows' default browser will not work
-| Trust: Crypto &amp; Bitcoin Wallet | 6.57.1 | 12 | ✅ || For login, you have to go to Android settings =>System =>Date &amp; Time and toggle the "Set Time Automatically" option. you can access it by this command .\adb.exe shell "am start -n com.android.settings/.Settings"
+| Trust: Crypto &amp; Bitcoin Wallet | 6.57.1 | 12 | ✅ || For login, you have to go to Android settings =&gt;System =&gt;Date &amp; Time and toggle the "Set Time Automatically" option. you can access it by this command .\adb.exe shell "am start -n com.android.settings/.Settings"
 | Tune In Pro | 28.7 (267721) | 11 | ✅
 | Twitter | 9.16.1-release.00 | 11 | ✅ | Optionally requires GMS
 | Twitter Lite | 3.1.1 | 12 | ✅ ||
@@ -1341,7 +1341,7 @@ wsa://com.apple.android.music
 | Subtransit Drive | 1.0.7.2 | 11 | ❌ | Crashes at startup because Vulkan or OpenGL ES 3.1 is required
 </details>
 
-&nbsp; 
+  
 
 
 <details>
@@ -1437,15 +1437,13 @@ wsa://com.apple.android.music
       
 <details>
 <summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Custom%20Builds.md"><img height="60" src="https://img.icons8.com/fluency/96/request-service.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Custom%20Builds.md">   Custom Builds Requests</a></h1></a></summary>
-
 <h3>   ❓Want to request a prebuilt custom build❓ <h3>
 <h4> If you can't find the build that you are looking for, I will be happy to fufill any custom build requests. <h4>
 <h4> Open an issue in the [Issues page](https://github.com/MustardChef/WSABuilds/issues) with the information below. <h4> 
    
-> [!IMPORTANT]
-> - State the [Device Model](https://github.com/WSABuilds/MagiskOnWSALocal#--custom-model) (Default: Pixel 5)? <br/> - Root Solution (Magisk, KernelSU or none)? <br/> - If you want a WSA build with Magisk, what [variant of magisk](https://github.com/WSABuilds/MagiskOnWSALocal#--magisk-ver) would you like? <br/> - Would you like GApps (Google Play Store and Play Services (GMS))? <br/> - Would you like to keep the Amazon Appstore? 
+&gt; [!IMPORTANT]
+&gt; - State the [Device Model](https://github.com/WSABuilds/MagiskOnWSALocal#--custom-model) (Default: Pixel 5)? <br/> - Root Solution (Magisk, KernelSU or none)? <br/> - If you want a WSA build with Magisk, what [variant of magisk](https://github.com/WSABuilds/MagiskOnWSALocal#--magisk-ver) would you like? <br/> - Would you like GApps (Google Play Store and Play Services (GMS))? <br/> - Would you like to keep the Amazon Appstore? 
 </h4></h4></h4></h4></h3></h3>
-
 </details>      
 
     
@@ -1519,13 +1517,13 @@ wsa://com.apple.android.music
 <td><a href="https://icons8.com/license" rel="noopener noreferrer" target="_blank">Icons8 License</a></td>
 <td>✅</td>
 </tr>
-</tr>
+
 <td>wsa-app-compatibility</td>
 <td>riverar and contributors</td>
 <td>App compatibility table has been obtained from this repo</td>
 <td>No License</td>
 <td>✅</td>
-</tr>
+
 </tbody>
 </table>
 
@@ -1575,18 +1573,17 @@ wsa://com.apple.android.music
 
 <br/>
 
-> [!IMPORTANT]
-> ***The repository is provided as a utility.***
+&gt; [!IMPORTANT]
+&gt; ***The repository is provided as a utility.***
 &gt;***Android is a trademark of Google LLC. Windows™ and Windows Subsystem for Android™ are trademarks of Microsoft LLC.***
 
 </details>
 </center>
 
-</br>
 
 ---
 
-</br>
+
 
 
 - ##### This GitHub repository/project is license under the "AGPL v3" License.
