@@ -187,7 +187,7 @@ jobs:
         run: ("hash=" + $(Get-FileHash -Path ${{ needs.build.outputs.zipname }}.7z -Algorithm SHA256).Hash.ToLower().ToString()) | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding UTF8 -Append
 
       - name: Setup rclone 🎚️
-        uses: AnimMouse/setup-rclone@v1.8.1
+        uses: AnimMouse/setup-rclone@v1.8.2
         with:
              rclone_config: ${{ secrets.RCLONE_CONFIG }}
 
