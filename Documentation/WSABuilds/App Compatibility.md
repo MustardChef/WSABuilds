@@ -96,6 +96,7 @@ wsa://com.apple.android.music
 | BBC Sounds | 2.13.0.19989 | 13 | ✅
 | Berry Browser | 3.57.8 | 12, 11 | ✅
 | Binance | 2.36.5 | 11 | ✅
+| Blue archive | 1.60.260228 | 13 | ⚠️ | Has vulkan issues. Specifically, If you are facing a black screen on startup install hevc codec on your windows 10 or 11 performance are worset even on good specs pc dont use d312 vulkan use system default will force close.
 | Bondee | 2.0.0.636 | 12 | ⚠️ | Has scaling issues. Specifically, after the introductory part, the app uses abnormally huge elements which makes it impossible to navigate.
 | Boost for Reddit | 1.12.5 | 12 | ✅
 | Bouncer | 1.26.3 | 11 | ⚠️
@@ -136,7 +137,7 @@ wsa://com.apple.android.music
 | F-Droid | 1.15.6 | 13, 12, 11 | ✅
 | F1 TV | 2.0.5 | 11 | ⚠️ | Terrible app experience including screen flashes and crashes while watching a video
 | FaceApp: Face Editor || 11 | ❌
-| Facebook | 377.0.0.22.107 | 12 | ✅ | 
+| Facebook | 453.0.0.40.107 | 12 |  ⚠️ | Force Close sometimes video stutters sometimes 
 | Facebook Lite | 339.0.0.10.100 | 12 | ✅ |
 | Facebook Messenger | 330.0.0.12.116 (x86_64) | 11 | ⚠️ | Chat Heads don't work
 | Facebook Messenger Lite | 334.0.0.10.101 | 12 | ✅ | 
@@ -421,6 +422,7 @@ wsa://com.apple.android.music
 | YouTube Music Vanced | 43.9.50 | 11 | ✅
 | YouTube Music ReVanced | 6.19.51 | 13 | ✅ || Used the x86-64 version as base
 | Youtube Vanced | 16.29.39 | 11 | ⚠️ | Picture-in-picture doesn't work &amp; Can't join channel membership
+| Youtube ReVanced | 19.04.37 | 13 | ⚠️ | Picture-in-picture doesn't work &amp; Force close some times
 | ZArchiver | 0.9.5.8 (9596) | 11 | ✅
 | Zenly (w/o GMS) | 4.55.2 | 11 | ⚠️ | App crashes after login, but background location works
 | Zoom | 5.8.3.2634 | 11 | ⚠️ | Camera severely glitched, share screen doesn't work due to WSA's windowed nature.
