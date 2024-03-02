@@ -137,7 +137,7 @@ wsa://com.apple.android.music
 | F-Droid | 1.15.6 | 13, 12, 11 | ✅
 | F1 TV | 2.0.5 | 11 | ⚠️ | Terrible app experience including screen flashes and crashes while watching a video
 | FaceApp: Face Editor || 11 | ❌
-| Facebook | 453.0.0.40.107 | 12 |  ⚠️ | Force Close sometimes video stutters sometimes 
+| Facebook | 453.0.0.40.107 | 12 |  ⚠️ | Force Close sometimes video stutters sometimes or hangs
 | Facebook Lite | 339.0.0.10.100 | 12 | ✅ |
 | Facebook Messenger | 330.0.0.12.116 (x86_64) | 11 | ⚠️ | Chat Heads don't work
 | Facebook Messenger Lite | 334.0.0.10.101 | 12 | ✅ | 
@@ -145,7 +145,7 @@ wsa://com.apple.android.music
 | FDM (Free Download Manager) (Play Store) | 6.18.1.4896 | 13 | ✅ | The app crashed after the splash screen (after granting its needed permissions) on some versions of the subsystem (due to libhoudini). Works fine again as of WSA 2301.40000.7.0 | Tested on an Intel x86_64 CPU
 | Fennec F-Droid | 105.1.0 | 12 | ❌ | While the app is correctly installed, it crashes very often, and sites load very, very slowly compared to Firefox Nightly.
 | Files by Google | Unknown | 11 | ✅ || Works fine
-| Firefox | 119.0.1 (2015982999) | 13, 12, 11 | ✅ | On Android 11, it works albeit with broken rendered webpages. On Android 12, works (without white box after updating WSA to 2205.40000.21.0) | Tested on Intel HD integrated graphics.
+| Firefox | 123.0 | 13, 12, 11 | ✅ | Some glitches on ui and video renders so slow at some point you had to restart the app scrolling also renders slow
 | Firefox Nightly | 95.0a1 | 11 | ✅
 | Firefox Focus | 106.1 | 12 | ✅
 | foobar2000 | 1.2.30 | 11 | ✅
