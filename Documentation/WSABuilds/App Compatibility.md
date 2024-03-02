@@ -124,7 +124,7 @@ wsa://com.apple.android.music
 | Deezer | 7.0.14.1 beta | 12 | ✅ | The Deezer Labs crossfade function doesn't seem to work as of September 2022 | Music and menus seem to work pretty well, even with HiFi bitrates.
 | Digital Wellness | 1.5.500315346 (471337) | 13 | ✅ | It's not available in the Settings App by default, requires Activity Launcher to launch it. | You can make it show in the launcher if you enable "Show icon on app list".
 | DirecTV for Tablet | 5.29.001 | 11 | ⚠️ || Frequent crashing, other functionality proper.
-| Discord | 98.6 | 11 | ✅
+| Discord | 219.9 beta | 11 | ✅
 | DMM Games Store | 2.8.0 | 11 | 🆖 | Requires GMS
 | Duolingo | 5.2.35 | 11 | ✅
 | DuckDuckGo Privacy Browser+ | 5.142.2 | 12 | ✅
@@ -540,6 +540,7 @@ wsa://com.apple.android.music
 | My Talking Angela 2 (Play Store) | 2.2.4.21687 (ARM64_v8a) | 13 | ⚠️ | Does not resize into window, even when the "Resize" button (on the bottom right) is clicked on. Bug in Angela's tub (go to Bathroom → Tub): While grabbing the soap to massage Angela, the shower head briefly appears, then disappears in 1 second. | 
 | NieR Re[in]carnation | 2.17.0 | 13, 12, 11 | 🆖 | Requires GMS to get past loading screen. If GMS is installed, terrible in-game experience, including poor performance and low FPS. | Tested on a Ryzen 9 5900X and Nvidia RTX 3080
 | New Star Soccer | 4.27 | 13, 12, 11 | ✅ | Keyboard not supported
+| NoVA Launcher | 7.0.58 | 13, 12, 11 | ✅ | Weird Layout
 | osu!lazer | 2023.403.1 | 13 - 5 | ⚠️ | Runs with terrible performance, high latency, generally unplayable
 | PAC-MAN (Play Games) | 2023.08.46243 | 13 | 🆖 || Requires GMS, keyboard supported
 | Penguin Isle | 1.59.1 | 13 - 5 | ✅ | Great performance, but UI size breaks with weird resolutions.
@@ -591,6 +592,7 @@ wsa://com.apple.android.music
 | Uma Musume: Pretty Derby (ウマ娘 プリティーダービー; JP) | 1.16.0 | 11 | ⚠️ | Doesn't work with Nvidia GeForce GTX 1660. Works with Microsoft Basic Render Driver with graphical issues. | Some features may require GMS.
 | Uma Musume: Pretty Derby (ウマ娘 プリティーダービー; JP) | 1.20.0 | 12 | ❌ | Only touch effect works after displaying the developer logo
 | Uma Musume: Pretty Derby (Korean) | 1.0.1 | 12 | ❌ | Only touch effect works after displaying the developer logo
+| Vanced MicroG | 0.3.0.234914 | 11 , 12 , 13 | ✅ 
 | War Robots | 7.7.7 (134783) | 11 | ✅ | GMS warnings might appear but these can be safely ignored
 | Warfare Incorporated | 1.63 | 11 | ✅ | The selection box does not work.
 | Where is my Water? || 11 | ⚠️ | Many images are replaced with white rectangles
@@ -598,6 +600,7 @@ wsa://com.apple.android.music
 | Where is my Water? Featuring XYY || 11 | ⚠️ | Bells are invisible
 | Whirlybird (Play Games) | 2023.08.46243 | 13 | ❌ | The game cannot be controlled at all after pressing "START" | Requires GMS
 | Wordament | 3.9.10260 | 11 | ✅
+| YTDLnis | 1.7.3 | 13 | ✅ 
 | Дурак Онлайн (Durak Online) | 1.9.2 | 11 | 🆖 | Requires GMS
 | 白夜極光 (Alchemy Stars) | 1.2.2 | 11 | ⚠️ | Poor in-game performance
 | 公主连结R (Princess Connect! Re: Dive (Simplified Chinese) | 3.4.10 | 11 | ✅
