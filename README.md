@@ -1,3 +1,8 @@
+## "Microsoft is ending support for the Windows Subsystem for Android™️ (WSA). As a result, the Amazon Appstore on Windows and all applications and games dependent on WSA will no longer be supported beginning March 5, 2025."
+### This repo will not be archived until after March 5, 2025 and support will still be given to any users installing WSA Builds from this repo. Thank you all for using this repository and supporting my work, its been a pleasure serving this community. 
+<br />
+<br />
+
 <p align="center">
 <a href="https://github.com/MustardChef/WSABuilds#downloads"><img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&amp;style=for-the-badge"/></a> <a href="https://forum.xda-developers.com/t/wsabuilds-latest-windows-subsystem-for-android-wsa-builds-for-   windows-10-and-11-with-magisk-and-google-play-store.4545087/"><img src="https://img.shields.io/badge/XDA%20Developers-WSABuilds-EA7100?style=for-the-badge&amp;logoColor=white&amp;logo=XDA-Developers"/></a> <a href="https://ko-fi.com/N4N0K08AC"><img alt="ko-fi" src="https://ko-fi.com/img/githubbutton_sm.svg"/></a>
 </p>
