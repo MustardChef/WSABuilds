@@ -634,7 +634,7 @@ After removing the lines above, run the script.
 
 When the Powershell window states "Press any key to quit", at that time multiple dialouge boxes will open:
 
-<-- <add here="" images=""> -->
+![image](https://github.com/MustardChef/WSABuilds/assets/68516357/53ba5738-a504-4c31-a414-40258180ee09)
 
 > [!IMPORTANT]
 > ****Ignore these and do not click on anything or close these popups****
@@ -732,12 +732,7 @@ Now close the popups and run WSA and your userdata should hopefully be restored
 <details>
 <summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/App%20Compatibility.md"><img height="60" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-compatibility-relationship-flaticons-lineal-color-flat-icons-2.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/App%20Compatibility.md">   App Compatibility</a></h1></a></summary>
 
-## Updated on 15/12/2023
-
-## Issues / Support
-
-We can't offer support for the Windows Subsystem for Android (WSA) or Android apps.
-Instead, try asking the folks that hang out in the [WSA Community Discord](https://discord.gg/2thee7zzHZ) or [WSA subreddit](https://www.reddit.com/r/WSA/). Good luck!
+## Updated on 05/03/2024
 
 ## Legend
 
@@ -754,10 +749,10 @@ This page currently uses Unicode characters from [Unicode Emoji (1.0)](https://u
 |---------|---------------|-------|
 | Multi-touch | ✅ | Demo: [Arcaea](https://www.bilibili.com/video/BV1Ph411n7M5)
 | Virtual Wifi (VirtWifi) | ✅
-| Bluetooth | ❌
+| Bluetooth | ❌ ([GitHub issue](https://github.com/microsoft/WSA/issues/103))
 | IPv6 | ✅ | Loading `ipv6.google.com` in Fennec F-Droid on a PC with IPv6 access, works well
 | Fingerprint Reader | ❌ | Test failed on ROG Flow X13, with SATRIA app
-| VPN | ⚠️ | VPNs may not work as intended
+| VPN | ❌ | VPN Connection request dialog does not appear
 | OpenGL ES 3.1 | ❌
 | Vulkan | ✅ | Added as experimental feature in [2307.40000.2.0](https://github.com/microsoft/WSA/discussions/374)
 
@@ -810,8 +805,8 @@ wsa://com.apple.android.music
 | Android System Webview | 118.0.5993.111 | 13, 12 | ✅ ||
 | Android System Webview Dev | 103.0.5060.22 | 11 | ✅ || App installs correctly 
 | AniLabX | 3.8.12 (Iridium) - Beta | 11 | ✅
-| Animiru | 0.14.2.0 | 13 | ✅ | 
-| Aniyomi | 0.12.3.10 | 13, 12 | ✅ |
+| Animiru | 0.16.0.0 | 13 | ✅ | 
+| Aniyomi | 0.15.2.1 | 13, 12 | ✅ |
 | AntennaPod | 2.5.0 | 11 | ✅
 | APKMirror Installer (Beta) | 1.3.2 | 11 | ⚠️ | Cannot remove ads without subscription which requires Location to be turned on. Apart from this, there are random crashes
 | APKPure | 3.17.26 | 11 | ✅ | Sometimes, it might require multiple attempts to install an app
@@ -834,11 +829,12 @@ wsa://com.apple.android.music
 | Boost for Reddit | 1.12.5 | 12 | ✅
 | Bouncer | 1.26.3 | 11 | ⚠️
 | Brave Browser | 1.30.87 | 11 | ✅
-| BritBox by BBC &amp; ITV | 2.1.2 (20043) | 11 | ❌ | App crashes on start
+| BritBox by BBC & ITV | 2.1.2 (20043) | 11 | ❌ | App crashes on start
 | Bromite | 94.0.4606.94 | 11 | ✅ || Use x64 build
+| Camera | 2.0.002 | 13 | ⚠️ | While taking pictures or video works fine but changing the camera (to an inactive virtual camera) freezes the app. | Included in the subsystem
 | CamScanner | 6.3.0.2110240000 | 11 | ❌ | WSA freezes after taking a snap
 | Canvas Student | 6.14.1 | 11 | ✅
-| Character.AI | 1.7.2 | 13 | ✅ | Sometimes, the text box for the prompt is broken when you resize the window. Restarting the app will restore the textbox.
+| Character.AI | 1.7.5 | 13 | ✅ | Sometimes, the text box for the prompt is broken when you resize the window. Restarting the app will restore the textbox.
 | ChMate | 0.8.10.153 | 11 | ✅
 | Clubhouse | 1.0.11 | 11 | ⚠️ | Unable to login via phone number, it throws an error after entering the OTP
 | Comixology | 3.10.18.310421 | 11 | ✅
@@ -848,6 +844,7 @@ wsa://com.apple.android.music
 | Cronometer | 3.13.1 | 11 | ✅
 | Cryptography | 1.24.0 | 12 | ✅
 | CX File Explorer | 2.0.0 | 13, 12 | ✅
+| Dantotsu | 2.0.0 | 13 | ✅ | To sign-in to the anilist integration, set the default browser to use a browser app in WSA (e.g. Firefox) since it opens the default brower on Windows. This also happens with links as well. | Hovering the mouse pointer, highlights the input element. Keyboard usage is supported on the Manga reader and Media Player.
 | Dcoder | 4.0.76 | 11 | ✅
 | Decibel X | 6.4.2 | 11 | ⚠️ | App crashes
 | Decrypto | 1.4.7 | 12 | ✅
@@ -863,7 +860,7 @@ wsa://com.apple.android.music
 | DuckDuckGo Privacy Browser+ | 5.142.2 | 12 | ✅
 | Easybell | 2.1.30 | 11 | ✅
 | EDS Lite | 2.0.0.237 | 12 | ✅ || Tested on an Intel x86-64 CPU (may work on AMD64 or ARM64). Recommended to add the exFAT module if you have a container that use this filesystem.
-| eGovPH | 1.9.1 | 13 | ⚠️ | Tested on a WSA install with GMS.  The app doesn't start properly if you didn't grant the permissions beforehand in android settings. For eReport, the app can't progress beyond the Current Location permission prompt as clicking the "Enable Location" doesn't do anything (even with the location permission granted for WSA in Windows); the workaround is to access it via the Suggested eGovPH Services part (found on the Home tab). eKYC verification is problematic as the built-in laptop camera is wonky with eGovPH's image handling, affecting the verification process (this also applies if you're registering an account from the same laptop for its face verification). Some pages display no content (notably FAQs and application details on some devices) |  Basic features work such as navigating through the app features/pages. The PhilSys Digital ID page works as well and able to recognize it in the verification site on my phone. Recommended to use an up-to-date version of Android System WebView since the app mostly relies on it.
+| eGovPH | 2.0.4 | 13 | ⚠️ | Tested on a WSA install with GMS and It's also recommended to turn off Developer Options before starting this app.  The app doesn't start properly if you didn't grant the permissions beforehand in android settings. For eReport, the app can't progress beyond the Current Location permission prompt as clicking the "Enable Location" doesn't do anything (even with the location permission granted for WSA in Windows); the workaround is to access it via the Suggested eGovPH Services part (found on the Home tab). eKYC verification is problematic as the built-in laptop camera is wonky with eGovPH's image handling, affecting the verification process (this also applies if you're registering an account from the same device for its face verification). Some pages display no content (notably FAQs and application details on some cases) |  Basic features work such as navigating through the app features/pages. The PhilSys Digital ID page works as well and able to recognize it in the verification site from another device. Recommended to use an up-to-date version of Android System WebView since the app mostly relies on it.
 | Emby | 2.0.48g | 11 | ✅
 | ES File Explorer | 4.2.1.8 | 11 | ✅ || Avoid updating the app
 | Excel | 16.0.14527.20162 | 11 | ✅
@@ -878,18 +875,18 @@ wsa://com.apple.android.music
 | FDM (Free Download Manager) (Play Store) | 6.18.1.4896 | 13 | ✅ | The app crashed after the splash screen (after granting its needed permissions) on some versions of the subsystem (due to libhoudini). Works fine again as of WSA 2301.40000.7.0 | Tested on an Intel x86_64 CPU
 | Fennec F-Droid | 105.1.0 | 12 | ❌ | While the app is correctly installed, it crashes very often, and sites load very, very slowly compared to Firefox Nightly.
 | Files by Google | Unknown | 11 | ✅ || Works fine
-| Firefox | 119.0.1 (2015982999) | 13, 12, 11 | ✅ | On Android 11, it works albeit with broken rendered webpages. On Android 12, works (without white box after updating WSA to 2205.40000.21.0) | Tested on Intel HD integrated graphics.
+| Firefox | 123.0 (2016003223) | 13, 12, 11 | ✅ | On Android 11, it works albeit with broken rendered webpages. On Android 12, works (without white box after updating WSA to 2205.40000.21.0) | Tested on Intel HD integrated graphics.
 | Firefox Nightly | 95.0a1 | 11 | ✅
 | Firefox Focus | 106.1 | 12 | ✅
 | foobar2000 | 1.2.30 | 11 | ✅
 | Formula 1 | 11.0.1533 | 11 | ⚠️ | Live Timing is broken, keeps crashing on initialization
-| FTP Server (Free) (F-Droid) | 3.1 - 30100 | 13, 12, 11 | ✅ | A network connection is required for the FTP service to initialize. Does not work with `Local network access` turned on in WSA Settings
 | FX File Explorer | 9.0.1.2 (r9012) | 13, 12, 11 | ✅ | Tested only on the base version (without FX Plus)
 | Game Pass | 2110.17.1005 | 11 | ✅ | GMS warnings might appear but these can be safely ignored | Cloud games can be launched but controlling them with controller or touch has not been tested.
 | GBoard | Unknown | 12, 11 | ⚠️ | Will not work as expected in newest WSA (2204.x)
 | GCash | 5.62.0 | 13, 12, 11 | 🆖 | Requires GMS. Will warn "limited functionality" if no GMS is present, if present, works normally. When it is launched for the first time, it will crash due to lack of permissions granted on previous versions (5.61.0 and below). Starting with 5.62.0, an alert pops up `We have detected that you are running the GCash app on emulator. You will not be able to proceed.` 
 | Geekbench | 5.4.1 | 11 | ✅
 | GeoGebra | 5.0.674.0 | 11 | ✅
+| GitHub | 1.146.0 | 13 | ✅ | Opening any web links in the using the "Windows default app" doesn't work (including the sign-in). | Set a default browser app first (like Chrome) if you want to use external links within the app
 | Globe2Go | 4.7.4.20.0810/3890 | 11 | ✅
 | GlobeOne | 1.8.37 | 12 | ✅ || May require GMS (otherwise use other login methods available in the app)
 | Gmail | 2022.05.01.440951655.Release | 11 | ✅ || May require GMS
@@ -947,7 +944,7 @@ wsa://com.apple.android.music
 | Kindle | 8.47.1.3370 | 11 | ✅
 | Kiwi Browser | 107.0.5304.74 | 13, 12 | ✅ |
 | Kobo Books | 8.40.29843 | 11 | ⚠️ | Aspect ratio and resolution are fixed, appears blurry when resized
-| Kotatsu | 6.2.6 | 13 | ✅ | | Keyboard navigation is supported
+| Kotatsu | 6.5.4 | 13 | ✅ | | Keyboard navigation is supported
 | KRL Access | 4.1.0 | 11 | ❌ | App crashes
 | Lawnchair | 12 Alpha 5 | 13, 12, 11 | ⚠️ | If you're running the Android 13 of the subsystem (2211.40000.11.0), if you launch any app from either the home screen or the app drawer, it crashes with an error: `java.lang.NoSuchMethodError: No virtual method setSplashscreen(I)V in class Landroid/app/ActivityOptions; or is superclasses (declaration of 'android.app.ActivityOption'...` | Works fine on Android 11 or 12 versions of the subsystem.
 | Lazada | 7.37.0 | 13 | ⚠️ | Google login requires GMS installed (use Email or Facebook login as alternatives). `Slide to verify` appears too often if logging in. Weird scaling options (interface elements are too large) | Keep it in portrait for the app to be usable.
@@ -960,6 +957,7 @@ wsa://com.apple.android.music
 | LSPosed | 1.8.6 | 13, 11 | ✅
 | Magisk | 25.2 | 13, 11 | ✅ || Magisk developer confirmed able to gain root access - [link to his tweet](https://twitter.com/topjohnwu/status/1451282578514735131)
 | ManCityApp | 2.1.11 | 11 | 🆖 || Might require GMS
+| MangaYomi | 0.1.65 | 13 | ✅ | Doesn't support keyboard (media) controls on the media player | Manga reader supports keyboard navigation
 | Manzur's Study Circle (MSC) | 1.0.2 | 11 | ✅
 | Material Files | 1.5.2 | 12, 11 | ✅
 | Maya (Paymaya) | 2.85.1 | 13 | ❌ | App crashes immediately upon launching the app 
@@ -968,31 +966,33 @@ wsa://com.apple.android.music
 | microG Settings | N/A | 11 | ❌ | App crashes, doesn't load
 | Microsoft Authenticator | 6.2112.8213 | 11 | ✅ || Some features might require GMS
 | Microsoft Azure | 3.9.2.2021.09.30-19.35.50 | 11 | ✅
-| Microsoft Bing - Search &amp; earn | 23.5.401109307 | 12 | ✅
-| Microsoft Edge | 95.0.1020.42 | 11 | ❌ | App frequently crashes
+| Microsoft Bing - Search & earn | 23.5.401109307 | 12 | ✅
+| Microsoft Edge | 120.0.2210.157 | 13,11 | ❌ | Always stuck in Microsoft Edge First Run Experience and a few seconds later, crashes out
 | Microsoft Edge Canary | 103.0.1264.1 | 11 | ❌ || Fails to load websites
 | Microsoft Launcher | 6.230703.0.1122680 | 13, 11 | ✅ | Can't set wallpaper
 | Microsoft PowerApps | 3.21124.20 | 11 | ✅
 | Microsoft Swiftkey Keyboard | 8.10.12.4 | 12, 11 | ✅ | Works on WSA 2203 (Android 11), but on-screen is completely broken in WSA 2204(Dev) (Android 12.1)
 | Microsoft Teams | 1416/1.0.0 | 12 | ✅
 | Mic Test | 5.2 | 12 | ✅ || lauresprojects.com.mictest
+| Mihon (Beta) | 0.16.3-6530 | 13 | ✅ | Notifications like "Large updates harm sources..." cut off. "Updating Library" progress bar doesn't show, until you clear the Mihon notification. Pressing any key on the keyboard during the Onboarding Guide (the thing when you start Mihon for the first time) will crash the app. | Some of the notifications will be missing due to the Windows Action Center limit of 20. When setting up the tracker, make sure to set the default browser (like Firefox) to sign in. 
+| Mihon (Stable) | 0.16.4 | 13 | ✅ |Notifications like "Large updates harm sources..." cut off. "Updating Library" progress bar doesn't show, until you clear the Mihon notification. Pressing any key on the keyboard during the Onboarding Guide (the thing when you start Mihon for the first time) will crash the app. | Some of the notifications will be missing due to the Windows Action Center limit of 20. When setting up the tracker, make sure to set the default browser (like Firefox) to sign in.
 | MiX | 6.57.0-Beta_B21070510 | 11 | ✅
 | Mobile JKN | 3.7.1 | 11 | ✅ || Some features might require GMS
 | MOLA | 2.1.3 | 11 | ❌ | App crashes
 | Monogolf | 3.4.10 | 13 | ✅ | 
 | Monument Browser | 1.0.333 | 12 | ✅
 | Moodle | 3.9.5 | 11 | ✅ 
-| MPV | 2022-07-30-release | 12 | ✅ || Keyboard navigation supported in the media player
+| MPV | 2023-11-30-release | 13, 12 | ✅ | Picture in Picture doesn't work | Keyboard navigation supported in the media player
 | MT File Manager | 2.10.0 | 11 | ✅
 | Musically (TikTok) | 7.8.0 | 11 | ✅
 | Muslim Pro | 1.2.3 | 11 | 🆖 | Requires GMS
 | MX Player | 1.40.9 | 11 | ✅
 | MX Player Pro | 1.39.13 | 11 | ⚠️ | App crashes, but videos can be played from external sources
-| myPLDT Smart | 2.0.1 | 13 | ✅ | Requires GMS only logging in using Google account. You can try logging in with e-mail instead. | Sideloaded installation
+| myPLDT Smart | 2.0.1 | 13 | ✅ | Requires GMS only when logging in using Google account. You can try logging in with e-mail instead. | Sideloaded installation
 | MyPostNord (Norway) | 3.12 | 12 | ✅ 
 | My Verizon | 16.4.2 | 11 | ✅ || The page might be displayed sideways for a short amount of time when the app is launched. The app automatically reverts to the correct orientation in a second.
-| NClientV2 (Release)| 3.0.2 | 13 | ✅ | Keyboard navigation is unsupported when reading. | You can try enabling `Disguise app in drawer` but it doesn't work in the Windows start menu, but works with an installed launcher like Lawnchair or Rootless Pixel Launcher.
-| Neko | 2.14.0 | 13, 12, 11 | ✅
+| NClientV2 (Release)| 3.0.5 | 13 | ✅ | Keyboard navigation is unsupported when reading. | You can try enabling `Disguise app in drawer` but it doesn't work in the Windows start menu, but works with an installed launcher like Lawnchair or Rootless Pixel Launcher.
+| Neko | 2.16.0 | 13, 12, 11 | ✅
 | Nekogram X | 8.1.2-1-rc01 | 11 | ✅ || Use NoGcm variant
 | Netflix (Aurora Store) | 8.4.0 | 11 | ❌ | "Device not supported" error
 | Nettfart Mobile | 3.6.8 | 12 | ✅ | The app must be given network permissions in App Settings
@@ -1009,6 +1009,7 @@ wsa://com.apple.android.music
 | Office Lens | 16.0.14527.20178 | 11 | ❌ | Might require GMS, cannot sign in
 | Okay? | 4.08 | 11 | ✅
 | One Store | 7.6.0 | 11 | ✅
+| Open Camera (F-droid) | 1.52 | 13 | ❌ | Crashes upon launching the app
 | Opera Browser Beta | 65.1.3381.61349 (x86_64) | 11 | ✅ || Change app layout to Tablet Mode for a better experience
 | Opera GX : Gaming Browser | 1.3.6 | 11 | ✅
 | Opera Mini Beta | 61.0.2254.59921 | 11 | 🆖 | Requires GMS
@@ -1022,7 +1023,7 @@ wsa://com.apple.android.music
 | OTT Navigator | 1.6.7.7 | ❌ | Crashes on video playback
 | OurGroceries | 4.0.10 | 11 | ✅ | Premium keys require Google Play Store
 | Outlook | 4.2138.0 | 11 | ⚠️ | Cannot activate device administrator with Outlook, which prevents activation.
-| Package Manager | 6.7 | 12 | ✅ || Recommeded with use of Shizuku for multi-app installation
+| Package Manager | v7.0 | 13,12 | ✅ || Recommeded with use of Shizuku for multi-app installation
 | PalawanPay | 1.0.400396 | 13 | ✅ | The app works but WSA's developer options should be disabled prior to opening the app as the app will lock you out if it detects it was turned on
 | Phigros || 11 | ✅
 | Philips Hue | 4.29.0 | 12 | ✅
@@ -1041,6 +1042,8 @@ wsa://com.apple.android.music
 | Pydroid | 5.00_x86_64 | 11 | ✅
 | Q-Dance | 8.0.7 | 11 | ❌ | App crashes
 | QooApp | 8.3.35 | 13, 11 | ✅ | QooApp Servant may not work due to WSA's windowed nature
+| QR & Barcode Scanner (F-droid) | 1.10 | 13 | ⚠️ | Errors out with a `Unable to access camera` even using a built-in laptop camera | You can still generate QR codes for URLs and other stuff
+| QR Scanner (F-droid) | 4.5.8 | 13 | ✅ | Does not work with a virtual camera | It can scan and generate QR codes
 | QPython 3L | 3.0.0 | 11 | ✅
 | QQ | 8.9.28 | 13, 12 | ❌ | App crashes
 | QuickNovel | 3.1.4 | 13 | ✅
@@ -1050,7 +1053,7 @@ wsa://com.apple.android.music
 | Remote Desktop (Microsoft) | 10.0.12.1148 | 11 | ✅
 | ReVanced Manager | 1.9.5 | 13 | ✅ | 
 | Rider | 1.59 | 11 | ✅
-| Robinhood - Food &amp; Booking | 2.2.2 | 12 | ⚠️ | App having trouble loading content. Maps &amp; Location picker don't work (Requires GMS). | You can log in only on one device at the same time. Previous device will log out upon signing in on new device.
+| Robinhood - Food & Booking | 2.2.2 | 12 | ⚠️ | App having trouble loading content. Maps & Location picker don't work (Requires GMS). | You can log in only on one device at the same time. Previous device will log out upon signing in on new device.
 | Rootless Launcher | 3.9.1 | 11 | ❌ | App crashes
 | Rootless Pixel Launcher | 3.9.1 | 13 | ✅ |
 | Ruler (F-Droid) | 1.1 | 12 | ❌ | While the app is correctly installed, the ruler lengths are wildly off-course no matter how much in-app calibration is done. | The app also refuses to recognise values above circa 100mm for the 70mm calibration line.
@@ -1063,7 +1066,7 @@ wsa://com.apple.android.music
 | Shazam | 13.19.0-230223 | 13, 12 | ✅ | Shazam on pop-up doesn't work | Requires microphone for song identification
 | Shein | 9.9.4 | 13 | ✅ || Keep it in portrait to be usable
 | ShemarooMe | 1.0.16 (106) | 11 | ✅
-| Shizuku (Play Store) | 13.5.2.r1028.2bbf671 | 13, 12, 11 | ✅ | Can't toggle wireless debugging in WSA 2207.40000.8.0 (android 12), use ADB on PC to use connect instead (even with dev options and USB debugging is on). | The service also works with root (Tested with Magisk)
+| Shizuku (Play Store) | 13.5.3.r1036.fff3f87 | 13, 12, 11 | ✅ | Can't toggle wireless debugging in WSA 2207.40000.8.0 (android 12), use ADB on PC to use connect instead (even with dev options and USB debugging is on). | The service also works with root (Tested with Magisk)
 | Shopee (PH) | 3.12.16 | 13, 11 | ✅ | Google login requires GMS installed (use Email or Facebook login as alternatives). Banner information is stretched horizontally 
 | Shosetsu | 2.4.4 | 13, 12 | ✅ | Keyboard navigation is unsupported when reading light novel.
 | Showtime | 3.1.1 | 11 | ❌ | App crashes when you try to login. Button clicks don't work
@@ -1088,20 +1091,21 @@ wsa://com.apple.android.music
 | Steam Chat | 1.0 | 11 | ✅
 | Steam Link | 1.1.81 | 11 | ❌ | App crashes
 | Stocard | 10.12.1 | 12 | ✅ || To log in to an earlier Stocard account that is set to use Google login, it needs to be transitioned from a Google-based account to an E-mail-based account, which has to be done on a phone.
+| SwiFTP FTP Server (Free) (F-Droid) | 3.1 - 30100 | 13, 12, 11 | ✅ | A network connection is required for the FTP service to initialize. Does not work with `Local network access` turned on in WSA Settings
 | SwiFTP Server | 1.24 | 11 | ✅
 | Symbolab | 9.3.0 | 11 | ✅ || Keyboard not working, in-app keyboard is available though
 | Sync for Reddit Pro | 20.0.3 | 11 | ✅
-| Tachiyomi (Preview) | 0.14.7-6191 | 13, 12, 11 | ✅ | Notifications like "Large updates harm sources..." cut off. Sometimes, "Updating Library" progress bar doesn't show, requires to clear the Tachiyomi notification. | Some of the notifications will be missing due to the Windows Action Center limit of 20.
-| Tachiyomi (Stable) | 0.14.7 | 13, 12, 11 | ✅ | Notifications like "Large updates harm sources..." cut off. Sometimes, "Updating Library" progress bar doesn't show, requires to clear the Tachiyomi notification. | Some of the notifications will be missing due to the Windows Action Center limit of 20.
-| TachiyomiAZ | 8.7.4-AZ | 13, 12, 11 | ✅
-| TachiyomiJ2K/TachiJ2K | 1.7.1 | 13, 12, 11 | ✅ | Parsing links (from a browser) causes to open the Tachiyomi extension window or app picker dialog instead of opening TachiJ2K itself.
-| TachiyomiSY | 1.9.4 | 13, 12, 11 | ✅
+| Tachiyomi (Preview) | 0.15.3-6421 | 13, 12, 11 | ✅ | Notifications like "Large updates harm sources..." cut off. Sometimes, "Updating Library" progress bar doesn't show, requires to clear the Tachiyomi notification. | Some of the notifications will be missing due to the Windows Action Center limit of 20.
+| Tachiyomi (Stable) | 0.15.3 | 13, 12, 11 | ✅ | Notifications like "Large updates harm sources..." cut off. Sometimes, "Updating Library" progress bar doesn't show, requires to clear the Tachiyomi notification. | Hovering the mouse pointer, highlights the input element. Some of the notifications will be missing due to the Windows Action Center limit of 20.
+| TachiyomiAZ | 8.8.0-AZ | 13, 12, 11 | ✅
+| TachiyomiJ2K/TachiJ2K | 1.7.4 | 13, 12, 11 | ✅ | Parsing links (from a browser) causes to open the Tachiyomi extension window or app picker dialog instead of opening TachiJ2K itself when you have multiple Tachiyomi forks are installed.
+| TachiyomiSY | 1.10.2 | 13, 12, 11 | ✅
 | Tap Tap | 3.1.1 | 12, 11 | ✅ | Sometimes freeze if you brute force the app, fixed by restarting the app
 | TeamViewer | 15.22.136 | 11 | ✅
 | Telegram | 8.1.2 | 11 | ✅
 | Televizo | 1.9.0.1 | 11 | ❌ | Crashes on video playback
 | Terminal Emulator for Android | 1.0.70-rebuild | 12 | ✅ | A warning shows up about the app being designed for older Android versions, but can be dismissed
-| Termux (F-droid) | 0.118.0 | 12, 11 |✅
+| Termux (F-droid) | 0.118.0 | 13, 12, 11 |✅
 | Tesla | 4.6.1 | 11 | ⚠️ | Vehicle graphics and maps do not load, cannot enable phone key. | Internet-based vehicle controls, charge stats, services are functional.
 | The Globe and Mail | 6.2.0 (100) | 11 | ✅
 | TIDAL | 2.49.0 | 11 | ✅
@@ -1109,10 +1113,10 @@ wsa://com.apple.android.music
 | TikTok (Global) | 25.0.3 | 12, 11 | ✅
 | TikTok (TV Version) | 1.6.0 | 11 | ❌ | App crashes
 | TikTok Lite | 21.7.1 | 11 | ❌ | App crashes
-| Tivimate | 4.4.0 | 11 | ✅ | Compatibility Options ->Force App to be non-resizeable ; Disable smooth resize ; Keyboard Compatibility ; ForceFullScreen [F11] Note: Version 4.5. And above force crashes, the latest working version remains 4.4.0
+| Tivimate | 4.4.0 | 11 | ✅ | Compatibility Options -> Force App to be non-resizeable ; Disable smooth resize ; Keyboard Compatibility ; ForceFullScreen [F11] Note: Version 4.5. And above force crashes, the latest working version remains 4.4.0
 | TP-Link Tapo | 2.4.25 | 11 | ✅
 | Trello | 2021.14.1.16332-production | 11 | ⚠️ | Login needs web browser installed in WSA, using Windows' default browser will not work
-| Trust: Crypto &amp; Bitcoin Wallet | 6.57.1 | 12 | ✅ || For login, you have to go to Android settings =>System =>Date &amp; Time and toggle the "Set Time Automatically" option. you can access it by this command .\adb.exe shell "am start -n com.android.settings/.Settings"
+| Trust: Crypto & Bitcoin Wallet | 6.57.1 | 12 | ✅ || For login, you have to go to Android settings => System => Date & Time and toggle the "Set Time Automatically" option. you can access it by this command .\adb.exe shell "am start -n com.android.settings/.Settings"
 | Tune In Pro | 28.7 (267721) | 11 | ✅
 | Twitter | 9.16.1-release.00 | 11 | ✅ | Optionally requires GMS
 | Twitter Lite | 3.1.1 | 12 | ✅ ||
@@ -1150,11 +1154,13 @@ wsa://com.apple.android.music
 | Yahoo! Fantasy Sports | 10.31.0 | 11 | ❌ | App crashes on launch
 | Yandex.Maps | 10.6.0 | 11 | ⚠️ | Map doesn't work
 | Ymusic | 3.7.2 | 11 | ✅
+| Yodayo | 1.4.2 | 13 | ✅ | Requires GMS only when logging in using Google account. You can try logging in with e-mail instead. | 
+| Yokai | 1.7.12 | 13 | ✅
 | YouTube (Google)| 16.40.35 | 11 | 🆖 | Requires GMS
 | YouTube Music (Google) | 5.07.50 | 11 | 🆖 | Requires GMS
 | YouTube Music Vanced | 43.9.50 | 11 | ✅
 | YouTube Music ReVanced | 6.19.51 | 13 | ✅ || Used the x86-64 version as base
-| Youtube Vanced | 16.29.39 | 11 | ⚠️ | Picture-in-picture doesn't work &amp; Can't join channel membership
+| Youtube Vanced | 16.29.39 | 11 | ⚠️ | Picture-in-picture doesn't work & Can't join channel membership
 | ZArchiver | 0.9.5.8 (9596) | 11 | ✅
 | Zenly (w/o GMS) | 4.55.2 | 11 | ⚠️ | App crashes after login, but background location works
 | Zoom | 5.8.3.2634 | 11 | ⚠️ | Camera severely glitched, share screen doesn't work due to WSA's windowed nature.
@@ -1183,6 +1189,7 @@ wsa://com.apple.android.music
 | 8 ball pool | 5.5.6 | 11 | ✅ |
 | A Dance of Fire and Ice | 1.15.5 | 11 | ✅ || Keyboard supported
 | AFK Arena | 1.72.01 | 11 | ⚠️ | Can't login using Google account
+| AirTycoon Online 3 | 1.3.0 | 13 | ⚠️ | You need touchscreen for making the flight routes (using a tablet with spacedesk works just fine and is easy to set up)
 | Alan Walker-The Aviation Game | 3.0.6 | 11 | ✅ || Touchscreen and cursor works; keyboard doesn't work
 | Alien: Blackout | 2.0 | 11 | ⚠️ | Terrible in-game experience, includes poor performance and low FPS
 | Alto's Adventure | 1.8.15 | 13, 11 | ✅
@@ -1197,6 +1204,7 @@ wsa://com.apple.android.music
 | Arknights (CN Server) | 1.9.21 | 12 | ✅
 | Asphalt 8 | 6.3.1a | 12 | ✅ | Keyboard supported in latest version (2206)
 | Asphalt 9 || 11 | ⚠️ | Keyboard unsupported
+| Avakin Life || 13 | ⚠️ | Low FPS with iGPUs
 | Azur Lane | 6.1.2 | 12, 11 | ⚠️ | Sometimes stuck on downloading resources, can be fixed by restarting the app. Overall gameplay, got stable FPS using NVIDIA GeForce GTX 1050 Ti Mobile
 | Bad Piggies HD | 2.4.3141 | 11 | ✅
 | BanG Dream! Girls Band Party! | 4.5.0 | 11 | 🆖 | Requires GMS
@@ -1206,14 +1214,14 @@ wsa://com.apple.android.music
 | Blue Archive (ブルーアーカイブ; JP) | 1.35.231115 | 13 | ✅ | Installing the HEVC video extension (9NMZLZ57R3T7 or 9N4WGH0Z6VHQ) will work properly. If not installed, it will be stuck in black screen.
 | Blue Archive (KR) | 1.39.146794 | 12, 11| ❌ | HEVC codec support required
 | Blue Archive (KR, Onestore distributed) | 1.50.203922 | 13 | ✅ | Does not work with Nvidia graphics
-| Brawl Stars | 38.159 | 11 | ❌ | Game crashes
+| Brawl Stars | 38.159 | 11,13 | ❌ | Game crashes
 | C.A.T.S (Crash Arena Turbo Stars) | 2.40.2 | 11 | ✅ | GMS warnings might appear but these can be safely ignored
 | Candy Crush Saga | 1.213.2.1 (12132011) | 11 | ✅
 | CarX Highway Racing | 1.17.1 | 11 | ⚠️ | Terrible in-game experience, includes poor performance and low FPS
 | Clash Mini | 1.1142.10 | 11 | ❌ | App crashes
 | Clash of Clans | 15.292.12 | 13 | ❌ | App crashes
 | Clash Royale | 3.6.1 | 11 | ❌ | App crashes
-| Clouds &amp; Sheep 2 | 1.4.6 | 11 | ✅ | Optionally uses GMS
+| Clouds & Sheep 2 | 1.4.6 | 11 | ✅ | Optionally uses GMS
 | Command and Conquer: Rivals | 1.8.1 | 12, 11 | ✅ || It will pop up "Won't run without GPlay services" when starts, but works fine except GPlay login. You may use link email instead.
 | Crazy Taxi Classic | 4.7 | 12 | ❌ | An error message on startup says "Download failed because the resources could not be found." | OBB installation has not yet been tested.
 | Cricket (Play Games) | 2023.08.46243 | 13 | 🆖 || Requires GMS
@@ -1223,7 +1231,7 @@ wsa://com.apple.android.music
 | Dwarf Balls | 3.5.2 | 11 | 🆖 | Requires GMS for Google Play login.
 | Endless Frontier - Idle RPG | 3.5.3 | 12 | ❌ | OpenGL ES 3.1 is unsupported
 | Epic Seven | 1.0.406 | 11 | ⚠️ | Low FPS, unable to sign in with Google
-| Extreme Car Driving Simulator | 6.74.0 | 13, 12, 11 | ✅ | Keyboard &amp; controller supported
+| Extreme Car Driving Simulator | 6.74.0 | 13, 12, 11 | ✅ | Keyboard & controller supported
 | F1 Mobile Racing | 5.1.11 | 13 - 7 | ❌ | No 3D rendering with any of the GPUs selected. Just shows a purple screen in game.
 | Fancade | 1.7.6 | 11 | ❌ | App crashes
 | Fate/Grand Order (US) FGO | 2.34.0 | 12, 11 | 🆖 || Require Google Play Services, skippable if you have Google Play Service (APK) installed
@@ -1239,7 +1247,7 @@ wsa://com.apple.android.music
 | Golf Rival | 2.54.241 (88) | 11 | 🆖 | Requires GMS | Produces warnings about GMS. Issues include not being able to pan.
 | Grand Theft Auto: San Andreas || 11 | ✅
 | Guardian Tales | 2.53.1 | 12, 11 | 🆖 | Requires GMS
-| Hatsune Miku: Colorful Stage! | 1.3.2 | 12, 11 | ❌ | App either crashes when loading into game after login or app screen turns dark
+| Hatsune Miku: Colorful Stage! | 2.3.8 | 13 | ✅ | Game performs well with "lite" setting, frame drop in 3d  
 | Hay Day | 1.55.93 (1706) | 1 | ❌ | App crashes on startup (Worked on 1.54.71 and earlier)
 | Hill Climb Racing | 1.53.0 (501) | 11 | ✅
 | Hitman Sniper | 1.7.193827 | 11 | ⚠️ | Terrible in-game experience, includes poor performance and low FPS
@@ -1259,6 +1267,7 @@ wsa://com.apple.android.music
 | Magic Tiles 3 | 8.086.201 | 11 | ✅
 | MapleStory M | 1.9300.3921 | 13 | ✅ |
 | Mario Kart Tour | 2.10.0 | 11 | ❌ | Fails to connect to servers after Nintendo login
+| MementoMori: AFKRPG | 2.4.0 | 13 | ✅ | Rarely the game will show an error regarding connectivity issue, just restart the game and it'll work fine most of the time. If you experience black background in the battle scene, try restarting the game. | Might require GMS. Tested on i7-12700H and Laptop RTX 3060, and WSA with GMS installed.
 | Minecraft (Aurora Store) | 1.17.40.06 | 11 | ❌ | Unable to verify game owner
 | Minecraft (China Edition) || 11 | ✅
 | Minecraft (Play Store) | 1.20.40.22 | 13, 11 | ⚠️ | Mouse and keyboard issue: The avatar doesn't look at the cursor in the main and game menus, as it should be on PC (and mouse and keyboard connected to Android device). While in the game, it does not recognize the mouse and instead the touchscreen controls will be used, but the keyboard works. Once entered into any text field (e.g. entering command in chat) and exited, the avatar now looks at the cursor again in the game and main menus; but back in the game, the camera no longer moves, and the letters, numbers and the spacebar on the keyboard no longer works, until you restart the app. Otherwise, it works with no issues.
@@ -1274,6 +1283,7 @@ wsa://com.apple.android.music
 | New Star Soccer | 4.27 | 13, 12, 11 | ✅ | Keyboard not supported
 | osu!lazer | 2023.403.1 | 13 - 5 | ⚠️ | Runs with terrible performance, high latency, generally unplayable
 | PAC-MAN (Play Games) | 2023.08.46243 | 13 | 🆖 || Requires GMS, keyboard supported
+| PC Creator 2 - Computer Tycoon | 4.1.5 | 13 | ❌ | Mouse does not work with the tutorial, so it cannot be completed ||
 | Penguin Isle | 1.59.1 | 13 - 5 | ✅ | Great performance, but UI size breaks with weird resolutions.
 | Plants vs Zombies 2 | 10.9.1 | 13, 11 | ✅ | Cloud save using Google Play Games works if GMS is available
 | Pojav Launcher | dahlia-209 | 12 | ✅ | Performance was great with an i7-10700K and an RTX 3060 Ti, but will probably be worse on lower hardware.
@@ -1339,7 +1349,7 @@ wsa://com.apple.android.music
 | 崩坏学园2 (Honkai Gakuen 2) | 8.5 | 11 | ✅ || Game has inbox keyboard controller for WASD
 | 東方LostWord (Touhou: Lost Word) | 1.16.0 | 11 | ❌
 | 战双帕弥什 (Punishing: Gray Raven) || 11 | ✅ || Keyboard is supported
-| プロジェクトセカイ カラフルステージ！ feat. 初音ミク (Project Sekai Colorful Stage JP) | 1.3.2 | 12, 11 | ❌ | App either crashes when loading into game after login or app screen turns dark
+| プロジェクトセカイ カラフルステージ！ feat. 初音ミク (Project Sekai Colorful Stage JP) | 3.3.1.Luna | 13, 12, 11 | ⚠️ | Works well, sometimes FPS spikes when a lot of notes appear | Requires an account with progress on it to be able to skip the tutorial(on start screen click the 3 lines on the top right for account settings), if not, the game crashes or freezes on a blackscreen. Multi-Touch Display required. Starting a LIVE takes a while on slower machines.
 | 世界計畫 繽紛舞台! feat. 初音未來 (Project Sekai Colorful Stage TW) | 2.3.1.10995 | 13, 12 | ❌ | App hangs when loading LIVE or crashes. Performance issues such as FPS spikes, freezing, etc. Broken textures and animations.
 | Subtransit Drive | 1.0.7.2 | 11 | ❌ | Crashes at startup because Vulkan or OpenGL ES 3.1 is required
 </details>
