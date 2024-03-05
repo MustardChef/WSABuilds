@@ -44,7 +44,7 @@ After removing the lines above, run the script.
 
 When the Powershell window states "Press any key to quit", at that time multiple dialouge boxes will open:
 
-&lt;-- <add here="" images=""> --&gt;
+<-- <add here="" images=""> -->
 
 > [!IMPORTANT]
 > ****Ignore these and do not click on anything or close these popups****
