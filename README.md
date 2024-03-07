@@ -574,7 +574,7 @@
   
 <br/>
 
-- **3.)** Delete the WSA folder that extracted you extracted and Run.bat was run from to install WSA (MagiskOnWSA folder)
+- **3.)** Delete the WSA folder that you extracted and Run.bat was run from to install WSA (MagiskOnWSA folder)
 
 <br/>
 
