@@ -404,7 +404,7 @@ jobs:
           KERNEL_SU_MSG: ${{ needs.check.outputs.KERNEL_SU_MSG }} 
 
       - name: Create Tag and Release for Windows 11 arm64 release ✍🏼
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ env.WIN11ARM64_TAG }}
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -414,7 +414,7 @@ jobs:
           GITHUB_WORKSPACE: ${{ github.workspace }}
 
       - name: Create Tag and Release for Windows 10 x64 release ✍🏼
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ env.WIN10X64_TAG }}
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -424,7 +424,7 @@ jobs:
           GITHUB_WORKSPACE: ${{ github.workspace }}
           
       - name: Create Tag and Release for Windows 11 x64 release ✍🏼
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ env.WIN11X64_TAG }}
           token: ${{ secrets.GITHUB_TOKEN }}

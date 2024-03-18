@@ -199,7 +199,7 @@ jobs:
            RCLONE_CONFIG_PASS: ${{ secrets.RCLONE_CONFIG_PASS }}
 
       - name: Upload Windows 11 x64 build to release 🤌
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: ${{ needs.build.outputs.zipname }}.7z
           fail_on_unmatched_files: true
@@ -249,7 +249,7 @@ jobs:
             RCLONE_CONFIG_PASS: ${{ secrets.RCLONE_CONFIG_PASS }}
         
       - name: Upload Windows 10 x64 build to release 🤌
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: ${{ needs.build.outputs.zipname }}_Windows_10.7z
           fail_on_unmatched_files: true
