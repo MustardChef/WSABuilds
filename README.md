@@ -6,7 +6,7 @@
 
 ---
 
-## Next LTS Build: ``Tuesday 19th March 2024``
+## Next LTS Build: ~~``Tuesday 19th March 2024``~~ ``Friday 22nd March 2024``
 
 ---
 <br />
