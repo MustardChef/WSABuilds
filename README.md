@@ -6,7 +6,10 @@
 
 ---
 
-## Next LTS Build: ~~``Tuesday 19th March 2024``~~ ``Friday 22nd March 2024``
+## Next LTS Build:
+### ~~``Friday 22nd March 2024``~~ Final Date: Tuesday 26th March 2024 
+#### (Reason for delay: Workflow Errors, switching to fallback (Local) building method)
+
 
 ---
 <br />
