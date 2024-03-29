@@ -7,8 +7,8 @@
 ---
 
 ## Next LTS Build:
-### ~~``Friday 22nd March 2024``~~ Final Date: Friday 29th March 2024 
-#### (Reason for delay: Workflow Errors, switching to fallback (Local) building method)
+### ``Sunday 31th March 2024``  
+#### (Reason for delay: Workflow Errors)
 
 
 ---
