@@ -1,0 +1,179 @@
+name: Auto Build function (Use for call only)
+on:
+  workflow_call:
+    inputs:
+      arch:
+        type: string
+      gapps:
+        type: string
+      root:
+        type: string
+      insider:
+        type: string
+      magiskver:
+        type: string
+      devicemodel:
+        type: string
+      amazonflag:
+        type: string
+      compressformat:
+       type: string
+      release_type:
+        type: string
+
+        
+jobs:
+  build:
+    name: Build WSA
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout ♻️
+        uses: actions/checkout@v4
+
+      - name: Setup Python 🏭
+        uses: actions/setup-python@v5
+        with:
+          check-latest: true
+          python-version: '3.x'
+          cache: 'pip'
+          cache-dependency-path: MagiskOnWSAOld/scripts/
+
+      - name: Setup Python3 Virtual Enviroment 🐍
+        working-directory: MagiskOnWSAOld/scripts
+        run: |
+          sudo apt-get update
+          PYTHON_VENV_DIR="$(dirname "$PWD")/python3-env"
+          python3 -m venv "$PYTHON_VENV_DIR" || abort "Failed to create python3 virtual env"
+          # shellcheck disable=SC1091
+          source "$PYTHON_VENV_DIR/bin/activate" || abort "Failed to activate python3 virtual env"
+          python3 -c "import pkg_resources; pkg_resources.require(open('requirements.txt',mode='r'))" &>/dev/null || {
+              echo "Installing Python3 dependencies"
+              python3 -m pip install --upgrade -r requirements.txt || abort "Failed to install python3 dependencies"
+          }
+          deactivate
+
+      - name: Install Ubuntu Dependencies 🧑‍🏭
+        uses: awalsh128/cache-apt-pkgs-action@v1
+        with:
+          packages: e2fsprogs attr unzip qemu-utils python3-venv
+          version: 1.0
+
+      - name: Check workflow inputs
+        run: |
+          echo ${{ inputs.arch }}
+          echo ${{ inputs.gapps }}
+          echo ${{ inputs.root }}
+          echo ${{ inputs.insider }}
+          echo ${{ inputs.magiskver }}
+          echo ${{ inputs.devicemodel }}
+          echo ${{ inputs.amazonflag }}
+          echo ${{ inputs.compressformat }}
+          echo ${{ inputs.release_type }}
+
+      - name: Build WSA ${{ inputs.arch }} with GApps ${{ inputs.root }} 🏗️
+        id: wsa
+        working-directory: MagiskOnWSAOld
+        run: |
+          if [[ "${{ inputs.release_type }}" == "WIF" ]]; then
+              RLS_TYPE="latest"
+          else
+              RLS_TYPE="retail"
+          fi
+          chmod -R 777 ./
+          mkdir -p download
+          ./scripts/build.sh --arch ${{ inputs.arch }} --release-type $RLS_TYPE --magisk-ver ${{ inputs.magiskver }} --gapps-brand ${{ inputs.gapps }} --root-sol ${{ inputs.root }} --custom-model ${{ inputs.devicemodel }} ${{ inputs.amazonflag }} --compress-format ${{ inputs.compressformat }}
+
+      - name: Prepare release tag 🏷️
+        id: releasetag
+        run: |
+          currentver=${{ inputs.wsa_ver }}
+          folderpath="/WSABuilds/Builds/Windows Subsystem For Android™ v$currentver/Windows 11/Windows 11 arm64"
+          echo "DRIVE_FOLDER_PATH=$folderpath" >> $GITHUB_ENV  
+          echo "WSA_TAG=Windows_11_${currentver}_arm64" >> $GITHUB_ENV
+          echo "WSA_VER=$currentver" >> $GITHUB_ENV 
+
+      - name: Check GitHub ENV variables
+        run: |
+          echo ${{ steps.wsa.outputs.artifact }}
+          echo ${{ steps.wsa.outputs.artifact_folder }}
+          echo ${{ steps.date.outputs.date }}
+          echo ${{ steps.wsa.outputs.built }}
+          echo ${{ env.WSA_TAG }}
+          echo ${{ env.WSA_VER }}
+          echo ${{ env.DRIVE_FOLDER_PATH }}
+          
+      - name: Pass to Windows 💸
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.wsa.outputs.artifact }}-${{ steps.wsa.outputs.built }}
+          path: MagiskOnWSAOld/output
+
+    outputs:
+      zipname: ${{ steps.wsa.outputs.artifact }}
+      artifact_folder: ${{ steps.wsa.outputs.artifact_folder }}}
+      date: ${{ steps.date.outputs.date }}
+      built: ${{ steps.wsa.outputs.built }}
+      tag: ${{ env.WSA_TAG }}
+      wsaver: ${{ env.WSA_VER }}
+      onedrivepath: ${{ env.DRIVE_FOLDER_PATH }}
+
+  make-pri:
+    name: Merge PRI resources
+    runs-on: windows-latest
+    needs: build
+    steps:
+      - name: Checkout ♻️
+        uses: actions/checkout@v4
+
+      - name: Download built artifact ⌛
+        uses: actions/download-artifact@v4
+        with:
+          path: output
+          name: ${{ needs.build.outputs.zipname }}-${{ needs.build.outputs.built }}
+
+      - name: Remove unused artifact ❌
+        uses: geekyeggo/delete-artifact@v5
+        with:
+          name: ${{ needs.build.outputs.zipname }}-${{ needs.build.outputs.built }}
+
+      - name: Check Subdirectories and Directories 1
+        run: tree /F ${{ github.workspace }}
+  
+      - name: Check Subdirectories and Directories 2
+        run: tree /F "${{ github.workspace }}\output\${{ needs.build.outputs.artifact_folder }}"
+
+      - name: Merge language and density resources 🧙🏻‍♂️
+        run: |
+          if ("${{ inputs.arch }}" -eq "x64") {
+            (Start-Process pwsh.exe -NoNewWindow -PassThru -Args "-ExecutionPolicy Bypass -File MakePri.ps1" -WorkingDirectory "${{ github.workspace }}\output\${{ needs.build.outputs.artifact_folder }}").WaitForExit()
+          } else {
+            Copy-Item -Force "C:\Program Files (x86)\Windows Kits\10\bin\10.0.22621.0\arm64\makepri.exe" "${{ github.workspace }}\output\${{ needs.build.outputs.artifact_folder }}"
+          }
+          
+      - name: Compact Images 💿
+        run: |
+         foreach ($Partition in 'system','product','system_ext','vendor') {
+             Write-Output "Optimizing of $Partition..."
+             Write-Output "SELECT VDISK FILE=`"${{ github.workspace }}\output\${{ needs.build.outputs.artifact_folder }}\$Partition.vhdx`"`
+             ATTACH VDISK READONLY`
+             COMPACT VDISK`
+             DETACH VDISK" | Set-Content -Path "$Partition.txt" -Encoding Ascii
+             Start-Process -NoNewWindow -Wait "diskpart.exe" -Args "/s $Partition.txt" -RedirectStandardOutput NUL
+         }
+
+      - name: Compress artifact for Windows 11 arm64 Build📦
+        run: 7z a -t7z -mx=6 -m0=LZMA2 -ms=on -mmt=8 -- "${{ needs.build.outputs.zipname }}.7z" .\output\*
+
+      - name: File Checksum for Windows 11 arm64 Build✔️
+        id: run
+        run: ("hash=" + $(Get-FileHash -Path ${{ needs.build.outputs.zipname }}.7z -Algorithm SHA256).Hash.ToLower().ToString()) | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding UTF8 -Append)
+
+      - name: Upload Windows 11 arm64 build to release 🤌
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ needs.build.outputs.zipname }}.7z
+          fail_on_unmatched_files: true
+          append_body: false
+          tag_name: ${{ needs.build.outputs.tag }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+        
