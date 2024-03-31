@@ -10,10 +10,8 @@
 ### WSABuilds LTS 1: ~~``Sunday 31st March 2024``~~ **Availiable Now**  
 ### WSABuilds LTS 2: ``TBD``
 ---
-<br />
-<br />
-
-
+<br/>
+<br/>
 <p align="center">
 <a href="https://github.com/MustardChef/WSABuilds#downloads"><img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&amp;style=for-the-badge"/></a> <a href="https://forum.xda-developers.com/t/wsabuilds-latest-windows-subsystem-for-android-wsa-builds-for-   windows-10-and-11-with-magisk-and-google-play-store.4545087/"><img src="https://img.shields.io/badge/XDA%20Developers-WSABuilds-EA7100?style=for-the-badge&amp;logoColor=white&amp;logo=XDA-Developers"/></a> <a href="https://ko-fi.com/N4N0K08AC"><img alt="ko-fi" src="https://ko-fi.com/img/githubbutton_sm.svg"/></a>
 </p>
@@ -228,7 +226,6 @@
 <td>v2311.40000.5.0</td>
 <td>✅</td>
 <td>✅</td>
-   
 </tr>
 </tbody>
 </table>
@@ -267,7 +264,6 @@
 <br/>
 </details>
 </div>
-
 <br/>
 <table>
 <thead>
@@ -319,11 +315,11 @@
 <tbody>
 <tr>
 <td rowspan="4"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" style="width: 200px;"/></td>
-<td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2311.40000.5.0"><img alt="win11x64downpre" src="https://img.shields.io/badge/Download%20Latest%20Pre--Release%20Builds-Windows%2011%20x64-orange?style=for-the-badge&amp;logo=windows11"/></a></p></td>
+<td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2311.40000.5.0_LTS_1"><img alt="win11x64downpre" src="https://img.shields.io/badge/Download%20Latest%20Pre--Release%20Builds-Windows%2011%20x64-orange?style=for-the-badge&amp;logo=windows11"/></a></p></td>
 <td rowspan="2"><p><a href="https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/EoVMTqCKkgVFvFlJTcz1u0gBdOBqLIwjT-9okE8eCpp3Aw?e=7y5PIT"><img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&amp;logo=Microsoft%20OneDrive&amp;logoColor=0078D4" style="width: 150px;"/></a></p></td>
 </tr>
 <tr>
-<td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2311.40000.5.0_arm64"><img alt="win11arm64downpre" src="https://img.shields.io/badge/Download%20Latest%20Pre--Release%20Builds-Windows%2011%20arm64-orange?style=for-the-badge&amp;logo=windows11"/></a></p></td>
+<td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2311.40000.5.0_LTS_1_arm64"><img alt="win11arm64downpre" src="https://img.shields.io/badge/Download%20Latest%20Pre--Release%20Builds-Windows%2011%20arm64-orange?style=for-the-badge&amp;logo=windows11"/></a></p></td>
 </tr>
 <tr>
 <td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2311.40000.5.0"><img alt="win11x64downstable" src="https://img.shields.io/badge/Download%20Latest%20Stable%20Builds-Windows%2011%20x64-blue?style=for-the-badge&amp;logo=windows11"/></a></p></td>
@@ -335,7 +331,7 @@
 </tr>
 <tr>
 <td rowspan="2"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" style="width: 200px;"/></td>
-<td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2311.40000.5.0"><img alt="win10x64down" src="https://img.shields.io/badge/Download%20Latest%20Pre--Release%20Builds-Windows%2010%20x64-orange?style=for-the-badge&amp;logo=windows"/></a></p></td>
+<td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2311.40000.5.0_LTS_1"><img alt="win10x64down" src="https://img.shields.io/badge/Download%20Latest%20Pre--Release%20Builds-Windows%2010%20x64-orange?style=for-the-badge&amp;logo=windows"/></a></p></td>
 <td><p><a href="https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/Enm0Tn0BRMlFmrfCWP9Omf0BCiQU0zybeXZtAyOfOVSQqA?e=v6UQyp"><img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&amp;logo=Microsoft%20OneDrive&amp;logoColor=0078D4" style="width: 150px;"/></a></p>
 </td>
 </tr>
@@ -438,13 +434,13 @@
 <details>
 <summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Installation.md"><img height="60" src="https://img.icons8.com/color/96/null/software-installer.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Installation.md">   Installation</a></h1></a></summary>
 
-> [!NOTE]
-> 
-> If you have the official Windows Subsystem For Android™ installed, you must [completely uninstall](#uninstallation) it to use MagiskOnWSA. 
+&gt; [!NOTE]
+&gt; 
+&gt; If you have the official Windows Subsystem For Android™ installed, you must [completely uninstall](#uninstallation) it to use MagiskOnWSA. 
 
-> [!IMPORTANT]
->  
-> In case you want to preserve your data from the previous installation (official or MagiskOnWSA), you can backup Userdata.vhdx, located at ``%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx`` before uninstallation and restore it after installation. A guide for this process is located further down in this README.
+&gt; [!IMPORTANT]
+&gt;  
+&gt; In case you want to preserve your data from the previous installation (official or MagiskOnWSA), you can backup Userdata.vhdx, located at ``%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx`` before uninstallation and restore it after installation. A guide for this process is located further down in this README.
 
 ---
 
@@ -461,8 +457,8 @@
 4. Delete the .7z archive
 5. Move the newly extracted folder to a suitable location (Documents folder is a good choice), as you will need to keep the folder on your PC to use MagiskOnWSA
 
-> [!NOTE]   
-> If you're updating WSA, merge the folders and replace the files for all items when asked
+&gt; [!NOTE]   
+&gt; If you're updating WSA, merge the folders and replace the files for all items when asked
 
 6. Open the Windows Subsystem For Android™ folder: Search for and double-click `Run.bat`
    - If you previously have a MagiskOnWSA installation, it will automatically uninstall the previous one while preserving all user data and install the new one, so don't worry about your data.
@@ -522,8 +518,8 @@
 
 ### How do I update without losing any of my apps and data on Windows Subsystem for Android (WSA)
 
-> [!IMPORTANT]
-> Make sure that WSA has been turned off from the settings and that tools such has WSA-System-Control, WSA-Sideloader, WSAPacman etc are not running.
+&gt; [!IMPORTANT]
+&gt; Make sure that WSA has been turned off from the settings and that tools such has WSA-System-Control, WSA-Sideloader, WSAPacman etc are not running.
 
 1. [Download the latest build](https://github.com/MustardChef/WSABuilds#downloads) (that you want to update to)
 
@@ -568,9 +564,9 @@
 
  
 
-> [!NOTE]   
->
-> If you want to preseve your data, make a backup of the `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx` file. After uninstalling, copy the VHDX file back to the `%LOCALAPPDATA%\Package\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache` folder. For a more comprehensive and detailed guide, take a look at the **Backup and Restore section** in this README markdown
+&gt; [!NOTE]   
+&gt;
+&gt; If you want to preseve your data, make a backup of the `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx` file. After uninstalling, copy the VHDX file back to the `%LOCALAPPDATA%\Package\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache` folder. For a more comprehensive and detailed guide, take a look at the **Backup and Restore section** in this README markdown
 
 ### To remove WSA installed through WSABuild:
 
@@ -612,8 +608,8 @@ In order to make a backup of your WSA data you must copy the ``Userdata.vhdx`` (
 Before attempting to restore your backup, you must remove WSA if installed. Then before you run the ``Run.bat`` script (to reinstall WSA after removing it), you need to remove these lines from ``Install.ps1``, located in the your extracted WSA folder:
       
       
-> [!TIP]
-> The Lines (as shown below) that you need to remove in ``Install.ps1`` may vary depending on the type of WSA Build that you are trying to install.    
+&gt; [!TIP]
+&gt; The Lines (as shown below) that you need to remove in ``Install.ps1`` may vary depending on the type of WSA Build that you are trying to install.    
       
 
 #### Android Settings:
@@ -647,14 +643,14 @@ When the Powershell window states "Press any key to quit", at that time multiple
 
 ![image](https://github.com/MustardChef/WSABuilds/assets/68516357/53ba5738-a504-4c31-a414-40258180ee09)
 
-> [!IMPORTANT]
-> ****Ignore these and do not click on anything or close these popups****
+&gt; [!IMPORTANT]
+&gt; ****Ignore these and do not click on anything or close these popups****
 
 Go to ``%localappdata%\Packages`` and (if these folders/directory do not exist, create them) in ``MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\`` paste the userdata.vhdx
 
 Now close the popups and run WSA and your userdata should hopefully be restored
 
-</add></details>
+</details>
     
 
  
@@ -678,7 +674,7 @@ Now close the popups and run WSA and your userdata should hopefully be restored
    ```
    or
 
--  Location in Windows ---><br/> `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalState\diagnostics\logcat`
+-  Location in Windows ---&gt;<br/> `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalState\diagnostics\logcat`
 
 **Can I delete the installed folder?**
 
@@ -706,7 +702,7 @@ Now close the popups and run WSA and your userdata should hopefully be restored
 
 **I cannot adb connect localhost:58526**
 
-- Make sure developer mode is enabled. If the issue persists, check the IP address of Windows Subsystem For Android™ on the Settings ---> Developer page and try 
+- Make sure developer mode is enabled. If the issue persists, check the IP address of Windows Subsystem For Android™ on the Settings ---&gt; Developer page and try 
 
    ```
    adb connect ip:5555
@@ -840,7 +836,7 @@ wsa://com.apple.android.music
 | Boost for Reddit | 1.12.5 | 12 | ✅
 | Bouncer | 1.26.3 | 11 | ⚠️
 | Brave Browser | 1.30.87 | 11 | ✅
-| BritBox by BBC & ITV | 2.1.2 (20043) | 11 | ❌ | App crashes on start
+| BritBox by BBC &amp; ITV | 2.1.2 (20043) | 11 | ❌ | App crashes on start
 | Bromite | 94.0.4606.94 | 11 | ✅ || Use x64 build
 | Camera | 2.0.002 | 13 | ⚠️ | While taking pictures or video works fine but changing the camera (to an inactive virtual camera) freezes the app. | Included in the subsystem
 | CamScanner | 6.3.0.2110240000 | 11 | ❌ | WSA freezes after taking a snap
@@ -977,7 +973,7 @@ wsa://com.apple.android.music
 | microG Settings | N/A | 11 | ❌ | App crashes, doesn't load
 | Microsoft Authenticator | 6.2112.8213 | 11 | ✅ || Some features might require GMS
 | Microsoft Azure | 3.9.2.2021.09.30-19.35.50 | 11 | ✅
-| Microsoft Bing - Search & earn | 23.5.401109307 | 12 | ✅
+| Microsoft Bing - Search &amp; earn | 23.5.401109307 | 12 | ✅
 | Microsoft Edge | 120.0.2210.157 | 13,11 | ❌ | Always stuck in Microsoft Edge First Run Experience and a few seconds later, crashes out
 | Microsoft Edge Canary | 103.0.1264.1 | 11 | ❌ || Fails to load websites
 | Microsoft Launcher | 6.230703.0.1122680 | 13, 11 | ✅ | Can't set wallpaper
@@ -1053,7 +1049,7 @@ wsa://com.apple.android.music
 | Pydroid | 5.00_x86_64 | 11 | ✅
 | Q-Dance | 8.0.7 | 11 | ❌ | App crashes
 | QooApp | 8.3.35 | 13, 11 | ✅ | QooApp Servant may not work due to WSA's windowed nature
-| QR & Barcode Scanner (F-droid) | 1.10 | 13 | ⚠️ | Errors out with a `Unable to access camera` even using a built-in laptop camera | You can still generate QR codes for URLs and other stuff
+| QR &amp; Barcode Scanner (F-droid) | 1.10 | 13 | ⚠️ | Errors out with a `Unable to access camera` even using a built-in laptop camera | You can still generate QR codes for URLs and other stuff
 | QR Scanner (F-droid) | 4.5.8 | 13 | ✅ | Does not work with a virtual camera | It can scan and generate QR codes
 | QPython 3L | 3.0.0 | 11 | ✅
 | QQ | 8.9.28 | 13, 12 | ❌ | App crashes
@@ -1064,7 +1060,7 @@ wsa://com.apple.android.music
 | Remote Desktop (Microsoft) | 10.0.12.1148 | 11 | ✅
 | ReVanced Manager | 1.9.5 | 13 | ✅ | 
 | Rider | 1.59 | 11 | ✅
-| Robinhood - Food & Booking | 2.2.2 | 12 | ⚠️ | App having trouble loading content. Maps & Location picker don't work (Requires GMS). | You can log in only on one device at the same time. Previous device will log out upon signing in on new device.
+| Robinhood - Food &amp; Booking | 2.2.2 | 12 | ⚠️ | App having trouble loading content. Maps &amp; Location picker don't work (Requires GMS). | You can log in only on one device at the same time. Previous device will log out upon signing in on new device.
 | Rootless Launcher | 3.9.1 | 11 | ❌ | App crashes
 | Rootless Pixel Launcher | 3.9.1 | 13 | ✅ |
 | Ruler (F-Droid) | 1.1 | 12 | ❌ | While the app is correctly installed, the ruler lengths are wildly off-course no matter how much in-app calibration is done. | The app also refuses to recognise values above circa 100mm for the 70mm calibration line.
@@ -1124,10 +1120,10 @@ wsa://com.apple.android.music
 | TikTok (Global) | 25.0.3 | 12, 11 | ✅
 | TikTok (TV Version) | 1.6.0 | 11 | ❌ | App crashes
 | TikTok Lite | 21.7.1 | 11 | ❌ | App crashes
-| Tivimate | 4.4.0 | 11 | ✅ | Compatibility Options -> Force App to be non-resizeable ; Disable smooth resize ; Keyboard Compatibility ; ForceFullScreen [F11] Note: Version 4.5. And above force crashes, the latest working version remains 4.4.0
+| Tivimate | 4.4.0 | 11 | ✅ | Compatibility Options -&gt; Force App to be non-resizeable ; Disable smooth resize ; Keyboard Compatibility ; ForceFullScreen [F11] Note: Version 4.5. And above force crashes, the latest working version remains 4.4.0
 | TP-Link Tapo | 2.4.25 | 11 | ✅
 | Trello | 2021.14.1.16332-production | 11 | ⚠️ | Login needs web browser installed in WSA, using Windows' default browser will not work
-| Trust: Crypto & Bitcoin Wallet | 6.57.1 | 12 | ✅ || For login, you have to go to Android settings => System => Date & Time and toggle the "Set Time Automatically" option. you can access it by this command .\adb.exe shell "am start -n com.android.settings/.Settings"
+| Trust: Crypto &amp; Bitcoin Wallet | 6.57.1 | 12 | ✅ || For login, you have to go to Android settings =&gt; System =&gt; Date &amp; Time and toggle the "Set Time Automatically" option. you can access it by this command .\adb.exe shell "am start -n com.android.settings/.Settings"
 | Tune In Pro | 28.7 (267721) | 11 | ✅
 | Twitter | 9.16.1-release.00 | 11 | ✅ | Optionally requires GMS
 | Twitter Lite | 3.1.1 | 12 | ✅ ||
@@ -1171,7 +1167,7 @@ wsa://com.apple.android.music
 | YouTube Music (Google) | 5.07.50 | 11 | 🆖 | Requires GMS
 | YouTube Music Vanced | 43.9.50 | 11 | ✅
 | YouTube Music ReVanced | 6.19.51 | 13 | ✅ || Used the x86-64 version as base
-| Youtube Vanced | 16.29.39 | 11 | ⚠️ | Picture-in-picture doesn't work & Can't join channel membership
+| Youtube Vanced | 16.29.39 | 11 | ⚠️ | Picture-in-picture doesn't work &amp; Can't join channel membership
 | ZArchiver | 0.9.5.8 (9596) | 11 | ✅
 | Zenly (w/o GMS) | 4.55.2 | 11 | ⚠️ | App crashes after login, but background location works
 | Zoom | 5.8.3.2634 | 11 | ⚠️ | Camera severely glitched, share screen doesn't work due to WSA's windowed nature.
@@ -1232,7 +1228,7 @@ wsa://com.apple.android.music
 | Clash Mini | 1.1142.10 | 11 | ❌ | App crashes
 | Clash of Clans | 15.292.12 | 13 | ❌ | App crashes
 | Clash Royale | 3.6.1 | 11 | ❌ | App crashes
-| Clouds & Sheep 2 | 1.4.6 | 11 | ✅ | Optionally uses GMS
+| Clouds &amp; Sheep 2 | 1.4.6 | 11 | ✅ | Optionally uses GMS
 | Command and Conquer: Rivals | 1.8.1 | 12, 11 | ✅ || It will pop up "Won't run without GPlay services" when starts, but works fine except GPlay login. You may use link email instead.
 | Crazy Taxi Classic | 4.7 | 12 | ❌ | An error message on startup says "Download failed because the resources could not be found." | OBB installation has not yet been tested.
 | Cricket (Play Games) | 2023.08.46243 | 13 | 🆖 || Requires GMS
@@ -1242,7 +1238,7 @@ wsa://com.apple.android.music
 | Dwarf Balls | 3.5.2 | 11 | 🆖 | Requires GMS for Google Play login.
 | Endless Frontier - Idle RPG | 3.5.3 | 12 | ❌ | OpenGL ES 3.1 is unsupported
 | Epic Seven | 1.0.406 | 11 | ⚠️ | Low FPS, unable to sign in with Google
-| Extreme Car Driving Simulator | 6.74.0 | 13, 12, 11 | ✅ | Keyboard & controller supported
+| Extreme Car Driving Simulator | 6.74.0 | 13, 12, 11 | ✅ | Keyboard &amp; controller supported
 | F1 Mobile Racing | 5.1.11 | 13 - 7 | ❌ | No 3D rendering with any of the GPUs selected. Just shows a purple screen in game.
 | Fancade | 1.7.6 | 11 | ❌ | App crashes
 | Fate/Grand Order (US) FGO | 2.34.0 | 12, 11 | 🆖 || Require Google Play Services, skippable if you have Google Play Service (APK) installed
@@ -1465,8 +1461,8 @@ wsa://com.apple.android.music
 <h4> If you can't find the build that you are looking for, I will be happy to fufill any custom build requests. <h4>
 <h4> Open an issue in the [Issues page](https://github.com/MustardChef/WSABuilds/issues) with the information below. <h4> 
    
-> [!IMPORTANT]
-> - State the [Device Model](https://github.com/WSABuilds/MagiskOnWSALocal#--custom-model) (Default: Pixel 5)? <br/> - Root Solution (Magisk, KernelSU or none)? <br/> - If you want a WSA build with Magisk, what [variant of magisk](https://github.com/WSABuilds/MagiskOnWSALocal#--magisk-ver) would you like? <br/> - Would you like GApps (Google Play Store and Play Services (GMS))? <br/> - Would you like to keep the Amazon Appstore? 
+&gt; [!IMPORTANT]
+&gt; - State the [Device Model](https://github.com/WSABuilds/MagiskOnWSALocal#--custom-model) (Default: Pixel 5)? <br/> - Root Solution (Magisk, KernelSU or none)? <br/> - If you want a WSA build with Magisk, what [variant of magisk](https://github.com/WSABuilds/MagiskOnWSALocal#--magisk-ver) would you like? <br/> - Would you like GApps (Google Play Store and Play Services (GMS))? <br/> - Would you like to keep the Amazon Appstore? 
 </h4></h4></h4></h4></h3></h3>
 </details>      
 
@@ -1595,9 +1591,9 @@ wsa://com.apple.android.music
 
 <br/>
 
-> [!IMPORTANT]
-> ***The repository is provided as a utility.***
->***Android is a trademark of Google LLC. Windows™ and Windows Subsystem for Android™ are trademarks of Microsoft LLC.***
+&gt; [!IMPORTANT]
+&gt; ***The repository is provided as a utility.***
+&gt;***Android is a trademark of Google LLC. Windows™ and Windows Subsystem for Android™ are trademarks of Microsoft LLC.***
 
 </details>
 </center>
