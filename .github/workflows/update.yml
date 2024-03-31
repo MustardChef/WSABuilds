@@ -146,14 +146,14 @@ jobs:
           RELEASE_TYPE: "WIF"
           LATEST_VER: ${{ env.LATEST_VER }}
 
-      - name: Replace Link in README.md for Download Links Table for the WSA ${{ env.LATEST_VER }} update
-        run: python "./MagiskOnWSA/Update Check/update-downloadlinks.py"
-        env:
-          LINK_FOR_W11X64: ${{ env.LINK_FOR_W11X64_RETAIL }}
-          LINK_FOR_W11ARM64: ${{ env.LINK_FOR_W11ARM64_RETAIL }}
-          LINK_FOR_W10X64: ${{ env.LINK_FOR_W10X64_RETAIL }}
-          RELEASE_TYPE: "retail"
-          LATEST_VER: ${{ env.LATEST_VER }}
+#      - name: Replace Link in README.md for Download Links Table for the WSA ${{ env.LATEST_VER }} update
+#        run: python "./MagiskOnWSA/Update Check/update-downloadlinks.py"
+#        env:
+#          LINK_FOR_W11X64: ${{ env.LINK_FOR_W11X64_RETAIL }}
+#          LINK_FOR_W11ARM64: ${{ env.LINK_FOR_W11ARM64_RETAIL }}
+#          LINK_FOR_W10X64: ${{ env.LINK_FOR_W10X64_RETAIL }}
+#          RELEASE_TYPE: "retail"
+#          LATEST_VER: ${{ env.LATEST_VER }}
 
       - name: Commit and push if it changed
         run: |
