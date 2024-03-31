@@ -71,7 +71,7 @@ def fix_prop(sec, prop):
     with open(prop, 'r') as f:
         p = Prop(f)
 
-    p += "# extra props added by MagiskOnWSA"
+    p += "# extra props added by MagiskOnWSA and YT-Advanced/WSA-Script"
 
     for k, v in new_props.items():
         p[f"ro.{k[0]}.{k[1]}"] = v

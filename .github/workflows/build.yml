@@ -18,9 +18,8 @@ on:
         type: string
       compressformat:
        type: string
-      release_type:
-        type: string
-
+      wsa_ver:
+        type: string 
         
 jobs:
   build:
@@ -69,6 +68,7 @@ jobs:
           echo ${{ inputs.amazonflag }}
           echo ${{ inputs.compressformat }}
           echo ${{ inputs.release_type }}
+          echo ${{ inputs.wsa_ver }}
 
       - name: Build WSA ${{ inputs.arch }} with GApps ${{ inputs.root }} 🏗️
         id: wsa
@@ -81,7 +81,7 @@ jobs:
           fi
           chmod -R 777 ./
           mkdir -p download
-          ./scripts/build.sh --arch ${{ inputs.arch }} --release-type WIF --magisk-branch topjohnwu --magisk-ver ${{ inputs.magiskver }} --gapps-brand ${{ inputs.gapps }} --root-sol ${{ inputs.root }} --custom-model redfin ${{ inputs.amazonflag }} --compress-format zip
+          ./scripts/build.sh --arch ${{ inputs.arch }} --release-type WIF --magisk-branch topjohnwu --magisk-ver ${{ inputs.magiskver }} ${{ inputs.gapps }} --root-sol ${{ inputs.root }} ${{ inputs.amazonflag }} --compress-format zip
 
       - name: Prepare release tag 🏷️
         id: releasetag
@@ -97,16 +97,14 @@ jobs:
 
       - name: Check GitHub ENV variables
         run: |
-          echo ${{ steps.wsa.outputs.artifact }}
-          echo ${{ steps.wsa.outputs.artifact_folder }}
-          echo ${{ steps.date.outputs.date }}
-          echo ${{ steps.wsa.outputs.built }}
-          echo ${{ env.WSA_TAG }}
-          echo ${{ env.WSA_TAG_WIN10 }}
-          echo ${{ env.WSA_VER }}
-          echo ${{ env.DRIVE_FOLDER_PATH }}
-          echo ${{ env.DRIVE_FOLDER_PATH_WIN10 }}    
-          
+          echo "${{ steps.wsa.outputs.artifact }}"
+          echo "${{ steps.wsa.outputs.artifact_folder }}"
+          echo "${{ steps.date.outputs.date }}"
+          echo "${{ steps.wsa.outputs.built }}"
+          echo "${{ env.WSA_TAG }}"
+          echo "${{ env.WSA_VER }}"
+          echo "${{ env.DRIVE_FOLDER_PATH }}"
+            
       - name: Pass to Windows 💸
         uses: actions/upload-artifact@v4
         with:
@@ -171,10 +169,6 @@ jobs:
       - name: Compress artifact for Windows 11 x64 Build📦
         run: 7z a -t7z -mx=6 -m0=LZMA2 -ms=on -mmt=8 -- "${{ needs.build.outputs.zipname }}.7z" .\output\*
 
-      - name: File Checksum for Windows 11 x64 Build✔️
-        id: run
-        run: ("hash=" + $(Get-FileHash -Path ${{ needs.build.outputs.zipname }}.7z -Algorithm SHA256).Hash.ToLower().ToString()) | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding UTF8 -Append
-
 #      - name: Setup rclone 🎚️
 #        uses: AnimMouse/setup-rclone@v1.9.0
 #        with:
@@ -225,10 +219,6 @@ jobs:
 
       - name: Compress artifact for Windows 10 x64 Build📦
         run: 7z a -t7z -mx=6 -m0=LZMA2 -ms=on -mmt=8 -sdel -- "${{ needs.build.outputs.zipname }}_Windows_10.7z" .\output\*
-
-      - name: File Checksum for Windows 10 x64 Build✔️
-        id: run2
-        run: ("hash=" + $(Get-FileHash -Path "${{ needs.build.outputs.zipname }}_Windows_10.7z" -Algorithm SHA256).Hash.ToLower().ToString()) | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding UTF8 -Append
 
 #      - name: Upload build to OneDrive for Windows 10 x64 Build⏫
 #        run: |

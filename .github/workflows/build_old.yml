@@ -18,9 +18,8 @@ on:
         type: string
       compressformat:
        type: string
-      release_type:
-        type: string
-
+      wsa_ver:
+        type: string  
         
 jobs:
   build:
@@ -171,9 +170,6 @@ jobs:
       - name: Compress artifact for Windows 11 x64 Build📦
         run: 7z a -t7z -mx=6 -m0=LZMA2 -ms=on -mmt=8 -- "${{ needs.build.outputs.zipname }}.7z" .\output\*
 
-      - name: File Checksum for Windows 11 x64 Build✔️
-        id: run
-        run: ("hash=" + $(Get-FileHash -Path ${{ needs.build.outputs.zipname }}.7z -Algorithm SHA256).Hash.ToLower().ToString()) | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding UTF8 -Append
 
 #      - name: Setup rclone 🎚️
 #        uses: AnimMouse/setup-rclone@v1.9.0
@@ -225,10 +221,6 @@ jobs:
 
       - name: Compress artifact for Windows 10 x64 Build📦
         run: 7z a -t7z -mx=6 -m0=LZMA2 -ms=on -mmt=8 -sdel -- "${{ needs.build.outputs.zipname }}_Windows_10.7z" .\output\*
-
-      - name: File Checksum for Windows 10 x64 Build✔️
-        id: run2
-        run: ("hash=" + $(Get-FileHash -Path "${{ needs.build.outputs.zipname }}_Windows_10.7z" -Algorithm SHA256).Hash.ToLower().ToString()) | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding UTF8 -Append
 
 #      - name: Upload build to OneDrive for Windows 10 x64 Build⏫
 #        run: |

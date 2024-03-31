@@ -74,11 +74,16 @@ workdir_rw = os.access(workdir, os.W_OK)
 
 with zipfile.ZipFile(wsa_zip_path) as zip:
     for f in zip.filelist:
-        if arch in f.filename.lower():
+        filename_lower = f.filename.lower()
+        if arch in filename_lower:
             zip_name = f.filename
             if not Path(workdir / zip_name).is_file():
                 print(f"unzipping {zip_name} to {workdir}", flush=True)
                 zip_path = zip.extract(f, workdir)
+                with zipfile.ZipFile(zip_path) as wsa_zip:
+                    stat = Path(zip_path).stat()
+                    print(f"unzipping from {zip_path}", flush=True)
+                    wsa_zip.extractall(archdir)
                 ver_no = zip_name.split("_")
                 long_ver = ver_no[1]
                 rel = ver_no[3].split(".")
@@ -89,7 +94,6 @@ with zipfile.ZipFile(wsa_zip_path) as zip:
                     env.WSA_REL = rel_long
                 with open(env_file, 'w') as environ_file:
                     environ_file.write(str(env))
-        filename_lower = f.filename.lower()
         if 'language' in filename_lower or 'scale' in filename_lower:
             name = f.filename.split("_")[2].split(".")[0]
             zip.extract(f, workdir)
@@ -103,7 +107,3 @@ with zipfile.ZipFile(wsa_zip_path) as zip:
                         l.extract(g, xmldir)
                     elif re.search(u'Images/.+.png', g.filename):
                         l.extract(g, archdir)
-with zipfile.ZipFile(zip_path) as zip:
-    stat = Path(zip_path).stat()
-    print(f"unzipping from {zip_path}", flush=True)
-    zip.extractall(archdir)
