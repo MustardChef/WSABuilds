@@ -1,6 +1,11 @@
 name: Check update
 on:
   workflow_dispatch:
+    inputs:
+      wsa_ver:
+        type: string
+        description: WSA Version.
+        required: true
 
 jobs:
   check:
@@ -352,6 +357,7 @@ jobs:
       magiskver: stable
       devicemodel: redfin
       compressformat: zip
+      wsa_ver: ${{ inputs.wsa_ver }}
       release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit
 
@@ -369,6 +375,7 @@ jobs:
       magiskver: stable
       devicemodel: redfin
       compressformat: zip
+      wsa_ver: ${{ inputs.wsa_ver }}
       release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit
 
@@ -386,6 +393,7 @@ jobs:
       magiskver: stable
       devicemodel: redfin
       compressformat: zip
+      wsa_ver: ${{ inputs.wsa_ver }}
       release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit
 
@@ -403,6 +411,7 @@ jobs:
       magiskver: stable
       devicemodel: redfin
       compressformat: zip
+      wsa_ver: ${{ inputs.wsa_ver }}
       release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit
 
@@ -420,6 +429,7 @@ jobs:
       magiskver: stable
       devicemodel: redfin
       compressformat: zip
+      wsa_ver: ${{ inputs.wsa_ver }}
       release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit
 
@@ -437,6 +447,7 @@ jobs:
       magiskver: stable
       devicemodel: redfin
       compressformat: zip
+      wsa_ver: ${{ inputs.wsa_ver }}
       release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit
 
@@ -454,6 +465,7 @@ jobs:
       magiskver: stable
       devicemodel: redfin
       compressformat: zip
+      wsa_ver: ${{ inputs.wsa_ver }}
       release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit
 
@@ -471,6 +483,7 @@ jobs:
       magiskver: canary
       devicemodel: redfin
       compressformat: zip
+      wsa_ver: ${{ inputs.wsa_ver }}
       release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit
 
@@ -488,6 +501,7 @@ jobs:
       magiskver: stable
       devicemodel: redfin
       compressformat: zip
+      wsa_ver: ${{ inputs.wsa_ver }}
       release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit
 
@@ -505,6 +519,7 @@ jobs:
       magiskver: stable
       devicemodel: redfin
       compressformat: zip
+      wsa_ver: ${{ inputs.wsa_ver }}
       release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit
 
@@ -522,6 +537,7 @@ jobs:
       magiskver: stable
       devicemodel: redfin
       compressformat: zip
+      wsa_ver: ${{ inputs.wsa_ver }}
       release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit
 
@@ -539,6 +555,7 @@ jobs:
       magiskver: stable
       devicemodel: redfin
       compressformat: zip
+      wsa_ver: ${{ inputs.wsa_ver }}
       release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit
 
@@ -556,6 +573,7 @@ jobs:
       magiskver: stable
       devicemodel: redfin
       compressformat: zip
+      wsa_ver: ${{ inputs.wsa_ver }}
       release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit
 
@@ -573,6 +591,7 @@ jobs:
       magiskver: stable
       devicemodel: redfin
       compressformat: zip
+      wsa_ver: ${{ inputs.wsa_ver }}
       release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit
 
@@ -590,6 +609,7 @@ jobs:
       magiskver: stable
       devicemodel: redfin
       compressformat: zip
+      wsa_ver: ${{ inputs.wsa_ver }}
       release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit
 
@@ -607,6 +627,7 @@ jobs:
       magiskver: canary
       devicemodel: redfin
       compressformat: zip
+      wsa_ver: ${{ inputs.wsa_ver }}
       release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit 
 
