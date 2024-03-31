@@ -81,30 +81,19 @@ jobs:
           fi
           chmod -R 777 ./
           mkdir -p download
-          ./scripts/build.sh --arch ${{ inputs.arch }} --release-type $RLS_TYPE --magisk-ver ${{ inputs.magiskver }} --gapps-brand ${{ inputs.gapps }} --root-sol ${{ inputs.root }} --custom-model ${{ inputs.devicemodel }} ${{ inputs.amazonflag }} --compress-format ${{ inputs.compressformat }}
+          ./scripts/build.sh --arch ${{ inputs.arch }} --release-type WIF --magisk-branch topjohnwu --magisk-ver ${{ inputs.magiskver }} --gapps-brand ${{ inputs.gapps }} --root-sol ${{ inputs.root }} --custom-model redfin ${{ inputs.amazonflag }} --compress-format zip
 
       - name: Prepare release tag 🏷️
         id: releasetag
         run: |
-          if [[ "${{ inputs.release_type }}" == "WIF" ]]; then
-            currentver=$(curl -s https://raw.githubusercontent.com/MustardChef/WSABuilds/update/WIF.appversion)
-            folderpath="/WSABuilds/Builds/Windows Subsystem For Android™ v$currentver/Windows 11/Windows 11 x86_64"
-            folderpathwin10="/WSABuilds/Builds/Windows Subsystem For Android™ v$currentver/Windows 10/" 
-            echo "DRIVE_FOLDER_PATH=$folderpath" >> $GITHUB_ENV  
-            echo "DRIVE_FOLDER_PATH_WIN10=$folderpathwin10" >> $GITHUB_ENV 
-            echo "WSA_TAG=Windows_11_$currentver" >> $GITHUB_ENV
-            echo "WSA_TAG_WIN10=Windows_10_$currentver" >> $GITHUB_ENV
-            echo "WSA_VER=$currentver" >> $GITHUB_ENV 
-          else
-            currentver=$(curl -s https://raw.githubusercontent.com/MustardChef/WSABuilds/update/retail.appversion)
-            folderpath="/WSABuilds/Builds/Windows Subsystem For Android™ v$currentver/Windows 11/Windows 11 x86_64"
-            folderpathwin10="/WSABuilds/Builds/Windows Subsystem For Android™ v$currentver/Windows 10/" 
-            echo "DRIVE_FOLDER_PATH=$folderpath" >> $GITHUB_ENV  
-            echo "DRIVE_FOLDER_PATH_WIN10=$folderpathwin10" >> $GITHUB_ENV 
-            echo "WSA_TAG=Windows_11_$currentver" >> $GITHUB_ENV
-            echo "WSA_TAG_WIN10=Windows_10_$currentver" >> $GITHUB_ENV
-            echo "WSA_VER=$currentver" >> $GITHUB_ENV 
-          fi
+          currentver=${{ inputs.wsa_ver }}
+          folderpath="/WSABuilds/Builds/Windows Subsystem For Android™ v$currentver/Windows 11/Windows 11 x86_64"
+          folderpathwin10="/WSABuilds/Builds/Windows Subsystem For Android™ v$currentver/Windows 10/" 
+          echo "DRIVE_FOLDER_PATH=$folderpath" >> $GITHUB_ENV  
+          echo "DRIVE_FOLDER_PATH_WIN10=$folderpathwin10" >> $GITHUB_ENV 
+          echo "WSA_TAG=Windows_11_$currentver" >> $GITHUB_ENV
+          echo "WSA_TAG_WIN10=Windows_10_$currentver" >> $GITHUB_ENV
+          echo "WSA_VER=$currentver" >> $GITHUB_ENV 
 
       - name: Check GitHub ENV variables
         run: |
@@ -186,17 +175,17 @@ jobs:
         id: run
         run: ("hash=" + $(Get-FileHash -Path ${{ needs.build.outputs.zipname }}.7z -Algorithm SHA256).Hash.ToLower().ToString()) | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding UTF8 -Append
 
-      - name: Setup rclone 🎚️
-        uses: AnimMouse/setup-rclone@v1.9.0
-        with:
-             rclone_config: ${{ secrets.RCLONE_CONFIG }}
-
-      - name: Upload build to OneDrive for Windows 11 x64 Build⏫
-        run: |
-           echo ${{ needs.build.outputs.onedrivepath }}
-           rclone copy ${{ needs.build.outputs.zipname }}.7z OneDrive:"${{ needs.build.outputs.onedrivepath }}" --create-empty-src-dirs
-        env:
-           RCLONE_CONFIG_PASS: ${{ secrets.RCLONE_CONFIG_PASS }}
+#      - name: Setup rclone 🎚️
+#        uses: AnimMouse/setup-rclone@v1.9.0
+#        with:
+#             rclone_config: ${{ secrets.RCLONE_CONFIG }}
+#
+#      - name: Upload build to OneDrive for Windows 11 x64 Build⏫
+#        run: |
+#           echo ${{ needs.build.outputs.onedrivepath }}
+#           rclone copy ${{ needs.build.outputs.zipname }}.7z OneDrive:"${{ needs.build.outputs.onedrivepath }}" --create-empty-src-dirs
+#        env:
+#           RCLONE_CONFIG_PASS: ${{ secrets.RCLONE_CONFIG_PASS }}
 
       - name: Upload Windows 11 x64 build to release 🤌
         uses: softprops/action-gh-release@v2
@@ -241,12 +230,12 @@ jobs:
         id: run2
         run: ("hash=" + $(Get-FileHash -Path "${{ needs.build.outputs.zipname }}_Windows_10.7z" -Algorithm SHA256).Hash.ToLower().ToString()) | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding UTF8 -Append
 
-      - name: Upload build to OneDrive for Windows 10 x64 Build⏫
-        run: |
-              echo ${{ needs.build.outputs.onedrivepathwin10 }}
-              rclone copy ${{ needs.build.outputs.zipname }}_Windows_10.7z OneDrive:"${{ needs.build.outputs.onedrivepathwin10 }}" --create-empty-src-dirs
-        env:
-            RCLONE_CONFIG_PASS: ${{ secrets.RCLONE_CONFIG_PASS }}
+#      - name: Upload build to OneDrive for Windows 10 x64 Build⏫
+#        run: |
+#              echo ${{ needs.build.outputs.onedrivepathwin10 }}
+#              rclone copy ${{ needs.build.outputs.zipname }}_Windows_10.7z OneDrive:"${{ needs.build.outputs.onedrivepathwin10 }}" --create-empty-src-dirs
+#        env:
+#           RCLONE_CONFIG_PASS: ${{ secrets.RCLONE_CONFIG_PASS }}
         
       - name: Upload Windows 10 x64 build to release 🤌
         uses: softprops/action-gh-release@v2
