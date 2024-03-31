@@ -15,7 +15,7 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with MagiskOnWSALocal.  If not, see <https://www.gnu.org/licenses/>.
 #
-# Copyright (C) 2023 LSPosed Contributors
+# Copyright (C) 2024 LSPosed Contributors
 #
 
 from datetime import datetime
@@ -27,6 +27,7 @@ import requests
 import json
 import re
 from pathlib import Path
+from packaging import version
 
 
 class Prop(OrderedDict):
@@ -53,28 +54,36 @@ tempScript = sys.argv[3]
 kernelVersion = sys.argv[4]
 file_name = sys.argv[5]
 abi_map = {"x64": "x86_64", "arm64": "arm64"}
-print(f"Generating KernelSU download link: arch={abi_map[arch]}, kernel version={kernelVersion}", flush=True)
-res = requests.get(f"https://api.github.com/repos/tiann/KernelSU/releases/latest")
+print(
+    f"Generating KernelSU download link: arch={abi_map[arch]}, kernel version={kernelVersion}", flush=True)
+res = requests.get(
+    f"https://api.github.com/repos/tiann/KernelSU/releases/latest")
 json_data = json.loads(res.content)
 headers = res.headers
 x_ratelimit_remaining = headers["x-ratelimit-remaining"]
+kernel_ver = 0
 if res.status_code == 200:
     link = ""
-    apk = ""
     assets = json_data["assets"]
-    release_name = json_data["tag_name"]
     for asset in assets:
-        if re.match(f'kernel-WSA-{abi_map[arch]}-{kernelVersion}.*.zip$', asset["name"]) and asset["content_type"] == "application/zip":
+        asset_name = asset["name"]
+        if re.match(f'kernel-WSA-{abi_map[arch]}-{kernelVersion}.*\.zip$', asset_name) and asset["content_type"] == "application/zip":
+            tmp_kernel_ver = re.search(
+                u'\d{1}.\d{1,}.\d{1,}.\d{1,}', asset_name.split("-")[3]).group()
+            if (kernel_ver == 0):
+                kernel_ver = tmp_kernel_ver
+            elif version.parse(kernel_ver) < version.parse(tmp_kernel_ver):
+                kernel_ver = tmp_kernel_ver
+    print(f"Kernel version: {kernel_ver}", flush=True)
+    for asset in assets:
+        if re.match(f'kernel-WSA-{abi_map[arch]}-{kernel_ver}.*\.zip$', asset["name"]) and asset["content_type"] == "application/zip":
             link = asset["browser_download_url"]
-        if re.match(f'KernelSU_{release_name}_.*-release.*.apk$', asset["name"]) and asset["content_type"] == "application/vnd.android.package-archive":
-            apk = asset["browser_download_url"]
             break
     if link == "":
-        print(f"Error: No KernelSU release found for arch={abi_map[arch]}, kernel version={kernelVersion}", flush=True)
+        print(
+            f"Error: No KernelSU release found for arch={abi_map[arch]}, kernel version={kernelVersion}", flush=True)
         exit(1)
-    elif apk == "":
-        print(f"Error: No KernelSU Manager release found", flush=True)
-        exit(1)
+    release_name = json_data["name"]
     with open(os.environ['WSA_WORK_ENV'], 'r') as environ_file:
         env = Prop(environ_file.read())
         env.KERNELSU_VER = release_name
@@ -85,7 +94,8 @@ elif res.status_code == 403 and x_ratelimit_remaining == '0':
     print(f"Github API Error: {message}", flush=True)
     ratelimit_reset = headers["x-ratelimit-reset"]
     ratelimit_reset = datetime.fromtimestamp(int(ratelimit_reset))
-    print(f"The current rate limit window resets in {ratelimit_reset}", flush=True)
+    print(
+        f"The current rate limit window resets in {ratelimit_reset}", flush=True)
     exit(1)
 
 print(f"download link: {link}", flush=True)
@@ -94,6 +104,6 @@ with open(download_dir/tempScript, 'a') as f:
     f.writelines(f'{link}\n')
     f.writelines(f'  dir={download_dir}\n')
     f.writelines(f'  out={file_name}\n')
-    f.writelines(f'{apk}\n')
-    f.writelines(f'  dir={download_dir}\n')
-    f.writelines(f'  out=KernelSU.apk\n')
+#    f.writelines(f'{apk}\n')
+#    f.writelines(f'  dir={download_dir}\n')
+#    f.writelines(f'  out=KernelSU.apk\n')

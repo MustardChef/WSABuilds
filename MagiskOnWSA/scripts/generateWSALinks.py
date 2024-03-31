@@ -15,12 +15,11 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with MagiskOnWSALocal.  If not, see <https://www.gnu.org/licenses/>.
 #
-# Copyright (C) 2023 LSPosed Contributors
+# Copyright (C) 2024 LSPosed Contributors
 #
 
 import html
 import logging
-import os
 import re
 import sys
 
@@ -54,7 +53,7 @@ logging.captureWarnings(True)
 arch = sys.argv[1]
 
 release_name_map = {"retail": "Retail", "RP": "Release Preview",
-                    "WIS": "Insider Slow", "WIF": "Insider Fast"}
+                    "WIS": "Insider Slow", "WIF": "Insider Fast", "latest": "Insider Private"}
 release_type = sys.argv[2] if sys.argv[2] != "" else "Retail"
 release_name = release_name_map[release_type]
 download_dir = Path.cwd().parent / \
@@ -69,7 +68,8 @@ if ms_account_conf.is_file():
     with open(ms_account_conf, "r") as f:
         conf = Prop(f.read())
         user = conf.get('user_code')
-print(f"Generating WSA download link: arch={arch} release_type={release_name}\n", flush=True)
+print(
+    f"Generating WSA download link: arch={arch} release_type={release_name}\n", flush=True)
 with open(Path.cwd().parent / ("xml/GetCookie.xml"), "r") as f:
     cookie_content = f.read().format(user)
 
@@ -143,50 +143,43 @@ def send_req(i, v, out_file_name):
 
 threads = []
 wsa_build_ver = 0
-latest_wsa_filename = ""
 for filename, values in identities.items():
-    if re.match(f"Microsoft.UI.Xaml..*_{arch}_.*.appx", filename):
-        out_file_name = f"{values[1]}_{arch}.appx"
-        out_file = download_dir / out_file_name
-    elif re.match(f"Microsoft.VCLibs..+.UWPDesktop_.*_{arch}_.*.appx", filename):
-        out_file_name = f"{values[1]}_{arch}.appx"
-        out_file = download_dir / out_file_name
-    elif re.match(f"Microsoft.VCLibs..+_.*_{arch}_.*.appx", filename):
-        out_file_name = f"{values[1]}_{arch}.appx"
-        out_file = download_dir / out_file_name
-    elif re.match(f"MicrosoftCorporationII.WindowsSubsystemForAndroid_.*.msixbundle", filename):
-        tmp_wsa_filename = filename
-        tmp_wsa_build_ver = re.search(r"\d{4}.\d{5}.\d{1,}.\d{1,}", filename).group()
-        if(wsa_build_ver == 0):
-            latest_wsa_filename = tmp_wsa_filename
+    if re.match(f"MicrosoftCorporationII\.WindowsSubsystemForAndroid_.*\.msixbundle", filename):
+        tmp_wsa_build_ver = re.search(
+            u'\d{4}.\d{5}.\d{1,}.\d{1,}', filename).group()
+        if (wsa_build_ver == 0):
             wsa_build_ver = tmp_wsa_build_ver
-        else:
-            if version.parse(wsa_build_ver) < version.parse(tmp_wsa_build_ver):
-                latest_wsa_filename = tmp_wsa_filename
-                wsa_build_ver = tmp_wsa_build_ver
-            else:
-                continue
-        version_splited = wsa_build_ver.split(".")
-        major_ver = version_splited[0]
-        with open(os.environ['WSA_WORK_ENV'], 'r') as environ_file:
-            env = Prop(environ_file.read())
-            env.WSA_VER = wsa_build_ver
-            env.WSA_MAJOR_VER = major_ver
-        with open(os.environ['WSA_WORK_ENV'], 'w') as environ_file:
-            environ_file.write(str(env))
+        elif version.parse(wsa_build_ver) < version.parse(tmp_wsa_build_ver):
+            wsa_build_ver = tmp_wsa_build_ver
+for filename, values in identities.items():
+    if re.match(f"Microsoft\.UI\.Xaml\..*_{arch}_.*\.appx", filename):
+        out_file_name = f"{values[1]}_{arch}.appx"
+        out_file = download_dir / out_file_name
+    elif re.match(f"Microsoft\.VCLibs\..+\.UWPDesktop_.*_{arch}_.*\.appx", filename):
+        out_file_name = f"{values[1]}_{arch}.appx"
+        out_file = download_dir / out_file_name
+    elif re.match(f"Microsoft\.VCLibs\..+_.*_{arch}_.*\.appx", filename):
+        out_file_name = f"{values[1]}_{arch}.appx"
+        out_file = download_dir / out_file_name
+    elif not release_name == 'latest' and re.match(f"MicrosoftCorporationII\.WindowsSubsystemForAndroid_.*\.msixbundle", filename):
+        tmp_wsa_build_ver = re.search(
+            u'\d{4}.\d{5}.\d{1,}.\d{1,}', filename).group()
+        if (wsa_build_ver != tmp_wsa_build_ver):
+            continue
+        version_splitted = wsa_build_ver.split(".")
+        major_ver = version_splitted[0]
+        minor_ver = version_splitted[1]
+        build_ver = version_splitted[2]
+        revision_ver = version_splitted[3]
         out_file_name = f"wsa-{release_type}.zip"
         out_file = download_dir / out_file_name
-        continue
     else:
         continue
-    th = Thread(target=send_req, args=(values[0][0], values[0][1], out_file_name))
+    th = Thread(target=send_req, args=(
+        values[0][0], values[0][1], out_file_name))
     threads.append(th)
     th.daemon = True
     th.start()
-th = Thread(target=send_req, args=(identities[latest_wsa_filename][0][0], identities[latest_wsa_filename][0][1], f"wsa-{release_type}.zip"))
-threads.append(th)
-th.daemon = True
-th.start()
 for th in threads:
     th.join()
 print(f'WSA Build Version={wsa_build_ver}\n', flush=True)

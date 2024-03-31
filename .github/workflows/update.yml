@@ -6,6 +6,10 @@ on:
         type: string
         description: WSA Version.
         required: true
+      wsa_message:
+        type: string
+        description: WSA Update Message.
+        required: true  
 
 jobs:
   check:
@@ -114,7 +118,7 @@ jobs:
           win10x64_link="<p><a href=\"https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_${verofwsa}\"><img alt=\"win10x64down\" src=\"https://img.shields.io/badge/Download%20Latest%20Pre--Release%20Builds-Windows%2010%20x64-orange?style=for-the-badge&amp;logo=windows\"/></a></p>"
           win11x64_link_retail="<p><a href=\"https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_${verofwsa}\"><img alt=\"win11x64downstable\" src=\"https://img.shields.io/badge/Download%20Latest%20Stable%20Builds-Windows%2011%20x64-blue?style=for-the-badge&amp;logo=windows11\"/></a></p>"
           win11arm64_link_retail="<p><a href=\"https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_${verofwsa}_arm64\"><img alt=\"win11arm64downstable\" src=\"https://img.shields.io/badge/Download%20Latest%20Stable%20Builds-Windows%2011%20arm64-blue?style=for-the-badge&amp;logo=windows11\"/></a></p>"
-          win10x64_link_retailk="<p><a href=\"https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_${verofwsa}\"><img alt=\"win10x64down\" src=\"https://img.shields.io/badge/Download%20Latest%20Stable%20Builds-Windows%2010%20x64-blue?style=for-the-badge&amp;logo=windows\"/></a></p>"
+          win10x64_link_retail="<p><a href=\"https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_${verofwsa}\"><img alt=\"win10x64down\" src=\"https://img.shields.io/badge/Download%20Latest%20Stable%20Builds-Windows%2010%20x64-blue?style=for-the-badge&amp;logo=windows\"/></a></p>"
           echo "LINK_FOR_W11X64=$win11x64_link" >> $GITHUB_ENV
           echo "LINK_FOR_W11ARM64=$win11arm64_link" >> $GITHUB_ENV
           echo "LINK_FOR_W10X64=$win10x64_link" >> $GITHUB_ENV
@@ -319,7 +323,7 @@ jobs:
           tag_name: ${{ env.WIN11ARM64_TAG }}
           token: ${{ secrets.GITHUB_TOKEN }}
           body_path: ${{github.workspace}}/Windows11arm64.md
-          name: Windows Subsystem For Android ${{ env.WSA_VER }} for Windows 11 arm64
+          name: WSABuilds LTS ${{ inputs.wsa_message }} for Windows 11 arm64
         env:
           GITHUB_WORKSPACE: ${{ github.workspace }}
 
@@ -329,17 +333,17 @@ jobs:
           tag_name: ${{ env.WIN10X64_TAG }}
           token: ${{ secrets.GITHUB_TOKEN }}
           body_path: ${{github.workspace}}/Windows10x64.md
-          name: Windows Subsystem For Android ${{ env.WSA_VER }} for Windows 10 x64
+          name: WSABuilds LTS ${{ inputs.wsa_message }} for Windows 10 x64
         env:
           GITHUB_WORKSPACE: ${{ github.workspace }}
-          
+  
       - name: Create Tag and Release for Windows 11 x64 release ✍🏼
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ env.WIN11X64_TAG }}
           token: ${{ secrets.GITHUB_TOKEN }}
           body_path: ${{github.workspace}}/Windows11x64.md
-          name: Windows Subsystem For Android ${{ env.WSA_VER }} for Windows 11 x64
+          name: WSABuilds LTS ${{ inputs.wsa_message }} for Windows 11 x64
         env:
           GITHUB_WORKSPACE: ${{ github.workspace }}
 
@@ -348,17 +352,15 @@ jobs:
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
     uses: ./.github/workflows/build.yml
-    if: needs.check.outputs.SHOULD_BUILD == 'yes'
     with:
       arch: x64
       root: none
-      gapps: MindTheGapps
+      gapps: --install-gapps
       amazonflag: --remove-amazon
       magiskver: stable
       devicemodel: redfin
       compressformat: zip
       wsa_ver: ${{ inputs.wsa_ver }}
-      release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit
 
   build_x64_no_root_gapps_redfin:
@@ -366,17 +368,15 @@ jobs:
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
     uses: ./.github/workflows/build.yml
-    if: needs.check.outputs.SHOULD_BUILD == 'yes'
     with:
       arch: x64
       root: none
-      gapps: MindTheGapps
+      gapps: --install-gapps
       amazonflag: ""
       magiskver: stable
       devicemodel: redfin
       compressformat: zip
       wsa_ver: ${{ inputs.wsa_ver }}
-      release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit
 
   build_x64_no_root_no_gapps_remove_amazon_redfin:
@@ -384,17 +384,15 @@ jobs:
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
     uses: ./.github/workflows/build.yml
-    if: needs.check.outputs.SHOULD_BUILD == 'yes'
     with:
       arch: x64
       root: none
-      gapps: none
+      gapps: ""
       amazonflag: --remove-amazon
       magiskver: stable
       devicemodel: redfin
       compressformat: zip
       wsa_ver: ${{ inputs.wsa_ver }}
-      release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit
 
   build_x64_no_root_no_gapps_redfin:
@@ -402,25 +400,22 @@ jobs:
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
     uses: ./.github/workflows/build.yml
-    if: needs.check.outputs.SHOULD_BUILD == 'yes'
     with:
       arch: x64
       root: none
-      gapps: none
+      gapps: ""
       amazonflag: ""
       magiskver: stable
       devicemodel: redfin
       compressformat: zip
       wsa_ver: ${{ inputs.wsa_ver }}
-      release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit
 
   build_x64_kernelsu_gapps_remove_amazon_redfin:
     name: Build for x64 as Redfin with KernelSU, GApps and No Amazon Appstore
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
-    uses: ./.github/workflows/build.yml
-    if: needs.check.outputs.SHOULD_BUILD == 'yes'
+    uses: ./.github/workflows/build_old.yml
     with:
       arch: x64
       root: kernelsu
@@ -430,7 +425,6 @@ jobs:
       devicemodel: redfin
       compressformat: zip
       wsa_ver: ${{ inputs.wsa_ver }}
-      release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit
 
   build_x64_magisk_gapps_redfin:
@@ -438,17 +432,15 @@ jobs:
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
     uses: ./.github/workflows/build.yml
-    if: needs.check.outputs.SHOULD_BUILD == 'yes'
     with:
       arch: x64
       root: magisk
-      gapps: MindTheGapps
+      gapps: --install-gapps
       amazonflag: ""
       magiskver: stable
       devicemodel: redfin
       compressformat: zip
       wsa_ver: ${{ inputs.wsa_ver }}
-      release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit
 
   build_x64_magisk_no_gapps_remove_amazon_redfin:
@@ -456,17 +448,15 @@ jobs:
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
     uses: ./.github/workflows/build.yml
-    if: needs.check.outputs.SHOULD_BUILD == 'yes'
     with:
       arch: x64
       root: magisk
-      gapps: none
+      gapps: ""
       amazonflag: --remove-amazon
       magiskver: stable
       devicemodel: redfin
       compressformat: zip
       wsa_ver: ${{ inputs.wsa_ver }}
-      release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit
 
   build_x64_magisk_canary_gapps_remove_amazon_redfin:
@@ -474,17 +464,15 @@ jobs:
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
     uses: ./.github/workflows/build.yml
-    if: needs.check.outputs.SHOULD_BUILD == 'yes'
     with:
       arch: x64
       root: magisk
-      gapps: MindTheGapps
+      gapps: --install-gapps
       amazonflag: --remove-amazon
       magiskver: canary
       devicemodel: redfin
       compressformat: zip
       wsa_ver: ${{ inputs.wsa_ver }}
-      release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit
 
   build_arm64_no_root_gapps_remove_amazon_redfin:
@@ -492,17 +480,15 @@ jobs:
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
     uses: ./.github/workflows/buildarm64.yml
-    if: needs.check.outputs.SHOULD_BUILD == 'yes'
     with:
       arch: arm64
       root: none
-      gapps: MindTheGapps
+      gapps: --install-gapps
       amazonflag: --remove-amazon
       magiskver: stable
       devicemodel: redfin
       compressformat: zip
       wsa_ver: ${{ inputs.wsa_ver }}
-      release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit
 
   build_arm64_no_root_gapps_redfin:
@@ -510,17 +496,15 @@ jobs:
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
     uses: ./.github/workflows/buildarm64.yml
-    if: needs.check.outputs.SHOULD_BUILD == 'yes'
     with:
       arch: arm64
       root: none
-      gapps: MindTheGapps
+      gapps: --install-gapps
       amazonflag: ""
       magiskver: stable
       devicemodel: redfin
       compressformat: zip
       wsa_ver: ${{ inputs.wsa_ver }}
-      release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit
 
   build_arm64_no_root_no_gapps_remove_amazon_redfin:
@@ -528,17 +512,15 @@ jobs:
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
     uses: ./.github/workflows/buildarm64.yml
-    if: needs.check.outputs.SHOULD_BUILD == 'yes'
     with:
       arch: arm64
       root: none
-      gapps: none
+      gapps: ""
       amazonflag: --remove-amazon
       magiskver: stable
       devicemodel: redfin
       compressformat: zip
       wsa_ver: ${{ inputs.wsa_ver }}
-      release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit
 
   build_arm64_no_root_no_gapps_redfin:
@@ -546,25 +528,22 @@ jobs:
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
     uses: ./.github/workflows/buildarm64.yml
-    if: needs.check.outputs.SHOULD_BUILD == 'yes'
     with:
       arch: arm64
       root: none
-      gapps: none
+      gapps: ""
       amazonflag: ""
       magiskver: stable
       devicemodel: redfin
       compressformat: zip
       wsa_ver: ${{ inputs.wsa_ver }}
-      release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit
 
   build_arm64_kernelsu_gapps_remove_amazon_redfin:
     name: Build for arm64 as Redfin with KernelSU, GApps and No Amazon Appstore
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
-    uses: ./.github/workflows/buildarm64.yml
-    if: needs.check.outputs.SHOULD_BUILD == 'yes'
+    uses: ./.github/workflows/build_arm64_old.yml
     with:
       arch: arm64
       root: kernelsu
@@ -574,7 +553,6 @@ jobs:
       devicemodel: redfin
       compressformat: zip
       wsa_ver: ${{ inputs.wsa_ver }}
-      release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit
 
   build_arm64_magisk_gapps_redfin:
@@ -582,17 +560,15 @@ jobs:
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
     uses: ./.github/workflows/buildarm64.yml
-    if: needs.check.outputs.SHOULD_BUILD == 'yes'
     with:
       arch: arm64
       root: magisk
-      gapps: MindTheGapps
+      gapps: --install-gapps
       amazonflag: ""
       magiskver: stable
       devicemodel: redfin
       compressformat: zip
       wsa_ver: ${{ inputs.wsa_ver }}
-      release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit
 
   build_arm64_magisk_no_gapps_remove_amazon_redfin:
@@ -600,17 +576,15 @@ jobs:
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
     uses: ./.github/workflows/buildarm64.yml
-    if: needs.check.outputs.SHOULD_BUILD == 'yes'
     with:
       arch: arm64
       root: magisk
-      gapps: none
+      gapps: ""
       amazonflag: --remove-amazon
       magiskver: stable
       devicemodel: redfin
       compressformat: zip
       wsa_ver: ${{ inputs.wsa_ver }}
-      release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit
 
   build_arm64_magisk_canary_gapps_remove_amazon_redfin:
@@ -618,17 +592,15 @@ jobs:
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
     uses: ./.github/workflows/buildarm64.yml
-    if: needs.check.outputs.SHOULD_BUILD == 'yes'
     with:
       arch: arm64
       root: magisk
-      gapps: MindTheGapps
+      gapps: --install-gapps
       amazonflag: --remove-amazon
       magiskver: canary
       devicemodel: redfin
       compressformat: zip
       wsa_ver: ${{ inputs.wsa_ver }}
-      release_type: ${{ needs.check.outputs.RELEASE_TYPE }}
     secrets: inherit 
 
 
