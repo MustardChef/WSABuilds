@@ -227,6 +227,11 @@
 <td>✅</td>
 <td>✅</td>
 </tr>
+<tr>
+<td>v2311.40000.5.0_LTS_1</td>
+<td>➖</td>
+<td>➖</td>
+</tr> 
 </tbody>
 </table>
 <table>
@@ -276,31 +281,27 @@
 <tbody>
 <tr>
 <td rowspan="2"><b>Differences:</b></td>
-<td>Follows the "WSA Preview Program Channel" <br/></td>
-<td colspan="2">Follows the "WSA Retail" or "Insider Fast Channel" <br/></td>
+<td><del>Follows "WSA Preview Program Channel"</del> <h4>WSABuilds LTS Releases</h4><br/></td>
+<td colspan="2"><del>Follows the "WSA Retail" or "Insider Fast Channel" <br/></del></td>
 </tr>
 <tr>
-<td>Builds are generally newer than the "WSA Retail" and "Insider Fast Channel"<br/></td>
-<td colspan="2">Builds are generally more stable than the builds in the "WSA Preview Program Channel"</td>
+<td><del>Builds are generally newer than the "WSA Retail" and "Insider Fast Channel"</del><br/></td>
+<td colspan="2"><del>Builds are generally more stable than the builds in the "WSA Preview Program Channel"</del></td>
 </tr>
 <tr>
 <td><b>Current Version:</b></td>
-<td>2311.40000.5.0</td>
+<td>2311.40000.5.0_LTS_1</td>
 <td colspan="2">2311.40000.5.0</td>
 </tr>
 <tr>
 <td><b>Release Date:</b></td>
-<td>10/01/2024</td>
+<td>31/03/2024</td>
 <td colspan="2">10/01/2024</td>
 </tr>
 <tr>
 <td>Update Frequency:</td>
-<td>Multiple Updates Every Month</td>
-<td colspan="2">One Update Every Month</td>
-</tr>
-<tr>
-<td></td>
-<td colspan="3"><h4>It is recommend to check this table regularly to see if there is a newer update avaliable for WSA for the Stable Builds and Pre-Release Builds<h4></h4></h4></td>
+<td><del>Multple Releases Every Month</del></td>
+<td colspan="2"><del>Once Every Month</del></td>
 </tr>
 </tbody>
 </table>
