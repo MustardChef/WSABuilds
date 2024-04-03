@@ -104,6 +104,3 @@ with open(download_dir/tempScript, 'a') as f:
     f.writelines(f'{link}\n')
     f.writelines(f'  dir={download_dir}\n')
     f.writelines(f'  out={file_name}\n')
-#    f.writelines(f'{apk}\n')
-#    f.writelines(f'  dir={download_dir}\n')
-#    f.writelines(f'  out=KernelSU.apk\n')

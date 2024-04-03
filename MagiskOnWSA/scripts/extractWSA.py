@@ -86,11 +86,14 @@ with zipfile.ZipFile(wsa_zip_path) as zip:
                     wsa_zip.extractall(archdir)
                 ver_no = zip_name.split("_")
                 long_ver = ver_no[1]
+                ver = long_ver.split(".")
+                major_ver = ver[0]
                 rel = ver_no[3].split(".")
                 rel_long = str(rel[0])
                 with open(env_file, 'r') as environ_file:
                     env = Prop(environ_file.read())
                     env.WSA_VER = long_ver
+                    env.WSA_MAJOR_VER = major_ver
                     env.WSA_REL = rel_long
                 with open(env_file, 'w') as environ_file:
                     environ_file.write(str(env))
@@ -105,5 +108,5 @@ with zipfile.ZipFile(wsa_zip_path) as zip:
                     elif g.filename == 'AppxManifest.xml':
                         g.filename = f'resources.{name}.xml'
                         l.extract(g, xmldir)
-                    elif re.search(u'Images/.+.png', g.filename):
+                    elif re.search(u'Images/.+\.png', g.filename):
                         l.extract(g, archdir)

@@ -1,10 +1,8 @@
-* text eol=lf merge=theirs
-
+*.py text eol=lf
+*.sh text eol=lf
+*.exe binary
+*.apk binary
+*.so binary
+*.xml text eol=crlf
 *.bat text eol=crlf
 *.ps1 text eol=crlf
-
-*.exe binary
-*.dll binary
-*.erofs binary
-linker64 binary
-*.so binary
