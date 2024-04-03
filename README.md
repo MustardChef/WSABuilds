@@ -7,7 +7,7 @@
 ---
 
 ## Next LTS Release Date:
-### WSABuilds LTS 1: ~~``Sunday 31st March 2024``~~ **Available Now**  
+### WSABuilds LTS 1: ~~``Wednesday 03rd April 2024``~~ **Available Now**  
 ### WSABuilds LTS 2: ``TBD``
 ---
 <br/>
@@ -295,7 +295,7 @@
 </tr>
 <tr>
 <td><b>Release Date:</b></td>
-<td>31/03/2024</td>
+<td>03/04/2024</td>
 <td colspan="2">10/01/2024</td>
 </tr>
 <tr>
