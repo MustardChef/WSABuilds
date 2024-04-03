@@ -231,7 +231,7 @@
 <td>v2311.40000.5.0_LTS_1</td>
 <td>➖</td>
 <td>➖</td>
-</tr> 
+</tr>
 </tbody>
 </table>
 <table>
