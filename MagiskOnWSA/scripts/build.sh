@@ -565,32 +565,23 @@ if [ -z "$HAS_GAPPS" ]; then
 else
     name2=-GApps-${ANDROID_API_MAP[$ANDROID_API]}
 fi
+#if [[ "$MODEL_NAME" != "default" ]]; then
+#    name3="-as-$MODEL_NAME"
+#fi
 artifact_name=WSA_${WSA_VER}_${ARCH}_${WSA_REL}${name1}${name2}
+#${name3}
+short_artifact_name=WSA_${WSA_VER}_${ARCH}
 [ "$REMOVE_AMAZON" ] && artifact_name+=-NoAmazon
 
-if [ -f "$OUTPUT_DIR" ]; then
-    rm -rf ${OUTPUT_DIR:?}
-fi
 if [ ! -d "$OUTPUT_DIR" ]; then
     mkdir -p "$OUTPUT_DIR"
 fi
-OUTPUT_PATH="${OUTPUT_DIR:?}/$artifact_name"
-if [ "$COMPRESS_FORMAT" != "none" ]; then
-    mv "$WORK_DIR/wsa/$ARCH" "$WORK_DIR/wsa/$artifact_name"
-    if [ -n "$COMPRESS_FORMAT" ]; then
-        FILE_EXT=".$COMPRESS_FORMAT"
-        OUTPUT_PATH="$OUTPUT_PATH$FILE_EXT"
-    fi
-    rm -f "${OUTPUT_PATH:?}" || abort
-    if [ "$COMPRESS_FORMAT" = "7z" ]; then
-        echo "Compressing with 7z to $OUTPUT_PATH"
-        7z a "${OUTPUT_PATH:?}" "$WORK_DIR/wsa/$artifact_name" || abort
-    elif [ "$COMPRESS_FORMAT" = "zip" ]; then
-        echo "Compressing with zip to $OUTPUT_PATH"
-        7z -tzip a "$OUTPUT_PATH" "$WORK_DIR/wsa/$artifact_name" || abort
-    fi
-else
-    rm -rf "${OUTPUT_PATH:?}" || abort
-    echo "Copying to $OUTPUT_PATH"
-    cp -r "$WORK_DIR/wsa/$ARCH" "$OUTPUT_PATH" || abort
-fi
+OUTPUT_PATH="${OUTPUT_DIR:?}/$short_artifact_name"
+mv "$WORK_DIR/wsa/$ARCH" "$OUTPUT_PATH"
+{
+  echo "artifact_folder=${short_artifact_name}"  
+  echo "artifact=${artifact_name}"
+  echo "arch=${ARCH}"
+  echo "built=$(date -u +%Y%m%d%H%M%S)"
+  echo "file_ext=${COMPRESS_FORMAT}"
+} >> "$GITHUB_OUTPUT"
