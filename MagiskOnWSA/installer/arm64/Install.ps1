@@ -127,6 +127,28 @@ Stop-Process -Name "WsaClient" -ErrorAction SilentlyContinue
 
 Write-Output "`r`nInstalling MagiskOnWSA..."
 
+$winver = (Get-WmiObject -class Win32_OperatingSystem).Caption
+if ($winver.Contains("10")) {
+    Clear-Host
+    Write-Output "`r`nPatching Windows 10 AppxManifest file..."
+    $xml = [xml](Get-Content '.\AppxManifest.xml')
+    $nsm = New-Object Xml.XmlNamespaceManager($xml.NameTable)
+    $nsm.AddNamespace('rescap', "http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities")
+    $nsm.AddNamespace('desktop6', "http://schemas.microsoft.com/appx/manifest/desktop/windows10/6")
+    $node = $xml.Package.Capabilities.SelectSingleNode("rescap:Capability[@Name='customInstallActions']", $nsm)
+    $xml.Package.Capabilities.RemoveChild($node) | Out-Null
+    $node = $xml.Package.Extensions.SelectSingleNode("desktop6:Extension[@Category='windows.customInstall']", $nsm)
+    $xml.Package.Extensions.RemoveChild($node) | Out-Null
+    $xml.Package.Dependencies.TargetDeviceFamily.MinVersion = "10.0.19041.264"
+    $xml.Save(".\AppxManifest.xml")
+    Clear-Host
+    Write-Output "`r`nDownloading modifided DLL file..."
+    $ProgressPreference = 'SilentlyContinue'
+    Invoke-WebRequest -Uri "https://github.com/A-JiuA/WSAOnWin10/raw/master/DLLs/arm64/winhttp.dll" -OutFile .\WSAClient\winhttp.dll
+    Invoke-WebRequest -Uri "https://github.com/A-JiuA/WSAOnWin10/raw/master/DLLs/arm64/WsaPatch.dll" -OutFile .\WSAClient\WsaPatch.dll
+    Invoke-WebRequest -Uri "https://github.com/A-JiuA/WSAOnWin10/raw/master/DLLs/arm64/icu.dll" -OutFile .\WSAClient\icu.dll
+}
+
 Add-AppxPackage -ForceApplicationShutdown -ForceUpdateFromAnyVersion -Register .\AppxManifest.xml
 if ($?) {
     Finish

@@ -54,7 +54,7 @@ jobs:
       - name: Install Ubuntu Dependencies 🧑‍🏭
         uses: awalsh128/cache-apt-pkgs-action@v1
         with:
-          packages: e2fsprogs attr unzip qemu-utils python3-venv
+          packages: e2fsprogs attr unzip qemu-utils python3-venv curl xmlstarlet
           version: 1.0
 
       - name: Check workflow inputs
@@ -74,15 +74,60 @@ jobs:
         id: wsa
         working-directory: MagiskOnWSA
         run: |
-          if [[ "${{ inputs.release_type }}" == "WIF" ]]; then
-              RLS_TYPE="latest"
-          else
-              RLS_TYPE="retail"
-          fi
           chmod -R 777 ./
           mkdir -p download
-          ./scripts/build.sh --arch ${{ inputs.arch }} --release-type WIF --magisk-branch topjohnwu --magisk-ver ${{ inputs.magiskver }} ${{ inputs.gapps }} --root-sol ${{ inputs.root }} ${{ inputs.amazonflag }} --compress-format zip
+          ./scripts/build.sh --arch ${{ inputs.arch }} --release-type WIF --magisk-ver ${{ inputs.magiskver }} ${{ inputs.gapps }} --root-sol ${{ inputs.root }} ${{ inputs.amazonflag }} --compress-format none
 
+      - name: Check Subdirectories and Directories
+        working-directory: MagiskOnWSA
+        run: |
+          ls -lR
+          
+      - name: Compress artifact for Windows 11 x64 Build📦
+        working-directory: MagiskOnWSA
+        run: |
+          7z a -t7z -mx=6 -m0=LZMA2 -ms=on -mmt=8 -- "${{ steps.wsa.outputs.artifact }}.7z" ./output/*
+
+      - name: Run WSA Windows 10 Python Patch Script
+        working-directory: MagiskOnWSA/output/WSA_2311.40000.5.0_x64
+        run: |
+          #!/bin/bash
+
+          # Define the output directory
+          outputDir="."
+
+          # Define the namespaces
+          rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+          desktop6="http://schemas.microsoft.com/appx/manifest/desktop/windows10/6"
+
+          # Define the XML file
+          xmlFile="$outputDir/AppxManifest.xml"
+
+          # Patching Windows 10 AppxManifest file
+          echo -e "\nPatching Windows 10 AppxManifest file..."
+
+          # Remove the 'customInstallActions' Capability node
+          xmlstarlet ed --inplace --delete "//*[local-name()='Capability' and @Name='customInstallActions']" $xmlFile
+
+          # Remove the 'windows.customInstall' Extension node
+          xmlstarlet ed --inplace --delete "//*[local-name()='Extension' and @Category='windows.customInstall']" $xmlFile
+
+          # Update the MinVersion
+          xmlstarlet ed --inplace --update "//*[local-name()='TargetDeviceFamily']/@MinVersion" -v "10.0.19041.264" $xmlFile
+
+          # Downloading modified DLL file
+          echo -e "\nDownloading modified DLL file..."
+
+          # Download the DLL files
+          curl -sL "https://github.com/MustardChef/WSAPatch/raw/main/DLLs%20for%20WSABuilds/winhttp.dll" -o "$outputDir/WsaClient/winhttp.dll"
+          curl -sL "https://github.com/MustardChef/WSAPatch/raw/main/DLLs%20for%20WSABuilds/WsaPatch.dll" -o "$outputDir/WsaClient/WsaPatch.dll"
+          curl -sL "https://github.com/MustardChef/WSAPatch/raw/main/DLLs%20for%20WSABuilds/icu.dll" -o "$outputDir/WsaClient/icu.dll"
+        shell: bash
+
+      - name: Compress artifact for Windows 10 x64 Build📦
+        working-directory: MagiskOnWSA
+        run: 7z a -t7z -mx=6 -m0=LZMA2 -ms=on -mmt=8 -sdel -- "${{ steps.wsa.outputs.artifact }}_Windows_10.7z" ./output/*
+      
       - name: Prepare release tag 🏷️
         id: releasetag
         run: |
@@ -104,70 +149,88 @@ jobs:
           echo "${{ env.WSA_TAG }}"
           echo "${{ env.WSA_VER }}"
           echo "${{ env.DRIVE_FOLDER_PATH }}"
+
+      - name: Upload Windows 11 x64 build to release 🤌
+        uses: softprops/action-gh-release@v2
+        with:
+          files: MagiskOnWSA/${{ steps.wsa.outputs.artifact }}.7z
+          fail_on_unmatched_files: true
+          append_body: false
+          tag_name: ${{ env.WSA_TAG }}
+          token: ${{ secrets.GITHUB_TOKEN }}
             
-      - name: Pass to Windows 💸
-        uses: actions/upload-artifact@v4
+      - name: Upload Windows 10 x64 build to release 🤌
+        uses: softprops/action-gh-release@v2
         with:
-          name: ${{ steps.wsa.outputs.artifact }}-${{ steps.wsa.outputs.built }}
-          path: MagiskOnWSA/output
+          files: MagiskOnWSA/${{ steps.wsa.outputs.artifact }}_Windows_10.7z
+          fail_on_unmatched_files: true
+          append_body: false
+          tag_name: ${{ env.WSA_TAG_WIN10 }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-    outputs:
-      zipname: ${{ steps.wsa.outputs.artifact }}
-      artifact_folder: ${{ steps.wsa.outputs.artifact_folder }}
-      date: ${{ steps.date.outputs.date }}
-      built: ${{ steps.wsa.outputs.built }}
-      tag: ${{ env.WSA_TAG }}
-      tagwin10: ${{ env.WSA_TAG_WIN10 }}
-      wsaver: ${{ env.WSA_VER }}
-      onedrivepath: ${{ env.DRIVE_FOLDER_PATH }}
-      onedrivepathwin10: ${{ env.DRIVE_FOLDER_PATH_WIN10 }}
+#     - name: Pass to Windows 💸
+#       uses: actions/upload-artifact@v4
+#       with:
+#         name: ${{ steps.wsa.outputs.artifact }}-${{ steps.wsa.outputs.built }}
+#         path: MagiskOnWSA/output
 
-  make-pri:
-    name: Merge PRI resources
-    runs-on: windows-latest
-    needs: build
-    steps:
-      - name: Checkout ♻️
-        uses: actions/checkout@v4
+#    outputs:
+#      zipname: ${{ steps.wsa.outputs.artifact }}
+#      artifact_folder: ${{ steps.wsa.outputs.artifact_folder }}
+#      date: ${{ steps.date.outputs.date }}
+#      built: ${{ steps.wsa.outputs.built }}
+#      tag: ${{ env.WSA_TAG }}
+#      tagwin10: ${{ env.WSA_TAG_WIN10 }}
+#      wsaver: ${{ env.WSA_VER }}
+#     onedrivepath: ${{ env.DRIVE_FOLDER_PATH }}
+#      onedrivepathwin10: ${{ env.DRIVE_FOLDER_PATH_WIN10 }}
 
-      - name: Download built artifact ⌛
-        uses: actions/download-artifact@v4
-        with:
-          path: output
-          name: ${{ needs.build.outputs.zipname }}-${{ needs.build.outputs.built }}
-
-      - name: Remove unused artifact ❌
-        uses: geekyeggo/delete-artifact@v5
-        with:
-          name: ${{ needs.build.outputs.zipname }}-${{ needs.build.outputs.built }}
-
-      - name: Check Subdirectories and Directories 1
-        run: tree /F ${{ github.workspace }}
-
-      - name: Check Subdirectories and Directories 2
-        run: tree /F "${{ github.workspace }}\output\${{ needs.build.outputs.artifact_folder }}"
-
-      - name: Merge language and density resources 🧙🏻‍♂️
-        run: |
-          if ("${{ inputs.arch }}" -eq "x64") {
-            (Start-Process pwsh.exe -NoNewWindow -PassThru -Args "-ExecutionPolicy Bypass -File MakePri.ps1" -WorkingDirectory "${{ github.workspace }}\output\${{ needs.build.outputs.artifact_folder }}").WaitForExit()
-          } else {
-            Copy-Item -Force "C:\Program Files (x86)\Windows Kits\10\bin\10.0.22621.0\arm64\makepri.exe" "${{ github.workspace }}\output\${{ needs.build.outputs.artifact_folder }}"
-          }
+#  make-pri:
+#    name: Merge PRI resources
+#    runs-on: windows-latest
+#    needs: build
+#    steps:
+#      - name: Checkout ♻️
+#        uses: actions/checkout@v4
+#
+#      - name: Download built artifact ⌛
+#        uses: actions/download-artifact@v4
+#        with:
+#          path: output
+#          name: ${{ needs.build.outputs.zipname }}-${{ needs.build.outputs.built }}
+#
+#      - name: Remove unused artifact ❌
+#        uses: geekyeggo/delete-artifact@v5
+#        with:
+#          name: ${{ needs.build.outputs.zipname }}-${{ needs.build.outputs.built }}
+#
+#      - name: Check Subdirectories and Directories 1
+#        run: tree /F ${{ github.workspace }}
+#
+#      - name: Check Subdirectories and Directories 2
+#        run: tree /F "${{ github.workspace }}\output\${{ needs.build.outputs.artifact_folder }}"
+#
+#      - name: Merge language and density resources 🧙🏻‍♂️
+#        run: |
+#          if ("${{ inputs.arch }}" -eq "x64") {
+#            (Start-Process pwsh.exe -NoNewWindow -PassThru -Args "-ExecutionPolicy Bypass -File MakePri.ps1" -WorkingDirectory "${{ github.workspace }}\output\${{ needs.build.outputs.artifact_folder }}").WaitForExit()
+#          } else {
+#            Copy-Item -Force "C:\Program Files (x86)\Windows Kits\10\bin\10.0.22621.0\arm64\makepri.exe" "${{ github.workspace }}\output\${{ needs.build.outputs.artifact_folder }}"
+#          }
           
-      - name: Compact Images 💿
-        run: |
-         foreach ($Partition in 'system','product','system_ext','vendor') {
-             Write-Output "Optimizing of $Partition..."
-             Write-Output "SELECT VDISK FILE=`"${{ github.workspace }}\output\${{ needs.build.outputs.artifact_folder }}\$Partition.vhdx`"`
-             ATTACH VDISK READONLY`
-             COMPACT VDISK`
-             DETACH VDISK" | Set-Content -Path "$Partition.txt" -Encoding Ascii
-             Start-Process -NoNewWindow -Wait "diskpart.exe" -Args "/s $Partition.txt" -RedirectStandardOutput NUL
-         }
+#      - name: Compact Images 💿
+#        run: |
+#         foreach ($Partition in 'system','product','system_ext','vendor') {
+#             Write-Output "Optimizing of $Partition..."
+#             Write-Output "SELECT VDISK FILE=`"${{ github.workspace }}\output\${{ needs.build.outputs.artifact_folder }}\$Partition.vhdx`"`
+#             ATTACH VDISK READONLY`
+#             COMPACT VDISK`
+#             DETACH VDISK" | Set-Content -Path "$Partition.txt" -Encoding Ascii
+#             Start-Process -NoNewWindow -Wait "diskpart.exe" -Args "/s $Partition.txt" -RedirectStandardOutput NUL
+#         }
 
-      - name: Compress artifact for Windows 11 x64 Build📦
-        run: 7z a -t7z -mx=6 -m0=LZMA2 -ms=on -mmt=8 -- "${{ needs.build.outputs.zipname }}.7z" .\output\*
+#      - name: Compress artifact for Windows 11 x64 Build📦
+#        run: 7z a -t7z -mx=6 -m0=LZMA2 -ms=on -mmt=8 -- "${{ needs.build.outputs.zipname }}.7z" .\output\*
 
 #      - name: Setup rclone 🎚️
 #        uses: AnimMouse/setup-rclone@v1.9.0
@@ -181,44 +244,44 @@ jobs:
 #        env:
 #           RCLONE_CONFIG_PASS: ${{ secrets.RCLONE_CONFIG_PASS }}
 
-      - name: Upload Windows 11 x64 build to release 🤌
-        uses: softprops/action-gh-release@v2
-        with:
-          files: ${{ needs.build.outputs.zipname }}.7z
-          fail_on_unmatched_files: true
-          append_body: false
-          tag_name: ${{ needs.build.outputs.tag }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+#      - name: Upload Windows 11 x64 build to release 🤌
+#        uses: softprops/action-gh-release@v2
+#        with:
+#          files: ${{ needs.build.outputs.zipname }}.7z
+#          fail_on_unmatched_files: true
+#          append_body: false
+#          tag_name: ${{ needs.build.outputs.tag }}
+#          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Check Subdirectories and Directories 3
-        run: tree /F ${{ github.workspace }}
+#      - name: Check Subdirectories and Directories 3
+#        run: tree /F ${{ github.workspace }}
 
-      - name: Check Subdirectories and Directories 4
-        run: tree /F "${{ github.workspace }}\output\${{ needs.build.outputs.artifact_folder }}"
+#      - name: Check Subdirectories and Directories 4
+#        run: tree /F "${{ github.workspace }}\output\${{ needs.build.outputs.artifact_folder }}"
         
-      - name: Run WSA Windows 10 PowerShell Patch Script
-        run: |
-          Write-Output "`r`nPatching Windows 10 AppxManifest file..."
-          $outputDir = "${{ github.workspace }}\output\${{ needs.build.outputs.artifact_folder }}"
-          $xml = [xml](Get-Content "$outputDir\AppxManifest.xml")
-          $nsm = New-Object Xml.XmlNamespaceManager($xml.NameTable)
-          $nsm.AddNamespace('rescap', "http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities")
-          $nsm.AddNamespace('desktop6', "http://schemas.microsoft.com/appx/manifest/desktop/windows10/6")
-          $node = $xml.Package.Capabilities.SelectSingleNode("rescap:Capability[@Name='customInstallActions']", $nsm)
-          $xml.Package.Capabilities.RemoveChild($node) | Out-Null
-          $node = $xml.Package.Extensions.SelectSingleNode("desktop6:Extension[@Category='windows.customInstall']", $nsm)
-          $xml.Package.Extensions.RemoveChild($node) | Out-Null
-          $xml.Package.Dependencies.TargetDeviceFamily.MinVersion = "10.0.19041.264"
-          $xml.Save("$outputDir\AppxManifest.xml")
-          Write-Output "`r`nDownloading modifided DLL file..."
-          $ProgressPreference = 'SilentlyContinue'
-          Invoke-WebRequest -Uri "https://github.com/MustardChef/WSAPatch/raw/main/DLLs%20for%20WSABuilds/winhttp.dll" -OutFile "$outputDir\WSAClient\winhttp.dll"
-          Invoke-WebRequest -Uri "https://github.com/MustardChef/WSAPatch/raw/main/DLLs%20for%20WSABuilds/WsaPatch.dll" -OutFile "$outputDir\WSAClient\WsaPatch.dll"
-          Invoke-WebRequest -Uri "https://github.com/MustardChef/WSAPatch/raw/main/DLLs%20for%20WSABuilds/icu.dll" -OutFile "$outputDir\WSAClient\icu.dll"
-        shell: pwsh
+#      - name: Run WSA Windows 10 PowerShell Patch Script
+#        run: |
+#          Write-Output "`r`nPatching Windows 10 AppxManifest file..."
+#          $outputDir = "${{ github.workspace }}\output\${{ needs.build.outputs.artifact_folder }}"
+#          $xml = [xml](Get-Content "$outputDir\AppxManifest.xml")
+#          $nsm = New-Object Xml.XmlNamespaceManager($xml.NameTable)
+#          $nsm.AddNamespace('rescap', "http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities")
+#          $nsm.AddNamespace('desktop6', "http://schemas.microsoft.com/appx/manifest/desktop/windows10/6")
+#          $node = $xml.Package.Capabilities.SelectSingleNode("rescap:Capability[@Name='customInstallActions']", $nsm)
+#          $xml.Package.Capabilities.RemoveChild($node) | Out-Null
+#          $node = $xml.Package.Extensions.SelectSingleNode("desktop6:Extension[@Category='windows.customInstall']", $nsm)
+#          $xml.Package.Extensions.RemoveChild($node) | Out-Null
+#          $xml.Package.Dependencies.TargetDeviceFamily.MinVersion = "10.0.19041.264"
+#          $xml.Save("$outputDir\AppxManifest.xml")
+#          Write-Output "`r`nDownloading modifided DLL file..."
+#          $ProgressPreference = 'SilentlyContinue'
+#          Invoke-WebRequest -Uri "https://github.com/MustardChef/WSAPatch/raw/main/DLLs%20for%20WSABuilds/winhttp.dll" -OutFile "$outputDir\WSAClient\winhttp.dll"
+#          Invoke-WebRequest -Uri "https://github.com/MustardChef/WSAPatch/raw/main/DLLs%20for%20WSABuilds/WsaPatch.dll" -OutFile "$outputDir\WSAClient\WsaPatch.dll"
+#          Invoke-WebRequest -Uri "https://github.com/MustardChef/WSAPatch/raw/main/DLLs%20for%20WSABuilds/icu.dll" -OutFile "$outputDir\WSAClient\icu.dll"
+#        shell: pwsh
 
-      - name: Compress artifact for Windows 10 x64 Build📦
-        run: 7z a -t7z -mx=6 -m0=LZMA2 -ms=on -mmt=8 -sdel -- "${{ needs.build.outputs.zipname }}_Windows_10.7z" .\output\*
+#      - name: Compress artifact for Windows 10 x64 Build📦
+#        run: 7z a -t7z -mx=6 -m0=LZMA2 -ms=on -mmt=8 -sdel -- "${{ needs.build.outputs.zipname }}_Windows_10.7z" .\output\*
 
 #      - name: Upload build to OneDrive for Windows 10 x64 Build⏫
 #        run: |
@@ -227,11 +290,11 @@ jobs:
 #        env:
 #           RCLONE_CONFIG_PASS: ${{ secrets.RCLONE_CONFIG_PASS }}
         
-      - name: Upload Windows 10 x64 build to release 🤌
-        uses: softprops/action-gh-release@v2
-        with:
-          files: ${{ needs.build.outputs.zipname }}_Windows_10.7z
-          fail_on_unmatched_files: true
-          append_body: false
-          tag_name: ${{ needs.build.outputs.tagwin10 }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+#      - name: Upload Windows 10 x64 build to release 🤌
+#        uses: softprops/action-gh-release@v2
+#        with:
+#          files: ${{ needs.build.outputs.zipname }}_Windows_10.7z
+#          fail_on_unmatched_files: true
+#          append_body: false
+#          tag_name: ${{ needs.build.outputs.tagwin10 }}
+#          token: ${{ secrets.GITHUB_TOKEN }}

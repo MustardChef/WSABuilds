@@ -437,8 +437,8 @@ fi
 #    name3="-as-$MODEL_NAME"
 #fi
 artifact_name=WSA_${WSA_VER}_${ARCH}_${WSA_REL}${name1}${name2}
-short_artifact_name=WSA_${WSA_VER}_${ARCH}
 #${name3}
+short_artifact_name=WSA_${WSA_VER}_${ARCH}
 [ "$REMOVE_AMAZON" ] && artifact_name+=-NoAmazon
 
 if [ ! -d "$OUTPUT_DIR" ]; then
