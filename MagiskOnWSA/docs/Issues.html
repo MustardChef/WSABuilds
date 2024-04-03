@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  data-color-mode="auto"
+  data-light-theme="light"
+  data-dark-theme="dark"
+  data-a11y-animated-images="system"
+>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="dns-prefetch" href="https://github.githubassets.com" />
+    <link rel="dns-prefetch" href="https://avatars.githubusercontent.com" />
+    <link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com" />
+    <link
+      rel="dns-prefetch"
+      href="https://user-images.githubusercontent.com/"
+    />
+    <link rel="preconnect" href="https://github.githubassets.com" crossorigin />
+    <link rel="preconnect" href="https://avatars.githubusercontent.com" />
+
+    <link
+      crossorigin="anonymous"
+      media="all"
+      rel="stylesheet"
+      href="https://github.githubassets.com/assets/light-0eace2597ca3.css"
+    />
+    <link
+      crossorigin="anonymous"
+      media="all"
+      rel="stylesheet"
+      href="https://github.githubassets.com/assets/dark-a167e256da9c.css"
+    />
+
+    <link
+      crossorigin="anonymous"
+      media="all"
+      rel="stylesheet"
+      href="https://github.githubassets.com/assets/primer-711f412bb361.css"
+    />
+    <link
+      crossorigin="anonymous"
+      media="all"
+      rel="stylesheet"
+      href="https://github.githubassets.com/assets/global-8215aa0ce496.css"
+    />
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.polyfill.io/v3/polyfill.min.js"></script>
+    <!-- <script src="https://fastly.jsdelivr.net/npm/marked/marked.min.js"></script> -->
+    <script type="application/javascript">
+
+      var repo = "YT-Advanced/WSA-Script";
+   
+      var cdn = "";
+
+      repo = getRepo(repo);
+
+      cdn = `https://raw.githubusercontent.com/${repo}/main/`;
+      cdn = `https://ghproxy.com/https://raw.githubusercontent.com/${repo}/main/`;
+      //cdn = `https://fastly.jsdelivr.net/gh/${repo}@main/`;
+      //cdn = `https://gcore.jsdelivr.net/gh/${repo}@main/`;
+      //cdn = `https://cdn.statically.io/gh/${repo}/main/`;
+      //cdn = `https://cdn.staticaly.com/gh/${repo}/main/`;
+
+
+      parameter = {
+          "--arch": {
+              "name": "--arch",
+              "description": "Target CPU architecture of WSA.",
+              "detailedinfo": "",
+              "required": true,
+              "default": "x64",
+              "type": "choice",
+              "options": [
+                  "x64",
+                  "arm64"
+              ]
+          },
+          "--release-type": {
+              "name": "--release-type",
+              "description": "WSA Release Channel.",
+              "detailedinfo": "",
+              "required": true,
+              "default": "retail",
+              "type": "choice",
+              "options": [
+                  "retail",
+                  "latest",
+                  "RP",
+                  "WIS",
+                  "WIF"
+              ]
+          },
+          "--root-sol": {
+              "name": "--root-sol",
+              "description": "Root solution.",
+              "detailedinfo": "None for no integration of root.",
+              "required": true,
+              "default": "magisk",
+              "type": "choice",
+              "options": [
+                  "magisk",
+                  "kernelsu",
+                  "none"
+              ]
+          },
+          "--magisk-branch": {
+              "name": "--magisk-branch",
+              "description": "Magisk branch.",
+              "detailedinfo": "",
+              "required": true,
+              "default": "magisk",
+              "type": "choice",
+              "options": [
+                  "topjohnwu",
+                  "HuskyDG",
+                  "vvb2060"
+              ]
+          },
+          "--magisk-ver": {
+              "name": "--magisk-ver",
+              "description": "Magisk version.",
+              "detailedinfo": "",
+              "required": true,
+              "default": "stable",
+              "type": "choice",
+              "options": [
+                  "stable",
+                  "beta",
+                  "canary",
+                  "debug"
+              ]
+          },
+          "--compress-format": {
+              "name": "--compress-format",
+              "description": "Compression algorithms",
+              "detailedinfo": "Compress format of output file.",
+              "required": true,
+              "default": "7z",
+              "type": "choice",
+              "options": [
+                  "7z",
+                  "zip"
+              ]
+          },
+          "--install-gapps": {
+              "name": "--install-gapps",
+              "description": "Install MindTheGapps into the system.",
+              "detailedinfo": "",
+              "required": false,
+              "default": true,
+              "type": "boolean"
+          },
+          "--remove-amazon": {
+              "name": "--remove-amazon",
+              "description": "Remove Amazon Appstore from the system.",
+              "detailedinfo": "",
+              "required": false,
+              "default": true,
+              "type": "boolean"
+          }
+      };
+
+      function getRepo(repo) {
+        var url = document.location.toString();
+        var arr = url.split("?")[0].split("/");
+        if (arr.length > 1) {
+          for (var i = 0; i < arr.length; i++) {
+            if (
+              arr[i].indexOf(".github.io") >= 0 &&
+              i + 1 < arr.length &&
+              arr[i + 1].length > 0
+            ) {
+              return arr[i].replace(".github.io", "") + "/" + arr[i + 1];
+            }
+          }
+        }
+        return repo;
+      }
+
+      function getUrlParam(paraName) {
+        var url = document.location.toString();
+        var arrObj = url.split("?");
+        if (arrObj.length > 1) {
+          var arrPara = arrObj[1].split("&");
+          var arr;
+          for (var i = 0; i < arrPara.length; i++) {
+            arr = arrPara[i].split("=");
+            if (arr != null && arr[0] == paraName) {
+              return arr[1];
+            }
+          }
+        }
+        return "";
+      }
+
+      function httpGetAsync(theUrl, callback) {
+        let xmlHttpReq = new XMLHttpRequest();
+        xmlHttpReq.onreadystatechange = function () {
+          if (xmlHttpReq.readyState == 4 && xmlHttpReq.status == 200)
+            callback(xmlHttpReq.responseText);
+        };
+        xmlHttpReq.open("GET", theUrl, true); // true for asynchronous
+        xmlHttpReq.send(null);
+      }
+
+      window.onload = function () {
+        setTitle();
+
+        $("#inputs").find("div").remove(); //html('');
+        var html = "";
+        for (var key in parameter) {
+          //console.log(key, result[key]);
+          html += createInput(parameter[key]);
+        }
+        $("#inputs").prepend(html);
+
+      };
+
+      function setTitle() {
+        document.title = repo;
+        $("#titleA")[0].href = `https://github.com/${repo}`;
+        $("#titleA")[0].innerText = repo.substring(repo.indexOf("/") + 1);
+      }
+
+      function createInput(data) {
+        var html = "";
+
+        var name = "";
+        var desc = "";
+        var type = "";
+        var dft = "";
+        var req = "";
+        var info = "";
+        if (data.hasOwnProperty("name")) name = data.name;
+        if (data.hasOwnProperty("description")) desc = data.description;
+        if (data.hasOwnProperty("type")) type = data.type;
+        if (data.hasOwnProperty("default")) dft = data.default;
+        if (data.hasOwnProperty("required")) req = data.required;
+        if (data.hasOwnProperty("detailedinfo")) info = data.detailedinfo;
+
+        if (type == "choice") {
+          var par = "";
+          var valname = {"none":"None","x64":"x64","arm64":"ARM64","retail":"Retail","RP":"Release Preview","WIS":"Insider Slow (Beta)","WIF":"Insider Fast (Dev)","latest":"WSA Insider","stable":"Magisk Stable","beta":"Magisk Beta","canary":"Magisk Canary","debug":"Magisk Debug","topjohnwu":"Magisk Official","HuskyDG":"Magisk Delta (HuskyDG)","vvb2060":"Magisk Alpha (vvb2060)","magisk":"Magisk","kernelsu":"KernelSU","zip":".zip","7z":".7z"};
+          if (req) par = "required";
+          html += `<div class="form-group mt-1 mb-2 ${par}"><div class="form-group-header"><label class="color-fg-default text-mono f6" for="${name}">${name}</label></div><div class="form-group-body">`;
+          html += `<select class="form-select form-control select-sm input-contrast" id="${name}" required="" name="inputs[${name}]" value="'${dft}'">`;
+          var opts = [];
+          if (data.hasOwnProperty("options")) opts = data.options;
+          for (var v in opts) {
+            var addpar = "";
+            if (opts[v] == dft) addpar = 'selected="selected"';
+            html += `<option ${addpar} value="${opts[v]}">${valname[opts[v]]}</option>`;
+          }
+          html += `</select>`;
+          html += `<label class="js-navigation-open Link--primary" title="${info}" data-pjax="#repo-content-pjax-container" data-turbo-frame="repo-content-turbo-frame" href="#">: ${desc}</label>`;
+          html += `</div></div>`;
+        } else if (type == "boolean") {
+          var par = "";
+          var addpar = "";
+          if (dft) addpar += ' checked="checked"';
+          html += `<div class="form-group mt-1 mb-2"><div class="form-group-header"><label class="color-fg-default text-mono f6" for="${name}">${name}${par}</label></div><div class="form-group-body">`;
+          html += `<div class="form-checkbox my-0"><label class="color-fg-default text-mono f6 sm"><input type="checkbox" id="${name}" name="inputs[${name}]" value="${name}" ${addpar}/></label>`;
+          html += `<label class="js-navigation-open Link--primary" title="${info}" data-pjax="#repo-content-pjax-container" data-turbo-frame="repo-content-turbo-frame" href="#">: ${desc}</label>`;
+          html += `</label></div></div>`;
+        } else {
+        }
+        return html;
+      }
+
+      function processext(ext) {
+        var obj = $("#ext_btn_" + ext.replace(/\./g, "·"));
+        var exts = $("#ext").val().split(",");
+        if (obj.hasClass("btn-danger")) {
+          //要删除掉已经输入的内容
+          exts.map((val, i) => {
+            if (val === ext) {
+              exts.splice(i, 1);
+            }
+          });
+          obj.removeClass("btn-danger");
+        } else {
+          obj.addClass("btn-danger");
+          exts.push(ext);
+        }
+        exts.map((val, i) => {
+          if (val === "") {
+            exts.splice(i, 1);
+          }
+        });
+        $("#ext").val(exts.join(","));
+      }
+
+      function createIssues() {
+        var form = document.getElementById("inputs");
+        let formData = new FormData(form);
+        var title = "Custom WSA Build Do not edit this";
+        var body = "";
+
+        for (var key in parameter) {
+          var name = parameter[key]["name"];
+          var type = parameter[key]["type"];
+          if (name == "title") {
+            if (formData.get(`inputs[${name}]`)) {
+              title += " " + formData.get(`inputs[${name}]`);
+            } else {
+              title += " " + new Date().toISOString().substr(0, 10);
+            }
+            continue;
+          }
+          if (formData.get(`inputs[${name}]`)) {
+            if (type == "choice") {
+              body += " " + name + " " + formData.get(`inputs[${name}]`);
+            } else if (type == "boolean") {
+              body += " " + name;
+            } else {
+
+            }
+          }
+        }
+
+        window.location.href = `https://github.com/${repo}/issues/new?title=${title}&body=${body}`;
+      }
+    </script>
+
+    <title></title>
+  </head>
+
+  <body
+    class="logged-in env-production page-responsive"
+    style="word-wrap: break-word"
+  >
+    <div
+      class="application-main left-0 text-left p-3 mx-auto container-xl px-3 px-md-4 px-lg-5 mt-4"
+    >
+      <pre
+        id="logoP"
+        style="
+          display: block;
+          font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
+            Liberation Mono, monospace !important;
+          font-size: 12px !important;
+          line-height: 12px !important;
+          margin: 15px 10px;
+          color: red;
+        "
+      >
+      ██╗    ██╗███████╗ █████╗     ██████╗ ██╗   ██╗██╗██╗     ██████╗ 
+      ██║    ██║██╔════╝██╔══██╗    ██╔══██╗██║   ██║██║██║     ██╔══██╗
+      ██║ █╗ ██║███████╗███████║    ██████╔╝██║   ██║██║██║     ██║  ██║
+      ██║███╗██║╚════██║██╔══██║    ██╔══██╗██║   ██║██║██║     ██║  ██║
+      ╚███╔███╔╝███████║██║  ██║    ██████╔╝╚██████╔╝██║███████╗██████╔╝
+       ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝    ╚═════╝  ╚═════╝ ╚═╝╚══════╝╚═════╝ 
+
+
+ 
+      </pre>
+      <div class="flex-auto min-width-0 width-fit mr-3">
+        <div
+          class="d-flex flex-wrap flex-items-center wb-break-word f3 text-normal"
+        >
+          <svg
+            aria-hidden="true"
+            height="16"
+            viewBox="0 0 16 16"
+            version="1.1"
+            width="16"
+            data-view-component="true"
+            class="octicon octicon-repo color-fg-muted mr-2"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"
+            ></path>
+          </svg>
+          <strong itemprop="name" class="mr-2 flex-self-stretch">
+            <a
+              id="titleA"
+              data-pjax="#repo-content-pjax-container"
+              data-turbo-frame="repo-content-turbo-frame"
+              href="#"
+            ></a>
+          </strong>
+        </div>
+      </div>
+      <div data-replace-remote-form-target="" class="workflow-dispatch">
+        <form id="inputs">
+          <button
+            type="button"
+            class="btn State--merged"
+            onclick="return createIssues()"
+            autofocus=""
+          >
+          Create Issue
+          </button>
+        </form>
+      </div>
+    </div>
+    <footer
+      class="footer width-full container-xl mt-3 text-center color-fg-muted"
+    >
+      <a
+        aria-label="Homepage"
+        title="GitHub"
+        class="footer-octicon mr-2"
+        href="https://github.com/YT-Advanced"
+      >
+        <img
+          class="avatar rounded-2 avatar-user"
+          src="https://avatars.githubusercontent.com/u/70064328?v=4"
+          width="40"
+          height="40"
+          alt="@wjz304"
+        />
+      </a>
+      <span> Copyright &copy; 2023 YT-Advanced</span>
+    </footer>
+  </body>
+</html>

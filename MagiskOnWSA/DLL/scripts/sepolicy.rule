@@ -1,0 +1,5 @@
+allow gmscore_app gmscore_app vsock_socket { create connect write read }
+allow gmscore_app device_config_runtime_native_boot_prop file read
+allow gmscore_app system_server_tmpfs dir search
+allow gmscore_app system_server_tmpfs file open
+allow gmscore_app { system_server_tmpfs media_rw_data_file } filesystem getattr
