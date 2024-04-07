@@ -38,6 +38,10 @@ function Get-InstalledDependencyVersion {
     }
 }
 
+Function Check-Windows11 {
+    RETURN (Get-ComputerInfo | Select-Object -expand OsName) -match 11
+}
+
 Function Test-CommandExist {
     Param ($Command)
     $OldPreference = $ErrorActionPreference
@@ -53,10 +57,9 @@ Function Finish {
     Start-Process "wsa://com.android.vending"
 }
 
-If (Test-CommandExist pwsh.exe) {
+If ((Check-Windows11) -And (Test-CommandExist 'pwsh.exe')) {
     $pwsh = "pwsh.exe"
-}
-Else {
+} Else {
     $pwsh = "powershell.exe"
 }
 
