@@ -57,7 +57,7 @@ Function Finish {
     Start-Process "wsa://com.android.vending"
 }
 
-If (Check-Windows11 -And Test-CommandExist pwsh.exe) {
+If ((Check-Windows11) -And (Test-CommandExist 'pwsh.exe')) {
     $pwsh = "pwsh.exe"
 } Else {
     $pwsh = "powershell.exe"
