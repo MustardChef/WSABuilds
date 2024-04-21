@@ -1,5 +1,5 @@
 import os
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
 
 # Load the README.md file
 with open('README.md', 'r') as file:
