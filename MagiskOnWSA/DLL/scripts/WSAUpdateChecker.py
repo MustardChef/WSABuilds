@@ -61,7 +61,7 @@ def MagiskandGappsChecker(type):
         f"https://raw.githubusercontent.com/YT-Advanced/WSA-Script/update/{type}.appversion").text.replace('\n',
                                                                                                                  '')
     # Write for pushing later
-    file = open('../' + type + '.appversion', 'w')
+    file = open(f'../{type}.appversion', 'w')
     file.write(currentver)
     if new_version_found:
         return 0
