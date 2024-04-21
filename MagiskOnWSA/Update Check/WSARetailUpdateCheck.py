@@ -31,7 +31,7 @@ class Prop(OrderedDict):
 logging.captureWarnings(True)
 env_file = os.getenv('GITHUB_ENV')
 
-#Category ID
+# Category ID
 cat_id = '858014f3-3934-4abe-8078-4aa193e74ca8'
 
 release_type = "retail"
