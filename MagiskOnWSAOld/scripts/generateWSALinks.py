@@ -70,7 +70,7 @@ if ms_account_conf.is_file():
         conf = Prop(f.read())
         user = conf.get('user_code')
 print(f"Generating WSA download link: arch={arch} release_type={release_name}\n", flush=True)
-with open(Path.cwd().parent / ("xml/GetCookie.xml"), "r") as f:
+with open(Path.cwd().parent / "xml/GetCookie.xml", "r") as f:
     cookie_content = f.read().format(user)
 
 out = session.post(

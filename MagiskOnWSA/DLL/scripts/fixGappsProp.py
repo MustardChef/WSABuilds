@@ -23,6 +23,8 @@ from io import TextIOWrapper
 from typing import OrderedDict
 from pathlib import Path
 import sys
+
+
 class Prop(OrderedDict):
     def __init__(self, file: TextIOWrapper) -> None:
         super().__init__()
@@ -40,6 +42,7 @@ class Prop(OrderedDict):
         self[f".{len(self)}"] = other
         return self
 
+
 new_props = {
     ("product", "brand"): "google",
     ("system", "brand"): "google",
@@ -54,6 +57,7 @@ new_props = {
     ("system", "model"): sys.argv[3],
     ("build", "flavor"): sys.argv[2] + "-user"
 }
+
 
 def description(sec: str, p: Prop) -> str:
     return f"{p[f'ro.{sec}.build.flavor']} {p[f'ro.{sec}.build.version.release_or_codename']} {p[f'ro.{sec}.build.id']} {p[f'ro.{sec}.build.version.incremental']} {p[f'ro.{sec}.build.tags']}"
@@ -92,5 +96,7 @@ def fix_prop(sec, prop):
 
 
 sys_path = sys.argv[1]
-for sec, prop in {"system": sys_path+"/system/build.prop", "vendor": sys_path+"/vendor/build.prop", "odm": sys_path+"/vendor/odm/etc/build.prop", "vendor_dlkm": sys_path+"/vendor/vendor_dlkm/etc/build.prop"}.items():
+for sec, prop in {"system": sys_path + "/system/build.prop", "vendor": sys_path + "/vendor/build.prop",
+                  "odm": sys_path + "/vendor/odm/etc/build.prop",
+                  "vendor_dlkm": sys_path + "/vendor/vendor_dlkm/etc/build.prop"}.items():
     fix_prop(sec, prop)

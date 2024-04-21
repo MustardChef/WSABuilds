@@ -24,7 +24,7 @@ import json
 import requests
 from pathlib import Path
 
-#Android header
+# Android header
 headers = {
     'User-Agent': 'Mozilla/5.0 (Linux; Android 13; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.6045.163 Mobile Safari/537.36',
 }
@@ -38,28 +38,33 @@ if not magisk_ver:
 if magisk_ver == "stable" or magisk_ver == "beta" or magisk_ver == "canary" or magisk_ver == "debug":
     try:
         magisk_link = json.loads(requests.get(
-            f"https://github.com/topjohnwu/magisk-files/raw/master/{magisk_ver}.json", headers=headers).content)['magisk']['link']
+            f"https://github.com/topjohnwu/magisk-files/raw/master/{magisk_ver}.json", headers=headers).content)[
+            'magisk']['link']
     except Exception:
         print("Failed to fetch from GitHub API, fallbacking to jsdelivr...")
         magisk_link = json.loads(requests.get(
-            f"https://fastly.jsdelivr.net/gh/topjohnwu/magisk-files@master/{magisk_ver}.json", headers=headers).content)['magisk']['link']
+            f"https://fastly.jsdelivr.net/gh/topjohnwu/magisk-files@master/{magisk_ver}.json",
+            headers=headers).content)['magisk']['link']
 elif magisk_ver == "delta":
     try:
         magisk_link = json.loads(requests.get(
-            f"https://raw.githubusercontent.com/HuskyDG/magisk-files/main/canary.json", headers=headers).content)['magisk']['link']
+            f"https://raw.githubusercontent.com/HuskyDG/magisk-files/main/canary.json", headers=headers).content)[
+            'magisk']['link']
     except Exception:
         print("Failed to fetch from GitHub API, fallbacking to jsdelivr...")
         magisk_link = json.loads(requests.get(
-            f"https://fastly.jsdelivr.net/gh/HuskyDG/magisk-files@main/canary.json", headers=headers).content)['magisk']['link']
+            f"https://fastly.jsdelivr.net/gh/HuskyDG/magisk-files@main/canary.json", headers=headers).content)[
+            'magisk']['link']
 elif magisk_ver == "alpha":
     try:
         magisk_link = json.loads(requests.get(
-            f"https://install.appcenter.ms/api/v0.1/apps/vvb2060/magisk/distribution_groups/public/releases/latest?is_install_page=true", headers=headers).content)['download_url']
+            f"https://install.appcenter.ms/api/v0.1/apps/vvb2060/magisk/distribution_groups/public/releases/latest?is_install_page=true",
+            headers=headers).content)['download_url']
     except Exception:
         print("Failed to fetch from AppCenter API...")
 print(f"download link: {magisk_link}", flush=True)
 
-with open(download_dir/tempScript, 'a') as f:
+with open(download_dir / tempScript, 'a') as f:
     f.writelines(f'{magisk_link}\n')
     f.writelines(f'  dir={download_dir}\n')
     f.writelines(f'  out=magisk-{magisk_ver}.zip\n')

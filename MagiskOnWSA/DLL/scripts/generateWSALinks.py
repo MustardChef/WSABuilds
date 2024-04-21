@@ -70,7 +70,7 @@ if ms_account_conf.is_file():
         user = conf.get('user_code')
 print(
     f"Generating WSA download link: arch={arch} release_type={release_name}\n", flush=True)
-with open(Path.cwd().parent / ("xml/GetCookie.xml"), "r") as f:
+with open(Path.cwd().parent / "xml/GetCookie.xml", "r") as f:
     cookie_content = f.read().format(user)
 
 out = session.post(
@@ -147,7 +147,7 @@ for filename, values in identities.items():
     if re.match(f"MicrosoftCorporationII\.WindowsSubsystemForAndroid_.*\.msixbundle", filename):
         tmp_wsa_build_ver = re.search(
             u'\d{4}.\d{5}.\d{1,}.\d{1,}', filename).group()
-        if (wsa_build_ver == 0):
+        if wsa_build_ver == 0:
             wsa_build_ver = tmp_wsa_build_ver
         elif version.parse(wsa_build_ver) < version.parse(tmp_wsa_build_ver):
             wsa_build_ver = tmp_wsa_build_ver
@@ -164,7 +164,7 @@ for filename, values in identities.items():
     elif not release_name == 'latest' and re.match(f"MicrosoftCorporationII\.WindowsSubsystemForAndroid_.*\.msixbundle", filename):
         tmp_wsa_build_ver = re.search(
             u'\d{4}.\d{5}.\d{1,}.\d{1,}', filename).group()
-        if (wsa_build_ver != tmp_wsa_build_ver):
+        if wsa_build_ver != tmp_wsa_build_ver:
             continue
         version_splitted = wsa_build_ver.split(".")
         major_ver = version_splitted[0]

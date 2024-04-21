@@ -18,7 +18,8 @@ target_table = None
 for table in soup.find_all('table'):
     ths = table.find_all('th')
     if len(ths) == 3:
-        th_texts = [th.get_text(strip=True) if th.img is None else (th.img['alt'] if 'alt' in th.img.attrs else '') for th in ths]
+        th_texts = [th.get_text(strip=True) if th.img is None else (th.img['alt'] if 'alt' in th.img.attrs else '') for
+                    th in ths]
         if all(header_text == header for header_text, header in zip(th_texts, headers)):
             target_table = table
             break

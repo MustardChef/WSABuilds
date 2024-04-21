@@ -30,12 +30,14 @@ import logging
 import tkinter as tk
 from tkinter import messagebox
 
+
 # Check if the script is running as an administrator
 def is_admin():
     try:
         return ctypes.windll.shell32.IsUserAnAdmin()
     except:
         return False
+
 
 if not is_admin():
     print("Please run this script as an administrator.")
@@ -49,13 +51,17 @@ start_menu_dir = "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs"
 
 # Define the directories to check
 dirs_to_check = [
-    os.path.expandvars(r'%LocalAppData%\Microsoft\WindowsApps\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe'),
+    os.path.expandvars(
+        r'%LocalAppData%\Microsoft\WindowsApps\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe'),
     os.path.expandvars(r'%LocalAppData%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe'),
-    os.path.expandvars(r'C:\Windows\System32\config\systemprofile\AppData\Local\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe'),
-    os.path.expandvars(r'%LocalAppData%\Microsoft\WindowsApps\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe'),
+    os.path.expandvars(
+        r'C:\Windows\System32\config\systemprofile\AppData\Local\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe'),
+    os.path.expandvars(
+        r'%LocalAppData%\Microsoft\WindowsApps\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe'),
     os.path.expandvars(r'C:\ProgramData\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe'),
     os.path.expandvars(r'%LocalAppData%\Local\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe')
 ]
+
 
 def with_restore_point_creation_frequency(minutes, func):
     # Define the key path
@@ -86,6 +92,7 @@ def with_restore_point_creation_frequency(minutes, func):
     # Close the key
     winreg.CloseKey(key)
 
+
 def create_restore_point(name):
     # Define the command
     cmd = f'powershell.exe -Command "Checkpoint-Computer -Description \'{name}\' -RestorePointType \'MODIFY_SETTINGS\'"'
@@ -97,6 +104,7 @@ def create_restore_point(name):
     if result.returncode != 0:
         raise Exception(f'Failed to create restore point. Command returned {result.returncode}')
 
+
 def uninstall_msix_package(package_full_name):
     # Define the PowerShell command
     cmd = f'powershell.exe -Command "Get-AppxPackage *{package_full_name}* | Remove-AppxPackage"'
@@ -104,15 +112,18 @@ def uninstall_msix_package(package_full_name):
     # Run the command
     subprocess.run(cmd, shell=True)
 
+
 def delete_directory(dir_path):
     # Check if the directory exists
     if os.path.exists(dir_path):
         # Delete the directory
         shutil.rmtree(dir_path)
 
+
 def delete_registry_folders():
     try:
-        key = winreg.OpenKey(winreg.HKEY_CURRENT_USER, r"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall", 0, winreg.KEY_ALL_ACCESS)
+        key = winreg.OpenKey(winreg.HKEY_CURRENT_USER, r"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall", 0,
+                             winreg.KEY_ALL_ACCESS)
     except WindowsError as e:
         logging.error(f"Failed to open key: {e}")
         return
@@ -132,25 +143,27 @@ def delete_registry_folders():
             break
     winreg.CloseKey(key)
 
+
 def delete_folders_and_files(root_path):
     target_string = 'MicrosoftCorporationII.WindowsSubsystemForAndroid'
-    
+
     # Walk through the file system starting from the root_path
     for dirpath, dirnames, filenames in os.walk(root_path):
-        
+
         # Check each directory
         for dirname in dirnames:
             if target_string in dirname:
                 full_dir_path = os.path.join(dirpath, dirname)
                 print(f"Deleting directory: {full_dir_path}")
                 shutil.rmtree(full_dir_path)
-        
+
         # Check each file
         for filename in filenames:
             if target_string in filename:
                 full_file_path = os.path.join(dirpath, filename)
                 print(f"Deleting file: {full_file_path}")
-                os.remove(full_file_path)    
+                os.remove(full_file_path)
+
 
 def delete_shortcuts(target_string, start_menu_dir):
     # Walk through the file system starting from the start_menu_dir
@@ -161,7 +174,6 @@ def delete_shortcuts(target_string, start_menu_dir):
             if target_string in target_location:
                 print(f"Deleting shortcut: {full_file_path}")
                 os.remove(full_file_path)
-
 
 
 def main():
@@ -180,9 +192,10 @@ def main():
 
     # Delete the registry folders
     delete_registry_folders()
-    
+
     # Delete the shortcuts
     delete_shortcuts(target_string, start_menu_dir)
+
 
 if __name__ == '__main__':
     with_restore_point_creation_frequency(0, main)

@@ -72,33 +72,33 @@ with zipfile.ZipFile(magisk_zip) as zip:
     with open(os.environ['WSA_WORK_ENV'], 'w') as environ_file:
         environ_file.write(str(env))
     extract_as(
-        zip, f"lib/{ abi_map[arch][0] }/libmagisk64.so", "magisk64", "magisk")
+        zip, f"lib/{abi_map[arch][0]}/libmagisk64.so", "magisk64", "magisk")
     extract_as(
-        zip, f"lib/{ abi_map[arch][1] }/libmagisk32.so", "magisk32", "magisk")
+        zip, f"lib/{abi_map[arch][1]}/libmagisk32.so", "magisk32", "magisk")
     standalone_policy = False
     try:
-        zip.getinfo(f"lib/{ abi_map[arch][0] }/libmagiskpolicy.so")
+        zip.getinfo(f"lib/{abi_map[arch][0]}/libmagiskpolicy.so")
         standalone_policy = True
     except:
         pass
     extract_as(
-        zip, f"lib/{ abi_map[arch][0] }/libmagiskinit.so", "magiskinit", "magisk")
+        zip, f"lib/{abi_map[arch][0]}/libmagiskinit.so", "magiskinit", "magisk")
     if standalone_policy:
         extract_as(
-            zip, f"lib/{ abi_map[arch][0] }/libmagiskpolicy.so", "magiskpolicy", "magisk")
+            zip, f"lib/{abi_map[arch][0]}/libmagiskpolicy.so", "magiskpolicy", "magisk")
     else:
         extract_as(
-            zip, f"lib/{ abi_map[arch][0] }/libmagiskinit.so", "magiskpolicy", "magisk")
+            zip, f"lib/{abi_map[arch][0]}/libmagiskinit.so", "magiskpolicy", "magisk")
     extract_as(
-        zip, f"lib/{ abi_map[arch][0] }/libmagiskboot.so", "magiskboot", "magisk")
+        zip, f"lib/{abi_map[arch][0]}/libmagiskboot.so", "magiskboot", "magisk")
     extract_as(
-        zip, f"lib/{ abi_map[arch][0] }/libbusybox.so", "busybox", "magisk")
+        zip, f"lib/{abi_map[arch][0]}/libbusybox.so", "busybox", "magisk")
     if standalone_policy:
         extract_as(
-            zip, f"lib/{ abi_map[host_abi][0] }/libmagiskpolicy.so", "magiskpolicy", ".")
+            zip, f"lib/{abi_map[host_abi][0]}/libmagiskpolicy.so", "magiskpolicy", ".")
     else:
         extract_as(
-            zip, f"lib/{ abi_map[host_abi][0] }/libmagiskinit.so", "magiskpolicy", ".")
+            zip, f"lib/{abi_map[host_abi][0]}/libmagiskinit.so", "magiskpolicy", ".")
     extract_as(zip, f"assets/boot_patch.sh", "boot_patch.sh", "magisk")
     extract_as(zip, f"assets/util_functions.sh",
                "util_functions.sh", "magisk")

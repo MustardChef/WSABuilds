@@ -70,7 +70,7 @@ if res.status_code == 200:
         if re.match(f'kernel-WSA-{abi_map[arch]}-{kernelVersion}.*\.zip$', asset_name) and asset["content_type"] == "application/zip":
             tmp_kernel_ver = re.search(
                 u'\d{1}.\d{1,}.\d{1,}.\d{1,}', asset_name.split("-")[3]).group()
-            if (kernel_ver == 0):
+            if kernel_ver == 0:
                 kernel_ver = tmp_kernel_ver
             elif version.parse(kernel_ver) < version.parse(tmp_kernel_ver):
                 kernel_ver = tmp_kernel_ver
