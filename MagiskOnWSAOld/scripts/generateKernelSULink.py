@@ -66,7 +66,7 @@ if res.status_code == 200:
     for asset in assets:
         if re.match(f'kernel-WSA-{abi_map[arch]}-{kernelVersion}.*.zip$', asset["name"]) and asset["content_type"] == "application/zip":
             link = asset["browser_download_url"]
-        if re.match(f'KernelSU_{release_name}_.*-release.*.apk$', asset["name"]) and asset["content_type"] == "application/vnd.android.package-archive":
+        if re.match(f'KernelSU_{release_name}_.*-release.*.apk$', asset["name"]) or re.match(f'KernelSU_v.*-release.apk$', asset["name"]) and asset["content_type"] == "application/vnd.android.package-archive":
             apk = asset["browser_download_url"]
             break
     if link == "":
