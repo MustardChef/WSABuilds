@@ -10,9 +10,9 @@
 ### WSABuilds LTS 1: 
 ~~``Wednesday 03rd April 2024``~~  **Available Now (via the Pre-release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))**  
 ### WSABuilds LTS 2: 
-~~``Wednesday 03rd May 2024``~~   **Available Now (via the Pre-release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))** 
+~~``Friday 03rd May 2024``~~   **Available Now (via the Pre-release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))** 
 ### WSABuilds LTS 3: 
-``Wednesday 03rd June 2024`` 
+``Monday 03rd June 2024`` 
 
 
 
