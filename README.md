@@ -12,7 +12,7 @@
 ### WSABuilds LTS 2: 
 ~~``Friday 03rd May 2024``~~   **Available Now (via the Pre-release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))** 
 ### WSABuilds LTS 3: 
-``Monday 03rd June 2024`` 
+~~``Monday 03rd June 2024``~~  **Available Now (via the Pre-release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))** 
 
 
 
@@ -241,8 +241,12 @@
 </tr>
 <tr>
 <td>v2311.40000.5.0_LTS_2</td>
-<td>➖</td>
-<td>➖</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<td>v2311.40000.5.0_LTS_3</td>
+<td>✅</td>
+<td>✅</td>
 </tr>
 </tbody>
 </table>
@@ -302,12 +306,12 @@
 </tr>
 <tr>
 <td><b>Current Version:</b></td>
-<td>2311.40000.5.0_LTS_2</td>
+<td>2311.40000.5.0_LTS_3</td>
 <td colspan="2">2311.40000.5.0</td>
 </tr>
 <tr>
 <td><b>Release Date:</b></td>
-<td>03/05/2024</td>
+<td>03/06/2024</td>
 <td colspan="2">10/01/2024</td>
 </tr>
 <tr>
