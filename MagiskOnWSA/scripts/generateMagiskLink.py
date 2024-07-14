@@ -67,12 +67,12 @@ if magisk_branch == "vvb2060":
 else:
     try:
         magisk_link = json.loads(requests.get(
-            f"https://github.com/{magisk_branch}/magisk-files/raw/master/{magisk_ver}.json").content)['magisk']['link']
+            f"https://raw.githubusercontent.com/{magisk_branch}/magisk-files/master/{magisk_ver}.json").content)['magisk']['link']
         download_files[f"magisk-{magisk_ver}.zip"] = magisk_link
     except Exception:
         print("Failed to fetch from GitHub API, fallbacking to jsdelivr...")
         magisk_link = json.loads(requests.get(
-            f"https://fastly.jsdelivr.net/gh/topjohnwu/magisk-files@master/{magisk_ver}.json").content)['magisk']['link']
+            f"https://fastly.jsdelivr.net/gh/{magisk_branch}/magisk-files@master/{magisk_ver}.json").content)['magisk']['link']
         download_files[f"magisk-{magisk_ver}.zip"] = magisk_link
 res = requests.get(
     f"https://api.github.com/repos/LSPosed/WSA-Addon/releases/latest", auth=github_auth)
