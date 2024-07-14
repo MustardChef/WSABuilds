@@ -252,8 +252,6 @@
 <td>v2407.40000.0.0</td>
 <td>➖</td>
 <td>➖</td>
-
-
 </tbody>
 </table>
 <table>
