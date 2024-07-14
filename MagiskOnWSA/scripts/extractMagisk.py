@@ -52,7 +52,6 @@ workdir.mkdir(parents=True, exist_ok=True)
 
 abi_map = {"x64": ["x86_64", "x86"], "arm64": ["arm64-v8a", "armeabi-v7a"]}
 
-
 def extract_as(zip, name, as_name, dir):
     info = zip.getinfo(name)
     info.filename = as_name
@@ -71,7 +70,11 @@ with zipfile.ZipFile(magisk_zip) as zip:
             env.MAGISK_VERSION_CODE = versionCode
         with open(os.environ['WSA_WORK_ENV'], 'w') as environ_file:
             environ_file.write(str(env))
-    extract_as(zip, f"lib/{ abi_map[arch][0] }/libmagisk64.so", "magisk64", "magisk")
-    extract_as(zip, f"lib/{ abi_map[arch][1] }/libmagisk32.so", "magisk32", "magisk")
+    try:
+        extract_as(zip, f"lib/{ abi_map[arch][0] }/libmagisk64.so", "magisk64", "magisk")
+        extract_as(zip, f"lib/{ abi_map[arch][1] }/libmagisk32.so", "magisk32", "magisk")
+    except:
+        extract_as(zip, f"lib/{ abi_map[arch][0] }/libmagisk.so", "magisk64", "magisk")
+        extract_as(zip, f"lib/{ abi_map[arch][1] }/libmagisk.so", "magisk32", "magisk")
     extract_as(zip, f"lib/{ abi_map[arch][0] }/libmagiskinit.so", "magiskinit", "magisk")
     extract_as(zip, f"lib/{ abi_map[host_abi][0] }/libmagiskboot.so", "magiskboot", "magisk")
