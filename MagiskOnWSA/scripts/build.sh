@@ -258,7 +258,7 @@ echo "Generating WSA Download Links"
 python3 generateWSALinks.py "$ARCH" "$RELEASE_TYPE" "$DOWNLOAD_DIR" "$DOWNLOAD_WSA_CONF_NAME" || abort
 
 if [ "$RELEASE_TYPE" == "latest" ]; then
-    printf "%s\n" "$(curl -sL https://api.github.com/repos/bubbles-wow/WSA-Archive/releases/latest | jq -r '.assets[] | .browser_download_url')" >> "$DOWNLOAD_DIR/$DOWNLOAD_WSA_CONF_NAME" || abort
+    printf "%s\n" "$(curl -sL https://api.github.com/repos/MustardChef/WSAPackages/releases/latest | jq -r '.assets[] | .browser_download_url')" >> "$DOWNLOAD_DIR/$DOWNLOAD_WSA_CONF_NAME" || abort
     printf "  dir=%s\n" "$DOWNLOAD_DIR" >> "$DOWNLOAD_DIR/$DOWNLOAD_WSA_CONF_NAME" || abort
     printf "  out=wsa-latest.zip\n" >> "$DOWNLOAD_DIR/$DOWNLOAD_WSA_CONF_NAME" || abort
     WSA_VER=$(curl -sL https://api.github.com/repos/bubbles-wow/WSA-Archive/releases/latest | jq -r '.tag_name')
