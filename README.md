@@ -8,7 +8,7 @@
 
 ## Next LTS Release Date:
 ### WSABuilds LTS 4 (v2407.40000.0.0): 
-~~``Monday 14th July 2024``~~  **Available Now (via the Pre-release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))** 
+~~``Sunday 14th July 2024``~~  **Available Now (via the Pre-release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))** 
 ### WSABuilds LTS 3 (v2311.40000.5.0): 
 ~~``Monday 03rd June 2024``~~  **Available Now (via the Pre-release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))** 
 ### WSABuilds LTS 2 (v2311.40000.5.0): 
