@@ -81,7 +81,7 @@ jobs:
           fi
           chmod -R 777 ./
           mkdir -p download
-          ./scripts/build.sh --arch ${{ inputs.arch }} --release-type $RLS_TYPE --magisk-ver ${{ inputs.magiskver }} --gapps-brand ${{ inputs.gapps }} --root-sol ${{ inputs.root }} --custom-model ${{ inputs.devicemodel }} ${{ inputs.amazonflag }} --compress-format ${{ inputs.compressformat }}
+          ./scripts/build.sh --arch ${{ inputs.arch }} --release-type latest --magisk-ver ${{ inputs.magiskver }} --gapps-brand ${{ inputs.gapps }} --root-sol ${{ inputs.root }} --custom-model ${{ inputs.devicemodel }} ${{ inputs.amazonflag }} --compress-format ${{ inputs.compressformat }}
 
       - name: Prepare release tag 🏷️
         id: releasetag
