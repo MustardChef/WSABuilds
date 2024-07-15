@@ -289,7 +289,7 @@ update_ksu_zip_name() {
     KERNEL_VER=""
     case "$WSA_MAJOR_VER" in
       "2308") KERNEL_VER="5.15.104.3";;
-      "2309"|"2310"|"2311") KERNEL_VER="5.15.104.4";;
+      "2309"|"2310"|"2311"|"2407") KERNEL_VER="5.15.104.4";;
       *) abort "KernelSU is not supported in this WSA version: $WSA_MAJOR_VER"
     esac
     KERNELSU_ZIP_NAME=kernelsu-$ARCH-$KERNEL_VER.zip
