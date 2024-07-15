@@ -81,7 +81,7 @@ jobs:
           fi
           chmod -R 777 ./
           mkdir -p download
-          ./scripts/build.sh --arch ${{ inputs.arch }} --release-type WIF --magisk-ver ${{ inputs.magiskver }} ${{ inputs.gapps }} --root-sol ${{ inputs.root }} ${{ inputs.amazonflag }} --compress-format zip
+          ./scripts/build.sh --arch ${{ inputs.arch }} --release-type latest --magisk-ver ${{ inputs.magiskver }} ${{ inputs.gapps }} --root-sol ${{ inputs.root }} ${{ inputs.amazonflag }} --compress-format zip
 
       - name: Check Subdirectories and Directories
         working-directory: MagiskOnWSA
