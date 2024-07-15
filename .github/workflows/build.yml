@@ -89,7 +89,7 @@ jobs:
           7z a -t7z -mx=6 -m0=LZMA2 -ms=on -mmt=8 -- "${{ steps.wsa.outputs.artifact }}.7z" ./output/*
 
       - name: Run WSA Windows 10 Python Patch Script
-        working-directory: MagiskOnWSA/output/WSA_2311.40000.5.0_x64
+        working-directory: MagiskOnWSA/output/WSA_${{ inputs.wsa_ver }}_x64
         run: |
           #!/bin/bash
 
