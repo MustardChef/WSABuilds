@@ -3,17 +3,17 @@
 > ### IF YOU HAVE BEEN RECENTLY HAVING ISSUES WITH SOME APPS BREAKING OR NOT STARTING OR APPS GETTING SUCK AT LOADING SCREEN OR APPS STUCK ON SPLASHSCREEN ( STUCK ON THE APP ICON SCREEN) OR ANY OTHER SIMILAR CASES.
 > ### UPDATE TO THE LATEST LTS AND NON-LTS RELEASES:
 >
-> #### LTS Releases:
-> ``Magisk is bundled by default on builds with Google Apps (GApps)):``
-> - [Windows 11 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2407.40000.0.0_LTS_5)
-> - [Windows 10 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2407.40000.0.0_LTS_5)
+> - ### LTS Releases:
+>    - ``Magisk is bundled by default on builds with Google Apps (GApps)):``
+>    - [Windows 11 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2407.40000.0.0_LTS_5)
+>    - [Windows 10 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2407.40000.0.0_LTS_5)
 >
-> #### Non-LTS Releases: 
-> ``(If you don't want Magisk being bundled by default) (Release contains no Magisk builds)``
-> - [Windows 11 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2407.40000.0.0)
-> - [Windows 10 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2407.40000.0.0)
+> - ### Non-LTS Releases: 
+>    - ``(If you don't want Magisk being bundled by default) (Release contains no Magisk builds)``
+>    - [Windows 11 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2407.40000.0.0)
+>    - [Windows 10 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2407.40000.0.0)
 >
-> #### LET ME KNOW VIA GITHUB ISSUES, THE WSA COMMUNITY DISCORD OR THE r/WSA SUBREDDIT IF THIS RELEASE HAS SOLVED YOUR ISSUE. THANK YOU.
+> #### LET ME KNOW VIA GITHUB ISSUES, THE WSA COMMUNITY DISCORD OR THE r/WSA SUBREDDIT IF THESE RELEASES HAVE SOLVED YOUR ISSUE. THANK YOU.
 
 > [!TIP]
 > <details>
