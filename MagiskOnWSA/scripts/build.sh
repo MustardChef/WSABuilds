@@ -18,7 +18,15 @@
 # Copyright (C) 2024 LSPosed Contributors
 #
 
-# shellcheck disable=SC2034
+if [ ! "$BASH_VERSION" ]; then
+    echo "Please do not use sh to run this script, just execute it directly" 1>&2
+    exit 1
+fi
+HOST_ARCH=$(uname -m)
+if [ "$HOST_ARCH" != "x86_64" ] && [ "$HOST_ARCH" != "aarch64" ]; then
+    echo "Unsupported architectures: $HOST_ARCH"
+    exit 1
+fi
 cd "$(dirname "$0")" || exit 1
 # export TMPDIR=$HOME/.cache/wsa
 if [ "$TMPDIR" ] && [ ! -d "$TMPDIR" ]; then
@@ -27,29 +35,71 @@ fi
 WORK_DIR=$(mktemp -d -t wsa-build-XXXXXXXXXX_) || exit 1
 
 DOWNLOAD_DIR=../download
-DOWNLOAD_WSA_CONF_NAME=wsa.list
 DOWNLOAD_CONF_NAME=download.list
 PYTHON_VENV_DIR="$(dirname "$PWD")/python3-env"
+
+dir_clean() {
+    rm -rf "${WORK_DIR:?}"
+    if [ "$TMPDIR" ] && [ -d "$TMPDIR" ]; then
+        echo "Cleanup Temp Directory"
+        rm -rf "${TMPDIR:?}"
+        unset TMPDIR
+    fi
+    rm -f "${DOWNLOAD_DIR:?}/$DOWNLOAD_CONF_NAME"
+    if [ "$(python3 -c 'import sys ; print( 1 if sys.prefix != sys.base_prefix else 0 )')" = "1" ]; then
+        echo "deactivate python3 venv"
+        deactivate
+    fi
+}
+trap dir_clean EXIT
 OUTPUT_DIR=../output
 WSA_WORK_ENV="${WORK_DIR:?}/ENV"
-
+if [ -f "$WSA_WORK_ENV" ]; then rm -f "${WSA_WORK_ENV:?}"; fi
 touch "$WSA_WORK_ENV"
 export WSA_WORK_ENV
+clean_download() {
+    if [ -d "$DOWNLOAD_DIR" ]; then
+        echo "Cleanup Download Directory"
+        if [ "$CLEAN_DOWNLOAD_WSA" ]; then
+            rm -f "${WSA_ZIP_PATH:?}"
+        fi
+        if [ "$CLEAN_DOWNLOAD_MAGISK" ]; then
+            rm -f "${MAGISK_PATH:?}"
+        fi
+        if [ "$CLEAN_DOWNLOAD_GAPPS" ]; then
+            rm -f "${GAPPS_IMAGE_PATH:?}"
+            rm -f "${GAPPS_RC_PATH:?}"
+        fi
+        if [ "$CLEAN_DOWNLOAD_KERNELSU" ]; then
+            rm -f "${KERNELSU_PATH:?}"
+            rm -f "${KERNELSU_INFO:?}"
+        fi
+    fi
+}
 abort() {
     [ "$1" ] && echo -e "ERROR: $1"
     echo "Build: an error has occurred, exit"
+    if [ -d "$WORK_DIR" ]; then
+        echo -e "\nCleanup Work Directory"
+        dir_clean
+    fi
+    clean_download
     exit 1
 }
 trap abort INT TERM
 
 default() {
     ARCH=x64
-#    CUSTOM_MODEL=redfin
     RELEASE_TYPE=retail
-    MAGISK_BRANCH=topjohnwu
     MAGISK_VER=stable
     ROOT_SOL=magisk
     COMPRESS_FORMAT=none
+}
+
+exit_with_message() {
+    echo "ERROR: $1"
+    usage
+    exit 1
 }
 
 ARCH_MAP=(
@@ -62,13 +112,6 @@ RELEASE_TYPE_MAP=(
     "RP"
     "WIS"
     "WIF"
-    "latest"
-)
-
-MAGISK_BRANCH_MAP=(
-    "topjohnwu"
-    "HuskyDG"
-    "vvb2060"
 )
 
 MAGISK_VER_MAP=(
@@ -77,25 +120,7 @@ MAGISK_VER_MAP=(
     "canary"
     "debug"
     "release"
-    "delta"
-    "alpha"
 )
-
-# CUSTOM_MODEL_MAP=(
-#    "none"
-#    "sunfish"
-#    "bramble"
-#    "redfin"
-#    "barbet"
-#    "raven"
-#    "oriole"
-#    "bluejay"
-#    "panther"
-#    "cheetah"
-#    "lynx"
-#    "tangorpro"
-#    "felix"
-# )
 
 ROOT_SOL_MAP=(
     "magisk"
@@ -109,15 +134,72 @@ COMPRESS_FORMAT_MAP=(
     "none"
 )
 
+ARR_TO_STR() {
+    local arr=("$@")
+    local joined
+    printf -v joined "%s, " "${arr[@]}"
+    echo "${joined%, }"
+}
+
+usage() {
+    default
+    echo -e "
+Usage:
+    --arch              Architecture of WSA.
+
+                        Possible values: $(ARR_TO_STR "${ARCH_MAP[@]}")
+                        Default: $ARCH
+
+    --release-type      Release type of WSA.
+                        RP means Release Preview, WIS means Insider Slow, WIF means Insider Fast.
+
+                        Possible values: $(ARR_TO_STR "${RELEASE_TYPE_MAP[@]}")
+                        Default: $RELEASE_TYPE
+
+    --magisk-ver        Magisk version.
+
+                        Possible values: $(ARR_TO_STR "${MAGISK_VER_MAP[@]}")
+                        Default: $MAGISK_VER
+
+    --root-sol          Root solution.
+                        \"none\" means no root.
+
+                        Possible values: $(ARR_TO_STR "${ROOT_SOL_MAP[@]}")
+                        Default: $ROOT_SOL
+
+    --compress-format   Compress format of output file.
+
+                        Possible values: $(ARR_TO_STR "${COMPRESS_FORMAT_MAP[@]}")
+                        Default: $COMPRESS_FORMAT
+
+Additional Options:
+    --offline           Build WSA offline
+    --magisk-custom     Install custom Magisk
+    --skip-download-wsa Skip download WSA
+    --help              Show this help message and exit
+
+Example:
+    ./build.sh --release-type RP --magisk-ver beta
+    ./build.sh --arch arm64 --release-type WIF
+    ./build.sh --release-type WIS
+    ./build.sh --offline --magisk-custom
+    ./build.sh --release-type WIF --magisk-custom --magisk-ver release
+    "
+}
+
 ARGUMENT_LIST=(
     "compress-format:"
     "arch:"
     "release-type:"
     "root-sol:"
-    "magisk-branch:"
     "magisk-ver:"
+    "magisk-custom"
     "install-gapps"
     "remove-amazon"
+    "offline"
+    "skip-download-wsa"
+    "help"
+    "debug"
 )
 
 default
@@ -128,7 +210,7 @@ opts=$(
         --name "$(basename "$0")" \
         --options "" \
         -- "$@"
-) || abort "Failed to parse options, please check your input"
+) || exit_with_message "Failed to parse options, please check your input"
 
 eval set --"$opts"
 while [[ $# -gt 0 ]]; do
@@ -149,13 +231,13 @@ while [[ $# -gt 0 ]]; do
             ROOT_SOL="$2"
             shift 2
             ;;
-        --magisk-branch)
-            MAGISK_BRANCH="$2"
-            shift 2
-            ;;
         --magisk-ver)
             MAGISK_VER="$2"
             shift 2
+            ;;
+        --magisk-custom)
+            CUSTOM_MAGISK=1
+            shift
             ;;
         --install-gapps)
             HAS_GAPPS=1
@@ -163,6 +245,22 @@ while [[ $# -gt 0 ]]; do
             ;;
         --remove-amazon)
             REMOVE_AMAZON=1
+            shift
+            ;;
+        --offline)
+            OFFLINE=1
+            shift
+            ;;
+        --skip-download-wsa)
+            SKIP_DOWN_WSA=1
+            shift
+            ;;
+        --help)
+            usage
+            exit 0
+            ;;
+        --debug)
+            DEBUG=1
             shift
             ;;
         --)
@@ -186,7 +284,7 @@ check_list() {
             fi
             ((list_count--))
             if (("$list_count" <= 0)); then
-                abort "Invalid $name: $input"
+                exit_with_message "Invalid $name: $input"
             fi
         done
     fi
@@ -194,18 +292,44 @@ check_list() {
 
 check_list "$ARCH" "Architecture" "${ARCH_MAP[@]}"
 check_list "$RELEASE_TYPE" "Release Type" "${RELEASE_TYPE_MAP[@]}"
-check_list "$MAGISK_BRANCH" "Magisk Branch" "${MAGISK_BRANCH_MAP[@]}"
 check_list "$MAGISK_VER" "Magisk Version" "${MAGISK_VER_MAP[@]}"
 check_list "$ROOT_SOL" "Root Solution" "${ROOT_SOL_MAP[@]}"
-# check_list "$CUSTOM_MODEL" "Custom Model" "${CUSTOM_MODEL_MAP[@]}"
 check_list "$COMPRESS_FORMAT" "Compress Format" "${COMPRESS_FORMAT_MAP[@]}"
+
+if [ "$DEBUG" ]; then
+    set -x
+fi
+
+ROOT_SEL=""
+
+if [ "$ROOT_SOL" = "none" ]; then
+    ROOT_SEL="none"
+elif [ "$ROOT_SOL" = "magisk" ]; then
+    ROOT_SEL="magisk"
+elif [ "$ROOT_SOL" = "kernelsu" ]; then
+    ROOT_SEL="kernelsu"
+fi
+
+if [ "$HAS_GAPPS" ]; then
+    case "$ROOT_SOL" in
+        "none")
+            ROOT_SOL="magisk"
+            echo "WARN: Force install Magisk since GApps needs it to mount the file"
+            ;;
+        "kernelsu")
+            abort "Unsupported combination: Install GApps and KernelSU"
+            ;;
+        *)
+            ;;
+    esac
+fi
 
 # shellcheck disable=SC1091
 [ -f "$PYTHON_VENV_DIR/bin/activate" ] && {
-    source "$PYTHON_VENV_DIR/bin/activate" || abort "Failed to activate virtual environment"
+    source "$PYTHON_VENV_DIR/bin/activate" || abort "Failed to activate virtual environment, please re-run install_deps.sh"
 }
-declare -A RELEASE_NAME_MAP=(["retail"]="Retail" ["latest"]="Insider Private" ["RP"]="Release Preview" ["WIS"]="Insider Slow" ["WIF"]="Insider Fast")
-declare -A ANDROID_API_MAP=(["33"]="13.0" ["34"]="14.0")
+declare -A RELEASE_NAME_MAP=(["retail"]="Retail" ["RP"]="Release Preview" ["WIS"]="Insider Slow" ["WIF"]="Insider Fast")
+declare -A ANDROID_API_MAP=(["30"]="11.0" ["32"]="12.1" ["33"]="13.0")
 declare -A ARCH_NAME_MAP=(["x64"]="x86_64" ["arm64"]="arm64")
 RELEASE_NAME=${RELEASE_NAME_MAP[$RELEASE_TYPE]} || abort
 echo -e "INFO: Release Name: $RELEASE_NAME\n"
@@ -216,6 +340,17 @@ xaml_PATH="$DOWNLOAD_DIR/Microsoft.UI.Xaml.2.8_$ARCH.appx"
 MAGISK_ZIP=magisk-$MAGISK_VER.zip
 MAGISK_PATH=$DOWNLOAD_DIR/$MAGISK_ZIP
 CUST_PATH="$DOWNLOAD_DIR/cust.img"
+if [ "$CUSTOM_MAGISK" ]; then
+    if [ ! -f "$MAGISK_PATH" ]; then
+        echo "Custom Magisk $MAGISK_ZIP not found"
+        MAGISK_ZIP=app-$MAGISK_VER.apk
+        echo -e "Fallback to $MAGISK_ZIP\n"
+        MAGISK_PATH=$DOWNLOAD_DIR/$MAGISK_ZIP
+        if [ ! -f "$MAGISK_PATH" ]; then
+            abort "Custom Magisk $MAGISK_ZIP not found\nPlease put custom Magisk in $DOWNLOAD_DIR"
+        fi
+    fi
+fi
 ANDROID_API=33
 update_gapps_files_name() {
     GAPPS_IMAGE_NAME=gapps-${ANDROID_API_MAP[$ANDROID_API]}-${ARCH_NAME_MAP[$ARCH]}.img
@@ -250,33 +385,30 @@ update_ksu_zip_name() {
     fi
     KERNELSU_ZIP_NAME=kernelsu-$ARCH-$KERNEL_VER.zip
     KERNELSU_PATH=$DOWNLOAD_DIR/$KERNELSU_ZIP_NAME
-    KERNELSU_APK_PATH=$DOWNLOAD_DIR/KernelSU.apk
     KERNELSU_INFO="$KERNELSU_PATH.info"
 }
 
-echo "Generating WSA Download Links"
-python3 generateWSALinks.py "$ARCH" "$RELEASE_TYPE" "$DOWNLOAD_DIR" "$DOWNLOAD_WSA_CONF_NAME" || abort
-
-if [ "$RELEASE_TYPE" == "latest" ]; then
-    printf "%s\n" "$(curl -sL https://api.github.com/repos/bubbles-wow/WSA-Archive/releases/latest | jq -r '.assets[] | .browser_download_url')" >> "$DOWNLOAD_DIR/$DOWNLOAD_WSA_CONF_NAME" || abort
-    printf "  dir=%s\n" "$DOWNLOAD_DIR" >> "$DOWNLOAD_DIR/$DOWNLOAD_WSA_CONF_NAME" || abort
-    printf "  out=wsa-latest.zip\n" >> "$DOWNLOAD_DIR/$DOWNLOAD_WSA_CONF_NAME" || abort
-    WSA_VER=$(curl -sL https://api.github.com/repos/bubbles-wow/WSA-Archive/releases/latest | jq -r '.tag_name')
-    WSA_MAJOR_VER=${WSA_VER:0:4}
-else
-    # shellcheck disable=SC1090
-    source "$WSA_WORK_ENV" || abort
-fi
-
-if ! aria2c --no-conf --log-level=info --log="$DOWNLOAD_DIR/aria2_download.log" -x16 -s16 -j7 -m0 \
-    --async-dns=false --check-integrity=true \
-    -d"$DOWNLOAD_DIR" -i"$DOWNLOAD_DIR/$DOWNLOAD_WSA_CONF_NAME"; then
-    abort "We have encountered an error while downloading files."
+if [ -z ${OFFLINE+x} ]; then
+    echo "Generating WSA Download Links"
+    if [ -z ${SKIP_DOWN_WSA+x} ]; then
+        python3 generateWSALinks.py "$ARCH" "$RELEASE_TYPE" "$DOWNLOAD_DIR" "$DOWNLOAD_CONF_NAME" || abort
+        echo "Downloading WSA"
+    else
+        python3 generateWSALinks.py "$ARCH" "$RELEASE_TYPE" "$DOWNLOAD_DIR" "$DOWNLOAD_CONF_NAME" "$SKIP_DOWN_WSA" || abort
+        echo "Skip download WSA, downloading WSA depends"
+    fi
+    if ! aria2c --no-conf --log-level=info --log="$DOWNLOAD_DIR/aria2_download.log" -x16 -s16 -j5 -c -R -m0 \
+        --async-dns=false --check-integrity=true --continue=true --allow-overwrite=true --conditional-get=true \
+        -d"$DOWNLOAD_DIR" -i"$DOWNLOAD_DIR/$DOWNLOAD_CONF_NAME"; then
+        abort "We have encountered an error while downloading files."
+    fi
+    rm -f "${DOWNLOAD_DIR:?}/$DOWNLOAD_CONF_NAME"
 fi
 
 echo "Extracting WSA"
 if [ -f "$WSA_ZIP_PATH" ]; then
     if ! python3 extractWSA.py "$ARCH" "$WSA_ZIP_PATH" "$WORK_DIR" "$WSA_WORK_ENV"; then
+        CLEAN_DOWNLOAD_WSA=1
         abort "Unzip WSA failed"
     fi
     echo -e "done\n"
@@ -285,35 +417,39 @@ if [ -f "$WSA_ZIP_PATH" ]; then
 else
     abort "The WSA zip package does not exist"
 fi
-
-echo "Generating Download Links"
-if [ "$HAS_GAPPS" ] || [ "$ROOT_SOL" = "magisk" ]; then
-    python3 generateMagiskLink.py "$MAGISK_BRANCH" "$MAGISK_VER" "$DOWNLOAD_DIR" "$DOWNLOAD_CONF_NAME" || abort
+if [[ "$WSA_MAJOR_VER" -lt 2211 ]]; then
+    ANDROID_API=32
 fi
-
-if [ "$ROOT_SOL" = "kernelsu" ]; then
-    update_ksu_zip_name
-    python3 generateKernelSULink.py "$ARCH" "$DOWNLOAD_DIR" "$DOWNLOAD_CONF_NAME" "$KERNEL_VER" "$KERNELSU_ZIP_NAME" || abort
-    # shellcheck disable=SC1090
-    source "$WSA_WORK_ENV" || abort
-    # shellcheck disable=SC2153
-    echo "KERNELSU_VER=$KERNELSU_VER" >"$KERNELSU_INFO"
-fi
-if [ "$HAS_GAPPS" ]; then
-    update_gapps_files_name
-    python3 generateGappsLink.py "$ARCH" "$DOWNLOAD_DIR" "$DOWNLOAD_CONF_NAME" "$ANDROID_API" "$GAPPS_IMAGE_NAME" || abort
-fi
-if [ -f "$DOWNLOAD_DIR/$DOWNLOAD_CONF_NAME" ]; then
-    echo "Downloading Artifacts"
-    if ! aria2c --no-conf --log-level=info --log="$DOWNLOAD_DIR/aria2_download.log" -x16 -s16 -j7 -m0 \
-        --async-dns=false --check-integrity=true \
-        -d"$DOWNLOAD_DIR" -i"$DOWNLOAD_DIR/$DOWNLOAD_CONF_NAME"; then
-        abort "We have encountered an error while downloading files."
+if [ -z ${OFFLINE+x} ]; then
+    echo "Generating Download Links"
+    if [ "$ROOT_SOL" = "magisk" ]; then
+        if [ -z ${CUSTOM_MAGISK+x} ]; then
+            python3 generateMagiskLink.py "$MAGISK_VER" "$DOWNLOAD_DIR" "$DOWNLOAD_CONF_NAME" || abort
+        fi
+    fi
+    if [ "$ROOT_SOL" = "kernelsu" ]; then
+        update_ksu_zip_name
+        python3 generateKernelSULink.py "$ARCH" "$DOWNLOAD_DIR" "$DOWNLOAD_CONF_NAME" "$KERNEL_VER" "$KERNELSU_ZIP_NAME" || abort
+        # shellcheck disable=SC1090
+        source "$WSA_WORK_ENV" || abort
+        # shellcheck disable=SC2153
+        echo "KERNELSU_VER=$KERNELSU_VER" >"$KERNELSU_INFO"
+    fi
+    if [ "$HAS_GAPPS" ]; then
+        update_gapps_files_name
+        python3 generateGappsLink.py "$ARCH" "$DOWNLOAD_DIR" "$DOWNLOAD_CONF_NAME" "$ANDROID_API" "$GAPPS_IMAGE_NAME" || abort
+    fi
+    if [ -f "$DOWNLOAD_DIR/$DOWNLOAD_CONF_NAME" ]; then
+        echo "Downloading Artifacts"
+        if ! aria2c --no-conf --log-level=info --log="$DOWNLOAD_DIR/aria2_download.log" -x16 -s16 -j5 -c -R -m0 \
+            --async-dns=false --check-integrity=true --continue=true --allow-overwrite=true --conditional-get=true \
+            -d"$DOWNLOAD_DIR" -i"$DOWNLOAD_DIR/$DOWNLOAD_CONF_NAME"; then
+            abort "We have encountered an error while downloading files."
+        fi
     fi
 fi
-
 declare -A FILES_CHECK_LIST=([xaml_PATH]="$xaml_PATH" [vclibs_PATH]="$vclibs_PATH" [UWPVCLibs_PATH]="$UWPVCLibs_PATH")
-if [ "$HAS_GAPPS" ] || [ "$ROOT_SOL" = "magisk" ]; then
+if [ "$ROOT_SOL" = "magisk" ]; then
     FILES_CHECK_LIST+=(["MAGISK_PATH"]="$MAGISK_PATH" ["CUST_PATH"]="$CUST_PATH")
 fi
 if [ "$ROOT_SOL" = "kernelsu" ]; then
@@ -333,27 +469,46 @@ done
 if [ "$FILE_MISSING" ]; then
     abort "Some files are missing"
 fi
-if [ "$HAS_GAPPS" ] || [ "$ROOT_SOL" = "magisk" ]; then
+if [ "$ROOT_SOL" = "magisk" ]; then
     echo "Extracting Magisk"
     if [ -f "$MAGISK_PATH" ]; then
         MAGISK_VERSION_NAME=""
         MAGISK_VERSION_CODE=0
         if ! python3 extractMagisk.py "$ARCH" "$MAGISK_PATH" "$WORK_DIR"; then
+            CLEAN_DOWNLOAD_MAGISK=1
             abort "Unzip Magisk failed, is the download incomplete?"
         fi
         # shellcheck disable=SC1090
         source "$WSA_WORK_ENV" || abort
+        if [ "$MAGISK_VERSION_CODE" -lt 26000 ] && [ "$MAGISK_VER" != "stable" ] && [ -z ${CUSTOM_MAGISK+x} ]; then
+            abort "Please install Magisk 26.0+"
+        fi
         chmod +x "$WORK_DIR/magisk/magiskboot" || abort
+    elif [ -z "${CUSTOM_MAGISK+x}" ]; then
+        abort "The Magisk zip package does not exist, is the download incomplete?"
     else
         abort "The Magisk zip package does not exist, rename it to magisk-debug.zip and put it in the download folder."
     fi
     echo -e "done\n"
 fi
 
-if [ "$HAS_GAPPS" ] || [ "$ROOT_SOL" = "magisk" ]; then
+if [ "$ROOT_SOL" = "magisk" ]; then
     echo "Integrating Magisk"
-    "$WORK_DIR/magisk/magiskboot" compress=xz "$WORK_DIR/magisk/magisk64" "$WORK_DIR/magisk/magisk64.xz"
-    "$WORK_DIR/magisk/magiskboot" compress=xz "$WORK_DIR/magisk/magisk32" "$WORK_DIR/magisk/magisk32.xz"
+    SKIP="#"
+    SINGLEABI="#"
+    SKIPINITLD="#"
+    if [ -f "$WORK_DIR/magisk/magisk64" ]; then
+        "$WORK_DIR/magisk/magiskboot" compress=xz "$WORK_DIR/magisk/magisk64" "$WORK_DIR/magisk/magisk64.xz"
+        "$WORK_DIR/magisk/magiskboot" compress=xz "$WORK_DIR/magisk/magisk32" "$WORK_DIR/magisk/magisk32.xz"
+        unset SINGLEABI
+    else
+        "$WORK_DIR/magisk/magiskboot" compress=xz "$WORK_DIR/magisk/magisk" "$WORK_DIR/magisk/magisk.xz"
+        unset SKIP
+    fi
+    if [ -f "$WORK_DIR/magisk/init-ld" ]; then
+        "$WORK_DIR/magisk/magiskboot" compress=xz "$WORK_DIR/magisk/init-ld" "$WORK_DIR/magisk/init-ld.xz"
+        unset SKIPINITLD
+    fi
     "$WORK_DIR/magisk/magiskboot" compress=xz "$MAGISK_PATH" "$WORK_DIR/magisk/stub.xz"
     "$WORK_DIR/magisk/magiskboot" cpio "$WORK_DIR/wsa/$ARCH/Tools/initrd.img" \
         "mv /init /wsainit" \
@@ -362,8 +517,10 @@ if [ "$HAS_GAPPS" ] || [ "$ROOT_SOL" = "magisk" ]; then
         "add 0750 /magiskinit $WORK_DIR/magisk/magiskinit" \
         "mkdir 0750 overlay.d" \
         "mkdir 0750 overlay.d/sbin" \
-        "add 0644 overlay.d/sbin/magisk64.xz $WORK_DIR/magisk/magisk64.xz" \
-        "add 0644 overlay.d/sbin/magisk32.xz $WORK_DIR/magisk/magisk32.xz" \
+        "$SINGLEABI add 0644 overlay.d/sbin/magisk64.xz $WORK_DIR/magisk/magisk64.xz" \
+        "$SINGLEABI add 0644 overlay.d/sbin/magisk32.xz $WORK_DIR/magisk/magisk32.xz" \
+        "$SKIP add 0644 overlay.d/sbin/magisk.xz $WORK_DIR/magisk/magisk.xz" \
+        "$SKIPINITLD add 0644 overlay.d/sbin/init-ld.xz $WORK_DIR/magisk/init-ld.xz" \
         "add 0644 overlay.d/sbin/stub.xz $WORK_DIR/magisk/stub.xz" \
         "mkdir 000 .backup" \
         "add 000 overlay.d/init.lsp.magisk.rc init.lsp.magisk.rc" \
@@ -377,6 +534,7 @@ elif [ "$ROOT_SOL" = "kernelsu" ]; then
     echo "WSA Kernel Version: $KERNEL_VER"
     echo "KernelSU Version: $KERNELSU_VER"
     if ! unzip "$KERNELSU_PATH" -d "$WORK_DIR/kernelsu"; then
+        CLEAN_DOWNLOAD_KERNELSU=1
         abort "Unzip KernelSU failed, package is corrupted?"
     fi
     if [ "$ARCH" = "x64" ]; then
@@ -394,7 +552,6 @@ if [ "$HAS_GAPPS" ]; then
     if [ -f "$GAPPS_IMAGE_PATH" ] && [ -f "$GAPPS_RC_PATH" ]; then
         echo "Integrating GApps"
         "$WORK_DIR/magisk/magiskboot" cpio "$WORK_DIR/wsa/$ARCH/Tools/initrd.img" \
-            "add 000 /lspolicy.rule sepolicy.rule" \
             "add 000 overlay.d/gapps.rc $GAPPS_RC_PATH" \
             "add 000 overlay.d/sbin/lsp_gapps.img $GAPPS_IMAGE_PATH" \
             || abort "Unable to patch initrd"
@@ -414,35 +571,34 @@ cp "$vclibs_PATH" "$xaml_PATH" "$WORK_DIR/wsa/$ARCH" || abort
 cp "$UWPVCLibs_PATH" "$xaml_PATH" "$WORK_DIR/wsa/$ARCH" || abort
 cp "../bin/$ARCH/makepri.exe" "$WORK_DIR/wsa/$ARCH" || abort
 cp "../xml/priconfig.xml" "$WORK_DIR/wsa/$ARCH/xml/" || abort
-cp "../installer/$ARCH/MakePri.ps1" "$WORK_DIR/wsa/$ARCH" || abort
-cp "../installer/$ARCH/Install.ps1" "$WORK_DIR/wsa/$ARCH" || abort
-cp "../installer/Run.bat" "$WORK_DIR/wsa/$ARCH" || abort
+cp ../installer/MakePri.ps1 "$WORK_DIR/wsa/$ARCH" || abort
+cp ../installer/Install.ps1 "$WORK_DIR/wsa/$ARCH" || abort
+cp ../installer/Run.bat "$WORK_DIR/wsa/$ARCH" || abort
 find "$WORK_DIR/wsa/$ARCH" -maxdepth 1 -mindepth 1 -printf "%P\n" >"$WORK_DIR/wsa/$ARCH/filelist.txt" || abort
 echo -e "done\n"
 
-if [[ "$ROOT_SOL" = "none" ]]; then
+if [[ "$ROOT_SEL" = "none" ]]; then
     name1=""
-elif [ "$ROOT_SOL" = "magisk" ]; then
+elif [ "$ROOT_SEL" = "magisk" ]; then
     name1="-with-magisk-$MAGISK_VERSION_NAME($MAGISK_VERSION_CODE)-$MAGISK_VER"
-elif [ "$ROOT_SOL" = "kernelsu" ]; then
-    name1="-with-$ROOT_SOL-$KERNELSU_VER"
+elif [ "$ROOT_SEL" = "kernelsu" ]; then
+    name1="-with-$ROOT_SEL-$KERNELSU_VER"
 fi
 if [ -z "$HAS_GAPPS" ]; then
     name2="-NoGApps"
 else
     name2=-GApps-${ANDROID_API_MAP[$ANDROID_API]}
 fi
-#if [[ "$MODEL_NAME" != "default" ]]; then
-#    name3="-as-$MODEL_NAME"
-#fi
+
 artifact_name=WSA_${WSA_VER}_${ARCH}_${WSA_REL}${name1}${name2}
-#${name3}
-short_artifact_name=WSA_${WSA_VER}_${ARCH}
 [ "$REMOVE_AMAZON" ] && artifact_name+=-NoAmazon
+
+short_artifact_name=WSA_${WSA_VER}_${ARCH}
 
 if [ ! -d "$OUTPUT_DIR" ]; then
     mkdir -p "$OUTPUT_DIR"
 fi
+
 OUTPUT_PATH="${OUTPUT_DIR:?}/$short_artifact_name"
 mv "$WORK_DIR/wsa/$ARCH" "$OUTPUT_PATH"
 {

@@ -49,7 +49,7 @@ android_api = sys.argv[4]
 file_name = sys.argv[5]
 print(f"Generating GApps download link: arch={arch}", flush=True)
 abi_map = {"x64": "x86_64", "arm64": "arm64"}
-android_api_map = {"33": "13.0", "34": "14.0"}
+android_api_map = {"30": "11.0", "32": "12.1", "33": "13.0"}
 release = android_api_map[android_api]
 res = requests.get(f"https://api.github.com/repos/LSPosed/WSA-Addon/releases/latest", auth=github_auth)
 json_data = json.loads(res.content)
@@ -59,9 +59,9 @@ if res.status_code == 200:
     download_files = {}
     assets = json_data["assets"]
     for asset in assets:
-        if re.match(f'gapps.*{release}.*\.rc$', asset["name"]):
+        if re.match(rf'gapps.*{release}.*\.rc$', asset["name"]):
             download_files[asset["name"]] = asset["browser_download_url"]
-        elif re.match(f'gapps.*{release}.*{abi_map[arch]}.*\.img$', asset["name"]):
+        elif re.match(rf'gapps.*{release}.*{abi_map[arch]}.*\.img$', asset["name"]):
             download_files[asset["name"]] = asset["browser_download_url"]
     with open(download_dir/tempScript, 'a') as f:
         for key, value in download_files.items():

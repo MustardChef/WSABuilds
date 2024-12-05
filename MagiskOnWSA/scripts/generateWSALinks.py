@@ -53,13 +53,14 @@ logging.captureWarnings(True)
 arch = sys.argv[1]
 
 release_name_map = {"retail": "Retail", "RP": "Release Preview",
-                    "WIS": "Insider Slow", "WIF": "Insider Fast", "latest": "Insider Private"}
+                    "WIS": "Insider Slow", "WIF": "Insider Fast"}
 release_type = sys.argv[2] if sys.argv[2] != "" else "Retail"
 release_name = release_name_map[release_type]
 download_dir = Path.cwd().parent / \
     "download" if sys.argv[3] == "" else Path(sys.argv[3])
 ms_account_conf = download_dir/".ms_account"
 tempScript = sys.argv[4]
+skip_wsa_download = sys.argv[5] == "1" if len(sys.argv) >= 6 else False
 cat_id = '858014f3-3934-4abe-8078-4aa193e74ca8'
 user = ''
 session = Session()
@@ -144,26 +145,26 @@ def send_req(i, v, out_file_name):
 threads = []
 wsa_build_ver = 0
 for filename, values in identities.items():
-    if re.match(f"MicrosoftCorporationII\.WindowsSubsystemForAndroid_.*\.msixbundle", filename):
+    if re.match(rf"MicrosoftCorporationII\.WindowsSubsystemForAndroid_.*\.msixbundle", filename):
         tmp_wsa_build_ver = re.search(
-            u'\d{4}.\d{5}.\d{1,}.\d{1,}', filename).group()
+            r'\d{4}.\d{5}.\d{1,}.\d{1,}', filename).group()
         if (wsa_build_ver == 0):
             wsa_build_ver = tmp_wsa_build_ver
         elif version.parse(wsa_build_ver) < version.parse(tmp_wsa_build_ver):
             wsa_build_ver = tmp_wsa_build_ver
 for filename, values in identities.items():
-    if re.match(f"Microsoft\.UI\.Xaml\..*_{arch}_.*\.appx", filename):
+    if re.match(rf"Microsoft\.UI\.Xaml\..*_{arch}_.*\.appx", filename):
         out_file_name = f"{values[1]}_{arch}.appx"
         out_file = download_dir / out_file_name
-    elif re.match(f"Microsoft\.VCLibs\..+\.UWPDesktop_.*_{arch}_.*\.appx", filename):
+    elif re.match(rf"Microsoft\.VCLibs\..+\.UWPDesktop_.*_{arch}_.*\.appx", filename):
         out_file_name = f"{values[1]}_{arch}.appx"
         out_file = download_dir / out_file_name
-    elif re.match(f"Microsoft\.VCLibs\..+_.*_{arch}_.*\.appx", filename):
+    elif re.match(rf"Microsoft\.VCLibs\..+_.*_{arch}_.*\.appx", filename):
         out_file_name = f"{values[1]}_{arch}.appx"
         out_file = download_dir / out_file_name
-    elif not release_name == 'latest' and re.match(f"MicrosoftCorporationII\.WindowsSubsystemForAndroid_.*\.msixbundle", filename):
+    elif not skip_wsa_download and re.match(rf"MicrosoftCorporationII\.WindowsSubsystemForAndroid_.*\.msixbundle", filename):
         tmp_wsa_build_ver = re.search(
-            u'\d{4}.\d{5}.\d{1,}.\d{1,}', filename).group()
+            r'\d{4}.\d{5}.\d{1,}.\d{1,}', filename).group()
         if (wsa_build_ver != tmp_wsa_build_ver):
             continue
         version_splitted = wsa_build_ver.split(".")

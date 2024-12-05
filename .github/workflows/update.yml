@@ -10,6 +10,13 @@ on:
         type: string
         description: WSA Update Message.
         required: true  
+      release_type:
+        type: choice
+        options:
+          - WIF
+          - retail
+        description: Release Type
+        required: true  
 
 jobs:
   check:
@@ -138,6 +145,7 @@ jobs:
             echo "LATEST_VER_RETAIL=$LATEST_VER"
             
       - name: Replace Link in README.md for Download Links Table for the WSA ${{ env.LATEST_VER }} update
+        if: inputs.release_type == 'WIF'
         run: python "./MagiskOnWSA/Update Check/update-downloadlinks.py"
         env:
           LINK_FOR_W11X64: ${{ env.LINK_FOR_W11X64 }}
@@ -146,14 +154,15 @@ jobs:
           RELEASE_TYPE: "WIF"
           LATEST_VER: ${{ env.LATEST_VER }}
 
-#      - name: Replace Link in README.md for Download Links Table for the WSA ${{ env.LATEST_VER }} update
-#        run: python "./MagiskOnWSA/Update Check/update-downloadlinks.py"
-#        env:
-#          LINK_FOR_W11X64: ${{ env.LINK_FOR_W11X64_RETAIL }}
-#          LINK_FOR_W11ARM64: ${{ env.LINK_FOR_W11ARM64_RETAIL }}
-#          LINK_FOR_W10X64: ${{ env.LINK_FOR_W10X64_RETAIL }}
-#          RELEASE_TYPE: "retail"
-#          LATEST_VER: ${{ env.LATEST_VER }}
+      - name: Replace Link in README.md for Download Links Table for the WSA ${{ env.LATEST_VER }} update
+        if: inputs.release_type == 'retail'
+        run: python "./MagiskOnWSA/Update Check/update-downloadlinks.py"
+        env:
+          LINK_FOR_W11X64: ${{ env.LINK_FOR_W11X64_RETAIL }}
+          LINK_FOR_W11ARM64: ${{ env.LINK_FOR_W11ARM64_RETAIL }}
+          LINK_FOR_W10X64: ${{ env.LINK_FOR_W10X64_RETAIL }}
+          RELEASE_TYPE: "retail"
+          LATEST_VER: ${{ env.LATEST_VER }}
 
       - name: Commit and push if it changed
         run: |
@@ -318,6 +327,7 @@ jobs:
           KERNEL_SU_MSG: ${{ needs.check.outputs.KERNEL_SU_MSG }} 
 
       - name: Create Tag and Release for Windows 11 arm64 release ✍🏼
+        if: inputs.release_type == 'WIF'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ env.WIN11ARM64_TAG }}
@@ -328,6 +338,7 @@ jobs:
           GITHUB_WORKSPACE: ${{ github.workspace }}
 
       - name: Create Tag and Release for Windows 10 x64 release ✍🏼
+        if: inputs.release_type == 'WIF'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ env.WIN10X64_TAG }}
@@ -338,6 +349,7 @@ jobs:
           GITHUB_WORKSPACE: ${{ github.workspace }}
   
       - name: Create Tag and Release for Windows 11 x64 release ✍🏼
+        if: inputs.release_type == 'WIF'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ env.WIN11X64_TAG }}
@@ -347,8 +359,42 @@ jobs:
         env:
           GITHUB_WORKSPACE: ${{ github.workspace }}
 
+      - name: Create Tag and Release for Windows 11 arm64 release ✍🏼
+        if: inputs.release_type == 'retail'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.WIN11ARM64_TAG }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          body_path: ${{github.workspace}}/Windows11arm64.md
+          name: Windows Subsystem For Android ${{ inputs.wsa_message }} for Windows 11 arm64
+        env:
+          GITHUB_WORKSPACE: ${{ github.workspace }}
+
+      - name: Create Tag and Release for Windows 10 x64 release ✍🏼
+        if: inputs.release_type == 'retail'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.WIN10X64_TAG }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          body_path: ${{github.workspace}}/Windows10x64.md
+          name: Windows Subsystem For Android ${{ inputs.wsa_message }} for Windows 10 x64
+        env:
+          GITHUB_WORKSPACE: ${{ github.workspace }}
+  
+      - name: Create Tag and Release for Windows 11 x64 release ✍🏼
+        if: inputs.release_type == 'retail'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.WIN11X64_TAG }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          body_path: ${{github.workspace}}/Windows11x64.md
+          name: Windows Subsystem For Android ${{ inputs.wsa_message }} for Windows 11 x64
+        env:
+          GITHUB_WORKSPACE: ${{ github.workspace }}  
+
   build_x64_no_root_gapps_remove_amazon_redfin:
     name: Build for x64 as Redfin with No Root, GApps and No Amazon Appstore
+    if: inputs.release_type == 'WIF'
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
     uses: ./.github/workflows/build.yml
@@ -356,6 +402,7 @@ jobs:
       arch: x64
       root: none
       gapps: --install-gapps
+      gappsver: MindTheGapps
       amazonflag: --remove-amazon
       magiskver: stable
       devicemodel: redfin
@@ -365,6 +412,7 @@ jobs:
 
   build_x64_no_root_gapps_redfin:
     name: Build for x64 as Redfin with No Root, GApps
+    if: inputs.release_type == 'WIF'
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
     uses: ./.github/workflows/build.yml
@@ -372,6 +420,7 @@ jobs:
       arch: x64
       root: none
       gapps: --install-gapps
+      gappsver: MindTheGapps
       amazonflag: ""
       magiskver: stable
       devicemodel: redfin
@@ -381,6 +430,7 @@ jobs:
 
   build_x64_no_root_no_gapps_remove_amazon_redfin:
     name: Build for x64 as Redfin with No Root, No GApps and No Amazon Appstore
+    if: inputs.release_type == 'WIF'
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
     uses: ./.github/workflows/build.yml
@@ -388,6 +438,7 @@ jobs:
       arch: x64
       root: none
       gapps: ""
+      gappsver: none
       amazonflag: --remove-amazon
       magiskver: stable
       devicemodel: redfin
@@ -397,6 +448,7 @@ jobs:
 
   build_x64_no_root_no_gapps_redfin:
     name: Build for x64 as Redfin with No Root, No GApps
+    if: inputs.release_type == 'WIF'
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
     uses: ./.github/workflows/build.yml
@@ -404,6 +456,7 @@ jobs:
       arch: x64
       root: none
       gapps: ""
+      gappsver: none
       amazonflag: ""
       magiskver: stable
       devicemodel: redfin
@@ -413,13 +466,15 @@ jobs:
 
   build_x64_kernelsu_gapps_remove_amazon_redfin:
     name: Build for x64 as Redfin with KernelSU, GApps and No Amazon Appstore
+    if: inputs.release_type == 'WIF'
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
     uses: ./.github/workflows/build_old.yml
     with:
       arch: x64
       root: kernelsu
-      gapps: MindTheGapps
+      gapps: --install-gapps
+      gappsver: MindTheGapps
       amazonflag: --remove-amazon
       magiskver: stable
       devicemodel: redfin
@@ -429,6 +484,7 @@ jobs:
 
   build_x64_magisk_gapps_redfin:
     name: Build for x64 as Redfin with Magisk, GApps
+    if: inputs.release_type == 'WIF'
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
     uses: ./.github/workflows/build.yml
@@ -436,6 +492,7 @@ jobs:
       arch: x64
       root: magisk
       gapps: --install-gapps
+      gappsver: MindTheGapps
       amazonflag: ""
       magiskver: stable
       devicemodel: redfin
@@ -445,6 +502,7 @@ jobs:
 
   build_x64_magisk_no_gapps_remove_amazon_redfin:
     name: Build for x64 as Redfin with Magisk, No GApps and No Amazon Appstore
+    if: inputs.release_type == 'WIF'
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
     uses: ./.github/workflows/build.yml
@@ -452,6 +510,7 @@ jobs:
       arch: x64
       root: magisk
       gapps: ""
+      gappsver: none
       amazonflag: --remove-amazon
       magiskver: stable
       devicemodel: redfin
@@ -461,6 +520,7 @@ jobs:
 
   build_x64_magisk_canary_gapps_remove_amazon_redfin:
     name: Build for x64 as Redfin with Magisk Canary, GApps and No Amazon Appstore
+    if: inputs.release_type == 'WIF'
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
     uses: ./.github/workflows/build.yml
@@ -468,6 +528,7 @@ jobs:
       arch: x64
       root: magisk
       gapps: --install-gapps
+      gappsver: MindTheGapps
       amazonflag: --remove-amazon
       magiskver: canary
       devicemodel: redfin
@@ -477,6 +538,7 @@ jobs:
 
   build_arm64_no_root_gapps_remove_amazon_redfin:
     name: Build for arm64 as Redfin with No Root, GApps and No Amazon Appstore
+    if: inputs.release_type == 'WIF'
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
     uses: ./.github/workflows/buildarm64.yml
@@ -484,6 +546,7 @@ jobs:
       arch: arm64
       root: none
       gapps: --install-gapps
+      gappsver: MindTheGapps
       amazonflag: --remove-amazon
       magiskver: stable
       devicemodel: redfin
@@ -493,6 +556,7 @@ jobs:
 
   build_arm64_no_root_gapps_redfin:
     name: Build for arm64 as Redfin with No Root, GApps
+    if: inputs.release_type == 'WIF'
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
     uses: ./.github/workflows/buildarm64.yml
@@ -500,6 +564,7 @@ jobs:
       arch: arm64
       root: none
       gapps: --install-gapps
+      gappsver: MindTheGapps
       amazonflag: ""
       magiskver: stable
       devicemodel: redfin
@@ -509,6 +574,7 @@ jobs:
 
   build_arm64_no_root_no_gapps_remove_amazon_redfin:
     name: Build for arm64 as Redfin with No Root, No GApps and No Amazon Appstore
+    if: inputs.release_type == 'WIF'
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
     uses: ./.github/workflows/buildarm64.yml
@@ -516,6 +582,7 @@ jobs:
       arch: arm64
       root: none
       gapps: ""
+      gappsver: none
       amazonflag: --remove-amazon
       magiskver: stable
       devicemodel: redfin
@@ -525,6 +592,7 @@ jobs:
 
   build_arm64_no_root_no_gapps_redfin:
     name: Build for arm64 as Redfin with No Root, No GApps
+    if: inputs.release_type == 'WIF'
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
     uses: ./.github/workflows/buildarm64.yml
@@ -532,6 +600,7 @@ jobs:
       arch: arm64
       root: none
       gapps: ""
+      gappsver: none
       amazonflag: ""
       magiskver: stable
       devicemodel: redfin
@@ -541,13 +610,15 @@ jobs:
 
   build_arm64_kernelsu_gapps_remove_amazon_redfin:
     name: Build for arm64 as Redfin with KernelSU, GApps and No Amazon Appstore
+    if: inputs.release_type == 'WIF'
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
     uses: ./.github/workflows/build_arm64_old.yml
     with:
       arch: arm64
       root: kernelsu
-      gapps: MindTheGapps
+      gapps: --install-gapps
+      gappsver: MindTheGapps
       amazonflag: --remove-amazon
       magiskver: stable
       devicemodel: redfin
@@ -557,6 +628,7 @@ jobs:
 
   build_arm64_magisk_gapps_redfin:
     name: Build for arm64 as Redfin with Magisk, GApps
+    if: inputs.release_type == 'WIF'
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
     uses: ./.github/workflows/buildarm64.yml
@@ -564,6 +636,7 @@ jobs:
       arch: arm64
       root: magisk
       gapps: --install-gapps
+      gappsver: MindTheGapps
       amazonflag: ""
       magiskver: stable
       devicemodel: redfin
@@ -573,6 +646,7 @@ jobs:
 
   build_arm64_magisk_no_gapps_remove_amazon_redfin:
     name: Build for arm64 as Redfin with Magisk, No GApps and No Amazon Appstore
+    if: inputs.release_type == 'WIF'
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
     uses: ./.github/workflows/buildarm64.yml
@@ -580,6 +654,7 @@ jobs:
       arch: arm64
       root: magisk
       gapps: ""
+      gappsver: none
       amazonflag: --remove-amazon
       magiskver: stable
       devicemodel: redfin
@@ -589,6 +664,7 @@ jobs:
 
   build_arm64_magisk_canary_gapps_remove_amazon_redfin:
     name: Build for arm64 as Redfin with Magisk Canary, GApps and No Amazon Appstore
+    if: inputs.release_type == 'WIF'
     permissions: write-all
     needs: [check, check-and-create-tag, update-downloadlinks]
     uses: ./.github/workflows/buildarm64.yml
@@ -596,6 +672,7 @@ jobs:
       arch: arm64
       root: magisk
       gapps: --install-gapps
+      gappsver: MindTheGapps
       amazonflag: --remove-amazon
       magiskver: canary
       devicemodel: redfin
@@ -603,5 +680,183 @@ jobs:
       wsa_ver: ${{ inputs.wsa_ver }}
     secrets: inherit 
 
+  build_x64_no_root_gapps_remove_amazon_redfin_retail:
+    name: Build for x64 as Redfin with No Root, GApps and No Amazon Appstore
+    if: inputs.release_type == 'retail'
+    permissions: write-all
+    needs: [check, check-and-create-tag, update-downloadlinks]
+    uses: ./.github/workflows/build_old.yml
+    with:
+      arch: x64
+      root: none
+      gapps: --install-gapps
+      gappsver: MindTheGapps
+      amazonflag: --remove-amazon
+      magiskver: stable
+      devicemodel: redfin
+      compressformat: zip
+      wsa_ver: ${{ inputs.wsa_ver }}
+    secrets: inherit
 
-  
+  build_x64_no_root_gapps_redfin_retail:
+    name: Build for x64 as Redfin with No Root, GApps
+    if: inputs.release_type == 'retail'
+    permissions: write-all
+    needs: [check, check-and-create-tag, update-downloadlinks]
+    uses: ./.github/workflows/build_old.yml
+    with:
+      arch: x64
+      root: none
+      gapps: --install-gapps
+      gappsver: MindTheGapps
+      amazonflag: ""
+      magiskver: stable
+      devicemodel: redfin
+      compressformat: zip
+      wsa_ver: ${{ inputs.wsa_ver }}
+    secrets: inherit
+
+  build_x64_no_root_no_gapps_remove_amazon_redfin_retail:
+    name: Build for x64 as Redfin with No Root, No GApps and No Amazon Appstore
+    if: inputs.release_type == 'retail'
+    permissions: write-all
+    needs: [check, check-and-create-tag, update-downloadlinks]
+    uses: ./.github/workflows/build_old.yml
+    with:
+      arch: x64
+      root: none
+      gapps: ""
+      gappsver: none
+      amazonflag: --remove-amazon
+      magiskver: stable
+      devicemodel: redfin
+      compressformat: zip
+      wsa_ver: ${{ inputs.wsa_ver }}
+    secrets: inherit
+
+  build_x64_no_root_no_gapps_redfin_retail:
+    name: Build for x64 as Redfin with No Root, No GApps
+    if: inputs.release_type == 'retail'
+    permissions: write-all
+    needs: [check, check-and-create-tag, update-downloadlinks]
+    uses: ./.github/workflows/build_old.yml
+    with:
+      arch: x64
+      root: none
+      gapps: ""
+      gappsver: none
+      amazonflag: ""
+      magiskver: stable
+      devicemodel: redfin
+      compressformat: zip
+      wsa_ver: ${{ inputs.wsa_ver }}
+    secrets: inherit
+
+  build_x64_kernelsu_gapps_remove_amazon_redfin_retail:
+    name: Build for x64 as Redfin with KernelSU, GApps and No Amazon Appstore
+    if: inputs.release_type == 'retail'
+    permissions: write-all
+    needs: [check, check-and-create-tag, update-downloadlinks]
+    uses: ./.github/workflows/build_old.yml
+    with:
+      arch: x64
+      root: kernelsu
+      gapps: --install-gapps
+      gappsver: MindTheGapps
+      amazonflag: --remove-amazon
+      magiskver: stable
+      devicemodel: redfin
+      compressformat: zip
+      wsa_ver: ${{ inputs.wsa_ver }}
+    secrets: inherit
+
+  build_arm64_no_root_gapps_remove_amazon_redfin_retail:
+    name: Build for arm64 as Redfin with No Root, GApps and No Amazon Appstore
+    if: inputs.release_type == 'retail'
+    permissions: write-all
+    needs: [check, check-and-create-tag, update-downloadlinks]
+    uses: ./.github/workflows/build_arm64_old.yml
+    with:
+      arch: arm64
+      root: none
+      gapps: --install-gapps
+      gappsver: MindTheGapps
+      amazonflag: --remove-amazon
+      magiskver: stable
+      devicemodel: redfin
+      compressformat: zip
+      wsa_ver: ${{ inputs.wsa_ver }}
+    secrets: inherit
+
+  build_arm64_no_root_gapps_redfin_retail:
+    name: Build for arm64 as Redfin with No Root, GApps
+    if: inputs.release_type == 'retail'
+    permissions: write-all
+    needs: [check, check-and-create-tag, update-downloadlinks]
+    uses: ./.github/workflows/build_arm64_old.yml
+    with:
+      arch: arm64
+      root: none
+      gapps: --install-gapps
+      gappsver: MindTheGapps
+      amazonflag: ""
+      magiskver: stable
+      devicemodel: redfin
+      compressformat: zip
+      wsa_ver: ${{ inputs.wsa_ver }}
+    secrets: inherit
+
+  build_arm64_no_root_no_gapps_remove_amazon_redfin_retail:
+    name: Build for arm64 as Redfin with No Root, No GApps and No Amazon Appstore
+    if: inputs.release_type == 'retail'
+    permissions: write-all
+    needs: [check, check-and-create-tag, update-downloadlinks]
+    uses: ./.github/workflows/build_arm64_old.yml
+    with:
+      arch: arm64
+      root: none
+      gapps: ""
+      gappsver: none
+      amazonflag: --remove-amazon
+      magiskver: stable
+      devicemodel: redfin
+      compressformat: zip
+      wsa_ver: ${{ inputs.wsa_ver }}
+    secrets: inherit
+
+  build_arm64_no_root_no_gapps_redfin_retail:
+    name: Build for arm64 as Redfin with No Root, No GApps
+    if: inputs.release_type == 'retail'
+    permissions: write-all
+    needs: [check, check-and-create-tag, update-downloadlinks]
+    uses: ./.github/workflows/build_arm64_old.yml
+    with:
+      arch: arm64
+      root: none
+      gapps: ""
+      gappsver: none
+      amazonflag: ""
+      magiskver: stable
+      devicemodel: redfin
+      compressformat: zip
+      wsa_ver: ${{ inputs.wsa_ver }}
+    secrets: inherit
+
+  build_arm64_kernelsu_gapps_remove_amazon_redfin_retail:
+    name: Build for arm64 as Redfin with KernelSU, GApps and No Amazon Appstore
+    if: inputs.release_type == 'retail'
+    permissions: write-all
+    needs: [check, check-and-create-tag, update-downloadlinks]
+    uses: ./.github/workflows/build_arm64_old.yml
+    with:
+      arch: arm64
+      root: kernelsu
+      gapps: --install-gapps
+      gappsver: MindTheGapps
+      amazonflag: --remove-amazon
+      magiskver: stable
+      devicemodel: redfin
+      compressformat: zip
+      wsa_ver: ${{ inputs.wsa_ver }}
+    secrets: inherit
+

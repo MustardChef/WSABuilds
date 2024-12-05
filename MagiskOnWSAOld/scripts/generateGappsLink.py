@@ -15,7 +15,7 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with MagiskOnWSALocal.  If not, see <https://www.gnu.org/licenses/>.
 #
-# Copyright (C) 2023 LSPosed Contributors
+# Copyright (C) 2024 LSPosed Contributors
 #
 
 from datetime import datetime
@@ -33,7 +33,7 @@ tempScript = sys.argv[3]
 file_name = sys.argv[4]
 print(f"Generating MindTheGapps download link: arch={arch}", flush=True)
 abi_map = {"x64": "x86_64", "arm64": "arm64"}
-res = requests.get(f"https://api.github.com/repos/MustardChef/MindTheGappsArchived/releases/latest")
+res = requests.get(f"https://api.github.com/repos/YT-Advanced/MindTheGappsBuilder/releases/latest")
 json_data = json.loads(res.content)
 headers = res.headers
 x_ratelimit_remaining = headers["x-ratelimit-remaining"]

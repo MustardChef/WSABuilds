@@ -49,13 +49,6 @@ if ((New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsI
     exit
 }
 
-$FileList = Get-Content -Path .\filelist.txt
-if (((Test-Path -Path $FileList) -eq $false).Count) {
-    Write-Error "`r`nSome files are missing in the folder.`r`nPlease try to build again.`r`n`r`nPress any key to exit"
-    $null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown')
-    exit 1
-}
-
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"
 
 if ($(Get-WindowsOptionalFeature -Online -FeatureName 'VirtualMachinePlatform').State -ne "Enabled") {

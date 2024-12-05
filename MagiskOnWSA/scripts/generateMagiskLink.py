@@ -26,10 +26,6 @@ import json
 import requests
 from pathlib import Path
 
-#Android header
-headers = {
-    'User-Agent': 'Mozilla/5.0 (Linux; Android 13; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.6045.163 Mobile Safari/537.36',
-}
 
 class BearerAuth(requests.auth.AuthBase):
     def __init__(self, token):
@@ -46,33 +42,24 @@ if Path.cwd().joinpath('token').exists():
         github_auth = BearerAuth(token_file.read())
         print("Using token file for authentication", flush=True)
 
-magisk_branch = sys.argv[1]
-magisk_ver = sys.argv[2]
+magisk_ver = sys.argv[1]
 download_dir = Path.cwd().parent / \
-    "download" if sys.argv[3] == "" else Path(sys.argv[3])
-tempScript = sys.argv[4]
+    "download" if sys.argv[2] == "" else Path(sys.argv[2])
+tempScript = sys.argv[3]
 download_files = {}
 print(
     f"Generating Magisk download link: release type={magisk_ver}", flush=True)
 if not magisk_ver:
     magisk_ver = "stable"
-
-if magisk_branch == "vvb2060":
+if magisk_ver == "stable" or magisk_ver == "beta" or magisk_ver == "canary" or magisk_ver == "debug":
     try:
         magisk_link = json.loads(requests.get(
-            f"https://install.appcenter.ms/api/v0.1/apps/vvb2060/magisk/distribution_groups/public/releases/latest?is_install_page=true", headers=headers).content)['download_url']
-        download_files[f"magisk-{magisk_ver}.zip"] = magisk_link
-    except Exception:
-        print("Failed to fetch from AppCenter API...")
-else:
-    try:
-        magisk_link = json.loads(requests.get(
-            f"https://raw.githubusercontent.com/{magisk_branch}/magisk-files/master/{magisk_ver}.json").content)['magisk']['link']
+            f"https://github.com/topjohnwu/magisk-files/raw/master/{magisk_ver}.json").content)['magisk']['link']
         download_files[f"magisk-{magisk_ver}.zip"] = magisk_link
     except Exception:
         print("Failed to fetch from GitHub API, fallbacking to jsdelivr...")
         magisk_link = json.loads(requests.get(
-            f"https://fastly.jsdelivr.net/gh/{magisk_branch}/magisk-files@master/{magisk_ver}.json").content)['magisk']['link']
+            f"https://fastly.jsdelivr.net/gh/topjohnwu/magisk-files@master/{magisk_ver}.json").content)['magisk']['link']
         download_files[f"magisk-{magisk_ver}.zip"] = magisk_link
 res = requests.get(
     f"https://api.github.com/repos/LSPosed/WSA-Addon/releases/latest", auth=github_auth)

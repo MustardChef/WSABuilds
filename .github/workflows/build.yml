@@ -19,7 +19,9 @@ on:
       compressformat:
        type: string
       wsa_ver:
-        type: string 
+        type: string
+      gappsver:
+        type: string    
         
 jobs:
   build:
@@ -69,6 +71,7 @@ jobs:
           echo ${{ inputs.compressformat }}
           echo ${{ inputs.release_type }}
           echo ${{ inputs.wsa_ver }}
+          echo ${{ inputs.gappsver }}
 
       - name: Build WSA ${{ inputs.arch }} with GApps ${{ inputs.root }} 🏗️
         id: wsa
@@ -76,7 +79,7 @@ jobs:
         run: |
           chmod -R 777 ./
           mkdir -p download
-          ./scripts/build.sh --arch ${{ inputs.arch }} --release-type latest --magisk-ver ${{ inputs.magiskver }} ${{ inputs.gapps }} --root-sol ${{ inputs.root }} ${{ inputs.amazonflag }} --compress-format none
+          ./scripts/build.sh --arch ${{ inputs.arch }} --release-type WIF --magisk-ver ${{ inputs.magiskver }} ${{ inputs.gapps }} --root-sol ${{ inputs.root }} ${{ inputs.amazonflag }} --compress-format none
 
       - name: Check Subdirectories and Directories
         working-directory: MagiskOnWSA
@@ -89,7 +92,7 @@ jobs:
           7z a -t7z -mx=6 -m0=LZMA2 -ms=on -mmt=8 -- "${{ steps.wsa.outputs.artifact }}.7z" ./output/*
 
       - name: Run WSA Windows 10 Python Patch Script
-        working-directory: MagiskOnWSA/output/WSA_${{ inputs.wsa_ver }}_x64
+        working-directory: MagiskOnWSA/output/${{ steps.wsa.outputs.artifact_folder }}
         run: |
           #!/bin/bash
 
@@ -149,6 +152,11 @@ jobs:
           echo "${{ env.WSA_TAG }}"
           echo "${{ env.WSA_VER }}"
           echo "${{ env.DRIVE_FOLDER_PATH }}"
+
+      - name: Check Subdirectories and Directories
+        working-directory: MagiskOnWSA
+        run: |
+          ls -lR
 
       - name: Upload Windows 11 x64 build to release 🤌
         uses: softprops/action-gh-release@v2

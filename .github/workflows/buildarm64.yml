@@ -20,6 +20,8 @@ on:
        type: string
       wsa_ver: 
         type: string 
+      gappsver:
+        type: string  
 
         
 jobs:
@@ -69,6 +71,7 @@ jobs:
           echo ${{ inputs.amazonflag }}
           echo ${{ inputs.compressformat }}
           echo ${{ inputs.release_type }}
+          echo ${{ inputs.gappsver }}
 
       - name: Build WSA ${{ inputs.arch }} with GApps ${{ inputs.root }} 🏗️
         id: wsa
@@ -81,7 +84,7 @@ jobs:
           fi
           chmod -R 777 ./
           mkdir -p download
-          ./scripts/build.sh --arch ${{ inputs.arch }} --release-type latest --magisk-ver ${{ inputs.magiskver }} ${{ inputs.gapps }} --root-sol ${{ inputs.root }} ${{ inputs.amazonflag }} --compress-format zip
+          ./scripts/build.sh --arch ${{ inputs.arch }} --release-type WIF --magisk-ver ${{ inputs.magiskver }} ${{ inputs.gapps }} --root-sol ${{ inputs.root }} ${{ inputs.amazonflag }} --compress-format zip
 
       - name: Check Subdirectories and Directories
         working-directory: MagiskOnWSA
@@ -111,6 +114,11 @@ jobs:
           echo "${{ env.WSA_TAG }}"
           echo "${{ env.WSA_VER }}"
           echo "${{ env.DRIVE_FOLDER_PATH }}"
+
+      - name: Check Subdirectories and Directories
+        working-directory: MagiskOnWSA
+        run: |
+          ls -lR
 
       - name: Upload Windows 11 arm64 build to release 🤌
         uses: softprops/action-gh-release@v2
