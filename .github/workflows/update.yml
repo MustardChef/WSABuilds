@@ -227,11 +227,22 @@ jobs:
         if: steps.checkTag3.outputs.exists == 'true'
         run: exit 1
         
-      - name: Download Release Notes 📥
+      - name: Download Release Notes (WIF) 📥
+        if: inputs.release_type == 'WIF'
         run: |
           wget https://gist.github.com/MustardChef/edb0dfc50ab4942cd5914cef6a81602e/raw/ -P ${{ github.workspace }} -O Windows11x64.md
           wget https://gist.github.com/MustardChef/3ae3343bb98f6e158ce951ec09fd3661/raw/ -P ${{ github.workspace }} -O Windows11arm64.md
           wget https://gist.github.com/MustardChef/f2ebafde3a3072cac7e6f726da3ffa50/raw/ -P ${{ github.workspace }} -O Windows10x64.md
+          ls
+        env:
+          GITHUB_WORKSPACE: ${{ github.workspace }}
+
+      - name: Download Release Notes (RETAIL) 📥
+        if: inputs.release_type == 'retail'
+        run: |
+          wget https://gist.github.com/MustardChef/788d12344916043a7a3df9c1165b8843/raw/a8084d98b28cf650a60c74f3abf0484640bd36b7/Windows11x64retail.md -P ${{ github.workspace }} -O Windows11x64.md
+          wget https://gist.github.com/MustardChef/102fd29f091ff5f727cb7b508bd1433e/raw/3e6b97d18d28f0daefcdc7c6cfb6e62677ab40c5/Windows11arm64retail.md -P ${{ github.workspace }} -O Windows11arm64.md
+          wget https://gist.github.com/MustardChef/5b9c3dad6c3fc93f98209f0c15efc0fe/raw/5886a7c07f40b1b716dc9ab1cfb6b28326dde552/Windows10x64retail.md -P ${{ github.workspace }} -O Windows10x64.md
           ls
         env:
           GITHUB_WORKSPACE: ${{ github.workspace }}
