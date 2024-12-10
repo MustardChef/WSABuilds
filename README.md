@@ -279,12 +279,23 @@
 <td>v2311.40000.5.0_LTS_3</td>
 <td>✅</td>
 <td>✅</td>
+</tr>
 <td>v2407.40000.0.0_LTS_4</td>
 <td>✅</td>
 <td>✅</td>
+</tr>
 <td>v2407.40000.0.0_LTS_5</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<td>v2407.40000.0.0_LTS_6</td>
 <td>➖</td>
 <td>➖</td>
+</tr>
+<td>v2407.40000.4.0</td>
+<td>➖</td>
+<td>➖</td>
+</tr>  
 </tbody>
 </table>
 <table>
@@ -343,13 +354,13 @@
 </tr>
 <tr>
 <td><b>Current Version:</b></td>
-<td>v2407.40000.0.0_LTS_5</td>
-<td colspan="2">v2407.40000.0.0</td>
+<td>v2407.40000.0.0_LTS_6</td>
+<td colspan="2">v2407.40000.4.0</td>
 </tr>
 <tr>
 <td><b>Release Date:</b></td>
-<td>05/12/2024</td>
-<td colspan="2">05/12/2024</td>
+<td>09/12/2024</td>
+<td colspan="2">09/12/2024</td>
 </tr>
 <tr>
 <td>Update Frequency:</td>
