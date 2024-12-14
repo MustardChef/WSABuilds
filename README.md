@@ -62,9 +62,9 @@
 <h3>MagiskOnWSA (For Windows™ 10 and 11)</h3>
 <h5>Windows Subsystem For Android™ (WSA) with Google Play Services and Magisk and KernelSU</h5>
 <br/>
-<a href="https://github.com/MustardChef/WSABuilds/blob/master/Sponsors/PetroSky.md"><img align="right" src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/></a>
+<a href="https://discord.gg/2thee7zzHZ"><img align="right" src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/></a>
 <br/> <br/> <br/> <br/>
-<br/><a href="https://discord.gg/2thee7zzHZ"><img align="right" src="https://github.com/user-attachments/assets/cb787e9d-886b-46f2-bb30-6fe9c8064f5f" width="400"/></a>
+<br/><a href="https://github.com/MustardChef/WSABuilds/blob/master/Sponsors/PetroSky.md"><img align="right" src="https://github.com/user-attachments/assets/cb787e9d-886b-46f2-bb30-6fe9c8064f5f" width="400"/></a>
 <br/> <br/> <br/> <br/>
 <img align="left" alt="downloads-folder" height="54" src="https://img.icons8.com/3d-fluency/94/downloads-folder.png" width="54"/><h2>Downloads</h2>
 
