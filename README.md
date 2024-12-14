@@ -1,5 +1,7 @@
 > [!IMPORTANT]  
-> ### IF YOU HAVE BEEN RECENTLY HAVING ISSUES WITH SOME APPS BREAKING OR NOT STARTING OR APPS GETTING SUCK AT LOADING SCREEN OR APPS STUCK ON SPLASHSCREEN ( STUCK ON THE APP ICON SCREEN) OR ANY OTHER SIMILAR CASES.
+> <details>
+> <summary><h3>IF YOU HAVE BEEN RECENTLY HAVING ISSUES WITH SOME APPS BREAKING OR NOT STARTING OR APPS GETTING SUCK AT LOADING SCREEN OR APPS STUCK ON SPLASHSCREEN ( STUCK ON THE APP ICON SCREEN) OR ANY OTHER SIMILAR CASES.</h3></summary>
+>   
 > ### UPDATE TO THE LATEST LTS AND NON-LTS RELEASES:
 >
 > - ### LTS Releases:
@@ -13,10 +15,11 @@
 >    - [Windows 10 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2407.40000.4.0)
 >
 > #### LET ME KNOW VIA GITHUB ISSUES, THE WSA COMMUNITY DISCORD OR THE r/WSA SUBREDDIT IF THESE RELEASES HAVE SOLVED YOUR ISSUE. THANK YOU.
+> </details>
 
 > [!TIP]
 > <details>
-> <summary><h2>WSA End Of Support Information</h2></summary>
+> <summary><h2>WSA End Of Support (EoS) Information</h2></summary>
 > 
 > ## "Microsoft is ending support for the Windows Subsystem for Android™️ (WSA). As a result, the Amazon Appstore on Windows and all applications and games dependent on WSA will no longer be supported beginning March 5, 2025." 
 > ###### (Source: [GitHub](https://github.com/microsoft/WSA/discussions/536) and [Microsoft Learn](https://learn.microsoft.com/en-us/windows/android/wsa/))
@@ -28,7 +31,9 @@
 > </details>
 >
 > 
-> ## Next LTS and Non-LTS Release Date:
+> <details>
+> <summary><h2> Next LTS and Non-LTS Release Date:</h2></summary>
+>   
 > ### Non-LTS Build Update (v2407.40000.4.0):
 > ~~``Monday 9th December 2024``~~  **Available Now (via the Stable release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))**
 > ### WSABuilds LTS 6 (v2407.40000.4.0) 
@@ -45,12 +50,10 @@
 > ~~``Friday 03rd May 2024``~~   **Available Now (via the Pre-release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))** 
 > ### WSABuilds LTS 1 (v2311.40000.5.0): 
 > ~~``Wednesday 03rd April 2024``~~  **Available Now (via the Pre-release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))**  
+      
 
-
-
----
 <br/>
-<br/>
+
 <p align="center">
 <a href="https://github.com/MustardChef/WSABuilds#downloads"><img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&amp;style=for-the-badge"/></a> <a href="https://forum.xda-developers.com/t/wsabuilds-latest-windows-subsystem-for-android-wsa-builds-for-   windows-10-and-11-with-magisk-and-google-play-store.4545087/"><img src="https://img.shields.io/badge/XDA%20Developers-WSABuilds-EA7100?style=for-the-badge&amp;logoColor=white&amp;logo=XDA-Developers"/></a> <a href="https://ko-fi.com/N4N0K08AC"><img alt="ko-fi" src="https://ko-fi.com/img/githubbutton_sm.svg"/></a>
 </p>
@@ -58,15 +61,17 @@
 <h1>WSABuilds</h1>
 <h3>MagiskOnWSA (For Windows™ 10 and 11)</h3>
 <h5>Windows Subsystem For Android™ (WSA) with Google Play Services and Magisk and KernelSU</h5>
-<br/><a href="https://discord.gg/2thee7zzHZ"><img align="right" src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/></a>
+<br/>
+<a href="https://github.com/MustardChef/WSABuilds/blob/master/Sponsors/PetroSky.md"><img align="right" src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/></a>
+<a href="https://discord.gg/2thee7zzHZ"><img align="right" src="https://github.com/user-attachments/assets/cb787e9d-886b-46f2-bb30-6fe9c8064f5f" width="400"/></a>
 <br/> <br/> <br/> <br/>
 <img align="left" alt="downloads-folder" height="54" src="https://img.icons8.com/3d-fluency/94/downloads-folder.png" width="54"/><h2>Downloads</h2>
-<div align="center">
+
+<div align="center">   
 <details>
 <summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Information.md"><img height="35" src="https://img.icons8.com/3d-fluency/94/ok.png" style="float: left;" width="35"/><h3><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Information.md">   WSABuilds Project Status</a></h3></a></summary>
 <center><h3>⚠️❗IMPORTANT: Read Before Downloading❗⚠️</h3></center>
 <div align="left">  
-   
 ## WSABuilds Repo Info
 
 #### Known Issues that may affect your WSA experiences:
@@ -279,12 +284,23 @@
 <td>v2311.40000.5.0_LTS_3</td>
 <td>✅</td>
 <td>✅</td>
+</tr>
 <td>v2407.40000.0.0_LTS_4</td>
 <td>✅</td>
 <td>✅</td>
+</tr>
 <td>v2407.40000.0.0_LTS_5</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<td>v2407.40000.0.0_LTS_6</td>
 <td>➖</td>
 <td>➖</td>
+</tr>
+<td>v2407.40000.4.0</td>
+<td>➖</td>
+<td>➖</td>
+</tr>  
 </tbody>
 </table>
 <table>
@@ -343,13 +359,13 @@
 </tr>
 <tr>
 <td><b>Current Version:</b></td>
-<td>v2407.40000.0.0_LTS_5</td>
-<td colspan="2">v2407.40000.0.0</td>
+<td>v2407.40000.0.0_LTS_6</td>
+<td colspan="2">v2407.40000.4.0</td>
 </tr>
 <tr>
 <td><b>Release Date:</b></td>
-<td>05/12/2024</td>
-<td colspan="2">05/12/2024</td>
+<td>09/12/2024</td>
+<td colspan="2">09/12/2024</td>
 </tr>
 <tr>
 <td>Update Frequency:</td>
@@ -417,9 +433,6 @@
 </tbody>
 </table>
 
- 
-
-      
       
 <img align="left" alt="system-information" height="58" src="https://img.icons8.com/fluency/48/system-information.png" width="58"/><h2>Requirements</h2>
 <center><table>
