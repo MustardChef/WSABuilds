@@ -1,6 +1,6 @@
 > [!IMPORTANT]  
 > <details>
-> <summary><h3>IF YOU HAVE BEEN RECENTLY HAVING ISSUES WITH SOME APPS BREAKING OR NOT STARTING OR APPS GETTING SUCK AT LOADING SCREEN OR APPS STUCK ON SPLASHSCREEN ( STUCK ON THE APP ICON SCREEN) OR ANY OTHER SIMILAR CASES.</h3></summary>
+> <summary><h3>IF YOU HAVE BEEN RECENTLY HAVING ISSUES WITH SOME APPS BREAKING OR NOT STARTING OR APPS GETTING SUCK AT LOADING SCREEN OR APPS STUCK ON SPLASHSCREEN ( STUCK ON THE APP ICON SCREEN) OR ANY OTHER SIMILAR CASES. (CLICK HERE)</h3></summary>
 >   
 > ### UPDATE TO THE LATEST LTS AND NON-LTS RELEASES:
 >
@@ -10,7 +10,7 @@
 >    - [Windows 10 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2407.40000.4.0_LTS_6)
 >
 > - ### Non-LTS Releases: 
->    - ``(If you don't want Magisk being bundled by default) (Release contains no Magisk builds)``
+>    - ``(If you don't want Magisk being bundled by default) (Releases contain no Magisk builds)``
 >    - [Windows 11 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2407.40000.4.0)
 >    - [Windows 10 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2407.40000.4.0)
 >
@@ -19,7 +19,7 @@
 
 > [!TIP]
 > <details>
-> <summary><h2>WSA End Of Support (EoS) Information</h2></summary>
+> <summary><h2> WSA End Of Support (EoS) Information (Click Here)</h2></summary>
 > 
 > ## "Microsoft is ending support for the Windows Subsystem for Android™️ (WSA). As a result, the Amazon Appstore on Windows and all applications and games dependent on WSA will no longer be supported beginning March 5, 2025." 
 > ###### (Source: [GitHub](https://github.com/microsoft/WSA/discussions/536) and [Microsoft Learn](https://learn.microsoft.com/en-us/windows/android/wsa/))
@@ -32,7 +32,7 @@
 >
 > 
 > <details>
-> <summary><h2> Next LTS and Non-LTS Release Date:</h2></summary>
+> <summary><h2>Next LTS and Non-LTS Release Date: (Click Here)</h2></summary>
 >   
 > ### Non-LTS Build Update (v2407.40000.4.0):
 > ~~``Monday 9th December 2024``~~  **Available Now (via the Stable release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))**
