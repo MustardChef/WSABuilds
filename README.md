@@ -24,8 +24,9 @@
 > ## "Microsoft is ending support for the Windows Subsystem for Android™️ (WSA). As a result, the Amazon Appstore on Windows and all applications and games dependent on WSA will no longer be supported beginning March 5, 2025." 
 > ###### (Source: [GitHub](https://github.com/microsoft/WSA/discussions/536) and [Microsoft Learn](https://learn.microsoft.com/en-us/windows/android/wsa/))
 > ---
-> ### WSABuilds has entered LTS (Long Term Support) for WSA version 2311.40000.5.0, where the Magisk version, KernelSU version and GApps version will be kept up to date via new releases.
+> ### WSABuilds has entered LTS (Long Term Support) for WSA versions ≥ 2311.40000.5.0, where the Magisk version, KernelSU version and GApps version will be kept up to date via new releases.
 > ### This repo will not be archived and support will still be given to any users installing WSA Builds from this repo. Thank you all for using this repository and supporting my work, its been a pleasure serving this community. 
+> ### Do make sure that you keep a look out for any updates to this repo for any futher changes to WSA and WSABuilds.      
 >
 > ---
 > </details>
