@@ -905,6 +905,7 @@ wsa://com.apple.android.music
 | Boost for Reddit | 1.12.5 | 12 | ✅
 | Bouncer | 1.26.3 | 11 | ⚠️
 | Brave Browser | 1.30.87 | 11 | ✅
+| Brawl Stars | | 13 | ❌ | App gets stuck on loading screen
 | BritBox by BBC &amp; ITV | 2.1.2 (20043) | 11 | ❌ | App crashes on start
 | Bromite | 94.0.4606.94 | 11 | ✅ || Use x64 build
 | Camera | 2.0.002 | 13 | ⚠️ | While taking pictures or video works fine but changing the camera (to an inactive virtual camera) freezes the app. | Included in the subsystem
@@ -1183,6 +1184,7 @@ wsa://com.apple.android.music
 | Terminal Emulator for Android | 1.0.70-rebuild | 12 | ✅ | A warning shows up about the app being designed for older Android versions, but can be dismissed
 | Termux (F-droid) | 0.118.0 | 13, 12, 11 |✅
 | Tesla | 4.6.1 | 11 | ⚠️ | Vehicle graphics and maps do not load, cannot enable phone key. | Internet-based vehicle controls, charge stats, services are functional.
+| TATS Dijital Kitap Uygulaması | | 13 | ✅ | Sometimes scaling issues can occur, can be fixed by changing window size
 | The Globe and Mail | 6.2.0 (100) | 11 | ✅
 | TIDAL | 2.49.0 | 11 | ✅
 | TikTok (China) | 18.1.0 | 11 | ⚠️ | App crashes on first startup and you might face hiccups logging in
