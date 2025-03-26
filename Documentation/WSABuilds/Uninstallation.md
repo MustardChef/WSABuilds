@@ -9,7 +9,7 @@
 >
 > If you want to preseve your data, make a backup of the `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx` file. After uninstalling, copy the VHDX file back to the `%LOCALAPPDATA%\Package\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache` folder. For a more comprehensive and detailed guide, take a look at the **Backup and Restore section** in this README markdown
 
-### To remove WSA installed through WSABuild:
+### To remove WSA installed through WSABuilds:
 
 - **1.)** Make sure that Windows Subsystem For Android™ is not running
 <br/>
