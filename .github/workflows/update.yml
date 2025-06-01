@@ -70,7 +70,7 @@ jobs:
             echo MTG Update Message: ${{ env.MTG_MSG }}   
 
       - name: Update App version 🔗
-        uses: stefanzweifel/git-auto-commit-action@v5.1.0
+        uses: stefanzweifel/git-auto-commit-action@v5.2.0
         with:
           branch: update
           push_options: '--force'
