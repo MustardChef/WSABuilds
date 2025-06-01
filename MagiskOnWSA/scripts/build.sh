@@ -34,6 +34,27 @@ if [ "$TMPDIR" ] && [ ! -d "$TMPDIR" ]; then
 fi
 WORK_DIR=$(mktemp -d -t wsa-build-XXXXXXXXXX_) || exit 1
 
+# lowerdir
+ROOT_MNT_RO="$WORK_DIR/erofs"
+VENDOR_MNT_RO="$ROOT_MNT_RO/vendor"
+PRODUCT_MNT_RO="$ROOT_MNT_RO/product"
+SYSTEM_EXT_MNT_RO="$ROOT_MNT_RO/system_ext"
+
+# upperdir
+ROOT_MNT_RW="$WORK_DIR/upper"
+VENDOR_MNT_RW="$ROOT_MNT_RW/vendor"
+PRODUCT_MNT_RW="$ROOT_MNT_RW/product"
+SYSTEM_EXT_MNT_RW="$ROOT_MNT_RW/system_ext"
+SYSTEM_MNT_RW="$ROOT_MNT_RW/system"
+
+# merged
+# shellcheck disable=SC2034
+ROOT_MNT="$WORK_DIR/system_root_merged"
+SYSTEM_MNT="$ROOT_MNT/system"
+VENDOR_MNT="$ROOT_MNT/vendor"
+PRODUCT_MNT="$ROOT_MNT/product"
+SYSTEM_EXT_MNT="$ROOT_MNT/system_ext"
+
 DOWNLOAD_DIR=../download
 DOWNLOAD_CONF_NAME=download.list
 PYTHON_VENV_DIR="$(dirname "$PWD")/python3-env"
@@ -388,6 +409,28 @@ update_ksu_zip_name() {
     KERNELSU_INFO="$KERNELSU_PATH.info"
 }
 
+vhdx_to_raw_img() {
+    qemu-img convert -q -f vhdx -O raw "$1" "$2" || return 1
+    rm -f "$1" || return 1
+}
+
+ro_ext4_img_to_rw() {
+    resize_img "$1" "$(($(du --apparent-size -sB512 "$1" | cut -f1) * 2))"s || return 1
+    e2fsck -fp -E unshare_blocks "$1" || return 1
+    resize_img "$1" || return 1
+    return 0
+}
+
+resize_img() {
+    sudo e2fsck -pf "$1" || return 1
+    if [ "$2" ]; then
+        sudo resize2fs "$1" "$2" || return 1
+    else
+        sudo resize2fs -M "$1" || return 1
+    fi
+    return 0
+}
+
 if [ -z ${OFFLINE+x} ]; then
     echo "Generating WSA Download Links"
     if [ -z ${SKIP_DOWN_WSA+x} ]; then
@@ -420,6 +463,79 @@ fi
 if [[ "$WSA_MAJOR_VER" -lt 2211 ]]; then
     ANDROID_API=32
 fi
+
+echo "Convert vhdx to RAW image"
+vhdx_to_raw_img "$WORK_DIR/wsa/$ARCH/system_ext.vhdx" "$WORK_DIR/wsa/$ARCH/system_ext.img" || abort
+vhdx_to_raw_img "$WORK_DIR/wsa/$ARCH/product.vhdx" "$WORK_DIR/wsa/$ARCH/product.img" || abort
+vhdx_to_raw_img "$WORK_DIR/wsa/$ARCH/system.vhdx" "$WORK_DIR/wsa/$ARCH/system.img" || abort
+vhdx_to_raw_img "$WORK_DIR/wsa/$ARCH/vendor.vhdx" "$WORK_DIR/wsa/$ARCH/vendor.img" || abort
+echo -e "Convert vhdx to RAW image done\n"
+
+echo "Remove read-only flag for read-only EXT4 image"
+ro_ext4_img_to_rw "$WORK_DIR/wsa/$ARCH/system_ext.img" || abort
+ro_ext4_img_to_rw "$WORK_DIR/wsa/$ARCH/product.img" || abort
+ro_ext4_img_to_rw "$WORK_DIR/wsa/$ARCH/system.img" || abort
+ro_ext4_img_to_rw "$WORK_DIR/wsa/$ARCH/vendor.img" || abort
+echo -e "Remove read-only flag for read-only EXT4 image done\n"
+
+echo "Calculate the required space"
+EXTRA_SIZE=10240
+
+SYSTEM_EXT_NEED_SIZE=$EXTRA_SIZE
+if [ -d "$WORK_DIR/gapps/system_ext" ]; then
+    SYSTEM_EXT_NEED_SIZE=$((SYSTEM_EXT_NEED_SIZE + $(du --apparent-size -sB512 "$WORK_DIR/gapps/system_ext" | cut -f1)))
+fi
+
+PRODUCT_NEED_SIZE=$EXTRA_SIZE
+if [ -d "$WORK_DIR/gapps/product" ]; then
+    PRODUCT_NEED_SIZE=$((PRODUCT_NEED_SIZE + $(du --apparent-size -sB512 "$WORK_DIR/gapps/product" | cut -f1)))
+fi
+
+SYSTEM_NEED_SIZE=$EXTRA_SIZE
+if [ -d "$WORK_DIR/gapps" ]; then
+    SYSTEM_NEED_SIZE=$((SYSTEM_NEED_SIZE + $(du --apparent-size -sB512 "$WORK_DIR/gapps" | cut -f1) - PRODUCT_NEED_SIZE - SYSTEM_EXT_NEED_SIZE))
+fi
+if [ "$ROOT_SOL" = "magisk" ]; then
+    if [ -d "$WORK_DIR/magisk" ]; then
+        MAGISK_SIZE=$(du --apparent-size -sB512 "$WORK_DIR/magisk/magisk" | cut -f1)
+        SYSTEM_NEED_SIZE=$((SYSTEM_NEED_SIZE + MAGISK_SIZE))
+    fi
+    if [ -f "$MAGISK_PATH" ]; then
+        MAGISK_APK_SIZE=$(du --apparent-size -sB512 "$MAGISK_PATH" | cut -f1)
+        SYSTEM_NEED_SIZE=$((SYSTEM_NEED_SIZE + MAGISK_APK_SIZE))
+    fi
+fi
+if [ -d "../$ARCH/system" ]; then
+    SYSTEM_NEED_SIZE=$((SYSTEM_NEED_SIZE + $(du --apparent-size -sB512 "../$ARCH/system" | cut -f1)))
+fi
+VENDOR_NEED_SIZE=$EXTRA_SIZE
+echo -e "done\n"
+
+echo "Expand images"
+SYSTEM_EXT_IMG_SIZE=$(du --apparent-size -sB512 "$WORK_DIR/wsa/$ARCH/system_ext.img" | cut -f1)
+PRODUCT_IMG_SIZE=$(du --apparent-size -sB512 "$WORK_DIR/wsa/$ARCH/product.img" | cut -f1)
+SYSTEM_IMG_SIZE=$(du --apparent-size -sB512 "$WORK_DIR/wsa/$ARCH/system.img" | cut -f1)
+VENDOR_IMG_SIZE=$(du --apparent-size -sB512 "$WORK_DIR/wsa/$ARCH/vendor.img" | cut -f1)
+SYSTEM_EXT_TARGET_SIZE=$((SYSTEM_EXT_NEED_SIZE * 2 + SYSTEM_EXT_IMG_SIZE))
+PRODUCT_TAGET_SIZE=$((PRODUCT_NEED_SIZE * 2 + PRODUCT_IMG_SIZE))
+SYSTEM_TAGET_SIZE=$((SYSTEM_IMG_SIZE * 2))
+VENDOR_TAGET_SIZE=$((VENDOR_NEED_SIZE * 2 + VENDOR_IMG_SIZE))
+
+resize_img "$WORK_DIR/wsa/$ARCH/system_ext.img" "$SYSTEM_EXT_TARGET_SIZE"s || abort
+resize_img "$WORK_DIR/wsa/$ARCH/product.img" "$PRODUCT_TAGET_SIZE"s || abort
+resize_img "$WORK_DIR/wsa/$ARCH/system.img" "$SYSTEM_TAGET_SIZE"s || abort
+resize_img "$WORK_DIR/wsa/$ARCH/vendor.img" "$VENDOR_TAGET_SIZE"s || abort
+
+echo -e "Expand images done\n"
+
+echo "Mount images"
+sudo mkdir "$ROOT_MNT" || abort
+sudo mount -vo loop "$WORK_DIR/wsa/$ARCH/system.img" "$ROOT_MNT" || abort
+sudo mount -vo loop "$WORK_DIR/wsa/$ARCH/vendor.img" "$VENDOR_MNT" || abort
+sudo mount -vo loop "$WORK_DIR/wsa/$ARCH/product.img" "$PRODUCT_MNT" || abort
+sudo mount -vo loop "$WORK_DIR/wsa/$ARCH/system_ext.img" "$SYSTEM_EXT_MNT" || abort
+echo -e "done\n"
+
 if [ -z ${OFFLINE+x} ]; then
     echo "Generating Download Links"
     if [ "$ROOT_SOL" = "magisk" ]; then
@@ -564,6 +680,99 @@ fi
 if [ "$REMOVE_AMAZON" ]; then
     rm -f "$WORK_DIR/wsa/$ARCH/apex/"mado*.apex || abort
 fi
+
+# Download and install Houdini files
+echo "Downloading and installing Houdini files (Many Thanks to SupremeGamers)"
+HOUDINI_BASE_URL="https://github.com/supremegamers/vendor_intel_proprietary_houdini/raw/refs/heads/hpe-14/prebuilts"
+
+# Create necessary directories
+sudo mkdir -p "$VENDOR_MNT/etc/binfmt_misc" || abort "Failed to create binfmt_misc directory"
+sudo mkdir -p "$VENDOR_MNT/lib" || abort "Failed to create vendor lib directory"
+sudo mkdir -p "$VENDOR_MNT/lib64" || abort "Failed to create vendor lib64 directory"
+sudo mkdir -p "$VENDOR_MNT/bin" || abort "Failed to create vendor bin directory"
+sudo mkdir -p "$SYSTEM_MNT/bin" || abort "Failed to create system bin directory"
+
+# Download and copy binfmt_misc files
+echo "Downloading binfmt_misc files..."
+curl -L "$HOUDINI_BASE_URL/etc/binfmt_misc/arm64_dyn" -o "/tmp/arm64_dyn" || abort "Failed to download arm64_dyn"
+curl -L "$HOUDINI_BASE_URL/etc/binfmt_misc/arm64_exe" -o "/tmp/arm64_exe" || abort "Failed to download arm64_exe"
+curl -L "$HOUDINI_BASE_URL/etc/binfmt_misc/arm_dyn" -o "/tmp/arm_dyn" || abort "Failed to download arm_dyn"
+curl -L "$HOUDINI_BASE_URL/etc/binfmt_misc/arm_exe" -o "/tmp/arm_exe" || abort "Failed to download arm_exe"
+
+sudo cp "/tmp/arm64_dyn" "$VENDOR_MNT/etc/binfmt_misc/" || abort "Failed to copy arm64_dyn"
+sudo cp "/tmp/arm64_exe" "$VENDOR_MNT/etc/binfmt_misc/" || abort "Failed to copy arm64_exe"
+sudo cp "/tmp/arm_dyn" "$VENDOR_MNT/etc/binfmt_misc/" || abort "Failed to copy arm_dyn"
+sudo cp "/tmp/arm_exe" "$VENDOR_MNT/etc/binfmt_misc/" || abort "Failed to copy arm_exe"
+
+# Set SELinux properties for binfmt_misc files
+sudo setfattr -n security.selinux -v "u:object_r:vendor_configs_file:s0" "$VENDOR_MNT/etc/binfmt_misc/arm64_dyn" || abort "Failed to set SELinux context for arm64_dyn"
+sudo setfattr -n security.selinux -v "u:object_r:vendor_configs_file:s0" "$VENDOR_MNT/etc/binfmt_misc/arm64_exe" || abort "Failed to set SELinux context for arm64_exe"
+sudo setfattr -n security.selinux -v "u:object_r:vendor_configs_file:s0" "$VENDOR_MNT/etc/binfmt_misc/arm_dyn" || abort "Failed to set SELinux context for arm_dyn"
+sudo setfattr -n security.selinux -v "u:object_r:vendor_configs_file:s0" "$VENDOR_MNT/etc/binfmt_misc/arm_exe" || abort "Failed to set SELinux context for arm_exe"
+
+# Download and copy vendor lib files
+echo "Downloading vendor library files..."
+curl -L "$HOUDINI_BASE_URL/lib/libhoudini.so" -o "/tmp/libhoudini_32.so" || abort "Failed to download 32-bit libhoudini.so"
+curl -L "$HOUDINI_BASE_URL/lib64/libhoudini.so" -o "/tmp/libhoudini_64.so" || abort "Failed to download 64-bit libhoudini.so"
+
+sudo cp "/tmp/libhoudini_32.so" "$VENDOR_MNT/lib/libhoudini.so" || abort "Failed to copy 32-bit libhoudini.so"
+sudo cp "/tmp/libhoudini_64.so" "$VENDOR_MNT/lib64/libhoudini.so" || abort "Failed to copy 64-bit libhoudini.so"
+
+# Set SELinux properties for vendor lib files
+sudo setfattr -n security.selinux -v "u:object_r:same_process_hal_file:s0" "$VENDOR_MNT/lib/libhoudini.so" || abort "Failed to set SELinux context for 32-bit libhoudini.so"
+sudo setfattr -n security.selinux -v "u:object_r:same_process_hal_file:s0" "$VENDOR_MNT/lib64/libhoudini.so" || abort "Failed to set SELinux context for 64-bit libhoudini.so"
+
+# Download and copy vendor bin files
+echo "Downloading vendor binary files..."
+curl -L "$HOUDINI_BASE_URL/bin/houdini" -o "/tmp/houdini" || abort "Failed to download houdini binary"
+curl -L "$HOUDINI_BASE_URL/bin/houdini64" -o "/tmp/houdini64" || abort "Failed to download houdini64 binary"
+
+sudo cp "/tmp/houdini" "$VENDOR_MNT/bin/" || abort "Failed to copy houdini to vendor bin"
+sudo cp "/tmp/houdini64" "$VENDOR_MNT/bin/" || abort "Failed to copy houdini64 to vendor bin"
+
+# Set SELinux properties for vendor bin files
+sudo setfattr -n security.selinux -v "u:object_r:same_process_hal_file:s0" "$VENDOR_MNT/bin/houdini" || abort "Failed to set SELinux context for vendor houdini"
+sudo setfattr -n security.selinux -v "u:object_r:same_process_hal_file:s0" "$VENDOR_MNT/bin/houdini64" || abort "Failed to set SELinux context for vendor houdini64"
+
+# Copy to system bin and set SELinux properties
+echo "Copying to system bin..."
+sudo cp "/tmp/houdini" "$SYSTEM_MNT/bin/" || abort "Failed to copy houdini to system bin"
+sudo cp "/tmp/houdini64" "$SYSTEM_MNT/bin/" || abort "Failed to copy houdini64 to system bin"
+
+# Set SELinux properties for system bin files
+sudo setfattr -n security.selinux -v "u:object_r:system_file:s0" "$SYSTEM_MNT/bin/houdini" || abort "Failed to set SELinux context for system houdini"
+sudo setfattr -n security.selinux -v "u:object_r:system_file:s0" "$SYSTEM_MNT/bin/houdini64" || abort "Failed to set SELinux context for system houdini64"
+
+# Set executable permissions
+sudo chmod 755 "$VENDOR_MNT/bin/houdini" "$VENDOR_MNT/bin/houdini64" "$SYSTEM_MNT/bin/houdini" "$SYSTEM_MNT/bin/houdini64" || abort "Failed to set executable permissions"
+
+# Clean up temporary files
+rm -f /tmp/arm64_dyn /tmp/arm64_exe /tmp/arm_dyn /tmp/arm_exe /tmp/libhoudini_32.so /tmp/libhoudini_64.so /tmp/houdini /tmp/houdini64
+
+echo -e "Houdini files installation completed\n"
+
+
+echo "Umount images"
+sudo find "$ROOT_MNT" -exec touch -hamt 200901010000.00 {} \;
+sudo umount -v "$VENDOR_MNT"
+sudo umount -v "$PRODUCT_MNT"
+sudo umount -v "$SYSTEM_EXT_MNT"
+sudo umount -v "$ROOT_MNT"
+echo -e "done\n"
+echo "Shrink images"
+resize_img "$WORK_DIR/wsa/$ARCH/system.img" || abort
+resize_img "$WORK_DIR/wsa/$ARCH/vendor.img" || abort
+resize_img "$WORK_DIR/wsa/$ARCH/product.img" || abort
+resize_img "$WORK_DIR/wsa/$ARCH/system_ext.img" || abort
+echo -e "Shrink images done\n"
+
+echo "Convert images to vhdx"
+qemu-img convert -q -f raw -o subformat=fixed -O vhdx "$WORK_DIR/wsa/$ARCH/system_ext.img" "$WORK_DIR/wsa/$ARCH/system_ext.vhdx" || abort
+qemu-img convert -q -f raw -o subformat=fixed -O vhdx "$WORK_DIR/wsa/$ARCH/product.img" "$WORK_DIR/wsa/$ARCH/product.vhdx" || abort
+qemu-img convert -q -f raw -o subformat=fixed -O vhdx "$WORK_DIR/wsa/$ARCH/system.img" "$WORK_DIR/wsa/$ARCH/system.vhdx" || abort
+qemu-img convert -q -f raw -o subformat=fixed -O vhdx "$WORK_DIR/wsa/$ARCH/vendor.img" "$WORK_DIR/wsa/$ARCH/vendor.vhdx" || abort
+rm -f "$WORK_DIR/wsa/$ARCH/"*.img || abort
+echo -e "Convert images to vhdx done\n"
 
 echo "Removing signature and add scripts"
 rm -rf "${WORK_DIR:?}"/wsa/"$ARCH"/\[Content_Types\].xml "$WORK_DIR/wsa/$ARCH/AppxBlockMap.xml" "$WORK_DIR/wsa/$ARCH/AppxSignature.p7x" "$WORK_DIR/wsa/$ARCH/AppxMetadata" || abort
