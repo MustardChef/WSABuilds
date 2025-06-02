@@ -56,7 +56,7 @@ jobs:
       - name: Install Ubuntu Dependencies 🧑‍🏭
         uses: awalsh128/cache-apt-pkgs-action@v1
         with:
-          packages: e2fsprogs attr unzip qemu-utils python3-venv
+          packages: e2fsprogs attr unzip qemu-utils python3-venv curl xmlstarlet
           version: 1.0
 
       - name: Check workflow inputs
@@ -85,6 +85,13 @@ jobs:
           chmod -R 777 ./
           mkdir -p download
           ./scripts/build.sh --arch ${{ inputs.arch }} --release-type latest --magisk-ver ${{ inputs.magiskver }} --gapps-brand ${{ inputs.gappsver }} --root-sol ${{ inputs.root }} --custom-model ${{ inputs.devicemodel }} ${{ inputs.amazonflag }} --compress-format ${{ inputs.compressformat }}
+
+      - name: Install Houdini and Process Images 🔧
+        working-directory: MagiskOnWSAOld
+        run: |      
+          chmod +x ./libhoudini/houdini_installer.sh
+          ./libhoudini/houdini_installer.sh "${{ steps.wsa.outputs.artifact_folder }}"
+        shell: bash
 
       - name: Prepare release tag 🏷️
         id: releasetag
