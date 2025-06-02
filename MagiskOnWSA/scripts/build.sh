@@ -685,7 +685,7 @@ fi
 # Install Houdini files only for x64 architecture using local files
 if [ "$ARCH" = "x64" ]; then
     echo "Installing Houdini files from local libhoudini folder (Many Thanks to SupremeGamers)"
-    HOUDINI_LOCAL_PATH="../libhoudini"
+    HOUDINI_LOCAL_PATH="$(realpath ../libhoudini)"
 
     # Verify local Houdini files exist
     if [ ! -d "$HOUDINI_LOCAL_PATH" ]; then
@@ -767,7 +767,11 @@ if [ "$ARCH" = "x64" ]; then
     # Copy all ARM library files from libhoudini/lib64/arm64 to vendor/lib64/arm64
     if [ -d "$HOUDINI_LOCAL_PATH/lib64/arm64" ]; then
         echo "Copying ARM libraries to vendor/lib64/arm64..."
-        sudo cp -r "$HOUDINI_LOCAL_PATH/lib64/arm64/"* "$VENDOR_MNT/lib64/arm64/" 2>/dev/null || echo "Warning: No files found in $HOUDINI_LOCAL_PATH/lib64/arm64 or copy failed"
+        if [ "$(ls -A "$HOUDINI_LOCAL_PATH/lib64/arm64" 2>/dev/null)" ]; then
+            sudo cp -r "$HOUDINI_LOCAL_PATH/lib64/arm64/"* "$VENDOR_MNT/lib64/arm64/" || echo "Warning: Copy failed for $HOUDINI_LOCAL_PATH/lib64/arm64"
+        else
+            echo "Warning: No files found in $HOUDINI_LOCAL_PATH/lib64/arm64"
+        fi
         
         # Set permissions and ownership for all files in vendor/lib64/arm64
         sudo find "$VENDOR_MNT/lib64/arm64" -type f -exec chown root:root {} \; 2>/dev/null || true
@@ -782,7 +786,11 @@ if [ "$ARCH" = "x64" ]; then
     # Copy all files from libhoudini/lib/arm to vendor/lib/arm
     if [ -d "$HOUDINI_LOCAL_PATH/lib/arm" ]; then
         echo "Copying ARM libraries from libhoudini/lib/arm to vendor/lib/arm..."
-        sudo cp -r "$HOUDINI_LOCAL_PATH/lib/arm/"* "$VENDOR_MNT/lib/arm/" 2>/dev/null || echo "Warning: No files found in $HOUDINI_LOCAL_PATH/lib/arm or copy failed"
+        if [ "$(ls -A "$HOUDINI_LOCAL_PATH/lib/arm" 2>/dev/null)" ]; then
+            sudo cp -r "$HOUDINI_LOCAL_PATH/lib/arm/"* "$VENDOR_MNT/lib/arm/" || echo "Warning: Copy failed for $HOUDINI_LOCAL_PATH/lib/arm"
+        else
+            echo "Warning: No files found in $HOUDINI_LOCAL_PATH/lib/arm"
+        fi
         
         # Set permissions and ownership for all files in vendor/lib/arm
         sudo find "$VENDOR_MNT/lib/arm" -type f -exec chown root:root {} \; 2>/dev/null || true
