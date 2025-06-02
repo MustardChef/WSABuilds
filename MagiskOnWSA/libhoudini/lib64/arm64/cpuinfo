@@ -1,0 +1,38 @@
+Processor	: ARMv8 processor rev 1 (aarch64)
+processor	: 0
+BogoMIPS	: 24.00
+Features	: fp asimd aes pmull sha1 sha2 crc32 atomics
+CPU implementer	: 0x4e
+CPU architecture: 8
+CPU variant	: 0x02
+CPU part	: 0x000
+CPU revision	: 1
+
+processor	: 1
+BogoMIPS	: 24.00
+Features	: fp asimd aes pmull sha1 sha2 crc32 atomics
+CPU implementer	: 0x4e
+CPU architecture: 8
+CPU variant	: 0x02
+CPU part	: 0x000
+CPU revision	: 1
+
+processor	: 2
+BogoMIPS	: 24.00
+Features	: fp asimd aes pmull sha1 sha2 crc32 atomics
+CPU implementer	: 0x4e
+CPU architecture: 8
+CPU variant	: 0x02
+CPU part	: 0x000
+CPU revision	: 1
+
+processor	: 3
+BogoMIPS	: 24.00
+Features	: fp asimd aes pmull sha1 sha2 crc32 atomics
+CPU implementer	: 0x4e
+CPU architecture: 8
+CPU variant	: 0x02
+CPU part	: 0x000
+CPU revision	: 1
+
+Hardware	: placeholder

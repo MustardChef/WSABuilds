@@ -1,0 +1,42 @@
+Processor	: ARMv8 processor rev 1 (aarch64)
+processor	: 0
+model name	: ARMv8 Processor rev 1 (v8l)
+BogoMIPS	: 24.00
+Features	: neon vfp half thumb fastmult edsp vfpv3 vfpv4 idiva idivt tls aes sha1 sha2 crc32
+CPU implementer	: 0x4e
+CPU architecture: 8
+CPU variant	: 0x02
+CPU part	: 0x000
+CPU revision	: 1
+
+processor	: 1
+model name	: ARMv8 Processor rev 1 (v8l)
+BogoMIPS	: 24.00
+Features	: neon vfp half thumb fastmult edsp vfpv3 vfpv4 idiva idivt tls aes sha1 sha2 crc32
+CPU implementer	: 0x4e
+CPU architecture: 8
+CPU variant	: 0x02
+CPU part	: 0x000
+CPU revision	: 1
+
+processor	: 2
+model name	: ARMv8 Processor rev 1 (v8l)
+BogoMIPS	: 24.00
+Features	: neon vfp half thumb fastmult edsp vfpv3 vfpv4 idiva idivt tls aes sha1 sha2 crc32
+CPU implementer	: 0x4e
+CPU architecture: 8
+CPU variant	: 0x02
+CPU part	: 0x000
+CPU revision	: 1
+
+processor	: 3
+model name	: ARMv8 Processor rev 1 (v8l)
+BogoMIPS	: 24.00
+Features	: neon vfp half thumb fastmult edsp vfpv3 vfpv4 idiva idivt tls aes sha1 sha2 crc32
+CPU implementer	: 0x4e
+CPU architecture: 8
+CPU variant	: 0x02
+CPU part	: 0x000
+CPU revision	: 1
+
+Hardware	: placeholder

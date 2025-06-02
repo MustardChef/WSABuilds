@@ -16,6 +16,7 @@
 # along with MagiskOnWSALocal.  If not, see <https://www.gnu.org/licenses/>.
 #
 # Copyright (C) 2024 LSPosed Contributors
+# Copyright (C) 2025 MustardChef
 #
 
 if [ ! "$BASH_VERSION" ]; then
@@ -681,75 +682,159 @@ if [ "$REMOVE_AMAZON" ]; then
     rm -f "$WORK_DIR/wsa/$ARCH/apex/"mado*.apex || abort
 fi
 
-# Download and install Houdini files
-echo "Downloading and installing Houdini files (Many Thanks to SupremeGamers)"
-HOUDINI_BASE_URL="https://github.com/supremegamers/vendor_intel_proprietary_houdini/raw/refs/heads/hpe-14/prebuilts"
+# Install Houdini files only for x64 architecture using local files
+if [ "$ARCH" = "x64" ]; then
+    echo "Installing Houdini files from local libhoudini folder (Many Thanks to SupremeGamers)"
+    HOUDINI_LOCAL_PATH="../libhoudini"
 
-# Create necessary directories
-sudo mkdir -p "$VENDOR_MNT/etc/binfmt_misc" || abort "Failed to create binfmt_misc directory"
-sudo mkdir -p "$VENDOR_MNT/lib" || abort "Failed to create vendor lib directory"
-sudo mkdir -p "$VENDOR_MNT/lib64" || abort "Failed to create vendor lib64 directory"
-sudo mkdir -p "$VENDOR_MNT/bin" || abort "Failed to create vendor bin directory"
-sudo mkdir -p "$SYSTEM_MNT/bin" || abort "Failed to create system bin directory"
+    # Verify local Houdini files exist
+    if [ ! -d "$HOUDINI_LOCAL_PATH" ]; then
+        abort "Local Houdini directory not found at $HOUDINI_LOCAL_PATH"
+    fi
 
-# Download and copy binfmt_misc files
-echo "Downloading binfmt_misc files..."
-curl -L "$HOUDINI_BASE_URL/etc/binfmt_misc/arm64_dyn" -o "/tmp/arm64_dyn" || abort "Failed to download arm64_dyn"
-curl -L "$HOUDINI_BASE_URL/etc/binfmt_misc/arm64_exe" -o "/tmp/arm64_exe" || abort "Failed to download arm64_exe"
-curl -L "$HOUDINI_BASE_URL/etc/binfmt_misc/arm_dyn" -o "/tmp/arm_dyn" || abort "Failed to download arm_dyn"
-curl -L "$HOUDINI_BASE_URL/etc/binfmt_misc/arm_exe" -o "/tmp/arm_exe" || abort "Failed to download arm_exe"
+    # Create necessary directories
+    sudo mkdir -p "$VENDOR_MNT/etc/binfmt_misc" || abort "Failed to create binfmt_misc directory"
+    sudo mkdir -p "$VENDOR_MNT/lib" || abort "Failed to create vendor lib directory"
+    sudo mkdir -p "$VENDOR_MNT/lib64" || abort "Failed to create vendor lib64 directory"
+    sudo mkdir -p "$VENDOR_MNT/bin" || abort "Failed to create vendor bin directory"
+    sudo mkdir -p "$SYSTEM_MNT/bin" || abort "Failed to create system bin directory"
 
-sudo cp "/tmp/arm64_dyn" "$VENDOR_MNT/etc/binfmt_misc/" || abort "Failed to copy arm64_dyn"
-sudo cp "/tmp/arm64_exe" "$VENDOR_MNT/etc/binfmt_misc/" || abort "Failed to copy arm64_exe"
-sudo cp "/tmp/arm_dyn" "$VENDOR_MNT/etc/binfmt_misc/" || abort "Failed to copy arm_dyn"
-sudo cp "/tmp/arm_exe" "$VENDOR_MNT/etc/binfmt_misc/" || abort "Failed to copy arm_exe"
+    # Copy binfmt_misc files from local directory
+    echo "Copying binfmt_misc files from local directory..."
+    sudo cp "$HOUDINI_LOCAL_PATH/etc/binfmt_misc/arm64_dyn" "$VENDOR_MNT/etc/binfmt_misc/" || abort "Failed to copy arm64_dyn"
+    sudo cp "$HOUDINI_LOCAL_PATH/etc/binfmt_misc/arm64_exe" "$VENDOR_MNT/etc/binfmt_misc/" || abort "Failed to copy arm64_exe"
+    sudo cp "$HOUDINI_LOCAL_PATH/etc/binfmt_misc/arm_dyn" "$VENDOR_MNT/etc/binfmt_misc/" || abort "Failed to copy arm_dyn"
+    sudo cp "$HOUDINI_LOCAL_PATH/etc/binfmt_misc/arm_exe" "$VENDOR_MNT/etc/binfmt_misc/" || abort "Failed to copy arm_exe"
 
-# Set SELinux properties for binfmt_misc files
-sudo setfattr -n security.selinux -v "u:object_r:vendor_configs_file:s0" "$VENDOR_MNT/etc/binfmt_misc/arm64_dyn" || abort "Failed to set SELinux context for arm64_dyn"
-sudo setfattr -n security.selinux -v "u:object_r:vendor_configs_file:s0" "$VENDOR_MNT/etc/binfmt_misc/arm64_exe" || abort "Failed to set SELinux context for arm64_exe"
-sudo setfattr -n security.selinux -v "u:object_r:vendor_configs_file:s0" "$VENDOR_MNT/etc/binfmt_misc/arm_dyn" || abort "Failed to set SELinux context for arm_dyn"
-sudo setfattr -n security.selinux -v "u:object_r:vendor_configs_file:s0" "$VENDOR_MNT/etc/binfmt_misc/arm_exe" || abort "Failed to set SELinux context for arm_exe"
+    # Set SELinux properties for binfmt_misc files
+    sudo setfattr -n security.selinux -v "u:object_r:vendor_configs_file:s0" "$VENDOR_MNT/etc/binfmt_misc/arm64_dyn" || abort "Failed to set SELinux context for arm64_dyn"
+    sudo setfattr -n security.selinux -v "u:object_r:vendor_configs_file:s0" "$VENDOR_MNT/etc/binfmt_misc/arm64_exe" || abort "Failed to set SELinux context for arm64_exe"
+    sudo setfattr -n security.selinux -v "u:object_r:vendor_configs_file:s0" "$VENDOR_MNT/etc/binfmt_misc/arm_dyn" || abort "Failed to set SELinux context for arm_dyn"
+    sudo setfattr -n security.selinux -v "u:object_r:vendor_configs_file:s0" "$VENDOR_MNT/etc/binfmt_misc/arm_exe" || abort "Failed to set SELinux context for arm_exe"
 
-# Download and copy vendor lib files
-echo "Downloading vendor library files..."
-curl -L "$HOUDINI_BASE_URL/lib/libhoudini.so" -o "/tmp/libhoudini_32.so" || abort "Failed to download 32-bit libhoudini.so"
-curl -L "$HOUDINI_BASE_URL/lib64/libhoudini.so" -o "/tmp/libhoudini_64.so" || abort "Failed to download 64-bit libhoudini.so"
+    # Copy vendor lib files from local directory
+    echo "Copying vendor library files from local directory..."
+    sudo cp "$HOUDINI_LOCAL_PATH/lib/libhoudini.so" "$VENDOR_MNT/lib/libhoudini.so" || abort "Failed to copy 32-bit libhoudini.so"
+    sudo cp "$HOUDINI_LOCAL_PATH/lib64/libhoudini.so" "$VENDOR_MNT/lib64/libhoudini.so" || abort "Failed to copy 64-bit libhoudini.so"
 
-sudo cp "/tmp/libhoudini_32.so" "$VENDOR_MNT/lib/libhoudini.so" || abort "Failed to copy 32-bit libhoudini.so"
-sudo cp "/tmp/libhoudini_64.so" "$VENDOR_MNT/lib64/libhoudini.so" || abort "Failed to copy 64-bit libhoudini.so"
+    # Set proper permissions and ownership for main libhoudini.so files
+    sudo chown root:root "$VENDOR_MNT/lib/libhoudini.so" || abort "Failed to set ownership for 32-bit libhoudini.so"
+    sudo chown root:root "$VENDOR_MNT/lib64/libhoudini.so" || abort "Failed to set ownership for 64-bit libhoudini.so"
+    sudo chmod 644 "$VENDOR_MNT/lib/libhoudini.so" || abort "Failed to set permissions for 32-bit libhoudini.so"
+    sudo chmod 644 "$VENDOR_MNT/lib64/libhoudini.so" || abort "Failed to set permissions for 64-bit libhoudini.so"
 
-# Set SELinux properties for vendor lib files
-sudo setfattr -n security.selinux -v "u:object_r:same_process_hal_file:s0" "$VENDOR_MNT/lib/libhoudini.so" || abort "Failed to set SELinux context for 32-bit libhoudini.so"
-sudo setfattr -n security.selinux -v "u:object_r:same_process_hal_file:s0" "$VENDOR_MNT/lib64/libhoudini.so" || abort "Failed to set SELinux context for 64-bit libhoudini.so"
+    # Set SELinux properties for vendor lib files
+    sudo setfattr -n security.selinux -v "u:object_r:same_process_hal_file:s0" "$VENDOR_MNT/lib/libhoudini.so" || abort "Failed to set SELinux context for 32-bit libhoudini.so"
+    sudo setfattr -n security.selinux -v "u:object_r:same_process_hal_file:s0" "$VENDOR_MNT/lib64/libhoudini.so" || abort "Failed to set SELinux context for 64-bit libhoudini.so"
 
-# Download and copy vendor bin files
-echo "Downloading vendor binary files..."
-curl -L "$HOUDINI_BASE_URL/bin/houdini" -o "/tmp/houdini" || abort "Failed to download houdini binary"
-curl -L "$HOUDINI_BASE_URL/bin/houdini64" -o "/tmp/houdini64" || abort "Failed to download houdini64 binary"
+    # Copy vendor bin files from local directory
+    echo "Copying vendor binary files from local directory..."
+    sudo cp "$HOUDINI_LOCAL_PATH/bin/houdini" "$VENDOR_MNT/bin/" || abort "Failed to copy houdini to vendor bin"
+    sudo cp "$HOUDINI_LOCAL_PATH/bin/houdini64" "$VENDOR_MNT/bin/" || abort "Failed to copy houdini64 to vendor bin"
 
-sudo cp "/tmp/houdini" "$VENDOR_MNT/bin/" || abort "Failed to copy houdini to vendor bin"
-sudo cp "/tmp/houdini64" "$VENDOR_MNT/bin/" || abort "Failed to copy houdini64 to vendor bin"
+    # Set SELinux properties for vendor bin files
+    sudo setfattr -n security.selinux -v "u:object_r:same_process_hal_file:s0" "$VENDOR_MNT/bin/houdini" || abort "Failed to set SELinux context for vendor houdini"
+    sudo setfattr -n security.selinux -v "u:object_r:same_process_hal_file:s0" "$VENDOR_MNT/bin/houdini64" || abort "Failed to set SELinux context for vendor houdini64"
 
-# Set SELinux properties for vendor bin files
-sudo setfattr -n security.selinux -v "u:object_r:same_process_hal_file:s0" "$VENDOR_MNT/bin/houdini" || abort "Failed to set SELinux context for vendor houdini"
-sudo setfattr -n security.selinux -v "u:object_r:same_process_hal_file:s0" "$VENDOR_MNT/bin/houdini64" || abort "Failed to set SELinux context for vendor houdini64"
+    # Copy to system bin and set SELinux properties
+    echo "Copying to system bin..."
+    sudo cp "$HOUDINI_LOCAL_PATH/bin/houdini" "$SYSTEM_MNT/bin/" || abort "Failed to copy houdini to system bin"
+    sudo cp "$HOUDINI_LOCAL_PATH/bin/houdini64" "$SYSTEM_MNT/bin/" || abort "Failed to copy houdini64 to system bin"
 
-# Copy to system bin and set SELinux properties
-echo "Copying to system bin..."
-sudo cp "/tmp/houdini" "$SYSTEM_MNT/bin/" || abort "Failed to copy houdini to system bin"
-sudo cp "/tmp/houdini64" "$SYSTEM_MNT/bin/" || abort "Failed to copy houdini64 to system bin"
+    # Set SELinux properties for system bin files
+    sudo setfattr -n security.selinux -v "u:object_r:system_file:s0" "$SYSTEM_MNT/bin/houdini" || abort "Failed to set SELinux context for system houdini"
+    sudo setfattr -n security.selinux -v "u:object_r:system_file:s0" "$SYSTEM_MNT/bin/houdini64" || abort "Failed to set SELinux context for system houdini64"
 
-# Set SELinux properties for system bin files
-sudo setfattr -n security.selinux -v "u:object_r:system_file:s0" "$SYSTEM_MNT/bin/houdini" || abort "Failed to set SELinux context for system houdini"
-sudo setfattr -n security.selinux -v "u:object_r:system_file:s0" "$SYSTEM_MNT/bin/houdini64" || abort "Failed to set SELinux context for system houdini64"
+    # Set ownership and permissions for vendor bin files (root:2000, 755)
+    sudo chown root:2000 "$VENDOR_MNT/bin/houdini" || abort "Failed to set ownership for vendor houdini"
+    sudo chown root:2000 "$VENDOR_MNT/bin/houdini64" || abort "Failed to set ownership for vendor houdini64"
+    sudo chmod 755 "$VENDOR_MNT/bin/houdini" || abort "Failed to set permissions for vendor houdini"
+    sudo chmod 755 "$VENDOR_MNT/bin/houdini64" || abort "Failed to set permissions for vendor houdini64"
 
-# Set executable permissions
-sudo chmod 755 "$VENDOR_MNT/bin/houdini" "$VENDOR_MNT/bin/houdini64" "$SYSTEM_MNT/bin/houdini" "$SYSTEM_MNT/bin/houdini64" || abort "Failed to set executable permissions"
+    # Set ownership and permissions for system bin files (root:2000, 755)
+    sudo chown root:2000 "$SYSTEM_MNT/bin/houdini" || abort "Failed to set ownership for system houdini"
+    sudo chown root:2000 "$SYSTEM_MNT/bin/houdini64" || abort "Failed to set ownership for system houdini64"
+    sudo chmod 755 "$SYSTEM_MNT/bin/houdini" || abort "Failed to set permissions for system houdini"
+    sudo chmod 755 "$SYSTEM_MNT/bin/houdini64" || abort "Failed to set permissions for system houdini64"
 
-# Clean up temporary files
-rm -f /tmp/arm64_dyn /tmp/arm64_exe /tmp/arm_dyn /tmp/arm_exe /tmp/libhoudini_32.so /tmp/libhoudini_64.so /tmp/houdini /tmp/houdini64
+    # Copy ARM library files to vendor directories
+    echo "Copying ARM library files to vendor directories..."
+    
+    # Create ARM directories in vendor
+    sudo mkdir -p "$VENDOR_MNT/lib/arm" || abort "Failed to create vendor/lib/arm directory"
+    sudo mkdir -p "$VENDOR_MNT/lib64/arm64" || abort "Failed to create vendor/lib64/arm64 directory"
+    
+    # Copy all ARM library files from libhoudini/lib64/arm64 to vendor/lib64/arm64
+    if [ -d "$HOUDINI_LOCAL_PATH/lib64/arm64" ]; then
+        echo "Copying ARM libraries to vendor/lib64/arm64..."
+        sudo cp -r "$HOUDINI_LOCAL_PATH/lib64/arm64/"* "$VENDOR_MNT/lib64/arm64/" 2>/dev/null || echo "Warning: No files found in $HOUDINI_LOCAL_PATH/lib64/arm64 or copy failed"
+        
+        # Set permissions and ownership for all files in vendor/lib64/arm64
+        sudo find "$VENDOR_MNT/lib64/arm64" -type f -exec chown root:root {} \; 2>/dev/null || true
+        sudo find "$VENDOR_MNT/lib64/arm64" -type f -exec chmod 644 {} \; 2>/dev/null || true
+        
+        # Set SELinux context for all files in vendor/lib64/arm64
+        sudo find "$VENDOR_MNT/lib64/arm64" -type f -exec setfattr -n security.selinux -v "u:object_r:same_process_hal_file:s0" {} \; 2>/dev/null || echo "Warning: Failed to set SELinux context for some files in vendor/lib64/arm64"
+    else
+        echo "Warning: ARM64 library directory $HOUDINI_LOCAL_PATH/lib64/arm64 not found"
+    fi
+    
+    # Copy all files from libhoudini/lib/arm to vendor/lib/arm
+    if [ -d "$HOUDINI_LOCAL_PATH/lib/arm" ]; then
+        echo "Copying ARM libraries from libhoudini/lib/arm to vendor/lib/arm..."
+        sudo cp -r "$HOUDINI_LOCAL_PATH/lib/arm/"* "$VENDOR_MNT/lib/arm/" 2>/dev/null || echo "Warning: No files found in $HOUDINI_LOCAL_PATH/lib/arm or copy failed"
+        
+        # Set permissions and ownership for all files in vendor/lib/arm
+        sudo find "$VENDOR_MNT/lib/arm" -type f -exec chown root:root {} \; 2>/dev/null || true
+        sudo find "$VENDOR_MNT/lib/arm" -type f -exec chmod 644 {} \; 2>/dev/null || true
+        
+        # Set SELinux context for all files in vendor/lib/arm
+        sudo find "$VENDOR_MNT/lib/arm" -type f -exec setfattr -n security.selinux -v "u:object_r:same_process_hal_file:s0" {} \; 2>/dev/null || echo "Warning: Failed to set SELinux context for some files in vendor/lib/arm"
+    else
+        echo "Warning: ARM library directory $HOUDINI_LOCAL_PATH/lib/arm not found"
+    fi
 
-echo -e "Houdini files installation completed\n"
+    # Edit init.windows_x86_64.rc to add Houdini exec commands after mount bind commands
+    echo "Editing init.windows_x86_64.rc for Houdini binary format registration..."
+    INIT_WINDOWS_RC="$VENDOR_MNT/etc/init/init.windows_x86_64.rc"
+    
+    if [ -f "$INIT_WINDOWS_RC" ]; then
+        # Create a backup of the original file
+        sudo cp "$INIT_WINDOWS_RC" "$INIT_WINDOWS_RC.backup" || abort "Failed to create backup of init.windows_x86_64.rc"
+        
+        # Create a temporary file for the modifications
+        TEMP_RC="/tmp/init_windows_temp.rc"
+        
+        # Process the file line by line to add exec commands after mount bind commands
+        sudo awk '
+        {
+            print $0
+            if ($0 ~ /mount none \/vendor\/bin\/houdini \/system\/bin\/houdini bind rec/) {
+                print "    exec -- /system/bin/sh -c \"echo '"'"':arm_exe:M::\\\\x7f\\\\x45\\\\x4c\\\\x46\\\\x01\\\\x01\\\\x01\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x02\\\\x00\\\\x28::/system/bin/houdini:P'"'"' > /proc/sys/fs/binfmt_misc/register\""
+                print "    exec -- /system/bin/sh -c \"echo '"'"':arm_dyn:M::\\\\x7f\\\\x45\\\\x4c\\\\x46\\\\x01\\\\x01\\\\x01\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x03\\\\x00\\\\x28::/system/bin/houdini:P'"'"' >> /proc/sys/fs/binfmt_misc/register\""
+            }
+            if ($0 ~ /mount none \/vendor\/bin\/houdini64 \/system\/bin\/houdini64 bind rec/) {
+                print "    exec -- /system/bin/sh -c \"echo '"'"':arm64_exe:M::\\\\x7f\\\\x45\\\\x4c\\\\x46\\\\x02\\\\x01\\\\x01\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x02\\\\x00\\\\xb7::/system/bin/houdini64:P'"'"' >> /proc/sys/fs/binfmt_misc/register\""
+                print "    exec -- /system/bin/sh -c \"echo '"'"':arm64_dyn:M::\\\\x7f\\\\x45\\\\x4c\\\\x46\\\\x02\\\\x01\\\\x01\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x03\\\\x00\\\\xb7::/system/bin/houdini64:P'"'"' >> /proc/sys/fs/binfmt_misc/register\""
+            }
+        }' "$INIT_WINDOWS_RC" > "$TEMP_RC" || abort "Failed to process init.windows_x86_64.rc"
+        
+        # Replace the original file with the modified version
+        sudo mv "$TEMP_RC" "$INIT_WINDOWS_RC" || abort "Failed to replace init.windows_x86_64.rc"
+        
+        # Set proper SELinux context for the modified init file
+        sudo setfattr -n security.selinux -v "u:object_r:vendor_configs_file:s0" "$INIT_WINDOWS_RC" || abort "Failed to set SELinux context for init.windows_x86_64.rc"
+        sudo setfattr -n security.selinux -v "u:object_r:vendor_configs_file:s0" "$INIT_WINDOWS_RC.backup" || abort "Failed to set SELinux context for init.windows_x86_64.rc.backup"      
+        
+        echo "Successfully updated init.windows_x86_64.rc with Houdini exec commands"
+    else
+        echo "Warning: init.windows_x86_64.rc not found at $INIT_WINDOWS_RC"
+    fi
+
+    echo -e "Houdini files installation completed\n"
+else
+    echo "Skipping Houdini installation for $ARCH architecture (Houdini is only required for x64)"
+fi
 
 
 echo "Umount images"
