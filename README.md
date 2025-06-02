@@ -2,7 +2,7 @@
 > <details>
 > <summary><h3>IF YOU HAVE BEEN RECENTLY HAVING ISSUES WITH SOME APPS BREAKING OR NOT STARTING OR APPS GETTING SUCK AT LOADING SCREEN OR APPS STUCK ON SPLASHSCREEN ( STUCK ON THE APP ICON SCREEN) OR ANY OTHER SIMILAR CASES AFTER <code>2ND JUNE 2025</code>. (CLICK HERE)</h3></summary>
 >   
-> ### UPDATE TO THE LATEST LTS AND NON-LTS RELEASES:
+> ### UPDATE TO THE LATEST LTS AND NON-LTS RELEASES:   
 >
 > - ### LTS Releases:
 >    - ``Magisk is bundled by default on builds with Google Apps (GApps)):``
@@ -14,6 +14,8 @@
 >    - [Windows 11 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2407.40000.4.0_v2)
 >    - [Windows 10 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2407.40000.4.0_v2)
 >
+> #### If some apps that worked before, still refuse to work after updating, try clearing the app data and cache or reinstalling the apps. If the issue still occurs, you may need to perform a clean install to fix some apps. Create a backup before proceeding. 
+>      
 > #### LET ME KNOW VIA GITHUB ISSUES, THE WSA COMMUNITY DISCORD OR THE r/WSA SUBREDDIT IF THESE RELEASES HAVE SOLVED YOUR ISSUE. THANK YOU.
 > </details>
 
