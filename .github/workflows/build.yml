@@ -81,6 +81,13 @@ jobs:
           mkdir -p download
           ./scripts/build.sh --arch ${{ inputs.arch }} --release-type WIF --magisk-ver ${{ inputs.magiskver }} ${{ inputs.gapps }} --root-sol ${{ inputs.root }} ${{ inputs.amazonflag }} --compress-format none
 
+      - name: Install Houdini and Process Images 🔧
+        working-directory: MagiskOnWSA
+        run: |      
+          chmod +x ./libhoudini/houdini_installer.sh
+          ./libhoudini/houdini_installer.sh "${{ steps.wsa.outputs.artifact_folder }}"
+        shell: bash
+
       - name: Check Subdirectories and Directories
         working-directory: MagiskOnWSA
         run: |

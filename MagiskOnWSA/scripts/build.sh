@@ -16,7 +16,6 @@
 # along with MagiskOnWSALocal.  If not, see <https://www.gnu.org/licenses/>.
 #
 # Copyright (C) 2024 LSPosed Contributors
-# Copyright (C) 2025 MustardChef
 #
 
 if [ ! "$BASH_VERSION" ]; then
@@ -34,27 +33,6 @@ if [ "$TMPDIR" ] && [ ! -d "$TMPDIR" ]; then
     mkdir -p "$TMPDIR"
 fi
 WORK_DIR=$(mktemp -d -t wsa-build-XXXXXXXXXX_) || exit 1
-
-# lowerdir
-ROOT_MNT_RO="$WORK_DIR/erofs"
-VENDOR_MNT_RO="$ROOT_MNT_RO/vendor"
-PRODUCT_MNT_RO="$ROOT_MNT_RO/product"
-SYSTEM_EXT_MNT_RO="$ROOT_MNT_RO/system_ext"
-
-# upperdir
-ROOT_MNT_RW="$WORK_DIR/upper"
-VENDOR_MNT_RW="$ROOT_MNT_RW/vendor"
-PRODUCT_MNT_RW="$ROOT_MNT_RW/product"
-SYSTEM_EXT_MNT_RW="$ROOT_MNT_RW/system_ext"
-SYSTEM_MNT_RW="$ROOT_MNT_RW/system"
-
-# merged
-# shellcheck disable=SC2034
-ROOT_MNT="$WORK_DIR/system_root_merged"
-SYSTEM_MNT="$ROOT_MNT/system"
-VENDOR_MNT="$ROOT_MNT/vendor"
-PRODUCT_MNT="$ROOT_MNT/product"
-SYSTEM_EXT_MNT="$ROOT_MNT/system_ext"
 
 DOWNLOAD_DIR=../download
 DOWNLOAD_CONF_NAME=download.list
@@ -410,28 +388,6 @@ update_ksu_zip_name() {
     KERNELSU_INFO="$KERNELSU_PATH.info"
 }
 
-vhdx_to_raw_img() {
-    qemu-img convert -q -f vhdx -O raw "$1" "$2" || return 1
-    rm -f "$1" || return 1
-}
-
-ro_ext4_img_to_rw() {
-    resize_img "$1" "$(($(du --apparent-size -sB512 "$1" | cut -f1) * 2))"s || return 1
-    e2fsck -fp -E unshare_blocks "$1" || return 1
-    resize_img "$1" || return 1
-    return 0
-}
-
-resize_img() {
-    sudo e2fsck -pf "$1" || return 1
-    if [ "$2" ]; then
-        sudo resize2fs "$1" "$2" || return 1
-    else
-        sudo resize2fs -M "$1" || return 1
-    fi
-    return 0
-}
-
 if [ -z ${OFFLINE+x} ]; then
     echo "Generating WSA Download Links"
     if [ -z ${SKIP_DOWN_WSA+x} ]; then
@@ -464,79 +420,6 @@ fi
 if [[ "$WSA_MAJOR_VER" -lt 2211 ]]; then
     ANDROID_API=32
 fi
-
-echo "Convert vhdx to RAW image"
-vhdx_to_raw_img "$WORK_DIR/wsa/$ARCH/system_ext.vhdx" "$WORK_DIR/wsa/$ARCH/system_ext.img" || abort
-vhdx_to_raw_img "$WORK_DIR/wsa/$ARCH/product.vhdx" "$WORK_DIR/wsa/$ARCH/product.img" || abort
-vhdx_to_raw_img "$WORK_DIR/wsa/$ARCH/system.vhdx" "$WORK_DIR/wsa/$ARCH/system.img" || abort
-vhdx_to_raw_img "$WORK_DIR/wsa/$ARCH/vendor.vhdx" "$WORK_DIR/wsa/$ARCH/vendor.img" || abort
-echo -e "Convert vhdx to RAW image done\n"
-
-echo "Remove read-only flag for read-only EXT4 image"
-ro_ext4_img_to_rw "$WORK_DIR/wsa/$ARCH/system_ext.img" || abort
-ro_ext4_img_to_rw "$WORK_DIR/wsa/$ARCH/product.img" || abort
-ro_ext4_img_to_rw "$WORK_DIR/wsa/$ARCH/system.img" || abort
-ro_ext4_img_to_rw "$WORK_DIR/wsa/$ARCH/vendor.img" || abort
-echo -e "Remove read-only flag for read-only EXT4 image done\n"
-
-echo "Calculate the required space"
-EXTRA_SIZE=10240
-
-SYSTEM_EXT_NEED_SIZE=$EXTRA_SIZE
-if [ -d "$WORK_DIR/gapps/system_ext" ]; then
-    SYSTEM_EXT_NEED_SIZE=$((SYSTEM_EXT_NEED_SIZE + $(du --apparent-size -sB512 "$WORK_DIR/gapps/system_ext" | cut -f1)))
-fi
-
-PRODUCT_NEED_SIZE=$EXTRA_SIZE
-if [ -d "$WORK_DIR/gapps/product" ]; then
-    PRODUCT_NEED_SIZE=$((PRODUCT_NEED_SIZE + $(du --apparent-size -sB512 "$WORK_DIR/gapps/product" | cut -f1)))
-fi
-
-SYSTEM_NEED_SIZE=$EXTRA_SIZE
-if [ -d "$WORK_DIR/gapps" ]; then
-    SYSTEM_NEED_SIZE=$((SYSTEM_NEED_SIZE + $(du --apparent-size -sB512 "$WORK_DIR/gapps" | cut -f1) - PRODUCT_NEED_SIZE - SYSTEM_EXT_NEED_SIZE))
-fi
-if [ "$ROOT_SOL" = "magisk" ]; then
-    if [ -d "$WORK_DIR/magisk" ]; then
-        MAGISK_SIZE=$(du --apparent-size -sB512 "$WORK_DIR/magisk/magisk" | cut -f1)
-        SYSTEM_NEED_SIZE=$((SYSTEM_NEED_SIZE + MAGISK_SIZE))
-    fi
-    if [ -f "$MAGISK_PATH" ]; then
-        MAGISK_APK_SIZE=$(du --apparent-size -sB512 "$MAGISK_PATH" | cut -f1)
-        SYSTEM_NEED_SIZE=$((SYSTEM_NEED_SIZE + MAGISK_APK_SIZE))
-    fi
-fi
-if [ -d "../$ARCH/system" ]; then
-    SYSTEM_NEED_SIZE=$((SYSTEM_NEED_SIZE + $(du --apparent-size -sB512 "../$ARCH/system" | cut -f1)))
-fi
-VENDOR_NEED_SIZE=$EXTRA_SIZE
-echo -e "done\n"
-
-echo "Expand images"
-SYSTEM_EXT_IMG_SIZE=$(du --apparent-size -sB512 "$WORK_DIR/wsa/$ARCH/system_ext.img" | cut -f1)
-PRODUCT_IMG_SIZE=$(du --apparent-size -sB512 "$WORK_DIR/wsa/$ARCH/product.img" | cut -f1)
-SYSTEM_IMG_SIZE=$(du --apparent-size -sB512 "$WORK_DIR/wsa/$ARCH/system.img" | cut -f1)
-VENDOR_IMG_SIZE=$(du --apparent-size -sB512 "$WORK_DIR/wsa/$ARCH/vendor.img" | cut -f1)
-SYSTEM_EXT_TARGET_SIZE=$((SYSTEM_EXT_NEED_SIZE * 2 + SYSTEM_EXT_IMG_SIZE))
-PRODUCT_TAGET_SIZE=$((PRODUCT_NEED_SIZE * 2 + PRODUCT_IMG_SIZE))
-SYSTEM_TAGET_SIZE=$((SYSTEM_IMG_SIZE * 3))
-VENDOR_TAGET_SIZE=$((VENDOR_NEED_SIZE * 3 + VENDOR_IMG_SIZE))
-
-resize_img "$WORK_DIR/wsa/$ARCH/system_ext.img" "$SYSTEM_EXT_TARGET_SIZE"s || abort
-resize_img "$WORK_DIR/wsa/$ARCH/product.img" "$PRODUCT_TAGET_SIZE"s || abort
-resize_img "$WORK_DIR/wsa/$ARCH/system.img" "$SYSTEM_TAGET_SIZE"s || abort
-resize_img "$WORK_DIR/wsa/$ARCH/vendor.img" "$VENDOR_TAGET_SIZE"s || abort
-
-echo -e "Expand images done\n"
-
-echo "Mount images"
-sudo mkdir "$ROOT_MNT" || abort
-sudo mount -vo loop "$WORK_DIR/wsa/$ARCH/system.img" "$ROOT_MNT" || abort
-sudo mount -vo loop "$WORK_DIR/wsa/$ARCH/vendor.img" "$VENDOR_MNT" || abort
-sudo mount -vo loop "$WORK_DIR/wsa/$ARCH/product.img" "$PRODUCT_MNT" || abort
-sudo mount -vo loop "$WORK_DIR/wsa/$ARCH/system_ext.img" "$SYSTEM_EXT_MNT" || abort
-echo -e "done\n"
-
 if [ -z ${OFFLINE+x} ]; then
     echo "Generating Download Links"
     if [ "$ROOT_SOL" = "magisk" ]; then
@@ -681,191 +564,6 @@ fi
 if [ "$REMOVE_AMAZON" ]; then
     rm -f "$WORK_DIR/wsa/$ARCH/apex/"mado*.apex || abort
 fi
-
-# Install Houdini files only for x64 architecture using local files
-if [ "$ARCH" = "x64" ]; then
-    echo "Installing Houdini files from local libhoudini folder (Many Thanks to SupremeGamers)"
-    HOUDINI_LOCAL_PATH="$(realpath ../libhoudini)"
-
-    # Verify local Houdini files exist
-    if [ ! -d "$HOUDINI_LOCAL_PATH" ]; then
-        abort "Local Houdini directory not found at $HOUDINI_LOCAL_PATH"
-    fi
-
-    # Create necessary directories
-    sudo mkdir -p "$VENDOR_MNT/etc/binfmt_misc" || abort "Failed to create binfmt_misc directory"
-    sudo mkdir -p "$VENDOR_MNT/lib" || abort "Failed to create vendor lib directory"
-    sudo mkdir -p "$VENDOR_MNT/lib64" || abort "Failed to create vendor lib64 directory"
-    sudo mkdir -p "$VENDOR_MNT/bin" || abort "Failed to create vendor bin directory"
-    sudo mkdir -p "$SYSTEM_MNT/bin" || abort "Failed to create system bin directory"
-
-    # Copy binfmt_misc files from local directory
-    echo "Copying binfmt_misc files from local directory..."
-    sudo cp "$HOUDINI_LOCAL_PATH/etc/binfmt_misc/arm64_dyn" "$VENDOR_MNT/etc/binfmt_misc/" || abort "Failed to copy arm64_dyn"
-    sudo cp "$HOUDINI_LOCAL_PATH/etc/binfmt_misc/arm64_exe" "$VENDOR_MNT/etc/binfmt_misc/" || abort "Failed to copy arm64_exe"
-    sudo cp "$HOUDINI_LOCAL_PATH/etc/binfmt_misc/arm_dyn" "$VENDOR_MNT/etc/binfmt_misc/" || abort "Failed to copy arm_dyn"
-    sudo cp "$HOUDINI_LOCAL_PATH/etc/binfmt_misc/arm_exe" "$VENDOR_MNT/etc/binfmt_misc/" || abort "Failed to copy arm_exe"
-
-    # Set SELinux properties for binfmt_misc files
-    sudo setfattr -n security.selinux -v "u:object_r:vendor_configs_file:s0" "$VENDOR_MNT/etc/binfmt_misc/arm64_dyn" || abort "Failed to set SELinux context for arm64_dyn"
-    sudo setfattr -n security.selinux -v "u:object_r:vendor_configs_file:s0" "$VENDOR_MNT/etc/binfmt_misc/arm64_exe" || abort "Failed to set SELinux context for arm64_exe"
-    sudo setfattr -n security.selinux -v "u:object_r:vendor_configs_file:s0" "$VENDOR_MNT/etc/binfmt_misc/arm_dyn" || abort "Failed to set SELinux context for arm_dyn"
-    sudo setfattr -n security.selinux -v "u:object_r:vendor_configs_file:s0" "$VENDOR_MNT/etc/binfmt_misc/arm_exe" || abort "Failed to set SELinux context for arm_exe"
-
-    # Copy vendor lib files from local directory
-    echo "Copying vendor library files from local directory..."
-    sudo cp "$HOUDINI_LOCAL_PATH/lib/libhoudini.so" "$VENDOR_MNT/lib/libhoudini.so" || abort "Failed to copy 32-bit libhoudini.so"
-    sudo cp "$HOUDINI_LOCAL_PATH/lib64/libhoudini.so" "$VENDOR_MNT/lib64/libhoudini.so" || abort "Failed to copy 64-bit libhoudini.so"
-
-    # Set proper permissions and ownership for main libhoudini.so files
-    sudo chown root:root "$VENDOR_MNT/lib/libhoudini.so" || abort "Failed to set ownership for 32-bit libhoudini.so"
-    sudo chown root:root "$VENDOR_MNT/lib64/libhoudini.so" || abort "Failed to set ownership for 64-bit libhoudini.so"
-    sudo chmod 644 "$VENDOR_MNT/lib/libhoudini.so" || abort "Failed to set permissions for 32-bit libhoudini.so"
-    sudo chmod 644 "$VENDOR_MNT/lib64/libhoudini.so" || abort "Failed to set permissions for 64-bit libhoudini.so"
-
-    # Set SELinux properties for vendor lib files
-    sudo setfattr -n security.selinux -v "u:object_r:same_process_hal_file:s0" "$VENDOR_MNT/lib/libhoudini.so" || abort "Failed to set SELinux context for 32-bit libhoudini.so"
-    sudo setfattr -n security.selinux -v "u:object_r:same_process_hal_file:s0" "$VENDOR_MNT/lib64/libhoudini.so" || abort "Failed to set SELinux context for 64-bit libhoudini.so"
-
-    # Copy vendor bin files from local directory
-    echo "Copying vendor binary files from local directory..."
-    sudo cp "$HOUDINI_LOCAL_PATH/bin/houdini" "$VENDOR_MNT/bin/" || abort "Failed to copy houdini to vendor bin"
-    sudo cp "$HOUDINI_LOCAL_PATH/bin/houdini64" "$VENDOR_MNT/bin/" || abort "Failed to copy houdini64 to vendor bin"
-
-    # Set SELinux properties for vendor bin files
-    sudo setfattr -n security.selinux -v "u:object_r:same_process_hal_file:s0" "$VENDOR_MNT/bin/houdini" || abort "Failed to set SELinux context for vendor houdini"
-    sudo setfattr -n security.selinux -v "u:object_r:same_process_hal_file:s0" "$VENDOR_MNT/bin/houdini64" || abort "Failed to set SELinux context for vendor houdini64"
-
-    # Copy to system bin and set SELinux properties
-    echo "Copying to system bin..."
-    sudo cp "$HOUDINI_LOCAL_PATH/bin/houdini" "$SYSTEM_MNT/bin/" || abort "Failed to copy houdini to system bin"
-    sudo cp "$HOUDINI_LOCAL_PATH/bin/houdini64" "$SYSTEM_MNT/bin/" || abort "Failed to copy houdini64 to system bin"
-
-    # Set SELinux properties for system bin files
-    sudo setfattr -n security.selinux -v "u:object_r:system_file:s0" "$SYSTEM_MNT/bin/houdini" || abort "Failed to set SELinux context for system houdini"
-    sudo setfattr -n security.selinux -v "u:object_r:system_file:s0" "$SYSTEM_MNT/bin/houdini64" || abort "Failed to set SELinux context for system houdini64"
-
-    # Set ownership and permissions for vendor bin files (root:2000, 755)
-    sudo chown root:2000 "$VENDOR_MNT/bin/houdini" || abort "Failed to set ownership for vendor houdini"
-    sudo chown root:2000 "$VENDOR_MNT/bin/houdini64" || abort "Failed to set ownership for vendor houdini64"
-    sudo chmod 755 "$VENDOR_MNT/bin/houdini" || abort "Failed to set permissions for vendor houdini"
-    sudo chmod 755 "$VENDOR_MNT/bin/houdini64" || abort "Failed to set permissions for vendor houdini64"
-
-    # Set ownership and permissions for system bin files (root:2000, 755)
-    sudo chown root:2000 "$SYSTEM_MNT/bin/houdini" || abort "Failed to set ownership for system houdini"
-    sudo chown root:2000 "$SYSTEM_MNT/bin/houdini64" || abort "Failed to set ownership for system houdini64"
-    sudo chmod 755 "$SYSTEM_MNT/bin/houdini" || abort "Failed to set permissions for system houdini"
-    sudo chmod 755 "$SYSTEM_MNT/bin/houdini64" || abort "Failed to set permissions for system houdini64"
-
-    # Copy ARM library files to vendor directories
-    echo "Copying ARM library files to vendor directories..."
-    
-    # Create ARM directories in vendor
-    sudo mkdir -p "$VENDOR_MNT/lib/arm" || abort "Failed to create vendor/lib/arm directory"
-    sudo mkdir -p "$VENDOR_MNT/lib64/arm64" || abort "Failed to create vendor/lib64/arm64 directory"
-    
-    # Copy all ARM library files from libhoudini/lib64/arm64 to vendor/lib64/arm64
-    if [ -d "$HOUDINI_LOCAL_PATH/lib64/arm64" ]; then
-        echo "Copying ARM libraries to vendor/lib64/arm64..."
-        if [ "$(ls -A "$HOUDINI_LOCAL_PATH/lib64/arm64" 2>/dev/null)" ]; then
-            sudo cp -r "$HOUDINI_LOCAL_PATH/lib64/arm64/"* "$VENDOR_MNT/lib64/arm64/" || echo "Warning: Copy failed for $HOUDINI_LOCAL_PATH/lib64/arm64"
-        else
-            echo "Warning: No files found in $HOUDINI_LOCAL_PATH/lib64/arm64"
-        fi
-        
-        # Set permissions and ownership for all files in vendor/lib64/arm64
-        sudo find "$VENDOR_MNT/lib64/arm64" -type f -exec chown root:root {} \; 2>/dev/null || true
-        sudo find "$VENDOR_MNT/lib64/arm64" -type f -exec chmod 644 {} \; 2>/dev/null || true
-        
-        # Set SELinux context for all files in vendor/lib64/arm64
-        sudo find "$VENDOR_MNT/lib64/arm64" -type f -exec setfattr -n security.selinux -v "u:object_r:same_process_hal_file:s0" {} \; 2>/dev/null || echo "Warning: Failed to set SELinux context for some files in vendor/lib64/arm64"
-    else
-        echo "Warning: ARM64 library directory $HOUDINI_LOCAL_PATH/lib64/arm64 not found"
-    fi
-    
-    # Copy all files from libhoudini/lib/arm to vendor/lib/arm
-    if [ -d "$HOUDINI_LOCAL_PATH/lib/arm" ]; then
-        echo "Copying ARM libraries from libhoudini/lib/arm to vendor/lib/arm..."
-        if [ "$(ls -A "$HOUDINI_LOCAL_PATH/lib/arm" 2>/dev/null)" ]; then
-            sudo cp -r "$HOUDINI_LOCAL_PATH/lib/arm/"* "$VENDOR_MNT/lib/arm/" || echo "Warning: Copy failed for $HOUDINI_LOCAL_PATH/lib/arm"
-        else
-            echo "Warning: No files found in $HOUDINI_LOCAL_PATH/lib/arm"
-        fi
-        
-        # Set permissions and ownership for all files in vendor/lib/arm
-        sudo find "$VENDOR_MNT/lib/arm" -type f -exec chown root:root {} \; 2>/dev/null || true
-        sudo find "$VENDOR_MNT/lib/arm" -type f -exec chmod 644 {} \; 2>/dev/null || true
-        
-        # Set SELinux context for all files in vendor/lib/arm
-        sudo find "$VENDOR_MNT/lib/arm" -type f -exec setfattr -n security.selinux -v "u:object_r:same_process_hal_file:s0" {} \; 2>/dev/null || echo "Warning: Failed to set SELinux context for some files in vendor/lib/arm"
-    else
-        echo "Warning: ARM library directory $HOUDINI_LOCAL_PATH/lib/arm not found"
-    fi
-
-    # Edit init.windows_x86_64.rc to add Houdini exec commands after mount bind commands
-    echo "Editing init.windows_x86_64.rc for Houdini binary format registration..."
-    INIT_WINDOWS_RC="$VENDOR_MNT/etc/init/init.windows_x86_64.rc"
-    
-    if [ -f "$INIT_WINDOWS_RC" ]; then
-        # Create a backup of the original file
-        sudo cp "$INIT_WINDOWS_RC" "$INIT_WINDOWS_RC.backup" || abort "Failed to create backup of init.windows_x86_64.rc"
-        
-        # Create a temporary file for the modifications
-        TEMP_RC="/tmp/init_windows_temp.rc"
-        
-        # Process the file line by line to add exec commands after mount bind commands
-        sudo awk '
-        {
-            print $0
-            if ($0 ~ /mount none \/vendor\/bin\/houdini \/system\/bin\/houdini bind rec/) {
-                print "    exec -- /system/bin/sh -c \"echo '"'"':arm_exe:M::\\\\x7f\\\\x45\\\\x4c\\\\x46\\\\x01\\\\x01\\\\x01\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x02\\\\x00\\\\x28::/system/bin/houdini:P'"'"' > /proc/sys/fs/binfmt_misc/register\""
-                print "    exec -- /system/bin/sh -c \"echo '"'"':arm_dyn:M::\\\\x7f\\\\x45\\\\x4c\\\\x46\\\\x01\\\\x01\\\\x01\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x03\\\\x00\\\\x28::/system/bin/houdini:P'"'"' >> /proc/sys/fs/binfmt_misc/register\""
-            }
-            if ($0 ~ /mount none \/vendor\/bin\/houdini64 \/system\/bin\/houdini64 bind rec/) {
-                print "    exec -- /system/bin/sh -c \"echo '"'"':arm64_exe:M::\\\\x7f\\\\x45\\\\x4c\\\\x46\\\\x02\\\\x01\\\\x01\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x02\\\\x00\\\\xb7::/system/bin/houdini64:P'"'"' >> /proc/sys/fs/binfmt_misc/register\""
-                print "    exec -- /system/bin/sh -c \"echo '"'"':arm64_dyn:M::\\\\x7f\\\\x45\\\\x4c\\\\x46\\\\x02\\\\x01\\\\x01\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x00\\\\x03\\\\x00\\\\xb7::/system/bin/houdini64:P'"'"' >> /proc/sys/fs/binfmt_misc/register\""
-            }
-        }' "$INIT_WINDOWS_RC" > "$TEMP_RC" || abort "Failed to process init.windows_x86_64.rc"
-        
-        # Replace the original file with the modified version
-        sudo mv "$TEMP_RC" "$INIT_WINDOWS_RC" || abort "Failed to replace init.windows_x86_64.rc"
-        
-        # Set proper SELinux context for the modified init file
-        sudo setfattr -n security.selinux -v "u:object_r:vendor_configs_file:s0" "$INIT_WINDOWS_RC" || abort "Failed to set SELinux context for init.windows_x86_64.rc"
-        sudo setfattr -n security.selinux -v "u:object_r:vendor_configs_file:s0" "$INIT_WINDOWS_RC.backup" || abort "Failed to set SELinux context for init.windows_x86_64.rc.backup"      
-        
-        echo "Successfully updated init.windows_x86_64.rc with Houdini exec commands"
-    else
-        echo "Warning: init.windows_x86_64.rc not found at $INIT_WINDOWS_RC"
-    fi
-
-    echo -e "Houdini files installation completed\n"
-else
-    echo "Skipping Houdini installation for $ARCH architecture (Houdini is only required for x64)"
-fi
-
-
-echo "Umount images"
-sudo find "$ROOT_MNT" -exec touch -hamt 200901010000.00 {} \;
-sudo umount -v "$VENDOR_MNT"
-sudo umount -v "$PRODUCT_MNT"
-sudo umount -v "$SYSTEM_EXT_MNT"
-sudo umount -v "$ROOT_MNT"
-echo -e "done\n"
-echo "Shrink images"
-resize_img "$WORK_DIR/wsa/$ARCH/system.img" || abort
-resize_img "$WORK_DIR/wsa/$ARCH/vendor.img" || abort
-resize_img "$WORK_DIR/wsa/$ARCH/product.img" || abort
-resize_img "$WORK_DIR/wsa/$ARCH/system_ext.img" || abort
-echo -e "Shrink images done\n"
-
-echo "Convert images to vhdx"
-qemu-img convert -q -f raw -o subformat=fixed -O vhdx "$WORK_DIR/wsa/$ARCH/system_ext.img" "$WORK_DIR/wsa/$ARCH/system_ext.vhdx" || abort
-qemu-img convert -q -f raw -o subformat=fixed -O vhdx "$WORK_DIR/wsa/$ARCH/product.img" "$WORK_DIR/wsa/$ARCH/product.vhdx" || abort
-qemu-img convert -q -f raw -o subformat=fixed -O vhdx "$WORK_DIR/wsa/$ARCH/system.img" "$WORK_DIR/wsa/$ARCH/system.vhdx" || abort
-qemu-img convert -q -f raw -o subformat=fixed -O vhdx "$WORK_DIR/wsa/$ARCH/vendor.img" "$WORK_DIR/wsa/$ARCH/vendor.vhdx" || abort
-rm -f "$WORK_DIR/wsa/$ARCH/"*.img || abort
-echo -e "Convert images to vhdx done\n"
 
 echo "Removing signature and add scripts"
 rm -rf "${WORK_DIR:?}"/wsa/"$ARCH"/\[Content_Types\].xml "$WORK_DIR/wsa/$ARCH/AppxBlockMap.xml" "$WORK_DIR/wsa/$ARCH/AppxSignature.p7x" "$WORK_DIR/wsa/$ARCH/AppxMetadata" || abort

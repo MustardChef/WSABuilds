@@ -1,0 +1,101 @@
+on early-init
+    setprop ro.sf.lcd_density ${ro.boot.lcd_density}
+    setprop ro.zygote.disable_gl_preload 1
+    setprop service.adb.listen_addrs vsock:5555
+    setprop ro.hw_timeout_multiplier ${ro.boot.hw_timeout_multiplier}
+
+on fs
+    mount_all /system/etc/fstab.${ro.boot.fstab_suffix}
+
+    chown system system /mnt/shared_mem
+    chmod 0777 /mnt/shared_mem
+
+    mkdir /dev/virtio-ports 0755 root system
+
+    # Create friendly names for virtio ports
+    exec_start label_virtio_ports
+
+on late-fs
+    # Create properties mapping static SCSI addresses to dynamically assigned block device names.
+    exec_start label_block_devices
+
+    # VHDX reports as a traditional rotational disk,
+    # correct that to eliminate seek reduction overhead
+    write /sys/block/${vendor.scsi_block_device.0:0:0:0}/queue/rotational 0
+    write /sys/block/${vendor.scsi_block_device.0:0:0:1}/queue/rotational 0
+    write /sys/block/${vendor.scsi_block_device.0:0:0:2}/queue/rotational 0
+    write /sys/block/${vendor.scsi_block_device.0:0:0:3}/queue/rotational 0
+    write /sys/block/${vendor.scsi_block_device.0:0:0:4}/queue/rotational 0
+    write /sys/block/${vendor.scsi_block_device.0:0:0:5}/queue/rotational 0
+
+    # During boot, boost the read ahead size of r/o volumes
+    # given a large amount of sequential reads.
+    write /sys/block/${vendor.scsi_block_device.0:0:0:0}/queue/read_ahead_kb 4096
+    write /sys/block/${vendor.scsi_block_device.0:0:0:1}/queue/read_ahead_kb 4096
+    write /sys/block/${vendor.scsi_block_device.0:0:0:2}/queue/read_ahead_kb 4096
+    write /sys/block/${vendor.scsi_block_device.0:0:0:3}/queue/read_ahead_kb 4096
+
+    # Increase the r/w volumes by a smaller amount.
+    # Tracing shows a marginal benefit to increasing
+    # this from 128 to 512.
+    write /sys/block/${vendor.scsi_block_device.0:0:0:4}/queue/read_ahead_kb 512
+    write /sys/block/${vendor.scsi_block_device.0:0:0:5}/queue/read_ahead_kb 512
+
+    # Provision apex packages shared from Windows.
+    exec_start provision_apex
+
+on property:sys.boot_completed=1
+    # Reduce the read ahead size of ro volumes once boot
+    # has completely to a more sane value.
+    write /sys/block/${vendor.scsi_block_device.0:0:0:0}/queue/read_ahead_kb 1024
+    write /sys/block/${vendor.scsi_block_device.0:0:0:1}/queue/read_ahead_kb 1024
+    write /sys/block/${vendor.scsi_block_device.0:0:0:2}/queue/read_ahead_kb 1024
+    write /sys/block/${vendor.scsi_block_device.0:0:0:3}/queue/read_ahead_kb 1024
+
+on post-fs-data && property:ro.debuggable=1
+    # Start adbd before waiting for launch.
+    start adbd
+
+on post-fs-data
+    # Set indication (checked by vold) that we have finished this action
+    setprop vold.post_fs_data_done 1
+
+    # Start the sysprep service.  When it's time to finish init,
+    # it will set windows.start_phase to continue to phase 1.
+    start sysprep_service
+
+    # We aren't officially considered Phase 0 until sysprep_service is running.
+    setprop vendor.sysprep.current_phase 0
+
+    # Pause boot splitting it into two phases.
+    wait_for_prop vendor.sysprep.start_phase 1
+
+    # Signal that the phase transitioned after we finished waiting for the start_phase.
+    setprop vendor.sysprep.current_phase 1
+
+on boot
+    mkdir /dev/input 0755 root root
+
+service label_virtio_ports /vendor/bin/virtio_ports_create_links
+service label_block_devices /vendor/bin/label_block_devices
+
+service provision_apex /system_ext/bin/provision_apex
+    user root
+    group system
+    oneshot
+    disabled
+    capabilities DAC_READ_SEARCH
+
+# Enable native bridge for target executables
+on early-init
+    mount binfmt_misc binfmt_misc /proc/sys/fs/binfmt_misc
+
+on property:ro.vendor.enable.native.bridge.exec=1
+    copy /vendor/etc/binfmt_misc/arm_exe /proc/sys/fs/binfmt_misc/register
+    copy /vendor/etc/binfmt_misc/arm_dyn /proc/sys/fs/binfmt_misc/register
+    mount none /vendor/bin/houdini /system/bin/houdini bind rec
+
+on property:ro.vendor.enable.native.bridge.exec64=1
+    copy /vendor/etc/binfmt_misc/arm64_exe /proc/sys/fs/binfmt_misc/register
+    copy /vendor/etc/binfmt_misc/arm64_dyn /proc/sys/fs/binfmt_misc/register
+    mount none /vendor/bin/houdini64 /system/bin/houdini64 bind rec
