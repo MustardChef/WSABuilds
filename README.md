@@ -6,13 +6,13 @@
 >
 > - ### LTS Releases:
 >    - ``Magisk is bundled by default on builds with Google Apps (GApps)):``
->    - [Windows 11 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2407.40000.4.0_LTS_6)
->    - [Windows 10 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2407.40000.4.0_LTS_6)
+>    - [Windows 11 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2407.40000.4.0_LTS_7)
+>    - [Windows 10 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2407.40000.4.0_LTS_7)
 >
 > - ### Non-LTS Releases: 
 >    - ``(If you don't want Magisk being bundled by default) (Releases contain no Magisk builds)``
->    - [Windows 11 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2407.40000.4.0)
->    - [Windows 10 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2407.40000.4.0)
+>    - [Windows 11 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2407.40000.4.0_v2)
+>    - [Windows 10 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2407.40000.4.0_v2)
 >
 > #### LET ME KNOW VIA GITHUB ISSUES, THE WSA COMMUNITY DISCORD OR THE r/WSA SUBREDDIT IF THESE RELEASES HAVE SOLVED YOUR ISSUE. THANK YOU.
 > </details>
@@ -35,6 +35,10 @@
 > <details>
 > <summary><h2>Next LTS and Non-LTS Release Date: (Click Here)</h2></summary>
 >   
+> ### Non-LTS Build Update (v2407.40000.4.0_v2):
+> ~~``Monday 2nd June 2025``  **Available Now (via the Stable release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))**
+> ### WSABuilds LTS 7 (v2407.40000.4.0) 
+> ~~``Monday 2nd June 2025``~~  **Available Now (via the Pre-release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))**    
 > ### Non-LTS Build Update (v2407.40000.4.0):
 > ~~``Monday 9th December 2024``~~  **Available Now (via the Stable release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))**
 > ### WSABuilds LTS 6 (v2407.40000.4.0) 
