@@ -27,6 +27,15 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install Dependencies 🧑‍🏭
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_BODY: ${{ github.event.pull_request.body }}
+          PR_HEAD_REF: ${{ github.event.pull_request.head.ref }}
+          PR_BASE_REF: ${{ github.event.pull_request.base.ref }}
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+          GITHUB_ACTOR_VAR: ${{ github.actor }}
+          GITHUB_REF_VAR: ${{ github.ref }}
+          GITHUB_REPOSITORY_VAR: ${{ github.repository }}
         run: |
           pip3 install beautifulsoup4 lxml
 
