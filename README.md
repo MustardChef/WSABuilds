@@ -1,3 +1,13 @@
+> [!CAUTION]
+>
+> ## It seems that the the following Windows Cumulative Update has been breaking WSA installations:
+> ### ``2025-07 Cumulative Update for Windows 11 Version 24H2 for x64-based Systems (KB5062553))``
+>
+> 
+> ### DO NOT install this Windows Update
+> #### There is currently no solution to the issue other than disabling updates until the issue is fixed (hopefully). 
+>
+
 > [!IMPORTANT]  
 > <details>
 > <summary><h3>IF YOU HAVE BEEN RECENTLY HAVING ISSUES WITH SOME APPS BREAKING OR NOT STARTING OR APPS GETTING SUCK AT LOADING SCREEN OR APPS STUCK ON SPLASHSCREEN ( STUCK ON THE APP ICON SCREEN) OR ANY OTHER SIMILAR CASES AFTER <code>2ND JUNE 2025</code>. (CLICK HERE)</h3></summary>
