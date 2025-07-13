@@ -1,6 +1,6 @@
 > [!CAUTION]
 >
-> ## It seems that the the following Windows Cumulative Update has been breaking WSA installations:
+> ## It seems that the the following Windows Cumulative Update has been breaking WSA installations for some users!
 > ### ``2025-07 Cumulative Update for Windows 11 Version 24H2 for x64-based Systems (KB5062553))``
 >
 > 
