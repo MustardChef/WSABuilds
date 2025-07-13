@@ -1,74 +1,14 @@
 > [!CAUTION]
 >
 > ## It seems that the the following Windows Cumulative Update has been breaking WSA installations for some users!
-> ### ``2025-07 Cumulative Update for Windows 11 Version 24H2 for x64-based Systems (KB5062553))``
+> ### ``2025-07 Cumulative Update for Windows 11 Version 24H2 for x64-based Systems (KB5062553)``
 >
 > 
 > ### DO NOT install this Windows Update
 > #### There is currently no solution to the issue other than disabling updates until the issue is fixed (hopefully). 
 >
 
-> [!IMPORTANT]  
-> <details>
-> <summary><h3>IF YOU HAVE BEEN RECENTLY HAVING ISSUES WITH SOME APPS BREAKING OR NOT STARTING OR APPS GETTING SUCK AT LOADING SCREEN OR APPS STUCK ON SPLASHSCREEN ( STUCK ON THE APP ICON SCREEN) OR ANY OTHER SIMILAR CASES AFTER <code>2ND JUNE 2025</code>. (CLICK HERE)</h3></summary>
->   
-> ### UPDATE TO THE LATEST LTS AND NON-LTS RELEASES:   
->
-> - ### LTS Releases:
->    - ``Magisk is bundled by default on builds with Google Apps (GApps)):``
->    - [Windows 11 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2407.40000.4.0_LTS_7)
->    - [Windows 10 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2407.40000.4.0_LTS_7)
->
-> - ### Non-LTS Releases: 
->    - ``(If you don't want Magisk being bundled by default) (Releases contain no Magisk builds)``
->    - [Windows 11 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2407.40000.4.0_v2)
->    - [Windows 10 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2407.40000.4.0_v2)
->
-> #### If some apps that worked before, still refuse to work after updating, try clearing the app data and cache or reinstalling the apps. If the issue still occurs, you may need to perform a clean install to fix some apps. Create a backup before proceeding. 
->      
-> #### LET ME KNOW VIA GITHUB ISSUES, THE WSA COMMUNITY DISCORD OR THE r/WSA SUBREDDIT IF THESE RELEASES HAVE SOLVED YOUR ISSUE. THANK YOU.
-> </details>
-
-> [!TIP]
-> <details>
-> <summary><h2> WSA End Of Support (EoS) Information (Click Here)</h2></summary>
-> 
-> ## "Microsoft is ending support for the Windows Subsystem for Android™️ (WSA). As a result, the Amazon Appstore on Windows and all applications and games dependent on WSA will no longer be supported beginning March 5, 2025." 
-> ###### (Source: [GitHub](https://github.com/microsoft/WSA/discussions/536) and [Microsoft Learn](https://learn.microsoft.com/en-us/windows/android/wsa/))
-> ---
-> ### WSABuilds has entered LTS (Long Term Support) for WSA versions ≥ 2311.40000.5.0, where the Magisk version, KernelSU version and GApps version will be kept up to date via new releases.
-> ### This repo will not be archived and support will still be given to any users installing WSA Builds from this repo. Thank you all for using this repository and supporting my work, its been a pleasure serving this community. 
-> ### Do make sure that you keep a look out for any updates to this repo to be notified of any futher changes to WSA and WSABuilds      
->
-> ---
-> </details>
->
-> 
-> <details>
-> <summary><h2>Next LTS and Non-LTS Release Date: (Click Here)</h2></summary>
->   
-> ### Non-LTS Build Update (v2407.40000.4.0_v2):
-> ~~``Monday 2nd June 2025``  **Available Now (via the Stable release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))**
-> ### WSABuilds LTS 7 (v2407.40000.4.0) 
-> ~~``Monday 2nd June 2025``~~  **Available Now (via the Pre-release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))**    
-> ### Non-LTS Build Update (v2407.40000.4.0):
-> ~~``Monday 9th December 2024``~~  **Available Now (via the Stable release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))**
-> ### WSABuilds LTS 6 (v2407.40000.4.0) 
-> ~~``Monday 9th December 2024``~~  **Available Now (via the Pre-release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))** 
-> ### Non-LTS Build Update (v2407.40000.0.0):
-> ~~``Thursday 5th December 2024``~~  **Available Now (via the Stable release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))**
-> ### WSABuilds LTS 5 (v2407.40000.0.0) 
-> ~~``Thursday 5th December 2024``~~  **Available Now (via the Pre-release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))** 
-> ### WSABuilds LTS 4 (v2407.40000.0.0): 
-> ~~``Monday 15th July 2024``~~  **Available Now (via the Pre-release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))** 
-> ### WSABuilds LTS 3 (v2311.40000.5.0): 
-> ~~``Monday 03rd June 2024``~~  **Available Now (via the Pre-release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))** 
-> ### WSABuilds LTS 2 (v2311.40000.5.0): 
-> ~~``Friday 03rd May 2024``~~   **Available Now (via the Pre-release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))** 
-> ### WSABuilds LTS 1 (v2311.40000.5.0): 
-> ~~``Wednesday 03rd April 2024``~~  **Available Now (via the Pre-release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))**  
       
-
 <br/>
 <p align="center">
 <a href="https://github.com/MustardChef/WSABuilds#downloads"><img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&amp;style=for-the-badge"/></a> <a href="https://forum.xda-developers.com/t/wsabuilds-latest-windows-subsystem-for-android-wsa-builds-for-   windows-10-and-11-with-magisk-and-google-play-store.4545087/"><img src="https://img.shields.io/badge/XDA%20Developers-WSABuilds-EA7100?style=for-the-badge&amp;logoColor=white&amp;logo=XDA-Developers"/></a> <a href="https://ko-fi.com/N4N0K08AC"><img alt="ko-fi" src="https://ko-fi.com/img/githubbutton_sm.svg"/></a>
@@ -511,7 +451,70 @@
 </tbody>
 </table>
 
- 
+<br/>
+
+> [!IMPORTANT]  
+> <details>
+> <summary><h3>IF YOU HAVE BEEN RECENTLY HAVING ISSUES WITH SOME APPS BREAKING OR NOT STARTING OR APPS GETTING SUCK AT LOADING SCREEN OR APPS STUCK ON SPLASHSCREEN ( STUCK ON THE APP ICON SCREEN) OR ANY OTHER SIMILAR CASES AFTER <code>2ND JUNE 2025</code>. (CLICK HERE)</h3></summary>
+>   
+> ### UPDATE TO THE LATEST LTS AND NON-LTS RELEASES:   
+>
+> - ### LTS Releases:
+>    - ``Magisk is bundled by default on builds with Google Apps (GApps)):``
+>    - [Windows 11 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2407.40000.4.0_LTS_7)
+>    - [Windows 10 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2407.40000.4.0_LTS_7)
+>
+> - ### Non-LTS Releases: 
+>    - ``(If you don't want Magisk being bundled by default) (Releases contain no Magisk builds)``
+>    - [Windows 11 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2407.40000.4.0_v2)
+>    - [Windows 10 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2407.40000.4.0_v2)
+>
+> #### If some apps that worked before, still refuse to work after updating, try clearing the app data and cache or reinstalling the apps. If the issue still occurs, you may need to perform a clean install to fix some apps. Create a backup before proceeding. 
+>      
+> #### LET ME KNOW VIA GITHUB ISSUES, THE WSA COMMUNITY DISCORD OR THE r/WSA SUBREDDIT IF THESE RELEASES HAVE SOLVED YOUR ISSUE. THANK YOU.
+> </details>
+
+> [!TIP]
+> <details>
+> <summary><h2> WSA End Of Support (EoS) Information (Click Here)</h2></summary>
+> 
+> ## "Microsoft is ending support for the Windows Subsystem for Android™️ (WSA). As a result, the Amazon Appstore on Windows and all applications and games dependent on WSA will no longer be supported beginning March 5, 2025." 
+> ###### (Source: [GitHub](https://github.com/microsoft/WSA/discussions/536) and [Microsoft Learn](https://learn.microsoft.com/en-us/windows/android/wsa/))
+> ---
+> ### WSABuilds has entered LTS (Long Term Support) for WSA versions ≥ 2311.40000.5.0, where the Magisk version, KernelSU version and GApps version will be kept up to date via new releases.
+> ### This repo will not be archived and support will still be given to any users installing WSA Builds from this repo. Thank you all for using this repository and supporting my work, its been a pleasure serving this community. 
+> ### Do make sure that you keep a look out for any updates to this repo to be notified of any futher changes to WSA and WSABuilds      
+>
+> ---
+> </details>
+>
+> 
+> <details>
+> <summary><h2>Next LTS and Non-LTS Release Date: (Click Here)</h2></summary>
+>   
+> ### Non-LTS Build Update (v2407.40000.4.0_v2):
+> ~~``Monday 2nd June 2025``~~  **Available Now (via the Stable release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))**
+> ### WSABuilds LTS 7 (v2407.40000.4.0) 
+> ~~``Monday 2nd June 2025``~~  **Available Now (via the Pre-release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))**    
+> ### Non-LTS Build Update (v2407.40000.4.0):
+> ~~``Monday 9th December 2024``~~  **Available Now (via the Stable release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))**
+> ### WSABuilds LTS 6 (v2407.40000.4.0) 
+> ~~``Monday 9th December 2024``~~  **Available Now (via the Pre-release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))** 
+> ### Non-LTS Build Update (v2407.40000.0.0):
+> ~~``Thursday 5th December 2024``~~  **Available Now (via the Stable release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))**
+> ### WSABuilds LTS 5 (v2407.40000.0.0) 
+> ~~``Thursday 5th December 2024``~~  **Available Now (via the Pre-release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))** 
+> ### WSABuilds LTS 4 (v2407.40000.0.0): 
+> ~~``Monday 15th July 2024``~~  **Available Now (via the Pre-release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))** 
+> ### WSABuilds LTS 3 (v2311.40000.5.0): 
+> ~~``Monday 03rd June 2024``~~  **Available Now (via the Pre-release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))** 
+> ### WSABuilds LTS 2 (v2311.40000.5.0): 
+> ~~``Friday 03rd May 2024``~~   **Available Now (via the Pre-release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))** 
+> ### WSABuilds LTS 1 (v2311.40000.5.0): 
+> ~~``Wednesday 03rd April 2024``~~  **Available Now (via the Pre-release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))**  
+
+<br/>
+
 
 <details>
 <summary><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Installation.md"><img height="60" src="https://img.icons8.com/color/96/null/software-installer.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Installation.md">   Installation</a></h1></a></summary>
