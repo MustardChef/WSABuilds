@@ -5,7 +5,7 @@
 >
 > 
 > ### DO NOT install this Windows Update
-> #### There is currently no solution to the issue other than disabling updates until the issue is fixed (hopefully). 
+> #### There is currently no solution to the issue other than disabling updates and rolling back the update if you have installed it until the issue is fixed (hopefully). 
 >
 
       
