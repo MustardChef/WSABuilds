@@ -1155,6 +1155,7 @@ wsa://com.apple.android.music
 | SAI (Split APKs Installer) (F-Droid) | 4.5 | 12 | ✅ || Used rootless method only, not yet tested for rooted WSA
 | SATRIA | 1.0.0 | 11 | ❌ | Needs fingerprint reader support
 | SD Maid (pro) | 5.2.2 | 11 | ⚠️ | Unable to grant external storage privileges, can be skipped
+| Seal | 1.13.1 | 13 | ❌ | Opens up to CrashReportActivity, freezes
 | Settings | 13, API 33 | 13 | ⚠️ | Setting screen lock to "Swipe", makes it impossible to use any apps without re-installing the entire Subsystem, since no method is provided on the lock screen to swipe or otherwise unlock. Adding a Google account in the Account menu doesn't work (the settings app will quit if you just clicked back when adding a new Google account). "Backup" and "SOS Alarm" send the phone back to the main Settings menu. | Included by default in Subsystem. Accessed by creating a Windows shortcut with this path: `%LOCALAPPDATA%\Microsoft\WindowsApps\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\WsaClient.exe /launch wsa://com.android.settings`
 | Shazam | 13.19.0-230223 | 13, 12 | ✅ | Shazam on pop-up doesn't work | Requires microphone for song identification
 | Shein | 9.9.4 | 13 | ✅ || Keep it in portrait to be usable
