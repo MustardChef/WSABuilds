@@ -88,15 +88,16 @@ bcdedit /set hypervisorlaunchtype auto
 <br />
 <br />
 
-- ### For AtlasOS Users:
+
+### For AtlasOS Users:
 
 
-    - #### If the steps above still do not fix your issue, go to the AtlasOS configuration folder and run the "Enable Hyper-V and VBS" CMD file. Then restart your PC and try running WSA again  
+- #### If the steps above still do not fix your issue, go to the AtlasOS configuration folder and run the ``Enable Hyper-V and VBS`` CMD file. Then restart your PC and try running WSA again  
 
 
-        <img src="https://github.com/MustardChef/WSABuilds/assets/68516357/1c8ec5b1-b071-4923-9c00-2f7449adf75c" width=70% height=70%>
+  <img src="https://github.com/MustardChef/WSABuilds/assets/68516357/1c8ec5b1-b071-4923-9c00-2f7449adf75c" width=70% height=70%>
 
-        <img src="https://github.com/MustardChef/WSABuilds/assets/68516357/738d4850-f7da-4408-b2f5-8483c30e1a9f" alt="Image description">
+  <img src="https://github.com/MustardChef/WSABuilds/assets/68516357/738d4850-f7da-4408-b2f5-8483c30e1a9f" alt="Image description">
 
 <br />
 <br />
