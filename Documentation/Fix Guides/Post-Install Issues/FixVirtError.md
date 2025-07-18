@@ -18,12 +18,14 @@ You may encounter this problem, even if Virtualization is enabled on your PC (in
 
 1. ***Remove WSA***: Right clicking on "Windows Subsystem for Android™ Settings" and pressing uninstall + Deleting the extracted WSA (MagiskOnWSA/WSABuilds) folder that you extracted and installed from.
 
+&nbsp;
+
 2. ***Go to "Turn Windows features on and off" and if any of these features below are enabled, DISABLE THEM.***
 
-- Hyper-V
-- Virtual Machine Platform
-- Windows Hypervisor Platform
-- Windows Subsystem for Linux
+    - Hyper-V
+    - Virtual Machine Platform
+    - Windows Hypervisor Platform
+    - Windows Subsystem for Linux
 
 &nbsp;
 
@@ -42,12 +44,14 @@ You may encounter this problem, even if Virtualization is enabled on your PC (in
 
 &nbsp;
 
-6.  ***In registry editor (regedit), go to “\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\FsDepends"***
-
-    Change the value of “Start” from “3” to “0”
-
-> [!NOTE]
-> You can change it back to 3, if it makes no difference
+6.  In registry editor (regedit):
+   
+    - Go to ``\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\FsDepends``
+        - Change the value of ``Start`` from ``3`` to ``0``
+   
+    - Go to ``HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\DeviceGuard``
+        - Change the value of ``EnableVirtualizationBasedSecurity`` to ``0``
+        - If you do not have a ``EnableVirtualizationBasedSecurity`` DWORD value, create one by right-clicking and adding a new ``DWORD (32 bit)`` value. Rename it to ``EnableVirtualizationBasedSecurity`` and make sure that the value is set to ``0``.    
 
 &nbsp;
 
@@ -80,7 +84,6 @@ bcdedit /set hypervisorlaunchtype auto
 
 &nbsp;
 
-**Hope this works for you!**
 
 <br />
 <br />
