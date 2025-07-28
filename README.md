@@ -1,12 +1,13 @@
 > [!CAUTION]
 >
-> ## It seems that the the following Windows Cumulative Update has been breaking WSA installations for some users!
-> ### ``2025-07 Cumulative Update for Windows 11 Version 24H2 for x64-based Systems (KB5062553)``
+> # It seems that the last few Windows Updates released on many/all of the update channels (issue started from July) are breaking WSA installations for many users! 
 >
-> 
-> ### DO NOT install this Windows Update
-> #### There is currently no solution to the issue other than disabling updates and rolling back the update if you have installed it until the issue is fixed (hopefully). 
+> ## There is currently no solution to the issue.
+> - ## If you are on a build that if affected by the issue, try these current workarounds:
+>   #### - Switch/Use the builds which do not contain GApps. These are the builds that contain ``NoGApps`` in their .7z archive names. 
+>   #### - Really old builds of WSA (2211/2210) are known to be working.  
 >
+> ## Refer to https://github.com/MustardChef/WSABuilds/issues/593 for more information.
 
       
 <br/>
