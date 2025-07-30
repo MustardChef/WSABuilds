@@ -3,7 +3,7 @@
 > # It seems that the last few Windows Updates released on many/all of the update channels (issue started from July) are breaking WSA installations for many users! 
 >
 > ## There is currently no solution to the issue.
-> - ## If you are on a build that if affected by the issue, try these current workarounds:
+> - ## If you are affected by the issue, try these current workarounds:
 >   - #### Switch/Use the builds which do not contain GApps. These are the builds that contain ``NoGApps`` in their .7z archive names. 
 >   - #### Really old builds of WSA (2211/2210) are known to be working.  
 >
