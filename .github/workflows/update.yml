@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout ♻️
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Install Dependencies 🧑‍🏭
         run: |
@@ -88,7 +88,7 @@ jobs:
           delete_workflow_pattern: "Check update"
           
       - name: Checkout Again! 🔄
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
     outputs:
       MAGISK_CANARY_MSG: ${{ env.MAGISK_CANARY_MSG }}
@@ -102,12 +102,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🔄
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -179,7 +179,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🔄
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Prepare release tag 🏷️
         id: releasetag
