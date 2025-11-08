@@ -615,6 +615,7 @@ wsa://com.apple.android.music
 | The King Of Fighters Allstar | 1.9.3 | 11 | ✅ | Blank screen/app crash on first boot, works on second boot upwards
 | This War of Mine | 1.0 | 11 | ❌ | Infinite loop at start-up screen
 | Traffic Racer | 3.5 | 13, 12, 11 | ✅ || Keyboard supported
+| Trickcal: Chibi Go | 1.0.3 | 13 | ✅ | Some lag at the start with 1% lows, runs better after a while with Subsystem resources set to Continuous and Vulkan driver set to D3D12, possibly better with more memory allocated | Tested with a laptop RTX2050. Did not test with any login and instead used a guest account.
 | Toca Kitchen 2 | 2.2-play | 13 | ⚠️ | You can't access the game settings (or any swipe action) with a keyboard and mouse even with trackpad gestures | Recommended to use a touchscreen but it is also possible to play the game with just only the mouse.
 | True Skate | 1.5.39 | 11 | ✅ | Minor graphical glitches
 | Uma Musume: Pretty Derby (ウマ娘 プリティーダービー; JP) | 1.16.0 | 11 | ⚠️ | Doesn't work with Nvidia GeForce GTX 1660. Works with Microsoft Basic Render Driver with graphical issues. | Some features may require GMS.
