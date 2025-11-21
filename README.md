@@ -1,16 +1,3 @@
-> [!CAUTION]
->
-> # It seems that the last few Windows Updates released on many/all of the update channels (issue started from July) are breaking WSA installations for many users! 
->
-> - ## If you are affected by the issue, try these current workarounds:
->   - ### RECOMMENDED FIX: https://github.com/MustardChef/WSABuilds/issues/593#issuecomment-3172749449
->   - #### Switch/Use the builds which do not contain GApps. These are the builds that contain ``NoGApps`` in their .7z archive names. 
->   - #### Really old builds of WSA (2211/2210) are known to be working.  
->
-> ## Refer to https://github.com/MustardChef/WSABuilds/issues/593 for more information.
-
-      
-<br/>
 <p align="center">
 <a href="https://github.com/MustardChef/WSABuilds#downloads"><img src="https://img.shields.io/github/downloads/MustardChef/WSABuilds/total?label=Total%20Downloads&amp;style=for-the-badge"/></a> <a href="https://forum.xda-developers.com/t/wsabuilds-latest-windows-subsystem-for-android-wsa-builds-for-   windows-10-and-11-with-magisk-and-google-play-store.4545087/"><img src="https://img.shields.io/badge/XDA%20Developers-WSABuilds-EA7100?style=for-the-badge&amp;logoColor=white&amp;logo=XDA-Developers"/></a> <a href="https://ko-fi.com/N4N0K08AC"><img alt="ko-fi" src="https://ko-fi.com/img/githubbutton_sm.svg"/></a>
 </p>
