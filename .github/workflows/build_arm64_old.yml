@@ -107,7 +107,7 @@ jobs:
           echo ${{ env.DRIVE_FOLDER_PATH }}
           
       - name: Pass to Windows 💸
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: ${{ steps.wsa.outputs.artifact }}-${{ steps.wsa.outputs.built }}
           path: MagiskOnWSAOld/output
