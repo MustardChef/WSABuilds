@@ -61,6 +61,9 @@ jobs:
 
       - name: Check workflow inputs
         run: |
+      env:
+        RUN_ID: ${{ github.run_id }}
+        SHA: ${{ github.sha }}
           echo ${{ inputs.arch }}
           echo ${{ inputs.gapps }}
           echo ${{ inputs.root }}
