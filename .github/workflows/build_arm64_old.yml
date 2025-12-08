@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout ♻️
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Setup Python 🏭
         uses: actions/setup-python@v6
@@ -127,7 +127,7 @@ jobs:
     needs: build
     steps:
       - name: Checkout ♻️
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Download built artifact ⌛
         uses: actions/download-artifact@v6
