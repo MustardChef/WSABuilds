@@ -350,12 +350,12 @@
 <td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2407.40000.4.0_LTS_7_HOTFIX_1_arm64"><img alt="win11arm64downpre" src="https://img.shields.io/badge/Download%20Latest%20Pre--Release%20Builds-Windows%2011%20arm64-orange?style=for-the-badge&amp;logo=windows11"/></a></p></td>
 </tr>
 <tr>
-<td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2407.40000.4.0_v2"><img alt="win11x64downstable" src="https://img.shields.io/badge/Download%20Latest%20Stable%20Builds-Windows%2011%20x64-blue?style=for-the-badge&amp;logo=windows11"/></a></p></td>
+<td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2407.40000.4.0_LTS_7_HOTFIX_1"><img alt="win11x64downstable" src="https://img.shields.io/badge/Download%20Latest%20Stable%20Builds-Windows%2011%20x64-blue?style=for-the-badge&amp;logo=windows11"/></a></p></td>
 <td rowspan="2"><p><a href="https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/EoVMTqCKkgVFvFlJTcz1u0gBdOBqLIwjT-9okE8eCpp3Aw?e=7y5PIT"><img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&amp;logo=Microsoft%20OneDrive&amp;logoColor=0078D4" style="width: 150px;"/></a></p>
 </td>
 </tr>
 <tr>
-<td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2407.40000.4.0_v2_arm64"><img alt="win11arm64downstable" src="https://img.shields.io/badge/Download%20Latest%20Stable%20Builds-Windows%2011%20arm64-blue?style=for-the-badge&amp;logo=windows11"/></a></p></td>
+<td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2407.40000.4.0_LTS_7_HOTFIX_1_arm64"><img alt="win11arm64downstable" src="https://img.shields.io/badge/Download%20Latest%20Stable%20Builds-Windows%2011%20arm64-blue?style=for-the-badge&amp;logo=windows11"/></a></p></td>
 </tr>
 <tr>
 <td rowspan="2"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" style="width: 200px;"/></td>
@@ -364,7 +364,7 @@
 </td>
 </tr>
 <tr>
-<td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2407.40000.4.0_v2"><img alt="win10x64down" src="https://img.shields.io/badge/Download%20Latest%20Stable%20Builds-Windows%2010%20x64-blue?style=for-the-badge&amp;logo=windows"/></a></p></td>
+<td><p><a href="https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2407.40000.4.0_LTS_7_HOTFIX_1"><img alt="win10x64down" src="https://img.shields.io/badge/Download%20Latest%20Stable%20Builds-Windows%2010%20x64-blue?style=for-the-badge&amp;logo=windows"/></a></p></td>
 <td><p><a href="https://x6cgr-my.sharepoint.com/:f:/g/personal/mcdt_x6cgr_onmicrosoft_com/Enm0Tn0BRMlFmrfCWP9Omf0BCiQU0zybeXZtAyOfOVSQqA?e=v6UQyp"><img src="https://img.shields.io/badge/OneDrive-white?style=for-the-badge&amp;logo=Microsoft%20OneDrive&amp;logoColor=0078D4" style="width: 150px;"/></a></p></td>
 </tr>
 <tr>
@@ -461,13 +461,13 @@
 >
 > - ### LTS Releases:
 >    - ``Magisk is bundled by default on builds with Google Apps (GApps)):``
->    - [Windows 11 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2407.40000.4.0_LTS_7)
->    - [Windows 10 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2407.40000.4.0_LTS_7)
+>    - [Windows 11 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2407.40000.4.0_LTS_7_HOTFIX_1)
+>    - [Windows 10 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2407.40000.4.0_LTS_7_HOTFIX_1)
 >
 > - ### Non-LTS Releases: 
 >    - ``(If you don't want Magisk being bundled by default) (Releases contain no Magisk builds)``
->    - [Windows 11 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2407.40000.4.0_v2)
->    - [Windows 10 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2407.40000.4.0_v2)
+>    - [Windows 11 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2407.40000.4.0_LTS_7_HOTFIX_1)
+>    - [Windows 10 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2407.40000.4.0_LTS_7_HOTFIX_1)
 >
 > #### If some apps that worked before, still refuse to work after updating, try clearing the app data and cache or reinstalling the apps. If the issue still occurs, you may need to perform a clean install to fix some apps. Create a backup before proceeding. 
 >      
