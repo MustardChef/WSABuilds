@@ -211,14 +211,14 @@ jobs:
           ($(Get-FileHash -Path ${{ needs.build.outputs.artifact }}.7z -Algorithm SHA256).Hash.ToLower().ToString() + "  " + "${{ needs.build.outputs.artifact }}.7z") | Out-File -FilePath sha256-checksum.txt -Encoding UTF8
 
       - name: Upload Windows 11 Artifact 📦
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: ${{ needs.build.outputs.artifact }}-compressed
           path: output
 
       - name: Upload Windows 10 Artifact 📦
         if: inputs.wintype == 'Windows 10'
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
             name: ${{ needs.build.outputs.artifact }}_Windows_10-compressed
             path: output
