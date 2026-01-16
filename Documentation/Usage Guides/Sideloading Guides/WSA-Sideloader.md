@@ -15,7 +15,6 @@ Operating System|Downloads
 |---------|---------|
 |<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" style="width: 150px;"/><br /><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" style="width: 150px;"/> |[<img src="https://user-images.githubusercontent.com/49786146/159123331-729ae9f2-4cf9-439b-8515-16a4ef991089.png" style="width: 200px;"/>](https://winstall.app/apps/infinitepower18.WSASideloader)|
 |<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" style="width: 150px;"/><br /><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Windows_10_Logo.svg" style="width: 150px;"/> |[<img src="https://user-images.githubusercontent.com/68516357/226141505-c93328f9-d6ae-4838-b080-85b073bfa1e0.png" style="width: 200px;"/>](https://github.com/infinitepower18/WSA-Sideloader/releases/latest)|
-|<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" style="width: 150px;"/>|[<img src="https://get.microsoft.com/images/en-us%20dark.svg" style="width: 200px;"/>](https://apps.microsoft.com/store/detail/9NMFSJB25QJR?launch=true&cid=wsabuilds&mode=mini)|
 
 ## Setup
 
@@ -62,10 +61,7 @@ Operating System|Downloads
 ## Updating WSA Sideloader
 From time to time, there may be updates that improve the reliability of the app, as well as ensuring it works properly with future releases of WSA. 
 
-Therefore, it's highly recommended you keep it up to date. 
-
-- If you installed WSA Sideloader using MS Store, you can update the app via the store. 
-- If you installed through other methods, the sideloader will notify you of an update the next time you launch it.
+Therefore, it's highly recommended you keep it up to date. The application will notify you of an update the next time you launch it.
 
 ## Troubleshooting
 If you get an error like the one below, check that you have allowed the ADB authorization and enabled Developer Mode. Also try disabling and enabling USB debugging under manage developer settings as that can sometimes fix issues with the ADB connection.
@@ -81,5 +77,5 @@ If you continue to face problems, make a note of the error info displayed in WSA
 ## Credits
 
 #### Special Thanks to infinitepower18
-#### Feel free to Star the [WSA-Sideloader Github Repo](https://github.com/infinitepower18/WSA-Sideloader/) or leave a review on the [Microsoft Store Page](https://www.microsoft.com/store/apps/9NMFSJB25QJR), if you found the app useful
+#### Feel free to Star the [WSA-Sideloader Github Repo](https://github.com/infinitepower18/WSA-Sideloader/), if you found the app useful
 
