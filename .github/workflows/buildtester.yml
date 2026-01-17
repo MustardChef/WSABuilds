@@ -127,7 +127,7 @@ jobs:
         shell: bash
   
       - name: Pass to Windows 💸
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         with:
           path: MagiskOnWSA/output
           key: ${{ steps.wsa.outputs.artifact }}-${{ steps.date.outputs.date }}
@@ -147,7 +147,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Download built artifact ⌛
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: output
           key: ${{ needs.build.outputs.artifact }}-${{ needs.build.outputs.date }}
