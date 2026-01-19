@@ -192,7 +192,7 @@ jobs:
           echo "WIN10X64_TAG=Windows_10_$currentver" >> $GITHUB_ENV
                 
       - name: Run Tag Checks for Windows 11 x64 Releases
-        uses: mukunku/tag-exists-action@v1.6.0
+        uses: mukunku/tag-exists-action@v1.7.0
         id: checkTag1
         with:
           tag: ${{ env.WIN11X64_TAG }}
@@ -204,7 +204,7 @@ jobs:
         run: exit 1
 
       - name: Run Tag Checks for Windows 11 arm64 Releases
-        uses: mukunku/tag-exists-action@v1.6.0
+        uses: mukunku/tag-exists-action@v1.7.0
         id: checkTag2
         with:
           tag: ${{ env.WIN11ARM64_TAG }}
@@ -216,7 +216,7 @@ jobs:
         run: exit 1
 
       - name: Run Tag Checks for Windows 10 x64 Releases
-        uses: mukunku/tag-exists-action@v1.6.0
+        uses: mukunku/tag-exists-action@v1.7.0
         id: checkTag3
         with:
           tag: ${{ env.WIN10X64_TAG }}
