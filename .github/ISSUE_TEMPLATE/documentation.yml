@@ -1,4 +1,4 @@
-name: Documentation 
+name: Documentation
 description: Report an issue with or request something regarding the project's documentation.
 title: "[DOC]"
 labels: documentation
@@ -6,6 +6,8 @@ body:
   - type: textarea
     id: description
     attributes:
-      label: Please provide a clear and concise description of the changes you would like to see made to the documentation.
+      label: Desired change
+      description: Please provide a clear and concise description of the changes you would like to see made to the documentation.
+      placeholder: […info…] in […documentation link…] needs to be [added / deleted / modefied to … / updated to …] due to […reason…].
     validations:
       required: true
