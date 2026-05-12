@@ -339,7 +339,7 @@ jobs:
 
       - name: Create Tag and Release for Windows 11 arm64 release ✍🏼
         if: inputs.release_type == 'WIF'
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           tag_name: ${{ env.WIN11ARM64_TAG }}
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -350,7 +350,7 @@ jobs:
 
       - name: Create Tag and Release for Windows 10 x64 release ✍🏼
         if: inputs.release_type == 'WIF'
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           tag_name: ${{ env.WIN10X64_TAG }}
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -361,7 +361,7 @@ jobs:
   
       - name: Create Tag and Release for Windows 11 x64 release ✍🏼
         if: inputs.release_type == 'WIF'
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           tag_name: ${{ env.WIN11X64_TAG }}
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -372,7 +372,7 @@ jobs:
 
       - name: Create Tag and Release for Windows 11 arm64 release ✍🏼
         if: inputs.release_type == 'retail'
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           tag_name: ${{ env.WIN11ARM64_TAG }}
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -383,7 +383,7 @@ jobs:
 
       - name: Create Tag and Release for Windows 10 x64 release ✍🏼
         if: inputs.release_type == 'retail'
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           tag_name: ${{ env.WIN10X64_TAG }}
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -394,7 +394,7 @@ jobs:
   
       - name: Create Tag and Release for Windows 11 x64 release ✍🏼
         if: inputs.release_type == 'retail'
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           tag_name: ${{ env.WIN11X64_TAG }}
           token: ${{ secrets.GITHUB_TOKEN }}
