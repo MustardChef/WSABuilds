@@ -71,7 +71,7 @@ jobs:
             fi
 
       - name: Checkout ♻️
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Setup Python 👷
         uses: actions/setup-python@v6
@@ -144,7 +144,7 @@ jobs:
     needs: build
     steps:
       - name: Checkout ♻️
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Download built artifact ⌛
         uses: actions/cache/restore@v6
