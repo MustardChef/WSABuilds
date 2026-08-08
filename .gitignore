@@ -1,0 +1,23 @@
+# IDE
+.idea/
+*.iml
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
