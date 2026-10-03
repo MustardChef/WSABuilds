@@ -196,6 +196,7 @@ wsa://com.apple.android.music
 | Ipsos MediaLink | 5.2.20 | 13 | ✅ || The VPN workaround is required, as are Accessibility permissions, and a CA certificate needs to be installed (wsa://com.android.settings) 
 | iPusnas | 1.5.1 | 11 | ✅
 | iRobot | 5.2.4-release | 12 | ❌ | Error message `java.lang.UnsatisfiedLinkError: dlopen failed: library "libcore_jni.so" not found`
+| iiSU | 0.7.2-prerelease 2 (and all versions) | 13 | ✅ | Works, but with varying levels of keyboard support. The arrow keys always work, so does pressing `Alt` and `Left Arrow` at once. Works perfectly with controllers as well. May not detect if another screen is connected unless another app does.
 | Insta360 | 1.49.0 | 12 | ❌ | Error message `Sorry, Insta360 app is temporarily incompatible with your device.`
 | J2ME Loader | 1.7.9-open | 13, 12, 11 | ✅
 | JAKI - Jakarta Kini | 1.2.34 | 11 | 🆖 | Some features require GMS
@@ -359,9 +360,6 @@ wsa://com.apple.android.music
 | Smash Hit | 1.4.3 | 13 | ✅ |
 | Snapchat || 11 | ⚠️ | Camera view is flipped | GMS warnings might appear but these can be safely ignored
 | Solid Explorer File Manager | 2.8.28b | 12 | ✅
-| Sonic Mania Plus - NETFLIX | 5.0.1 | 13 | ✅ | Sometimes an NGP Error will happen
-| Sonic Prime Dash | 1.9.0 | 13 | ✅ | |White bars as the border|
-| Sonic The Hedgehog 2 Classic | 1.10.2 | 13 | ✅ |
 | SoundHound | 10.1.2 | 12 | ✅ |  | Ensure in Windows' audio settings that the microphone has a high enough sound level 
 | Speedtest by Ookla | 4.8.0 (177906) | 12 | ✅ | VPN workaround is needed after installation to allow the app to create VPN connections.
 | Spotify | 8.7.30.1221 | 12, 11 | ✅ | 
@@ -554,7 +552,7 @@ wsa://com.apple.android.music
 | Love Live! All Stars | 3.6.0 | 12 | ⚠️ | Requires GMS, Hovers around 20-30 FPS with stuttering and slowdown on taps, requires root access and disabling SELinux. | Tested on a Ryzen 5 5600X and Nvidia RTX 3060 Ti
 | Magic Tiles 3 | 8.086.201 | 11 | ✅
 | MapleStory M | 1.9300.3921 | 13 | ✅ |
-| Mario Kart Tour | 2.10.0 | 11 | ❌ | Fails to connect to servers after Nintendo login
+| Mario Kart Tour | 2.10.0 | 11 | ❌ | Fails to connect to servers after Nintendo login. (Discontinued.)
 | MementoMori: AFKRPG | 2.4.0 | 13 | ✅ | Rarely the game will show an error regarding connectivity issue, just restart the game and it'll work fine most of the time. If you experience black background in the battle scene, try restarting the game. | Might require GMS. Tested on i7-12700H and Laptop RTX 3060, and WSA with GMS installed.
 | Minecraft (Aurora Store) | 1.17.40.06 | 11 | ❌ | Unable to verify game owner
 | Minecraft (China Edition) || 11 | ✅
@@ -599,6 +597,11 @@ wsa://com.apple.android.music
 | Smash Hit | 1.4.3 | 11 | ✅
 | Snake (Play Games) | 2023.08.46243 | 13 | ⚠️ | Full screen must be entered to correct orientation. On the other hand, sprites and assets might not be fully loaded if there's no internet connection. This might lead to anomalies such as invisible food, missing head | Requires GMS, keyboard supported
 | Solitaire (Play Games) | 2023.08.46243 | 13 | 🆖 || Requires GMS, keyboard supported
+| Sonic CD Classic | 4.0.0 | 13 | ⚠️ | Playable, but prone to crashing when time travelling or entering the 3D Special Stages. However the game does pick up after the last played stage and special stage, so it isn't too big of a deal.
+| Sonic The Hedgehog Classic | 5.0.0 | 13 | ⚠️ | Playable to an extent, but very prone to crashing. (Discontinued support.)
+| Sonic The Hedgehog 2 Classic | 1.10.2 | 13 | ✅ |
+| Sonic Mania Plus - NETFLIX | 5.0.1 | 13 | ✅ | Sometimes an NGP Error will happen
+| Sonic Prime Dash | 1.9.0 | 13 | ✅ | |White bars as the border|
 | Standoff 2 | 0.16.6 | 11 | ⚠️ | Battle experience is terrible, includes micro-stutters
 | Stardew Valley | 1.4.5.151 | 11 | ✅
 | State of Survival | 1.13.40 | 11 | ✅
