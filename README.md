@@ -1,6 +1,6 @@
 > [!IMPORTANT]  
 > <details>
-> <summary><h3>IF YOU HAVE BEEN RECENTLY HAVING ISSUES WITH SOME APPS BREAKING OR NOT STARTING OR APPS GETTING SUCK AT LOADING SCREEN OR APPS STUCK ON SPLASHSCREEN ( STUCK ON THE APP ICON SCREEN) OR ANY OTHER SIMILAR CASES AFTER THE <code>1ST OF SEPTEMBER 2026</code>.<br/><br/>UPDATE TO THE LATEST LTS RELEASE!</h3><br/><h5>CLICK HERE FOR MORE INFORMATION</h5></summary>
+> <summary><h3>IF YOU HAVE RECENTLY BEEN HAVING ISSUES WITH SOME APPS BREAKING OR NOT STARTING OR APPS GETTING STUCK ON THE LOADING SCREEN OR STUCK ON THE SPLASH SCREEN (THE APP ICON SCREEN) OR ANY OTHER SIMILAR CASES AFTER THE <code>1ST OF SEPTEMBER 2026</code>.<br/><br/>UPDATE TO THE LATEST LTS RELEASE!</h3><br/><h5>CLICK HERE FOR MORE INFORMATION</h5></summary>
 >
 > ---
 >
@@ -10,7 +10,7 @@
 >    - [Windows 11 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_11_2407.40000.4.0_LTS_8)
 >    - [Windows 10 x64](https://github.com/MustardChef/WSABuilds/releases/tag/Windows_10_2407.40000.4.0_LTS_8)
 >
-> #### If some apps that worked before, still refuse to work after updating, try clearing the app data and cache or reinstalling the apps. If the issue still occurs, you may need to perform a clean install to fix some apps. Create a backup before proceeding. 
+> #### If some apps that worked before still refuse to work after updating, try clearing the app data and cache or reinstalling the apps. If the issue still occurs, you may need to perform a clean install to fix some apps. Create a backup before proceeding. 
 >      
 > #### LET ME KNOW VIA GITHUB ISSUES AND/OR THE WSA COMMUNITY DISCORD IF THESE RELEASES HAVE SOLVED YOUR ISSUE. THANK YOU.
 > </details>
@@ -23,11 +23,11 @@
 > 
 > <br/>
 >
-> <h2>If you are affecting by this issue, try these current workarounds in the meantime:</h2>
+> <h2>If you are affected by this issue, try these current workarounds in the meantime:</h2>
 > <ul>
 >   <li><h4> RECOMMENDED FIX FOR BUILDS CONTAINING GAPPS (Google Play Store and Services): https://github.com/MustardChef/WSABuilds/issues/593#issuecomment-3172749449 </h4></li> 
 >       OR
->   <li><h4> Switch/Use the builds which do not contain GApps. These are the builds that contain <code>NoGApps</code> in their .7z archive names. </h4></li> 
+>   <li><h4> Switch to or use builds that do not contain GApps. These are the builds that contain <code>NoGApps</code> in their .7z archive names. </h4></li> 
 >   <li><h4> Really old builds of WSA (2211/2210) are known to be working. </h4></li> 
 > </ul>
 >
@@ -51,7 +51,7 @@
       <picture><img align="center" height="20%" src="https://github.com/MustardChef/WSABuilds/assets/68516357/35cd1d5d-e464-4eb8-a676-b451341f65ad" width="20%"/></picture>
       <h1>WSABuilds</h1>
       <h3>MagiskOnWSA (For Windows™ 10 and 11)</h3>
-      <h5>Windows Subsystem For Android™ (WSA) with Google Play Services and Magisk and KernelSU</h5>
+      <h5>Windows Subsystem for Android™ (WSA) with Google Play Services and Magisk and KernelSU</h5>
       <br/>
       <a href="https://discord.gg/2thee7zzHZ"><img align="center" src="https://invidget.switchblade.xyz/2thee7zzHZ" style="width: 400px;"/></a>
 </div>
@@ -131,7 +131,7 @@
 <td>Windows™ 10: 22H2 10.0.19045.2311 or higher. <br/><br/><b><i>May work on Windows™ 10: 20H1 10.0.19041.264 or higher.<b></b></i><sup>1</sup><br/><br/><sub><sup>1. You may need to install <a href="https://www.catalog.update.microsoft.com/Search.aspx?q=KB5014032" rel="noopener noreferrer" target="_blank">KB5014032</a> then install <a href="https://www.catalog.update.microsoft.com/Search.aspx?q=KB5022834" rel="noopener noreferrer" target="_blank">KB5022834</a> to use WSA on these older Windows 10 builds<b><br/><br/><b></b></b></sup></sub></b></td>
 </tr>
 <tr>
-<td colspan="2"><h5><b><i>Custom/modfied Windows OS installations (such as ReviOS, Tiny 10/11 and Ghost Spectre etc.) may have issues with running WSA.<br/></i></b></h5></td>
+<td colspan="2"><h5><b><i>Custom/modified Windows OS installations (such as ReviOS, Tiny 10/11 and Ghost Spectre etc.) may have issues with running WSA.<br/></i></b></h5></td>
 </tr>
 <tr>
 <td><img height="60" src="https://img.icons8.com/external-smashingstocks-flat-smashing-stocks/66/null/external-RAM-technology-and-devices-smashingstocks-flat-smashing-stocks.png" style="float: left;" width="60"/><h4>RAM<h4></h4></h4></td>
@@ -142,12 +142,12 @@
 <td colspan="2"><b><i>CPU Architecture: x86_64 or arm64<b><i></i></b></i></b></td>
 </tr>
 <tr>
-<td>Your PC should meet the basic Windows™ 11 requirements i.e Core i3 8th Gen, Ryzen 3000, Snapdragon 8c, or above</td>
-<td>N/A <br/><br/> This is a bit of a hit or miss, but it is highly recommended that your processor is listed in the <a href="https://learn.microsoft.com/en-gb/windows-hardware/design/minimum/windows-processor-requirements" rel="noopener noreferrer" target="_blank">supported CPU lists for Windows 11 requirements</a></td>
+<td>Your PC should meet the basic Windows™ 11 requirements i.e., Core i3 8th Gen, Ryzen 3000, Snapdragon 8c, or above</td>
+<td>N/A <br/><br/> This is a bit of a hit-or-miss situation, but it is highly recommended that your processor is listed in the <a href="https://learn.microsoft.com/en-gb/windows-hardware/design/minimum/windows-processor-requirements" rel="noopener noreferrer" target="_blank">supported CPU lists for Windows 11 requirements</a></td>
 </tr>
 <tr>
 <td><img height="60" src="https://img.icons8.com/3d-fluency/94/null/video-card.png" style="float: left;" width="60"/><h4>GPU<h4></h4></h4></td>
-<td colspan="2">Any compatible Intel, AMD or Nvidia GPU. <br/> GPU Performance may vary depending on its compatibility with Windows Subsystem For Android™  <br/><br/><details><summary><h4>Users with Intel HD Graphics 530 and older<h4></h4></h4></summary><br/><h5> WSA may not start or graphical glitches will occur when Intel HD Graphics 530 and Older iGPUs are used. This is a known issue, but unfortunately there are no fixes that I currently know of, plus, these GPUs are too old and do not meet Windows 11 requirements and hence are not official supported. <a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Usage%20Guides/General%20Usage%20Guides/ChangingGPU.md" rel="noopener noreferrer" target="_blank">Follow this guide</a> to switch to another iGPU/dGPU/eGPU that you may have or Microsoft Basic Renderer<h5></h5></h5></details><br/><details><summary><h4>Users with Nvidia GPUs<h4></h4></h4></summary><br/><h5> Nvidia GPUs are known to cause problems. If Windows Subsystem For Android™ does not start or there are graphical glitches when an Nvidia GPU is used, <a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Usage%20Guides/General%20Usage%20Guides/ChangingGPU.md" rel="noopener noreferrer" target="_blank">follow this guide</a> to switch to another iGPU/dGPU/eGPU  that you may have or Microsoft Basic Renderer<h5></h5></h5></details></td>
+<td colspan="2">Any compatible Intel, AMD or Nvidia GPU. <br/> GPU performance may vary depending on its compatibility with Windows Subsystem for Android™  <br/><br/><details><summary><h4>Users with Intel HD Graphics 530 and older<h4></h4></h4></summary><br/><h5> WSA may not start or graphical glitches will occur when Intel HD Graphics 530 and older iGPUs are used. This is a known issue, but unfortunately there are no fixes that I currently know of. Additionally, these GPUs are too old, do not meet Windows 11 requirements, and are therefore not officially supported. <a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Usage%20Guides/General%20Usage%20Guides/ChangingGPU.md" rel="noopener noreferrer" target="_blank">Follow this guide</a> to switch to another iGPU/dGPU/eGPU that you may have or Microsoft Basic Renderer<h5></h5></h5></details><br/><details><summary><h4>Users with Nvidia GPUs<h4></h4></h4></summary><br/><h5> Nvidia GPUs are known to cause problems. If Windows Subsystem for Android™ does not start or there are graphical glitches when an Nvidia GPU is used, <a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Usage%20Guides/General%20Usage%20Guides/ChangingGPU.md" rel="noopener noreferrer" target="_blank">follow this guide</a> to switch to another iGPU/dGPU/eGPU  that you may have or Microsoft Basic Renderer<h5></h5></h5></details></td>
 </tr>
 <tr>
 <td rowspan="2"><img height="60" src="https://img.icons8.com/3d-fluency/94/null/ssd.png" style="float: left;" width="60"/><h4>Storage<h4></h4></h4></td>
@@ -158,7 +158,7 @@
 </tr>
 <tr>
 <td><img height="60" src="https://img.icons8.com/stickers/100/null/storage.png" style="float: left;" width="60"/><h4>Partition<h4></h4></h4></td>
-<td colspan="2"><b><i>NTFS ONLY<b><i> <br/><br/> Windows Subsystem For Android™ can only be installed on a NTFS partition, not on an exFAT partition</i></b></i></b></td>
+<td colspan="2"><b><i>NTFS ONLY<b><i> <br/><br/> Windows Subsystem for Android™ can only be installed on an NTFS partition, not on an exFAT partition</i></b></i></b></td>
 </tr>
 <tr>
 <td rowspan="3"><img height="58" src="https://user-images.githubusercontent.com/68516357/230764789-ad8f7361-4a3b-49a8-a8e9-24fdc87d5781.png" style="float: left;" width="66"/><h4>Windows Features Needed<h4></h4></h4></td>
@@ -168,11 +168,11 @@
 <td colspan="2">Windows Hypervisor Platform Enabled</td>
 </tr>
 <tr>
-<td colspan="2"><sub><b><i>These optional settings are for virtualization and provide components that are needed to run WSA. You can enable these settings by pressing the Windows Key + R on your keyboard and typing "OptionalFeatures.exe" into the box, pressing enter and selecting the features above followed by pressing apply</i></b></sub></td>
+<td colspan="2"><sub><b><i>These optional settings are for virtualization and provide components that are needed to run WSA. You can enable these settings by pressing the Windows Key + R on your keyboard and typing "OptionalFeatures.exe" into the box, pressing Enter, selecting the features above, and then clicking Apply</i></b></sub></td>
 </tr>
 <tr>
 <td><img height="60" src="https://user-images.githubusercontent.com/68516357/230759907-5d11950e-1b17-4811-8f4e-a0f82e598079.png" style="float: left;" width="60"/><h4>Virtualization<h4></h4></h4></td>
-<td colspan="2">The Computer must support virtualization and be enabled in BIOS/UEFI and Optional Features. <br/> <h3><a href="https://support.microsoft.com/en-us/windows/enable-virtualization-on-windows-11-pcs-c5578302-6e43-4b4b-a449-8ced115f58e1" rel="noopener noreferrer" target="_blank">Guide on how to enable</a><h3></h3></h3></td>
+<td colspan="2">Your computer must support virtualization, and virtualization must be enabled in the BIOS/UEFI and in Windows Optional Features. <br/> <h3><a href="https://support.microsoft.com/en-us/windows/enable-virtualization-on-windows-11-pcs-c5578302-6e43-4b4b-a449-8ced115f58e1" rel="noopener noreferrer" target="_blank">Guide on how to enable</a><h3></h3></h3></td>
 </tr>
 </tbody>
 </table>
@@ -187,8 +187,8 @@
 > ###### (Source: [GitHub](https://github.com/microsoft/WSA/discussions/536) and [Microsoft Learn](https://learn.microsoft.com/en-us/windows/android/wsa/))
 > ---
 > ### WSABuilds has entered LTS (Long Term Support) for WSA versions ≥ 2311.40000.5.0, where the Magisk version, KernelSU version and GApps version will be kept up to date via new releases.
-> ### This repo will not be archived and support will still be given to any users installing WSA Builds from this repo. Thank you all for using this repository and supporting my work, its been a pleasure serving this community. 
-> ### Do make sure that you keep a look out for any updates to this repo to be notified of any futher changes to WSA and WSABuilds      
+> ### This repo will not be archived and support will still be given to any users installing WSA Builds from this repo. Thank you all for using this repository and supporting my work, it's been a pleasure serving this community. 
+> ### Do make sure that you keep an eye out for updates to this repo to be notified of any further changes to WSA and WSABuilds      
 >
 > ---
 > </details>
@@ -198,9 +198,9 @@
 > <summary><h2>Next LTS and Non-LTS Release Date: (Click Here)</h2></summary>
 >
 > ### WSABuilds LTS 8 Hotfix (v2407.40000.4.0)
-> ~~``Friday 4th September 2026``~~  **Available Now (via the both Stable and Pre-release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))**
+> ~~``Friday 4th September 2026``~~  **Available Now (via both the Stable and Pre-release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))**
 > ### WSABuilds LTS 7 Hotfix (v2407.40000.4.0)
-> ~~``Sunday 4th January 2026``~~  **Available Now (via the both Stable and Pre-release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))**
+> ~~``Sunday 4th January 2026``~~  **Available Now (via both the Stable and Pre-release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))**
 > ### Non-LTS Build Update (v2407.40000.4.0_v2):
 > ~~``Monday 2nd June 2025``~~  **Available Now (via the Stable release buttons in [Downloads](https://github.com/MustardChef/WSABuilds#downloads))**
 > ### WSABuilds LTS 7 (v2407.40000.4.0) 
@@ -225,37 +225,37 @@
 <br/>
 <br/>
 
-<a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Installation.md"><img height="60" src="https://img.icons8.com/color/96/null/software-installer.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Installation.md">   Installation</a></h1></a>
+<a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Installation.md"><img height="60" src="https://img.icons8.com/color/96/null/software-installer.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Installation.md">   Installation</a></h1></a>
 
 <br/>
 
-<a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Updating.md"><img height="60" src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/null/external-updating-tools-and-material-ecommerce-flaticons-flat-flat-icons.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Updating.md">   Updating</a></h1></a>  
+<a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Updating.md"><img height="60" src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/null/external-updating-tools-and-material-ecommerce-flaticons-flat-flat-icons.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Updating.md">   Updating</a></h1></a>  
 
 <br/>
 
-<a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Uninstallation.md"><img height="60" src="https://img.icons8.com/color/96/null/uninstall-programs.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Uninstallation.md">   Uninstallation</a></h1></a>
+<a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Uninstallation.md"><img height="60" src="https://img.icons8.com/color/96/null/uninstall-programs.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Uninstallation.md">   Uninstallation</a></h1></a>
     
 <br/>
 
-<a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Backup%20and%20Restore.md"><img height="60" src="https://img.icons8.com/fluency/96/cloud-backup-restore.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Backup%20and%20Restore.md">   Backup and Restore Userdata</a></h1></a>
+<a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Backup%20and%20Restore.md"><img height="60" src="https://img.icons8.com/fluency/96/cloud-backup-restore.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Backup%20and%20Restore.md">   Backup and Restore Userdata</a></h1></a>
 
 <br/>
 
-<a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/FAQ.md"><img height="60" src="https://img.icons8.com/3d-fluency/94/null/help.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/FAQ.md">   FAQ</a></h1></a>
+<a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/FAQ.md"><img height="60" src="https://img.icons8.com/3d-fluency/94/null/help.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/FAQ.md">   FAQ</a></h1></a>
 
 <br/>
 
-<a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/App%20Compatibility.md"><img height="60" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-compatibility-relationship-flaticons-lineal-color-flat-icons-2.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/App%20Compatibility.md">   App Compatibility</a></h1></a>
+<a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/App%20Compatibility.md"><img height="60" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-compatibility-relationship-flaticons-lineal-color-flat-icons-2.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/App%20Compatibility.md">   App Compatibility</a></h1></a>
 
 <br/>
 
-<a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Usage%20Guide.md"><img height="60" src="https://img.icons8.com/external-xnimrodx-lineal-color-xnimrodx/96/null/external-guide-education-xnimrodx-lineal-color-xnimrodx.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Usage%20Guide.md">   Usage Guides</a></h1></a>
+<a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Usage%20Guide.md"><img height="60" src="https://img.icons8.com/external-xnimrodx-lineal-color-xnimrodx/96/null/external-guide-education-xnimrodx-lineal-color-xnimrodx.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Usage%20Guide.md">   Usage Guides</a></h1></a>
 
 <br/>
- 
+ 
 
-<a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Having%20Issues.md"><img height="60" src="https://img.icons8.com/external-soft-fill-juicy-fish/96/null/external-bug-coding-and-development-soft-fill-soft-fill-juicy-fish-2.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Having%20Issues.md">   Having Issues?</a></h1></a>
+<a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Having%20Issues.md"><img height="60" src="https://img.icons8.com/external-soft-fill-juicy-fish/96/null/external-bug-coding-and-development-soft-fill-soft-fill-juicy-fish-2.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Having%20Issues.md">   Having Issues?</a></h1></a>
 
 <br/>
 
-<a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Credits.md"><img height="60" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-credits-movie-theater-flaticons-lineal-color-flat-icons.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Credits.md">   Credits</a></h1></a>
+<a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Credits.md"><img height="60" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-credits-movie-theater-flaticons-lineal-color-flat-icons.png" style="float: left;" width="60"/><h1><a href="https://github.com/MustardChef/WSABuilds/blob/master/Documentation/WSABuilds/Credits.md">   Credits</a></h1></a>
